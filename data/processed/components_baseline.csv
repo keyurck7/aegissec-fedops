@@ -1,0 +1,9 @@
+asset_id,component_name,version,ecosystem,source_file,source_line,dependency_type,extraction_confidence,validation_issue
+ASSET-001,django,3.2.10,PyPI,data/sample_inputs/citizen_portal/requirements.txt,1.0,runtime,High,
+ASSET-001,requests,2.25.1,PyPI,data/sample_inputs/citizen_portal/requirements.txt,2.0,runtime,High,
+ASSET-001,urllib3,1.26.5,PyPI,data/sample_inputs/citizen_portal/requirements.txt,3.0,runtime,High,
+ASSET-001,pyjwt,1.7.1,PyPI,data/sample_inputs/citizen_portal/requirements.txt,4.0,runtime,High,
+ASSET-001,jinja2,2.11.3,PyPI,data/sample_inputs/citizen_portal/requirements.txt,5.0,runtime,High,
+ASSET-001,lodash,4.17.20,npm,data/sample_inputs/citizen_portal/package.json,,runtime,High,
+ASSET-001,axios,0.21.1,npm,data/sample_inputs/citizen_portal/package.json,,runtime,High,
+ASSET-001,express,4.17.1,npm,data/sample_inputs/citizen_portal/package.json,,runtime,High,

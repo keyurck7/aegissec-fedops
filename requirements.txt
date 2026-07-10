@@ -1,0 +1,13 @@
+pandas
+numpy
+requests
+python-dotenv
+packaging
+scikit-learn
+matplotlib
+jupyter
+nbformat
+pytest
+pydantic
+jsonschema
+rich

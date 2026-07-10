@@ -1,0 +1,10 @@
+{
+  "asset_id": "ASSET-001",
+  "asset_name": "Citizen Services Portal",
+  "sector": "Public Administration",
+  "exposure": "Internet-facing",
+  "criticality": "High",
+  "data_sensitivity": "Citizen personal data",
+  "environment": "Controlled demo",
+  "authorization_status": "Authorized internal demo evidence"
+}

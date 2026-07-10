@@ -1,0 +1,12 @@
+{
+  "name": "citizen-services-portal",
+  "version": "0.1.0",
+  "dependencies": {
+    "lodash": "4.17.20",
+    "axios": "0.21.1",
+    "express": "4.17.1"
+  },
+  "devDependencies": {
+    "minimist": "0.0.8"
+  }
+}

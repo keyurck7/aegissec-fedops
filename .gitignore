@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment
+.env
+
+# Data caches and large files
+data/cache/
+data/raw/**/*.zip
+data/raw/**/*.gz
+
+# Reports
+reports/*.html
+reports/*.pdf
+
+# OS/editor
+.DS_Store
+.vscode/
