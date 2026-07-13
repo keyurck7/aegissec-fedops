@@ -1,0 +1,581 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aegissec.example/schemas/aegis-policy-mutation-report-v1.0.0.json",
+  "title": "AegisSec Policy Mutation Report v1.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "report_id",
+    "catalog",
+    "trusted_policy",
+    "input_integrity_checks",
+    "baseline_calibration",
+    "summary",
+    "quality_gates",
+    "results",
+    "surviving_mutation_ids",
+    "harness_error_mutation_ids",
+    "release_decision",
+    "limitations",
+    "generated_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "report_id": {
+      "type": "string",
+      "pattern": "^AEG-MUTATION-[A-Z0-9._-]+$"
+    },
+    "catalog": {
+      "$ref": "#/$defs/catalog"
+    },
+    "trusted_policy": {
+      "$ref": "#/$defs/trustedPolicy"
+    },
+    "input_integrity_checks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/integrityCheck"
+      }
+    },
+    "baseline_calibration": {
+      "$ref": "#/$defs/baseline"
+    },
+    "summary": {
+      "$ref": "#/$defs/summary"
+    },
+    "quality_gates": {
+      "type": "array",
+      "minItems": 5,
+      "items": {
+        "$ref": "#/$defs/gate"
+      }
+    },
+    "results": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/result"
+      }
+    },
+    "surviving_mutation_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "harness_error_mutation_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "release_decision": {
+      "$ref": "#/$defs/release"
+    },
+    "limitations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "$defs": {
+    "sha": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "catalog": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "catalog_id",
+        "version",
+        "harness_version",
+        "relative_path",
+        "sha256"
+      ],
+      "properties": {
+        "catalog_id": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "harness_version": {
+          "type": "string"
+        },
+        "relative_path": {
+          "type": "string"
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha"
+        }
+      }
+    },
+    "trustedPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "relative_path",
+        "sha256_before",
+        "sha256_after",
+        "unchanged"
+      ],
+      "properties": {
+        "relative_path": {
+          "type": "string"
+        },
+        "sha256_before": {
+          "$ref": "#/$defs/sha"
+        },
+        "sha256_after": {
+          "$ref": "#/$defs/sha"
+        },
+        "unchanged": {
+          "type": "boolean"
+        }
+      }
+    },
+    "integrityCheck": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "relative_path",
+        "expected_sha256",
+        "actual_sha256",
+        "passed"
+      ],
+      "properties": {
+        "relative_path": {
+          "type": "string"
+        },
+        "expected_sha256": {
+          "$ref": "#/$defs/sha"
+        },
+        "actual_sha256": {
+          "$ref": "#/$defs/sha"
+        },
+        "passed": {
+          "type": "boolean"
+        }
+      }
+    },
+    "baseline": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "case_count",
+        "passed_case_count",
+        "pair_count",
+        "passed_pair_count",
+        "invariant_pass_case_count",
+        "passed"
+      ],
+      "properties": {
+        "case_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "passed_case_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "pair_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "passed_pair_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "invariant_pass_case_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "passed": {
+          "type": "boolean"
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mutation_count",
+        "critical_mutation_count",
+        "blocked_at_load_count",
+        "killed_by_assurance_count",
+        "survived_count",
+        "harness_error_count",
+        "critical_mutation_defence_rate",
+        "executable_critical_mutation_count",
+        "executable_critical_killed_count",
+        "executable_critical_mutation_kill_rate",
+        "trusted_policy_integrity_passed",
+        "overall_passed"
+      ],
+      "properties": {
+        "mutation_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "critical_mutation_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "blocked_at_load_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "killed_by_assurance_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "survived_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "harness_error_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "critical_mutation_defence_rate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "executable_critical_mutation_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "executable_critical_killed_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "executable_critical_mutation_kill_rate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "trusted_policy_integrity_passed": {
+          "type": "boolean"
+        },
+        "overall_passed": {
+          "type": "boolean"
+        }
+      }
+    },
+    "gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "gate_id",
+        "observed",
+        "operator",
+        "threshold",
+        "passed"
+      ],
+      "properties": {
+        "gate_id": {
+          "type": "string"
+        },
+        "observed": {},
+        "operator": {
+          "enum": [
+            "gte",
+            "lte",
+            "eq"
+          ]
+        },
+        "threshold": {},
+        "passed": {
+          "type": "boolean"
+        }
+      }
+    },
+    "staticFailure": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "code",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "assurance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "case_count",
+        "passed_case_count",
+        "failed_case_count",
+        "failed_case_ids",
+        "failed_check_codes",
+        "invariant_failure_case_count",
+        "invariant_failure_case_ids",
+        "failed_pair_count",
+        "failed_pair_ids"
+      ],
+      "properties": {
+        "case_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "passed_case_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "failed_case_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "failed_case_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "failed_check_codes": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "invariant_failure_case_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "invariant_failure_case_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "failed_pair_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "failed_pair_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "releaseEval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "stage_gate_status",
+        "under_triage_count",
+        "safety_recall",
+        "full_rule_coverage_rate",
+        "uncovered_policy_rules",
+        "failed_quality_gate_ids",
+        "policy_consistency_error"
+      ],
+      "properties": {
+        "stage_gate_status": {
+          "enum": [
+            "PASS",
+            "FAIL",
+            "NOT_EVALUATED"
+          ]
+        },
+        "under_triage_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "safety_recall": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "full_rule_coverage_rate": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "uncovered_policy_rules": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "failed_quality_gate_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "policy_consistency_error": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mutation_id",
+        "title",
+        "family",
+        "severity",
+        "description",
+        "expected_detection",
+        "operations",
+        "status",
+        "executable",
+        "trusted_policy_sha256",
+        "mutated_policy_sha256",
+        "load_error",
+        "static_contract_failures",
+        "assurance",
+        "release_evaluation",
+        "detection_oracles",
+        "error"
+      ],
+      "properties": {
+        "mutation_id": {
+          "type": "string",
+          "pattern": "^MUT-[A-Z0-9-]+$"
+        },
+        "title": {
+          "type": "string"
+        },
+        "family": {
+          "type": "string"
+        },
+        "severity": {
+          "const": "critical"
+        },
+        "description": {
+          "type": "string"
+        },
+        "expected_detection": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "operations": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object"
+          }
+        },
+        "status": {
+          "enum": [
+            "BLOCKED_AT_LOAD",
+            "KILLED_BY_ASSURANCE",
+            "SURVIVED",
+            "HARNESS_ERROR"
+          ]
+        },
+        "executable": {
+          "type": "boolean"
+        },
+        "trusted_policy_sha256": {
+          "$ref": "#/$defs/sha"
+        },
+        "mutated_policy_sha256": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/sha"
+            },
+            {
+              "const": ""
+            }
+          ]
+        },
+        "load_error": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "static_contract_failures": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/staticFailure"
+          }
+        },
+        "assurance": {
+          "$ref": "#/$defs/assurance"
+        },
+        "release_evaluation": {
+          "$ref": "#/$defs/releaseEval"
+        },
+        "detection_oracles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "error": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "release": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "stage_gate_status",
+        "production_readiness_status",
+        "blocking_reasons"
+      ],
+      "properties": {
+        "stage_gate_status": {
+          "enum": [
+            "PASS",
+            "FAIL"
+          ]
+        },
+        "production_readiness_status": {
+          "const": "BLOCKED"
+        },
+        "blocking_reasons": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

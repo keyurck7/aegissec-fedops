@@ -1,0 +1,383 @@
+policy:
+  catalog_id: AEGIS-POLICY-MUTATION-CATALOG
+  version: 1.0.0
+  harness_version: 0.1.0
+  description: >
+    Controlled, non-deployable mutations used to prove that dangerous weakening
+    of the federal decision policy is rejected at load time or detected by
+    independent assurance, invariant, fairness, coverage, and release gates.
+
+trusted_policy:
+  relative_path: policies/decision/federal_base_policy_v1.yaml
+  expected_sha256: fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f
+
+assurance_inputs:
+  corpus:
+    relative_path: data/assurance/step11a_policy_rule_coverage_corpus.jsonl
+    expected_sha256: d51747056c4f920d5e0b6bfb51613b4e1ee1910de82770aa179dd3fe77f68ded
+  manifest:
+    relative_path: data/assurance/step11a_policy_rule_coverage_manifest.json
+    expected_sha256: d1fdd9308b973e5248e464daf528a376bca6bc6c27b9d45f267b88f842797465
+  case_schema:
+    relative_path: schemas/aegis_policy_assurance_case_v1_1.schema.json
+    expected_sha256: e2a72f8736a06b2120b619d4b894c416cfd863b82d3a5e974549c2bbcf8fe677
+  release_gate_policy:
+    relative_path: policies/assurance/fairness_release_gates_v1.yaml
+
+release_gates:
+  critical_mutation_defence_rate_minimum: 1.0
+  executable_critical_mutation_kill_rate_minimum: 1.0
+  surviving_critical_mutations_maximum: 0
+  harness_errors_maximum: 0
+  require_trusted_policy_hash_unchanged: true
+  approved_remaining_production_blockers:
+    - Real operational validation has not yet been completed.
+    - Independent security review has not yet been completed.
+
+security_contract:
+  forbidden_field_fragments:
+    - sector
+    - primary_sector
+    - subsector
+  action_ranks:
+    TRACK: 0
+    TRACK_STAR: 1
+    ATTEND: 2
+    ACT: 3
+    HOLD: 4
+  priority_ranks:
+    INFORMATIONAL: 0
+    LOW: 1
+    MEDIUM: 2
+    HIGH: 3
+    CRITICAL: 4
+    EMERGENCY: 5
+  required_rule_ids:
+    - RULE-AFFECTED-BASELINE-001
+    - RULE-PROBABLY-AFFECTED-001
+    - RULE-UNKNOWN-AFFECTEDNESS-001
+    - RULE-PROBABLY-NOT-AFFECTED-001
+    - RULE-NEGATIVE-AFFECTEDNESS-001
+    - RULE-TRUST-BLOCKED-001
+    - RULE-TRUST-WARNINGS-001
+    - RULE-KEV-AFFECTED-001
+    - RULE-KEV-UNCERTAIN-001
+    - RULE-ACTIVE-EXPLOITATION-001
+    - RULE-KNOWN-EXPLOITATION-001
+    - RULE-RUNTIME-REACHABLE-001
+    - RULE-INTERNET-EXPOSED-001
+    - RULE-EXPOSURE-UNKNOWN-001
+    - RULE-CATASTROPHIC-IMPACT-001
+    - RULE-SEVERE-IMPACT-001
+    - RULE-HIGH-IMPACT-001
+    - RULE-MISSION-ESSENTIAL-001
+    - RULE-HIGH-CRITICALITY-001
+    - RULE-CRITICAL-CVSS-001
+    - RULE-NO-FIX-AVAILABLE-001
+    - RULE-EPSS-MISSING-AFFECTED-001
+  critical_rule_minima:
+    RULE-AFFECTED-BASELINE-001:
+      action_floor: ATTEND
+      priority_floor: HIGH
+      deadline_hours_maximum: 168
+      non_overridable: true
+    RULE-UNKNOWN-AFFECTEDNESS-001:
+      action_floor: HOLD
+      priority_floor: HIGH
+      deadline_hours_maximum: 24
+      human_review_required: true
+      prohibit_closure: true
+      non_overridable: true
+    RULE-TRUST-BLOCKED-001:
+      action_floor: HOLD
+      priority_floor: HIGH
+      deadline_hours_maximum: 4
+      human_review_required: true
+      prohibit_closure: true
+      non_overridable: true
+    RULE-KEV-AFFECTED-001:
+      action_floor: ACT
+      priority_floor: CRITICAL
+      deadline_hours_maximum: 24
+      human_review_required: true
+      prohibit_closure: true
+      non_overridable: true
+    RULE-ACTIVE-EXPLOITATION-001:
+      action_floor: ACT
+      priority_floor: EMERGENCY
+      deadline_hours_maximum: 4
+      human_review_required: true
+      containment_required: true
+      prohibit_closure: true
+      non_overridable: true
+    RULE-CATASTROPHIC-IMPACT-001:
+      action_floor: ACT
+      priority_floor: EMERGENCY
+      deadline_hours_maximum: 4
+      human_review_required: true
+      containment_required: true
+      prohibit_closure: true
+      non_overridable: true
+    RULE-NO-FIX-AVAILABLE-001:
+      action_floor: ACT
+      priority_floor: CRITICAL
+      deadline_hours_maximum: 24
+      human_review_required: true
+      containment_required: true
+      prohibit_closure: true
+      non_overridable: true
+
+mutations:
+  - mutation_id: MUT-KEV-ACTION-DOWNGRADE-001
+    title: Downgrade KEV action to TRACK
+    family: kev_downgrade
+    severity: critical
+    description: Weakens the KEV affected action floor from ACT to TRACK.
+    expected_detection:
+      - case_oracle
+      - policy_invariant
+      - release_gate
+    operations:
+      - op: set_rule_field
+        rule_id: RULE-KEV-AFFECTED-001
+        field_path: set.action_floor
+        value: TRACK
+
+  - mutation_id: MUT-KEV-PRIORITY-DOWNGRADE-001
+    title: Downgrade KEV priority to MEDIUM
+    family: kev_downgrade
+    severity: critical
+    description: Weakens the KEV affected priority floor below Critical.
+    expected_detection:
+      - case_oracle
+      - policy_invariant
+      - release_gate
+    operations:
+      - op: set_rule_field
+        rule_id: RULE-KEV-AFFECTED-001
+        field_path: set.priority_floor
+        value: MEDIUM
+
+  - mutation_id: MUT-ACTIVE-DEADLINE-EXTENSION-001
+    title: Extend active exploitation deadline
+    family: deadline_extension
+    severity: critical
+    description: Extends active exploitation response from four to 168 hours.
+    expected_detection:
+      - case_oracle
+      - release_gate
+    operations:
+      - op: set_rule_field
+        rule_id: RULE-ACTIVE-EXPLOITATION-001
+        field_path: set.deadline_hours
+        value: 168
+
+  - mutation_id: MUT-ACTIVE-REVIEW-REMOVAL-001
+    title: Remove active exploitation review
+    family: review_removal
+    severity: critical
+    description: Removes accountable human review from active exploitation.
+    expected_detection:
+      - case_oracle
+      - release_gate
+    operations:
+      - op: set_rule_field
+        rule_id: RULE-ACTIVE-EXPLOITATION-001
+        field_path: set.human_review_required
+        value: false
+
+  - mutation_id: MUT-ACTIVE-CONTAINMENT-REMOVAL-001
+    title: Remove active exploitation containment
+    family: containment_removal
+    severity: critical
+    description: Removes containment from an actively exploited affected component.
+    expected_detection:
+      - case_oracle
+      - release_gate
+    operations:
+      - op: set_rule_field
+        rule_id: RULE-ACTIVE-EXPLOITATION-001
+        field_path: set.containment_required
+        value: false
+
+  - mutation_id: MUT-ACTIVE-CLOSURE-WEAKENING-001
+    title: Permit closure during active exploitation
+    family: closure_weakening
+    severity: critical
+    description: Allows closure while active exploitation remains unresolved.
+    expected_detection:
+      - case_oracle
+      - release_gate
+    operations:
+      - op: set_rule_field
+        rule_id: RULE-ACTIVE-EXPLOITATION-001
+        field_path: set.prohibit_closure
+        value: false
+
+  - mutation_id: MUT-UNKNOWN-AFFECTEDNESS-TRACK-001
+    title: Track unknown affectedness
+    family: uncertainty_downgrade
+    severity: critical
+    description: Replaces fail-closed HOLD with permissive TRACK for unknown affectedness.
+    expected_detection:
+      - case_oracle
+      - policy_invariant
+      - release_gate
+    operations:
+      - op: set_rule_field
+        rule_id: RULE-UNKNOWN-AFFECTEDNESS-001
+        field_path: set.action_floor
+        value: TRACK
+
+  - mutation_id: MUT-REJECTED-EVIDENCE-CONTINUE-001
+    title: Allow rejected evidence to continue
+    family: trust_bypass
+    severity: critical
+    description: Removes REJECT from the evidence states that force HOLD.
+    expected_detection:
+      - case_oracle
+      - policy_invariant
+      - release_gate
+    operations:
+      - op: set_rule_field
+        rule_id: RULE-TRUST-BLOCKED-001
+        field_path: when.all.0.value
+        value:
+          - QUARANTINE
+
+  - mutation_id: MUT-EPSS-MISSING-AS-ZERO-001
+    title: Treat missing EPSS as zero
+    family: missing_value_coercion
+    severity: critical
+    description: Replaces explicit missing-status handling with a zero-probability condition.
+    expected_detection:
+      - case_oracle
+      - release_gate
+    operations:
+      - op: set_rule_field
+        rule_id: RULE-EPSS-MISSING-AFFECTED-001
+        field_path: when.all.0.field
+        value: epss.probability
+      - op: set_rule_field
+        rule_id: RULE-EPSS-MISSING-AFFECTED-001
+        field_path: when.all.0.value
+        value: 0.0
+
+  - mutation_id: MUT-NO-FIX-CONTAINMENT-REMOVAL-001
+    title: Remove containment when no fix exists
+    family: containment_removal
+    severity: critical
+    description: Removes mandatory containment for no-fix and end-of-life findings.
+    expected_detection:
+      - case_oracle
+      - release_gate
+    operations:
+      - op: set_rule_field
+        rule_id: RULE-NO-FIX-AVAILABLE-001
+        field_path: set.containment_required
+        value: false
+
+  - mutation_id: MUT-CATASTROPHIC-PRIORITY-DOWNGRADE-001
+    title: Downgrade catastrophic priority
+    family: impact_downgrade
+    severity: critical
+    description: Reduces catastrophic impact from Emergency to High priority.
+    expected_detection:
+      - case_oracle
+      - release_gate
+    operations:
+      - op: set_rule_field
+        rule_id: RULE-CATASTROPHIC-IMPACT-001
+        field_path: set.priority_floor
+        value: HIGH
+
+  - mutation_id: MUT-CATASTROPHIC-ACTION-DOWNGRADE-001
+    title: Downgrade catastrophic action
+    family: impact_downgrade
+    severity: critical
+    description: Reduces catastrophic impact action from ACT to ATTEND.
+    expected_detection:
+      - case_oracle
+      - release_gate
+    operations:
+      - op: set_rule_field
+        rule_id: RULE-CATASTROPHIC-IMPACT-001
+        field_path: set.action_floor
+        value: ATTEND
+
+  - mutation_id: MUT-KEV-OVERRIDABLE-001
+    title: Make KEV rule overridable
+    family: mandatory_floor_removal
+    severity: critical
+    description: Makes the KEV affected rule overridable without changing its immediate output.
+    expected_detection:
+      - static_security_contract
+    operations:
+      - op: set_rule_field
+        rule_id: RULE-KEV-AFFECTED-001
+        field_path: non_overridable
+        value: false
+
+  - mutation_id: MUT-SECTOR-LABEL-INJECTION-001
+    title: Inject sector label into decision logic
+    family: prohibited_input_injection
+    severity: critical
+    description: Removes sector prohibitions and adds a sector condition to an affectedness rule.
+    expected_detection:
+      - static_security_contract
+      - policy_invariant
+      - case_oracle
+    operations:
+      - op: set_policy_field
+        field_path: forbidden_field_fragments
+        value: []
+      - op: append_policy_list
+        field_path: allowed_context_fields
+        value: sector_context.primary_sector
+      - op: append_rule_condition
+        rule_id: RULE-AFFECTED-BASELINE-001
+        condition:
+          field: sector_context.primary_sector
+          operator: eq
+          value: healthcare
+
+  - mutation_id: MUT-AFFECTED-BASELINE-REMOVAL-001
+    title: Remove affected baseline floor
+    family: mandatory_floor_removal
+    severity: critical
+    description: Deletes the baseline rule for confirmed affectedness.
+    expected_detection:
+      - static_security_contract
+      - case_oracle
+      - rule_coverage
+      - policy_consistency
+    operations:
+      - op: remove_rule
+        rule_id: RULE-AFFECTED-BASELINE-001
+
+  - mutation_id: MUT-HOLD-RANK-DOWNGRADE-001
+    title: Downgrade HOLD rank below TRACK
+    family: rank_tampering
+    severity: critical
+    description: Alters action ordering so HOLD no longer dominates permissive actions.
+    expected_detection:
+      - static_security_contract
+      - case_oracle
+      - policy_invariant
+    operations:
+      - op: set_policy_field
+        field_path: action_ranks.HOLD
+        value: -1
+
+  - mutation_id: MUT-UNRANKED-ACTION-TOKEN-001
+    title: Insert an unranked action token
+    family: invalid_policy_configuration
+    severity: critical
+    description: Replaces a critical action floor with an unranked token.
+    expected_detection:
+      - policy_loader
+    operations:
+      - op: set_rule_field
+        rule_id: RULE-KEV-AFFECTED-001
+        field_path: set.action_floor
+        value: EXECUTE

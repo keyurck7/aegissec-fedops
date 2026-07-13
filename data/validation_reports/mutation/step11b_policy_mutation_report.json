@@ -1,0 +1,1742 @@
+{
+  "baseline_calibration": {
+    "case_count": 130,
+    "invariant_pass_case_count": 130,
+    "pair_count": 65,
+    "passed": true,
+    "passed_case_count": 130,
+    "passed_pair_count": 65
+  },
+  "catalog": {
+    "catalog_id": "AEGIS-POLICY-MUTATION-CATALOG",
+    "harness_version": "0.1.0",
+    "relative_path": "policies/assurance/policy_mutation_catalog_v1.yaml",
+    "sha256": "e8e050967e9aa6bc4be096745bae5c384d88b861116fb7df37868132741b17e9",
+    "version": "1.0.0"
+  },
+  "generated_at": "2026-07-13T21:15:00+00:00",
+  "harness_error_mutation_ids": [],
+  "input_integrity_checks": {
+    "case_schema": {
+      "actual_sha256": "e2a72f8736a06b2120b619d4b894c416cfd863b82d3a5e974549c2bbcf8fe677",
+      "expected_sha256": "e2a72f8736a06b2120b619d4b894c416cfd863b82d3a5e974549c2bbcf8fe677",
+      "passed": true,
+      "relative_path": "schemas/aegis_policy_assurance_case_v1_1.schema.json"
+    },
+    "corpus": {
+      "actual_sha256": "d51747056c4f920d5e0b6bfb51613b4e1ee1910de82770aa179dd3fe77f68ded",
+      "expected_sha256": "d51747056c4f920d5e0b6bfb51613b4e1ee1910de82770aa179dd3fe77f68ded",
+      "passed": true,
+      "relative_path": "data/assurance/step11a_policy_rule_coverage_corpus.jsonl"
+    },
+    "manifest": {
+      "actual_sha256": "d1fdd9308b973e5248e464daf528a376bca6bc6c27b9d45f267b88f842797465",
+      "expected_sha256": "d1fdd9308b973e5248e464daf528a376bca6bc6c27b9d45f267b88f842797465",
+      "passed": true,
+      "relative_path": "data/assurance/step11a_policy_rule_coverage_manifest.json"
+    },
+    "trusted_policy": {
+      "actual_sha256": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f",
+      "expected_sha256": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f",
+      "passed": true,
+      "relative_path": "policies/decision/federal_base_policy_v1.yaml"
+    }
+  },
+  "limitations": [
+    "Mutations execute only against ephemeral policy copies.",
+    "The suite evaluates deterministic policy logic and does not replace independent penetration testing.",
+    "The controlled corpus is not operational incident data.",
+    "A killed mutation proves detection by this harness, not complete absence of policy defects."
+  ],
+  "quality_gates": [
+    {
+      "gate_id": "MUTATION-CRITICAL-DEFENCE-RATE",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "MUTATION-EXECUTABLE-KILL-RATE",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "MUTATION-SURVIVORS",
+      "observed": 0,
+      "operator": "lte",
+      "passed": true,
+      "threshold": 0
+    },
+    {
+      "gate_id": "MUTATION-HARNESS-ERRORS",
+      "observed": 0,
+      "operator": "lte",
+      "passed": true,
+      "threshold": 0
+    },
+    {
+      "gate_id": "TRUSTED-POLICY-INTEGRITY",
+      "observed": true,
+      "operator": "eq",
+      "passed": true,
+      "threshold": true
+    }
+  ],
+  "release_decision": {
+    "blocking_reasons": [
+      "Real operational validation has not yet been completed.",
+      "Independent security review has not yet been completed."
+    ],
+    "production_readiness_status": "BLOCKED",
+    "stage_gate_status": "PASS"
+  },
+  "report_id": "AEG-MUTATION-STEP11B-001",
+  "results": [
+    {
+      "assurance": {
+        "case_count": 130,
+        "failed_case_count": 4,
+        "failed_case_ids": [
+          "AEG-ASR-002-HC",
+          "AEG-ASR-002-DL",
+          "AEG-ASR-014-HC",
+          "AEG-ASR-014-DL"
+        ],
+        "failed_check_codes": {
+          "ACTION_MATCHES_ORACLE": 4,
+          "DEADLINE_MATCHES_ORACLE": 4,
+          "POLICY_INVARIANTS_PASS": 4
+        },
+        "failed_pair_count": 0,
+        "failed_pair_ids": [],
+        "invariant_failure_case_count": 4,
+        "invariant_failure_case_ids": [
+          "AEG-ASR-002-HC",
+          "AEG-ASR-002-DL",
+          "AEG-ASR-014-HC",
+          "AEG-ASR-014-DL"
+        ],
+        "passed_case_count": 126
+      },
+      "description": "Weakens the KEV affected action floor from ACT to TRACK.",
+      "detection_oracles": [
+        "CASE_ORACLE",
+        "POLICY_INVARIANT",
+        "RELEASE_GATE",
+        "STATIC_SECURITY_CONTRACT"
+      ],
+      "error": null,
+      "executable": true,
+      "expected_detection": [
+        "case_oracle",
+        "policy_invariant",
+        "release_gate"
+      ],
+      "family": "kev_downgrade",
+      "load_error": null,
+      "mutated_policy_sha256": "a8c0aa3589e6d77fa74cb7b1abbcaa1b1013eb5893a11b556f2150ae0a6fa32b",
+      "mutation_id": "MUT-KEV-ACTION-DOWNGRADE-001",
+      "operations": [
+        {
+          "field_path": "set.action_floor",
+          "op": "set_rule_field",
+          "rule_id": "RULE-KEV-AFFECTED-001",
+          "value": "TRACK"
+        }
+      ],
+      "release_evaluation": {
+        "failed_quality_gate_ids": [
+          "GATE-CASE-EXACT-001",
+          "GATE-ACTION-EXACT-001",
+          "GATE-DEADLINE-EXACT-001",
+          "GATE-INVARIANTS-001",
+          "GATE-HOLD-PRECISION-001",
+          "GATE-BOOTSTRAP-CASE-001"
+        ],
+        "full_rule_coverage_rate": 1.0,
+        "policy_consistency_error": null,
+        "safety_recall": 1.0,
+        "stage_gate_status": "FAIL",
+        "uncovered_policy_rules": [],
+        "under_triage_count": 0
+      },
+      "severity": "critical",
+      "static_contract_failures": [
+        {
+          "code": "CRITICAL_ACTION_FLOOR_WEAKENED",
+          "message": "RULE-KEV-AFFECTED-001 action floor is below ACT."
+        }
+      ],
+      "status": "KILLED_BY_ASSURANCE",
+      "title": "Downgrade KEV action to TRACK",
+      "trusted_policy_sha256": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f"
+    },
+    {
+      "assurance": {
+        "case_count": 130,
+        "failed_case_count": 4,
+        "failed_case_ids": [
+          "AEG-ASR-002-HC",
+          "AEG-ASR-002-DL",
+          "AEG-ASR-014-HC",
+          "AEG-ASR-014-DL"
+        ],
+        "failed_check_codes": {
+          "ACTION_MATCHES_ORACLE": 4,
+          "DEADLINE_MATCHES_ORACLE": 4,
+          "POLICY_INVARIANTS_PASS": 4,
+          "PRIORITY_MATCHES_ORACLE": 4
+        },
+        "failed_pair_count": 0,
+        "failed_pair_ids": [],
+        "invariant_failure_case_count": 4,
+        "invariant_failure_case_ids": [
+          "AEG-ASR-002-HC",
+          "AEG-ASR-002-DL",
+          "AEG-ASR-014-HC",
+          "AEG-ASR-014-DL"
+        ],
+        "passed_case_count": 126
+      },
+      "description": "Weakens the KEV affected priority floor below Critical.",
+      "detection_oracles": [
+        "CASE_ORACLE",
+        "POLICY_INVARIANT",
+        "RELEASE_GATE",
+        "STATIC_SECURITY_CONTRACT",
+        "UNDER_TRIAGE_DETECTION"
+      ],
+      "error": null,
+      "executable": true,
+      "expected_detection": [
+        "case_oracle",
+        "policy_invariant",
+        "release_gate"
+      ],
+      "family": "kev_downgrade",
+      "load_error": null,
+      "mutated_policy_sha256": "b481db83c2b839207681e18780ad601d718f31c08fc4d311ff84b3134525af96",
+      "mutation_id": "MUT-KEV-PRIORITY-DOWNGRADE-001",
+      "operations": [
+        {
+          "field_path": "set.priority_floor",
+          "op": "set_rule_field",
+          "rule_id": "RULE-KEV-AFFECTED-001",
+          "value": "MEDIUM"
+        }
+      ],
+      "release_evaluation": {
+        "failed_quality_gate_ids": [
+          "GATE-CASE-EXACT-001",
+          "GATE-ACTION-EXACT-001",
+          "GATE-PRIORITY-EXACT-001",
+          "GATE-DEADLINE-EXACT-001",
+          "GATE-INVARIANTS-001",
+          "GATE-UNDER-TRIAGE-001",
+          "GATE-SAFETY-RECALL-001",
+          "GATE-HOLD-PRECISION-001",
+          "GATE-BOOTSTRAP-CASE-001",
+          "GATE-BOOTSTRAP-SAFETY-001"
+        ],
+        "full_rule_coverage_rate": 1.0,
+        "policy_consistency_error": null,
+        "safety_recall": 0.9622641509433962,
+        "stage_gate_status": "FAIL",
+        "uncovered_policy_rules": [],
+        "under_triage_count": 4
+      },
+      "severity": "critical",
+      "static_contract_failures": [
+        {
+          "code": "CRITICAL_PRIORITY_FLOOR_WEAKENED",
+          "message": "RULE-KEV-AFFECTED-001 priority floor is below CRITICAL."
+        }
+      ],
+      "status": "KILLED_BY_ASSURANCE",
+      "title": "Downgrade KEV priority to MEDIUM",
+      "trusted_policy_sha256": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f"
+    },
+    {
+      "assurance": {
+        "case_count": 130,
+        "failed_case_count": 4,
+        "failed_case_ids": [
+          "AEG-ASR-003-HC",
+          "AEG-ASR-003-DL",
+          "AEG-ASR-015-HC",
+          "AEG-ASR-015-DL"
+        ],
+        "failed_check_codes": {
+          "DEADLINE_MATCHES_ORACLE": 4
+        },
+        "failed_pair_count": 0,
+        "failed_pair_ids": [],
+        "invariant_failure_case_count": 0,
+        "invariant_failure_case_ids": [],
+        "passed_case_count": 126
+      },
+      "description": "Extends active exploitation response from four to 168 hours.",
+      "detection_oracles": [
+        "CASE_ORACLE",
+        "RELEASE_GATE",
+        "STATIC_SECURITY_CONTRACT",
+        "UNDER_TRIAGE_DETECTION"
+      ],
+      "error": null,
+      "executable": true,
+      "expected_detection": [
+        "case_oracle",
+        "release_gate"
+      ],
+      "family": "deadline_extension",
+      "load_error": null,
+      "mutated_policy_sha256": "d7fc2aab8c7ef77a6b7323b351676a7a099385beba0f83ed0ac5500e298106d7",
+      "mutation_id": "MUT-ACTIVE-DEADLINE-EXTENSION-001",
+      "operations": [
+        {
+          "field_path": "set.deadline_hours",
+          "op": "set_rule_field",
+          "rule_id": "RULE-ACTIVE-EXPLOITATION-001",
+          "value": 168
+        }
+      ],
+      "release_evaluation": {
+        "failed_quality_gate_ids": [
+          "GATE-CASE-EXACT-001",
+          "GATE-DEADLINE-EXACT-001",
+          "GATE-UNDER-TRIAGE-001",
+          "GATE-SAFETY-RECALL-001",
+          "GATE-BOOTSTRAP-CASE-001",
+          "GATE-BOOTSTRAP-SAFETY-001"
+        ],
+        "full_rule_coverage_rate": 1.0,
+        "policy_consistency_error": null,
+        "safety_recall": 0.9622641509433962,
+        "stage_gate_status": "FAIL",
+        "uncovered_policy_rules": [],
+        "under_triage_count": 4
+      },
+      "severity": "critical",
+      "static_contract_failures": [
+        {
+          "code": "CRITICAL_DEADLINE_EXTENDED",
+          "message": "RULE-ACTIVE-EXPLOITATION-001 deadline exceeds 4.0 hours."
+        }
+      ],
+      "status": "KILLED_BY_ASSURANCE",
+      "title": "Extend active exploitation deadline",
+      "trusted_policy_sha256": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f"
+    },
+    {
+      "assurance": {
+        "case_count": 130,
+        "failed_case_count": 2,
+        "failed_case_ids": [
+          "AEG-ASR-003-HC",
+          "AEG-ASR-003-DL"
+        ],
+        "failed_check_codes": {
+          "REVIEW_MATCHES_ORACLE": 2
+        },
+        "failed_pair_count": 0,
+        "failed_pair_ids": [],
+        "invariant_failure_case_count": 0,
+        "invariant_failure_case_ids": [],
+        "passed_case_count": 128
+      },
+      "description": "Removes accountable human review from active exploitation.",
+      "detection_oracles": [
+        "CASE_ORACLE",
+        "RELEASE_GATE",
+        "STATIC_SECURITY_CONTRACT",
+        "UNDER_TRIAGE_DETECTION"
+      ],
+      "error": null,
+      "executable": true,
+      "expected_detection": [
+        "case_oracle",
+        "release_gate"
+      ],
+      "family": "review_removal",
+      "load_error": null,
+      "mutated_policy_sha256": "a9673d1d730a22f945adb87a6825ebc2c666976a94e059f749a698d3c4f98988",
+      "mutation_id": "MUT-ACTIVE-REVIEW-REMOVAL-001",
+      "operations": [
+        {
+          "field_path": "set.human_review_required",
+          "op": "set_rule_field",
+          "rule_id": "RULE-ACTIVE-EXPLOITATION-001",
+          "value": false
+        }
+      ],
+      "release_evaluation": {
+        "failed_quality_gate_ids": [
+          "GATE-CASE-EXACT-001",
+          "GATE-UNDER-TRIAGE-001",
+          "GATE-SAFETY-RECALL-001",
+          "GATE-BOOTSTRAP-CASE-001",
+          "GATE-BOOTSTRAP-SAFETY-001"
+        ],
+        "full_rule_coverage_rate": 1.0,
+        "policy_consistency_error": null,
+        "safety_recall": 0.9811320754716981,
+        "stage_gate_status": "FAIL",
+        "uncovered_policy_rules": [],
+        "under_triage_count": 2
+      },
+      "severity": "critical",
+      "static_contract_failures": [
+        {
+          "code": "CRITICAL_HUMAN_REVIEW_REQUIRED_REMOVED",
+          "message": "RULE-ACTIVE-EXPLOITATION-001 removed human_review_required."
+        }
+      ],
+      "status": "KILLED_BY_ASSURANCE",
+      "title": "Remove active exploitation review",
+      "trusted_policy_sha256": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f"
+    },
+    {
+      "assurance": {
+        "case_count": 130,
+        "failed_case_count": 4,
+        "failed_case_ids": [
+          "AEG-ASR-003-HC",
+          "AEG-ASR-003-DL",
+          "AEG-ASR-015-HC",
+          "AEG-ASR-015-DL"
+        ],
+        "failed_check_codes": {
+          "CONTAINMENT_MATCHES_ORACLE": 4
+        },
+        "failed_pair_count": 0,
+        "failed_pair_ids": [],
+        "invariant_failure_case_count": 0,
+        "invariant_failure_case_ids": [],
+        "passed_case_count": 126
+      },
+      "description": "Removes containment from an actively exploited affected component.",
+      "detection_oracles": [
+        "CASE_ORACLE",
+        "RELEASE_GATE",
+        "STATIC_SECURITY_CONTRACT",
+        "UNDER_TRIAGE_DETECTION"
+      ],
+      "error": null,
+      "executable": true,
+      "expected_detection": [
+        "case_oracle",
+        "release_gate"
+      ],
+      "family": "containment_removal",
+      "load_error": null,
+      "mutated_policy_sha256": "a7c2978649030d6c13f656c1e23f5057079158adc3c594f1f6599e9b0653531e",
+      "mutation_id": "MUT-ACTIVE-CONTAINMENT-REMOVAL-001",
+      "operations": [
+        {
+          "field_path": "set.containment_required",
+          "op": "set_rule_field",
+          "rule_id": "RULE-ACTIVE-EXPLOITATION-001",
+          "value": false
+        }
+      ],
+      "release_evaluation": {
+        "failed_quality_gate_ids": [
+          "GATE-CASE-EXACT-001",
+          "GATE-UNDER-TRIAGE-001",
+          "GATE-SAFETY-RECALL-001",
+          "GATE-BOOTSTRAP-CASE-001",
+          "GATE-BOOTSTRAP-SAFETY-001"
+        ],
+        "full_rule_coverage_rate": 1.0,
+        "policy_consistency_error": null,
+        "safety_recall": 0.9622641509433962,
+        "stage_gate_status": "FAIL",
+        "uncovered_policy_rules": [],
+        "under_triage_count": 4
+      },
+      "severity": "critical",
+      "static_contract_failures": [
+        {
+          "code": "CRITICAL_CONTAINMENT_REQUIRED_REMOVED",
+          "message": "RULE-ACTIVE-EXPLOITATION-001 removed containment_required."
+        }
+      ],
+      "status": "KILLED_BY_ASSURANCE",
+      "title": "Remove active exploitation containment",
+      "trusted_policy_sha256": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f"
+    },
+    {
+      "assurance": {
+        "case_count": 130,
+        "failed_case_count": 2,
+        "failed_case_ids": [
+          "AEG-ASR-003-HC",
+          "AEG-ASR-003-DL"
+        ],
+        "failed_check_codes": {
+          "CLOSURE_MATCHES_ORACLE": 2
+        },
+        "failed_pair_count": 0,
+        "failed_pair_ids": [],
+        "invariant_failure_case_count": 0,
+        "invariant_failure_case_ids": [],
+        "passed_case_count": 128
+      },
+      "description": "Allows closure while active exploitation remains unresolved.",
+      "detection_oracles": [
+        "CASE_ORACLE",
+        "RELEASE_GATE",
+        "STATIC_SECURITY_CONTRACT",
+        "UNDER_TRIAGE_DETECTION"
+      ],
+      "error": null,
+      "executable": true,
+      "expected_detection": [
+        "case_oracle",
+        "release_gate"
+      ],
+      "family": "closure_weakening",
+      "load_error": null,
+      "mutated_policy_sha256": "8deb40f3aa915b2343d9cb2954bbe0f63964507e6c0fdf105f295d1b97b67258",
+      "mutation_id": "MUT-ACTIVE-CLOSURE-WEAKENING-001",
+      "operations": [
+        {
+          "field_path": "set.prohibit_closure",
+          "op": "set_rule_field",
+          "rule_id": "RULE-ACTIVE-EXPLOITATION-001",
+          "value": false
+        }
+      ],
+      "release_evaluation": {
+        "failed_quality_gate_ids": [
+          "GATE-CASE-EXACT-001",
+          "GATE-UNDER-TRIAGE-001",
+          "GATE-SAFETY-RECALL-001",
+          "GATE-BOOTSTRAP-CASE-001",
+          "GATE-BOOTSTRAP-SAFETY-001"
+        ],
+        "full_rule_coverage_rate": 1.0,
+        "policy_consistency_error": null,
+        "safety_recall": 0.9811320754716981,
+        "stage_gate_status": "FAIL",
+        "uncovered_policy_rules": [],
+        "under_triage_count": 2
+      },
+      "severity": "critical",
+      "static_contract_failures": [
+        {
+          "code": "CRITICAL_PROHIBIT_CLOSURE_REMOVED",
+          "message": "RULE-ACTIVE-EXPLOITATION-001 removed prohibit_closure."
+        }
+      ],
+      "status": "KILLED_BY_ASSURANCE",
+      "title": "Permit closure during active exploitation",
+      "trusted_policy_sha256": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f"
+    },
+    {
+      "assurance": {
+        "case_count": 130,
+        "failed_case_count": 20,
+        "failed_case_ids": [
+          "AEG-ASR-025-HC",
+          "AEG-ASR-025-DL",
+          "AEG-ASR-027-HC",
+          "AEG-ASR-027-DL",
+          "AEG-ASR-028-HC",
+          "AEG-ASR-028-DL",
+          "AEG-ASR-029-HC",
+          "AEG-ASR-029-DL",
+          "AEG-ASR-030-HC",
+          "AEG-ASR-030-DL",
+          "AEG-ASR-031-HC",
+          "AEG-ASR-031-DL",
+          "AEG-ASR-032-HC",
+          "AEG-ASR-032-DL",
+          "AEG-ASR-033-HC",
+          "AEG-ASR-033-DL",
+          "AEG-ASR-034-HC",
+          "AEG-ASR-034-DL",
+          "AEG-ASR-035-HC",
+          "AEG-ASR-035-DL"
+        ],
+        "failed_check_codes": {
+          "DEADLINE_MATCHES_ORACLE": 20,
+          "POLICY_INVARIANTS_PASS": 20
+        },
+        "failed_pair_count": 0,
+        "failed_pair_ids": [],
+        "invariant_failure_case_count": 20,
+        "invariant_failure_case_ids": [
+          "AEG-ASR-025-HC",
+          "AEG-ASR-025-DL",
+          "AEG-ASR-027-HC",
+          "AEG-ASR-027-DL",
+          "AEG-ASR-028-HC",
+          "AEG-ASR-028-DL",
+          "AEG-ASR-029-HC",
+          "AEG-ASR-029-DL",
+          "AEG-ASR-030-HC",
+          "AEG-ASR-030-DL",
+          "AEG-ASR-031-HC",
+          "AEG-ASR-031-DL",
+          "AEG-ASR-032-HC",
+          "AEG-ASR-032-DL",
+          "AEG-ASR-033-HC",
+          "AEG-ASR-033-DL",
+          "AEG-ASR-034-HC",
+          "AEG-ASR-034-DL",
+          "AEG-ASR-035-HC",
+          "AEG-ASR-035-DL"
+        ],
+        "passed_case_count": 110
+      },
+      "description": "Replaces fail-closed HOLD with permissive TRACK for unknown affectedness.",
+      "detection_oracles": [
+        "CASE_ORACLE",
+        "POLICY_INVARIANT",
+        "RELEASE_GATE",
+        "STATIC_SECURITY_CONTRACT"
+      ],
+      "error": null,
+      "executable": true,
+      "expected_detection": [
+        "case_oracle",
+        "policy_invariant",
+        "release_gate"
+      ],
+      "family": "uncertainty_downgrade",
+      "load_error": null,
+      "mutated_policy_sha256": "1b4f3dfc4fced97424fb64947c42600d4dfe7da45b060ea4b16d5966481b77f5",
+      "mutation_id": "MUT-UNKNOWN-AFFECTEDNESS-TRACK-001",
+      "operations": [
+        {
+          "field_path": "set.action_floor",
+          "op": "set_rule_field",
+          "rule_id": "RULE-UNKNOWN-AFFECTEDNESS-001",
+          "value": "TRACK"
+        }
+      ],
+      "release_evaluation": {
+        "failed_quality_gate_ids": [
+          "GATE-CASE-EXACT-001",
+          "GATE-DEADLINE-EXACT-001",
+          "GATE-INVARIANTS-001",
+          "GATE-MONOTONICITY-001",
+          "GATE-BOOTSTRAP-CASE-001"
+        ],
+        "full_rule_coverage_rate": 1.0,
+        "policy_consistency_error": null,
+        "safety_recall": 1.0,
+        "stage_gate_status": "FAIL",
+        "uncovered_policy_rules": [],
+        "under_triage_count": 0
+      },
+      "severity": "critical",
+      "static_contract_failures": [
+        {
+          "code": "CRITICAL_ACTION_FLOOR_WEAKENED",
+          "message": "RULE-UNKNOWN-AFFECTEDNESS-001 action floor is below HOLD."
+        }
+      ],
+      "status": "KILLED_BY_ASSURANCE",
+      "title": "Track unknown affectedness",
+      "trusted_policy_sha256": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f"
+    },
+    {
+      "assurance": {
+        "case_count": 130,
+        "failed_case_count": 4,
+        "failed_case_ids": [
+          "AEG-ASR-024-HC",
+          "AEG-ASR-024-DL",
+          "AEG-ASR-048-HC",
+          "AEG-ASR-048-DL"
+        ],
+        "failed_check_codes": {
+          "DEADLINE_MATCHES_ORACLE": 2,
+          "POLICY_INVARIANTS_PASS": 2,
+          "PRIORITY_MATCHES_ORACLE": 2
+        },
+        "failed_pair_count": 0,
+        "failed_pair_ids": [],
+        "invariant_failure_case_count": 2,
+        "invariant_failure_case_ids": [
+          "AEG-ASR-024-HC",
+          "AEG-ASR-024-DL"
+        ],
+        "passed_case_count": 126
+      },
+      "description": "Removes REJECT from the evidence states that force HOLD.",
+      "detection_oracles": [
+        "CASE_ORACLE",
+        "POLICY_INVARIANT",
+        "RELEASE_GATE",
+        "UNDER_TRIAGE_DETECTION"
+      ],
+      "error": null,
+      "executable": true,
+      "expected_detection": [
+        "case_oracle",
+        "policy_invariant",
+        "release_gate"
+      ],
+      "family": "trust_bypass",
+      "load_error": null,
+      "mutated_policy_sha256": "de3f96af899aa232c2c9ddf67a65dfe335c867be07e246aa8a877e66948ef188",
+      "mutation_id": "MUT-REJECTED-EVIDENCE-CONTINUE-001",
+      "operations": [
+        {
+          "field_path": "when.all.0.value",
+          "op": "set_rule_field",
+          "rule_id": "RULE-TRUST-BLOCKED-001",
+          "value": [
+            "QUARANTINE"
+          ]
+        }
+      ],
+      "release_evaluation": {
+        "failed_quality_gate_ids": [
+          "GATE-CASE-EXACT-001",
+          "GATE-PRIORITY-EXACT-001",
+          "GATE-DEADLINE-EXACT-001",
+          "GATE-INVARIANTS-001",
+          "GATE-UNDER-TRIAGE-001",
+          "GATE-SAFETY-RECALL-001",
+          "GATE-BOOTSTRAP-CASE-001",
+          "GATE-BOOTSTRAP-SAFETY-001"
+        ],
+        "full_rule_coverage_rate": 1.0,
+        "policy_consistency_error": null,
+        "safety_recall": 0.9811320754716981,
+        "stage_gate_status": "FAIL",
+        "uncovered_policy_rules": [],
+        "under_triage_count": 2
+      },
+      "severity": "critical",
+      "static_contract_failures": [],
+      "status": "KILLED_BY_ASSURANCE",
+      "title": "Allow rejected evidence to continue",
+      "trusted_policy_sha256": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f"
+    },
+    {
+      "assurance": {
+        "case_count": 130,
+        "failed_case_count": 2,
+        "failed_case_ids": [
+          "AEG-ASR-065-HC",
+          "AEG-ASR-065-DL"
+        ],
+        "failed_check_codes": {
+          "CLOSURE_MATCHES_ORACLE": 2,
+          "REVIEW_MATCHES_ORACLE": 2
+        },
+        "failed_pair_count": 0,
+        "failed_pair_ids": [],
+        "invariant_failure_case_count": 0,
+        "invariant_failure_case_ids": [],
+        "passed_case_count": 128
+      },
+      "description": "Replaces explicit missing-status handling with a zero-probability condition.",
+      "detection_oracles": [
+        "CASE_ORACLE",
+        "RELEASE_GATE",
+        "RULE_COVERAGE",
+        "UNDER_TRIAGE_DETECTION"
+      ],
+      "error": null,
+      "executable": true,
+      "expected_detection": [
+        "case_oracle",
+        "release_gate"
+      ],
+      "family": "missing_value_coercion",
+      "load_error": null,
+      "mutated_policy_sha256": "8f4bb87529da3310b683e2107102b1c4362d9e460dfed118684e3ad8ecd52cc1",
+      "mutation_id": "MUT-EPSS-MISSING-AS-ZERO-001",
+      "operations": [
+        {
+          "field_path": "when.all.0.field",
+          "op": "set_rule_field",
+          "rule_id": "RULE-EPSS-MISSING-AFFECTED-001",
+          "value": "epss.probability"
+        },
+        {
+          "field_path": "when.all.0.value",
+          "op": "set_rule_field",
+          "rule_id": "RULE-EPSS-MISSING-AFFECTED-001",
+          "value": 0.0
+        }
+      ],
+      "release_evaluation": {
+        "failed_quality_gate_ids": [
+          "GATE-CASE-EXACT-001",
+          "GATE-UNDER-TRIAGE-001",
+          "GATE-SAFETY-RECALL-001",
+          "GATE-BOOTSTRAP-CASE-001",
+          "GATE-BOOTSTRAP-SAFETY-001"
+        ],
+        "full_rule_coverage_rate": 0.9545454545454546,
+        "policy_consistency_error": null,
+        "safety_recall": 0.9811320754716981,
+        "stage_gate_status": "FAIL",
+        "uncovered_policy_rules": [
+          "RULE-EPSS-MISSING-AFFECTED-001"
+        ],
+        "under_triage_count": 2
+      },
+      "severity": "critical",
+      "static_contract_failures": [],
+      "status": "KILLED_BY_ASSURANCE",
+      "title": "Treat missing EPSS as zero",
+      "trusted_policy_sha256": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f"
+    },
+    {
+      "assurance": {
+        "case_count": 130,
+        "failed_case_count": 4,
+        "failed_case_ids": [
+          "AEG-ASR-011-HC",
+          "AEG-ASR-011-DL",
+          "AEG-ASR-023-HC",
+          "AEG-ASR-023-DL"
+        ],
+        "failed_check_codes": {
+          "CONTAINMENT_MATCHES_ORACLE": 4
+        },
+        "failed_pair_count": 0,
+        "failed_pair_ids": [],
+        "invariant_failure_case_count": 0,
+        "invariant_failure_case_ids": [],
+        "passed_case_count": 126
+      },
+      "description": "Removes mandatory containment for no-fix and end-of-life findings.",
+      "detection_oracles": [
+        "CASE_ORACLE",
+        "RELEASE_GATE",
+        "STATIC_SECURITY_CONTRACT",
+        "UNDER_TRIAGE_DETECTION"
+      ],
+      "error": null,
+      "executable": true,
+      "expected_detection": [
+        "case_oracle",
+        "release_gate"
+      ],
+      "family": "containment_removal",
+      "load_error": null,
+      "mutated_policy_sha256": "d7f67f3b86ae9be1ec4d558d2afe6ab11367e713437637d7594dab838e0b61c3",
+      "mutation_id": "MUT-NO-FIX-CONTAINMENT-REMOVAL-001",
+      "operations": [
+        {
+          "field_path": "set.containment_required",
+          "op": "set_rule_field",
+          "rule_id": "RULE-NO-FIX-AVAILABLE-001",
+          "value": false
+        }
+      ],
+      "release_evaluation": {
+        "failed_quality_gate_ids": [
+          "GATE-CASE-EXACT-001",
+          "GATE-UNDER-TRIAGE-001",
+          "GATE-SAFETY-RECALL-001",
+          "GATE-BOOTSTRAP-CASE-001",
+          "GATE-BOOTSTRAP-SAFETY-001"
+        ],
+        "full_rule_coverage_rate": 1.0,
+        "policy_consistency_error": null,
+        "safety_recall": 0.9622641509433962,
+        "stage_gate_status": "FAIL",
+        "uncovered_policy_rules": [],
+        "under_triage_count": 4
+      },
+      "severity": "critical",
+      "static_contract_failures": [
+        {
+          "code": "CRITICAL_CONTAINMENT_REQUIRED_REMOVED",
+          "message": "RULE-NO-FIX-AVAILABLE-001 removed containment_required."
+        }
+      ],
+      "status": "KILLED_BY_ASSURANCE",
+      "title": "Remove containment when no fix exists",
+      "trusted_policy_sha256": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f"
+    },
+    {
+      "assurance": {
+        "case_count": 130,
+        "failed_case_count": 4,
+        "failed_case_ids": [
+          "AEG-ASR-006-HC",
+          "AEG-ASR-006-DL",
+          "AEG-ASR-018-HC",
+          "AEG-ASR-018-DL"
+        ],
+        "failed_check_codes": {
+          "PRIORITY_MATCHES_ORACLE": 4
+        },
+        "failed_pair_count": 0,
+        "failed_pair_ids": [],
+        "invariant_failure_case_count": 0,
+        "invariant_failure_case_ids": [],
+        "passed_case_count": 126
+      },
+      "description": "Reduces catastrophic impact from Emergency to High priority.",
+      "detection_oracles": [
+        "CASE_ORACLE",
+        "RELEASE_GATE",
+        "STATIC_SECURITY_CONTRACT",
+        "UNDER_TRIAGE_DETECTION"
+      ],
+      "error": null,
+      "executable": true,
+      "expected_detection": [
+        "case_oracle",
+        "release_gate"
+      ],
+      "family": "impact_downgrade",
+      "load_error": null,
+      "mutated_policy_sha256": "ee1559ff876ca54d3035adefd2342778647166afa651b0647a0a8851082774b8",
+      "mutation_id": "MUT-CATASTROPHIC-PRIORITY-DOWNGRADE-001",
+      "operations": [
+        {
+          "field_path": "set.priority_floor",
+          "op": "set_rule_field",
+          "rule_id": "RULE-CATASTROPHIC-IMPACT-001",
+          "value": "HIGH"
+        }
+      ],
+      "release_evaluation": {
+        "failed_quality_gate_ids": [
+          "GATE-CASE-EXACT-001",
+          "GATE-PRIORITY-EXACT-001",
+          "GATE-UNDER-TRIAGE-001",
+          "GATE-SAFETY-RECALL-001",
+          "GATE-BOOTSTRAP-CASE-001",
+          "GATE-BOOTSTRAP-SAFETY-001"
+        ],
+        "full_rule_coverage_rate": 1.0,
+        "policy_consistency_error": null,
+        "safety_recall": 0.9622641509433962,
+        "stage_gate_status": "FAIL",
+        "uncovered_policy_rules": [],
+        "under_triage_count": 4
+      },
+      "severity": "critical",
+      "static_contract_failures": [
+        {
+          "code": "CRITICAL_PRIORITY_FLOOR_WEAKENED",
+          "message": "RULE-CATASTROPHIC-IMPACT-001 priority floor is below EMERGENCY."
+        }
+      ],
+      "status": "KILLED_BY_ASSURANCE",
+      "title": "Downgrade catastrophic priority",
+      "trusted_policy_sha256": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f"
+    },
+    {
+      "assurance": {
+        "case_count": 130,
+        "failed_case_count": 4,
+        "failed_case_ids": [
+          "AEG-ASR-006-HC",
+          "AEG-ASR-006-DL",
+          "AEG-ASR-018-HC",
+          "AEG-ASR-018-DL"
+        ],
+        "failed_check_codes": {
+          "ACTION_MATCHES_ORACLE": 4
+        },
+        "failed_pair_count": 0,
+        "failed_pair_ids": [],
+        "invariant_failure_case_count": 0,
+        "invariant_failure_case_ids": [],
+        "passed_case_count": 126
+      },
+      "description": "Reduces catastrophic impact action from ACT to ATTEND.",
+      "detection_oracles": [
+        "CASE_ORACLE",
+        "RELEASE_GATE",
+        "STATIC_SECURITY_CONTRACT",
+        "UNDER_TRIAGE_DETECTION"
+      ],
+      "error": null,
+      "executable": true,
+      "expected_detection": [
+        "case_oracle",
+        "release_gate"
+      ],
+      "family": "impact_downgrade",
+      "load_error": null,
+      "mutated_policy_sha256": "384e8958eed0168f6e1a164ff8699b79ea701db605339dce4c5b188f974c8f0d",
+      "mutation_id": "MUT-CATASTROPHIC-ACTION-DOWNGRADE-001",
+      "operations": [
+        {
+          "field_path": "set.action_floor",
+          "op": "set_rule_field",
+          "rule_id": "RULE-CATASTROPHIC-IMPACT-001",
+          "value": "ATTEND"
+        }
+      ],
+      "release_evaluation": {
+        "failed_quality_gate_ids": [
+          "GATE-CASE-EXACT-001",
+          "GATE-ACTION-EXACT-001",
+          "GATE-UNDER-TRIAGE-001",
+          "GATE-SAFETY-RECALL-001",
+          "GATE-BOOTSTRAP-CASE-001",
+          "GATE-BOOTSTRAP-SAFETY-001"
+        ],
+        "full_rule_coverage_rate": 1.0,
+        "policy_consistency_error": null,
+        "safety_recall": 0.9622641509433962,
+        "stage_gate_status": "FAIL",
+        "uncovered_policy_rules": [],
+        "under_triage_count": 4
+      },
+      "severity": "critical",
+      "static_contract_failures": [
+        {
+          "code": "CRITICAL_ACTION_FLOOR_WEAKENED",
+          "message": "RULE-CATASTROPHIC-IMPACT-001 action floor is below ACT."
+        }
+      ],
+      "status": "KILLED_BY_ASSURANCE",
+      "title": "Downgrade catastrophic action",
+      "trusted_policy_sha256": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f"
+    },
+    {
+      "assurance": {
+        "case_count": 130,
+        "failed_case_count": 0,
+        "failed_case_ids": [],
+        "failed_check_codes": {},
+        "failed_pair_count": 0,
+        "failed_pair_ids": [],
+        "invariant_failure_case_count": 0,
+        "invariant_failure_case_ids": [],
+        "passed_case_count": 130
+      },
+      "description": "Makes the KEV affected rule overridable without changing its immediate output.",
+      "detection_oracles": [
+        "STATIC_SECURITY_CONTRACT"
+      ],
+      "error": null,
+      "executable": true,
+      "expected_detection": [
+        "static_security_contract"
+      ],
+      "family": "mandatory_floor_removal",
+      "load_error": null,
+      "mutated_policy_sha256": "eefa20be200ee21d3209dfbd16a7734358d230f70c2223cbf85ccea4c1a597ae",
+      "mutation_id": "MUT-KEV-OVERRIDABLE-001",
+      "operations": [
+        {
+          "field_path": "non_overridable",
+          "op": "set_rule_field",
+          "rule_id": "RULE-KEV-AFFECTED-001",
+          "value": false
+        }
+      ],
+      "release_evaluation": {
+        "failed_quality_gate_ids": [],
+        "full_rule_coverage_rate": 1.0,
+        "policy_consistency_error": null,
+        "safety_recall": 1.0,
+        "stage_gate_status": "PASS",
+        "uncovered_policy_rules": [],
+        "under_triage_count": 0
+      },
+      "severity": "critical",
+      "static_contract_failures": [
+        {
+          "code": "CRITICAL_RULE_MADE_OVERRIDABLE",
+          "message": "RULE-KEV-AFFECTED-001 is no longer non-overridable."
+        }
+      ],
+      "status": "KILLED_BY_ASSURANCE",
+      "title": "Make KEV rule overridable",
+      "trusted_policy_sha256": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f"
+    },
+    {
+      "assurance": {
+        "case_count": 130,
+        "failed_case_count": 130,
+        "failed_case_ids": [
+          "AEG-ASR-001-HC",
+          "AEG-ASR-001-DL",
+          "AEG-ASR-002-HC",
+          "AEG-ASR-002-DL",
+          "AEG-ASR-003-HC",
+          "AEG-ASR-003-DL",
+          "AEG-ASR-004-HC",
+          "AEG-ASR-004-DL",
+          "AEG-ASR-005-HC",
+          "AEG-ASR-005-DL",
+          "AEG-ASR-006-HC",
+          "AEG-ASR-006-DL",
+          "AEG-ASR-007-HC",
+          "AEG-ASR-007-DL",
+          "AEG-ASR-008-HC",
+          "AEG-ASR-008-DL",
+          "AEG-ASR-009-HC",
+          "AEG-ASR-009-DL",
+          "AEG-ASR-010-HC",
+          "AEG-ASR-010-DL",
+          "AEG-ASR-011-HC",
+          "AEG-ASR-011-DL",
+          "AEG-ASR-012-HC",
+          "AEG-ASR-012-DL",
+          "AEG-ASR-013-HC",
+          "AEG-ASR-013-DL",
+          "AEG-ASR-014-HC",
+          "AEG-ASR-014-DL",
+          "AEG-ASR-015-HC",
+          "AEG-ASR-015-DL",
+          "AEG-ASR-016-HC",
+          "AEG-ASR-016-DL",
+          "AEG-ASR-017-HC",
+          "AEG-ASR-017-DL",
+          "AEG-ASR-018-HC",
+          "AEG-ASR-018-DL",
+          "AEG-ASR-019-HC",
+          "AEG-ASR-019-DL",
+          "AEG-ASR-020-HC",
+          "AEG-ASR-020-DL",
+          "AEG-ASR-021-HC",
+          "AEG-ASR-021-DL",
+          "AEG-ASR-022-HC",
+          "AEG-ASR-022-DL",
+          "AEG-ASR-023-HC",
+          "AEG-ASR-023-DL",
+          "AEG-ASR-024-HC",
+          "AEG-ASR-024-DL",
+          "AEG-ASR-025-HC",
+          "AEG-ASR-025-DL",
+          "AEG-ASR-026-HC",
+          "AEG-ASR-026-DL",
+          "AEG-ASR-027-HC",
+          "AEG-ASR-027-DL",
+          "AEG-ASR-028-HC",
+          "AEG-ASR-028-DL",
+          "AEG-ASR-029-HC",
+          "AEG-ASR-029-DL",
+          "AEG-ASR-030-HC",
+          "AEG-ASR-030-DL",
+          "AEG-ASR-031-HC",
+          "AEG-ASR-031-DL",
+          "AEG-ASR-032-HC",
+          "AEG-ASR-032-DL",
+          "AEG-ASR-033-HC",
+          "AEG-ASR-033-DL",
+          "AEG-ASR-034-HC",
+          "AEG-ASR-034-DL",
+          "AEG-ASR-035-HC",
+          "AEG-ASR-035-DL",
+          "AEG-ASR-036-HC",
+          "AEG-ASR-036-DL",
+          "AEG-ASR-037-HC",
+          "AEG-ASR-037-DL",
+          "AEG-ASR-038-HC",
+          "AEG-ASR-038-DL",
+          "AEG-ASR-039-HC",
+          "AEG-ASR-039-DL",
+          "AEG-ASR-040-HC",
+          "AEG-ASR-040-DL",
+          "AEG-ASR-041-HC",
+          "AEG-ASR-041-DL",
+          "AEG-ASR-042-HC",
+          "AEG-ASR-042-DL",
+          "AEG-ASR-043-HC",
+          "AEG-ASR-043-DL",
+          "AEG-ASR-044-HC",
+          "AEG-ASR-044-DL",
+          "AEG-ASR-045-HC",
+          "AEG-ASR-045-DL",
+          "AEG-ASR-046-HC",
+          "AEG-ASR-046-DL",
+          "AEG-ASR-047-HC",
+          "AEG-ASR-047-DL",
+          "AEG-ASR-048-HC",
+          "AEG-ASR-048-DL",
+          "AEG-ASR-049-HC",
+          "AEG-ASR-049-DL",
+          "AEG-ASR-050-HC",
+          "AEG-ASR-050-DL",
+          "AEG-ASR-051-HC",
+          "AEG-ASR-051-DL",
+          "AEG-ASR-052-HC",
+          "AEG-ASR-052-DL",
+          "AEG-ASR-053-HC",
+          "AEG-ASR-053-DL",
+          "AEG-ASR-054-HC",
+          "AEG-ASR-054-DL",
+          "AEG-ASR-055-HC",
+          "AEG-ASR-055-DL",
+          "AEG-ASR-056-HC",
+          "AEG-ASR-056-DL",
+          "AEG-ASR-057-HC",
+          "AEG-ASR-057-DL",
+          "AEG-ASR-058-HC",
+          "AEG-ASR-058-DL",
+          "AEG-ASR-059-HC",
+          "AEG-ASR-059-DL",
+          "AEG-ASR-060-HC",
+          "AEG-ASR-060-DL",
+          "AEG-ASR-061-HC",
+          "AEG-ASR-061-DL",
+          "AEG-ASR-062-HC",
+          "AEG-ASR-062-DL",
+          "AEG-ASR-063-HC",
+          "AEG-ASR-063-DL",
+          "AEG-ASR-064-HC",
+          "AEG-ASR-064-DL",
+          "AEG-ASR-065-HC",
+          "AEG-ASR-065-DL"
+        ],
+        "failed_check_codes": {
+          "ACTION_MATCHES_ORACLE": 76,
+          "CLOSURE_MATCHES_ORACLE": 32,
+          "DEADLINE_MATCHES_ORACLE": 112,
+          "POLICY_INVARIANTS_PASS": 130,
+          "PRIORITY_MATCHES_ORACLE": 44,
+          "REVIEW_MATCHES_ORACLE": 32
+        },
+        "failed_pair_count": 0,
+        "failed_pair_ids": [],
+        "invariant_failure_case_count": 130,
+        "invariant_failure_case_ids": [
+          "AEG-ASR-001-HC",
+          "AEG-ASR-001-DL",
+          "AEG-ASR-002-HC",
+          "AEG-ASR-002-DL",
+          "AEG-ASR-003-HC",
+          "AEG-ASR-003-DL",
+          "AEG-ASR-004-HC",
+          "AEG-ASR-004-DL",
+          "AEG-ASR-005-HC",
+          "AEG-ASR-005-DL",
+          "AEG-ASR-006-HC",
+          "AEG-ASR-006-DL",
+          "AEG-ASR-007-HC",
+          "AEG-ASR-007-DL",
+          "AEG-ASR-008-HC",
+          "AEG-ASR-008-DL",
+          "AEG-ASR-009-HC",
+          "AEG-ASR-009-DL",
+          "AEG-ASR-010-HC",
+          "AEG-ASR-010-DL",
+          "AEG-ASR-011-HC",
+          "AEG-ASR-011-DL",
+          "AEG-ASR-012-HC",
+          "AEG-ASR-012-DL",
+          "AEG-ASR-013-HC",
+          "AEG-ASR-013-DL",
+          "AEG-ASR-014-HC",
+          "AEG-ASR-014-DL",
+          "AEG-ASR-015-HC",
+          "AEG-ASR-015-DL",
+          "AEG-ASR-016-HC",
+          "AEG-ASR-016-DL",
+          "AEG-ASR-017-HC",
+          "AEG-ASR-017-DL",
+          "AEG-ASR-018-HC",
+          "AEG-ASR-018-DL",
+          "AEG-ASR-019-HC",
+          "AEG-ASR-019-DL",
+          "AEG-ASR-020-HC",
+          "AEG-ASR-020-DL",
+          "AEG-ASR-021-HC",
+          "AEG-ASR-021-DL",
+          "AEG-ASR-022-HC",
+          "AEG-ASR-022-DL",
+          "AEG-ASR-023-HC",
+          "AEG-ASR-023-DL",
+          "AEG-ASR-024-HC",
+          "AEG-ASR-024-DL",
+          "AEG-ASR-025-HC",
+          "AEG-ASR-025-DL",
+          "AEG-ASR-026-HC",
+          "AEG-ASR-026-DL",
+          "AEG-ASR-027-HC",
+          "AEG-ASR-027-DL",
+          "AEG-ASR-028-HC",
+          "AEG-ASR-028-DL",
+          "AEG-ASR-029-HC",
+          "AEG-ASR-029-DL",
+          "AEG-ASR-030-HC",
+          "AEG-ASR-030-DL",
+          "AEG-ASR-031-HC",
+          "AEG-ASR-031-DL",
+          "AEG-ASR-032-HC",
+          "AEG-ASR-032-DL",
+          "AEG-ASR-033-HC",
+          "AEG-ASR-033-DL",
+          "AEG-ASR-034-HC",
+          "AEG-ASR-034-DL",
+          "AEG-ASR-035-HC",
+          "AEG-ASR-035-DL",
+          "AEG-ASR-036-HC",
+          "AEG-ASR-036-DL",
+          "AEG-ASR-037-HC",
+          "AEG-ASR-037-DL",
+          "AEG-ASR-038-HC",
+          "AEG-ASR-038-DL",
+          "AEG-ASR-039-HC",
+          "AEG-ASR-039-DL",
+          "AEG-ASR-040-HC",
+          "AEG-ASR-040-DL",
+          "AEG-ASR-041-HC",
+          "AEG-ASR-041-DL",
+          "AEG-ASR-042-HC",
+          "AEG-ASR-042-DL",
+          "AEG-ASR-043-HC",
+          "AEG-ASR-043-DL",
+          "AEG-ASR-044-HC",
+          "AEG-ASR-044-DL",
+          "AEG-ASR-045-HC",
+          "AEG-ASR-045-DL",
+          "AEG-ASR-046-HC",
+          "AEG-ASR-046-DL",
+          "AEG-ASR-047-HC",
+          "AEG-ASR-047-DL",
+          "AEG-ASR-048-HC",
+          "AEG-ASR-048-DL",
+          "AEG-ASR-049-HC",
+          "AEG-ASR-049-DL",
+          "AEG-ASR-050-HC",
+          "AEG-ASR-050-DL",
+          "AEG-ASR-051-HC",
+          "AEG-ASR-051-DL",
+          "AEG-ASR-052-HC",
+          "AEG-ASR-052-DL",
+          "AEG-ASR-053-HC",
+          "AEG-ASR-053-DL",
+          "AEG-ASR-054-HC",
+          "AEG-ASR-054-DL",
+          "AEG-ASR-055-HC",
+          "AEG-ASR-055-DL",
+          "AEG-ASR-056-HC",
+          "AEG-ASR-056-DL",
+          "AEG-ASR-057-HC",
+          "AEG-ASR-057-DL",
+          "AEG-ASR-058-HC",
+          "AEG-ASR-058-DL",
+          "AEG-ASR-059-HC",
+          "AEG-ASR-059-DL",
+          "AEG-ASR-060-HC",
+          "AEG-ASR-060-DL",
+          "AEG-ASR-061-HC",
+          "AEG-ASR-061-DL",
+          "AEG-ASR-062-HC",
+          "AEG-ASR-062-DL",
+          "AEG-ASR-063-HC",
+          "AEG-ASR-063-DL",
+          "AEG-ASR-064-HC",
+          "AEG-ASR-064-DL",
+          "AEG-ASR-065-HC",
+          "AEG-ASR-065-DL"
+        ],
+        "passed_case_count": 0
+      },
+      "description": "Removes sector prohibitions and adds a sector condition to an affectedness rule.",
+      "detection_oracles": [
+        "CASE_ORACLE",
+        "POLICY_INVARIANT",
+        "RELEASE_GATE",
+        "RULE_COVERAGE",
+        "STATIC_SECURITY_CONTRACT"
+      ],
+      "error": null,
+      "executable": true,
+      "expected_detection": [
+        "static_security_contract",
+        "policy_invariant",
+        "case_oracle"
+      ],
+      "family": "prohibited_input_injection",
+      "load_error": null,
+      "mutated_policy_sha256": "7691af7ab42553ca88a1a5763b7791f55657f7655b29b1fc9ed2583d10612004",
+      "mutation_id": "MUT-SECTOR-LABEL-INJECTION-001",
+      "operations": [
+        {
+          "field_path": "forbidden_field_fragments",
+          "op": "set_policy_field",
+          "value": []
+        },
+        {
+          "field_path": "allowed_context_fields",
+          "op": "append_policy_list",
+          "value": "sector_context.primary_sector"
+        },
+        {
+          "condition": {
+            "field": "sector_context.primary_sector",
+            "operator": "eq",
+            "value": "healthcare"
+          },
+          "op": "append_rule_condition",
+          "rule_id": "RULE-AFFECTED-BASELINE-001"
+        }
+      ],
+      "release_evaluation": {
+        "failed_quality_gate_ids": [
+          "GATE-CASE-EXACT-001",
+          "GATE-ACTION-EXACT-001",
+          "GATE-PRIORITY-EXACT-001",
+          "GATE-DEADLINE-EXACT-001",
+          "GATE-INVARIANTS-001",
+          "GATE-HOLD-PRECISION-001",
+          "GATE-REQUIRED-RULE-COVERAGE-001",
+          "GATE-BOOTSTRAP-CASE-001"
+        ],
+        "full_rule_coverage_rate": 0.9545454545454546,
+        "policy_consistency_error": null,
+        "safety_recall": 1.0,
+        "stage_gate_status": "FAIL",
+        "uncovered_policy_rules": [
+          "RULE-AFFECTED-BASELINE-001"
+        ],
+        "under_triage_count": 0
+      },
+      "severity": "critical",
+      "static_contract_failures": [
+        {
+          "code": "FORBIDDEN_LABEL_GUARD_REMOVED",
+          "message": "Required forbidden field fragments are missing: primary_sector, sector, subsector"
+        },
+        {
+          "code": "PROHIBITED_CONTEXT_FIELD_ALLOWED",
+          "message": "Prohibited context field allowed: sector_context.primary_sector"
+        },
+        {
+          "code": "PROHIBITED_RULE_INPUT",
+          "message": "Rule RULE-AFFECTED-BASELINE-001 directly uses prohibited field sector_context.primary_sector."
+        }
+      ],
+      "status": "KILLED_BY_ASSURANCE",
+      "title": "Inject sector label into decision logic",
+      "trusted_policy_sha256": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f"
+    },
+    {
+      "assurance": {
+        "case_count": 130,
+        "failed_case_count": 4,
+        "failed_case_ids": [
+          "AEG-ASR-001-HC",
+          "AEG-ASR-001-DL",
+          "AEG-ASR-065-HC",
+          "AEG-ASR-065-DL"
+        ],
+        "failed_check_codes": {
+          "ACTION_MATCHES_ORACLE": 4,
+          "DEADLINE_MATCHES_ORACLE": 2,
+          "PRIORITY_MATCHES_ORACLE": 4
+        },
+        "failed_pair_count": 0,
+        "failed_pair_ids": [],
+        "invariant_failure_case_count": 0,
+        "invariant_failure_case_ids": [],
+        "passed_case_count": 126
+      },
+      "description": "Deletes the baseline rule for confirmed affectedness.",
+      "detection_oracles": [
+        "CASE_ORACLE",
+        "POLICY_CONSISTENCY",
+        "STATIC_SECURITY_CONTRACT"
+      ],
+      "error": null,
+      "executable": true,
+      "expected_detection": [
+        "static_security_contract",
+        "case_oracle",
+        "rule_coverage",
+        "policy_consistency"
+      ],
+      "family": "mandatory_floor_removal",
+      "load_error": null,
+      "mutated_policy_sha256": "e4046585d78693e089774e03f90f58c9f57ca5bf6a31a95b6d9b4d48d2399335",
+      "mutation_id": "MUT-AFFECTED-BASELINE-REMOVAL-001",
+      "operations": [
+        {
+          "op": "remove_rule",
+          "rule_id": "RULE-AFFECTED-BASELINE-001"
+        }
+      ],
+      "release_evaluation": {
+        "failed_quality_gate_ids": [],
+        "full_rule_coverage_rate": null,
+        "policy_consistency_error": "FairnessEvaluationError: Release-gate policy references unknown decision rules: ['RULE-AFFECTED-BASELINE-001']",
+        "safety_recall": null,
+        "stage_gate_status": "NOT_EVALUATED",
+        "uncovered_policy_rules": [],
+        "under_triage_count": 0
+      },
+      "severity": "critical",
+      "static_contract_failures": [
+        {
+          "code": "REQUIRED_RULE_REMOVED",
+          "message": "Required policy rules are missing: RULE-AFFECTED-BASELINE-001"
+        }
+      ],
+      "status": "KILLED_BY_ASSURANCE",
+      "title": "Remove affected baseline floor",
+      "trusted_policy_sha256": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f"
+    },
+    {
+      "assurance": {
+        "case_count": 130,
+        "failed_case_count": 54,
+        "failed_case_ids": [
+          "AEG-ASR-012-HC",
+          "AEG-ASR-012-DL",
+          "AEG-ASR-024-HC",
+          "AEG-ASR-024-DL",
+          "AEG-ASR-025-HC",
+          "AEG-ASR-025-DL",
+          "AEG-ASR-026-HC",
+          "AEG-ASR-026-DL",
+          "AEG-ASR-027-HC",
+          "AEG-ASR-027-DL",
+          "AEG-ASR-028-HC",
+          "AEG-ASR-028-DL",
+          "AEG-ASR-029-HC",
+          "AEG-ASR-029-DL",
+          "AEG-ASR-030-HC",
+          "AEG-ASR-030-DL",
+          "AEG-ASR-031-HC",
+          "AEG-ASR-031-DL",
+          "AEG-ASR-032-HC",
+          "AEG-ASR-032-DL",
+          "AEG-ASR-033-HC",
+          "AEG-ASR-033-DL",
+          "AEG-ASR-034-HC",
+          "AEG-ASR-034-DL",
+          "AEG-ASR-035-HC",
+          "AEG-ASR-035-DL",
+          "AEG-ASR-036-HC",
+          "AEG-ASR-036-DL",
+          "AEG-ASR-037-HC",
+          "AEG-ASR-037-DL",
+          "AEG-ASR-038-HC",
+          "AEG-ASR-038-DL",
+          "AEG-ASR-039-HC",
+          "AEG-ASR-039-DL",
+          "AEG-ASR-040-HC",
+          "AEG-ASR-040-DL",
+          "AEG-ASR-041-HC",
+          "AEG-ASR-041-DL",
+          "AEG-ASR-042-HC",
+          "AEG-ASR-042-DL",
+          "AEG-ASR-043-HC",
+          "AEG-ASR-043-DL",
+          "AEG-ASR-044-HC",
+          "AEG-ASR-044-DL",
+          "AEG-ASR-045-HC",
+          "AEG-ASR-045-DL",
+          "AEG-ASR-046-HC",
+          "AEG-ASR-046-DL",
+          "AEG-ASR-047-HC",
+          "AEG-ASR-047-DL",
+          "AEG-ASR-048-HC",
+          "AEG-ASR-048-DL",
+          "AEG-ASR-060-HC",
+          "AEG-ASR-060-DL"
+        ],
+        "failed_check_codes": {
+          "ACTION_MATCHES_ORACLE": 54,
+          "DEADLINE_MATCHES_ORACLE": 44,
+          "POLICY_INVARIANTS_PASS": 54,
+          "PRIORITY_MATCHES_ORACLE": 20
+        },
+        "failed_pair_count": 0,
+        "failed_pair_ids": [],
+        "invariant_failure_case_count": 54,
+        "invariant_failure_case_ids": [
+          "AEG-ASR-012-HC",
+          "AEG-ASR-012-DL",
+          "AEG-ASR-024-HC",
+          "AEG-ASR-024-DL",
+          "AEG-ASR-025-HC",
+          "AEG-ASR-025-DL",
+          "AEG-ASR-026-HC",
+          "AEG-ASR-026-DL",
+          "AEG-ASR-027-HC",
+          "AEG-ASR-027-DL",
+          "AEG-ASR-028-HC",
+          "AEG-ASR-028-DL",
+          "AEG-ASR-029-HC",
+          "AEG-ASR-029-DL",
+          "AEG-ASR-030-HC",
+          "AEG-ASR-030-DL",
+          "AEG-ASR-031-HC",
+          "AEG-ASR-031-DL",
+          "AEG-ASR-032-HC",
+          "AEG-ASR-032-DL",
+          "AEG-ASR-033-HC",
+          "AEG-ASR-033-DL",
+          "AEG-ASR-034-HC",
+          "AEG-ASR-034-DL",
+          "AEG-ASR-035-HC",
+          "AEG-ASR-035-DL",
+          "AEG-ASR-036-HC",
+          "AEG-ASR-036-DL",
+          "AEG-ASR-037-HC",
+          "AEG-ASR-037-DL",
+          "AEG-ASR-038-HC",
+          "AEG-ASR-038-DL",
+          "AEG-ASR-039-HC",
+          "AEG-ASR-039-DL",
+          "AEG-ASR-040-HC",
+          "AEG-ASR-040-DL",
+          "AEG-ASR-041-HC",
+          "AEG-ASR-041-DL",
+          "AEG-ASR-042-HC",
+          "AEG-ASR-042-DL",
+          "AEG-ASR-043-HC",
+          "AEG-ASR-043-DL",
+          "AEG-ASR-044-HC",
+          "AEG-ASR-044-DL",
+          "AEG-ASR-045-HC",
+          "AEG-ASR-045-DL",
+          "AEG-ASR-046-HC",
+          "AEG-ASR-046-DL",
+          "AEG-ASR-047-HC",
+          "AEG-ASR-047-DL",
+          "AEG-ASR-048-HC",
+          "AEG-ASR-048-DL",
+          "AEG-ASR-060-HC",
+          "AEG-ASR-060-DL"
+        ],
+        "passed_case_count": 76
+      },
+      "description": "Alters action ordering so HOLD no longer dominates permissive actions.",
+      "detection_oracles": [
+        "CASE_ORACLE",
+        "POLICY_INVARIANT",
+        "RELEASE_GATE",
+        "STATIC_SECURITY_CONTRACT"
+      ],
+      "error": null,
+      "executable": true,
+      "expected_detection": [
+        "static_security_contract",
+        "case_oracle",
+        "policy_invariant"
+      ],
+      "family": "rank_tampering",
+      "load_error": null,
+      "mutated_policy_sha256": "a461921db59aa72e573eb01c80e98f79fffe1d5c78c8184caa69a77261af4783",
+      "mutation_id": "MUT-HOLD-RANK-DOWNGRADE-001",
+      "operations": [
+        {
+          "field_path": "action_ranks.HOLD",
+          "op": "set_policy_field",
+          "value": -1
+        }
+      ],
+      "release_evaluation": {
+        "failed_quality_gate_ids": [
+          "GATE-CASE-EXACT-001",
+          "GATE-ACTION-EXACT-001",
+          "GATE-PRIORITY-EXACT-001",
+          "GATE-DEADLINE-EXACT-001",
+          "GATE-INVARIANTS-001",
+          "GATE-HOLD-RECALL-001",
+          "GATE-BOOTSTRAP-CASE-001"
+        ],
+        "full_rule_coverage_rate": 1.0,
+        "policy_consistency_error": null,
+        "safety_recall": 1.0,
+        "stage_gate_status": "FAIL",
+        "uncovered_policy_rules": [],
+        "under_triage_count": 0
+      },
+      "severity": "critical",
+      "static_contract_failures": [
+        {
+          "code": "ACTION_RANKS_CHANGED",
+          "message": "Action rank ordering differs from the approved contract."
+        }
+      ],
+      "status": "KILLED_BY_ASSURANCE",
+      "title": "Downgrade HOLD rank below TRACK",
+      "trusted_policy_sha256": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f"
+    },
+    {
+      "assurance": {
+        "case_count": 130,
+        "failed_case_count": 0,
+        "failed_case_ids": [],
+        "failed_check_codes": {},
+        "failed_pair_count": 0,
+        "failed_pair_ids": [],
+        "invariant_failure_case_count": 0,
+        "invariant_failure_case_ids": [],
+        "passed_case_count": 0
+      },
+      "description": "Replaces a critical action floor with an unranked token.",
+      "detection_oracles": [
+        "POLICY_LOADER"
+      ],
+      "error": null,
+      "executable": false,
+      "expected_detection": [
+        "policy_loader"
+      ],
+      "family": "invalid_policy_configuration",
+      "load_error": "PolicyConfigurationError: RULE-KEV-AFFECTED-001 contains unranked action 'EXECUTE'.",
+      "mutated_policy_sha256": "e166d5cbb5aa295903e72b1c6a64d63fc6eb44fd15766aaef31844b9fdffac13",
+      "mutation_id": "MUT-UNRANKED-ACTION-TOKEN-001",
+      "operations": [
+        {
+          "field_path": "set.action_floor",
+          "op": "set_rule_field",
+          "rule_id": "RULE-KEV-AFFECTED-001",
+          "value": "EXECUTE"
+        }
+      ],
+      "release_evaluation": {
+        "failed_quality_gate_ids": [],
+        "full_rule_coverage_rate": null,
+        "policy_consistency_error": null,
+        "safety_recall": null,
+        "stage_gate_status": "NOT_EVALUATED",
+        "uncovered_policy_rules": [],
+        "under_triage_count": 0
+      },
+      "severity": "critical",
+      "static_contract_failures": [
+        {
+          "code": "CRITICAL_ACTION_FLOOR_WEAKENED",
+          "message": "RULE-KEV-AFFECTED-001 action floor is below ACT."
+        }
+      ],
+      "status": "BLOCKED_AT_LOAD",
+      "title": "Insert an unranked action token",
+      "trusted_policy_sha256": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "summary": {
+    "blocked_at_load_count": 1,
+    "critical_mutation_count": 17,
+    "critical_mutation_defence_rate": 1.0,
+    "executable_critical_killed_count": 16,
+    "executable_critical_mutation_count": 16,
+    "executable_critical_mutation_kill_rate": 1.0,
+    "harness_error_count": 0,
+    "killed_by_assurance_count": 16,
+    "mutation_count": 17,
+    "overall_passed": true,
+    "survived_count": 0,
+    "trusted_policy_integrity_passed": true
+  },
+  "surviving_mutation_ids": [],
+  "trusted_policy": {
+    "relative_path": "policies/decision/federal_base_policy_v1.yaml",
+    "sha256_after": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f",
+    "sha256_before": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f",
+    "unchanged": true
+  }
+}
