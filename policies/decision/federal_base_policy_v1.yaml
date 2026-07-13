@@ -1,0 +1,665 @@
+policy:
+  policy_id: AEGIS-FEDERAL-BASE-POLICY
+  version: 1.0.0
+  engine_version: 0.1.0
+  description: >
+    Mission-aware vulnerability decision policy using monotonic action and
+    priority floors. Rules may escalate decisions, require review, impose
+    containment, shorten deadlines or prohibit closure. Rules cannot lower
+    an existing decision floor.
+
+action_ranks:
+  TRACK: 0
+  TRACK_STAR: 1
+  ATTEND: 2
+  ACT: 3
+  HOLD: 4
+
+priority_ranks:
+  INFORMATIONAL: 0
+  LOW: 1
+  MEDIUM: 2
+  HIGH: 3
+  CRITICAL: 4
+  EMERGENCY: 5
+
+default_decision:
+  action: TRACK
+  priority: INFORMATIONAL
+  deadline_hours: 720
+  human_review_required: false
+  containment_required: false
+  prohibit_closure: false
+
+allowed_context_fields:
+  - affectedness.status
+  - affectedness.confidence
+  - trust.action
+  - trust.score
+  - intelligence.record_status
+  - kev.status
+  - exploitation.status
+  - cvss.base_score
+  - cvss.base_severity
+  - epss.status
+  - epss.probability
+  - asset.criticality
+  - asset.mission_essential
+  - asset.internet_accessible
+  - asset.externally_accessible
+  - asset.network_zone
+  - impact.maximum_severity
+  - impact.maximum_rank
+  - component.runtime_status
+  - remediation.status
+
+forbidden_field_fragments:
+  - sector
+  - primary_sector
+  - subsector
+
+allowed_operators:
+  - eq
+  - neq
+  - in
+  - not_in
+  - gte
+  - lte
+  - gt
+  - lt
+  - is_true
+  - is_false
+  - is_missing
+  - not_missing
+
+allowed_evidence_sources:
+  - component
+  - affectedness
+  - asset_context
+  - exposure
+  - impact
+  - intelligence
+  - kev
+  - exploitation
+  - cvss
+  - epss
+  - remediation
+
+rules:
+  - rule_id: RULE-AFFECTED-BASELINE-001
+    version: 1.0.0
+    description: >
+      Confirmed affectedness establishes an ATTEND action and High
+      operational-priority floor.
+    when:
+      all:
+        - field: affectedness.status
+          operator: eq
+          value: affected
+    set:
+      action_floor: ATTEND
+      priority_floor: HIGH
+      deadline_hours: 168
+      human_review_required: false
+      containment_required: false
+      prohibit_closure: false
+    non_overridable: true
+    evidence_sources:
+      - affectedness
+      - component
+
+  - rule_id: RULE-PROBABLY-AFFECTED-001
+    version: 1.0.0
+    description: >
+      Probably affected findings require prompt action and accountable
+      review because uncertainty cannot justify delay.
+    when:
+      all:
+        - field: affectedness.status
+          operator: eq
+          value: probably_affected
+    set:
+      action_floor: ATTEND
+      priority_floor: HIGH
+      deadline_hours: 72
+      human_review_required: true
+      containment_required: false
+      prohibit_closure: true
+    non_overridable: true
+    evidence_sources:
+      - affectedness
+      - component
+
+  - rule_id: RULE-UNKNOWN-AFFECTEDNESS-001
+    version: 1.0.0
+    description: >
+      Unknown affectedness blocks automatic closure and requires human
+      investigation.
+    when:
+      all:
+        - field: affectedness.status
+          operator: eq
+          value: unknown
+    set:
+      action_floor: HOLD
+      priority_floor: HIGH
+      deadline_hours: 24
+      human_review_required: true
+      containment_required: false
+      prohibit_closure: true
+    non_overridable: true
+    evidence_sources:
+      - affectedness
+      - component
+
+  - rule_id: RULE-PROBABLY-NOT-AFFECTED-001
+    version: 1.0.0
+    description: >
+      Probably-not-affected findings cannot be closed automatically and
+      require affirmative confirmation.
+    when:
+      all:
+        - field: affectedness.status
+          operator: eq
+          value: probably_not_affected
+    set:
+      action_floor: HOLD
+      priority_floor: MEDIUM
+      deadline_hours: 72
+      human_review_required: true
+      containment_required: false
+      prohibit_closure: true
+    non_overridable: true
+    evidence_sources:
+      - affectedness
+      - component
+
+  - rule_id: RULE-NEGATIVE-AFFECTEDNESS-001
+    version: 1.0.0
+    description: >
+      Affirmatively not-affected or fixed findings may be tracked for
+      evidence retention and accountable closure.
+    when:
+      all:
+        - field: affectedness.status
+          operator: in
+          value:
+            - not_affected
+            - fixed
+    set:
+      action_floor: TRACK
+      priority_floor: INFORMATIONAL
+      deadline_hours: 720
+      human_review_required: false
+      containment_required: false
+      prohibit_closure: false
+    non_overridable: false
+    evidence_sources:
+      - affectedness
+      - component
+
+  - rule_id: RULE-TRUST-BLOCKED-001
+    version: 1.0.0
+    description: >
+      Quarantined or rejected evidence blocks automatic vulnerability
+      disposition.
+    when:
+      all:
+        - field: trust.action
+          operator: in
+          value:
+            - QUARANTINE
+            - REJECT
+    set:
+      action_floor: HOLD
+      priority_floor: HIGH
+      deadline_hours: 4
+      human_review_required: true
+      containment_required: false
+      prohibit_closure: true
+    non_overridable: true
+    evidence_sources:
+      - component
+      - affectedness
+
+  - rule_id: RULE-TRUST-WARNINGS-001
+    version: 1.0.0
+    description: >
+      Evidence accepted with warnings requires accountable review before
+      closure.
+    when:
+      all:
+        - field: trust.action
+          operator: eq
+          value: ACCEPT_WITH_WARNINGS
+    set:
+      action_floor: TRACK_STAR
+      priority_floor: MEDIUM
+      deadline_hours: 168
+      human_review_required: true
+      containment_required: false
+      prohibit_closure: true
+    non_overridable: false
+    evidence_sources:
+      - component
+
+  - rule_id: RULE-KEV-AFFECTED-001
+    version: 1.0.0
+    description: >
+      A CISA KEV-listed vulnerability confirmed or probably affected
+      requires ACT with a Critical minimum-priority floor.
+    when:
+      all:
+        - field: kev.status
+          operator: eq
+          value: listed
+        - field: affectedness.status
+          operator: in
+          value:
+            - affected
+            - probably_affected
+    set:
+      action_floor: ACT
+      priority_floor: CRITICAL
+      deadline_hours: 24
+      human_review_required: true
+      containment_required: false
+      prohibit_closure: true
+    non_overridable: true
+    evidence_sources:
+      - kev
+      - affectedness
+      - component
+
+  - rule_id: RULE-KEV-UNCERTAIN-001
+    version: 1.0.0
+    description: >
+      KEV listing combined with uncertain affectedness requires urgent
+      investigation and prohibits automatic closure.
+    when:
+      all:
+        - field: kev.status
+          operator: eq
+          value: listed
+        - field: affectedness.status
+          operator: in
+          value:
+            - unknown
+            - probably_not_affected
+    set:
+      action_floor: HOLD
+      priority_floor: CRITICAL
+      deadline_hours: 24
+      human_review_required: true
+      containment_required: false
+      prohibit_closure: true
+    non_overridable: true
+    evidence_sources:
+      - kev
+      - affectedness
+      - component
+
+  - rule_id: RULE-ACTIVE-EXPLOITATION-001
+    version: 1.0.0
+    description: >
+      Active exploitation against an affected or probably affected
+      component establishes an Emergency priority.
+    when:
+      all:
+        - field: exploitation.status
+          operator: eq
+          value: active_exploitation
+        - field: affectedness.status
+          operator: in
+          value:
+            - affected
+            - probably_affected
+    set:
+      action_floor: ACT
+      priority_floor: EMERGENCY
+      deadline_hours: 4
+      human_review_required: true
+      containment_required: true
+      prohibit_closure: true
+    non_overridable: true
+    evidence_sources:
+      - exploitation
+      - affectedness
+      - component
+
+  - rule_id: RULE-KNOWN-EXPLOITATION-001
+    version: 1.0.0
+    description: >
+      Confirmed exploitation evidence requires ACT and a Critical
+      priority floor for affected components.
+    when:
+      all:
+        - field: exploitation.status
+          operator: eq
+          value: known_exploited
+        - field: affectedness.status
+          operator: in
+          value:
+            - affected
+            - probably_affected
+    set:
+      action_floor: ACT
+      priority_floor: CRITICAL
+      deadline_hours: 24
+      human_review_required: true
+      containment_required: false
+      prohibit_closure: true
+    non_overridable: true
+    evidence_sources:
+      - exploitation
+      - affectedness
+      - component
+
+  - rule_id: RULE-RUNTIME-REACHABLE-001
+    version: 1.0.0
+    description: >
+      A vulnerable component confirmed as loaded or reachable receives
+      an ACT and Critical floor.
+    when:
+      all:
+        - field: component.runtime_status
+          operator: in
+          value:
+            - loaded
+            - reachable
+        - field: affectedness.status
+          operator: in
+          value:
+            - affected
+            - probably_affected
+    set:
+      action_floor: ACT
+      priority_floor: CRITICAL
+      deadline_hours: 24
+      human_review_required: true
+      containment_required: false
+      prohibit_closure: true
+    non_overridable: true
+    evidence_sources:
+      - component
+      - affectedness
+
+  - rule_id: RULE-INTERNET-EXPOSED-001
+    version: 1.0.0
+    description: >
+      Internet-accessible affected components require ACT and a Critical
+      operational-priority floor.
+    when:
+      all:
+        - field: asset.internet_accessible
+          operator: is_true
+        - field: affectedness.status
+          operator: in
+          value:
+            - affected
+            - probably_affected
+    set:
+      action_floor: ACT
+      priority_floor: CRITICAL
+      deadline_hours: 24
+      human_review_required: true
+      containment_required: false
+      prohibit_closure: true
+    non_overridable: true
+    evidence_sources:
+      - exposure
+      - affectedness
+      - component
+
+  - rule_id: RULE-EXPOSURE-UNKNOWN-001
+    version: 1.0.0
+    description: >
+      Unknown internet exposure for an affected component requires review
+      and prevents low-confidence scheduling.
+    when:
+      all:
+        - field: asset.internet_accessible
+          operator: is_missing
+        - field: affectedness.status
+          operator: in
+          value:
+            - affected
+            - probably_affected
+    set:
+      action_floor: ATTEND
+      priority_floor: HIGH
+      deadline_hours: 72
+      human_review_required: true
+      containment_required: false
+      prohibit_closure: true
+    non_overridable: true
+    evidence_sources:
+      - exposure
+      - affectedness
+      - component
+
+  - rule_id: RULE-CATASTROPHIC-IMPACT-001
+    version: 1.0.0
+    description: >
+      Catastrophic mission or human consequence combined with affectedness
+      establishes Emergency response.
+    when:
+      all:
+        - field: impact.maximum_severity
+          operator: eq
+          value: catastrophic
+        - field: affectedness.status
+          operator: in
+          value:
+            - affected
+            - probably_affected
+    set:
+      action_floor: ACT
+      priority_floor: EMERGENCY
+      deadline_hours: 4
+      human_review_required: true
+      containment_required: true
+      prohibit_closure: true
+    non_overridable: true
+    evidence_sources:
+      - impact
+      - affectedness
+      - component
+
+  - rule_id: RULE-SEVERE-IMPACT-001
+    version: 1.0.0
+    description: >
+      Severe mission, public-service, safety or operational consequences
+      require ACT and a Critical floor.
+    when:
+      all:
+        - field: impact.maximum_severity
+          operator: eq
+          value: severe
+        - field: affectedness.status
+          operator: in
+          value:
+            - affected
+            - probably_affected
+    set:
+      action_floor: ACT
+      priority_floor: CRITICAL
+      deadline_hours: 24
+      human_review_required: true
+      containment_required: false
+      prohibit_closure: true
+    non_overridable: true
+    evidence_sources:
+      - impact
+      - affectedness
+      - component
+
+  - rule_id: RULE-HIGH-IMPACT-001
+    version: 1.0.0
+    description: >
+      High mission or stakeholder consequences require at least ATTEND
+      and High priority.
+    when:
+      all:
+        - field: impact.maximum_severity
+          operator: eq
+          value: high
+        - field: affectedness.status
+          operator: in
+          value:
+            - affected
+            - probably_affected
+    set:
+      action_floor: ATTEND
+      priority_floor: HIGH
+      deadline_hours: 72
+      human_review_required: false
+      containment_required: false
+      prohibit_closure: false
+    non_overridable: true
+    evidence_sources:
+      - impact
+      - affectedness
+      - component
+
+  - rule_id: RULE-MISSION-ESSENTIAL-001
+    version: 1.0.0
+    description: >
+      Mission-essential affected assets require at least ATTEND and High
+      operational priority.
+    when:
+      all:
+        - field: asset.mission_essential
+          operator: is_true
+        - field: affectedness.status
+          operator: in
+          value:
+            - affected
+            - probably_affected
+    set:
+      action_floor: ATTEND
+      priority_floor: HIGH
+      deadline_hours: 72
+      human_review_required: false
+      containment_required: false
+      prohibit_closure: false
+    non_overridable: true
+    evidence_sources:
+      - asset_context
+      - affectedness
+      - component
+
+  - rule_id: RULE-HIGH-CRITICALITY-001
+    version: 1.0.0
+    description: >
+      High or very-high asset criticality requires at least ATTEND and
+      High priority when affected.
+    when:
+      all:
+        - field: asset.criticality
+          operator: in
+          value:
+            - high
+            - very_high
+        - field: affectedness.status
+          operator: in
+          value:
+            - affected
+            - probably_affected
+    set:
+      action_floor: ATTEND
+      priority_floor: HIGH
+      deadline_hours: 72
+      human_review_required: false
+      containment_required: false
+      prohibit_closure: false
+    non_overridable: true
+    evidence_sources:
+      - asset_context
+      - affectedness
+      - component
+
+  - rule_id: RULE-CRITICAL-CVSS-001
+    version: 1.0.0
+    description: >
+      Critical CVSS contributes an escalation floor but does not replace
+      mission and affectedness analysis.
+    when:
+      all:
+        - field: cvss.base_score
+          operator: gte
+          value: 9.0
+        - field: affectedness.status
+          operator: in
+          value:
+            - affected
+            - probably_affected
+    set:
+      action_floor: ATTEND
+      priority_floor: HIGH
+      deadline_hours: 72
+      human_review_required: false
+      containment_required: false
+      prohibit_closure: false
+    non_overridable: false
+    evidence_sources:
+      - cvss
+      - affectedness
+      - component
+
+  - rule_id: RULE-NO-FIX-AVAILABLE-001
+    version: 1.0.0
+    description: >
+      Affected components without a fix or on unsupported software require
+      containment and Critical escalation.
+    when:
+      all:
+        - field: remediation.status
+          operator: in
+          value:
+            - no_fix_available
+            - end_of_life
+        - field: affectedness.status
+          operator: in
+          value:
+            - affected
+            - probably_affected
+    set:
+      action_floor: ACT
+      priority_floor: CRITICAL
+      deadline_hours: 24
+      human_review_required: true
+      containment_required: true
+      prohibit_closure: true
+    non_overridable: true
+    evidence_sources:
+      - remediation
+      - affectedness
+      - component
+
+  - rule_id: RULE-EPSS-MISSING-AFFECTED-001
+    version: 1.0.0
+    description: >
+      Missing EPSS must remain unknown and requires review when the
+      component is affected or probably affected.
+    when:
+      all:
+        - field: epss.status
+          operator: eq
+          value: missing
+        - field: affectedness.status
+          operator: in
+          value:
+            - affected
+            - probably_affected
+    set:
+      action_floor: TRACK_STAR
+      priority_floor: MEDIUM
+      deadline_hours: 168
+      human_review_required: true
+      containment_required: false
+      prohibit_closure: true
+    non_overridable: false
+    evidence_sources:
+      - affectedness
+      - component

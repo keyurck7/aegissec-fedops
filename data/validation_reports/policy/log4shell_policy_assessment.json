@@ -1,0 +1,249 @@
+{
+  "assessment_id": "AEG-POL-AEG-CMP-LOG4J-CORE-001-CVE-2021-44228",
+  "status": "completed",
+  "execution_mode": "automated_policy",
+  "policy": {
+    "policy_id": "AEGIS-FEDERAL-BASE-POLICY",
+    "version": "1.0.0",
+    "engine_version": "0.1.0",
+    "sha256": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f"
+  },
+  "decision": {
+    "action": "ACT",
+    "minimum_priority": "CRITICAL",
+    "response_deadline_hours": 24.0,
+    "response_due_at": "2026-07-14T17:14:35.733547+00:00",
+    "human_review_required": true,
+    "containment_required": false,
+    "prohibit_closure": true
+  },
+  "matched_rules": [
+    {
+      "rule_id": "RULE-AFFECTED-BASELINE-001",
+      "rule_version": "1.0.0",
+      "description": "Confirmed affectedness establishes an ATTEND action and High operational-priority floor.",
+      "action_floor": "ATTEND",
+      "priority_floor": "HIGH",
+      "deadline_hours": 168.0,
+      "human_review_required": false,
+      "containment_required": false,
+      "prohibit_closure": false,
+      "non_overridable": true,
+      "supporting_evidence_ids": [
+        "AEG-EVD-SBOM-LOG4J-001",
+        "AEG-EVD-OSV-LOG4J-001"
+      ]
+    },
+    {
+      "rule_id": "RULE-TRUST-WARNINGS-001",
+      "rule_version": "1.0.0",
+      "description": "Evidence accepted with warnings requires accountable review before closure.",
+      "action_floor": "TRACK_STAR",
+      "priority_floor": "MEDIUM",
+      "deadline_hours": 168.0,
+      "human_review_required": true,
+      "containment_required": false,
+      "prohibit_closure": true,
+      "non_overridable": false,
+      "supporting_evidence_ids": [
+        "AEG-EVD-SBOM-LOG4J-001"
+      ]
+    },
+    {
+      "rule_id": "RULE-KEV-AFFECTED-001",
+      "rule_version": "1.0.0",
+      "description": "A CISA KEV-listed vulnerability confirmed or probably affected requires ACT with a Critical minimum-priority floor.",
+      "action_floor": "ACT",
+      "priority_floor": "CRITICAL",
+      "deadline_hours": 24.0,
+      "human_review_required": true,
+      "containment_required": false,
+      "prohibit_closure": true,
+      "non_overridable": true,
+      "supporting_evidence_ids": [
+        "AEG-EVD-KEV-LOG4J-001",
+        "AEG-EVD-SBOM-LOG4J-001",
+        "AEG-EVD-OSV-LOG4J-001"
+      ]
+    },
+    {
+      "rule_id": "RULE-KNOWN-EXPLOITATION-001",
+      "rule_version": "1.0.0",
+      "description": "Confirmed exploitation evidence requires ACT and a Critical priority floor for affected components.",
+      "action_floor": "ACT",
+      "priority_floor": "CRITICAL",
+      "deadline_hours": 24.0,
+      "human_review_required": true,
+      "containment_required": false,
+      "prohibit_closure": true,
+      "non_overridable": true,
+      "supporting_evidence_ids": [
+        "AEG-EVD-KEV-LOG4J-001",
+        "AEG-EVD-SBOM-LOG4J-001",
+        "AEG-EVD-OSV-LOG4J-001"
+      ]
+    },
+    {
+      "rule_id": "RULE-INTERNET-EXPOSED-001",
+      "rule_version": "1.0.0",
+      "description": "Internet-accessible affected components require ACT and a Critical operational-priority floor.",
+      "action_floor": "ACT",
+      "priority_floor": "CRITICAL",
+      "deadline_hours": 24.0,
+      "human_review_required": true,
+      "containment_required": false,
+      "prohibit_closure": true,
+      "non_overridable": true,
+      "supporting_evidence_ids": [
+        "AEG-EVD-REQ-000001",
+        "AEG-EVD-SBOM-LOG4J-001",
+        "AEG-EVD-OSV-LOG4J-001"
+      ]
+    },
+    {
+      "rule_id": "RULE-SEVERE-IMPACT-001",
+      "rule_version": "1.0.0",
+      "description": "Severe mission, public-service, safety or operational consequences require ACT and a Critical floor.",
+      "action_floor": "ACT",
+      "priority_floor": "CRITICAL",
+      "deadline_hours": 24.0,
+      "human_review_required": true,
+      "containment_required": false,
+      "prohibit_closure": true,
+      "non_overridable": true,
+      "supporting_evidence_ids": [
+        "AEG-EVD-REQ-000001",
+        "AEG-EVD-SBOM-LOG4J-001",
+        "AEG-EVD-OSV-LOG4J-001"
+      ]
+    },
+    {
+      "rule_id": "RULE-MISSION-ESSENTIAL-001",
+      "rule_version": "1.0.0",
+      "description": "Mission-essential affected assets require at least ATTEND and High operational priority.",
+      "action_floor": "ATTEND",
+      "priority_floor": "HIGH",
+      "deadline_hours": 72.0,
+      "human_review_required": false,
+      "containment_required": false,
+      "prohibit_closure": false,
+      "non_overridable": true,
+      "supporting_evidence_ids": [
+        "AEG-EVD-REQ-000001",
+        "AEG-EVD-SBOM-LOG4J-001",
+        "AEG-EVD-OSV-LOG4J-001"
+      ]
+    },
+    {
+      "rule_id": "RULE-HIGH-CRITICALITY-001",
+      "rule_version": "1.0.0",
+      "description": "High or very-high asset criticality requires at least ATTEND and High priority when affected.",
+      "action_floor": "ATTEND",
+      "priority_floor": "HIGH",
+      "deadline_hours": 72.0,
+      "human_review_required": false,
+      "containment_required": false,
+      "prohibit_closure": false,
+      "non_overridable": true,
+      "supporting_evidence_ids": [
+        "AEG-EVD-REQ-000001",
+        "AEG-EVD-SBOM-LOG4J-001",
+        "AEG-EVD-OSV-LOG4J-001"
+      ]
+    },
+    {
+      "rule_id": "RULE-CRITICAL-CVSS-001",
+      "rule_version": "1.0.0",
+      "description": "Critical CVSS contributes an escalation floor but does not replace mission and affectedness analysis.",
+      "action_floor": "ATTEND",
+      "priority_floor": "HIGH",
+      "deadline_hours": 72.0,
+      "human_review_required": false,
+      "containment_required": false,
+      "prohibit_closure": false,
+      "non_overridable": false,
+      "supporting_evidence_ids": [
+        "AEG-EVD-NVD-LOG4J-001",
+        "AEG-EVD-SBOM-LOG4J-001",
+        "AEG-EVD-OSV-LOG4J-001"
+      ]
+    },
+    {
+      "rule_id": "RULE-EPSS-MISSING-AFFECTED-001",
+      "rule_version": "1.0.0",
+      "description": "Missing EPSS must remain unknown and requires review when the component is affected or probably affected.",
+      "action_floor": "TRACK_STAR",
+      "priority_floor": "MEDIUM",
+      "deadline_hours": 168.0,
+      "human_review_required": true,
+      "containment_required": false,
+      "prohibit_closure": true,
+      "non_overridable": false,
+      "supporting_evidence_ids": [
+        "AEG-EVD-SBOM-LOG4J-001",
+        "AEG-EVD-OSV-LOG4J-001"
+      ]
+    }
+  ],
+  "invariant_results": [
+    {
+      "code": "SECTOR_LABEL_EXCLUDED",
+      "passed": true,
+      "message": "Sector and subsector labels are excluded from direct decision inputs."
+    },
+    {
+      "code": "RULE_FLOORS_ENFORCED",
+      "passed": true,
+      "message": "Final action and priority meet or exceed every triggered rule floor."
+    },
+    {
+      "code": "UNCERTAIN_AFFECTEDNESS_HELD",
+      "passed": true,
+      "message": "Unknown and probably-not-affected states require HOLD and human review."
+    },
+    {
+      "code": "KEV_AFFECTED_MINIMUM_ENFORCED",
+      "passed": true,
+      "message": "KEV plus affectedness requires ACT-or-HOLD, Critical-or-higher priority and human review."
+    },
+    {
+      "code": "LOW_TRUST_BLOCKS_AUTOMATION",
+      "passed": true,
+      "message": "Quarantined or rejected evidence blocks automated disposition."
+    },
+    {
+      "code": "MISSING_EPSS_REMAINS_UNKNOWN",
+      "passed": true,
+      "message": "Missing EPSS remains None and is never interpreted as zero."
+    },
+    {
+      "code": "MONOTONIC_POLICY_STRUCTURE",
+      "passed": true,
+      "message": "Policy rules contain escalation floors only. No rule can decrement action or priority."
+    }
+  ],
+  "invariants_passed": true,
+  "context_snapshot": {
+    "affectedness.status": "affected",
+    "affectedness.confidence": 0.9794,
+    "trust.action": "ACCEPT_WITH_WARNINGS",
+    "trust.score": 0.9794,
+    "intelligence.record_status": "active",
+    "kev.status": "listed",
+    "exploitation.status": "known_exploited",
+    "cvss.base_score": 10.0,
+    "cvss.base_severity": "CRITICAL",
+    "epss.status": "missing",
+    "epss.probability": null,
+    "asset.criticality": "high",
+    "asset.mission_essential": true,
+    "asset.internet_accessible": true,
+    "asset.externally_accessible": true,
+    "asset.network_zone": "dmz",
+    "impact.maximum_severity": "severe",
+    "impact.maximum_rank": 4,
+    "component.runtime_status": "present_runtime_unknown",
+    "remediation.status": "fix_available"
+  },
+  "evaluated_at": "2026-07-13T17:14:35.733547+00:00"
+}

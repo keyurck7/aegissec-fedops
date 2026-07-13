@@ -1,0 +1,634 @@
+{
+  "schema_version": "1.0.0",
+  "decision_id": "AEG-DEC-LOG4J-HOSP-POLICY-001",
+  "decision_status": "pending_human_review",
+  "decision_type": "vulnerability_prioritization",
+  "input_records": {
+    "asset_context": {
+      "record_type": "asset_context",
+      "record_id": "AEG-AST-HOSP-SCHED-001",
+      "schema_version": "1.0.0",
+      "relative_path": "data/sample_inputs/assets/valid_healthcare_asset.json",
+      "sha256": "bc9cb98980010ca2bc1c123e808296a2e17bb34a5735cf42cd07e1efcfc64395",
+      "validation_status": "accepted_with_warnings",
+      "required_for_decision": true
+    },
+    "vulnerability_intelligence": {
+      "record_type": "vulnerability_intelligence",
+      "record_id": "AEG-VULN-CVE-2021-44228",
+      "schema_version": "1.0.0",
+      "relative_path": "data/sample_inputs/intelligence/valid_log4shell_intelligence.json",
+      "sha256": "e2204ab8ff8736c0826ffe24d518cef462a75dcea7e498943506b0fe7f41ff1f",
+      "validation_status": "accepted_with_warnings",
+      "required_for_decision": true
+    },
+    "evidence_records": [
+      {
+        "record_type": "evidence_record",
+        "record_id": "AEG-EVD-SBOM-LOG4J-001",
+        "schema_version": "1.0.0",
+        "relative_path": "data/sample_inputs/evidence/valid_log4j_sbom_evidence.json",
+        "sha256": "21ed78284567bc33bb463fb2525941829b80c7e21144d17677f022d168a3c2de",
+        "validation_status": "accepted_with_warnings",
+        "required_for_decision": true
+      }
+    ]
+  },
+  "component_instance": {
+    "component_id": "AEG-CMP-LOG4J-CORE-001",
+    "name": "org.apache.logging.log4j:log4j-core",
+    "version": "2.14.1",
+    "ecosystem": "Maven",
+    "purl": "pkg:maven/org.apache.logging.log4j/log4j-core@2.14.1",
+    "dependency_scope": "direct",
+    "runtime_status": "present_runtime_unknown",
+    "evidence_ids": [
+      "AEG-EVD-SBOM-LOG4J-001"
+    ]
+  },
+  "affectedness": {
+    "status": "affected",
+    "confidence": 0.9794,
+    "determination_method": "version_range",
+    "engine_version": "0.1.0",
+    "reason_codes": [
+      "PACKAGE_IDENTITY_MATCHED",
+      "COMPONENT_VERSION_IN_AFFECTED_RANGE",
+      "AFFECTEDNESS_CONFIRMED"
+    ],
+    "supporting_evidence_ids": [
+      "AEG-EVD-SBOM-LOG4J-001",
+      "AEG-EVD-OSV-LOG4J-001"
+    ],
+    "uncertainty_factors": [],
+    "determined_at": "2026-07-13T19:15:00+00:00"
+  },
+  "policy_decision": {
+    "status": "completed",
+    "execution_mode": "automated_policy",
+    "policy_id": "AEGIS-FEDERAL-BASE-POLICY",
+    "policy_version": "1.0.0",
+    "action": "ACT",
+    "minimum_priority": "CRITICAL",
+    "response_deadline_hours": 24.0,
+    "response_due_at": "2026-07-14T19:15:00+00:00",
+    "triggered_rules": [
+      {
+        "rule_id": "RULE-AFFECTED-BASELINE-001-ACTION",
+        "rule_version": "1.0.0",
+        "description": "Confirmed affectedness establishes an ATTEND action and High operational-priority floor. Effect: set_action.",
+        "effect": "set_action",
+        "non_overridable": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-SBOM-LOG4J-001",
+          "AEG-EVD-OSV-LOG4J-001"
+        ]
+      },
+      {
+        "rule_id": "RULE-AFFECTED-BASELINE-001-PRIORITY",
+        "rule_version": "1.0.0",
+        "description": "Confirmed affectedness establishes an ATTEND action and High operational-priority floor. Effect: set_priority_floor.",
+        "effect": "set_priority_floor",
+        "non_overridable": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-SBOM-LOG4J-001",
+          "AEG-EVD-OSV-LOG4J-001"
+        ]
+      },
+      {
+        "rule_id": "RULE-AFFECTED-BASELINE-001-DEADLINE",
+        "rule_version": "1.0.0",
+        "description": "Confirmed affectedness establishes an ATTEND action and High operational-priority floor. Effect: set_deadline.",
+        "effect": "set_deadline",
+        "non_overridable": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-SBOM-LOG4J-001",
+          "AEG-EVD-OSV-LOG4J-001"
+        ]
+      },
+      {
+        "rule_id": "RULE-TRUST-WARNINGS-001-ACTION",
+        "rule_version": "1.0.0",
+        "description": "Evidence accepted with warnings requires accountable review before closure. Effect: set_action.",
+        "effect": "set_action",
+        "non_overridable": false,
+        "supporting_evidence_ids": [
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      {
+        "rule_id": "RULE-TRUST-WARNINGS-001-PRIORITY",
+        "rule_version": "1.0.0",
+        "description": "Evidence accepted with warnings requires accountable review before closure. Effect: set_priority_floor.",
+        "effect": "set_priority_floor",
+        "non_overridable": false,
+        "supporting_evidence_ids": [
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      {
+        "rule_id": "RULE-TRUST-WARNINGS-001-DEADLINE",
+        "rule_version": "1.0.0",
+        "description": "Evidence accepted with warnings requires accountable review before closure. Effect: set_deadline.",
+        "effect": "set_deadline",
+        "non_overridable": false,
+        "supporting_evidence_ids": [
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      {
+        "rule_id": "RULE-TRUST-WARNINGS-001-REVIEW",
+        "rule_version": "1.0.0",
+        "description": "Evidence accepted with warnings requires accountable review before closure. Effect: require_human_review.",
+        "effect": "require_human_review",
+        "non_overridable": false,
+        "supporting_evidence_ids": [
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      {
+        "rule_id": "RULE-TRUST-WARNINGS-001-NO-CLOSURE",
+        "rule_version": "1.0.0",
+        "description": "Evidence accepted with warnings requires accountable review before closure. Effect: prohibit_closure.",
+        "effect": "prohibit_closure",
+        "non_overridable": false,
+        "supporting_evidence_ids": [
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      {
+        "rule_id": "RULE-KEV-AFFECTED-001-ACTION",
+        "rule_version": "1.0.0",
+        "description": "A CISA KEV-listed vulnerability confirmed or probably affected requires ACT with a Critical minimum-priority floor. Effect: set_action.",
+        "effect": "set_action",
+        "non_overridable": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-KEV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001",
+          "AEG-EVD-OSV-LOG4J-001"
+        ]
+      },
+      {
+        "rule_id": "RULE-KEV-AFFECTED-001-PRIORITY",
+        "rule_version": "1.0.0",
+        "description": "A CISA KEV-listed vulnerability confirmed or probably affected requires ACT with a Critical minimum-priority floor. Effect: set_priority_floor.",
+        "effect": "set_priority_floor",
+        "non_overridable": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-KEV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001",
+          "AEG-EVD-OSV-LOG4J-001"
+        ]
+      },
+      {
+        "rule_id": "RULE-KEV-AFFECTED-001-DEADLINE",
+        "rule_version": "1.0.0",
+        "description": "A CISA KEV-listed vulnerability confirmed or probably affected requires ACT with a Critical minimum-priority floor. Effect: set_deadline.",
+        "effect": "set_deadline",
+        "non_overridable": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-KEV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001",
+          "AEG-EVD-OSV-LOG4J-001"
+        ]
+      },
+      {
+        "rule_id": "RULE-KEV-AFFECTED-001-REVIEW",
+        "rule_version": "1.0.0",
+        "description": "A CISA KEV-listed vulnerability confirmed or probably affected requires ACT with a Critical minimum-priority floor. Effect: require_human_review.",
+        "effect": "require_human_review",
+        "non_overridable": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-KEV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001",
+          "AEG-EVD-OSV-LOG4J-001"
+        ]
+      },
+      {
+        "rule_id": "RULE-KEV-AFFECTED-001-NO-CLOSURE",
+        "rule_version": "1.0.0",
+        "description": "A CISA KEV-listed vulnerability confirmed or probably affected requires ACT with a Critical minimum-priority floor. Effect: prohibit_closure.",
+        "effect": "prohibit_closure",
+        "non_overridable": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-KEV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001",
+          "AEG-EVD-OSV-LOG4J-001"
+        ]
+      },
+      {
+        "rule_id": "RULE-KNOWN-EXPLOITATION-001-ACTION",
+        "rule_version": "1.0.0",
+        "description": "Confirmed exploitation evidence requires ACT and a Critical priority floor for affected components. Effect: set_action.",
+        "effect": "set_action",
+        "non_overridable": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-KEV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001",
+          "AEG-EVD-OSV-LOG4J-001"
+        ]
+      },
+      {
+        "rule_id": "RULE-KNOWN-EXPLOITATION-001-PRIORITY",
+        "rule_version": "1.0.0",
+        "description": "Confirmed exploitation evidence requires ACT and a Critical priority floor for affected components. Effect: set_priority_floor.",
+        "effect": "set_priority_floor",
+        "non_overridable": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-KEV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001",
+          "AEG-EVD-OSV-LOG4J-001"
+        ]
+      },
+      {
+        "rule_id": "RULE-KNOWN-EXPLOITATION-001-DEADLINE",
+        "rule_version": "1.0.0",
+        "description": "Confirmed exploitation evidence requires ACT and a Critical priority floor for affected components. Effect: set_deadline.",
+        "effect": "set_deadline",
+        "non_overridable": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-KEV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001",
+          "AEG-EVD-OSV-LOG4J-001"
+        ]
+      },
+      {
+        "rule_id": "RULE-KNOWN-EXPLOITATION-001-REVIEW",
+        "rule_version": "1.0.0",
+        "description": "Confirmed exploitation evidence requires ACT and a Critical priority floor for affected components. Effect: require_human_review.",
+        "effect": "require_human_review",
+        "non_overridable": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-KEV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001",
+          "AEG-EVD-OSV-LOG4J-001"
+        ]
+      },
+      {
+        "rule_id": "RULE-KNOWN-EXPLOITATION-001-NO-CLOSURE",
+        "rule_version": "1.0.0",
+        "description": "Confirmed exploitation evidence requires ACT and a Critical priority floor for affected components. Effect: prohibit_closure.",
+        "effect": "prohibit_closure",
+        "non_overridable": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-KEV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001",
+          "AEG-EVD-OSV-LOG4J-001"
+        ]
+      },
+      {
+        "rule_id": "RULE-INTERNET-EXPOSED-001-ACTION",
+        "rule_version": "1.0.0",
+        "description": "Internet-accessible affected components require ACT and a Critical operational-priority floor. Effect: set_action.",
+        "effect": "set_action",
+        "non_overridable": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-REQ-000001",
+          "AEG-EVD-SBOM-LOG4J-001",
+          "AEG-EVD-OSV-LOG4J-001"
+        ]
+      },
+      {
+        "rule_id": "RULE-INTERNET-EXPOSED-001-PRIORITY",
+        "rule_version": "1.0.0",
+        "description": "Internet-accessible affected components require ACT and a Critical operational-priority floor. Effect: set_priority_floor.",
+        "effect": "set_priority_floor",
+        "non_overridable": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-REQ-000001",
+          "AEG-EVD-SBOM-LOG4J-001",
+          "AEG-EVD-OSV-LOG4J-001"
+        ]
+      },
+      {
+        "rule_id": "RULE-INTERNET-EXPOSED-001-DEADLINE",
+        "rule_version": "1.0.0",
+        "description": "Internet-accessible affected components require ACT and a Critical operational-priority floor. Effect: set_deadline.",
+        "effect": "set_deadline",
+        "non_overridable": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-REQ-000001",
+          "AEG-EVD-SBOM-LOG4J-001",
+          "AEG-EVD-OSV-LOG4J-001"
+        ]
+      },
+      {
+        "rule_id": "RULE-INTERNET-EXPOSED-001-REVIEW",
+        "rule_version": "1.0.0",
+        "description": "Internet-accessible affected components require ACT and a Critical operational-priority floor. Effect: require_human_review.",
+        "effect": "require_human_review",
+        "non_overridable": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-REQ-000001",
+          "AEG-EVD-SBOM-LOG4J-001",
+          "AEG-EVD-OSV-LOG4J-001"
+        ]
+      },
+      {
+        "rule_id": "RULE-INTERNET-EXPOSED-001-NO-CLOSURE",
+        "rule_version": "1.0.0",
+        "description": "Internet-accessible affected components require ACT and a Critical operational-priority floor. Effect: prohibit_closure.",
+        "effect": "prohibit_closure",
+        "non_overridable": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-REQ-000001",
+          "AEG-EVD-SBOM-LOG4J-001",
+          "AEG-EVD-OSV-LOG4J-001"
+        ]
+      },
+      {
+        "rule_id": "RULE-SEVERE-IMPACT-001-ACTION",
+        "rule_version": "1.0.0",
+        "description": "Severe mission, public-service, safety or operational consequences require ACT and a Critical floor. Effect: set_action.",
+        "effect": "set_action",
+        "non_overridable": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-REQ-000001",
+          "AEG-EVD-SBOM-LOG4J-001",
+          "AEG-EVD-OSV-LOG4J-001"
+        ]
+      },
+      {
+        "rule_id": "RULE-SEVERE-IMPACT-001-PRIORITY",
+        "rule_version": "1.0.0",
+        "description": "Severe mission, public-service, safety or operational consequences require ACT and a Critical floor. Effect: set_priority_floor.",
+        "effect": "set_priority_floor",
+        "non_overridable": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-REQ-000001",
+          "AEG-EVD-SBOM-LOG4J-001",
+          "AEG-EVD-OSV-LOG4J-001"
+        ]
+      },
+      {
+        "rule_id": "RULE-SEVERE-IMPACT-001-DEADLINE",
+        "rule_version": "1.0.0",
+        "description": "Severe mission, public-service, safety or operational consequences require ACT and a Critical floor. Effect: set_deadline.",
+        "effect": "set_deadline",
+        "non_overridable": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-REQ-000001",
+          "AEG-EVD-SBOM-LOG4J-001",
+          "AEG-EVD-OSV-LOG4J-001"
+        ]
+      },
+      {
+        "rule_id": "RULE-SEVERE-IMPACT-001-REVIEW",
+        "rule_version": "1.0.0",
+        "description": "Severe mission, public-service, safety or operational consequences require ACT and a Critical floor. Effect: require_human_review.",
+        "effect": "require_human_review",
+        "non_overridable": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-REQ-000001",
+          "AEG-EVD-SBOM-LOG4J-001",
+          "AEG-EVD-OSV-LOG4J-001"
+        ]
+      },
+      {
+        "rule_id": "RULE-SEVERE-IMPACT-001-NO-CLOSURE",
+        "rule_version": "1.0.0",
+        "description": "Severe mission, public-service, safety or operational consequences require ACT and a Critical floor. Effect: prohibit_closure.",
+        "effect": "prohibit_closure",
+        "non_overridable": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-REQ-000001",
+          "AEG-EVD-SBOM-LOG4J-001",
+          "AEG-EVD-OSV-LOG4J-001"
+        ]
+      },
+      {
+        "rule_id": "RULE-MISSION-ESSENTIAL-001-ACTION",
+        "rule_version": "1.0.0",
+        "description": "Mission-essential affected assets require at least ATTEND and High operational priority. Effect: set_action.",
+        "effect": "set_action",
+        "non_overridable": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-REQ-000001",
+          "AEG-EVD-SBOM-LOG4J-001",
+          "AEG-EVD-OSV-LOG4J-001"
+        ]
+      },
+      {
+        "rule_id": "RULE-MISSION-ESSENTIAL-001-PRIORITY",
+        "rule_version": "1.0.0",
+        "description": "Mission-essential affected assets require at least ATTEND and High operational priority. Effect: set_priority_floor.",
+        "effect": "set_priority_floor",
+        "non_overridable": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-REQ-000001",
+          "AEG-EVD-SBOM-LOG4J-001",
+          "AEG-EVD-OSV-LOG4J-001"
+        ]
+      },
+      {
+        "rule_id": "RULE-MISSION-ESSENTIAL-001-DEADLINE",
+        "rule_version": "1.0.0",
+        "description": "Mission-essential affected assets require at least ATTEND and High operational priority. Effect: set_deadline.",
+        "effect": "set_deadline",
+        "non_overridable": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-REQ-000001",
+          "AEG-EVD-SBOM-LOG4J-001",
+          "AEG-EVD-OSV-LOG4J-001"
+        ]
+      },
+      {
+        "rule_id": "RULE-HIGH-CRITICALITY-001-ACTION",
+        "rule_version": "1.0.0",
+        "description": "High or very-high asset criticality requires at least ATTEND and High priority when affected. Effect: set_action.",
+        "effect": "set_action",
+        "non_overridable": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-REQ-000001",
+          "AEG-EVD-SBOM-LOG4J-001",
+          "AEG-EVD-OSV-LOG4J-001"
+        ]
+      },
+      {
+        "rule_id": "RULE-HIGH-CRITICALITY-001-PRIORITY",
+        "rule_version": "1.0.0",
+        "description": "High or very-high asset criticality requires at least ATTEND and High priority when affected. Effect: set_priority_floor.",
+        "effect": "set_priority_floor",
+        "non_overridable": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-REQ-000001",
+          "AEG-EVD-SBOM-LOG4J-001",
+          "AEG-EVD-OSV-LOG4J-001"
+        ]
+      },
+      {
+        "rule_id": "RULE-HIGH-CRITICALITY-001-DEADLINE",
+        "rule_version": "1.0.0",
+        "description": "High or very-high asset criticality requires at least ATTEND and High priority when affected. Effect: set_deadline.",
+        "effect": "set_deadline",
+        "non_overridable": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-REQ-000001",
+          "AEG-EVD-SBOM-LOG4J-001",
+          "AEG-EVD-OSV-LOG4J-001"
+        ]
+      },
+      {
+        "rule_id": "RULE-CRITICAL-CVSS-001-ACTION",
+        "rule_version": "1.0.0",
+        "description": "Critical CVSS contributes an escalation floor but does not replace mission and affectedness analysis. Effect: set_action.",
+        "effect": "set_action",
+        "non_overridable": false,
+        "supporting_evidence_ids": [
+          "AEG-EVD-NVD-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001",
+          "AEG-EVD-OSV-LOG4J-001"
+        ]
+      },
+      {
+        "rule_id": "RULE-CRITICAL-CVSS-001-PRIORITY",
+        "rule_version": "1.0.0",
+        "description": "Critical CVSS contributes an escalation floor but does not replace mission and affectedness analysis. Effect: set_priority_floor.",
+        "effect": "set_priority_floor",
+        "non_overridable": false,
+        "supporting_evidence_ids": [
+          "AEG-EVD-NVD-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001",
+          "AEG-EVD-OSV-LOG4J-001"
+        ]
+      },
+      {
+        "rule_id": "RULE-CRITICAL-CVSS-001-DEADLINE",
+        "rule_version": "1.0.0",
+        "description": "Critical CVSS contributes an escalation floor but does not replace mission and affectedness analysis. Effect: set_deadline.",
+        "effect": "set_deadline",
+        "non_overridable": false,
+        "supporting_evidence_ids": [
+          "AEG-EVD-NVD-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001",
+          "AEG-EVD-OSV-LOG4J-001"
+        ]
+      },
+      {
+        "rule_id": "RULE-EPSS-MISSING-AFFECTED-001-ACTION",
+        "rule_version": "1.0.0",
+        "description": "Missing EPSS must remain unknown and requires review when the component is affected or probably affected. Effect: set_action.",
+        "effect": "set_action",
+        "non_overridable": false,
+        "supporting_evidence_ids": [
+          "AEG-EVD-SBOM-LOG4J-001",
+          "AEG-EVD-OSV-LOG4J-001"
+        ]
+      },
+      {
+        "rule_id": "RULE-EPSS-MISSING-AFFECTED-001-PRIORITY",
+        "rule_version": "1.0.0",
+        "description": "Missing EPSS must remain unknown and requires review when the component is affected or probably affected. Effect: set_priority_floor.",
+        "effect": "set_priority_floor",
+        "non_overridable": false,
+        "supporting_evidence_ids": [
+          "AEG-EVD-SBOM-LOG4J-001",
+          "AEG-EVD-OSV-LOG4J-001"
+        ]
+      },
+      {
+        "rule_id": "RULE-EPSS-MISSING-AFFECTED-001-DEADLINE",
+        "rule_version": "1.0.0",
+        "description": "Missing EPSS must remain unknown and requires review when the component is affected or probably affected. Effect: set_deadline.",
+        "effect": "set_deadline",
+        "non_overridable": false,
+        "supporting_evidence_ids": [
+          "AEG-EVD-SBOM-LOG4J-001",
+          "AEG-EVD-OSV-LOG4J-001"
+        ]
+      },
+      {
+        "rule_id": "RULE-EPSS-MISSING-AFFECTED-001-REVIEW",
+        "rule_version": "1.0.0",
+        "description": "Missing EPSS must remain unknown and requires review when the component is affected or probably affected. Effect: require_human_review.",
+        "effect": "require_human_review",
+        "non_overridable": false,
+        "supporting_evidence_ids": [
+          "AEG-EVD-SBOM-LOG4J-001",
+          "AEG-EVD-OSV-LOG4J-001"
+        ]
+      },
+      {
+        "rule_id": "RULE-EPSS-MISSING-AFFECTED-001-NO-CLOSURE",
+        "rule_version": "1.0.0",
+        "description": "Missing EPSS must remain unknown and requires review when the component is affected or probably affected. Effect: prohibit_closure.",
+        "effect": "prohibit_closure",
+        "non_overridable": false,
+        "supporting_evidence_ids": [
+          "AEG-EVD-SBOM-LOG4J-001",
+          "AEG-EVD-OSV-LOG4J-001"
+        ]
+      }
+    ],
+    "evaluated_at": "2026-07-13T19:15:00+00:00"
+  },
+  "ml_advisory": {
+    "status": "not_run",
+    "model_id": null,
+    "model_version": null,
+    "predicted_priority": null,
+    "confidence": null,
+    "calibrated": null,
+    "probabilities": {},
+    "top_features": [],
+    "advisory_only": true,
+    "abstention_reason": "The independent ML advisory model has not yet been implemented.",
+    "evaluated_at": null
+  },
+  "arbitration": {
+    "status": "policy_only",
+    "final_system_priority": "CRITICAL",
+    "final_action": "ACT",
+    "decision_basis": "policy_only",
+    "human_review_required": true,
+    "reason_codes": [
+      "POLICY_FLOOR_APPLIED",
+      "POLICY_INVARIANTS_EVALUATED",
+      "ML_NOT_RUN",
+      "RULE_AFFECTED_BASELINE_001",
+      "RULE_TRUST_WARNINGS_001",
+      "RULE_KEV_AFFECTED_001",
+      "RULE_KNOWN_EXPLOITATION_001",
+      "RULE_INTERNET_EXPOSED_001",
+      "RULE_SEVERE_IMPACT_001",
+      "RULE_MISSION_ESSENTIAL_001",
+      "RULE_HIGH_CRITICALITY_001",
+      "RULE_CRITICAL_CVSS_001",
+      "RULE_EPSS_MISSING_AFFECTED_001"
+    ],
+    "uncertainty_level": "medium",
+    "policy_floor_enforced": true,
+    "evaluated_at": "2026-07-13T19:15:00+00:00"
+  },
+  "human_disposition": {
+    "status": "pending",
+    "analyst": null,
+    "final_priority": null,
+    "final_action": null,
+    "justification": null,
+    "override": false,
+    "override_reason": null,
+    "approved_by": null,
+    "decided_at": null,
+    "expires_at": null,
+    "ticket_reference": null
+  },
+  "provenance": {
+    "origin_type": "controlled_fixture",
+    "workflow_version": "step8-policy-floor-0.1.0",
+    "execution_environment": "AegisSec Datalab controlled demonstration environment",
+    "generated_at": "2026-07-13T19:15:00+00:00"
+  },
+  "audit": {
+    "workflow_run_id": "RUN-STEP8-POLICY-001",
+    "created_by": "AegisSec Step 8 Policy Pipeline",
+    "hash_algorithm": "sha256",
+    "canonicalization_policy_id": "AEGIS-CANONICAL-JSON-V1",
+    "previous_record_hash": null,
+    "record_hash": "0356a26dcd7f1dd3aabc8e645b575520f95e266e85559c1b7710bc3b2dc306e3",
+    "immutable": true,
+    "generated_at": "2026-07-13T19:15:00+00:00"
+  },
+  "created_at": "2026-07-13T17:12:00Z",
+  "updated_at": "2026-07-13T19:15:00+00:00"
+}
