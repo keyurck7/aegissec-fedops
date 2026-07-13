@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0.0",
+  "corpus_id": "AEG-ASR-POLICY-CORPUS-STEP9-001",
+  "generator_version": "1.0.0",
+  "description": "One hundred twenty controlled policy assurance cases formed from sixty counterfactual sector pairs.",
+  "created_at": "2026-07-13T19:30:00+00:00",
+  "case_count": 120,
+  "pair_count": 60,
+  "design": {
+    "affectedness_profiles": [
+      "affected",
+      "probably_affected",
+      "unknown",
+      "probably_not_affected",
+      "fixed"
+    ],
+    "operational_profiles": [
+      "baseline",
+      "kev_listed",
+      "active_exploitation",
+      "internet_exposed",
+      "exposure_unknown",
+      "catastrophic_impact",
+      "severe_impact",
+      "mission_essential",
+      "high_criticality",
+      "critical_cvss",
+      "no_fix_available",
+      "trust_blocked"
+    ],
+    "sector_labels": [
+      "healthcare",
+      "defence_logistics"
+    ],
+    "counterfactual_differing_fields": [
+      "sector_context.primary_sector"
+    ],
+    "decision_relevant_sector_fields": []
+  },
+  "base_fixtures": {
+    "asset_context": {
+      "relative_path": "data/sample_inputs/assets/valid_healthcare_asset.json",
+      "sha256": "bc9cb98980010ca2bc1c123e808296a2e17bb34a5735cf42cd07e1efcfc64395"
+    },
+    "vulnerability_intelligence": {
+      "relative_path": "data/sample_inputs/intelligence/valid_log4shell_intelligence.json",
+      "sha256": "e2204ab8ff8736c0826ffe24d518cef462a75dcea7e498943506b0fe7f41ff1f"
+    },
+    "component_source": {
+      "relative_path": "data/sample_inputs/decisions/valid_log4shell_decision_record_policy.json",
+      "sha256": "7d557b127eb2cb6ae097be75273cad3e3d0cd0876385dd74d2439c762254f37a"
+    }
+  },
+  "artifacts": {
+    "case_schema": {
+      "relative_path": "schemas/aegis_policy_assurance_case.schema.json",
+      "sha256": "72b6f2fda35c8e726fa16e09f32c975b9dbee2aba7f6ce81eeb82903ead55557"
+    },
+    "decision_policy": {
+      "relative_path": "policies/decision/federal_base_policy_v1.yaml",
+      "sha256": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f"
+    },
+    "corpus": {
+      "relative_path": "data/assurance/step9_policy_assurance_corpus.jsonl",
+      "sha256": "846d4e90afb82d432a2751c3ac36026e0b9e8ef0531b0e55e6199d62d153332e"
+    },
+    "summary": {
+      "relative_path": "data/assurance/step9_policy_assurance_summary.csv",
+      "sha256": "bb67da8792904523c89001bb53a5f71e98fc099a676ce14ee8739bccfdd27df1"
+    }
+  }
+}
