@@ -1,0 +1,87 @@
+{
+  "assessment_id": "AEG-AFF-AEG-CMP-LOG4J-CORE-001-CVE-2021-44228",
+  "status": "affected",
+  "confidence": 0.9794,
+  "determination_method": "version_range",
+  "engine_version": "0.1.0",
+  "policy": {
+    "policy_id": "AEGIS-AFFECTEDNESS-POLICY",
+    "version": "1.0.0",
+    "sha256": "84aa03a09bbc05a1b6e51a4e71a6aa0fefc9775f17866659e1ec4760ed9667f8"
+  },
+  "package_match": {
+    "matched": true,
+    "method": "exact_purl",
+    "confidence": 1.0,
+    "component_purl": "pkg:maven/org.apache.logging.log4j/log4j-core@2.14.1",
+    "intelligence_purl": "pkg:maven/org.apache.logging.log4j/log4j-core",
+    "component_name": "org.apache.logging.log4j:log4j-core",
+    "intelligence_package_name": "org.apache.logging.log4j:log4j-core",
+    "ecosystem": "Maven",
+    "package_index": 0,
+    "reason_codes": [
+      "EXACT_PURL_MATCH"
+    ]
+  },
+  "component_version": "2.14.1",
+  "range_status": "available",
+  "range_evaluations": [
+    {
+      "range_index": 0,
+      "range_type": "ECOSYSTEM",
+      "introduced": "2.0-beta9",
+      "fixed": "2.3.1",
+      "last_affected": null,
+      "valid": true,
+      "affected": false,
+      "fixed_boundary_reached": true,
+      "before_introduced": false,
+      "reason_codes": [
+        "FIXED_BOUNDARY_REACHED"
+      ],
+      "error": null
+    },
+    {
+      "range_index": 1,
+      "range_type": "ECOSYSTEM",
+      "introduced": "2.4",
+      "fixed": "2.12.2",
+      "last_affected": null,
+      "valid": true,
+      "affected": false,
+      "fixed_boundary_reached": true,
+      "before_introduced": false,
+      "reason_codes": [
+        "FIXED_BOUNDARY_REACHED"
+      ],
+      "error": null
+    },
+    {
+      "range_index": 2,
+      "range_type": "ECOSYSTEM",
+      "introduced": "2.13.0",
+      "fixed": "2.15.0",
+      "last_affected": null,
+      "valid": true,
+      "affected": true,
+      "fixed_boundary_reached": false,
+      "before_introduced": false,
+      "reason_codes": [
+        "VERSION_WITHIN_AFFECTED_RANGE"
+      ],
+      "error": null
+    }
+  ],
+  "reason_codes": [
+    "PACKAGE_IDENTITY_MATCHED",
+    "COMPONENT_VERSION_IN_AFFECTED_RANGE",
+    "AFFECTEDNESS_CONFIRMED"
+  ],
+  "supporting_evidence_ids": [
+    "AEG-EVD-SBOM-LOG4J-001",
+    "AEG-EVD-OSV-LOG4J-001"
+  ],
+  "uncertainty_factors": [],
+  "human_review_required": false,
+  "determined_at": "2026-07-13T16:57:35.720986+00:00"
+}
