@@ -1,0 +1,781 @@
+{
+  "schema_version": "1.0.0",
+  "report_id": "AEG-EVAL-FAIRNESS-ROBUSTNESS-001",
+  "source_assurance_report": {
+    "relative_path": "data/validation_reports/assurance/step11a_policy_rule_coverage_report.json",
+    "sha256": "6226d36646b0d00a22b9c7f4d7efcea216e705bbd1143b1caef07a97e41fd710",
+    "case_count": 130,
+    "pair_count": 65
+  },
+  "evaluator": {
+    "policy_id": "AEGIS-FAIRNESS-ROBUSTNESS-GATES",
+    "policy_version": "1.0.0",
+    "evaluator_version": "0.1.0",
+    "policy_sha256": "e422c806da3d4db041f981eb6c13986b1a7fcb64cea186168188b08d62954d2b"
+  },
+  "decision_policy": {
+    "policy_id": "AEGIS-FEDERAL-BASE-POLICY",
+    "version": "1.0.0",
+    "sha256": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f"
+  },
+  "summary": {
+    "case_count": 130,
+    "pair_count": 65,
+    "stage_gate_passed": true,
+    "production_readiness": false,
+    "failed_quality_gate_count": 0
+  },
+  "exact_match_metrics": {
+    "case_count": 130,
+    "exact_case_count": 130,
+    "case_exact_match_rate": 1.0,
+    "action_exact_match_rate": 1.0,
+    "priority_exact_match_rate": 1.0,
+    "deadline_exact_match_rate": 1.0,
+    "review_exact_match_rate": 1.0,
+    "containment_exact_match_rate": 1.0,
+    "closure_exact_match_rate": 1.0,
+    "invariant_pass_rate": 1.0
+  },
+  "safety_metrics": {
+    "safety_relevant_case_count": 106,
+    "under_triage_count": 0,
+    "over_triage_count": 0,
+    "safety_under_triage_count": 0,
+    "safety_recall": 1.0,
+    "under_triage_cases": [],
+    "over_triage_cases": []
+  },
+  "abstention_metrics": {
+    "expected_hold_count": 54,
+    "actual_hold_count": 54,
+    "true_hold_count": 54,
+    "false_hold_count": 0,
+    "missed_hold_count": 0,
+    "hold_precision": 1.0,
+    "hold_recall": 1.0,
+    "hold_f1": 1.0
+  },
+  "counterfactual_metrics": {
+    "pair_count": 65,
+    "passed_pair_count": 65,
+    "counterfactual_consistency_rate": 1.0,
+    "sector_disparity_count": 0,
+    "action_pair_gap_count": 0,
+    "priority_pair_gap_count": 0,
+    "review_pair_gap_count": 0,
+    "containment_pair_gap_count": 0,
+    "closure_pair_gap_count": 0,
+    "deadline_pair_mean_gap_hours": 0.0,
+    "deadline_pair_max_gap_hours": 0.0
+  },
+  "monotonicity_metrics": {
+    "comparison_count": 120,
+    "passed_comparison_count": 120,
+    "violation_count": 0,
+    "monotonicity_rate": 1.0,
+    "violations": []
+  },
+  "subgroup_metrics": {
+    "by_sector": {
+      "defence_logistics": {
+        "case_count": 65,
+        "passed_case_count": 65,
+        "exact_match_rate": 1.0,
+        "under_triage_count": 0,
+        "under_triage_rate": 0.0,
+        "mean_deadline_hours": 160.43076923076924,
+        "action_distribution": {
+          "ACT": 14,
+          "ATTEND": 12,
+          "HOLD": 27,
+          "TRACK": 11,
+          "TRACK_STAR": 1
+        },
+        "priority_distribution": {
+          "CRITICAL": 12,
+          "EMERGENCY": 4,
+          "HIGH": 27,
+          "INFORMATIONAL": 11,
+          "MEDIUM": 11
+        }
+      },
+      "healthcare": {
+        "case_count": 65,
+        "passed_case_count": 65,
+        "exact_match_rate": 1.0,
+        "under_triage_count": 0,
+        "under_triage_rate": 0.0,
+        "mean_deadline_hours": 160.43076923076924,
+        "action_distribution": {
+          "ACT": 14,
+          "ATTEND": 12,
+          "HOLD": 27,
+          "TRACK": 11,
+          "TRACK_STAR": 1
+        },
+        "priority_distribution": {
+          "CRITICAL": 12,
+          "EMERGENCY": 4,
+          "HIGH": 27,
+          "INFORMATIONAL": 11,
+          "MEDIUM": 11
+        }
+      }
+    },
+    "by_affectedness": {
+      "affected": {
+        "case_count": 32,
+        "passed_case_count": 32,
+        "exact_match_rate": 1.0,
+        "under_triage_count": 0,
+        "under_triage_rate": 0.0,
+        "mean_deadline_hours": 53.25,
+        "action_distribution": {
+          "ACT": 16,
+          "ATTEND": 14,
+          "HOLD": 2
+        },
+        "priority_distribution": {
+          "CRITICAL": 12,
+          "EMERGENCY": 4,
+          "HIGH": 16
+        }
+      },
+      "fixed": {
+        "case_count": 26,
+        "passed_case_count": 26,
+        "exact_match_rate": 1.0,
+        "under_triage_count": 0,
+        "under_triage_rate": 0.0,
+        "mean_deadline_hours": 622.4615384615385,
+        "action_distribution": {
+          "HOLD": 2,
+          "TRACK": 22,
+          "TRACK_STAR": 2
+        },
+        "priority_distribution": {
+          "HIGH": 2,
+          "INFORMATIONAL": 22,
+          "MEDIUM": 2
+        }
+      },
+      "probably_affected": {
+        "case_count": 24,
+        "passed_case_count": 24,
+        "exact_match_rate": 1.0,
+        "under_triage_count": 0,
+        "under_triage_rate": 0.0,
+        "mean_deadline_hours": 39.0,
+        "action_distribution": {
+          "ACT": 12,
+          "ATTEND": 10,
+          "HOLD": 2
+        },
+        "priority_distribution": {
+          "CRITICAL": 8,
+          "EMERGENCY": 4,
+          "HIGH": 12
+        }
+      },
+      "probably_not_affected": {
+        "case_count": 24,
+        "passed_case_count": 24,
+        "exact_match_rate": 1.0,
+        "under_triage_count": 0,
+        "under_triage_rate": 0.0,
+        "mean_deadline_hours": 62.333333333333336,
+        "action_distribution": {
+          "HOLD": 24
+        },
+        "priority_distribution": {
+          "CRITICAL": 2,
+          "HIGH": 2,
+          "MEDIUM": 20
+        }
+      },
+      "unknown": {
+        "case_count": 24,
+        "passed_case_count": 24,
+        "exact_match_rate": 1.0,
+        "under_triage_count": 0,
+        "under_triage_rate": 0.0,
+        "mean_deadline_hours": 22.333333333333332,
+        "action_distribution": {
+          "HOLD": 24
+        },
+        "priority_distribution": {
+          "CRITICAL": 2,
+          "HIGH": 22
+        }
+      }
+    },
+    "by_operational_profile": {
+      "active_exploitation": {
+        "case_count": 10,
+        "passed_case_count": 10,
+        "exact_match_rate": 1.0,
+        "under_triage_count": 0,
+        "under_triage_rate": 0.0,
+        "mean_deadline_hours": 164.8,
+        "action_distribution": {
+          "ACT": 4,
+          "HOLD": 4,
+          "TRACK": 2
+        },
+        "priority_distribution": {
+          "EMERGENCY": 4,
+          "HIGH": 2,
+          "INFORMATIONAL": 2,
+          "MEDIUM": 2
+        }
+      },
+      "baseline": {
+        "case_count": 10,
+        "passed_case_count": 10,
+        "exact_match_rate": 1.0,
+        "under_triage_count": 0,
+        "under_triage_rate": 0.0,
+        "mean_deadline_hours": 211.2,
+        "action_distribution": {
+          "ATTEND": 4,
+          "HOLD": 4,
+          "TRACK": 2
+        },
+        "priority_distribution": {
+          "HIGH": 6,
+          "INFORMATIONAL": 2,
+          "MEDIUM": 2
+        }
+      },
+      "catastrophic_impact": {
+        "case_count": 10,
+        "passed_case_count": 10,
+        "exact_match_rate": 1.0,
+        "under_triage_count": 0,
+        "under_triage_rate": 0.0,
+        "mean_deadline_hours": 164.8,
+        "action_distribution": {
+          "ACT": 4,
+          "HOLD": 4,
+          "TRACK": 2
+        },
+        "priority_distribution": {
+          "EMERGENCY": 4,
+          "HIGH": 2,
+          "INFORMATIONAL": 2,
+          "MEDIUM": 2
+        }
+      },
+      "critical_cvss": {
+        "case_count": 10,
+        "passed_case_count": 10,
+        "exact_match_rate": 1.0,
+        "under_triage_count": 0,
+        "under_triage_rate": 0.0,
+        "mean_deadline_hours": 192.0,
+        "action_distribution": {
+          "ATTEND": 4,
+          "HOLD": 4,
+          "TRACK": 2
+        },
+        "priority_distribution": {
+          "HIGH": 6,
+          "INFORMATIONAL": 2,
+          "MEDIUM": 2
+        }
+      },
+      "epss_missing_affected": {
+        "case_count": 2,
+        "passed_case_count": 2,
+        "exact_match_rate": 1.0,
+        "under_triage_count": 0,
+        "under_triage_rate": 0.0,
+        "mean_deadline_hours": 168.0,
+        "action_distribution": {
+          "ATTEND": 2
+        },
+        "priority_distribution": {
+          "HIGH": 2
+        }
+      },
+      "exposure_unknown": {
+        "case_count": 10,
+        "passed_case_count": 10,
+        "exact_match_rate": 1.0,
+        "under_triage_count": 0,
+        "under_triage_rate": 0.0,
+        "mean_deadline_hours": 192.0,
+        "action_distribution": {
+          "ATTEND": 4,
+          "HOLD": 4,
+          "TRACK": 2
+        },
+        "priority_distribution": {
+          "HIGH": 6,
+          "INFORMATIONAL": 2,
+          "MEDIUM": 2
+        }
+      },
+      "high_criticality": {
+        "case_count": 10,
+        "passed_case_count": 10,
+        "exact_match_rate": 1.0,
+        "under_triage_count": 0,
+        "under_triage_rate": 0.0,
+        "mean_deadline_hours": 192.0,
+        "action_distribution": {
+          "ATTEND": 4,
+          "HOLD": 4,
+          "TRACK": 2
+        },
+        "priority_distribution": {
+          "HIGH": 6,
+          "INFORMATIONAL": 2,
+          "MEDIUM": 2
+        }
+      },
+      "high_impact": {
+        "case_count": 2,
+        "passed_case_count": 2,
+        "exact_match_rate": 1.0,
+        "under_triage_count": 0,
+        "under_triage_rate": 0.0,
+        "mean_deadline_hours": 72.0,
+        "action_distribution": {
+          "ATTEND": 2
+        },
+        "priority_distribution": {
+          "HIGH": 2
+        }
+      },
+      "internet_exposed": {
+        "case_count": 10,
+        "passed_case_count": 10,
+        "exact_match_rate": 1.0,
+        "under_triage_count": 0,
+        "under_triage_rate": 0.0,
+        "mean_deadline_hours": 172.8,
+        "action_distribution": {
+          "ACT": 4,
+          "HOLD": 4,
+          "TRACK": 2
+        },
+        "priority_distribution": {
+          "CRITICAL": 4,
+          "HIGH": 2,
+          "INFORMATIONAL": 2,
+          "MEDIUM": 2
+        }
+      },
+      "kev_listed": {
+        "case_count": 10,
+        "passed_case_count": 10,
+        "exact_match_rate": 1.0,
+        "under_triage_count": 0,
+        "under_triage_rate": 0.0,
+        "mean_deadline_hours": 163.2,
+        "action_distribution": {
+          "ACT": 4,
+          "HOLD": 4,
+          "TRACK": 2
+        },
+        "priority_distribution": {
+          "CRITICAL": 8,
+          "INFORMATIONAL": 2
+        }
+      },
+      "known_exploitation": {
+        "case_count": 2,
+        "passed_case_count": 2,
+        "exact_match_rate": 1.0,
+        "under_triage_count": 0,
+        "under_triage_rate": 0.0,
+        "mean_deadline_hours": 24.0,
+        "action_distribution": {
+          "ACT": 2
+        },
+        "priority_distribution": {
+          "CRITICAL": 2
+        }
+      },
+      "mission_essential": {
+        "case_count": 10,
+        "passed_case_count": 10,
+        "exact_match_rate": 1.0,
+        "under_triage_count": 0,
+        "under_triage_rate": 0.0,
+        "mean_deadline_hours": 192.0,
+        "action_distribution": {
+          "ATTEND": 4,
+          "HOLD": 4,
+          "TRACK": 2
+        },
+        "priority_distribution": {
+          "HIGH": 6,
+          "INFORMATIONAL": 2,
+          "MEDIUM": 2
+        }
+      },
+      "no_fix_available": {
+        "case_count": 10,
+        "passed_case_count": 10,
+        "exact_match_rate": 1.0,
+        "under_triage_count": 0,
+        "under_triage_rate": 0.0,
+        "mean_deadline_hours": 172.8,
+        "action_distribution": {
+          "ACT": 4,
+          "HOLD": 4,
+          "TRACK": 2
+        },
+        "priority_distribution": {
+          "CRITICAL": 4,
+          "HIGH": 2,
+          "INFORMATIONAL": 2,
+          "MEDIUM": 2
+        }
+      },
+      "runtime_reachable": {
+        "case_count": 2,
+        "passed_case_count": 2,
+        "exact_match_rate": 1.0,
+        "under_triage_count": 0,
+        "under_triage_rate": 0.0,
+        "mean_deadline_hours": 24.0,
+        "action_distribution": {
+          "ACT": 2
+        },
+        "priority_distribution": {
+          "CRITICAL": 2
+        }
+      },
+      "severe_impact": {
+        "case_count": 10,
+        "passed_case_count": 10,
+        "exact_match_rate": 1.0,
+        "under_triage_count": 0,
+        "under_triage_rate": 0.0,
+        "mean_deadline_hours": 172.8,
+        "action_distribution": {
+          "ACT": 4,
+          "HOLD": 4,
+          "TRACK": 2
+        },
+        "priority_distribution": {
+          "CRITICAL": 4,
+          "HIGH": 2,
+          "INFORMATIONAL": 2,
+          "MEDIUM": 2
+        }
+      },
+      "trust_blocked": {
+        "case_count": 10,
+        "passed_case_count": 10,
+        "exact_match_rate": 1.0,
+        "under_triage_count": 0,
+        "under_triage_rate": 0.0,
+        "mean_deadline_hours": 4.0,
+        "action_distribution": {
+          "HOLD": 10
+        },
+        "priority_distribution": {
+          "HIGH": 10
+        }
+      },
+      "trust_warnings": {
+        "case_count": 2,
+        "passed_case_count": 2,
+        "exact_match_rate": 1.0,
+        "under_triage_count": 0,
+        "under_triage_rate": 0.0,
+        "mean_deadline_hours": 168.0,
+        "action_distribution": {
+          "TRACK_STAR": 2
+        },
+        "priority_distribution": {
+          "MEDIUM": 2
+        }
+      }
+    }
+  },
+  "rule_coverage": {
+    "policy_rule_count": 22,
+    "covered_policy_rule_count": 22,
+    "full_rule_coverage_rate": 1.0,
+    "required_rule_count": 17,
+    "covered_required_rule_count": 17,
+    "required_rule_coverage_rate": 1.0,
+    "covered_required_rules": [
+      "RULE-ACTIVE-EXPLOITATION-001",
+      "RULE-AFFECTED-BASELINE-001",
+      "RULE-CATASTROPHIC-IMPACT-001",
+      "RULE-CRITICAL-CVSS-001",
+      "RULE-EXPOSURE-UNKNOWN-001",
+      "RULE-HIGH-CRITICALITY-001",
+      "RULE-INTERNET-EXPOSED-001",
+      "RULE-KEV-AFFECTED-001",
+      "RULE-KEV-UNCERTAIN-001",
+      "RULE-MISSION-ESSENTIAL-001",
+      "RULE-NEGATIVE-AFFECTEDNESS-001",
+      "RULE-NO-FIX-AVAILABLE-001",
+      "RULE-PROBABLY-AFFECTED-001",
+      "RULE-PROBABLY-NOT-AFFECTED-001",
+      "RULE-SEVERE-IMPACT-001",
+      "RULE-TRUST-BLOCKED-001",
+      "RULE-UNKNOWN-AFFECTEDNESS-001"
+    ],
+    "missing_required_rules": [],
+    "uncovered_policy_rules": [],
+    "rule_trigger_counts": {
+      "RULE-ACTIVE-EXPLOITATION-001": 4,
+      "RULE-AFFECTED-BASELINE-001": 32,
+      "RULE-CATASTROPHIC-IMPACT-001": 4,
+      "RULE-CRITICAL-CVSS-001": 4,
+      "RULE-EPSS-MISSING-AFFECTED-001": 2,
+      "RULE-EXPOSURE-UNKNOWN-001": 4,
+      "RULE-HIGH-CRITICALITY-001": 4,
+      "RULE-HIGH-IMPACT-001": 2,
+      "RULE-INTERNET-EXPOSED-001": 4,
+      "RULE-KEV-AFFECTED-001": 4,
+      "RULE-KEV-UNCERTAIN-001": 4,
+      "RULE-KNOWN-EXPLOITATION-001": 2,
+      "RULE-MISSION-ESSENTIAL-001": 4,
+      "RULE-NEGATIVE-AFFECTEDNESS-001": 26,
+      "RULE-NO-FIX-AVAILABLE-001": 4,
+      "RULE-PROBABLY-AFFECTED-001": 24,
+      "RULE-PROBABLY-NOT-AFFECTED-001": 24,
+      "RULE-RUNTIME-REACHABLE-001": 2,
+      "RULE-SEVERE-IMPACT-001": 4,
+      "RULE-TRUST-BLOCKED-001": 10,
+      "RULE-TRUST-WARNINGS-001": 2,
+      "RULE-UNKNOWN-AFFECTEDNESS-001": 24
+    }
+  },
+  "bootstrap": {
+    "iterations": 1000,
+    "confidence_level": 0.95,
+    "random_seed": 20260713,
+    "sampling_unit": "counterfactual_pair",
+    "case_exact_match_rate": {
+      "mean": 1.0,
+      "lower_bound": 1.0,
+      "upper_bound": 1.0
+    },
+    "counterfactual_consistency_rate": {
+      "mean": 1.0,
+      "lower_bound": 1.0,
+      "upper_bound": 1.0
+    },
+    "safety_recall": {
+      "mean": 1.0,
+      "lower_bound": 1.0,
+      "upper_bound": 1.0
+    }
+  },
+  "quality_gates": [
+    {
+      "gate_id": "GATE-CASE-EXACT-001",
+      "metric": "case_exact_match_rate",
+      "operator": "gte",
+      "threshold": 1.0,
+      "observed": 1.0,
+      "passed": true,
+      "release_blocking": true
+    },
+    {
+      "gate_id": "GATE-ACTION-EXACT-001",
+      "metric": "action_exact_match_rate",
+      "operator": "gte",
+      "threshold": 1.0,
+      "observed": 1.0,
+      "passed": true,
+      "release_blocking": true
+    },
+    {
+      "gate_id": "GATE-PRIORITY-EXACT-001",
+      "metric": "priority_exact_match_rate",
+      "operator": "gte",
+      "threshold": 1.0,
+      "observed": 1.0,
+      "passed": true,
+      "release_blocking": true
+    },
+    {
+      "gate_id": "GATE-DEADLINE-EXACT-001",
+      "metric": "deadline_exact_match_rate",
+      "operator": "gte",
+      "threshold": 1.0,
+      "observed": 1.0,
+      "passed": true,
+      "release_blocking": true
+    },
+    {
+      "gate_id": "GATE-INVARIANTS-001",
+      "metric": "invariant_pass_rate",
+      "operator": "gte",
+      "threshold": 1.0,
+      "observed": 1.0,
+      "passed": true,
+      "release_blocking": true
+    },
+    {
+      "gate_id": "GATE-UNDER-TRIAGE-001",
+      "metric": "under_triage_count",
+      "operator": "lte",
+      "threshold": 0,
+      "observed": 0,
+      "passed": true,
+      "release_blocking": true
+    },
+    {
+      "gate_id": "GATE-SAFETY-RECALL-001",
+      "metric": "safety_recall",
+      "operator": "gte",
+      "threshold": 1.0,
+      "observed": 1.0,
+      "passed": true,
+      "release_blocking": true
+    },
+    {
+      "gate_id": "GATE-COUNTERFACTUAL-001",
+      "metric": "counterfactual_consistency_rate",
+      "operator": "gte",
+      "threshold": 1.0,
+      "observed": 1.0,
+      "passed": true,
+      "release_blocking": true
+    },
+    {
+      "gate_id": "GATE-SECTOR-DISPARITY-001",
+      "metric": "sector_disparity_count",
+      "operator": "lte",
+      "threshold": 0,
+      "observed": 0,
+      "passed": true,
+      "release_blocking": true
+    },
+    {
+      "gate_id": "GATE-DEADLINE-PARITY-001",
+      "metric": "deadline_pair_max_gap_hours",
+      "operator": "lte",
+      "threshold": 0.0,
+      "observed": 0.0,
+      "passed": true,
+      "release_blocking": true
+    },
+    {
+      "gate_id": "GATE-REVIEW-PARITY-001",
+      "metric": "review_pair_gap_count",
+      "operator": "lte",
+      "threshold": 0,
+      "observed": 0,
+      "passed": true,
+      "release_blocking": true
+    },
+    {
+      "gate_id": "GATE-CONTAINMENT-PARITY-001",
+      "metric": "containment_pair_gap_count",
+      "operator": "lte",
+      "threshold": 0,
+      "observed": 0,
+      "passed": true,
+      "release_blocking": true
+    },
+    {
+      "gate_id": "GATE-CLOSURE-PARITY-001",
+      "metric": "closure_pair_gap_count",
+      "operator": "lte",
+      "threshold": 0,
+      "observed": 0,
+      "passed": true,
+      "release_blocking": true
+    },
+    {
+      "gate_id": "GATE-HOLD-PRECISION-001",
+      "metric": "hold_precision",
+      "operator": "gte",
+      "threshold": 1.0,
+      "observed": 1.0,
+      "passed": true,
+      "release_blocking": true
+    },
+    {
+      "gate_id": "GATE-HOLD-RECALL-001",
+      "metric": "hold_recall",
+      "operator": "gte",
+      "threshold": 1.0,
+      "observed": 1.0,
+      "passed": true,
+      "release_blocking": true
+    },
+    {
+      "gate_id": "GATE-MONOTONICITY-001",
+      "metric": "escalation_monotonicity_rate",
+      "operator": "gte",
+      "threshold": 1.0,
+      "observed": 1.0,
+      "passed": true,
+      "release_blocking": true
+    },
+    {
+      "gate_id": "GATE-REQUIRED-RULE-COVERAGE-001",
+      "metric": "required_rule_coverage_rate",
+      "operator": "gte",
+      "threshold": 1.0,
+      "observed": 1.0,
+      "passed": true,
+      "release_blocking": true
+    },
+    {
+      "gate_id": "GATE-BOOTSTRAP-CASE-001",
+      "metric": "bootstrap_case_pass_lower_bound",
+      "operator": "gte",
+      "threshold": 0.99,
+      "observed": 1.0,
+      "passed": true,
+      "release_blocking": true
+    },
+    {
+      "gate_id": "GATE-BOOTSTRAP-PAIR-001",
+      "metric": "bootstrap_counterfactual_lower_bound",
+      "operator": "gte",
+      "threshold": 0.99,
+      "observed": 1.0,
+      "passed": true,
+      "release_blocking": true
+    },
+    {
+      "gate_id": "GATE-BOOTSTRAP-SAFETY-001",
+      "metric": "bootstrap_safety_lower_bound",
+      "operator": "gte",
+      "threshold": 0.99,
+      "observed": 1.0,
+      "passed": true,
+      "release_blocking": true
+    }
+  ],
+  "release_decision": {
+    "stage_gate_status": "PASS",
+    "production_readiness_status": "BLOCKED",
+    "blocking_reasons": [
+      "Real operational validation has not yet been completed.",
+      "Independent security review has not yet been completed."
+    ],
+    "scope_limitations": [
+      "Controlled synthetic assurance cases are not operational incident data.",
+      "Sector-label parity is not equivalent to protected-group fairness.",
+      "Bootstrap intervals describe this controlled corpus only.",
+      "The current evaluation covers deterministic policy logic, not an ML model.",
+      "Production authorization requires independent testing and governance review."
+    ]
+  },
+  "limitations": [
+    "Controlled synthetic assurance cases are not operational incident data.",
+    "Sector-label parity is not equivalent to protected-group fairness.",
+    "Bootstrap intervals describe this controlled corpus only.",
+    "The current evaluation covers deterministic policy logic, not an ML model.",
+    "Production authorization requires independent testing and governance review."
+  ],
+  "generated_at": "2026-07-13T20:45:00+00:00"
+}

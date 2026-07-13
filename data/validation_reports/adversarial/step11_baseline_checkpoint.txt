@@ -1,0 +1,19 @@
+AegisSec-FedOps Step 11 Baseline
+Generated UTC: 2026-07-13T17:53:43Z
+
+Branch:
+feature/evidence-contract-v1
+
+Commit:
+e82077e9fbcdf5507f18b4e5c08d3948cf03850c
+
+Git status:
+ M notebooks/AegisSec-3.ipynb
+?? data/validation_reports/adversarial/
+
+Trusted artifact hashes:
+e422c806da3d4db041f981eb6c13986b1a7fcb64cea186168188b08d62954d2b  policies/assurance/fairness_release_gates_v1.yaml
+846d4e90afb82d432a2751c3ac36026e0b9e8ef0531b0e55e6199d62d153332e  data/assurance/step9_policy_assurance_corpus.jsonl
+144e294df078e87765c7e1b2d5df3ed76d9cdcf37c1cc0227d1f830ed85700e5  data/assurance/step9_policy_assurance_manifest.json
+26e31e5b867dae491f8bc06c06fca70e852dafdd4fa8621305e11a31690954d5  data/validation_reports/assurance/step9_policy_assurance_report.json
+5131b213b715df9fe6c14042ca66c38ceb35932ad8521aa7a93deec2669af2bb  data/validation_reports/fairness/step10_fairness_robustness_report.json

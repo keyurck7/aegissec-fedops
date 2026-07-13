@@ -1,0 +1,8 @@
+AegisSec Step 11A Policy-Rule Coverage Assurance
+Cases: 130/130 passed
+Counterfactual pairs: 65/65 passed
+Policy invariant cases: 130/130 passed
+Sector disparities: 0
+Targeted rules covered: 5 / 5
+Overall passed: True
+Report: /home/jovyan/vault/aegissec-fedops/data/validation_reports/assurance/step11a_policy_rule_coverage_report.json

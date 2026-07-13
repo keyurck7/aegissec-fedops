@@ -1,0 +1,15 @@
+AegisSec Step 11A Rule-Coverage Evaluation
+Exact policy cases: 130/130
+Under-triage cases: 0
+Safety recall: 1.0000
+Counterfactual consistency: 1.0000
+Sector disparities: 0
+Policy-rule coverage: 22/22
+Stage gate: PASS
+Production readiness: BLOCKED
+Report: /home/jovyan/vault/aegissec-fedops/data/validation_reports/fairness/step11a_rule_coverage_evaluation_report.json
+Subgroup metrics: /home/jovyan/vault/aegissec-fedops/data/validation_reports/fairness/step11a_subgroup_metrics.csv
+
+Remaining production blockers:
+  - Real operational validation has not yet been completed.
+  - Independent security review has not yet been completed.

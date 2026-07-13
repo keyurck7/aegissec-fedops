@@ -89,6 +89,35 @@ OPERATIONAL_PROFILES = (
 )
 
 
+TARGETED_RULE_PROFILES = (
+    {
+        "name": "trust_warnings",
+        "affectedness_profile": "fixed",
+        "target_rule_id": "RULE-TRUST-WARNINGS-001",
+    },
+    {
+        "name": "known_exploitation",
+        "affectedness_profile": "affected",
+        "target_rule_id": "RULE-KNOWN-EXPLOITATION-001",
+    },
+    {
+        "name": "runtime_reachable",
+        "affectedness_profile": "affected",
+        "target_rule_id": "RULE-RUNTIME-REACHABLE-001",
+    },
+    {
+        "name": "high_impact",
+        "affectedness_profile": "affected",
+        "target_rule_id": "RULE-HIGH-IMPACT-001",
+    },
+    {
+        "name": "epss_missing_affected",
+        "affectedness_profile": "affected",
+        "target_rule_id": "RULE-EPSS-MISSING-AFFECTED-001",
+    },
+)
+
+
 SECTOR_LABELS = (
     {
         "label": "healthcare",
@@ -548,6 +577,46 @@ def build_expected_decision(
                 prohibit_closure=True,
             )
 
+    elif operational_profile == "trust_warnings":
+        escalate(
+            action="TRACK_STAR",
+            priority="MEDIUM",
+            deadline_hours=168,
+            human_review_required=True,
+            prohibit_closure=True,
+        )
+
+    elif operational_profile in {
+        "known_exploitation",
+        "runtime_reachable",
+    }:
+        if affectedness_status in vulnerable_states:
+            escalate(
+                action="ACT",
+                priority="CRITICAL",
+                deadline_hours=24,
+                human_review_required=True,
+                prohibit_closure=True,
+            )
+
+    elif operational_profile == "high_impact":
+        if affectedness_status in vulnerable_states:
+            escalate(
+                action="ATTEND",
+                priority="HIGH",
+                deadline_hours=72,
+            )
+
+    elif operational_profile == "epss_missing_affected":
+        if affectedness_status in vulnerable_states:
+            escalate(
+                action="TRACK_STAR",
+                priority="MEDIUM",
+                deadline_hours=168,
+                human_review_required=True,
+                prohibit_closure=True,
+            )
+
     elif operational_profile == "trust_blocked":
         escalate(
             action="HOLD",
@@ -717,6 +786,28 @@ class PolicyAssuranceRunner:
         manifest = load_json(
             manifest_file
         )
+
+        expected_case_count = manifest.get(
+            "case_count"
+        )
+        expected_pair_count = manifest.get(
+            "pair_count"
+        )
+
+        for field_name, value in (
+            ("case_count", expected_case_count),
+            ("pair_count", expected_pair_count),
+        ):
+            if (
+                not isinstance(value, int)
+                or isinstance(value, bool)
+                or value < 1
+            ):
+                raise ValueError(
+                    "Assurance manifest field "
+                    f"{field_name!r} must be a "
+                    "positive integer."
+                )
 
         manifest_checks = (
             self.verify_manifest(
@@ -1180,14 +1271,18 @@ class PolicyAssuranceRunner:
         )
 
         overall_passed = (
-            len(case_results) == 120
-            and passed_cases == 120
+            len(case_results)
+            == expected_case_count
+            and passed_cases
+            == expected_case_count
             and len(
                 counterfactual_results
             )
-            == 60
-            and passed_pairs == 60
-            and invariant_pass_cases == 120
+            == expected_pair_count
+            and passed_pairs
+            == expected_pair_count
+            and invariant_pass_cases
+            == expected_case_count
             and all(
                 check["passed"]
                 for check in manifest_checks

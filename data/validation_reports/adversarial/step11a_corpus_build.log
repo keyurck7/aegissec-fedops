@@ -1,0 +1,9 @@
+Step 11A policy-rule coverage corpus created
+Source cases preserved: 120
+Targeted cases added: 10
+Combined cases: 130
+Counterfactual pairs: 65
+Corpus: data/assurance/step11a_policy_rule_coverage_corpus.jsonl
+Summary: data/assurance/step11a_policy_rule_coverage_summary.csv
+Manifest: data/assurance/step11a_policy_rule_coverage_manifest.json
+Corpus SHA-256: d51747056c4f920d5e0b6bfb51613b4e1ee1910de82770aa179dd3fe77f68ded

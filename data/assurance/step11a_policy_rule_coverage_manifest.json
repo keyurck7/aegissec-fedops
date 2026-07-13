@@ -1,0 +1,94 @@
+{
+  "schema_version": "1.1.0",
+  "corpus_id": "AEG-ASR-POLICY-CORPUS-STEP11A-001",
+  "generator_version": "1.1.0",
+  "description": "The immutable 120-case Step 9 assurance corpus extended with ten targeted cases forming five counterfactual pairs for complete decision-policy rule coverage.",
+  "created_at": "2026-07-13T20:15:00+00:00",
+  "case_count": 130,
+  "pair_count": 65,
+  "design": {
+    "source_case_count": 120,
+    "source_pair_count": 60,
+    "targeted_pair_count": 5,
+    "targeted_profiles": [
+      {
+        "operational_profile": "trust_warnings",
+        "affectedness_profile": "fixed",
+        "target_rule_id": "RULE-TRUST-WARNINGS-001",
+        "pair_id": "PAIR-061"
+      },
+      {
+        "operational_profile": "known_exploitation",
+        "affectedness_profile": "affected",
+        "target_rule_id": "RULE-KNOWN-EXPLOITATION-001",
+        "pair_id": "PAIR-062"
+      },
+      {
+        "operational_profile": "runtime_reachable",
+        "affectedness_profile": "affected",
+        "target_rule_id": "RULE-RUNTIME-REACHABLE-001",
+        "pair_id": "PAIR-063"
+      },
+      {
+        "operational_profile": "high_impact",
+        "affectedness_profile": "affected",
+        "target_rule_id": "RULE-HIGH-IMPACT-001",
+        "pair_id": "PAIR-064"
+      },
+      {
+        "operational_profile": "epss_missing_affected",
+        "affectedness_profile": "affected",
+        "target_rule_id": "RULE-EPSS-MISSING-AFFECTED-001",
+        "pair_id": "PAIR-065"
+      }
+    ],
+    "sector_labels": [
+      "healthcare",
+      "defence_logistics"
+    ],
+    "counterfactual_differing_fields": [
+      "sector_context.primary_sector"
+    ],
+    "decision_relevant_sector_fields": []
+  },
+  "base_fixtures": {
+    "asset_context": {
+      "relative_path": "data/sample_inputs/assets/valid_healthcare_asset.json",
+      "sha256": "bc9cb98980010ca2bc1c123e808296a2e17bb34a5735cf42cd07e1efcfc64395"
+    },
+    "vulnerability_intelligence": {
+      "relative_path": "data/sample_inputs/intelligence/valid_log4shell_intelligence.json",
+      "sha256": "e2204ab8ff8736c0826ffe24d518cef462a75dcea7e498943506b0fe7f41ff1f"
+    },
+    "component_source": {
+      "relative_path": "data/sample_inputs/decisions/valid_log4shell_decision_record_policy.json",
+      "sha256": "7d557b127eb2cb6ae097be75273cad3e3d0cd0876385dd74d2439c762254f37a"
+    }
+  },
+  "artifacts": {
+    "case_schema": {
+      "relative_path": "schemas/aegis_policy_assurance_case_v1_1.schema.json",
+      "sha256": "e2a72f8736a06b2120b619d4b894c416cfd863b82d3a5e974549c2bbcf8fe677"
+    },
+    "decision_policy": {
+      "relative_path": "policies/decision/federal_base_policy_v1.yaml",
+      "sha256": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f"
+    },
+    "source_step9_corpus": {
+      "relative_path": "data/assurance/step9_policy_assurance_corpus.jsonl",
+      "sha256": "846d4e90afb82d432a2751c3ac36026e0b9e8ef0531b0e55e6199d62d153332e"
+    },
+    "source_step9_manifest": {
+      "relative_path": "data/assurance/step9_policy_assurance_manifest.json",
+      "sha256": "144e294df078e87765c7e1b2d5df3ed76d9cdcf37c1cc0227d1f830ed85700e5"
+    },
+    "corpus": {
+      "relative_path": "data/assurance/step11a_policy_rule_coverage_corpus.jsonl",
+      "sha256": "d51747056c4f920d5e0b6bfb51613b4e1ee1910de82770aa179dd3fe77f68ded"
+    },
+    "summary": {
+      "relative_path": "data/assurance/step11a_policy_rule_coverage_summary.csv",
+      "sha256": "803d94b5b50641262c095b90f3e97ad489785b3a051e037913ecb69086e5709d"
+    }
+  }
+}
