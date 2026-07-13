@@ -1,0 +1,238 @@
+{
+  "schema_version": "1.0.0",
+  "intelligence_id": "AEG-VULN-CVE-2021-44228",
+  "canonical_id": "CVE-2021-44228",
+  "record_status": "active",
+
+  "aliases": [
+    "GHSA-jfh8-c2jp-5v3q"
+  ],
+
+  "summary": "Apache Log4j2 contains a JNDI-related remote code execution vulnerability affecting vulnerable versions of the log4j-core package.",
+
+  "published_at": "2021-12-10T10:15:09Z",
+  "modified_at": "2026-07-08T06:01:28Z",
+
+  "observations": [
+    {
+      "observation_id": "OBS-NVD-LOG4J-001",
+      "source_name": "NVD",
+      "source_record_id": "CVE-2021-44228",
+      "source_authority": "authoritative",
+      "evidence_id": "AEG-EVD-NVD-LOG4J-001",
+      "retrieved_at": "2026-07-13T16:30:00Z",
+      "source_modified_at": "2025-04-03T20:53:22Z",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-44228",
+      "freshness_status": "current",
+      "retrieval_status": "success"
+    },
+
+    {
+      "observation_id": "OBS-OSV-LOG4J-001",
+      "source_name": "OSV",
+      "source_record_id": "GHSA-jfh8-c2jp-5v3q",
+      "source_authority": "high",
+      "evidence_id": "AEG-EVD-OSV-LOG4J-001",
+      "retrieved_at": "2026-07-13T16:31:00Z",
+      "source_modified_at": "2025-10-22T19:37:02Z",
+      "source_url": "https://api.osv.dev/v1/vulns/GHSA-jfh8-c2jp-5v3q",
+      "freshness_status": "current",
+      "retrieval_status": "success"
+    },
+
+    {
+      "observation_id": "OBS-KEV-LOG4J-001",
+      "source_name": "CISA_KEV",
+      "source_record_id": "CVE-2021-44228",
+      "source_authority": "authoritative",
+      "evidence_id": "AEG-EVD-KEV-LOG4J-001",
+      "retrieved_at": "2026-07-13T16:32:00Z",
+      "source_modified_at": null,
+      "source_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "freshness_status": "current",
+      "retrieval_status": "success"
+    }
+  ],
+
+  "cvss": {
+    "availability": "available",
+
+    "metrics": [
+      {
+        "metric_id": "CVSS-NVD-3.1-LOG4J-001",
+        "version": "3.1",
+        "base_score": 10.0,
+        "base_severity": "CRITICAL",
+        "vector_string": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+        "source_name": "NVD",
+        "metric_type": "primary",
+        "evidence_id": "AEG-EVD-NVD-LOG4J-001",
+        "observed_at": "2026-07-13T16:30:00Z"
+      }
+    ],
+
+    "selected_metric_id": "CVSS-NVD-3.1-LOG4J-001",
+    "selection_policy_id": "CVSS-SELECTION-POLICY-V1",
+    "missing_reason": null
+  },
+
+  "epss": {
+    "status": "missing",
+    "probability": null,
+    "percentile": null,
+    "score_date": null,
+    "retrieved_at": null,
+    "evidence_id": null,
+    "model_version": null,
+    "missing_reason": "EPSS was intentionally not collected for this contract-validation fixture. Missing EPSS must remain unknown and must not be converted to zero."
+  },
+
+  "kev": {
+    "status": "listed",
+    "checked_at": "2026-07-13T16:32:00Z",
+    "catalog_version": "CONTROLLED-FIXTURE-2026-07-13",
+    "date_added": "2021-12-10",
+    "due_date": "2021-12-24",
+    "known_ransomware_campaign_use": "not_available",
+    "required_action": "Apply vendor updates or approved mitigations according to organizational vulnerability-management policy.",
+    "evidence_id": "AEG-EVD-KEV-LOG4J-001",
+    "missing_reason": null
+  },
+
+  "affected_packages": [
+    {
+      "ecosystem": "Maven",
+      "package_name": "org.apache.logging.log4j:log4j-core",
+      "purl": "pkg:maven/org.apache.logging.log4j/log4j-core",
+      "range_status": "available",
+
+      "ranges": [
+        {
+          "range_type": "ECOSYSTEM",
+          "introduced": "2.0-beta9",
+          "fixed": "2.3.1",
+          "last_affected": null
+        },
+
+        {
+          "range_type": "ECOSYSTEM",
+          "introduced": "2.4",
+          "fixed": "2.12.2",
+          "last_affected": null
+        },
+
+        {
+          "range_type": "ECOSYSTEM",
+          "introduced": "2.13.0",
+          "fixed": "2.15.0",
+          "last_affected": null
+        }
+      ],
+
+      "evidence_ids": [
+        "AEG-EVD-OSV-LOG4J-001"
+      ],
+
+      "notes": "Affected-version ranges are source-specific. Later affectedness analysis must evaluate the installed version and applicable vendor guidance."
+    }
+  ],
+
+  "weaknesses": [
+    "CWE-20",
+    "CWE-400",
+    "CWE-502",
+    "CWE-917"
+  ],
+
+  "exploitation": {
+    "status": "known_exploited",
+    "confidence": 1.0,
+    "last_observed_at": null,
+    "evidence_ids": [
+      "AEG-EVD-KEV-LOG4J-001"
+    ],
+    "assessment_notes": "Known-exploitation status is supported by the CISA KEV observation. It does not establish that every vulnerable asset has been exploited."
+  },
+
+  "remediation": {
+    "status": "fix_available",
+
+    "fixed_versions": [
+      "2.3.1",
+      "2.12.2",
+      "2.12.3",
+      "2.16.0"
+    ],
+
+    "mitigations": [
+      "Upgrade to an applicable vendor-supported fixed release.",
+      "Where immediate upgrade is impossible, apply the vendor-approved temporary mitigation and schedule urgent replacement.",
+      "Validate that the affected log4j-core component is no longer present or reachable after remediation."
+    ],
+
+    "vendor_advisory_urls": [
+      "https://logging.apache.org/log4j/2.x/security.html"
+    ],
+
+    "evidence_ids": [
+      "AEG-EVD-NVD-LOG4J-001",
+      "AEG-EVD-OSV-LOG4J-001"
+    ]
+  },
+
+  "source_assessment": {
+    "source_count": 3,
+    "authoritative_source_count": 2,
+    "completeness_score": 0.86,
+    "freshness_status": "current",
+    "last_refreshed_at": "2026-07-13T16:32:00Z"
+  },
+
+  "conflicts": [],
+
+  "provenance": {
+    "origin_type": "synthetic_fixture",
+
+    "source_evidence_ids": [
+      "AEG-EVD-NVD-LOG4J-001",
+      "AEG-EVD-OSV-LOG4J-001",
+      "AEG-EVD-KEV-LOG4J-001"
+    ],
+
+    "normalizer_version": "0.1.0",
+    "merge_policy_id": "INTELLIGENCE-MERGE-POLICY-V1",
+    "generated_at": "2026-07-13T16:35:00Z"
+  },
+
+  "validation": {
+    "schema_valid": true,
+    "business_rules_valid": true,
+    "status": "accepted_with_warnings",
+    "validated_at": "2026-07-13T16:36:00Z",
+    "validator_version": "0.1.0",
+    "errors": [],
+    "warnings": [
+      {
+        "code": "EPSS_MISSING",
+        "message": "EPSS data is missing and must remain unknown.",
+        "field_path": "epss.status"
+      },
+
+      {
+        "code": "SYNTHETIC_INTELLIGENCE_FIXTURE",
+        "message": "This record is a controlled contract-validation fixture built from public information.",
+        "field_path": "provenance.origin_type"
+      }
+    ]
+  },
+
+  "tags": [
+    "log4shell",
+    "known-exploited",
+    "maven",
+    "controlled-fixture"
+  ],
+
+  "created_at": "2026-07-13T16:36:00Z",
+  "updated_at": null
+}
