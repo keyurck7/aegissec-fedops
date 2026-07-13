@@ -1,0 +1,188 @@
+{
+  "schema_version": "1.0.0",
+  "evidence_id": "AEG-EVD-REQ-000001",
+  "evidence_type": "requirements_txt",
+  "title": "Healthcare scheduling application requirements.txt",
+  "description": "Authorized demonstration dependency inventory for the hospital scheduling scenario.",
+
+  "source": {
+    "source_id": "SRC-DEMO-APP-001",
+    "source_name": "AegisSec Controlled Healthcare Demo Application",
+    "source_category": "authorized_internal",
+    "source_authority": "high",
+    "publisher": "AegisSec Project Team",
+    "source_url": null,
+    "api_endpoint": null,
+    "external_reference": "DEMO-HEALTH-APP-001"
+  },
+
+  "authorization": {
+    "status": "authorized",
+    "collection_basis": "approved_test_fixture",
+    "approved_use": "demonstration",
+    "authorization_reference": "AEGIS-DEMO-DATA-POLICY-V1",
+    "contains_restricted_data": false,
+    "restrictions": [
+      "Use only within the AegisSec controlled demonstration environment"
+    ]
+  },
+
+  "classification": {
+    "data_sensitivity": "internal",
+    "handling_label": "internal_use_only",
+    "contains_personal_data": false,
+    "contains_security_sensitive_data": false
+  },
+
+  "collection": {
+    "collected_at": "2026-07-13T15:00:00Z",
+    "valid_from": "2026-07-13T15:00:00Z",
+    "valid_until": null,
+    "collection_method": "file_upload",
+    "collector": "AegisSec Ingestion Pipeline",
+    "collection_run_id": "RUN-20260713-001"
+  },
+
+  "artifact": {
+    "filename": "requirements.txt",
+    "media_type": "text/plain",
+    "storage_location": "data/sample_inputs/healthcare/requirements.txt",
+    "size_bytes": 184,
+    "encoding": "utf-8"
+  },
+
+  "integrity": {
+    "status": "verified",
+    "hash_algorithm": "sha256",
+    "content_hash": "6f2e01f503abca42a1d6a0e857f04ff6094b7434504ea0824d37fa27150a6898",
+    "signature_status": "not_present",
+    "signature_reference": null
+  },
+
+  "freshness": {
+    "evaluated_at": "2026-07-13T15:01:00Z",
+    "status": "current",
+    "age_seconds": 60,
+    "maximum_age_seconds": 86400,
+    "freshness_policy_id": "FRESHNESS-DEPENDENCY-FILE-V1"
+  },
+
+  "parser": {
+    "parser_name": "AegisSec Requirements Parser",
+    "parser_version": "0.1.0",
+    "parse_status": "success",
+    "parser_confidence": 0.98,
+    "warnings": []
+  },
+
+  "provenance": {
+    "origin_type": "observed",
+    "parent_evidence_ids": [],
+    "transformation_steps": [
+      {
+        "step_id": "STEP-001",
+        "operation": "Load and parse authorized requirements.txt file",
+        "tool": "requirements_parser",
+        "tool_version": "0.1.0",
+        "configuration_hash": null,
+        "executed_at": "2026-07-13T15:00:30Z"
+      }
+    ],
+    "reproducible": true
+  },
+
+  "trust": {
+    "authenticity": {
+      "score": 0.95,
+      "status": "confirmed",
+      "reason_codes": [
+        "AUTHORIZED_CONTROLLED_SOURCE"
+      ]
+    },
+    "integrity": {
+      "score": 1.0,
+      "status": "confirmed",
+      "reason_codes": [
+        "SHA256_VERIFIED"
+      ]
+    },
+    "completeness": {
+      "score": 0.9,
+      "status": "estimated",
+      "reason_codes": [
+        "DEPENDENCY_NAMES_AND_VERSIONS_PRESENT"
+      ]
+    },
+    "freshness": {
+      "score": 1.0,
+      "status": "confirmed",
+      "reason_codes": [
+        "WITHIN_FRESHNESS_WINDOW"
+      ]
+    },
+    "consistency": {
+      "score": 0.8,
+      "status": "estimated",
+      "reason_codes": [
+        "NO_CONFLICTS_DETECTED"
+      ]
+    },
+    "source_authority": {
+      "score": 0.9,
+      "status": "confirmed",
+      "reason_codes": [
+        "AUTHORIZED_INTERNAL_SOURCE"
+      ]
+    },
+    "parser_confidence": {
+      "score": 0.98,
+      "status": "confirmed",
+      "reason_codes": [
+        "PARSER_COMPLETED_SUCCESSFULLY"
+      ]
+    },
+    "identity_confidence": {
+      "score": 0.9,
+      "status": "estimated",
+      "reason_codes": [
+        "PACKAGE_NAMES_NORMALIZED"
+      ]
+    },
+    "overall_score": 0.93,
+    "summary_level": "high",
+    "calculation_policy_id": "TRUST-POLICY-V1"
+  },
+
+  "validation": {
+    "schema_valid": true,
+    "business_rules_valid": true,
+    "status": "accepted",
+    "validated_at": "2026-07-13T15:01:10Z",
+    "validator_version": "0.1.0",
+    "errors": [],
+    "warnings": []
+  },
+
+  "component_summary": {
+    "component_count": 8,
+    "direct_dependency_count": 8,
+    "transitive_dependency_count": null,
+    "components_with_versions": 8,
+    "components_with_purl": 0
+  },
+
+  "asset_references": [
+    "AEG-AST-HOSP-SCHED-001"
+  ],
+
+  "conflicts": [],
+
+  "tags": [
+    "healthcare",
+    "dependency-inventory",
+    "controlled-demo"
+  ],
+
+  "created_at": "2026-07-13T15:01:10Z",
+  "updated_at": null
+}

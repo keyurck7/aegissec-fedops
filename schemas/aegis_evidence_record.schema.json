@@ -1,0 +1,889 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aegissec.example/schemas/aegis-evidence-record-v1.0.0.json",
+  "title": "AegisSec Evidence Record",
+  "description": "Canonical metadata and provenance envelope for every evidence object ingested by AegisSec-FedOps.",
+  "type": "object",
+  "additionalProperties": false,
+
+  "required": [
+    "schema_version",
+    "evidence_id",
+    "evidence_type",
+    "title",
+    "source",
+    "authorization",
+    "collection",
+    "artifact",
+    "integrity",
+    "parser",
+    "provenance",
+    "trust",
+    "validation",
+    "created_at"
+  ],
+
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+
+    "evidence_id": {
+      "type": "string",
+      "pattern": "^AEG-EVD-[A-Z0-9][A-Z0-9._-]{5,99}$",
+      "description": "Stable identifier assigned by AegisSec."
+    },
+
+    "evidence_type": {
+      "type": "string",
+      "enum": [
+        "sbom_cyclonedx",
+        "sbom_spdx",
+        "requirements_txt",
+        "package_json",
+        "package_lock",
+        "poetry_lock",
+        "pipfile_lock",
+        "dockerfile",
+        "container_manifest",
+        "scanner_export",
+        "asset_inventory",
+        "cmdb_export",
+        "osv_response",
+        "nvd_response",
+        "epss_response",
+        "cisa_kev_catalog",
+        "github_advisory",
+        "vendor_advisory",
+        "sector_advisory",
+        "screenshot",
+        "human_attestation",
+        "other"
+      ]
+    },
+
+    "title": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 300
+    },
+
+    "description": {
+      "type": ["string", "null"],
+      "maxLength": 2000
+    },
+
+    "source": {
+      "$ref": "#/$defs/source"
+    },
+
+    "authorization": {
+      "$ref": "#/$defs/authorization"
+    },
+
+    "classification": {
+      "$ref": "#/$defs/classification"
+    },
+
+    "collection": {
+      "$ref": "#/$defs/collection"
+    },
+
+    "artifact": {
+      "$ref": "#/$defs/artifact"
+    },
+
+    "integrity": {
+      "$ref": "#/$defs/integrity"
+    },
+
+    "freshness": {
+      "$ref": "#/$defs/freshness"
+    },
+
+    "parser": {
+      "$ref": "#/$defs/parser"
+    },
+
+    "provenance": {
+      "$ref": "#/$defs/provenance"
+    },
+
+    "trust": {
+      "$ref": "#/$defs/trust"
+    },
+
+    "validation": {
+      "$ref": "#/$defs/validation"
+    },
+
+    "component_summary": {
+      "$ref": "#/$defs/componentSummary"
+    },
+
+    "asset_references": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^AEG-AST-[A-Z0-9][A-Z0-9._-]{3,99}$"
+      },
+      "default": []
+    },
+
+    "conflicts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/conflict"
+      },
+      "default": []
+    },
+
+    "tags": {
+      "type": "array",
+      "uniqueItems": true,
+      "maxItems": 50,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 100
+      },
+      "default": []
+    },
+
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+
+    "updated_at": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    }
+  },
+
+  "$defs": {
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_id",
+        "source_name",
+        "source_category",
+        "source_authority"
+      ],
+      "properties": {
+        "source_id": {
+          "type": "string",
+          "pattern": "^SRC-[A-Z0-9][A-Z0-9._-]{2,99}$"
+        },
+        "source_name": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 200
+        },
+        "source_category": {
+          "type": "string",
+          "enum": [
+            "official_government",
+            "official_vendor",
+            "authorized_internal",
+            "open_source_project",
+            "commercial_provider",
+            "research",
+            "human_submission",
+            "unknown"
+          ]
+        },
+        "source_authority": {
+          "type": "string",
+          "enum": [
+            "authoritative",
+            "high",
+            "medium",
+            "low",
+            "unknown"
+          ]
+        },
+        "publisher": {
+          "type": ["string", "null"],
+          "maxLength": 200
+        },
+        "source_url": {
+          "type": ["string", "null"],
+          "format": "uri"
+        },
+        "api_endpoint": {
+          "type": ["string", "null"],
+          "format": "uri"
+        },
+        "external_reference": {
+          "type": ["string", "null"],
+          "maxLength": 500
+        }
+      }
+    },
+
+    "authorization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "collection_basis",
+        "approved_use",
+        "contains_restricted_data"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "authorized",
+            "publicly_available",
+            "conditionally_authorized",
+            "authorization_unknown",
+            "unauthorized"
+          ]
+        },
+        "collection_basis": {
+          "type": "string",
+          "enum": [
+            "official_public_api",
+            "official_public_download",
+            "customer_provided",
+            "internally_generated",
+            "approved_test_fixture",
+            "human_attestation",
+            "unknown"
+          ]
+        },
+        "approved_use": {
+          "type": "string",
+          "enum": [
+            "production_analysis",
+            "research",
+            "demonstration",
+            "testing",
+            "training",
+            "prohibited"
+          ]
+        },
+        "authorization_reference": {
+          "type": ["string", "null"],
+          "maxLength": 500
+        },
+        "contains_restricted_data": {
+          "type": "boolean"
+        },
+        "restrictions": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "maxLength": 300
+          },
+          "default": []
+        }
+      }
+    },
+
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "data_sensitivity",
+        "handling_label"
+      ],
+      "properties": {
+        "data_sensitivity": {
+          "type": "string",
+          "enum": [
+            "public",
+            "internal",
+            "confidential",
+            "restricted",
+            "unknown"
+          ]
+        },
+        "handling_label": {
+          "type": "string",
+          "enum": [
+            "public",
+            "internal_use_only",
+            "need_to_know",
+            "restricted_processing",
+            "unknown"
+          ]
+        },
+        "contains_personal_data": {
+          "type": "boolean",
+          "default": false
+        },
+        "contains_security_sensitive_data": {
+          "type": "boolean",
+          "default": false
+        }
+      }
+    },
+
+    "collection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "collected_at",
+        "collection_method",
+        "collector"
+      ],
+      "properties": {
+        "collected_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "valid_from": {
+          "type": ["string", "null"],
+          "format": "date-time"
+        },
+        "valid_until": {
+          "type": ["string", "null"],
+          "format": "date-time"
+        },
+        "collection_method": {
+          "type": "string",
+          "enum": [
+            "api",
+            "file_upload",
+            "repository_checkout",
+            "local_generation",
+            "manual_entry",
+            "approved_scanner_import",
+            "batch_import",
+            "other"
+          ]
+        },
+        "collector": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 200
+        },
+        "collection_run_id": {
+          "type": ["string", "null"],
+          "maxLength": 150
+        }
+      }
+    },
+
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "filename",
+        "media_type",
+        "storage_location",
+        "size_bytes"
+      ],
+      "properties": {
+        "filename": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "media_type": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 150
+        },
+        "storage_location": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000
+        },
+        "size_bytes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "encoding": {
+          "type": ["string", "null"],
+          "maxLength": 50
+        }
+      }
+    },
+
+    "integrity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "hash_algorithm"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "verified",
+            "partially_verified",
+            "not_verified",
+            "failed"
+          ]
+        },
+        "hash_algorithm": {
+          "type": "string",
+          "enum": [
+            "sha256",
+            "sha384",
+            "sha512",
+            "none"
+          ]
+        },
+        "content_hash": {
+          "type": ["string", "null"],
+          "pattern": "^[a-fA-F0-9]{64,128}$"
+        },
+        "signature_status": {
+          "type": "string",
+          "enum": [
+            "valid",
+            "invalid",
+            "not_present",
+            "not_checked",
+            "unknown"
+          ],
+          "default": "not_checked"
+        },
+        "signature_reference": {
+          "type": ["string", "null"],
+          "maxLength": 1000
+        }
+      }
+    },
+
+    "freshness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evaluated_at",
+        "status"
+      ],
+      "properties": {
+        "evaluated_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "current",
+            "aging",
+            "stale",
+            "expired",
+            "unknown"
+          ]
+        },
+        "age_seconds": {
+          "type": ["integer", "null"],
+          "minimum": 0
+        },
+        "maximum_age_seconds": {
+          "type": ["integer", "null"],
+          "minimum": 0
+        },
+        "freshness_policy_id": {
+          "type": ["string", "null"],
+          "maxLength": 150
+        }
+      }
+    },
+
+    "parser": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "parser_name",
+        "parser_version",
+        "parse_status"
+      ],
+      "properties": {
+        "parser_name": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 150
+        },
+        "parser_version": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 50
+        },
+        "parse_status": {
+          "type": "string",
+          "enum": [
+            "success",
+            "partial",
+            "failed",
+            "not_required"
+          ]
+        },
+        "parser_confidence": {
+          "type": ["number", "null"],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "warnings": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 500
+          },
+          "default": []
+        }
+      }
+    },
+
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "origin_type",
+        "transformation_steps",
+        "parent_evidence_ids"
+      ],
+      "properties": {
+        "origin_type": {
+          "type": "string",
+          "enum": [
+            "observed",
+            "retrieved",
+            "human_entered",
+            "derived",
+            "synthetic",
+            "model_generated"
+          ]
+        },
+        "parent_evidence_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^AEG-EVD-[A-Z0-9][A-Z0-9._-]{5,99}$"
+          }
+        },
+        "transformation_steps": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/transformationStep"
+          }
+        },
+        "reproducible": {
+          "type": "boolean",
+          "default": true
+        }
+      }
+    },
+
+    "transformationStep": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "step_id",
+        "operation",
+        "tool",
+        "tool_version",
+        "executed_at"
+      ],
+      "properties": {
+        "step_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "operation": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 300
+        },
+        "tool": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 150
+        },
+        "tool_version": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "configuration_hash": {
+          "type": ["string", "null"],
+          "maxLength": 128
+        },
+        "executed_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+
+    "trust": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "authenticity",
+        "integrity",
+        "completeness",
+        "freshness",
+        "consistency",
+        "source_authority",
+        "parser_confidence",
+        "identity_confidence",
+        "summary_level"
+      ],
+      "properties": {
+        "authenticity": {
+          "$ref": "#/$defs/trustScore"
+        },
+        "integrity": {
+          "$ref": "#/$defs/trustScore"
+        },
+        "completeness": {
+          "$ref": "#/$defs/trustScore"
+        },
+        "freshness": {
+          "$ref": "#/$defs/trustScore"
+        },
+        "consistency": {
+          "$ref": "#/$defs/trustScore"
+        },
+        "source_authority": {
+          "$ref": "#/$defs/trustScore"
+        },
+        "parser_confidence": {
+          "$ref": "#/$defs/trustScore"
+        },
+        "identity_confidence": {
+          "$ref": "#/$defs/trustScore"
+        },
+        "overall_score": {
+          "type": ["number", "null"],
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Calculated by the trust engine. It must not be entered as an unsupported guess."
+        },
+        "summary_level": {
+          "type": "string",
+          "enum": [
+            "high",
+            "medium",
+            "low",
+            "rejected",
+            "not_calculated"
+          ]
+        },
+        "calculation_policy_id": {
+          "type": ["string", "null"],
+          "maxLength": 150
+        }
+      }
+    },
+
+    "trustScore": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "score",
+        "status",
+        "reason_codes"
+      ],
+      "properties": {
+        "score": {
+          "type": ["number", "null"],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "confirmed",
+            "estimated",
+            "unknown",
+            "failed",
+            "not_evaluated"
+          ]
+        },
+        "reason_codes": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Z][A-Z0-9_]{2,99}$"
+          }
+        }
+      }
+    },
+
+    "validation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_valid",
+        "business_rules_valid",
+        "status",
+        "validated_at",
+        "validator_version"
+      ],
+      "properties": {
+        "schema_valid": {
+          "type": "boolean"
+        },
+        "business_rules_valid": {
+          "type": "boolean"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "accepted",
+            "accepted_with_warnings",
+            "quarantined",
+            "rejected",
+            "pending"
+          ]
+        },
+        "validated_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "validator_version": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/validationMessage"
+          },
+          "default": []
+        },
+        "warnings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/validationMessage"
+          },
+          "default": []
+        }
+      }
+    },
+
+    "validationMessage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "code",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]{2,99}$"
+        },
+        "message": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000
+        },
+        "field_path": {
+          "type": ["string", "null"],
+          "maxLength": 500
+        }
+      }
+    },
+
+    "componentSummary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "component_count"
+      ],
+      "properties": {
+        "component_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "direct_dependency_count": {
+          "type": ["integer", "null"],
+          "minimum": 0
+        },
+        "transitive_dependency_count": {
+          "type": ["integer", "null"],
+          "minimum": 0
+        },
+        "components_with_versions": {
+          "type": ["integer", "null"],
+          "minimum": 0
+        },
+        "components_with_purl": {
+          "type": ["integer", "null"],
+          "minimum": 0
+        }
+      }
+    },
+
+    "conflict": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "conflict_id",
+        "conflict_type",
+        "severity",
+        "description",
+        "resolution_status"
+      ],
+      "properties": {
+        "conflict_id": {
+          "type": "string",
+          "pattern": "^CON-[A-Z0-9][A-Z0-9._-]{3,99}$"
+        },
+        "conflict_type": {
+          "type": "string",
+          "enum": [
+            "version_mismatch",
+            "component_identity_mismatch",
+            "source_disagreement",
+            "timestamp_conflict",
+            "hash_mismatch",
+            "schema_conflict",
+            "authorization_conflict",
+            "other"
+          ]
+        },
+        "severity": {
+          "type": "string",
+          "enum": [
+            "critical",
+            "high",
+            "medium",
+            "low"
+          ]
+        },
+        "description": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 1000
+        },
+        "related_evidence_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^AEG-EVD-[A-Z0-9][A-Z0-9._-]{5,99}$"
+          }
+        },
+        "resolution_status": {
+          "type": "string",
+          "enum": [
+            "open",
+            "under_review",
+            "resolved",
+            "accepted_exception"
+          ]
+        }
+      }
+    }
+  }
+}
