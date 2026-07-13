@@ -1,0 +1,153 @@
+policy:
+  policy_id: AEGIS-EVIDENCE-TRUST-POLICY
+  version: 1.0.0
+  aggregation_method: weighted_geometric_mean
+  description: >
+    Policy for calculating multidimensional evidence trust while preventing
+    strong dimensions from compensating for failed authenticity, integrity,
+    freshness, consistency, parser or identity controls.
+
+dimensions:
+  authenticity:
+    weight: 0.16
+    minimum_score: 0.50
+
+  integrity:
+    weight: 0.18
+    minimum_score: 0.60
+
+  completeness:
+    weight: 0.12
+    minimum_score: 0.50
+
+  freshness:
+    weight: 0.12
+    minimum_score: 0.50
+
+  consistency:
+    weight: 0.14
+    minimum_score: 0.50
+
+  source_authority:
+    weight: 0.10
+    minimum_score: 0.45
+
+  parser_confidence:
+    weight: 0.10
+    minimum_score: 0.60
+
+  identity_confidence:
+    weight: 0.08
+    minimum_score: 0.55
+
+thresholds:
+  high: 0.85
+  medium: 0.65
+  low: 0.40
+
+mappings:
+  authorization_status:
+    authorized: 1.00
+    publicly_available: 0.95
+    conditionally_authorized: 0.70
+    authorization_unknown: 0.20
+    unauthorized: 0.00
+
+  collection_basis:
+    official_public_api: 1.00
+    official_public_download: 0.95
+    customer_provided: 0.90
+    internally_generated: 0.90
+    approved_test_fixture: 0.85
+    human_attestation: 0.65
+    unknown: 0.25
+
+  source_category:
+    official_government: 1.00
+    official_vendor: 0.95
+    authorized_internal: 0.90
+    open_source_project: 0.82
+    commercial_provider: 0.80
+    research: 0.75
+    human_submission: 0.60
+    unknown: 0.25
+
+  source_authority:
+    authoritative: 1.00
+    high: 0.90
+    medium: 0.70
+    low: 0.35
+    unknown: 0.25
+
+  integrity_status:
+    verified: 1.00
+    partially_verified: 0.70
+    not_verified: 0.35
+    failed: 0.00
+
+  freshness_status:
+    current: 1.00
+    aging: 0.72
+    stale: 0.30
+    expired: 0.10
+    unknown: 0.35
+
+  conflict_status:
+    no_conflicts: 1.00
+    resolved_low: 0.95
+    resolved_medium: 0.90
+    resolved_high: 0.82
+    resolved_critical: 0.70
+    open_low: 0.75
+    open_medium: 0.55
+    open_high: 0.25
+    open_critical: 0.00
+
+component_bearing_evidence_types:
+  - sbom_cyclonedx
+  - sbom_spdx
+  - requirements_txt
+  - package_json
+  - package_lock
+  - poetry_lock
+  - pipfile_lock
+  - dockerfile
+  - container_manifest
+  - scanner_export
+
+purl_expected_evidence_types:
+  - sbom_cyclonedx
+  - sbom_spdx
+  - package_lock
+  - poetry_lock
+  - pipfile_lock
+  - container_manifest
+  - scanner_export
+
+hard_rejection_rules:
+  - unauthorized_evidence
+  - prohibited_use
+  - integrity_failed
+  - invalid_signature
+  - parser_failed
+  - open_critical_conflict
+
+quarantine_rules:
+  - authorization_unknown
+  - conditional_authorization
+  - open_high_conflict
+  - stale_or_expired
+  - mandatory_dimension_below_floor
+
+warning_rules:
+  - synthetic_or_model_generated
+  - aging_evidence
+  - signature_not_verified
+  - partial_parse
+  - trust_declaration_mismatch
+
+output_actions:
+  accept: ACCEPT
+  accept_with_warnings: ACCEPT_WITH_WARNINGS
+  quarantine: QUARANTINE
+  reject: REJECT

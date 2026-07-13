@@ -1,0 +1,167 @@
+{
+  "assessment_id": "AEG-TRUST-SBOM-LOG4J-001",
+  "evidence_id": "AEG-EVD-SBOM-LOG4J-001",
+  "policy": {
+    "policy_id": "AEGIS-EVIDENCE-TRUST-POLICY",
+    "version": "1.0.0",
+    "sha256": "6a4b41df0d5084bdc8a82c6c82714376253af9229ab1474dc73727d966359249",
+    "aggregation_method": "weighted_geometric_mean"
+  },
+  "dimensions": {
+    "authenticity": {
+      "name": "authenticity",
+      "score": 0.9375,
+      "status": "estimated",
+      "weight": 0.16,
+      "minimum_score": 0.5,
+      "below_floor": false,
+      "reason_codes": [
+        "AUTHORIZATION_AUTHORIZED",
+        "COLLECTION_BASIS_APPROVED_TEST_FIXTURE",
+        "SOURCE_CATEGORY_AUTHORIZED_INTERNAL"
+      ],
+      "evidence_paths": [
+        "authorization.status",
+        "authorization.collection_basis",
+        "authorization.approved_use",
+        "source.source_category"
+      ]
+    },
+    "integrity": {
+      "name": "integrity",
+      "score": 1.0,
+      "status": "confirmed",
+      "weight": 0.18,
+      "minimum_score": 0.6,
+      "below_floor": false,
+      "reason_codes": [
+        "INTEGRITY_VERIFIED",
+        "CRYPTOGRAPHIC_HASH_PRESENT",
+        "SIGNATURE_NOT_VERIFIED"
+      ],
+      "evidence_paths": [
+        "integrity.status",
+        "integrity.hash_algorithm",
+        "integrity.content_hash",
+        "integrity.signature_status"
+      ]
+    },
+    "completeness": {
+      "name": "completeness",
+      "score": 1.0,
+      "status": "estimated",
+      "weight": 0.12,
+      "minimum_score": 0.5,
+      "below_floor": false,
+      "reason_codes": [
+        "PURL_EXPECTED_FOR_EVIDENCE_TYPE",
+        "COMPONENT_VERSION_COVERAGE_EVALUATED",
+        "COMPONENT_PURL_COVERAGE_EVALUATED"
+      ],
+      "evidence_paths": [
+        "component_summary.component_count",
+        "component_summary.components_with_versions",
+        "component_summary.components_with_purl"
+      ]
+    },
+    "freshness": {
+      "name": "freshness",
+      "score": 1.0,
+      "status": "confirmed",
+      "weight": 0.12,
+      "minimum_score": 0.5,
+      "below_floor": false,
+      "reason_codes": [
+        "FRESHNESS_CURRENT",
+        "AGE_WITHIN_HALF_FRESHNESS_WINDOW"
+      ],
+      "evidence_paths": [
+        "freshness.status",
+        "freshness.age_seconds",
+        "freshness.maximum_age_seconds",
+        "freshness.evaluated_at"
+      ]
+    },
+    "consistency": {
+      "name": "consistency",
+      "score": 1.0,
+      "status": "confirmed",
+      "weight": 0.14,
+      "minimum_score": 0.5,
+      "below_floor": false,
+      "reason_codes": [
+        "NO_CONFLICTS_DETECTED"
+      ],
+      "evidence_paths": [
+        "conflicts"
+      ]
+    },
+    "source_authority": {
+      "name": "source_authority",
+      "score": 0.9,
+      "status": "confirmed",
+      "weight": 0.1,
+      "minimum_score": 0.45,
+      "below_floor": false,
+      "reason_codes": [
+        "SOURCE_AUTHORITY_HIGH"
+      ],
+      "evidence_paths": [
+        "source.source_authority"
+      ]
+    },
+    "parser_confidence": {
+      "name": "parser_confidence",
+      "score": 1.0,
+      "status": "confirmed",
+      "weight": 0.1,
+      "minimum_score": 0.6,
+      "below_floor": false,
+      "reason_codes": [
+        "PARSER_STATUS_SUCCESS"
+      ],
+      "evidence_paths": [
+        "parser.parse_status",
+        "parser.parser_confidence",
+        "parser.warnings"
+      ]
+    },
+    "identity_confidence": {
+      "name": "identity_confidence",
+      "score": 1.0,
+      "status": "estimated",
+      "weight": 0.08,
+      "minimum_score": 0.55,
+      "below_floor": false,
+      "reason_codes": [
+        "VERSION_IDENTITY_COVERAGE_EVALUATED",
+        "PURL_IDENTITY_COVERAGE_EVALUATED"
+      ],
+      "evidence_paths": [
+        "component_summary.component_count",
+        "component_summary.components_with_versions",
+        "component_summary.components_with_purl"
+      ]
+    }
+  },
+  "aggregate_score": 0.9794,
+  "trust_level": "high",
+  "action": "ACCEPT_WITH_WARNINGS",
+  "accepted": true,
+  "gate_results": [],
+  "warnings": [
+    {
+      "code": "SIGNATURE_NOT_VERIFIED",
+      "severity": "low",
+      "message": "No valid digital signature was verified.",
+      "field_path": "integrity.signature_status"
+    },
+    {
+      "code": "NON_OPERATIONAL_EVIDENCE_ORIGIN",
+      "severity": "medium",
+      "message": "Synthetic or model-generated evidence must not be represented as observed operational evidence.",
+      "field_path": "provenance.origin_type"
+    }
+  ],
+  "assessed_at": "2026-07-13T16:37:05.009625+00:00"
+}

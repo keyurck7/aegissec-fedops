@@ -11,3 +11,4 @@ pytest
 pydantic
 jsonschema
 rich
+PyYAML>=6.0,<7
