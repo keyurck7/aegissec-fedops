@@ -1,0 +1,4 @@
+finding_id,asset_id,component_name,component_version,canonical_id,kev_flag,epss_probability,epss_percentile,cvss_score,internet_accessible,asset_criticality,affectedness,input_trust,patient_safety_impact,mission_readiness_impact
+FND-STRICT-001,AEG-AST-HOSP-SCHED-001,log4j-core,2.14.1,CVE-2021-44228,False,,0.999,10.0,true,high,affected,high,high,not_applicable
+FND-STRICT-002,AEG-AST-PORTAL-001,django,3.2.10,CVE-2022-34265,0,0,0.25,7.5,1,medium,unknown,medium,unknown,unknown
+FND-STRICT-003,AEG-AST-TEST-001,example-component,1.0.0,CVE-2024-12345,maybe,NaN,1.5,11.0,yes,critical,not_sure,ultra,severe,severe
