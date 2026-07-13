@@ -1,0 +1,1458 @@
+{
+  "baseline_validation": {
+    "decision_record_hash_valid": true,
+    "decision_record_status": "accepted_with_warnings",
+    "decision_record_valid": true,
+    "evidence_record_status": "accepted_with_warnings",
+    "evidence_record_valid": true
+  },
+  "catalog": {
+    "catalog_id": "AEGIS-TAMPER-SCENARIO-CATALOG",
+    "harness_version": "0.1.0",
+    "relative_path": "policies/assurance/tamper_scenario_catalog_v1.yaml",
+    "sha256": "572acb31d30d4ff34b887a86c73b2f07714eb015af833d2b715da9ab239e6a24",
+    "version": "1.0.0"
+  },
+  "generated_at": "2026-07-13T20:16:14.918725+00:00",
+  "harness_error_attack_ids": [],
+  "input_integrity_checks_after": {
+    "asset_context": {
+      "actual_sha256": "bc9cb98980010ca2bc1c123e808296a2e17bb34a5735cf42cd07e1efcfc64395",
+      "expected_sha256": "bc9cb98980010ca2bc1c123e808296a2e17bb34a5735cf42cd07e1efcfc64395",
+      "passed": true,
+      "relative_path": "data/sample_inputs/assets/valid_healthcare_asset.json"
+    },
+    "assurance_corpus": {
+      "actual_sha256": "d51747056c4f920d5e0b6bfb51613b4e1ee1910de82770aa179dd3fe77f68ded",
+      "expected_sha256": "d51747056c4f920d5e0b6bfb51613b4e1ee1910de82770aa179dd3fe77f68ded",
+      "passed": true,
+      "relative_path": "data/assurance/step11a_policy_rule_coverage_corpus.jsonl"
+    },
+    "assurance_manifest": {
+      "actual_sha256": "d1fdd9308b973e5248e464daf528a376bca6bc6c27b9d45f267b88f842797465",
+      "expected_sha256": "d1fdd9308b973e5248e464daf528a376bca6bc6c27b9d45f267b88f842797465",
+      "passed": true,
+      "relative_path": "data/assurance/step11a_policy_rule_coverage_manifest.json"
+    },
+    "decision_policy": {
+      "actual_sha256": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f",
+      "expected_sha256": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f",
+      "passed": true,
+      "relative_path": "policies/decision/federal_base_policy_v1.yaml"
+    },
+    "decision_record": {
+      "actual_sha256": "82cc8dfa5d4c82cdb864e9d769236376ed34b3630f0a81ba9f31a244fb65a878",
+      "expected_sha256": "82cc8dfa5d4c82cdb864e9d769236376ed34b3630f0a81ba9f31a244fb65a878",
+      "passed": true,
+      "relative_path": "data/sample_inputs/decisions/valid_log4shell_decision_record.json"
+    },
+    "decision_schema": {
+      "actual_sha256": "e54a394ef9c772d3dce070f359051d6accf5761b1983ca9721e03e80a9e54ba3",
+      "expected_sha256": "e54a394ef9c772d3dce070f359051d6accf5761b1983ca9721e03e80a9e54ba3",
+      "passed": true,
+      "relative_path": "schemas/aegis_decision_record.schema.json"
+    },
+    "evidence_record": {
+      "actual_sha256": "21ed78284567bc33bb463fb2525941829b80c7e21144d17677f022d168a3c2de",
+      "expected_sha256": "21ed78284567bc33bb463fb2525941829b80c7e21144d17677f022d168a3c2de",
+      "passed": true,
+      "relative_path": "data/sample_inputs/evidence/valid_log4j_sbom_evidence.json"
+    },
+    "evidence_schema": {
+      "actual_sha256": "adaef9c4a1a837fddebee3d40cc03d6d99592682b3c42f1c24dded2fc74ce772",
+      "expected_sha256": "adaef9c4a1a837fddebee3d40cc03d6d99592682b3c42f1c24dded2fc74ce772",
+      "passed": true,
+      "relative_path": "schemas/aegis_evidence_record.schema.json"
+    },
+    "step11a_assurance_report": {
+      "actual_sha256": "6226d36646b0d00a22b9c7f4d7efcea216e705bbd1143b1caef07a97e41fd710",
+      "expected_sha256": "6226d36646b0d00a22b9c7f4d7efcea216e705bbd1143b1caef07a97e41fd710",
+      "passed": true,
+      "relative_path": "data/validation_reports/assurance/step11a_policy_rule_coverage_report.json"
+    },
+    "step11a_release_report": {
+      "actual_sha256": "3ab83f8962cc6b2dfa4014e59fb1c0a33f399e2b4bd29fa6f822de7ba19e6634",
+      "expected_sha256": "3ab83f8962cc6b2dfa4014e59fb1c0a33f399e2b4bd29fa6f822de7ba19e6634",
+      "passed": true,
+      "relative_path": "data/validation_reports/fairness/step11a_rule_coverage_evaluation_report.json"
+    },
+    "step11b_mutation_report": {
+      "actual_sha256": "73365a05f63fe4ee0cf51fed471c8a3846679f4ae737cc033be670220de5ceb1",
+      "expected_sha256": "73365a05f63fe4ee0cf51fed471c8a3846679f4ae737cc033be670220de5ceb1",
+      "passed": true,
+      "relative_path": "data/validation_reports/mutation/step11b_policy_mutation_report.json"
+    },
+    "vulnerability_intelligence": {
+      "actual_sha256": "e2204ab8ff8736c0826ffe24d518cef462a75dcea7e498943506b0fe7f41ff1f",
+      "expected_sha256": "e2204ab8ff8736c0826ffe24d518cef462a75dcea7e498943506b0fe7f41ff1f",
+      "passed": true,
+      "relative_path": "data/sample_inputs/intelligence/valid_log4shell_intelligence.json"
+    }
+  },
+  "input_integrity_checks_before": {
+    "asset_context": {
+      "actual_sha256": "bc9cb98980010ca2bc1c123e808296a2e17bb34a5735cf42cd07e1efcfc64395",
+      "expected_sha256": "bc9cb98980010ca2bc1c123e808296a2e17bb34a5735cf42cd07e1efcfc64395",
+      "passed": true,
+      "relative_path": "data/sample_inputs/assets/valid_healthcare_asset.json"
+    },
+    "assurance_corpus": {
+      "actual_sha256": "d51747056c4f920d5e0b6bfb51613b4e1ee1910de82770aa179dd3fe77f68ded",
+      "expected_sha256": "d51747056c4f920d5e0b6bfb51613b4e1ee1910de82770aa179dd3fe77f68ded",
+      "passed": true,
+      "relative_path": "data/assurance/step11a_policy_rule_coverage_corpus.jsonl"
+    },
+    "assurance_manifest": {
+      "actual_sha256": "d1fdd9308b973e5248e464daf528a376bca6bc6c27b9d45f267b88f842797465",
+      "expected_sha256": "d1fdd9308b973e5248e464daf528a376bca6bc6c27b9d45f267b88f842797465",
+      "passed": true,
+      "relative_path": "data/assurance/step11a_policy_rule_coverage_manifest.json"
+    },
+    "decision_policy": {
+      "actual_sha256": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f",
+      "expected_sha256": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f",
+      "passed": true,
+      "relative_path": "policies/decision/federal_base_policy_v1.yaml"
+    },
+    "decision_record": {
+      "actual_sha256": "82cc8dfa5d4c82cdb864e9d769236376ed34b3630f0a81ba9f31a244fb65a878",
+      "expected_sha256": "82cc8dfa5d4c82cdb864e9d769236376ed34b3630f0a81ba9f31a244fb65a878",
+      "passed": true,
+      "relative_path": "data/sample_inputs/decisions/valid_log4shell_decision_record.json"
+    },
+    "decision_schema": {
+      "actual_sha256": "e54a394ef9c772d3dce070f359051d6accf5761b1983ca9721e03e80a9e54ba3",
+      "expected_sha256": "e54a394ef9c772d3dce070f359051d6accf5761b1983ca9721e03e80a9e54ba3",
+      "passed": true,
+      "relative_path": "schemas/aegis_decision_record.schema.json"
+    },
+    "evidence_record": {
+      "actual_sha256": "21ed78284567bc33bb463fb2525941829b80c7e21144d17677f022d168a3c2de",
+      "expected_sha256": "21ed78284567bc33bb463fb2525941829b80c7e21144d17677f022d168a3c2de",
+      "passed": true,
+      "relative_path": "data/sample_inputs/evidence/valid_log4j_sbom_evidence.json"
+    },
+    "evidence_schema": {
+      "actual_sha256": "adaef9c4a1a837fddebee3d40cc03d6d99592682b3c42f1c24dded2fc74ce772",
+      "expected_sha256": "adaef9c4a1a837fddebee3d40cc03d6d99592682b3c42f1c24dded2fc74ce772",
+      "passed": true,
+      "relative_path": "schemas/aegis_evidence_record.schema.json"
+    },
+    "step11a_assurance_report": {
+      "actual_sha256": "6226d36646b0d00a22b9c7f4d7efcea216e705bbd1143b1caef07a97e41fd710",
+      "expected_sha256": "6226d36646b0d00a22b9c7f4d7efcea216e705bbd1143b1caef07a97e41fd710",
+      "passed": true,
+      "relative_path": "data/validation_reports/assurance/step11a_policy_rule_coverage_report.json"
+    },
+    "step11a_release_report": {
+      "actual_sha256": "3ab83f8962cc6b2dfa4014e59fb1c0a33f399e2b4bd29fa6f822de7ba19e6634",
+      "expected_sha256": "3ab83f8962cc6b2dfa4014e59fb1c0a33f399e2b4bd29fa6f822de7ba19e6634",
+      "passed": true,
+      "relative_path": "data/validation_reports/fairness/step11a_rule_coverage_evaluation_report.json"
+    },
+    "step11b_mutation_report": {
+      "actual_sha256": "73365a05f63fe4ee0cf51fed471c8a3846679f4ae737cc033be670220de5ceb1",
+      "expected_sha256": "73365a05f63fe4ee0cf51fed471c8a3846679f4ae737cc033be670220de5ceb1",
+      "passed": true,
+      "relative_path": "data/validation_reports/mutation/step11b_policy_mutation_report.json"
+    },
+    "vulnerability_intelligence": {
+      "actual_sha256": "e2204ab8ff8736c0826ffe24d518cef462a75dcea7e498943506b0fe7f41ff1f",
+      "expected_sha256": "e2204ab8ff8736c0826ffe24d518cef462a75dcea7e498943506b0fe7f41ff1f",
+      "passed": true,
+      "relative_path": "data/sample_inputs/intelligence/valid_log4shell_intelligence.json"
+    }
+  },
+  "limitations": [
+    "The suite uses controlled repository fixtures rather than live operational systems.",
+    "Cryptographic signature verification is policy-contract testing; no external PKI trust chain is exercised.",
+    "Filesystem behavior is evaluated in the local Linux test environment and requires independent deployment testing.",
+    "Passing Step 11C does not replace independent security assessment or authorization to operate."
+  ],
+  "quality_gates": [
+    {
+      "gate_id": "GATE-CRITICAL-TAMPER-DEFENCE",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "GATE-UNDETECTED-CRITICAL",
+      "observed": 0,
+      "operator": "lte",
+      "passed": true,
+      "threshold": 0
+    },
+    {
+      "gate_id": "GATE-HARNESS-ERRORS",
+      "observed": 0,
+      "operator": "lte",
+      "passed": true,
+      "threshold": 0
+    },
+    {
+      "gate_id": "GATE-PATH-ESCAPE",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "GATE-HASH-CORRUPTION",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "GATE-IDENTITY-COLLISION",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "GATE-TRUSTED-INPUT-INTEGRITY",
+      "observed": true,
+      "operator": "eq",
+      "passed": true,
+      "threshold": true
+    }
+  ],
+  "release_decision": {
+    "blocking_reasons": [
+      "Real operational validation has not yet been completed.",
+      "Independent security review has not yet been completed."
+    ],
+    "production_readiness_status": "BLOCKED",
+    "stage_gate_status": "PASS"
+  },
+  "report_id": "AEG-TAMPER-STEP11C-001",
+  "results": [
+    {
+      "baseline_sha256": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f",
+      "control_tags": [
+        "hash_corruption"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "BASELINE_HASH"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "BASELINE_HASH"
+      ],
+      "expected_outcomes": [
+        "BLOCKED"
+      ],
+      "family": "policy_tampering",
+      "findings": [
+        {
+          "code": "TRUSTED_POLICY_HASH_MISMATCH",
+          "message": "Trusted decision-policy bytes changed.",
+          "oracle": "BASELINE_HASH"
+        }
+      ],
+      "handler": "policy_file_modified",
+      "mutated_sha256": "6d2a8f9ef7fc31bc9e1b7105f9b4b252ce75e6ca2251aeb2b90882330ce4e246",
+      "outcome": "BLOCKED",
+      "scenario_id": "TAMPER-POLICY-BYTE-MODIFICATION-001",
+      "severity": "critical",
+      "title": "Modify trusted decision-policy bytes"
+    },
+    {
+      "baseline_sha256": "d51747056c4f920d5e0b6bfb51613b4e1ee1910de82770aa179dd3fe77f68ded",
+      "control_tags": [
+        "hash_corruption"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "MANIFEST_HASH"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "MANIFEST_HASH"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "corpus_tampering",
+      "findings": [
+        {
+          "code": "CORPUS_MANIFEST_HASH_MISMATCH",
+          "message": "Assurance corpus no longer matches its manifest.",
+          "oracle": "MANIFEST_HASH"
+        }
+      ],
+      "handler": "corpus_line_modified",
+      "mutated_sha256": "14da01651d480f4b1e85a4ad146bb3a289d7b63b053fcb3e1395d429fb72123e",
+      "outcome": "REJECTED",
+      "scenario_id": "TAMPER-CORPUS-LINE-MODIFICATION-001",
+      "severity": "critical",
+      "title": "Alter one assurance-corpus case after manifest creation"
+    },
+    {
+      "baseline_sha256": "d1fdd9308b973e5248e464daf528a376bca6bc6c27b9d45f267b88f842797465",
+      "control_tags": [
+        "hash_corruption"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "MANIFEST_HASH",
+        "TRUSTED_MANIFEST_HASH"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "TRUSTED_MANIFEST_HASH",
+        "MANIFEST_HASH"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "manifest_tampering",
+      "findings": [
+        {
+          "code": "TRUSTED_MANIFEST_MODIFIED",
+          "message": "The assurance manifest was modified.",
+          "oracle": "TRUSTED_MANIFEST_HASH"
+        },
+        {
+          "code": "DECLARED_CORPUS_HASH_INVALID",
+          "message": "Manifest corpus hash does not match the corpus.",
+          "oracle": "MANIFEST_HASH"
+        }
+      ],
+      "handler": "manifest_corpus_hash_replaced",
+      "mutated_sha256": "697e968dae11ff659a4a24360a75b40431905806141f34e7f5bac7527789c650",
+      "outcome": "REJECTED",
+      "scenario_id": "TAMPER-MANIFEST-CORPUS-HASH-001",
+      "severity": "critical",
+      "title": "Replace the manifest corpus hash"
+    },
+    {
+      "baseline_sha256": "d1fdd9308b973e5248e464daf528a376bca6bc6c27b9d45f267b88f842797465",
+      "control_tags": [
+        "hash_corruption"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "FIXTURE_HASH",
+        "TRUSTED_MANIFEST_HASH"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "TRUSTED_MANIFEST_HASH",
+        "FIXTURE_HASH"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "manifest_tampering",
+      "findings": [
+        {
+          "code": "TRUSTED_MANIFEST_MODIFIED",
+          "message": "The assurance manifest was modified.",
+          "oracle": "TRUSTED_MANIFEST_HASH"
+        },
+        {
+          "code": "DECLARED_FIXTURE_HASH_INVALID",
+          "message": "Manifest fixture hash does not match the asset fixture.",
+          "oracle": "FIXTURE_HASH"
+        }
+      ],
+      "handler": "manifest_fixture_hash_replaced",
+      "mutated_sha256": "bba95776e25682b7543ed9d0340a6320584ac33584f04dbbd6b525c0deb80bf4",
+      "outcome": "REJECTED",
+      "scenario_id": "TAMPER-MANIFEST-FIXTURE-HASH-001",
+      "severity": "critical",
+      "title": "Replace a trusted fixture hash in the manifest"
+    },
+    {
+      "baseline_sha256": "bc9cb98980010ca2bc1c123e808296a2e17bb34a5735cf42cd07e1efcfc64395",
+      "control_tags": [
+        "hash_corruption",
+        "identity_collision"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "DECISION_VALIDATOR",
+        "INPUT_ID_BINDING",
+        "INPUT_RECORD_HASH",
+        "INPUT_SCHEMA"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "INPUT_RECORD_HASH",
+        "INPUT_ID_BINDING",
+        "INPUT_SCHEMA"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "fixture_substitution",
+      "findings": [
+        {
+          "code": "DECISION_RECORD_REJECTED",
+          "message": "Decision Record validation rejected the tampered record.",
+          "oracle": "DECISION_VALIDATOR"
+        },
+        {
+          "code": "INPUT_RECORD_HASH_MISMATCH",
+          "message": "Referenced input hash does not match the current file contents.",
+          "oracle": "INPUT_RECORD_HASH"
+        },
+        {
+          "code": "INPUT_RECORD_ID_MISMATCH",
+          "message": "Reference expects AEG-AST-HOSP-SCHED-001, but file contains None.",
+          "oracle": "INPUT_ID_BINDING"
+        },
+        {
+          "code": "INPUT_RECORD_VALIDATION_FAILED",
+          "message": "Referenced asset_context did not pass validation.",
+          "oracle": "INPUT_SCHEMA"
+        },
+        {
+          "code": "INPUT_VALIDATION_STATUS_MISMATCH",
+          "message": "Reference declares accepted_with_warnings, but validator returned rejected.",
+          "oracle": "DECISION_VALIDATOR"
+        },
+        {
+          "code": "POLICY_EVIDENCE_NOT_FOUND",
+          "message": "Policy evidence AEG-EVD-REQ-000001 is not present in the validated input lineage.",
+          "oracle": "DECISION_VALIDATOR"
+        }
+      ],
+      "handler": "fixture_substitution",
+      "mutated_sha256": "21ed78284567bc33bb463fb2525941829b80c7e21144d17677f022d168a3c2de",
+      "outcome": "REJECTED",
+      "scenario_id": "TAMPER-FIXTURE-SUBSTITUTION-001",
+      "severity": "critical",
+      "title": "Substitute an asset fixture with an unrelated record"
+    },
+    {
+      "baseline_sha256": "ae5c9c8a1129f314149dfe673e9d74fd4efe08b7338624e3eea32ef071c7f16f",
+      "control_tags": [
+        "hash_corruption"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "DECISION_RECORD_HASH",
+        "DECISION_VALIDATOR"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "DECISION_RECORD_HASH",
+        "DECISION_VALIDATOR"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "decision_record_tampering",
+      "findings": [
+        {
+          "code": "DECISION_RECORD_REJECTED",
+          "message": "Decision Record validation rejected the tampered record.",
+          "oracle": "DECISION_VALIDATOR"
+        },
+        {
+          "code": "DECISION_RECORD_HASH_MISMATCH",
+          "message": "Decision Record contents do not match the stored audit hash.",
+          "oracle": "DECISION_RECORD_HASH"
+        }
+      ],
+      "handler": "decision_content_modified",
+      "mutated_sha256": "e17aa43ea13266ed3145ebf9df602da67d195b4488f44661e116cf410cd1ced9",
+      "outcome": "REJECTED",
+      "scenario_id": "TAMPER-DECISION-CONTENT-MODIFICATION-001",
+      "severity": "critical",
+      "title": "Modify decision content without updating its record hash"
+    },
+    {
+      "baseline_sha256": "ae5c9c8a1129f314149dfe673e9d74fd4efe08b7338624e3eea32ef071c7f16f",
+      "control_tags": [
+        "hash_corruption"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "DECISION_RECORD_HASH",
+        "DECISION_VALIDATOR"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "DECISION_RECORD_HASH",
+        "DECISION_VALIDATOR"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "decision_record_tampering",
+      "findings": [
+        {
+          "code": "DECISION_RECORD_REJECTED",
+          "message": "Decision Record validation rejected the tampered record.",
+          "oracle": "DECISION_VALIDATOR"
+        },
+        {
+          "code": "DECISION_RECORD_HASH_MISMATCH",
+          "message": "Decision Record contents do not match the stored audit hash.",
+          "oracle": "DECISION_RECORD_HASH"
+        }
+      ],
+      "handler": "decision_hash_invalid",
+      "mutated_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "outcome": "REJECTED",
+      "scenario_id": "TAMPER-DECISION-HASH-INVALID-001",
+      "severity": "critical",
+      "title": "Replace a decision record hash with a different valid-length digest"
+    },
+    {
+      "baseline_sha256": "ae5c9c8a1129f314149dfe673e9d74fd4efe08b7338624e3eea32ef071c7f16f",
+      "control_tags": [
+        "hash_corruption"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "DECISION_VALIDATOR",
+        "JSON_SCHEMA"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "JSON_SCHEMA",
+        "DECISION_VALIDATOR"
+      ],
+      "expected_outcomes": [
+        "BLOCKED"
+      ],
+      "family": "decision_record_tampering",
+      "findings": [
+        {
+          "code": "DECISION_RECORD_REJECTED",
+          "message": "Decision Record validation rejected the tampered record.",
+          "oracle": "DECISION_VALIDATOR"
+        },
+        {
+          "code": "SCHEMA_VALIDATION_ERROR",
+          "message": "'not-a-sha256' does not match '^[a-f0-9]{64}$'",
+          "oracle": "JSON_SCHEMA"
+        }
+      ],
+      "handler": "decision_hash_malformed",
+      "mutated_sha256": "a376698e11fd27f6e08f13db9f8e68d8e61493adc733f73fd0f5700881408330",
+      "outcome": "BLOCKED",
+      "scenario_id": "TAMPER-DECISION-HASH-MALFORMED-001",
+      "severity": "critical",
+      "title": "Insert a malformed decision record hash"
+    },
+    {
+      "baseline_sha256": null,
+      "control_tags": [],
+      "defended": true,
+      "detection_oracles": [
+        "SIGNATURE_POLICY"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "SIGNATURE_POLICY"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "signature_corruption",
+      "findings": [
+        {
+          "code": "INVALID_EVIDENCE_SIGNATURE",
+          "message": "Evidence declares an invalid signature and cannot be trusted.",
+          "oracle": "SIGNATURE_POLICY"
+        }
+      ],
+      "handler": "signature_invalid",
+      "mutated_sha256": null,
+      "outcome": "REJECTED",
+      "scenario_id": "TAMPER-SIGNATURE-INVALID-001",
+      "severity": "critical",
+      "title": "Declare an invalid evidence signature"
+    },
+    {
+      "baseline_sha256": null,
+      "control_tags": [],
+      "defended": true,
+      "detection_oracles": [
+        "SIGNATURE_POLICY"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "SIGNATURE_POLICY"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "signature_corruption",
+      "findings": [
+        {
+          "code": "VALID_SIGNATURE_REFERENCE_MISSING",
+          "message": "A valid signature declaration requires a traceable reference.",
+          "oracle": "SIGNATURE_POLICY"
+        }
+      ],
+      "handler": "signature_valid_missing_reference",
+      "mutated_sha256": null,
+      "outcome": "REJECTED",
+      "scenario_id": "TAMPER-SIGNATURE-MISSING-REFERENCE-001",
+      "severity": "critical",
+      "title": "Declare a valid signature without a signature reference"
+    },
+    {
+      "baseline_sha256": "21ed78284567bc33bb463fb2525941829b80c7e21144d17677f022d168a3c2de",
+      "control_tags": [
+        "hash_corruption",
+        "identity_collision"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "EVIDENCE_ID_BINDING",
+        "INPUT_RECORD_HASH"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "EVIDENCE_ID_BINDING",
+        "INPUT_RECORD_HASH"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "evidence_substitution",
+      "findings": [
+        {
+          "code": "EVIDENCE_ID_CONTENT_BINDING_CHANGED",
+          "message": "Trusted evidence ID was reused for different content.",
+          "oracle": "EVIDENCE_ID_BINDING"
+        },
+        {
+          "code": "REFERENCED_EVIDENCE_HASH_MISMATCH",
+          "message": "Substituted evidence does not match the trusted hash.",
+          "oracle": "INPUT_RECORD_HASH"
+        }
+      ],
+      "handler": "evidence_substitution_same_id",
+      "mutated_sha256": "cb042dbd12d500649ffe1a28c6c0f09c6593c88fa09e4b698cb273e93aa3d794",
+      "outcome": "REJECTED",
+      "scenario_id": "TAMPER-EVIDENCE-SUBSTITUTION-001",
+      "severity": "critical",
+      "title": "Reuse a trusted evidence ID with different content"
+    },
+    {
+      "baseline_sha256": null,
+      "control_tags": [
+        "path_escape"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "DECISION_VALIDATOR",
+        "SAFE_PATH"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "SAFE_PATH",
+        "DECISION_VALIDATOR"
+      ],
+      "expected_outcomes": [
+        "BLOCKED"
+      ],
+      "family": "path_traversal",
+      "findings": [
+        {
+          "code": "PARENT_PATH_TRAVERSAL",
+          "message": "Referenced path contains parent traversal.",
+          "oracle": "SAFE_PATH"
+        },
+        {
+          "code": "REFERENCE_PATH_ESCAPE",
+          "message": "Referenced path resolves outside the approved project root.",
+          "oracle": "SAFE_PATH"
+        },
+        {
+          "code": "DECISION_RECORD_REJECTED",
+          "message": "Decision Record validation rejected the tampered record.",
+          "oracle": "DECISION_VALIDATOR"
+        },
+        {
+          "code": "INPUT_PATH_ESCAPE",
+          "message": "Input reference resolves outside the AegisSec project root.",
+          "oracle": "SAFE_PATH"
+        },
+        {
+          "code": "COMPONENT_EVIDENCE_NOT_FOUND",
+          "message": "Component evidence AEG-EVD-SBOM-LOG4J-001 is not present in the validated input lineage.",
+          "oracle": "DECISION_VALIDATOR"
+        },
+        {
+          "code": "AFFECTEDNESS_EVIDENCE_NOT_FOUND",
+          "message": "Affectedness evidence AEG-EVD-SBOM-LOG4J-001 is not present in the validated input lineage.",
+          "oracle": "DECISION_VALIDATOR"
+        },
+        {
+          "code": "POLICY_EVIDENCE_NOT_FOUND",
+          "message": "Policy evidence AEG-EVD-SBOM-LOG4J-001 is not present in the validated input lineage.",
+          "oracle": "DECISION_VALIDATOR"
+        }
+      ],
+      "handler": "path_traversal",
+      "mutated_sha256": null,
+      "outcome": "BLOCKED",
+      "scenario_id": "TAMPER-PATH-TRAVERSAL-001",
+      "severity": "critical",
+      "title": "Traverse outside the approved project root"
+    },
+    {
+      "baseline_sha256": null,
+      "control_tags": [
+        "path_escape"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "DECISION_VALIDATOR",
+        "SAFE_PATH"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "SAFE_PATH",
+        "DECISION_VALIDATOR"
+      ],
+      "expected_outcomes": [
+        "BLOCKED"
+      ],
+      "family": "path_traversal",
+      "findings": [
+        {
+          "code": "ABSOLUTE_REFERENCE_PATH",
+          "message": "Absolute referenced paths are prohibited.",
+          "oracle": "SAFE_PATH"
+        },
+        {
+          "code": "DECISION_RECORD_REJECTED",
+          "message": "Decision Record validation rejected the tampered record.",
+          "oracle": "DECISION_VALIDATOR"
+        },
+        {
+          "code": "INPUT_PATH_ESCAPE",
+          "message": "Input reference resolves outside the AegisSec project root.",
+          "oracle": "SAFE_PATH"
+        },
+        {
+          "code": "COMPONENT_EVIDENCE_NOT_FOUND",
+          "message": "Component evidence AEG-EVD-SBOM-LOG4J-001 is not present in the validated input lineage.",
+          "oracle": "DECISION_VALIDATOR"
+        },
+        {
+          "code": "AFFECTEDNESS_EVIDENCE_NOT_FOUND",
+          "message": "Affectedness evidence AEG-EVD-SBOM-LOG4J-001 is not present in the validated input lineage.",
+          "oracle": "DECISION_VALIDATOR"
+        },
+        {
+          "code": "POLICY_EVIDENCE_NOT_FOUND",
+          "message": "Policy evidence AEG-EVD-SBOM-LOG4J-001 is not present in the validated input lineage.",
+          "oracle": "DECISION_VALIDATOR"
+        }
+      ],
+      "handler": "absolute_path",
+      "mutated_sha256": null,
+      "outcome": "BLOCKED",
+      "scenario_id": "TAMPER-ABSOLUTE-PATH-001",
+      "severity": "critical",
+      "title": "Reference an absolute filesystem path"
+    },
+    {
+      "baseline_sha256": null,
+      "control_tags": [
+        "path_escape"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "DECISION_VALIDATOR",
+        "ENCODED_PATH_POLICY",
+        "JSON_SCHEMA",
+        "SAFE_PATH"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "ENCODED_PATH_POLICY",
+        "JSON_SCHEMA"
+      ],
+      "expected_outcomes": [
+        "BLOCKED"
+      ],
+      "family": "path_traversal",
+      "findings": [
+        {
+          "code": "ENCODED_PATH_TRAVERSAL",
+          "message": "Percent-decoded path contains parent traversal.",
+          "oracle": "ENCODED_PATH_POLICY"
+        },
+        {
+          "code": "PARENT_PATH_TRAVERSAL",
+          "message": "Referenced path contains parent traversal.",
+          "oracle": "SAFE_PATH"
+        },
+        {
+          "code": "REFERENCE_PATH_ESCAPE",
+          "message": "Referenced path resolves outside the approved project root.",
+          "oracle": "SAFE_PATH"
+        },
+        {
+          "code": "DECISION_RECORD_REJECTED",
+          "message": "Decision Record validation rejected the tampered record.",
+          "oracle": "DECISION_VALIDATOR"
+        },
+        {
+          "code": "SCHEMA_VALIDATION_ERROR",
+          "message": "'%2e%2e/outside.json' does not match '^[A-Za-z0-9_./() -]+\\\\.json$'",
+          "oracle": "JSON_SCHEMA"
+        }
+      ],
+      "handler": "encoded_path_traversal",
+      "mutated_sha256": null,
+      "outcome": "BLOCKED",
+      "scenario_id": "TAMPER-ENCODED-PATH-TRAVERSAL-001",
+      "severity": "critical",
+      "title": "Use percent-encoded traversal tokens"
+    },
+    {
+      "baseline_sha256": null,
+      "control_tags": [
+        "path_escape"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "DECISION_VALIDATOR",
+        "SAFE_PATH"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "SAFE_PATH",
+        "DECISION_VALIDATOR"
+      ],
+      "expected_outcomes": [
+        "BLOCKED"
+      ],
+      "family": "path_traversal",
+      "findings": [
+        {
+          "code": "REFERENCE_PATH_ESCAPE",
+          "message": "Referenced path resolves outside the approved project root.",
+          "oracle": "SAFE_PATH"
+        },
+        {
+          "code": "DECISION_RECORD_REJECTED",
+          "message": "Decision Record validation rejected the tampered record.",
+          "oracle": "DECISION_VALIDATOR"
+        },
+        {
+          "code": "INPUT_PATH_ESCAPE",
+          "message": "Input reference resolves outside the AegisSec project root.",
+          "oracle": "SAFE_PATH"
+        },
+        {
+          "code": "COMPONENT_EVIDENCE_NOT_FOUND",
+          "message": "Component evidence AEG-EVD-SBOM-LOG4J-001 is not present in the validated input lineage.",
+          "oracle": "DECISION_VALIDATOR"
+        },
+        {
+          "code": "AFFECTEDNESS_EVIDENCE_NOT_FOUND",
+          "message": "Affectedness evidence AEG-EVD-SBOM-LOG4J-001 is not present in the validated input lineage.",
+          "oracle": "DECISION_VALIDATOR"
+        },
+        {
+          "code": "POLICY_EVIDENCE_NOT_FOUND",
+          "message": "Policy evidence AEG-EVD-SBOM-LOG4J-001 is not present in the validated input lineage.",
+          "oracle": "DECISION_VALIDATOR"
+        }
+      ],
+      "handler": "symlink_escape",
+      "mutated_sha256": null,
+      "outcome": "BLOCKED",
+      "scenario_id": "TAMPER-SYMLINK-ESCAPE-001",
+      "severity": "critical",
+      "title": "Escape the approved root through a symbolic link"
+    },
+    {
+      "baseline_sha256": null,
+      "control_tags": [
+        "identity_collision"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "DECISION_VALIDATOR",
+        "DUPLICATE_ID"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "DUPLICATE_ID",
+        "DECISION_VALIDATOR"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "duplicate_identity",
+      "findings": [
+        {
+          "code": "DECISION_RECORD_REJECTED",
+          "message": "Decision Record validation rejected the tampered record.",
+          "oracle": "DECISION_VALIDATOR"
+        },
+        {
+          "code": "DUPLICATE_INPUT_REFERENCE",
+          "message": "Duplicate input reference: ('evidence_record', 'AEG-EVD-SBOM-LOG4J-001')",
+          "oracle": "DUPLICATE_ID"
+        }
+      ],
+      "handler": "duplicate_input_reference",
+      "mutated_sha256": null,
+      "outcome": "REJECTED",
+      "scenario_id": "TAMPER-DUPLICATE-INPUT-REFERENCE-001",
+      "severity": "critical",
+      "title": "Duplicate a decision input reference"
+    },
+    {
+      "baseline_sha256": "d51747056c4f920d5e0b6bfb51613b4e1ee1910de82770aa179dd3fe77f68ded",
+      "control_tags": [
+        "identity_collision",
+        "hash_corruption"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "DUPLICATE_ID",
+        "MANIFEST_HASH"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "DUPLICATE_ID",
+        "MANIFEST_HASH"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "duplicate_identity",
+      "findings": [
+        {
+          "code": "DUPLICATE_ASSURANCE_CASE_ID",
+          "message": "Duplicate case identifiers: ['AEG-ASR-001-HC']",
+          "oracle": "DUPLICATE_ID"
+        },
+        {
+          "code": "CORPUS_MANIFEST_HASH_MISMATCH",
+          "message": "Duplicate case changed the manifest-bound corpus.",
+          "oracle": "MANIFEST_HASH"
+        }
+      ],
+      "handler": "duplicate_corpus_case_id",
+      "mutated_sha256": "581c0d6edd98ce81a464081ff74892d05dd95a0240848d57ea8229c1d79b2106",
+      "outcome": "REJECTED",
+      "scenario_id": "TAMPER-DUPLICATE-CORPUS-CASE-ID-001",
+      "severity": "critical",
+      "title": "Append a duplicate assurance case identifier"
+    },
+    {
+      "baseline_sha256": null,
+      "control_tags": [],
+      "defended": true,
+      "detection_oracles": [
+        "REFERENCE_SET_INTEGRITY"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "REFERENCE_SET_INTEGRITY"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "reference_tampering",
+      "findings": [
+        {
+          "code": "DECISION_REFERENCE_SET_CHANGED",
+          "message": "A supporting evidence reference was deleted.",
+          "oracle": "REFERENCE_SET_INTEGRITY"
+        }
+      ],
+      "handler": "reference_deletion",
+      "mutated_sha256": null,
+      "outcome": "REJECTED",
+      "scenario_id": "TAMPER-REFERENCE-DELETION-001",
+      "severity": "critical",
+      "title": "Delete a supporting evidence reference and recompute the record hash"
+    },
+    {
+      "baseline_sha256": null,
+      "control_tags": [],
+      "defended": true,
+      "detection_oracles": [
+        "REFERENCE_SET_INTEGRITY"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "REFERENCE_SET_INTEGRITY"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "reference_tampering",
+      "findings": [
+        {
+          "code": "DECISION_REFERENCE_SET_CHANGED",
+          "message": "An unrelated evidence reference was injected.",
+          "oracle": "REFERENCE_SET_INTEGRITY"
+        }
+      ],
+      "handler": "reference_injection",
+      "mutated_sha256": null,
+      "outcome": "REJECTED",
+      "scenario_id": "TAMPER-REFERENCE-INJECTION-001",
+      "severity": "critical",
+      "title": "Inject an unrelated evidence reference and recompute the record hash"
+    },
+    {
+      "baseline_sha256": null,
+      "control_tags": [
+        "hash_corruption"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "DECISION_RECORD_HASH",
+        "DECISION_VALIDATOR",
+        "REFERENCE_ORDER_INTEGRITY"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "DECISION_RECORD_HASH",
+        "REFERENCE_ORDER_INTEGRITY"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "reference_tampering",
+      "findings": [
+        {
+          "code": "DECISION_RECORD_REJECTED",
+          "message": "Decision Record validation rejected the tampered record.",
+          "oracle": "DECISION_VALIDATOR"
+        },
+        {
+          "code": "DECISION_RECORD_HASH_MISMATCH",
+          "message": "Decision Record contents do not match the stored audit hash.",
+          "oracle": "DECISION_RECORD_HASH"
+        },
+        {
+          "code": "EVIDENCE_REFERENCE_ORDER_CHANGED",
+          "message": "Order-sensitive canonical record content changed.",
+          "oracle": "REFERENCE_ORDER_INTEGRITY"
+        }
+      ],
+      "handler": "reference_reordering",
+      "mutated_sha256": null,
+      "outcome": "REJECTED",
+      "scenario_id": "TAMPER-REFERENCE-REORDERING-001",
+      "severity": "critical",
+      "title": "Reorder supporting evidence without updating the record hash"
+    },
+    {
+      "baseline_sha256": null,
+      "control_tags": [],
+      "defended": true,
+      "detection_oracles": [
+        "FRESHNESS_CONSISTENCY"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "FRESHNESS_CONSISTENCY"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "freshness_tampering",
+      "findings": [
+        {
+          "code": "DECLARED_EVIDENCE_AGE_MISMATCH",
+          "message": "Declared evidence age does not match its timestamps.",
+          "oracle": "FRESHNESS_CONSISTENCY"
+        },
+        {
+          "code": "STALE_EVIDENCE_DECLARED_CURRENT",
+          "message": "Evidence exceeds its maximum age but is declared current.",
+          "oracle": "FRESHNESS_CONSISTENCY"
+        }
+      ],
+      "handler": "stale_as_current",
+      "mutated_sha256": null,
+      "outcome": "REJECTED",
+      "scenario_id": "TAMPER-STALE-AS-CURRENT-001",
+      "severity": "critical",
+      "title": "Present stale evidence as current"
+    },
+    {
+      "baseline_sha256": null,
+      "control_tags": [],
+      "defended": true,
+      "detection_oracles": [
+        "TIMESTAMP_CONSISTENCY"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "TIMESTAMP_CONSISTENCY"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "timestamp_tampering",
+      "findings": [
+        {
+          "code": "COLLECTION_AFTER_FRESHNESS_EVALUATION",
+          "message": "Evidence collection time occurs after freshness evaluation.",
+          "oracle": "TIMESTAMP_CONSISTENCY"
+        }
+      ],
+      "handler": "future_collection_timestamp",
+      "mutated_sha256": null,
+      "outcome": "REJECTED",
+      "scenario_id": "TAMPER-FUTURE-COLLECTION-TIMESTAMP-001",
+      "severity": "critical",
+      "title": "Set evidence collection after its freshness evaluation"
+    },
+    {
+      "baseline_sha256": null,
+      "control_tags": [
+        "identity_collision"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "IDENTIFIER_POLICY",
+        "JSON_SCHEMA"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "IDENTIFIER_POLICY",
+        "JSON_SCHEMA"
+      ],
+      "expected_outcomes": [
+        "BLOCKED"
+      ],
+      "family": "unicode_deception",
+      "findings": [
+        {
+          "code": "NON_ASCII_OR_NON_CANONICAL_IDENTIFIER",
+          "message": "Security identifiers must use canonical ASCII characters.",
+          "oracle": "IDENTIFIER_POLICY"
+        },
+        {
+          "code": "EVIDENCE_IDENTIFIER_SCHEMA_REJECTION",
+          "message": "Confusable identifier fails the evidence schema.",
+          "oracle": "JSON_SCHEMA"
+        }
+      ],
+      "handler": "unicode_confusable_id",
+      "mutated_sha256": null,
+      "outcome": "BLOCKED",
+      "scenario_id": "TAMPER-UNICODE-CONFUSABLE-ID-001",
+      "severity": "critical",
+      "title": "Replace an ASCII evidence identifier character with a Unicode confusable"
+    },
+    {
+      "baseline_sha256": "a6668425a112dcea1bb0d53795ad2da219bbcfc61b8d03e2f24438dc39850d25",
+      "control_tags": [],
+      "defended": true,
+      "detection_oracles": [
+        "CHAIN_OF_CUSTODY"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "CHAIN_OF_CUSTODY"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "chain_of_custody",
+      "findings": [
+        {
+          "code": "DECISION_CHAIN_LINK_MISMATCH",
+          "message": "The previous-record chain link was deleted or replaced.",
+          "oracle": "CHAIN_OF_CUSTODY"
+        }
+      ],
+      "handler": "chain_link_deleted",
+      "mutated_sha256": "ae5c9c8a1129f314149dfe673e9d74fd4efe08b7338624e3eea32ef071c7f16f",
+      "outcome": "REJECTED",
+      "scenario_id": "TAMPER-CHAIN-LINK-DELETION-001",
+      "severity": "critical",
+      "title": "Delete a previous-record chain link and recompute the current hash"
+    },
+    {
+      "baseline_sha256": "a6668425a112dcea1bb0d53795ad2da219bbcfc61b8d03e2f24438dc39850d25",
+      "control_tags": [],
+      "defended": true,
+      "detection_oracles": [
+        "CHAIN_OF_CUSTODY"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "CHAIN_OF_CUSTODY"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "chain_of_custody",
+      "findings": [
+        {
+          "code": "DECISION_CHAIN_LINK_MISMATCH",
+          "message": "The previous-record chain link was deleted or replaced.",
+          "oracle": "CHAIN_OF_CUSTODY"
+        }
+      ],
+      "handler": "chain_link_replaced",
+      "mutated_sha256": "2909d74f58ce13bb1fa63f9e766be10591034353d892311f681470d3c3b3a209",
+      "outcome": "REJECTED",
+      "scenario_id": "TAMPER-CHAIN-LINK-REPLACEMENT-001",
+      "severity": "critical",
+      "title": "Replace a previous-record chain link and recompute the current hash"
+    },
+    {
+      "baseline_sha256": null,
+      "control_tags": [
+        "identity_collision"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "PROVENANCE_GRAPH"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "PROVENANCE_GRAPH"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "provenance_tampering",
+      "findings": [
+        {
+          "code": "SELF_REFERENTIAL_EVIDENCE_PROVENANCE",
+          "message": "An evidence record cannot name itself as a provenance parent.",
+          "oracle": "PROVENANCE_GRAPH"
+        }
+      ],
+      "handler": "evidence_parent_cycle",
+      "mutated_sha256": null,
+      "outcome": "REJECTED",
+      "scenario_id": "TAMPER-EVIDENCE-PARENT-CYCLE-001",
+      "severity": "critical",
+      "title": "Make an evidence record its own provenance parent"
+    },
+    {
+      "baseline_sha256": null,
+      "control_tags": [
+        "identity_collision"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "DUPLICATE_ID"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "DUPLICATE_ID"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "duplicate_identity",
+      "findings": [
+        {
+          "code": "DUPLICATE_DECISION_ID",
+          "message": "Different records share decision IDs: ['AEG-DEC-LOG4J-HOSP-001']",
+          "oracle": "DUPLICATE_ID"
+        }
+      ],
+      "handler": "duplicate_decision_id",
+      "mutated_sha256": null,
+      "outcome": "REJECTED",
+      "scenario_id": "TAMPER-DUPLICATE-DECISION-ID-001",
+      "severity": "critical",
+      "title": "Introduce two different decisions with the same decision identifier"
+    },
+    {
+      "baseline_sha256": null,
+      "control_tags": [
+        "hash_corruption"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "EVIDENCE_VALIDATOR"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "EVIDENCE_VALIDATOR"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "integrity_declaration_tampering",
+      "findings": [
+        {
+          "code": "VERIFIED_WITHOUT_HASH_ALGORITHM",
+          "message": "Integrity cannot be verified when the hash algorithm is 'none'.",
+          "oracle": "EVIDENCE_VALIDATOR"
+        },
+        {
+          "code": "VERIFIED_WITHOUT_CONTENT_HASH",
+          "message": "Verified integrity requires a cryptographic content hash.",
+          "oracle": "EVIDENCE_VALIDATOR"
+        }
+      ],
+      "handler": "verified_evidence_without_hash",
+      "mutated_sha256": null,
+      "outcome": "REJECTED",
+      "scenario_id": "TAMPER-VERIFIED-EVIDENCE-WITHOUT-HASH-001",
+      "severity": "critical",
+      "title": "Mark evidence verified while removing its cryptographic hash"
+    },
+    {
+      "baseline_sha256": null,
+      "control_tags": [],
+      "defended": true,
+      "detection_oracles": [
+        "VALIDATION_ATTESTATION"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "VALIDATION_ATTESTATION"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "validation_attestation_tampering",
+      "findings": [
+        {
+          "code": "DECLARED_VALIDATION_STATUS_MISMATCH",
+          "message": "Record declares accepted, but validator returns accepted_with_warnings.",
+          "oracle": "VALIDATION_ATTESTATION"
+        }
+      ],
+      "handler": "validation_status_forgery",
+      "mutated_sha256": null,
+      "outcome": "REJECTED",
+      "scenario_id": "TAMPER-VALIDATION-STATUS-FORGERY-001",
+      "severity": "critical",
+      "title": "Forge an accepted status that hides validator warnings"
+    },
+    {
+      "baseline_sha256": null,
+      "control_tags": [],
+      "defended": true,
+      "detection_oracles": [
+        "REFERENCE_SET_INTEGRITY"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "REFERENCE_SET_INTEGRITY"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "reference_tampering",
+      "findings": [
+        {
+          "code": "REQUIRED_INPUT_FLAG_CHANGED",
+          "message": "A required decision input was relabeled as optional.",
+          "oracle": "REFERENCE_SET_INTEGRITY"
+        }
+      ],
+      "handler": "required_reference_flag_removed",
+      "mutated_sha256": null,
+      "outcome": "REJECTED",
+      "scenario_id": "TAMPER-REQUIRED-REFERENCE-FLAG-001",
+      "severity": "critical",
+      "title": "Mark a required evidence input as optional and recompute the hash"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "summary": {
+    "blocked_count": 7,
+    "critical_scenario_count": 30,
+    "critical_tamper_defence_rate": 1.0,
+    "defended_critical_count": 30,
+    "harness_error_count": 0,
+    "hash_corruption_detected_count": 12,
+    "hash_corruption_detection_rate": 1.0,
+    "hash_corruption_scenario_count": 12,
+    "identity_collision_detected_count": 7,
+    "identity_collision_detection_rate": 1.0,
+    "identity_collision_scenario_count": 7,
+    "overall_passed": true,
+    "path_escape_defence_rate": 1.0,
+    "path_escape_defended_count": 4,
+    "path_escape_scenario_count": 4,
+    "quarantined_count": 0,
+    "rejected_count": 23,
+    "scenario_count": 30,
+    "trusted_input_integrity_passed": true,
+    "undetected_count": 0,
+    "warning_detection_count": 0
+  },
+  "undetected_attack_ids": []
+}

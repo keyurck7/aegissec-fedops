@@ -1,0 +1,325 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aegissec.example/schemas/aegis-tamper-assurance-report-v1.0.0.json",
+  "title": "AegisSec Tamper Assurance Report v1.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "report_id",
+    "catalog",
+    "input_integrity_checks_before",
+    "input_integrity_checks_after",
+    "baseline_validation",
+    "summary",
+    "quality_gates",
+    "results",
+    "undetected_attack_ids",
+    "harness_error_attack_ids",
+    "release_decision",
+    "limitations",
+    "generated_at"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "report_id": {
+      "type": "string",
+      "pattern": "^AEG-TAMPER-[A-Z0-9._-]+$"
+    },
+    "catalog": {"$ref": "#/$defs/catalog"},
+    "input_integrity_checks_before": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {"$ref": "#/$defs/integrityCheck"}
+    },
+    "input_integrity_checks_after": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {"$ref": "#/$defs/integrityCheck"}
+    },
+    "baseline_validation": {"$ref": "#/$defs/baselineValidation"},
+    "summary": {"$ref": "#/$defs/summary"},
+    "quality_gates": {
+      "type": "array",
+      "minItems": 7,
+      "items": {"$ref": "#/$defs/gate"}
+    },
+    "results": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/result"}
+    },
+    "undetected_attack_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string"}
+    },
+    "harness_error_attack_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string"}
+    },
+    "release_decision": {"$ref": "#/$defs/releaseDecision"},
+    "limitations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 5}
+    },
+    "generated_at": {"type": "string", "format": "date-time"}
+  },
+  "$defs": {
+    "sha": {
+      "type": ["string", "null"],
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "catalog": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "catalog_id",
+        "version",
+        "harness_version",
+        "relative_path",
+        "sha256"
+      ],
+      "properties": {
+        "catalog_id": {"type": "string"},
+        "version": {"type": "string"},
+        "harness_version": {"type": "string"},
+        "relative_path": {"type": "string"},
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      }
+    },
+    "integrityCheck": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "relative_path",
+        "expected_sha256",
+        "actual_sha256",
+        "passed"
+      ],
+      "properties": {
+        "relative_path": {"type": "string"},
+        "expected_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "actual_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "passed": {"type": "boolean"}
+      }
+    },
+    "baselineValidation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "decision_record_status",
+        "decision_record_valid",
+        "decision_record_hash_valid",
+        "evidence_record_status",
+        "evidence_record_valid"
+      ],
+      "properties": {
+        "decision_record_status": {"type": "string"},
+        "decision_record_valid": {"type": "boolean"},
+        "decision_record_hash_valid": {"type": "boolean"},
+        "evidence_record_status": {"type": "string"},
+        "evidence_record_valid": {"type": "boolean"}
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scenario_count",
+        "critical_scenario_count",
+        "blocked_count",
+        "rejected_count",
+        "quarantined_count",
+        "warning_detection_count",
+        "undetected_count",
+        "harness_error_count",
+        "defended_critical_count",
+        "critical_tamper_defence_rate",
+        "path_escape_scenario_count",
+        "path_escape_defended_count",
+        "path_escape_defence_rate",
+        "hash_corruption_scenario_count",
+        "hash_corruption_detected_count",
+        "hash_corruption_detection_rate",
+        "identity_collision_scenario_count",
+        "identity_collision_detected_count",
+        "identity_collision_detection_rate",
+        "trusted_input_integrity_passed",
+        "overall_passed"
+      ],
+      "properties": {
+        "scenario_count": {"type": "integer", "minimum": 1},
+        "critical_scenario_count": {"type": "integer", "minimum": 1},
+        "blocked_count": {"type": "integer", "minimum": 0},
+        "rejected_count": {"type": "integer", "minimum": 0},
+        "quarantined_count": {"type": "integer", "minimum": 0},
+        "warning_detection_count": {"type": "integer", "minimum": 0},
+        "undetected_count": {"type": "integer", "minimum": 0},
+        "harness_error_count": {"type": "integer", "minimum": 0},
+        "defended_critical_count": {"type": "integer", "minimum": 0},
+        "critical_tamper_defence_rate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "path_escape_scenario_count": {"type": "integer", "minimum": 0},
+        "path_escape_defended_count": {"type": "integer", "minimum": 0},
+        "path_escape_defence_rate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "hash_corruption_scenario_count": {"type": "integer", "minimum": 0},
+        "hash_corruption_detected_count": {"type": "integer", "minimum": 0},
+        "hash_corruption_detection_rate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "identity_collision_scenario_count": {"type": "integer", "minimum": 0},
+        "identity_collision_detected_count": {"type": "integer", "minimum": 0},
+        "identity_collision_detection_rate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "trusted_input_integrity_passed": {"type": "boolean"},
+        "overall_passed": {"type": "boolean"}
+      }
+    },
+    "gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["gate_id", "observed", "operator", "threshold", "passed"],
+      "properties": {
+        "gate_id": {"type": "string"},
+        "observed": {},
+        "operator": {"enum": ["gte", "lte", "eq"]},
+        "threshold": {},
+        "passed": {"type": "boolean"}
+      }
+    },
+    "finding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["code", "oracle", "message"],
+      "properties": {
+        "code": {"type": "string", "minLength": 3},
+        "oracle": {"type": "string", "minLength": 3},
+        "message": {"type": "string", "minLength": 5}
+      }
+    },
+    "result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scenario_id",
+        "title",
+        "family",
+        "severity",
+        "handler",
+        "control_tags",
+        "expected_outcomes",
+        "expected_oracles",
+        "ephemeral_only",
+        "outcome",
+        "defended",
+        "expectation_met",
+        "detection_oracles",
+        "findings",
+        "baseline_sha256",
+        "mutated_sha256",
+        "error"
+      ],
+      "properties": {
+        "scenario_id": {
+          "type": "string",
+          "pattern": "^TAMPER-[A-Z0-9._-]+$"
+        },
+        "title": {"type": "string", "minLength": 5},
+        "family": {"type": "string", "minLength": 3},
+        "severity": {"const": "critical"},
+        "handler": {"type": "string", "minLength": 3},
+        "control_tags": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"type": "string"}
+        },
+        "expected_outcomes": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "BLOCKED",
+              "REJECTED",
+              "QUARANTINED",
+              "DETECTED_WITH_WARNING"
+            ]
+          }
+        },
+        "expected_oracles": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string"}
+        },
+        "ephemeral_only": {"const": true},
+        "outcome": {
+          "enum": [
+            "BLOCKED",
+            "REJECTED",
+            "QUARANTINED",
+            "DETECTED_WITH_WARNING",
+            "UNDETECTED",
+            "HARNESS_ERROR"
+          ]
+        },
+        "defended": {"type": "boolean"},
+        "expectation_met": {"type": "boolean"},
+        "detection_oracles": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"type": "string"}
+        },
+        "findings": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/finding"}
+        },
+        "baseline_sha256": {"$ref": "#/$defs/sha"},
+        "mutated_sha256": {"$ref": "#/$defs/sha"},
+        "error": {"type": ["string", "null"]}
+      }
+    },
+    "releaseDecision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "stage_gate_status",
+        "production_readiness_status",
+        "blocking_reasons"
+      ],
+      "properties": {
+        "stage_gate_status": {"enum": ["PASS", "FAIL"]},
+        "production_readiness_status": {"const": "BLOCKED"},
+        "blocking_reasons": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string"}
+        }
+      }
+    }
+  }
+}

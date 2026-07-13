@@ -1,0 +1,330 @@
+policy:
+  catalog_id: AEGIS-TAMPER-SCENARIO-CATALOG
+  version: 1.0.0
+  harness_version: 0.1.0
+  description: >
+    Controlled, non-deployable tampering scenarios used to verify that AegisSec
+    detects or blocks integrity corruption, record substitution, path escape,
+    identity collision, stale-evidence manipulation, signature corruption, and
+    chain-of-custody attacks without modifying trusted repository artifacts.
+
+trusted_inputs:
+  decision_policy:
+    relative_path: policies/decision/federal_base_policy_v1.yaml
+    expected_sha256: fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f
+  decision_record:
+    relative_path: data/sample_inputs/decisions/valid_log4shell_decision_record.json
+    expected_sha256: 82cc8dfa5d4c82cdb864e9d769236376ed34b3630f0a81ba9f31a244fb65a878
+  evidence_record:
+    relative_path: data/sample_inputs/evidence/valid_log4j_sbom_evidence.json
+    expected_sha256: 21ed78284567bc33bb463fb2525941829b80c7e21144d17677f022d168a3c2de
+  asset_context:
+    relative_path: data/sample_inputs/assets/valid_healthcare_asset.json
+    expected_sha256: bc9cb98980010ca2bc1c123e808296a2e17bb34a5735cf42cd07e1efcfc64395
+  vulnerability_intelligence:
+    relative_path: data/sample_inputs/intelligence/valid_log4shell_intelligence.json
+    expected_sha256: e2204ab8ff8736c0826ffe24d518cef462a75dcea7e498943506b0fe7f41ff1f
+  assurance_corpus:
+    relative_path: data/assurance/step11a_policy_rule_coverage_corpus.jsonl
+    expected_sha256: d51747056c4f920d5e0b6bfb51613b4e1ee1910de82770aa179dd3fe77f68ded
+  assurance_manifest:
+    relative_path: data/assurance/step11a_policy_rule_coverage_manifest.json
+    expected_sha256: d1fdd9308b973e5248e464daf528a376bca6bc6c27b9d45f267b88f842797465
+  step11a_assurance_report:
+    relative_path: data/validation_reports/assurance/step11a_policy_rule_coverage_report.json
+    expected_sha256: 6226d36646b0d00a22b9c7f4d7efcea216e705bbd1143b1caef07a97e41fd710
+  step11a_release_report:
+    relative_path: data/validation_reports/fairness/step11a_rule_coverage_evaluation_report.json
+    expected_sha256: 3ab83f8962cc6b2dfa4014e59fb1c0a33f399e2b4bd29fa6f822de7ba19e6634
+  step11b_mutation_report:
+    relative_path: data/validation_reports/mutation/step11b_policy_mutation_report.json
+    expected_sha256: 73365a05f63fe4ee0cf51fed471c8a3846679f4ae737cc033be670220de5ceb1
+  decision_schema:
+    relative_path: schemas/aegis_decision_record.schema.json
+    expected_sha256: e54a394ef9c772d3dce070f359051d6accf5761b1983ca9721e03e80a9e54ba3
+  evidence_schema:
+    relative_path: schemas/aegis_evidence_record.schema.json
+    expected_sha256: adaef9c4a1a837fddebee3d40cc03d6d99592682b3c42f1c24dded2fc74ce772
+
+release_gates:
+  critical_tamper_defence_rate_minimum: 1.0
+  undetected_critical_tampering_maximum: 0
+  harness_errors_maximum: 0
+  path_escape_defence_rate_minimum: 1.0
+  hash_corruption_detection_rate_minimum: 1.0
+  identity_collision_detection_rate_minimum: 1.0
+  require_trusted_inputs_unchanged: true
+  approved_remaining_production_blockers:
+    - Real operational validation has not yet been completed.
+    - Independent security review has not yet been completed.
+
+scenarios:
+  - scenario_id: TAMPER-POLICY-BYTE-MODIFICATION-001
+    title: Modify trusted decision-policy bytes
+    family: policy_tampering
+    severity: critical
+    handler: policy_file_modified
+    control_tags: [hash_corruption]
+    expected_outcomes: [BLOCKED]
+    expected_oracles: [BASELINE_HASH]
+
+  - scenario_id: TAMPER-CORPUS-LINE-MODIFICATION-001
+    title: Alter one assurance-corpus case after manifest creation
+    family: corpus_tampering
+    severity: critical
+    handler: corpus_line_modified
+    control_tags: [hash_corruption]
+    expected_outcomes: [REJECTED]
+    expected_oracles: [MANIFEST_HASH]
+
+  - scenario_id: TAMPER-MANIFEST-CORPUS-HASH-001
+    title: Replace the manifest corpus hash
+    family: manifest_tampering
+    severity: critical
+    handler: manifest_corpus_hash_replaced
+    control_tags: [hash_corruption]
+    expected_outcomes: [REJECTED]
+    expected_oracles: [TRUSTED_MANIFEST_HASH, MANIFEST_HASH]
+
+  - scenario_id: TAMPER-MANIFEST-FIXTURE-HASH-001
+    title: Replace a trusted fixture hash in the manifest
+    family: manifest_tampering
+    severity: critical
+    handler: manifest_fixture_hash_replaced
+    control_tags: [hash_corruption]
+    expected_outcomes: [REJECTED]
+    expected_oracles: [TRUSTED_MANIFEST_HASH, FIXTURE_HASH]
+
+  - scenario_id: TAMPER-FIXTURE-SUBSTITUTION-001
+    title: Substitute an asset fixture with an unrelated record
+    family: fixture_substitution
+    severity: critical
+    handler: fixture_substitution
+    control_tags: [hash_corruption, identity_collision]
+    expected_outcomes: [REJECTED]
+    expected_oracles: [INPUT_RECORD_HASH, INPUT_ID_BINDING, INPUT_SCHEMA]
+
+  - scenario_id: TAMPER-DECISION-CONTENT-MODIFICATION-001
+    title: Modify decision content without updating its record hash
+    family: decision_record_tampering
+    severity: critical
+    handler: decision_content_modified
+    control_tags: [hash_corruption]
+    expected_outcomes: [REJECTED]
+    expected_oracles: [DECISION_RECORD_HASH, DECISION_VALIDATOR]
+
+  - scenario_id: TAMPER-DECISION-HASH-INVALID-001
+    title: Replace a decision record hash with a different valid-length digest
+    family: decision_record_tampering
+    severity: critical
+    handler: decision_hash_invalid
+    control_tags: [hash_corruption]
+    expected_outcomes: [REJECTED]
+    expected_oracles: [DECISION_RECORD_HASH, DECISION_VALIDATOR]
+
+  - scenario_id: TAMPER-DECISION-HASH-MALFORMED-001
+    title: Insert a malformed decision record hash
+    family: decision_record_tampering
+    severity: critical
+    handler: decision_hash_malformed
+    control_tags: [hash_corruption]
+    expected_outcomes: [BLOCKED]
+    expected_oracles: [JSON_SCHEMA, DECISION_VALIDATOR]
+
+  - scenario_id: TAMPER-SIGNATURE-INVALID-001
+    title: Declare an invalid evidence signature
+    family: signature_corruption
+    severity: critical
+    handler: signature_invalid
+    control_tags: []
+    expected_outcomes: [REJECTED]
+    expected_oracles: [SIGNATURE_POLICY]
+
+  - scenario_id: TAMPER-SIGNATURE-MISSING-REFERENCE-001
+    title: Declare a valid signature without a signature reference
+    family: signature_corruption
+    severity: critical
+    handler: signature_valid_missing_reference
+    control_tags: []
+    expected_outcomes: [REJECTED]
+    expected_oracles: [SIGNATURE_POLICY]
+
+  - scenario_id: TAMPER-EVIDENCE-SUBSTITUTION-001
+    title: Reuse a trusted evidence ID with different content
+    family: evidence_substitution
+    severity: critical
+    handler: evidence_substitution_same_id
+    control_tags: [hash_corruption, identity_collision]
+    expected_outcomes: [REJECTED]
+    expected_oracles: [EVIDENCE_ID_BINDING, INPUT_RECORD_HASH]
+
+  - scenario_id: TAMPER-PATH-TRAVERSAL-001
+    title: Traverse outside the approved project root
+    family: path_traversal
+    severity: critical
+    handler: path_traversal
+    control_tags: [path_escape]
+    expected_outcomes: [BLOCKED]
+    expected_oracles: [SAFE_PATH, DECISION_VALIDATOR]
+
+  - scenario_id: TAMPER-ABSOLUTE-PATH-001
+    title: Reference an absolute filesystem path
+    family: path_traversal
+    severity: critical
+    handler: absolute_path
+    control_tags: [path_escape]
+    expected_outcomes: [BLOCKED]
+    expected_oracles: [SAFE_PATH, DECISION_VALIDATOR]
+
+  - scenario_id: TAMPER-ENCODED-PATH-TRAVERSAL-001
+    title: Use percent-encoded traversal tokens
+    family: path_traversal
+    severity: critical
+    handler: encoded_path_traversal
+    control_tags: [path_escape]
+    expected_outcomes: [BLOCKED]
+    expected_oracles: [ENCODED_PATH_POLICY, JSON_SCHEMA]
+
+  - scenario_id: TAMPER-SYMLINK-ESCAPE-001
+    title: Escape the approved root through a symbolic link
+    family: path_traversal
+    severity: critical
+    handler: symlink_escape
+    control_tags: [path_escape]
+    expected_outcomes: [BLOCKED]
+    expected_oracles: [SAFE_PATH, DECISION_VALIDATOR]
+
+  - scenario_id: TAMPER-DUPLICATE-INPUT-REFERENCE-001
+    title: Duplicate a decision input reference
+    family: duplicate_identity
+    severity: critical
+    handler: duplicate_input_reference
+    control_tags: [identity_collision]
+    expected_outcomes: [REJECTED]
+    expected_oracles: [DUPLICATE_ID, DECISION_VALIDATOR]
+
+  - scenario_id: TAMPER-DUPLICATE-CORPUS-CASE-ID-001
+    title: Append a duplicate assurance case identifier
+    family: duplicate_identity
+    severity: critical
+    handler: duplicate_corpus_case_id
+    control_tags: [identity_collision, hash_corruption]
+    expected_outcomes: [REJECTED]
+    expected_oracles: [DUPLICATE_ID, MANIFEST_HASH]
+
+  - scenario_id: TAMPER-REFERENCE-DELETION-001
+    title: Delete a supporting evidence reference and recompute the record hash
+    family: reference_tampering
+    severity: critical
+    handler: reference_deletion
+    control_tags: []
+    expected_outcomes: [REJECTED]
+    expected_oracles: [REFERENCE_SET_INTEGRITY]
+
+  - scenario_id: TAMPER-REFERENCE-INJECTION-001
+    title: Inject an unrelated evidence reference and recompute the record hash
+    family: reference_tampering
+    severity: critical
+    handler: reference_injection
+    control_tags: []
+    expected_outcomes: [REJECTED]
+    expected_oracles: [REFERENCE_SET_INTEGRITY]
+
+  - scenario_id: TAMPER-REFERENCE-REORDERING-001
+    title: Reorder supporting evidence without updating the record hash
+    family: reference_tampering
+    severity: critical
+    handler: reference_reordering
+    control_tags: [hash_corruption]
+    expected_outcomes: [REJECTED]
+    expected_oracles: [DECISION_RECORD_HASH, REFERENCE_ORDER_INTEGRITY]
+
+  - scenario_id: TAMPER-STALE-AS-CURRENT-001
+    title: Present stale evidence as current
+    family: freshness_tampering
+    severity: critical
+    handler: stale_as_current
+    control_tags: []
+    expected_outcomes: [REJECTED]
+    expected_oracles: [FRESHNESS_CONSISTENCY]
+
+  - scenario_id: TAMPER-FUTURE-COLLECTION-TIMESTAMP-001
+    title: Set evidence collection after its freshness evaluation
+    family: timestamp_tampering
+    severity: critical
+    handler: future_collection_timestamp
+    control_tags: []
+    expected_outcomes: [REJECTED]
+    expected_oracles: [TIMESTAMP_CONSISTENCY]
+
+  - scenario_id: TAMPER-UNICODE-CONFUSABLE-ID-001
+    title: Replace an ASCII evidence identifier character with a Unicode confusable
+    family: unicode_deception
+    severity: critical
+    handler: unicode_confusable_id
+    control_tags: [identity_collision]
+    expected_outcomes: [BLOCKED]
+    expected_oracles: [IDENTIFIER_POLICY, JSON_SCHEMA]
+
+  - scenario_id: TAMPER-CHAIN-LINK-DELETION-001
+    title: Delete a previous-record chain link and recompute the current hash
+    family: chain_of_custody
+    severity: critical
+    handler: chain_link_deleted
+    control_tags: []
+    expected_outcomes: [REJECTED]
+    expected_oracles: [CHAIN_OF_CUSTODY]
+
+  - scenario_id: TAMPER-CHAIN-LINK-REPLACEMENT-001
+    title: Replace a previous-record chain link and recompute the current hash
+    family: chain_of_custody
+    severity: critical
+    handler: chain_link_replaced
+    control_tags: []
+    expected_outcomes: [REJECTED]
+    expected_oracles: [CHAIN_OF_CUSTODY]
+
+  - scenario_id: TAMPER-EVIDENCE-PARENT-CYCLE-001
+    title: Make an evidence record its own provenance parent
+    family: provenance_tampering
+    severity: critical
+    handler: evidence_parent_cycle
+    control_tags: [identity_collision]
+    expected_outcomes: [REJECTED]
+    expected_oracles: [PROVENANCE_GRAPH]
+
+  - scenario_id: TAMPER-DUPLICATE-DECISION-ID-001
+    title: Introduce two different decisions with the same decision identifier
+    family: duplicate_identity
+    severity: critical
+    handler: duplicate_decision_id
+    control_tags: [identity_collision]
+    expected_outcomes: [REJECTED]
+    expected_oracles: [DUPLICATE_ID]
+
+  - scenario_id: TAMPER-VERIFIED-EVIDENCE-WITHOUT-HASH-001
+    title: Mark evidence verified while removing its cryptographic hash
+    family: integrity_declaration_tampering
+    severity: critical
+    handler: verified_evidence_without_hash
+    control_tags: [hash_corruption]
+    expected_outcomes: [REJECTED]
+    expected_oracles: [EVIDENCE_VALIDATOR]
+
+  - scenario_id: TAMPER-VALIDATION-STATUS-FORGERY-001
+    title: Forge an accepted status that hides validator warnings
+    family: validation_attestation_tampering
+    severity: critical
+    handler: validation_status_forgery
+    control_tags: []
+    expected_outcomes: [REJECTED]
+    expected_oracles: [VALIDATION_ATTESTATION]
+
+  - scenario_id: TAMPER-REQUIRED-REFERENCE-FLAG-001
+    title: Mark a required evidence input as optional and recompute the hash
+    family: reference_tampering
+    severity: critical
+    handler: required_reference_flag_removed
+    control_tags: []
+    expected_outcomes: [REJECTED]
+    expected_oracles: [REFERENCE_SET_INTEGRITY]
