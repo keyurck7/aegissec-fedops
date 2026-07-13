@@ -1,0 +1,162 @@
+{
+  "schema_version": "1.0.0",
+  "decision_id": "AEG-DEC-LOG4J-HOSP-001",
+  "decision_status": "pending_human_review",
+  "decision_type": "vulnerability_prioritization",
+  "input_records": {
+    "asset_context": {
+      "record_type": "asset_context",
+      "record_id": "AEG-AST-HOSP-SCHED-001",
+      "schema_version": "1.0.0",
+      "relative_path": "data/sample_inputs/assets/valid_healthcare_asset.json",
+      "sha256": "bc9cb98980010ca2bc1c123e808296a2e17bb34a5735cf42cd07e1efcfc64395",
+      "validation_status": "accepted_with_warnings",
+      "required_for_decision": true
+    },
+    "vulnerability_intelligence": {
+      "record_type": "vulnerability_intelligence",
+      "record_id": "AEG-VULN-CVE-2021-44228",
+      "schema_version": "1.0.0",
+      "relative_path": "data/sample_inputs/intelligence/valid_log4shell_intelligence.json",
+      "sha256": "e2204ab8ff8736c0826ffe24d518cef462a75dcea7e498943506b0fe7f41ff1f",
+      "validation_status": "accepted_with_warnings",
+      "required_for_decision": true
+    },
+    "evidence_records": [
+      {
+        "record_type": "evidence_record",
+        "record_id": "AEG-EVD-SBOM-LOG4J-001",
+        "schema_version": "1.0.0",
+        "relative_path": "data/sample_inputs/evidence/valid_log4j_sbom_evidence.json",
+        "sha256": "21ed78284567bc33bb463fb2525941829b80c7e21144d17677f022d168a3c2de",
+        "validation_status": "accepted_with_warnings",
+        "required_for_decision": true
+      }
+    ]
+  },
+  "component_instance": {
+    "component_id": "AEG-CMP-LOG4J-CORE-001",
+    "name": "org.apache.logging.log4j:log4j-core",
+    "version": "2.14.1",
+    "ecosystem": "Maven",
+    "purl": "pkg:maven/org.apache.logging.log4j/log4j-core@2.14.1",
+    "dependency_scope": "direct",
+    "runtime_status": "present_runtime_unknown",
+    "evidence_ids": [
+      "AEG-EVD-SBOM-LOG4J-001"
+    ]
+  },
+  "affectedness": {
+    "status": "affected",
+    "confidence": 0.99,
+    "determination_method": "controlled_fixture_assertion",
+    "engine_version": "fixture-0.1.0",
+    "reason_codes": [
+      "COMPONENT_VERSION_IN_AFFECTED_RANGE",
+      "PURL_MATCH_CONFIRMED"
+    ],
+    "supporting_evidence_ids": [
+      "AEG-EVD-SBOM-LOG4J-001",
+      "AEG-EVD-OSV-LOG4J-001"
+    ],
+    "uncertainty_factors": [
+      "Runtime reachability has not yet been evaluated"
+    ],
+    "determined_at": "2026-07-13T17:10:00Z"
+  },
+  "policy_decision": {
+    "status": "completed",
+    "execution_mode": "controlled_fixture_assertion",
+    "policy_id": "AEGIS-FEDERAL-BASE-POLICY",
+    "policy_version": "fixture-0.1.0",
+    "action": "ACT",
+    "minimum_priority": "CRITICAL",
+    "response_deadline_hours": 24,
+    "response_due_at": "2026-07-14T17:10:00Z",
+    "triggered_rules": [
+      {
+        "rule_id": "RULE-KEV-AFFECTED-001",
+        "rule_version": "0.1.0",
+        "description": "A KEV-listed vulnerability confirmed as affected establishes an ACT decision and Critical floor.",
+        "effect": "set_priority_floor",
+        "non_overridable": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-KEV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      {
+        "rule_id": "RULE-HUMAN-REVIEW-001",
+        "rule_version": "0.1.0",
+        "description": "Known exploitation affecting a high-criticality production asset requires accountable review.",
+        "effect": "require_human_review",
+        "non_overridable": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-KEV-LOG4J-001",
+          "AEG-EVD-REQ-000001"
+        ]
+      }
+    ],
+    "evaluated_at": "2026-07-13T17:10:30Z"
+  },
+  "ml_advisory": {
+    "status": "not_run",
+    "model_id": null,
+    "model_version": null,
+    "predicted_priority": null,
+    "confidence": null,
+    "calibrated": null,
+    "probabilities": {},
+    "top_features": [],
+    "advisory_only": true,
+    "abstention_reason": "The independent ML advisory model has not yet been implemented.",
+    "evaluated_at": null
+  },
+  "arbitration": {
+    "status": "policy_only",
+    "final_system_priority": "CRITICAL",
+    "final_action": "ACT",
+    "decision_basis": "policy_only",
+    "human_review_required": true,
+    "reason_codes": [
+      "POLICY_FLOOR_APPLIED",
+      "ML_NOT_RUN",
+      "KNOWN_EXPLOITATION",
+      "HUMAN_AUTHORIZATION_REQUIRED"
+    ],
+    "uncertainty_level": "medium",
+    "policy_floor_enforced": true,
+    "evaluated_at": "2026-07-13T17:11:00Z"
+  },
+  "human_disposition": {
+    "status": "pending",
+    "analyst": null,
+    "final_priority": null,
+    "final_action": null,
+    "justification": null,
+    "override": false,
+    "override_reason": null,
+    "approved_by": null,
+    "decided_at": null,
+    "expires_at": null,
+    "ticket_reference": null
+  },
+  "provenance": {
+    "origin_type": "controlled_fixture",
+    "workflow_version": "step4-contract-0.1.0",
+    "execution_environment": "AegisSec Datalab controlled demonstration environment",
+    "generated_at": "2026-07-13T17:12:00Z"
+  },
+  "audit": {
+    "workflow_run_id": "RUN-STEP4-DECISION-001",
+    "created_by": "AegisSec Step 4 Fixture Builder",
+    "hash_algorithm": "sha256",
+    "canonicalization_policy_id": "AEGIS-CANONICAL-JSON-V1",
+    "previous_record_hash": null,
+    "record_hash": "ae5c9c8a1129f314149dfe673e9d74fd4efe08b7338624e3eea32ef071c7f16f",
+    "immutable": true,
+    "generated_at": "2026-07-13T17:12:00Z"
+  },
+  "created_at": "2026-07-13T17:12:00Z",
+  "updated_at": null
+}

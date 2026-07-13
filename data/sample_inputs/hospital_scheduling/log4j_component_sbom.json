@@ -1,0 +1,24 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:7a75a7aa-f54c-4e54-97a5-aegissec000001",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-07-13T17:00:00Z",
+    "component": {
+      "type": "application",
+      "name": "hospital-scheduling-demo",
+      "version": "1.0.0"
+    }
+  },
+  "components": [
+    {
+      "type": "library",
+      "group": "org.apache.logging.log4j",
+      "name": "log4j-core",
+      "version": "2.14.1",
+      "scope": "required",
+      "purl": "pkg:maven/org.apache.logging.log4j/log4j-core@2.14.1"
+    }
+  ]
+}

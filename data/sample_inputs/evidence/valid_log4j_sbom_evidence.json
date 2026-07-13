@@ -1,0 +1,178 @@
+{
+  "schema_version": "1.0.0",
+  "evidence_id": "AEG-EVD-SBOM-LOG4J-001",
+  "evidence_type": "sbom_cyclonedx",
+  "title": "Controlled hospital scheduling CycloneDX SBOM",
+  "description": "Synthetic demonstration SBOM containing log4j-core 2.14.1 for Decision Record contract validation.",
+  "source": {
+    "source_id": "SRC-DEMO-SBOM-LOG4J",
+    "source_name": "AegisSec Controlled SBOM Fixture",
+    "source_category": "authorized_internal",
+    "source_authority": "high",
+    "publisher": "AegisSec Project Team",
+    "source_url": null,
+    "api_endpoint": null,
+    "external_reference": "DEMO-SBOM-LOG4J-001"
+  },
+  "authorization": {
+    "status": "authorized",
+    "collection_basis": "approved_test_fixture",
+    "approved_use": "testing",
+    "authorization_reference": "AEGIS-DEMO-DATA-POLICY-V1",
+    "contains_restricted_data": false,
+    "restrictions": [
+      "Controlled demonstration use only"
+    ]
+  },
+  "classification": {
+    "data_sensitivity": "internal",
+    "handling_label": "internal_use_only",
+    "contains_personal_data": false,
+    "contains_security_sensitive_data": false
+  },
+  "collection": {
+    "collected_at": "2026-07-13T17:01:00Z",
+    "valid_from": "2026-07-13T17:00:00Z",
+    "valid_until": null,
+    "collection_method": "local_generation",
+    "collector": "AegisSec Step 4 Fixture Builder",
+    "collection_run_id": "RUN-STEP4-FIXTURE-001"
+  },
+  "artifact": {
+    "filename": "log4j_component_sbom.json",
+    "media_type": "application/json",
+    "storage_location": "data/sample_inputs/hospital_scheduling/log4j_component_sbom.json",
+    "size_bytes": 577,
+    "encoding": "utf-8"
+  },
+  "integrity": {
+    "status": "verified",
+    "hash_algorithm": "sha256",
+    "content_hash": "7ce8d78bc7659484cfef835bed25b788de2f16126cea5ea923998bc06c8c865c",
+    "signature_status": "not_present",
+    "signature_reference": null
+  },
+  "freshness": {
+    "evaluated_at": "2026-07-13T17:02:00Z",
+    "status": "current",
+    "age_seconds": 120,
+    "maximum_age_seconds": 86400,
+    "freshness_policy_id": "FRESHNESS-SBOM-V1"
+  },
+  "parser": {
+    "parser_name": "AegisSec CycloneDX Parser",
+    "parser_version": "0.1.0",
+    "parse_status": "success",
+    "parser_confidence": 1.0,
+    "warnings": []
+  },
+  "provenance": {
+    "origin_type": "synthetic",
+    "parent_evidence_ids": [],
+    "transformation_steps": [
+      {
+        "step_id": "STEP-SBOM-001",
+        "operation": "Generate controlled CycloneDX fixture",
+        "tool": "build_step4_fixture",
+        "tool_version": "0.1.0",
+        "configuration_hash": null,
+        "executed_at": "2026-07-13T17:00:00Z"
+      }
+    ],
+    "reproducible": true
+  },
+  "trust": {
+    "authenticity": {
+      "score": 1.0,
+      "status": "confirmed",
+      "reason_codes": [
+        "CONTROLLED_FIXTURE_SOURCE"
+      ]
+    },
+    "integrity": {
+      "score": 1.0,
+      "status": "confirmed",
+      "reason_codes": [
+        "SHA256_VERIFIED"
+      ]
+    },
+    "completeness": {
+      "score": 0.9,
+      "status": "estimated",
+      "reason_codes": [
+        "COMPONENT_IDENTITY_COMPLETE"
+      ]
+    },
+    "freshness": {
+      "score": 1.0,
+      "status": "confirmed",
+      "reason_codes": [
+        "WITHIN_FRESHNESS_WINDOW"
+      ]
+    },
+    "consistency": {
+      "score": 1.0,
+      "status": "confirmed",
+      "reason_codes": [
+        "NO_CONFLICTS_DETECTED"
+      ]
+    },
+    "source_authority": {
+      "score": 0.9,
+      "status": "confirmed",
+      "reason_codes": [
+        "AUTHORIZED_INTERNAL_FIXTURE"
+      ]
+    },
+    "parser_confidence": {
+      "score": 1.0,
+      "status": "confirmed",
+      "reason_codes": [
+        "PARSER_COMPLETED_SUCCESSFULLY"
+      ]
+    },
+    "identity_confidence": {
+      "score": 1.0,
+      "status": "confirmed",
+      "reason_codes": [
+        "PURL_AND_VERSION_PRESENT"
+      ]
+    },
+    "overall_score": 0.97,
+    "summary_level": "high",
+    "calculation_policy_id": "TRUST-POLICY-V1"
+  },
+  "validation": {
+    "schema_valid": true,
+    "business_rules_valid": true,
+    "status": "accepted_with_warnings",
+    "validated_at": "2026-07-13T17:03:00Z",
+    "validator_version": "0.1.0",
+    "errors": [],
+    "warnings": [
+      {
+        "code": "NON_OBSERVED_EVIDENCE",
+        "message": "This SBOM is a synthetic controlled fixture.",
+        "field_path": "provenance.origin_type"
+      }
+    ]
+  },
+  "component_summary": {
+    "component_count": 1,
+    "direct_dependency_count": 1,
+    "transitive_dependency_count": 0,
+    "components_with_versions": 1,
+    "components_with_purl": 1
+  },
+  "asset_references": [
+    "AEG-AST-HOSP-SCHED-001"
+  ],
+  "conflicts": [],
+  "tags": [
+    "controlled-fixture",
+    "cyclonedx",
+    "log4j"
+  ],
+  "created_at": "2026-07-13T17:03:00Z",
+  "updated_at": null
+}
