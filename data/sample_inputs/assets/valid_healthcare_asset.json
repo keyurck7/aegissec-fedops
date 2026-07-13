@@ -1,0 +1,268 @@
+{
+  "schema_version": "1.0.0",
+  "asset_id": "AEG-AST-HOSP-SCHED-001",
+  "asset_name": "Hospital Patient Scheduling Portal",
+  "asset_type": "web_application",
+  "description": "Controlled demonstration application used to manage patient appointments, clinical scheduling, and staff availability.",
+
+  "sector_context": {
+    "primary_sector": "healthcare",
+    "subsector": "Hospital digital services",
+    "jurisdiction": [
+      "INTERNAL_DEMO",
+      "GERMANY",
+      "EU"
+    ],
+    "sector_label_is_decision_input": false,
+    "sector_context_notes": "Healthcare context determines which consequence questions are evaluated. It does not automatically increase vulnerability priority."
+  },
+
+  "ownership": {
+    "accountable_system_owner": {
+      "name": "Demonstration Hospital Digital Services Lead",
+      "role": "Accountable System Owner",
+      "organization": "AegisSec Controlled Demonstration Environment",
+      "contact_reference": "OWNER-HOSP-SCHED-001"
+    },
+
+    "business_owner": {
+      "name": "Hospital Scheduling Operations Lead",
+      "role": "Business Process Owner",
+      "organization": "AegisSec Controlled Demonstration Environment",
+      "contact_reference": "BUSINESS-HOSP-SCHED-001"
+    },
+
+    "cyber_risk_owner": {
+      "name": "Demonstration Cyber Risk Lead",
+      "role": "Cyber Risk Owner",
+      "organization": "AegisSec Controlled Demonstration Environment",
+      "contact_reference": "CYBER-HOSP-SCHED-001"
+    },
+
+    "technical_owner": {
+      "name": "Application Engineering Lead",
+      "role": "Technical Owner",
+      "organization": "AegisSec Controlled Demonstration Environment",
+      "contact_reference": "TECH-HOSP-SCHED-001"
+    },
+
+    "sector_sme": {
+      "name": "Healthcare Operations Reviewer",
+      "role": "Healthcare Sector Subject-Matter Expert",
+      "organization": "AegisSec Controlled Demonstration Environment",
+      "contact_reference": "SME-HEALTH-001"
+    },
+
+    "privacy_rights_reviewer": {
+      "name": "Privacy and Rights Reviewer",
+      "role": "Privacy and Fundamental Rights Reviewer",
+      "organization": "AegisSec Controlled Demonstration Environment",
+      "contact_reference": "PRIVACY-001"
+    }
+  },
+
+  "environment": {
+    "lifecycle_stage": "production",
+    "deployment_model": "private_cloud",
+    "hosting_location": "Controlled EU demonstration environment",
+    "operational_status": "operational",
+    "production_data_present": false
+  },
+
+  "exposure": {
+    "internet_accessible": true,
+    "externally_accessible": true,
+    "network_zone": "dmz",
+    "remote_access": "managed",
+    "authentication_required": true,
+    "privileged_interface_exposed": false,
+    "exposure_confidence": 0.95,
+    "exposure_evidence_ids": [
+      "AEG-EVD-REQ-000001"
+    ],
+    "notes": "The public scheduling interface is internet accessible. Administrative interfaces are restricted."
+  },
+
+  "mission": {
+    "primary_function": "Patient appointment and staff scheduling",
+    "service_description": "Supports booking, modification, prioritization, and operational coordination of patient appointments across hospital departments.",
+    "mission_essential": true,
+    "mission_tier": "critical",
+    "users_or_beneficiaries": [
+      "Patients",
+      "Clinical staff",
+      "Hospital scheduling staff"
+    ],
+    "critical_processes": [
+      "Patient appointment booking",
+      "Clinical resource allocation",
+      "Appointment change notification",
+      "Care-continuity scheduling"
+    ],
+    "manual_alternative_available": true
+  },
+
+  "criticality": {
+    "level": "high",
+    "rationale": "Loss or manipulation of the scheduling service could delay appointments, disrupt care coordination, increase administrative workload, and affect continuity of care.",
+    "assessed_by": "Healthcare Operations Reviewer",
+    "assessment_date": "2026-07-13",
+    "approval_status": "approved",
+    "approval_reference": "ASSET-CRITICALITY-APPROVAL-001"
+  },
+
+  "impact_assessment": {
+    "assessed_by": "Healthcare Operations Reviewer",
+    "assessment_date": "2026-07-13",
+    "method": "approved_scenario",
+
+    "confidentiality": {
+      "severity": "high",
+      "rationale": "Unauthorized disclosure could expose appointment and patient-related operational information.",
+      "evidence_ids": [
+        "AEG-EVD-REQ-000001"
+      ]
+    },
+
+    "integrity": {
+      "severity": "severe",
+      "rationale": "Unauthorized changes to appointment records could cause missed, duplicated, or incorrectly prioritized appointments.",
+      "evidence_ids": [
+        "AEG-EVD-REQ-000001"
+      ]
+    },
+
+    "availability": {
+      "severity": "severe",
+      "rationale": "Extended service outage could prevent appointment coordination and disrupt care-continuity processes.",
+      "evidence_ids": [
+        "AEG-EVD-REQ-000001"
+      ]
+    },
+
+    "public_service": {
+      "severity": "high",
+      "rationale": "The service supports access to hospital scheduling and therefore affects the delivery of an essential public-facing service.",
+      "evidence_ids": [
+        "AEG-EVD-REQ-000001"
+      ]
+    },
+
+    "public_wellbeing": {
+      "severity": "high",
+      "rationale": "Scheduling disruption may delay access to care and increase operational pressure on clinical and administrative personnel.",
+      "evidence_ids": [
+        "AEG-EVD-REQ-000001"
+      ]
+    },
+
+    "patient_safety": {
+      "severity": "high",
+      "rationale": "Incorrect or unavailable scheduling information may contribute to delayed treatment or disrupted follow-up care, although the system does not itself make clinical decisions.",
+      "evidence_ids": [
+        "AEG-EVD-REQ-000001"
+      ]
+    },
+
+    "mission_readiness": {
+      "severity": "not_applicable",
+      "rationale": "Military or defence-readiness impact does not apply to this controlled healthcare scenario.",
+      "evidence_ids": []
+    },
+
+    "legal_regulatory": {
+      "severity": "high",
+      "rationale": "Loss of confidentiality, integrity, or availability may create data-protection, accountability, and service-continuity concerns.",
+      "evidence_ids": [
+        "AEG-EVD-REQ-000001"
+      ]
+    }
+  },
+
+  "data_profile": {
+    "highest_sensitivity": "confidential",
+    "data_categories": [
+      "personal_data",
+      "health_data",
+      "operational_data",
+      "authentication_data"
+    ],
+    "contains_personal_data": true,
+    "contains_health_data": true,
+    "contains_defence_sensitive_data": false,
+    "retention_requirements": "Demonstration value. A production deployment would use the organization's approved retention and deletion policy."
+  },
+
+  "resilience": {
+    "recovery_time_objective_hours": 4,
+    "recovery_point_objective_hours": 1,
+    "maximum_tolerable_downtime_hours": 8,
+    "manual_workaround_available": true,
+    "backup_status": "verified",
+    "failover_capability": "manual",
+    "last_recovery_test_date": "2026-06-15"
+  },
+
+  "security_posture": {
+    "mfa_required": true,
+    "network_segmentation": "strong",
+    "logging_monitoring": "continuous",
+    "edr_or_runtime_protection": "deployed",
+    "compensating_controls": [
+      "Administrative interface restricted to internal network",
+      "Multi-factor authentication for privileged accounts",
+      "Centralized security monitoring"
+    ]
+  },
+
+  "dependencies": [
+    {
+      "dependency_asset_id": "AEG-AST-IDP-001",
+      "relationship": "authenticates_through",
+      "criticality": "essential"
+    },
+
+    {
+      "dependency_asset_id": "AEG-AST-DB-001",
+      "relationship": "stores_data_in",
+      "criticality": "essential"
+    }
+  ],
+
+  "provenance": {
+    "origin_type": "synthetic_demo",
+    "source_evidence_ids": [
+      "AEG-EVD-REQ-000001"
+    ],
+    "attested_by": "AegisSec Project Team",
+    "attested_at": "2026-07-13T16:00:00Z",
+    "review_due_at": "2026-08-13T16:00:00Z",
+    "attestation_reference": "AEGIS-DEMO-ASSET-CONTEXT-V1"
+  },
+
+  "validation": {
+    "schema_valid": true,
+    "business_rules_valid": true,
+    "status": "accepted_with_warnings",
+    "validated_at": "2026-07-13T16:01:00Z",
+    "validator_version": "0.1.0",
+    "errors": [],
+    "warnings": [
+      {
+        "code": "SYNTHETIC_DEMO_CONTEXT",
+        "message": "This asset context is a controlled demonstration fixture and must not be represented as a live hospital system.",
+        "field_path": "provenance.origin_type"
+      }
+    ]
+  },
+
+  "tags": [
+    "healthcare",
+    "controlled-demo",
+    "internet-facing",
+    "critical-service"
+  ],
+
+  "created_at": "2026-07-13T16:01:00Z",
+  "updated_at": null
+}

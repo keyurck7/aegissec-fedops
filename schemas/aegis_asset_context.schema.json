@@ -1,0 +1,1019 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aegissec.example/schemas/aegis-asset-context-v1.0.0.json",
+  "title": "AegisSec Asset Context Record",
+  "description": "Mission, exposure, ownership, consequence, resilience, and provenance context for an asset analyzed by AegisSec-FedOps.",
+  "type": "object",
+  "additionalProperties": false,
+
+  "required": [
+    "schema_version",
+    "asset_id",
+    "asset_name",
+    "asset_type",
+    "sector_context",
+    "ownership",
+    "environment",
+    "exposure",
+    "mission",
+    "criticality",
+    "impact_assessment",
+    "data_profile",
+    "resilience",
+    "provenance",
+    "validation",
+    "created_at"
+  ],
+
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+
+    "asset_id": {
+      "type": "string",
+      "pattern": "^AEG-AST-[A-Z0-9][A-Z0-9._-]{3,99}$"
+    },
+
+    "asset_name": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 300
+    },
+
+    "asset_type": {
+      "type": "string",
+      "enum": [
+        "web_application",
+        "api",
+        "database",
+        "identity_service",
+        "endpoint",
+        "server",
+        "container_platform",
+        "network_service",
+        "medical_device",
+        "operational_technology",
+        "logistics_system",
+        "business_application",
+        "cloud_service",
+        "software_library",
+        "other"
+      ]
+    },
+
+    "description": {
+      "type": ["string", "null"],
+      "maxLength": 3000
+    },
+
+    "sector_context": {
+      "$ref": "#/$defs/sectorContext"
+    },
+
+    "ownership": {
+      "$ref": "#/$defs/ownership"
+    },
+
+    "environment": {
+      "$ref": "#/$defs/environment"
+    },
+
+    "exposure": {
+      "$ref": "#/$defs/exposure"
+    },
+
+    "mission": {
+      "$ref": "#/$defs/mission"
+    },
+
+    "criticality": {
+      "$ref": "#/$defs/criticality"
+    },
+
+    "impact_assessment": {
+      "$ref": "#/$defs/impactAssessment"
+    },
+
+    "data_profile": {
+      "$ref": "#/$defs/dataProfile"
+    },
+
+    "resilience": {
+      "$ref": "#/$defs/resilience"
+    },
+
+    "security_posture": {
+      "$ref": "#/$defs/securityPosture"
+    },
+
+    "dependencies": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/dependency"
+      },
+      "default": []
+    },
+
+    "provenance": {
+      "$ref": "#/$defs/provenance"
+    },
+
+    "validation": {
+      "$ref": "#/$defs/validation"
+    },
+
+    "tags": {
+      "type": "array",
+      "uniqueItems": true,
+      "maxItems": 50,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 100
+      },
+      "default": []
+    },
+
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+
+    "updated_at": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    }
+  },
+
+  "$defs": {
+    "sectorContext": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "primary_sector",
+        "subsector",
+        "jurisdiction",
+        "sector_label_is_decision_input"
+      ],
+      "properties": {
+        "primary_sector": {
+          "type": "string",
+          "enum": [
+            "public_administration",
+            "healthcare",
+            "defence_logistics",
+            "germany_eu_public_sector",
+            "cross_sector",
+            "other"
+          ]
+        },
+
+        "subsector": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 200
+        },
+
+        "jurisdiction": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "US_FEDERAL",
+              "US_STATE_LOCAL",
+              "GERMANY",
+              "EU",
+              "NATO",
+              "INTERNAL_DEMO",
+              "OTHER"
+            ]
+          }
+        },
+
+        "sector_label_is_decision_input": {
+          "type": "boolean",
+          "const": false,
+          "description": "Sector labels must never directly determine vulnerability priority."
+        },
+
+        "sector_context_notes": {
+          "type": ["string", "null"],
+          "maxLength": 1500
+        }
+      }
+    },
+
+    "ownership": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "accountable_system_owner",
+        "business_owner",
+        "cyber_risk_owner",
+        "technical_owner"
+      ],
+      "properties": {
+        "accountable_system_owner": {
+          "$ref": "#/$defs/owner"
+        },
+
+        "business_owner": {
+          "$ref": "#/$defs/owner"
+        },
+
+        "cyber_risk_owner": {
+          "$ref": "#/$defs/owner"
+        },
+
+        "technical_owner": {
+          "$ref": "#/$defs/owner"
+        },
+
+        "sector_sme": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/owner"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+
+        "privacy_rights_reviewer": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/owner"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+
+    "owner": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "role",
+        "organization"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 200
+        },
+
+        "role": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 200
+        },
+
+        "organization": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 200
+        },
+
+        "contact_reference": {
+          "type": ["string", "null"],
+          "maxLength": 300
+        }
+      }
+    },
+
+    "environment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "lifecycle_stage",
+        "deployment_model",
+        "hosting_location",
+        "operational_status"
+      ],
+      "properties": {
+        "lifecycle_stage": {
+          "type": "string",
+          "enum": [
+            "development",
+            "testing",
+            "staging",
+            "production",
+            "disaster_recovery",
+            "decommissioning"
+          ]
+        },
+
+        "deployment_model": {
+          "type": "string",
+          "enum": [
+            "on_premises",
+            "public_cloud",
+            "private_cloud",
+            "hybrid_cloud",
+            "edge",
+            "air_gapped",
+            "unknown"
+          ]
+        },
+
+        "hosting_location": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 300
+        },
+
+        "operational_status": {
+          "type": "string",
+          "enum": [
+            "operational",
+            "degraded",
+            "maintenance",
+            "offline",
+            "unknown"
+          ]
+        },
+
+        "production_data_present": {
+          "type": "boolean",
+          "default": false
+        }
+      }
+    },
+
+    "exposure": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "internet_accessible",
+        "externally_accessible",
+        "network_zone",
+        "remote_access",
+        "authentication_required",
+        "exposure_confidence"
+      ],
+      "properties": {
+        "internet_accessible": {
+          "type": ["boolean", "null"]
+        },
+
+        "externally_accessible": {
+          "type": ["boolean", "null"]
+        },
+
+        "network_zone": {
+          "type": "string",
+          "enum": [
+            "public",
+            "dmz",
+            "internal",
+            "restricted_internal",
+            "isolated",
+            "air_gapped",
+            "unknown"
+          ]
+        },
+
+        "remote_access": {
+          "type": "string",
+          "enum": [
+            "none",
+            "managed",
+            "privileged",
+            "third_party",
+            "public",
+            "unknown"
+          ]
+        },
+
+        "authentication_required": {
+          "type": ["boolean", "null"]
+        },
+
+        "privileged_interface_exposed": {
+          "type": ["boolean", "null"]
+        },
+
+        "exposure_confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+
+        "exposure_evidence_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^AEG-EVD-[A-Z0-9][A-Z0-9._-]{5,99}$"
+          },
+          "default": []
+        },
+
+        "notes": {
+          "type": ["string", "null"],
+          "maxLength": 1500
+        }
+      }
+    },
+
+    "mission": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "primary_function",
+        "service_description",
+        "mission_essential",
+        "mission_tier",
+        "users_or_beneficiaries",
+        "critical_processes"
+      ],
+      "properties": {
+        "primary_function": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 300
+        },
+
+        "service_description": {
+          "type": "string",
+          "minLength": 10,
+          "maxLength": 3000
+        },
+
+        "mission_essential": {
+          "type": "boolean"
+        },
+
+        "mission_tier": {
+          "type": "string",
+          "enum": [
+            "essential",
+            "critical",
+            "important",
+            "standard",
+            "non_critical",
+            "unknown"
+          ]
+        },
+
+        "users_or_beneficiaries": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 200
+          }
+        },
+
+        "critical_processes": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 300
+          }
+        },
+
+        "manual_alternative_available": {
+          "type": ["boolean", "null"]
+        }
+      }
+    },
+
+    "criticality": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "level",
+        "rationale",
+        "assessed_by",
+        "assessment_date",
+        "approval_status"
+      ],
+      "properties": {
+        "level": {
+          "type": "string",
+          "enum": [
+            "very_high",
+            "high",
+            "medium",
+            "low",
+            "unknown"
+          ]
+        },
+
+        "rationale": {
+          "type": "string",
+          "minLength": 20,
+          "maxLength": 3000
+        },
+
+        "assessed_by": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 200
+        },
+
+        "assessment_date": {
+          "type": "string",
+          "format": "date"
+        },
+
+        "approval_status": {
+          "type": "string",
+          "enum": [
+            "approved",
+            "pending_review",
+            "rejected",
+            "expired"
+          ]
+        },
+
+        "approval_reference": {
+          "type": ["string", "null"],
+          "maxLength": 500
+        }
+      }
+    },
+
+    "impactAssessment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "assessed_by",
+        "assessment_date",
+        "confidentiality",
+        "integrity",
+        "availability",
+        "public_service",
+        "public_wellbeing",
+        "patient_safety",
+        "mission_readiness",
+        "legal_regulatory"
+      ],
+      "properties": {
+        "assessed_by": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 200
+        },
+
+        "assessment_date": {
+          "type": "string",
+          "format": "date"
+        },
+
+        "method": {
+          "type": "string",
+          "enum": [
+            "expert_assessment",
+            "business_impact_analysis",
+            "approved_scenario",
+            "historical_analysis",
+            "combined"
+          ]
+        },
+
+        "confidentiality": {
+          "$ref": "#/$defs/impactDimension"
+        },
+
+        "integrity": {
+          "$ref": "#/$defs/impactDimension"
+        },
+
+        "availability": {
+          "$ref": "#/$defs/impactDimension"
+        },
+
+        "public_service": {
+          "$ref": "#/$defs/impactDimension"
+        },
+
+        "public_wellbeing": {
+          "$ref": "#/$defs/impactDimension"
+        },
+
+        "patient_safety": {
+          "$ref": "#/$defs/impactDimension"
+        },
+
+        "mission_readiness": {
+          "$ref": "#/$defs/impactDimension"
+        },
+
+        "legal_regulatory": {
+          "$ref": "#/$defs/impactDimension"
+        }
+      }
+    },
+
+    "impactDimension": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "severity",
+        "rationale",
+        "evidence_ids"
+      ],
+      "properties": {
+        "severity": {
+          "type": "string",
+          "enum": [
+            "none",
+            "low",
+            "moderate",
+            "high",
+            "severe",
+            "catastrophic",
+            "unknown",
+            "not_applicable"
+          ]
+        },
+
+        "rationale": {
+          "type": "string",
+          "minLength": 5,
+          "maxLength": 2000
+        },
+
+        "evidence_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^AEG-EVD-[A-Z0-9][A-Z0-9._-]{5,99}$"
+          }
+        }
+      }
+    },
+
+    "dataProfile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "highest_sensitivity",
+        "data_categories",
+        "contains_personal_data",
+        "contains_health_data",
+        "contains_defence_sensitive_data"
+      ],
+      "properties": {
+        "highest_sensitivity": {
+          "type": "string",
+          "enum": [
+            "public",
+            "internal",
+            "confidential",
+            "restricted",
+            "unknown"
+          ]
+        },
+
+        "data_categories": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "public_information",
+              "operational_data",
+              "personal_data",
+              "health_data",
+              "financial_data",
+              "authentication_data",
+              "security_telemetry",
+              "defence_logistics_data",
+              "classified_data",
+              "other"
+            ]
+          }
+        },
+
+        "contains_personal_data": {
+          "type": "boolean"
+        },
+
+        "contains_health_data": {
+          "type": "boolean"
+        },
+
+        "contains_defence_sensitive_data": {
+          "type": "boolean"
+        },
+
+        "retention_requirements": {
+          "type": ["string", "null"],
+          "maxLength": 1000
+        }
+      }
+    },
+
+    "resilience": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "recovery_time_objective_hours",
+        "recovery_point_objective_hours",
+        "maximum_tolerable_downtime_hours",
+        "manual_workaround_available",
+        "backup_status",
+        "failover_capability"
+      ],
+      "properties": {
+        "recovery_time_objective_hours": {
+          "type": ["number", "null"],
+          "minimum": 0
+        },
+
+        "recovery_point_objective_hours": {
+          "type": ["number", "null"],
+          "minimum": 0
+        },
+
+        "maximum_tolerable_downtime_hours": {
+          "type": ["number", "null"],
+          "minimum": 0
+        },
+
+        "manual_workaround_available": {
+          "type": ["boolean", "null"]
+        },
+
+        "backup_status": {
+          "type": "string",
+          "enum": [
+            "verified",
+            "available_not_recently_tested",
+            "partial",
+            "unavailable",
+            "unknown",
+            "not_applicable"
+          ]
+        },
+
+        "failover_capability": {
+          "type": "string",
+          "enum": [
+            "automatic",
+            "manual",
+            "partial",
+            "none",
+            "unknown",
+            "not_applicable"
+          ]
+        },
+
+        "last_recovery_test_date": {
+          "type": ["string", "null"],
+          "format": "date"
+        }
+      }
+    },
+
+    "securityPosture": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "mfa_required": {
+          "type": ["boolean", "null"]
+        },
+
+        "network_segmentation": {
+          "type": "string",
+          "enum": [
+            "strong",
+            "partial",
+            "none",
+            "unknown"
+          ]
+        },
+
+        "logging_monitoring": {
+          "type": "string",
+          "enum": [
+            "continuous",
+            "periodic",
+            "limited",
+            "none",
+            "unknown"
+          ]
+        },
+
+        "edr_or_runtime_protection": {
+          "type": "string",
+          "enum": [
+            "deployed",
+            "partial",
+            "not_deployed",
+            "not_applicable",
+            "unknown"
+          ]
+        },
+
+        "compensating_controls": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "maxLength": 500
+          },
+          "default": []
+        }
+      }
+    },
+
+    "dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "dependency_asset_id",
+        "relationship",
+        "criticality"
+      ],
+      "properties": {
+        "dependency_asset_id": {
+          "type": "string",
+          "pattern": "^AEG-AST-[A-Z0-9][A-Z0-9._-]{3,99}$"
+        },
+
+        "relationship": {
+          "type": "string",
+          "enum": [
+            "depends_on",
+            "provides_service_to",
+            "authenticates_through",
+            "stores_data_in",
+            "communicates_with",
+            "managed_by"
+          ]
+        },
+
+        "criticality": {
+          "type": "string",
+          "enum": [
+            "essential",
+            "important",
+            "supporting",
+            "unknown"
+          ]
+        }
+      }
+    },
+
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "origin_type",
+        "source_evidence_ids",
+        "attested_by",
+        "attested_at",
+        "review_due_at"
+      ],
+      "properties": {
+        "origin_type": {
+          "type": "string",
+          "enum": [
+            "authorized_internal",
+            "customer_provided",
+            "human_attestation",
+            "synthetic_demo",
+            "derived"
+          ]
+        },
+
+        "source_evidence_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^AEG-EVD-[A-Z0-9][A-Z0-9._-]{5,99}$"
+          }
+        },
+
+        "attested_by": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 200
+        },
+
+        "attested_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+
+        "review_due_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+
+        "attestation_reference": {
+          "type": ["string", "null"],
+          "maxLength": 500
+        }
+      }
+    },
+
+    "validation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_valid",
+        "business_rules_valid",
+        "status",
+        "validated_at",
+        "validator_version"
+      ],
+      "properties": {
+        "schema_valid": {
+          "type": "boolean"
+        },
+
+        "business_rules_valid": {
+          "type": "boolean"
+        },
+
+        "status": {
+          "type": "string",
+          "enum": [
+            "accepted",
+            "accepted_with_warnings",
+            "quarantined",
+            "rejected",
+            "pending"
+          ]
+        },
+
+        "validated_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+
+        "validator_version": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+
+        "errors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/validationMessage"
+          },
+          "default": []
+        },
+
+        "warnings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/validationMessage"
+          },
+          "default": []
+        }
+      }
+    },
+
+    "validationMessage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "code",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]{2,99}$"
+        },
+
+        "message": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000
+        },
+
+        "field_path": {
+          "type": ["string", "null"],
+          "maxLength": 500
+        }
+      }
+    }
+  }
+}
