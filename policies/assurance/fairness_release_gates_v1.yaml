@@ -1,0 +1,73 @@
+policy:
+  policy_id: AEGIS-FAIRNESS-ROBUSTNESS-GATES
+  version: 1.0.0
+  evaluator_version: 0.1.0
+  description: >
+    Release gates for controlled policy assurance, counterfactual consistency,
+    under-triage prevention, abstention quality, deadline parity, escalation
+    monotonicity, policy-rule coverage and deterministic bootstrap uncertainty.
+
+bootstrap:
+  iterations: 1000
+  confidence_level: 0.95
+  random_seed: 20260713
+  sampling_unit: counterfactual_pair
+
+thresholds:
+  case_exact_match_rate_minimum: 1.0
+  action_exact_match_rate_minimum: 1.0
+  priority_exact_match_rate_minimum: 1.0
+  deadline_exact_match_rate_minimum: 1.0
+  invariant_pass_rate_minimum: 1.0
+
+  under_triage_count_maximum: 0
+  safety_recall_minimum: 1.0
+
+  counterfactual_consistency_rate_minimum: 1.0
+  sector_disparity_count_maximum: 0
+  deadline_pair_max_gap_hours_maximum: 0.0
+  review_pair_gap_count_maximum: 0
+  containment_pair_gap_count_maximum: 0
+  closure_pair_gap_count_maximum: 0
+
+  hold_precision_minimum: 1.0
+  hold_recall_minimum: 1.0
+
+  escalation_monotonicity_rate_minimum: 1.0
+  required_rule_coverage_rate_minimum: 1.0
+
+  bootstrap_case_pass_lower_bound_minimum: 0.99
+  bootstrap_counterfactual_lower_bound_minimum: 0.99
+  bootstrap_safety_lower_bound_minimum: 0.99
+
+required_rule_ids:
+  - RULE-AFFECTED-BASELINE-001
+  - RULE-PROBABLY-AFFECTED-001
+  - RULE-UNKNOWN-AFFECTEDNESS-001
+  - RULE-PROBABLY-NOT-AFFECTED-001
+  - RULE-NEGATIVE-AFFECTEDNESS-001
+  - RULE-TRUST-BLOCKED-001
+  - RULE-KEV-AFFECTED-001
+  - RULE-KEV-UNCERTAIN-001
+  - RULE-ACTIVE-EXPLOITATION-001
+  - RULE-INTERNET-EXPOSED-001
+  - RULE-EXPOSURE-UNKNOWN-001
+  - RULE-CATASTROPHIC-IMPACT-001
+  - RULE-SEVERE-IMPACT-001
+  - RULE-MISSION-ESSENTIAL-001
+  - RULE-HIGH-CRITICALITY-001
+  - RULE-CRITICAL-CVSS-001
+  - RULE-NO-FIX-AVAILABLE-001
+
+production_readiness:
+  require_full_policy_rule_coverage: true
+  require_real_operational_validation: true
+  require_independent_security_review: true
+  require_ml_evaluation_when_ml_enabled: true
+
+limitations:
+  - Controlled synthetic assurance cases are not operational incident data.
+  - Sector-label parity is not equivalent to protected-group fairness.
+  - Bootstrap intervals describe this controlled corpus only.
+  - The current evaluation covers deterministic policy logic, not an ML model.
+  - Production authorization requires independent testing and governance review.
