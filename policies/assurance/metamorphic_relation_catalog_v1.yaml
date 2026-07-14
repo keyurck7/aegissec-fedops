@@ -1,0 +1,748 @@
+policy:
+  catalog_id: AEGIS-METAMORPHIC-RELATION-CATALOG
+  version: 1.0.0
+  description: Critical metamorphic relations for deterministic federal vulnerability
+    policy assurance.
+  evaluated_at: '2026-07-14T00:00:00+00:00'
+trusted_inputs:
+  decision_policy:
+    relative_path: policies/decision/federal_base_policy_v1.yaml
+    expected_sha256: fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f
+  assurance_corpus:
+    relative_path: data/assurance/step11a_policy_rule_coverage_corpus.jsonl
+    expected_sha256: d51747056c4f920d5e0b6bfb51613b4e1ee1910de82770aa179dd3fe77f68ded
+  assurance_manifest:
+    relative_path: data/assurance/step11a_policy_rule_coverage_manifest.json
+    expected_sha256: d1fdd9308b973e5248e464daf528a376bca6bc6c27b9d45f267b88f842797465
+  asset_fixture:
+    relative_path: data/sample_inputs/assets/valid_healthcare_asset.json
+    expected_sha256: bc9cb98980010ca2bc1c123e808296a2e17bb34a5735cf42cd07e1efcfc64395
+  intelligence_fixture:
+    relative_path: data/sample_inputs/intelligence/valid_log4shell_intelligence.json
+    expected_sha256: e2204ab8ff8736c0826ffe24d518cef462a75dcea7e498943506b0fe7f41ff1f
+  component_fixture:
+    relative_path: data/sample_inputs/decisions/valid_log4shell_decision_record_policy.json
+    expected_sha256: 7d557b127eb2cb6ae097be75273cad3e3d0cd0876385dd74d2439c762254f37a
+  step11a_report:
+    relative_path: data/validation_reports/assurance/step11a_policy_rule_coverage_report.json
+    expected_sha256: 6226d36646b0d00a22b9c7f4d7efcea216e705bbd1143b1caef07a97e41fd710
+  step11b_report:
+    relative_path: data/validation_reports/mutation/step11b_policy_mutation_report.json
+    expected_sha256: 73365a05f63fe4ee0cf51fed471c8a3846679f4ae737cc033be670220de5ceb1
+  step11c_report:
+    relative_path: data/validation_reports/tampering/step11c_tamper_assurance_report.json
+    expected_sha256: 74f0849ee40aa73f09b9abf23929bbaf4a355d51f00c9b01958b01f943867a23
+  step11d_report:
+    relative_path: data/validation_reports/hostile_inputs/step11d_hostile_input_report.json
+    expected_sha256: 8c21529e07fa9b9b196a002d64fa302e7f9ec10da3e1fec9b7070bdd6d6b6f69
+quality_gates:
+  critical_relation_pass_rate_minimum: 1.0
+  sector_neutrality_consistency_rate_minimum: 1.0
+  danger_escalation_monotonicity_rate_minimum: 1.0
+  trust_degradation_fail_closed_rate_minimum: 1.0
+  deadline_monotonicity_rate_minimum: 1.0
+  review_monotonicity_rate_minimum: 1.0
+  containment_monotonicity_rate_minimum: 1.0
+  closure_monotonicity_rate_minimum: 1.0
+  evidence_removal_no_confidence_gain_rate_minimum: 1.0
+  violation_count_maximum: 0
+  harness_error_count_maximum: 0
+  trusted_input_integrity_required: true
+production_readiness:
+  blocking_reasons:
+  - Real operational validation has not yet been completed.
+  - Independent security review has not yet been completed.
+limitations:
+- Controlled deterministic corpus only; not a substitute for live operational validation.
+- Relations validate policy monotonicity, not deployment security or human workflow
+  performance.
+relations:
+- relation_id: META-SECTOR-BASELINE-001
+  property: Sector label neutrality for baseline affected decisions.
+  family: sector_neutrality
+  severity: critical
+  baseline_case_id: AEG-ASR-001-HC
+  mode: EXACT_EQUALITY
+  expected_changed_paths:
+  - asset_overrides.sector_context.primary_sector
+  expected_transformed_rule_ids:
+  - RULE-AFFECTED-BASELINE-001
+  control_tags:
+  - sector_neutrality
+  comparison_case_id: AEG-ASR-001-DL
+- relation_id: META-SECTOR-ACTIVE-001
+  property: Sector label neutrality under active exploitation.
+  family: sector_neutrality
+  severity: critical
+  baseline_case_id: AEG-ASR-003-HC
+  mode: EXACT_EQUALITY
+  expected_changed_paths:
+  - asset_overrides.sector_context.primary_sector
+  expected_transformed_rule_ids:
+  - RULE-ACTIVE-EXPLOITATION-001
+  control_tags:
+  - sector_neutrality
+  comparison_case_id: AEG-ASR-003-DL
+- relation_id: META-SECTOR-TRUST-BLOCKED-001
+  property: Sector label neutrality under rejected evidence.
+  family: sector_neutrality
+  severity: critical
+  baseline_case_id: AEG-ASR-012-HC
+  mode: EXACT_EQUALITY
+  expected_changed_paths:
+  - asset_overrides.sector_context.primary_sector
+  expected_transformed_rule_ids:
+  - RULE-TRUST-BLOCKED-001
+  control_tags:
+  - sector_neutrality
+  comparison_case_id: AEG-ASR-012-DL
+- relation_id: META-SECTOR-NO-FIX-001
+  property: Sector label neutrality when no remediation exists.
+  family: sector_neutrality
+  severity: critical
+  baseline_case_id: AEG-ASR-011-HC
+  mode: EXACT_EQUALITY
+  expected_changed_paths:
+  - asset_overrides.sector_context.primary_sector
+  expected_transformed_rule_ids:
+  - RULE-NO-FIX-AVAILABLE-001
+  control_tags:
+  - sector_neutrality
+  comparison_case_id: AEG-ASR-011-DL
+- relation_id: META-IMPACT-LOW-HIGH-001
+  property: Increasing impact from low to high cannot weaken the decision.
+  family: impact_monotonicity
+  severity: critical
+  baseline_case_id: AEG-ASR-001-HC
+  mode: NON_DECREASING
+  expected_changed_paths:
+  - asset_overrides.impact_assessment.availability.severity
+  - operational_profile
+  expected_transformed_rule_ids:
+  - RULE-HIGH-IMPACT-001
+  control_tags:
+  - danger_escalation
+  - deadline_monotonicity
+  - review_monotonicity
+  - containment_monotonicity
+  - closure_monotonicity
+  comparison_case_id: AEG-ASR-064-HC
+- relation_id: META-IMPACT-HIGH-SEVERE-001
+  property: Increasing impact from high to severe cannot weaken the decision.
+  family: impact_monotonicity
+  severity: critical
+  baseline_case_id: AEG-ASR-064-HC
+  mode: NON_DECREASING
+  expected_changed_paths:
+  - asset_overrides.impact_assessment.availability.severity
+  - operational_profile
+  expected_transformed_rule_ids:
+  - RULE-SEVERE-IMPACT-001
+  control_tags:
+  - danger_escalation
+  - deadline_monotonicity
+  - review_monotonicity
+  - containment_monotonicity
+  - closure_monotonicity
+  comparison_case_id: AEG-ASR-007-HC
+- relation_id: META-IMPACT-SEVERE-CATASTROPHIC-001
+  property: Increasing impact from severe to catastrophic cannot weaken the decision.
+  family: impact_monotonicity
+  severity: critical
+  baseline_case_id: AEG-ASR-007-HC
+  mode: NON_DECREASING
+  expected_changed_paths:
+  - asset_overrides.impact_assessment.availability.severity
+  - operational_profile
+  expected_transformed_rule_ids:
+  - RULE-CATASTROPHIC-IMPACT-001
+  control_tags:
+  - danger_escalation
+  - deadline_monotonicity
+  - review_monotonicity
+  - containment_monotonicity
+  - closure_monotonicity
+  comparison_case_id: AEG-ASR-006-HC
+- relation_id: META-KEV-ADD-001
+  property: Adding CISA KEV status cannot reduce urgency.
+  family: kev_escalation
+  severity: critical
+  baseline_case_id: AEG-ASR-001-HC
+  mode: NON_DECREASING
+  expected_changed_paths:
+  - intelligence_overrides.kev.catalog_version
+  - intelligence_overrides.kev.date_added
+  - intelligence_overrides.kev.due_date
+  - intelligence_overrides.kev.evidence_id
+  - intelligence_overrides.kev.required_action
+  - intelligence_overrides.kev.status
+  - operational_profile
+  expected_transformed_rule_ids:
+  - RULE-KEV-AFFECTED-001
+  control_tags:
+  - danger_escalation
+  - deadline_monotonicity
+  - review_monotonicity
+  - containment_monotonicity
+  - closure_monotonicity
+  comparison_case_id: AEG-ASR-002-HC
+- relation_id: META-EXPLOITATION-KNOWN-001
+  property: Known exploitation cannot weaken a baseline affected decision.
+  family: exploitation_escalation
+  severity: critical
+  baseline_case_id: AEG-ASR-001-HC
+  mode: NON_DECREASING
+  expected_changed_paths:
+  - intelligence_overrides.exploitation.confidence
+  - intelligence_overrides.exploitation.evidence_ids
+  - intelligence_overrides.exploitation.last_observed_at
+  - intelligence_overrides.exploitation.status
+  - operational_profile
+  expected_transformed_rule_ids:
+  - RULE-KNOWN-EXPLOITATION-001
+  control_tags:
+  - danger_escalation
+  - deadline_monotonicity
+  - review_monotonicity
+  - containment_monotonicity
+  - closure_monotonicity
+  comparison_case_id: AEG-ASR-062-HC
+- relation_id: META-EXPLOITATION-ACTIVE-001
+  property: Active exploitation cannot weaken known-exploitation handling.
+  family: exploitation_escalation
+  severity: critical
+  baseline_case_id: AEG-ASR-062-HC
+  mode: NON_DECREASING
+  expected_changed_paths:
+  - intelligence_overrides.exploitation.confidence
+  - intelligence_overrides.exploitation.evidence_ids
+  - intelligence_overrides.exploitation.last_observed_at
+  - intelligence_overrides.exploitation.status
+  - operational_profile
+  expected_transformed_rule_ids:
+  - RULE-ACTIVE-EXPLOITATION-001
+  control_tags:
+  - danger_escalation
+  - deadline_monotonicity
+  - review_monotonicity
+  - containment_monotonicity
+  - closure_monotonicity
+  comparison_case_id: AEG-ASR-003-HC
+- relation_id: META-EXPOSURE-INTERNET-001
+  property: Adding internet exposure cannot reduce urgency.
+  family: exposure_monotonicity
+  severity: critical
+  baseline_case_id: AEG-ASR-001-HC
+  mode: NON_DECREASING
+  expected_changed_paths:
+  - asset_overrides.exposure.externally_accessible
+  - asset_overrides.exposure.internet_accessible
+  - operational_profile
+  expected_transformed_rule_ids:
+  - RULE-INTERNET-EXPOSED-001
+  control_tags:
+  - danger_escalation
+  - deadline_monotonicity
+  - review_monotonicity
+  - containment_monotonicity
+  - closure_monotonicity
+  comparison_case_id: AEG-ASR-004-HC
+- relation_id: META-EXPOSURE-UNKNOWN-001
+  property: Replacing known non-exposure with unknown exposure cannot ease handling.
+  family: exposure_uncertainty
+  severity: critical
+  baseline_case_id: AEG-ASR-001-HC
+  mode: NON_DECREASING
+  expected_changed_paths:
+  - asset_overrides.exposure.internet_accessible
+  - operational_profile
+  expected_transformed_rule_ids:
+  - RULE-EXPOSURE-UNKNOWN-001
+  control_tags:
+  - danger_escalation
+  - uncertainty_escalation
+  - deadline_monotonicity
+  - review_monotonicity
+  - containment_monotonicity
+  - closure_monotonicity
+  comparison_case_id: AEG-ASR-005-HC
+- relation_id: META-RUNTIME-REACHABLE-001
+  property: Making a component reachable cannot lower priority.
+  family: runtime_reachability
+  severity: critical
+  baseline_case_id: AEG-ASR-001-HC
+  mode: NON_DECREASING
+  expected_changed_paths:
+  - component_overrides.runtime_status
+  - operational_profile
+  expected_transformed_rule_ids:
+  - RULE-RUNTIME-REACHABLE-001
+  control_tags:
+  - danger_escalation
+  - deadline_monotonicity
+  - review_monotonicity
+  - containment_monotonicity
+  - closure_monotonicity
+  comparison_case_id: AEG-ASR-063-HC
+- relation_id: META-RUNTIME-LOADED-001
+  property: Changing reachable to loaded preserves or strengthens safeguards.
+  family: runtime_reachability
+  severity: critical
+  baseline_case_id: AEG-ASR-063-HC
+  mode: NON_DECREASING
+  expected_changed_paths:
+  - component_overrides.runtime_status
+  expected_transformed_rule_ids:
+  - RULE-RUNTIME-REACHABLE-001
+  control_tags:
+  - danger_escalation
+  - deadline_monotonicity
+  - review_monotonicity
+  - containment_monotonicity
+  - closure_monotonicity
+  transformations:
+  - path: component_overrides.runtime_status
+    value: loaded
+- relation_id: META-MISSION-ESSENTIAL-001
+  property: Increasing mission essentiality cannot weaken the decision.
+  family: mission_escalation
+  severity: critical
+  baseline_case_id: AEG-ASR-001-HC
+  mode: NON_DECREASING
+  expected_changed_paths:
+  - asset_overrides.mission.mission_essential
+  - operational_profile
+  expected_transformed_rule_ids:
+  - RULE-MISSION-ESSENTIAL-001
+  control_tags:
+  - danger_escalation
+  - deadline_monotonicity
+  - review_monotonicity
+  - containment_monotonicity
+  - closure_monotonicity
+  comparison_case_id: AEG-ASR-008-HC
+- relation_id: META-CRITICALITY-HIGH-001
+  property: Increasing asset criticality cannot lower priority.
+  family: criticality_escalation
+  severity: critical
+  baseline_case_id: AEG-ASR-001-HC
+  mode: NON_DECREASING
+  expected_changed_paths:
+  - asset_overrides.criticality.level
+  - operational_profile
+  expected_transformed_rule_ids:
+  - RULE-HIGH-CRITICALITY-001
+  control_tags:
+  - danger_escalation
+  - deadline_monotonicity
+  - review_monotonicity
+  - containment_monotonicity
+  - closure_monotonicity
+  comparison_case_id: AEG-ASR-009-HC
+- relation_id: META-CRITICALITY-VERY-HIGH-001
+  property: Increasing high criticality to very high cannot weaken safeguards.
+  family: criticality_escalation
+  severity: critical
+  baseline_case_id: AEG-ASR-009-HC
+  mode: NON_DECREASING
+  expected_changed_paths:
+  - asset_overrides.criticality.level
+  expected_transformed_rule_ids:
+  - RULE-HIGH-CRITICALITY-001
+  control_tags:
+  - danger_escalation
+  - deadline_monotonicity
+  - review_monotonicity
+  - containment_monotonicity
+  - closure_monotonicity
+  transformations:
+  - path: asset_overrides.criticality.level
+    value: very_high
+- relation_id: META-CVSS-INCREASE-001
+  property: Increasing CVSS into the critical range cannot weaken the decision.
+  family: cvss_escalation
+  severity: critical
+  baseline_case_id: AEG-ASR-001-HC
+  mode: NON_DECREASING
+  expected_changed_paths:
+  - intelligence_overrides.cvss.metrics.0.base_score
+  - intelligence_overrides.cvss.metrics.0.base_severity
+  - operational_profile
+  expected_transformed_rule_ids:
+  - RULE-CRITICAL-CVSS-001
+  control_tags:
+  - danger_escalation
+  - deadline_monotonicity
+  - review_monotonicity
+  - containment_monotonicity
+  - closure_monotonicity
+  comparison_case_id: AEG-ASR-010-HC
+- relation_id: META-EPSS-INCREASE-001
+  property: Increasing EPSS probability cannot reduce action or priority.
+  family: epss_monotonicity
+  severity: critical
+  baseline_case_id: AEG-ASR-001-HC
+  mode: NON_DECREASING
+  expected_changed_paths:
+  - intelligence_overrides.epss.percentile
+  - intelligence_overrides.epss.probability
+  expected_transformed_rule_ids: []
+  control_tags:
+  - danger_escalation
+  - deadline_monotonicity
+  - review_monotonicity
+  - containment_monotonicity
+  - closure_monotonicity
+  transformations:
+  - path: intelligence_overrides.epss.probability
+    value: 0.9
+  - path: intelligence_overrides.epss.percentile
+    value: 0.95
+- relation_id: META-EPSS-MISSING-001
+  property: Replacing known EPSS with missing cannot be treated as safer.
+  family: missing_value_uncertainty
+  severity: critical
+  baseline_case_id: AEG-ASR-001-HC
+  mode: NON_DECREASING
+  expected_changed_paths:
+  - intelligence_overrides.epss.evidence_id
+  - intelligence_overrides.epss.missing_reason
+  - intelligence_overrides.epss.model_version
+  - intelligence_overrides.epss.percentile
+  - intelligence_overrides.epss.probability
+  - intelligence_overrides.epss.score_date
+  - intelligence_overrides.epss.status
+  - operational_profile
+  expected_transformed_rule_ids:
+  - RULE-EPSS-MISSING-AFFECTED-001
+  control_tags:
+  - danger_escalation
+  - uncertainty_escalation
+  - deadline_monotonicity
+  - review_monotonicity
+  - containment_monotonicity
+  - closure_monotonicity
+  comparison_case_id: AEG-ASR-065-HC
+- relation_id: META-NO-FIX-001
+  property: Removing remediation availability cannot reduce urgency or containment.
+  family: remediation_removal
+  severity: critical
+  baseline_case_id: AEG-ASR-001-HC
+  mode: NON_DECREASING
+  expected_changed_paths:
+  - intelligence_overrides.remediation.status
+  - operational_profile
+  expected_transformed_rule_ids:
+  - RULE-NO-FIX-AVAILABLE-001
+  control_tags:
+  - danger_escalation
+  - deadline_monotonicity
+  - review_monotonicity
+  - containment_monotonicity
+  - closure_monotonicity
+  comparison_case_id: AEG-ASR-011-HC
+- relation_id: META-END-OF-LIFE-001
+  property: Changing fix available to end of life cannot weaken safeguards.
+  family: remediation_removal
+  severity: critical
+  baseline_case_id: AEG-ASR-001-HC
+  mode: NON_DECREASING
+  expected_changed_paths:
+  - intelligence_overrides.remediation.status
+  expected_transformed_rule_ids:
+  - RULE-NO-FIX-AVAILABLE-001
+  control_tags:
+  - danger_escalation
+  - deadline_monotonicity
+  - review_monotonicity
+  - containment_monotonicity
+  - closure_monotonicity
+  transformations:
+  - path: intelligence_overrides.remediation.status
+    value: end_of_life
+- relation_id: META-TRUST-WARNINGS-001
+  property: Degrading accepted trust to accepted-with-warnings cannot ease automation.
+  family: trust_degradation
+  severity: critical
+  baseline_case_id: AEG-ASR-049-HC
+  mode: NON_DECREASING
+  expected_changed_paths:
+  - operational_profile
+  - trust.action
+  - trust.aggregate_score
+  expected_transformed_rule_ids:
+  - RULE-TRUST-WARNINGS-001
+  control_tags:
+  - trust_degradation
+  - deadline_monotonicity
+  - review_monotonicity
+  - containment_monotonicity
+  - closure_monotonicity
+  comparison_case_id: AEG-ASR-061-HC
+- relation_id: META-TRUST-QUARANTINE-001
+  property: Degrading warning-level trust to quarantine must fail closed.
+  family: trust_degradation
+  severity: critical
+  baseline_case_id: AEG-ASR-061-HC
+  mode: FAIL_CLOSED
+  expected_changed_paths:
+  - trust.action
+  - trust.aggregate_score
+  expected_transformed_rule_ids:
+  - RULE-TRUST-BLOCKED-001
+  control_tags:
+  - trust_degradation
+  - trust_fail_closed
+  - deadline_monotonicity
+  - review_monotonicity
+  - containment_monotonicity
+  - closure_monotonicity
+  transformations:
+  - path: trust.action
+    value: QUARANTINE
+  - path: trust.aggregate_score
+    value: 0.4
+- relation_id: META-TRUST-REJECT-001
+  property: Changing accepted trust to rejected must fail closed.
+  family: trust_degradation
+  severity: critical
+  baseline_case_id: AEG-ASR-049-HC
+  mode: FAIL_CLOSED
+  expected_changed_paths:
+  - trust.action
+  - trust.aggregate_score
+  expected_transformed_rule_ids:
+  - RULE-TRUST-BLOCKED-001
+  control_tags:
+  - trust_degradation
+  - trust_fail_closed
+  - deadline_monotonicity
+  - review_monotonicity
+  - containment_monotonicity
+  - closure_monotonicity
+  transformations:
+  - path: trust.action
+    value: REJECT
+  - path: trust.aggregate_score
+    value: 0.0
+- relation_id: META-AFFECTED-PROBABLE-001
+  property: Increasing affectedness uncertainty to probably affected cannot remove
+    safeguards.
+  family: affectedness_uncertainty
+  severity: critical
+  baseline_case_id: AEG-ASR-001-HC
+  mode: NON_DECREASING
+  expected_changed_paths:
+  - affectedness.confidence
+  - affectedness.status
+  - affectedness_profile
+  expected_transformed_rule_ids:
+  - RULE-PROBABLY-AFFECTED-001
+  control_tags:
+  - danger_escalation
+  - uncertainty_escalation
+  - deadline_monotonicity
+  - review_monotonicity
+  - containment_monotonicity
+  - closure_monotonicity
+  comparison_case_id: AEG-ASR-013-HC
+- relation_id: META-AFFECTED-UNKNOWN-001
+  property: Changing affected to unknown must not produce a permissive disposition.
+  family: affectedness_uncertainty
+  severity: critical
+  baseline_case_id: AEG-ASR-001-HC
+  mode: NON_DECREASING
+  expected_changed_paths:
+  - affectedness.confidence
+  - affectedness.status
+  - affectedness_profile
+  expected_transformed_rule_ids:
+  - RULE-UNKNOWN-AFFECTEDNESS-001
+  control_tags:
+  - danger_escalation
+  - uncertainty_escalation
+  - deadline_monotonicity
+  - review_monotonicity
+  - containment_monotonicity
+  - closure_monotonicity
+  comparison_case_id: AEG-ASR-025-HC
+- relation_id: META-PROBABLE-NOT-UNKNOWN-001
+  property: Increasing uncertainty from probably not affected to unknown cannot weaken
+    safeguards.
+  family: affectedness_uncertainty
+  severity: critical
+  baseline_case_id: AEG-ASR-037-HC
+  mode: NON_DECREASING
+  expected_changed_paths:
+  - affectedness.confidence
+  - affectedness.status
+  - affectedness_profile
+  expected_transformed_rule_ids:
+  - RULE-UNKNOWN-AFFECTEDNESS-001
+  control_tags:
+  - danger_escalation
+  - uncertainty_escalation
+  - deadline_monotonicity
+  - review_monotonicity
+  - containment_monotonicity
+  - closure_monotonicity
+  comparison_case_id: AEG-ASR-025-HC
+- relation_id: META-FIXED-PROBABLE-NOT-001
+  property: Moving fixed to probably not affected must add review and closure controls.
+  family: affectedness_uncertainty
+  severity: critical
+  baseline_case_id: AEG-ASR-049-HC
+  mode: NON_DECREASING
+  expected_changed_paths:
+  - affectedness.confidence
+  - affectedness.status
+  - affectedness_profile
+  expected_transformed_rule_ids:
+  - RULE-PROBABLY-NOT-AFFECTED-001
+  control_tags:
+  - danger_escalation
+  - uncertainty_escalation
+  - deadline_monotonicity
+  - review_monotonicity
+  - containment_monotonicity
+  - closure_monotonicity
+  comparison_case_id: AEG-ASR-037-HC
+- relation_id: META-EVIDENCE-REMOVE-ONE-001
+  property: Removing one affectedness evidence reference cannot increase automation.
+  family: evidence_removal
+  severity: critical
+  baseline_case_id: AEG-ASR-001-HC
+  mode: EVIDENCE_REMOVAL
+  expected_changed_paths:
+  - affectedness.supporting_evidence_ids
+  expected_transformed_rule_ids: []
+  control_tags:
+  - evidence_removal
+  - deadline_monotonicity
+  - review_monotonicity
+  - containment_monotonicity
+  - closure_monotonicity
+  transformations:
+  - path: affectedness.supporting_evidence_ids
+    value:
+    - AEG-EVD-SBOM-LOG4J-001
+- relation_id: META-EVIDENCE-REMOVE-ALL-001
+  property: Removing all affectedness evidence references cannot increase confidence
+    or ease handling.
+  family: evidence_removal
+  severity: critical
+  baseline_case_id: AEG-ASR-001-HC
+  mode: EVIDENCE_REMOVAL
+  expected_changed_paths:
+  - affectedness.supporting_evidence_ids
+  expected_transformed_rule_ids: []
+  control_tags:
+  - evidence_removal
+  - deadline_monotonicity
+  - review_monotonicity
+  - containment_monotonicity
+  - closure_monotonicity
+  transformations:
+  - path: affectedness.supporting_evidence_ids
+    value: []
+- relation_id: META-TRUST-SCORE-DECREASE-001
+  property: Lowering trust score while disposition remains accepted cannot ease handling.
+  family: trust_score_degradation
+  severity: critical
+  baseline_case_id: AEG-ASR-001-HC
+  mode: NO_AUTOMATION_GAIN
+  expected_changed_paths:
+  - trust.aggregate_score
+  expected_transformed_rule_ids: []
+  control_tags:
+  - trust_degradation
+  - deadline_monotonicity
+  - review_monotonicity
+  - containment_monotonicity
+  - closure_monotonicity
+  transformations:
+  - path: trust.aggregate_score
+    value: 0.5
+- relation_id: META-AFFECTEDNESS-CONFIDENCE-DECREASE-001
+  property: Lowering affectedness confidence cannot enable easier automation.
+  family: confidence_degradation
+  severity: critical
+  baseline_case_id: AEG-ASR-001-HC
+  mode: NO_AUTOMATION_GAIN
+  expected_changed_paths:
+  - affectedness.confidence
+  expected_transformed_rule_ids: []
+  control_tags:
+  - uncertainty_escalation
+  - deadline_monotonicity
+  - review_monotonicity
+  - containment_monotonicity
+  - closure_monotonicity
+  transformations:
+  - path: affectedness.confidence
+    value: 0.5
+- relation_id: META-KEV-INTERNET-CUMULATIVE-001
+  property: Adding internet exposure to a KEV-listed case cannot weaken safeguards.
+  family: cumulative_escalation
+  severity: critical
+  baseline_case_id: AEG-ASR-002-HC
+  mode: NON_DECREASING
+  expected_changed_paths:
+  - asset_overrides.exposure.externally_accessible
+  - asset_overrides.exposure.internet_accessible
+  expected_transformed_rule_ids:
+  - RULE-KEV-AFFECTED-001
+  - RULE-INTERNET-EXPOSED-001
+  control_tags:
+  - danger_escalation
+  - deadline_monotonicity
+  - review_monotonicity
+  - containment_monotonicity
+  - closure_monotonicity
+  transformations:
+  - path: asset_overrides.exposure.internet_accessible
+    value: true
+  - path: asset_overrides.exposure.externally_accessible
+    value: true
+- relation_id: META-ACTIVE-NO-FIX-CUMULATIVE-001
+  property: Removing remediation during active exploitation cannot weaken emergency
+    handling.
+  family: cumulative_escalation
+  severity: critical
+  baseline_case_id: AEG-ASR-003-HC
+  mode: NON_DECREASING
+  expected_changed_paths:
+  - intelligence_overrides.remediation.status
+  expected_transformed_rule_ids:
+  - RULE-ACTIVE-EXPLOITATION-001
+  - RULE-NO-FIX-AVAILABLE-001
+  control_tags:
+  - danger_escalation
+  - deadline_monotonicity
+  - review_monotonicity
+  - containment_monotonicity
+  - closure_monotonicity
+  transformations:
+  - path: intelligence_overrides.remediation.status
+    value: no_fix_available
+- relation_id: META-MISSION-CRITICALITY-CUMULATIVE-001
+  property: Adding high criticality to a mission-essential case cannot weaken the
+    decision.
+  family: cumulative_escalation
+  severity: critical
+  baseline_case_id: AEG-ASR-008-HC
+  mode: NON_DECREASING
+  expected_changed_paths:
+  - asset_overrides.criticality.level
+  expected_transformed_rule_ids:
+  - RULE-MISSION-ESSENTIAL-001
+  - RULE-HIGH-CRITICALITY-001
+  control_tags:
+  - danger_escalation
+  - deadline_monotonicity
+  - review_monotonicity
+  - containment_monotonicity
+  - closure_monotonicity
+  transformations:
+  - path: asset_overrides.criticality.level
+    value: high

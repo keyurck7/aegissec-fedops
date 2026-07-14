@@ -1,0 +1,25 @@
+AegisSec Step 11E Metamorphic Assurance
+Relations: 36
+Passed: 36
+Violations: 0
+Blocked invalid transformations: 0
+Harness errors: 0
+Critical relation pass rate: 1.0000
+Sector-neutrality consistency: 1.0000
+Danger-escalation monotonicity: 1.0000
+Trust fail-closed rate: 1.0000
+Deadline monotonicity: 1.0000
+Review monotonicity: 1.0000
+Containment monotonicity: 1.0000
+Closure monotonicity: 1.0000
+Trusted inputs unchanged: True
+Stage gate: PASS
+Production readiness: BLOCKED
+Report: /home/jovyan/vault/aegissec-fedops/data/validation_reports/metamorphic/step11e_metamorphic_assurance_report.json
+Results CSV: /home/jovyan/vault/aegissec-fedops/data/validation_reports/metamorphic/step11e_relation_results.csv
+Violations: /home/jovyan/vault/aegissec-fedops/data/validation_reports/metamorphic/step11e_violations.json
+Integrity record: /home/jovyan/vault/aegissec-fedops/data/validation_reports/metamorphic/step11e_trusted_baseline_integrity.sha256
+
+Remaining production blockers:
+ - Real operational validation has not yet been completed.
+ - Independent security review has not yet been completed.

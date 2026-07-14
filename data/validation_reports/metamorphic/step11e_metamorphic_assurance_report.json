@@ -1,0 +1,4653 @@
+{
+  "assurance_corpus": {
+    "case_count": 130,
+    "relative_path": "data/assurance/step11a_policy_rule_coverage_corpus.jsonl",
+    "sha256": "d51747056c4f920d5e0b6bfb51613b4e1ee1910de82770aa179dd3fe77f68ded"
+  },
+  "catalog": {
+    "catalog_id": "AEGIS-METAMORPHIC-RELATION-CATALOG",
+    "relative_path": "policies/assurance/metamorphic_relation_catalog_v1.yaml",
+    "sha256": "d5f5be9616f1bbe97775d94e10b9699c31a0a4db6f449dac7687b2a3f38cc175",
+    "version": "1.0.0"
+  },
+  "decision_policy": {
+    "relative_path": "policies/decision/federal_base_policy_v1.yaml",
+    "sha256": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f"
+  },
+  "generated_at": "2026-07-14T00:43:42.676210+00:00",
+  "harness_error_relation_ids": [],
+  "input_integrity_checks_after": {
+    "asset_fixture": {
+      "actual_sha256": "bc9cb98980010ca2bc1c123e808296a2e17bb34a5735cf42cd07e1efcfc64395",
+      "exists": true,
+      "expected_sha256": "bc9cb98980010ca2bc1c123e808296a2e17bb34a5735cf42cd07e1efcfc64395",
+      "passed": true,
+      "relative_path": "data/sample_inputs/assets/valid_healthcare_asset.json",
+      "safe_path": true
+    },
+    "assurance_corpus": {
+      "actual_sha256": "d51747056c4f920d5e0b6bfb51613b4e1ee1910de82770aa179dd3fe77f68ded",
+      "exists": true,
+      "expected_sha256": "d51747056c4f920d5e0b6bfb51613b4e1ee1910de82770aa179dd3fe77f68ded",
+      "passed": true,
+      "relative_path": "data/assurance/step11a_policy_rule_coverage_corpus.jsonl",
+      "safe_path": true
+    },
+    "assurance_manifest": {
+      "actual_sha256": "d1fdd9308b973e5248e464daf528a376bca6bc6c27b9d45f267b88f842797465",
+      "exists": true,
+      "expected_sha256": "d1fdd9308b973e5248e464daf528a376bca6bc6c27b9d45f267b88f842797465",
+      "passed": true,
+      "relative_path": "data/assurance/step11a_policy_rule_coverage_manifest.json",
+      "safe_path": true
+    },
+    "component_fixture": {
+      "actual_sha256": "7d557b127eb2cb6ae097be75273cad3e3d0cd0876385dd74d2439c762254f37a",
+      "exists": true,
+      "expected_sha256": "7d557b127eb2cb6ae097be75273cad3e3d0cd0876385dd74d2439c762254f37a",
+      "passed": true,
+      "relative_path": "data/sample_inputs/decisions/valid_log4shell_decision_record_policy.json",
+      "safe_path": true
+    },
+    "decision_policy": {
+      "actual_sha256": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f",
+      "exists": true,
+      "expected_sha256": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f",
+      "passed": true,
+      "relative_path": "policies/decision/federal_base_policy_v1.yaml",
+      "safe_path": true
+    },
+    "intelligence_fixture": {
+      "actual_sha256": "e2204ab8ff8736c0826ffe24d518cef462a75dcea7e498943506b0fe7f41ff1f",
+      "exists": true,
+      "expected_sha256": "e2204ab8ff8736c0826ffe24d518cef462a75dcea7e498943506b0fe7f41ff1f",
+      "passed": true,
+      "relative_path": "data/sample_inputs/intelligence/valid_log4shell_intelligence.json",
+      "safe_path": true
+    },
+    "step11a_report": {
+      "actual_sha256": "6226d36646b0d00a22b9c7f4d7efcea216e705bbd1143b1caef07a97e41fd710",
+      "exists": true,
+      "expected_sha256": "6226d36646b0d00a22b9c7f4d7efcea216e705bbd1143b1caef07a97e41fd710",
+      "passed": true,
+      "relative_path": "data/validation_reports/assurance/step11a_policy_rule_coverage_report.json",
+      "safe_path": true
+    },
+    "step11b_report": {
+      "actual_sha256": "73365a05f63fe4ee0cf51fed471c8a3846679f4ae737cc033be670220de5ceb1",
+      "exists": true,
+      "expected_sha256": "73365a05f63fe4ee0cf51fed471c8a3846679f4ae737cc033be670220de5ceb1",
+      "passed": true,
+      "relative_path": "data/validation_reports/mutation/step11b_policy_mutation_report.json",
+      "safe_path": true
+    },
+    "step11c_report": {
+      "actual_sha256": "74f0849ee40aa73f09b9abf23929bbaf4a355d51f00c9b01958b01f943867a23",
+      "exists": true,
+      "expected_sha256": "74f0849ee40aa73f09b9abf23929bbaf4a355d51f00c9b01958b01f943867a23",
+      "passed": true,
+      "relative_path": "data/validation_reports/tampering/step11c_tamper_assurance_report.json",
+      "safe_path": true
+    },
+    "step11d_report": {
+      "actual_sha256": "8c21529e07fa9b9b196a002d64fa302e7f9ec10da3e1fec9b7070bdd6d6b6f69",
+      "exists": true,
+      "expected_sha256": "8c21529e07fa9b9b196a002d64fa302e7f9ec10da3e1fec9b7070bdd6d6b6f69",
+      "passed": true,
+      "relative_path": "data/validation_reports/hostile_inputs/step11d_hostile_input_report.json",
+      "safe_path": true
+    }
+  },
+  "input_integrity_checks_before": {
+    "asset_fixture": {
+      "actual_sha256": "bc9cb98980010ca2bc1c123e808296a2e17bb34a5735cf42cd07e1efcfc64395",
+      "exists": true,
+      "expected_sha256": "bc9cb98980010ca2bc1c123e808296a2e17bb34a5735cf42cd07e1efcfc64395",
+      "passed": true,
+      "relative_path": "data/sample_inputs/assets/valid_healthcare_asset.json",
+      "safe_path": true
+    },
+    "assurance_corpus": {
+      "actual_sha256": "d51747056c4f920d5e0b6bfb51613b4e1ee1910de82770aa179dd3fe77f68ded",
+      "exists": true,
+      "expected_sha256": "d51747056c4f920d5e0b6bfb51613b4e1ee1910de82770aa179dd3fe77f68ded",
+      "passed": true,
+      "relative_path": "data/assurance/step11a_policy_rule_coverage_corpus.jsonl",
+      "safe_path": true
+    },
+    "assurance_manifest": {
+      "actual_sha256": "d1fdd9308b973e5248e464daf528a376bca6bc6c27b9d45f267b88f842797465",
+      "exists": true,
+      "expected_sha256": "d1fdd9308b973e5248e464daf528a376bca6bc6c27b9d45f267b88f842797465",
+      "passed": true,
+      "relative_path": "data/assurance/step11a_policy_rule_coverage_manifest.json",
+      "safe_path": true
+    },
+    "component_fixture": {
+      "actual_sha256": "7d557b127eb2cb6ae097be75273cad3e3d0cd0876385dd74d2439c762254f37a",
+      "exists": true,
+      "expected_sha256": "7d557b127eb2cb6ae097be75273cad3e3d0cd0876385dd74d2439c762254f37a",
+      "passed": true,
+      "relative_path": "data/sample_inputs/decisions/valid_log4shell_decision_record_policy.json",
+      "safe_path": true
+    },
+    "decision_policy": {
+      "actual_sha256": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f",
+      "exists": true,
+      "expected_sha256": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f",
+      "passed": true,
+      "relative_path": "policies/decision/federal_base_policy_v1.yaml",
+      "safe_path": true
+    },
+    "intelligence_fixture": {
+      "actual_sha256": "e2204ab8ff8736c0826ffe24d518cef462a75dcea7e498943506b0fe7f41ff1f",
+      "exists": true,
+      "expected_sha256": "e2204ab8ff8736c0826ffe24d518cef462a75dcea7e498943506b0fe7f41ff1f",
+      "passed": true,
+      "relative_path": "data/sample_inputs/intelligence/valid_log4shell_intelligence.json",
+      "safe_path": true
+    },
+    "step11a_report": {
+      "actual_sha256": "6226d36646b0d00a22b9c7f4d7efcea216e705bbd1143b1caef07a97e41fd710",
+      "exists": true,
+      "expected_sha256": "6226d36646b0d00a22b9c7f4d7efcea216e705bbd1143b1caef07a97e41fd710",
+      "passed": true,
+      "relative_path": "data/validation_reports/assurance/step11a_policy_rule_coverage_report.json",
+      "safe_path": true
+    },
+    "step11b_report": {
+      "actual_sha256": "73365a05f63fe4ee0cf51fed471c8a3846679f4ae737cc033be670220de5ceb1",
+      "exists": true,
+      "expected_sha256": "73365a05f63fe4ee0cf51fed471c8a3846679f4ae737cc033be670220de5ceb1",
+      "passed": true,
+      "relative_path": "data/validation_reports/mutation/step11b_policy_mutation_report.json",
+      "safe_path": true
+    },
+    "step11c_report": {
+      "actual_sha256": "74f0849ee40aa73f09b9abf23929bbaf4a355d51f00c9b01958b01f943867a23",
+      "exists": true,
+      "expected_sha256": "74f0849ee40aa73f09b9abf23929bbaf4a355d51f00c9b01958b01f943867a23",
+      "passed": true,
+      "relative_path": "data/validation_reports/tampering/step11c_tamper_assurance_report.json",
+      "safe_path": true
+    },
+    "step11d_report": {
+      "actual_sha256": "8c21529e07fa9b9b196a002d64fa302e7f9ec10da3e1fec9b7070bdd6d6b6f69",
+      "exists": true,
+      "expected_sha256": "8c21529e07fa9b9b196a002d64fa302e7f9ec10da3e1fec9b7070bdd6d6b6f69",
+      "passed": true,
+      "relative_path": "data/validation_reports/hostile_inputs/step11d_hostile_input_report.json",
+      "safe_path": true
+    }
+  },
+  "limitations": [
+    "Controlled deterministic corpus only; not a substitute for live operational validation.",
+    "Relations validate policy monotonicity, not deployment security or human workflow performance."
+  ],
+  "quality_gates": [
+    {
+      "gate_id": "META-CRITICAL-PASS-RATE",
+      "metric": "critical_relation_pass_rate",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "META-SECTOR-NEUTRALITY",
+      "metric": "sector_neutrality_consistency_rate",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "META-DANGER-MONOTONICITY",
+      "metric": "danger_escalation_monotonicity_rate",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "META-TRUST-FAIL-CLOSED",
+      "metric": "trust_degradation_fail_closed_rate",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "META-DEADLINE-MONOTONICITY-RATE",
+      "metric": "deadline_monotonicity_rate",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "META-REVIEW-MONOTONICITY-RATE",
+      "metric": "review_monotonicity_rate",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "META-CONTAINMENT-MONOTONICITY-RATE",
+      "metric": "containment_monotonicity_rate",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "META-CLOSURE-MONOTONICITY-RATE",
+      "metric": "closure_monotonicity_rate",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "META-EVIDENCE-REMOVAL-NO-CONFIDENCE-GAIN-RATE",
+      "metric": "evidence_removal_no_confidence_gain_rate",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "META-NO-VIOLATIONS",
+      "metric": "violated_count",
+      "observed": 0,
+      "operator": "lte",
+      "passed": true,
+      "threshold": 0
+    },
+    {
+      "gate_id": "META-NO-HARNESS-ERRORS",
+      "metric": "harness_error_count",
+      "observed": 0,
+      "operator": "lte",
+      "passed": true,
+      "threshold": 0
+    },
+    {
+      "gate_id": "META-TRUSTED-INTEGRITY",
+      "metric": "trusted_input_integrity_passed",
+      "observed": true,
+      "operator": "eq",
+      "passed": true,
+      "threshold": true
+    }
+  ],
+  "release_decision": {
+    "blocking_reasons": [
+      "Real operational validation has not yet been completed.",
+      "Independent security review has not yet been completed."
+    ],
+    "production_readiness_status": "BLOCKED",
+    "stage_gate_status": "PASS"
+  },
+  "report_id": "AEG-METAMORPHIC-STEP11E-001",
+  "results": [
+    {
+      "baseline": {
+        "action": "ATTEND",
+        "containment_required": false,
+        "deadline_hours": 168.0,
+        "human_review_required": false,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001"
+        ],
+        "priority": "HIGH",
+        "prohibit_closure": false,
+        "supporting_evidence_ids": [
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "baseline_case_id": "AEG-ASR-001-HC",
+      "change_scope_valid": true,
+      "changed_paths": [
+        "asset_overrides.sector_context.primary_sector"
+      ],
+      "checks": [
+        {
+          "code": "TRANSFORMATION_SCOPE_EXACT",
+          "message": "Expected changed paths ['asset_overrides.sector_context.primary_sector']; received ['asset_overrides.sector_context.primary_sector'].",
+          "passed": true
+        },
+        {
+          "code": "BASELINE_INVARIANTS_PASS",
+          "message": "Baseline policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "TRANSFORMED_INVARIANTS_PASS",
+          "message": "Transformed policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "EXPECTED_RULES_TRIGGERED",
+          "message": "Expected transformed policy rules must trigger.",
+          "passed": true
+        },
+        {
+          "code": "ACTION_EQUAL",
+          "message": "action must remain equal.",
+          "passed": true
+        },
+        {
+          "code": "PRIORITY_EQUAL",
+          "message": "priority must remain equal.",
+          "passed": true
+        },
+        {
+          "code": "DEADLINE_HOURS_EQUAL",
+          "message": "deadline_hours must remain equal.",
+          "passed": true
+        },
+        {
+          "code": "HUMAN_REVIEW_REQUIRED_EQUAL",
+          "message": "human_review_required must remain equal.",
+          "passed": true
+        },
+        {
+          "code": "CONTAINMENT_REQUIRED_EQUAL",
+          "message": "containment_required must remain equal.",
+          "passed": true
+        },
+        {
+          "code": "PROHIBIT_CLOSURE_EQUAL",
+          "message": "prohibit_closure must remain equal.",
+          "passed": true
+        },
+        {
+          "code": "MATCHED_RULES_EQUAL",
+          "message": "Sector-only changes must not alter matched rules.",
+          "passed": true
+        }
+      ],
+      "control_tags": [
+        "sector_neutrality"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expected_changed_paths": [
+        "asset_overrides.sector_context.primary_sector"
+      ],
+      "family": "sector_neutrality",
+      "mode": "EXACT_EQUALITY",
+      "outcome": "PASSED",
+      "passed": true,
+      "property": "Sector label neutrality for baseline affected decisions.",
+      "relation_id": "META-SECTOR-BASELINE-001",
+      "severity": "critical",
+      "transformed": {
+        "action": "ATTEND",
+        "containment_required": false,
+        "deadline_hours": 168.0,
+        "human_review_required": false,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001"
+        ],
+        "priority": "HIGH",
+        "prohibit_closure": false,
+        "supporting_evidence_ids": [
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "transformed_case_id": "AEG-ASR-001-DL",
+      "violations": []
+    },
+    {
+      "baseline": {
+        "action": "ACT",
+        "containment_required": true,
+        "deadline_hours": 4.0,
+        "human_review_required": true,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001",
+          "RULE-ACTIVE-EXPLOITATION-001"
+        ],
+        "priority": "EMERGENCY",
+        "prohibit_closure": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-EXPLOIT-ASR-001",
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "baseline_case_id": "AEG-ASR-003-HC",
+      "change_scope_valid": true,
+      "changed_paths": [
+        "asset_overrides.sector_context.primary_sector"
+      ],
+      "checks": [
+        {
+          "code": "TRANSFORMATION_SCOPE_EXACT",
+          "message": "Expected changed paths ['asset_overrides.sector_context.primary_sector']; received ['asset_overrides.sector_context.primary_sector'].",
+          "passed": true
+        },
+        {
+          "code": "BASELINE_INVARIANTS_PASS",
+          "message": "Baseline policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "TRANSFORMED_INVARIANTS_PASS",
+          "message": "Transformed policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "EXPECTED_RULES_TRIGGERED",
+          "message": "Expected transformed policy rules must trigger.",
+          "passed": true
+        },
+        {
+          "code": "ACTION_EQUAL",
+          "message": "action must remain equal.",
+          "passed": true
+        },
+        {
+          "code": "PRIORITY_EQUAL",
+          "message": "priority must remain equal.",
+          "passed": true
+        },
+        {
+          "code": "DEADLINE_HOURS_EQUAL",
+          "message": "deadline_hours must remain equal.",
+          "passed": true
+        },
+        {
+          "code": "HUMAN_REVIEW_REQUIRED_EQUAL",
+          "message": "human_review_required must remain equal.",
+          "passed": true
+        },
+        {
+          "code": "CONTAINMENT_REQUIRED_EQUAL",
+          "message": "containment_required must remain equal.",
+          "passed": true
+        },
+        {
+          "code": "PROHIBIT_CLOSURE_EQUAL",
+          "message": "prohibit_closure must remain equal.",
+          "passed": true
+        },
+        {
+          "code": "MATCHED_RULES_EQUAL",
+          "message": "Sector-only changes must not alter matched rules.",
+          "passed": true
+        }
+      ],
+      "control_tags": [
+        "sector_neutrality"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expected_changed_paths": [
+        "asset_overrides.sector_context.primary_sector"
+      ],
+      "family": "sector_neutrality",
+      "mode": "EXACT_EQUALITY",
+      "outcome": "PASSED",
+      "passed": true,
+      "property": "Sector label neutrality under active exploitation.",
+      "relation_id": "META-SECTOR-ACTIVE-001",
+      "severity": "critical",
+      "transformed": {
+        "action": "ACT",
+        "containment_required": true,
+        "deadline_hours": 4.0,
+        "human_review_required": true,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001",
+          "RULE-ACTIVE-EXPLOITATION-001"
+        ],
+        "priority": "EMERGENCY",
+        "prohibit_closure": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-EXPLOIT-ASR-001",
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "transformed_case_id": "AEG-ASR-003-DL",
+      "violations": []
+    },
+    {
+      "baseline": {
+        "action": "HOLD",
+        "containment_required": false,
+        "deadline_hours": 4.0,
+        "human_review_required": true,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001",
+          "RULE-TRUST-BLOCKED-001"
+        ],
+        "priority": "HIGH",
+        "prohibit_closure": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "baseline_case_id": "AEG-ASR-012-HC",
+      "change_scope_valid": true,
+      "changed_paths": [
+        "asset_overrides.sector_context.primary_sector"
+      ],
+      "checks": [
+        {
+          "code": "TRANSFORMATION_SCOPE_EXACT",
+          "message": "Expected changed paths ['asset_overrides.sector_context.primary_sector']; received ['asset_overrides.sector_context.primary_sector'].",
+          "passed": true
+        },
+        {
+          "code": "BASELINE_INVARIANTS_PASS",
+          "message": "Baseline policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "TRANSFORMED_INVARIANTS_PASS",
+          "message": "Transformed policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "EXPECTED_RULES_TRIGGERED",
+          "message": "Expected transformed policy rules must trigger.",
+          "passed": true
+        },
+        {
+          "code": "ACTION_EQUAL",
+          "message": "action must remain equal.",
+          "passed": true
+        },
+        {
+          "code": "PRIORITY_EQUAL",
+          "message": "priority must remain equal.",
+          "passed": true
+        },
+        {
+          "code": "DEADLINE_HOURS_EQUAL",
+          "message": "deadline_hours must remain equal.",
+          "passed": true
+        },
+        {
+          "code": "HUMAN_REVIEW_REQUIRED_EQUAL",
+          "message": "human_review_required must remain equal.",
+          "passed": true
+        },
+        {
+          "code": "CONTAINMENT_REQUIRED_EQUAL",
+          "message": "containment_required must remain equal.",
+          "passed": true
+        },
+        {
+          "code": "PROHIBIT_CLOSURE_EQUAL",
+          "message": "prohibit_closure must remain equal.",
+          "passed": true
+        },
+        {
+          "code": "MATCHED_RULES_EQUAL",
+          "message": "Sector-only changes must not alter matched rules.",
+          "passed": true
+        }
+      ],
+      "control_tags": [
+        "sector_neutrality"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expected_changed_paths": [
+        "asset_overrides.sector_context.primary_sector"
+      ],
+      "family": "sector_neutrality",
+      "mode": "EXACT_EQUALITY",
+      "outcome": "PASSED",
+      "passed": true,
+      "property": "Sector label neutrality under rejected evidence.",
+      "relation_id": "META-SECTOR-TRUST-BLOCKED-001",
+      "severity": "critical",
+      "transformed": {
+        "action": "HOLD",
+        "containment_required": false,
+        "deadline_hours": 4.0,
+        "human_review_required": true,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001",
+          "RULE-TRUST-BLOCKED-001"
+        ],
+        "priority": "HIGH",
+        "prohibit_closure": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "transformed_case_id": "AEG-ASR-012-DL",
+      "violations": []
+    },
+    {
+      "baseline": {
+        "action": "ACT",
+        "containment_required": true,
+        "deadline_hours": 24.0,
+        "human_review_required": true,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001",
+          "RULE-NO-FIX-AVAILABLE-001"
+        ],
+        "priority": "CRITICAL",
+        "prohibit_closure": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-NVD-LOG4J-001",
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "baseline_case_id": "AEG-ASR-011-HC",
+      "change_scope_valid": true,
+      "changed_paths": [
+        "asset_overrides.sector_context.primary_sector"
+      ],
+      "checks": [
+        {
+          "code": "TRANSFORMATION_SCOPE_EXACT",
+          "message": "Expected changed paths ['asset_overrides.sector_context.primary_sector']; received ['asset_overrides.sector_context.primary_sector'].",
+          "passed": true
+        },
+        {
+          "code": "BASELINE_INVARIANTS_PASS",
+          "message": "Baseline policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "TRANSFORMED_INVARIANTS_PASS",
+          "message": "Transformed policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "EXPECTED_RULES_TRIGGERED",
+          "message": "Expected transformed policy rules must trigger.",
+          "passed": true
+        },
+        {
+          "code": "ACTION_EQUAL",
+          "message": "action must remain equal.",
+          "passed": true
+        },
+        {
+          "code": "PRIORITY_EQUAL",
+          "message": "priority must remain equal.",
+          "passed": true
+        },
+        {
+          "code": "DEADLINE_HOURS_EQUAL",
+          "message": "deadline_hours must remain equal.",
+          "passed": true
+        },
+        {
+          "code": "HUMAN_REVIEW_REQUIRED_EQUAL",
+          "message": "human_review_required must remain equal.",
+          "passed": true
+        },
+        {
+          "code": "CONTAINMENT_REQUIRED_EQUAL",
+          "message": "containment_required must remain equal.",
+          "passed": true
+        },
+        {
+          "code": "PROHIBIT_CLOSURE_EQUAL",
+          "message": "prohibit_closure must remain equal.",
+          "passed": true
+        },
+        {
+          "code": "MATCHED_RULES_EQUAL",
+          "message": "Sector-only changes must not alter matched rules.",
+          "passed": true
+        }
+      ],
+      "control_tags": [
+        "sector_neutrality"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expected_changed_paths": [
+        "asset_overrides.sector_context.primary_sector"
+      ],
+      "family": "sector_neutrality",
+      "mode": "EXACT_EQUALITY",
+      "outcome": "PASSED",
+      "passed": true,
+      "property": "Sector label neutrality when no remediation exists.",
+      "relation_id": "META-SECTOR-NO-FIX-001",
+      "severity": "critical",
+      "transformed": {
+        "action": "ACT",
+        "containment_required": true,
+        "deadline_hours": 24.0,
+        "human_review_required": true,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001",
+          "RULE-NO-FIX-AVAILABLE-001"
+        ],
+        "priority": "CRITICAL",
+        "prohibit_closure": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-NVD-LOG4J-001",
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "transformed_case_id": "AEG-ASR-011-DL",
+      "violations": []
+    },
+    {
+      "baseline": {
+        "action": "ATTEND",
+        "containment_required": false,
+        "deadline_hours": 168.0,
+        "human_review_required": false,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001"
+        ],
+        "priority": "HIGH",
+        "prohibit_closure": false,
+        "supporting_evidence_ids": [
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "baseline_case_id": "AEG-ASR-001-HC",
+      "change_scope_valid": true,
+      "changed_paths": [
+        "asset_overrides.impact_assessment.availability.severity",
+        "operational_profile"
+      ],
+      "checks": [
+        {
+          "code": "TRANSFORMATION_SCOPE_EXACT",
+          "message": "Expected changed paths ['asset_overrides.impact_assessment.availability.severity', 'operational_profile']; received ['asset_overrides.impact_assessment.availability.severity', 'operational_profile'].",
+          "passed": true
+        },
+        {
+          "code": "BASELINE_INVARIANTS_PASS",
+          "message": "Baseline policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "TRANSFORMED_INVARIANTS_PASS",
+          "message": "Transformed policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "EXPECTED_RULES_TRIGGERED",
+          "message": "Expected transformed policy rules must trigger.",
+          "passed": true
+        },
+        {
+          "code": "ACTION_NOT_DECREASED",
+          "message": "Action rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "PRIORITY_NOT_DECREASED",
+          "message": "Priority rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "DEADLINE_NOT_LENGTHENED",
+          "message": "Response deadline must not lengthen.",
+          "passed": true
+        },
+        {
+          "code": "REVIEW_NOT_REMOVED",
+          "message": "Existing human review must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CONTAINMENT_NOT_REMOVED",
+          "message": "Existing containment must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CLOSURE_PROHIBITION_NOT_REMOVED",
+          "message": "Existing closure prohibition must not be removed.",
+          "passed": true
+        }
+      ],
+      "control_tags": [
+        "danger_escalation",
+        "deadline_monotonicity",
+        "review_monotonicity",
+        "containment_monotonicity",
+        "closure_monotonicity"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expected_changed_paths": [
+        "asset_overrides.impact_assessment.availability.severity",
+        "operational_profile"
+      ],
+      "family": "impact_monotonicity",
+      "mode": "NON_DECREASING",
+      "outcome": "PASSED",
+      "passed": true,
+      "property": "Increasing impact from low to high cannot weaken the decision.",
+      "relation_id": "META-IMPACT-LOW-HIGH-001",
+      "severity": "critical",
+      "transformed": {
+        "action": "ATTEND",
+        "containment_required": false,
+        "deadline_hours": 72.0,
+        "human_review_required": false,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001",
+          "RULE-HIGH-IMPACT-001"
+        ],
+        "priority": "HIGH",
+        "prohibit_closure": false,
+        "supporting_evidence_ids": [
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-REQ-000001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "transformed_case_id": "AEG-ASR-064-HC",
+      "violations": []
+    },
+    {
+      "baseline": {
+        "action": "ATTEND",
+        "containment_required": false,
+        "deadline_hours": 72.0,
+        "human_review_required": false,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001",
+          "RULE-HIGH-IMPACT-001"
+        ],
+        "priority": "HIGH",
+        "prohibit_closure": false,
+        "supporting_evidence_ids": [
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-REQ-000001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "baseline_case_id": "AEG-ASR-064-HC",
+      "change_scope_valid": true,
+      "changed_paths": [
+        "asset_overrides.impact_assessment.availability.severity",
+        "operational_profile"
+      ],
+      "checks": [
+        {
+          "code": "TRANSFORMATION_SCOPE_EXACT",
+          "message": "Expected changed paths ['asset_overrides.impact_assessment.availability.severity', 'operational_profile']; received ['asset_overrides.impact_assessment.availability.severity', 'operational_profile'].",
+          "passed": true
+        },
+        {
+          "code": "BASELINE_INVARIANTS_PASS",
+          "message": "Baseline policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "TRANSFORMED_INVARIANTS_PASS",
+          "message": "Transformed policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "EXPECTED_RULES_TRIGGERED",
+          "message": "Expected transformed policy rules must trigger.",
+          "passed": true
+        },
+        {
+          "code": "ACTION_NOT_DECREASED",
+          "message": "Action rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "PRIORITY_NOT_DECREASED",
+          "message": "Priority rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "DEADLINE_NOT_LENGTHENED",
+          "message": "Response deadline must not lengthen.",
+          "passed": true
+        },
+        {
+          "code": "REVIEW_NOT_REMOVED",
+          "message": "Existing human review must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CONTAINMENT_NOT_REMOVED",
+          "message": "Existing containment must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CLOSURE_PROHIBITION_NOT_REMOVED",
+          "message": "Existing closure prohibition must not be removed.",
+          "passed": true
+        }
+      ],
+      "control_tags": [
+        "danger_escalation",
+        "deadline_monotonicity",
+        "review_monotonicity",
+        "containment_monotonicity",
+        "closure_monotonicity"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expected_changed_paths": [
+        "asset_overrides.impact_assessment.availability.severity",
+        "operational_profile"
+      ],
+      "family": "impact_monotonicity",
+      "mode": "NON_DECREASING",
+      "outcome": "PASSED",
+      "passed": true,
+      "property": "Increasing impact from high to severe cannot weaken the decision.",
+      "relation_id": "META-IMPACT-HIGH-SEVERE-001",
+      "severity": "critical",
+      "transformed": {
+        "action": "ACT",
+        "containment_required": false,
+        "deadline_hours": 24.0,
+        "human_review_required": true,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001",
+          "RULE-SEVERE-IMPACT-001"
+        ],
+        "priority": "CRITICAL",
+        "prohibit_closure": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-REQ-000001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "transformed_case_id": "AEG-ASR-007-HC",
+      "violations": []
+    },
+    {
+      "baseline": {
+        "action": "ACT",
+        "containment_required": false,
+        "deadline_hours": 24.0,
+        "human_review_required": true,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001",
+          "RULE-SEVERE-IMPACT-001"
+        ],
+        "priority": "CRITICAL",
+        "prohibit_closure": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-REQ-000001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "baseline_case_id": "AEG-ASR-007-HC",
+      "change_scope_valid": true,
+      "changed_paths": [
+        "asset_overrides.impact_assessment.availability.severity",
+        "operational_profile"
+      ],
+      "checks": [
+        {
+          "code": "TRANSFORMATION_SCOPE_EXACT",
+          "message": "Expected changed paths ['asset_overrides.impact_assessment.availability.severity', 'operational_profile']; received ['asset_overrides.impact_assessment.availability.severity', 'operational_profile'].",
+          "passed": true
+        },
+        {
+          "code": "BASELINE_INVARIANTS_PASS",
+          "message": "Baseline policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "TRANSFORMED_INVARIANTS_PASS",
+          "message": "Transformed policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "EXPECTED_RULES_TRIGGERED",
+          "message": "Expected transformed policy rules must trigger.",
+          "passed": true
+        },
+        {
+          "code": "ACTION_NOT_DECREASED",
+          "message": "Action rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "PRIORITY_NOT_DECREASED",
+          "message": "Priority rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "DEADLINE_NOT_LENGTHENED",
+          "message": "Response deadline must not lengthen.",
+          "passed": true
+        },
+        {
+          "code": "REVIEW_NOT_REMOVED",
+          "message": "Existing human review must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CONTAINMENT_NOT_REMOVED",
+          "message": "Existing containment must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CLOSURE_PROHIBITION_NOT_REMOVED",
+          "message": "Existing closure prohibition must not be removed.",
+          "passed": true
+        }
+      ],
+      "control_tags": [
+        "danger_escalation",
+        "deadline_monotonicity",
+        "review_monotonicity",
+        "containment_monotonicity",
+        "closure_monotonicity"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expected_changed_paths": [
+        "asset_overrides.impact_assessment.availability.severity",
+        "operational_profile"
+      ],
+      "family": "impact_monotonicity",
+      "mode": "NON_DECREASING",
+      "outcome": "PASSED",
+      "passed": true,
+      "property": "Increasing impact from severe to catastrophic cannot weaken the decision.",
+      "relation_id": "META-IMPACT-SEVERE-CATASTROPHIC-001",
+      "severity": "critical",
+      "transformed": {
+        "action": "ACT",
+        "containment_required": true,
+        "deadline_hours": 4.0,
+        "human_review_required": true,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001",
+          "RULE-CATASTROPHIC-IMPACT-001"
+        ],
+        "priority": "EMERGENCY",
+        "prohibit_closure": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-REQ-000001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "transformed_case_id": "AEG-ASR-006-HC",
+      "violations": []
+    },
+    {
+      "baseline": {
+        "action": "ATTEND",
+        "containment_required": false,
+        "deadline_hours": 168.0,
+        "human_review_required": false,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001"
+        ],
+        "priority": "HIGH",
+        "prohibit_closure": false,
+        "supporting_evidence_ids": [
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "baseline_case_id": "AEG-ASR-001-HC",
+      "change_scope_valid": true,
+      "changed_paths": [
+        "intelligence_overrides.kev.catalog_version",
+        "intelligence_overrides.kev.date_added",
+        "intelligence_overrides.kev.due_date",
+        "intelligence_overrides.kev.evidence_id",
+        "intelligence_overrides.kev.required_action",
+        "intelligence_overrides.kev.status",
+        "operational_profile"
+      ],
+      "checks": [
+        {
+          "code": "TRANSFORMATION_SCOPE_EXACT",
+          "message": "Expected changed paths ['intelligence_overrides.kev.catalog_version', 'intelligence_overrides.kev.date_added', 'intelligence_overrides.kev.due_date', 'intelligence_overrides.kev.evidence_id', 'intelligence_overrides.kev.required_action', 'intelligence_overrides.kev.status', 'operational_profile']; received ['intelligence_overrides.kev.catalog_version', 'intelligence_overrides.kev.date_added', 'intelligence_overrides.kev.due_date', 'intelligence_overrides.kev.evidence_id', 'intelligence_overrides.kev.required_action', 'intelligence_overrides.kev.status', 'operational_profile'].",
+          "passed": true
+        },
+        {
+          "code": "BASELINE_INVARIANTS_PASS",
+          "message": "Baseline policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "TRANSFORMED_INVARIANTS_PASS",
+          "message": "Transformed policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "EXPECTED_RULES_TRIGGERED",
+          "message": "Expected transformed policy rules must trigger.",
+          "passed": true
+        },
+        {
+          "code": "ACTION_NOT_DECREASED",
+          "message": "Action rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "PRIORITY_NOT_DECREASED",
+          "message": "Priority rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "DEADLINE_NOT_LENGTHENED",
+          "message": "Response deadline must not lengthen.",
+          "passed": true
+        },
+        {
+          "code": "REVIEW_NOT_REMOVED",
+          "message": "Existing human review must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CONTAINMENT_NOT_REMOVED",
+          "message": "Existing containment must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CLOSURE_PROHIBITION_NOT_REMOVED",
+          "message": "Existing closure prohibition must not be removed.",
+          "passed": true
+        }
+      ],
+      "control_tags": [
+        "danger_escalation",
+        "deadline_monotonicity",
+        "review_monotonicity",
+        "containment_monotonicity",
+        "closure_monotonicity"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expected_changed_paths": [
+        "intelligence_overrides.kev.catalog_version",
+        "intelligence_overrides.kev.date_added",
+        "intelligence_overrides.kev.due_date",
+        "intelligence_overrides.kev.evidence_id",
+        "intelligence_overrides.kev.required_action",
+        "intelligence_overrides.kev.status",
+        "operational_profile"
+      ],
+      "family": "kev_escalation",
+      "mode": "NON_DECREASING",
+      "outcome": "PASSED",
+      "passed": true,
+      "property": "Adding CISA KEV status cannot reduce urgency.",
+      "relation_id": "META-KEV-ADD-001",
+      "severity": "critical",
+      "transformed": {
+        "action": "ACT",
+        "containment_required": false,
+        "deadline_hours": 24.0,
+        "human_review_required": true,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001",
+          "RULE-KEV-AFFECTED-001"
+        ],
+        "priority": "CRITICAL",
+        "prohibit_closure": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-KEV-ASR-001",
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "transformed_case_id": "AEG-ASR-002-HC",
+      "violations": []
+    },
+    {
+      "baseline": {
+        "action": "ATTEND",
+        "containment_required": false,
+        "deadline_hours": 168.0,
+        "human_review_required": false,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001"
+        ],
+        "priority": "HIGH",
+        "prohibit_closure": false,
+        "supporting_evidence_ids": [
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "baseline_case_id": "AEG-ASR-001-HC",
+      "change_scope_valid": true,
+      "changed_paths": [
+        "intelligence_overrides.exploitation.confidence",
+        "intelligence_overrides.exploitation.evidence_ids",
+        "intelligence_overrides.exploitation.last_observed_at",
+        "intelligence_overrides.exploitation.status",
+        "operational_profile"
+      ],
+      "checks": [
+        {
+          "code": "TRANSFORMATION_SCOPE_EXACT",
+          "message": "Expected changed paths ['intelligence_overrides.exploitation.confidence', 'intelligence_overrides.exploitation.evidence_ids', 'intelligence_overrides.exploitation.last_observed_at', 'intelligence_overrides.exploitation.status', 'operational_profile']; received ['intelligence_overrides.exploitation.confidence', 'intelligence_overrides.exploitation.evidence_ids', 'intelligence_overrides.exploitation.last_observed_at', 'intelligence_overrides.exploitation.status', 'operational_profile'].",
+          "passed": true
+        },
+        {
+          "code": "BASELINE_INVARIANTS_PASS",
+          "message": "Baseline policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "TRANSFORMED_INVARIANTS_PASS",
+          "message": "Transformed policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "EXPECTED_RULES_TRIGGERED",
+          "message": "Expected transformed policy rules must trigger.",
+          "passed": true
+        },
+        {
+          "code": "ACTION_NOT_DECREASED",
+          "message": "Action rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "PRIORITY_NOT_DECREASED",
+          "message": "Priority rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "DEADLINE_NOT_LENGTHENED",
+          "message": "Response deadline must not lengthen.",
+          "passed": true
+        },
+        {
+          "code": "REVIEW_NOT_REMOVED",
+          "message": "Existing human review must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CONTAINMENT_NOT_REMOVED",
+          "message": "Existing containment must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CLOSURE_PROHIBITION_NOT_REMOVED",
+          "message": "Existing closure prohibition must not be removed.",
+          "passed": true
+        }
+      ],
+      "control_tags": [
+        "danger_escalation",
+        "deadline_monotonicity",
+        "review_monotonicity",
+        "containment_monotonicity",
+        "closure_monotonicity"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expected_changed_paths": [
+        "intelligence_overrides.exploitation.confidence",
+        "intelligence_overrides.exploitation.evidence_ids",
+        "intelligence_overrides.exploitation.last_observed_at",
+        "intelligence_overrides.exploitation.status",
+        "operational_profile"
+      ],
+      "family": "exploitation_escalation",
+      "mode": "NON_DECREASING",
+      "outcome": "PASSED",
+      "passed": true,
+      "property": "Known exploitation cannot weaken a baseline affected decision.",
+      "relation_id": "META-EXPLOITATION-KNOWN-001",
+      "severity": "critical",
+      "transformed": {
+        "action": "ACT",
+        "containment_required": false,
+        "deadline_hours": 24.0,
+        "human_review_required": true,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001",
+          "RULE-KNOWN-EXPLOITATION-001"
+        ],
+        "priority": "CRITICAL",
+        "prohibit_closure": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-KNOWN-EXPLOIT-ASR-001",
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "transformed_case_id": "AEG-ASR-062-HC",
+      "violations": []
+    },
+    {
+      "baseline": {
+        "action": "ACT",
+        "containment_required": false,
+        "deadline_hours": 24.0,
+        "human_review_required": true,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001",
+          "RULE-KNOWN-EXPLOITATION-001"
+        ],
+        "priority": "CRITICAL",
+        "prohibit_closure": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-KNOWN-EXPLOIT-ASR-001",
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "baseline_case_id": "AEG-ASR-062-HC",
+      "change_scope_valid": true,
+      "changed_paths": [
+        "intelligence_overrides.exploitation.confidence",
+        "intelligence_overrides.exploitation.evidence_ids",
+        "intelligence_overrides.exploitation.last_observed_at",
+        "intelligence_overrides.exploitation.status",
+        "operational_profile"
+      ],
+      "checks": [
+        {
+          "code": "TRANSFORMATION_SCOPE_EXACT",
+          "message": "Expected changed paths ['intelligence_overrides.exploitation.confidence', 'intelligence_overrides.exploitation.evidence_ids', 'intelligence_overrides.exploitation.last_observed_at', 'intelligence_overrides.exploitation.status', 'operational_profile']; received ['intelligence_overrides.exploitation.confidence', 'intelligence_overrides.exploitation.evidence_ids', 'intelligence_overrides.exploitation.last_observed_at', 'intelligence_overrides.exploitation.status', 'operational_profile'].",
+          "passed": true
+        },
+        {
+          "code": "BASELINE_INVARIANTS_PASS",
+          "message": "Baseline policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "TRANSFORMED_INVARIANTS_PASS",
+          "message": "Transformed policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "EXPECTED_RULES_TRIGGERED",
+          "message": "Expected transformed policy rules must trigger.",
+          "passed": true
+        },
+        {
+          "code": "ACTION_NOT_DECREASED",
+          "message": "Action rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "PRIORITY_NOT_DECREASED",
+          "message": "Priority rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "DEADLINE_NOT_LENGTHENED",
+          "message": "Response deadline must not lengthen.",
+          "passed": true
+        },
+        {
+          "code": "REVIEW_NOT_REMOVED",
+          "message": "Existing human review must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CONTAINMENT_NOT_REMOVED",
+          "message": "Existing containment must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CLOSURE_PROHIBITION_NOT_REMOVED",
+          "message": "Existing closure prohibition must not be removed.",
+          "passed": true
+        }
+      ],
+      "control_tags": [
+        "danger_escalation",
+        "deadline_monotonicity",
+        "review_monotonicity",
+        "containment_monotonicity",
+        "closure_monotonicity"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expected_changed_paths": [
+        "intelligence_overrides.exploitation.confidence",
+        "intelligence_overrides.exploitation.evidence_ids",
+        "intelligence_overrides.exploitation.last_observed_at",
+        "intelligence_overrides.exploitation.status",
+        "operational_profile"
+      ],
+      "family": "exploitation_escalation",
+      "mode": "NON_DECREASING",
+      "outcome": "PASSED",
+      "passed": true,
+      "property": "Active exploitation cannot weaken known-exploitation handling.",
+      "relation_id": "META-EXPLOITATION-ACTIVE-001",
+      "severity": "critical",
+      "transformed": {
+        "action": "ACT",
+        "containment_required": true,
+        "deadline_hours": 4.0,
+        "human_review_required": true,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001",
+          "RULE-ACTIVE-EXPLOITATION-001"
+        ],
+        "priority": "EMERGENCY",
+        "prohibit_closure": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-EXPLOIT-ASR-001",
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "transformed_case_id": "AEG-ASR-003-HC",
+      "violations": []
+    },
+    {
+      "baseline": {
+        "action": "ATTEND",
+        "containment_required": false,
+        "deadline_hours": 168.0,
+        "human_review_required": false,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001"
+        ],
+        "priority": "HIGH",
+        "prohibit_closure": false,
+        "supporting_evidence_ids": [
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "baseline_case_id": "AEG-ASR-001-HC",
+      "change_scope_valid": true,
+      "changed_paths": [
+        "asset_overrides.exposure.externally_accessible",
+        "asset_overrides.exposure.internet_accessible",
+        "operational_profile"
+      ],
+      "checks": [
+        {
+          "code": "TRANSFORMATION_SCOPE_EXACT",
+          "message": "Expected changed paths ['asset_overrides.exposure.externally_accessible', 'asset_overrides.exposure.internet_accessible', 'operational_profile']; received ['asset_overrides.exposure.externally_accessible', 'asset_overrides.exposure.internet_accessible', 'operational_profile'].",
+          "passed": true
+        },
+        {
+          "code": "BASELINE_INVARIANTS_PASS",
+          "message": "Baseline policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "TRANSFORMED_INVARIANTS_PASS",
+          "message": "Transformed policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "EXPECTED_RULES_TRIGGERED",
+          "message": "Expected transformed policy rules must trigger.",
+          "passed": true
+        },
+        {
+          "code": "ACTION_NOT_DECREASED",
+          "message": "Action rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "PRIORITY_NOT_DECREASED",
+          "message": "Priority rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "DEADLINE_NOT_LENGTHENED",
+          "message": "Response deadline must not lengthen.",
+          "passed": true
+        },
+        {
+          "code": "REVIEW_NOT_REMOVED",
+          "message": "Existing human review must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CONTAINMENT_NOT_REMOVED",
+          "message": "Existing containment must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CLOSURE_PROHIBITION_NOT_REMOVED",
+          "message": "Existing closure prohibition must not be removed.",
+          "passed": true
+        }
+      ],
+      "control_tags": [
+        "danger_escalation",
+        "deadline_monotonicity",
+        "review_monotonicity",
+        "containment_monotonicity",
+        "closure_monotonicity"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expected_changed_paths": [
+        "asset_overrides.exposure.externally_accessible",
+        "asset_overrides.exposure.internet_accessible",
+        "operational_profile"
+      ],
+      "family": "exposure_monotonicity",
+      "mode": "NON_DECREASING",
+      "outcome": "PASSED",
+      "passed": true,
+      "property": "Adding internet exposure cannot reduce urgency.",
+      "relation_id": "META-EXPOSURE-INTERNET-001",
+      "severity": "critical",
+      "transformed": {
+        "action": "ACT",
+        "containment_required": false,
+        "deadline_hours": 24.0,
+        "human_review_required": true,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001",
+          "RULE-INTERNET-EXPOSED-001"
+        ],
+        "priority": "CRITICAL",
+        "prohibit_closure": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-REQ-000001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "transformed_case_id": "AEG-ASR-004-HC",
+      "violations": []
+    },
+    {
+      "baseline": {
+        "action": "ATTEND",
+        "containment_required": false,
+        "deadline_hours": 168.0,
+        "human_review_required": false,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001"
+        ],
+        "priority": "HIGH",
+        "prohibit_closure": false,
+        "supporting_evidence_ids": [
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "baseline_case_id": "AEG-ASR-001-HC",
+      "change_scope_valid": true,
+      "changed_paths": [
+        "asset_overrides.exposure.internet_accessible",
+        "operational_profile"
+      ],
+      "checks": [
+        {
+          "code": "TRANSFORMATION_SCOPE_EXACT",
+          "message": "Expected changed paths ['asset_overrides.exposure.internet_accessible', 'operational_profile']; received ['asset_overrides.exposure.internet_accessible', 'operational_profile'].",
+          "passed": true
+        },
+        {
+          "code": "BASELINE_INVARIANTS_PASS",
+          "message": "Baseline policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "TRANSFORMED_INVARIANTS_PASS",
+          "message": "Transformed policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "EXPECTED_RULES_TRIGGERED",
+          "message": "Expected transformed policy rules must trigger.",
+          "passed": true
+        },
+        {
+          "code": "ACTION_NOT_DECREASED",
+          "message": "Action rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "PRIORITY_NOT_DECREASED",
+          "message": "Priority rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "DEADLINE_NOT_LENGTHENED",
+          "message": "Response deadline must not lengthen.",
+          "passed": true
+        },
+        {
+          "code": "REVIEW_NOT_REMOVED",
+          "message": "Existing human review must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CONTAINMENT_NOT_REMOVED",
+          "message": "Existing containment must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CLOSURE_PROHIBITION_NOT_REMOVED",
+          "message": "Existing closure prohibition must not be removed.",
+          "passed": true
+        }
+      ],
+      "control_tags": [
+        "danger_escalation",
+        "uncertainty_escalation",
+        "deadline_monotonicity",
+        "review_monotonicity",
+        "containment_monotonicity",
+        "closure_monotonicity"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expected_changed_paths": [
+        "asset_overrides.exposure.internet_accessible",
+        "operational_profile"
+      ],
+      "family": "exposure_uncertainty",
+      "mode": "NON_DECREASING",
+      "outcome": "PASSED",
+      "passed": true,
+      "property": "Replacing known non-exposure with unknown exposure cannot ease handling.",
+      "relation_id": "META-EXPOSURE-UNKNOWN-001",
+      "severity": "critical",
+      "transformed": {
+        "action": "ATTEND",
+        "containment_required": false,
+        "deadline_hours": 72.0,
+        "human_review_required": true,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001",
+          "RULE-EXPOSURE-UNKNOWN-001"
+        ],
+        "priority": "HIGH",
+        "prohibit_closure": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-REQ-000001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "transformed_case_id": "AEG-ASR-005-HC",
+      "violations": []
+    },
+    {
+      "baseline": {
+        "action": "ATTEND",
+        "containment_required": false,
+        "deadline_hours": 168.0,
+        "human_review_required": false,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001"
+        ],
+        "priority": "HIGH",
+        "prohibit_closure": false,
+        "supporting_evidence_ids": [
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "baseline_case_id": "AEG-ASR-001-HC",
+      "change_scope_valid": true,
+      "changed_paths": [
+        "component_overrides.runtime_status",
+        "operational_profile"
+      ],
+      "checks": [
+        {
+          "code": "TRANSFORMATION_SCOPE_EXACT",
+          "message": "Expected changed paths ['component_overrides.runtime_status', 'operational_profile']; received ['component_overrides.runtime_status', 'operational_profile'].",
+          "passed": true
+        },
+        {
+          "code": "BASELINE_INVARIANTS_PASS",
+          "message": "Baseline policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "TRANSFORMED_INVARIANTS_PASS",
+          "message": "Transformed policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "EXPECTED_RULES_TRIGGERED",
+          "message": "Expected transformed policy rules must trigger.",
+          "passed": true
+        },
+        {
+          "code": "ACTION_NOT_DECREASED",
+          "message": "Action rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "PRIORITY_NOT_DECREASED",
+          "message": "Priority rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "DEADLINE_NOT_LENGTHENED",
+          "message": "Response deadline must not lengthen.",
+          "passed": true
+        },
+        {
+          "code": "REVIEW_NOT_REMOVED",
+          "message": "Existing human review must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CONTAINMENT_NOT_REMOVED",
+          "message": "Existing containment must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CLOSURE_PROHIBITION_NOT_REMOVED",
+          "message": "Existing closure prohibition must not be removed.",
+          "passed": true
+        }
+      ],
+      "control_tags": [
+        "danger_escalation",
+        "deadline_monotonicity",
+        "review_monotonicity",
+        "containment_monotonicity",
+        "closure_monotonicity"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expected_changed_paths": [
+        "component_overrides.runtime_status",
+        "operational_profile"
+      ],
+      "family": "runtime_reachability",
+      "mode": "NON_DECREASING",
+      "outcome": "PASSED",
+      "passed": true,
+      "property": "Making a component reachable cannot lower priority.",
+      "relation_id": "META-RUNTIME-REACHABLE-001",
+      "severity": "critical",
+      "transformed": {
+        "action": "ACT",
+        "containment_required": false,
+        "deadline_hours": 24.0,
+        "human_review_required": true,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001",
+          "RULE-RUNTIME-REACHABLE-001"
+        ],
+        "priority": "CRITICAL",
+        "prohibit_closure": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "transformed_case_id": "AEG-ASR-063-HC",
+      "violations": []
+    },
+    {
+      "baseline": {
+        "action": "ACT",
+        "containment_required": false,
+        "deadline_hours": 24.0,
+        "human_review_required": true,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001",
+          "RULE-RUNTIME-REACHABLE-001"
+        ],
+        "priority": "CRITICAL",
+        "prohibit_closure": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "baseline_case_id": "AEG-ASR-063-HC",
+      "change_scope_valid": true,
+      "changed_paths": [
+        "component_overrides.runtime_status"
+      ],
+      "checks": [
+        {
+          "code": "TRANSFORMATION_SCOPE_EXACT",
+          "message": "Expected changed paths ['component_overrides.runtime_status']; received ['component_overrides.runtime_status'].",
+          "passed": true
+        },
+        {
+          "code": "BASELINE_INVARIANTS_PASS",
+          "message": "Baseline policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "TRANSFORMED_INVARIANTS_PASS",
+          "message": "Transformed policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "EXPECTED_RULES_TRIGGERED",
+          "message": "Expected transformed policy rules must trigger.",
+          "passed": true
+        },
+        {
+          "code": "ACTION_NOT_DECREASED",
+          "message": "Action rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "PRIORITY_NOT_DECREASED",
+          "message": "Priority rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "DEADLINE_NOT_LENGTHENED",
+          "message": "Response deadline must not lengthen.",
+          "passed": true
+        },
+        {
+          "code": "REVIEW_NOT_REMOVED",
+          "message": "Existing human review must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CONTAINMENT_NOT_REMOVED",
+          "message": "Existing containment must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CLOSURE_PROHIBITION_NOT_REMOVED",
+          "message": "Existing closure prohibition must not be removed.",
+          "passed": true
+        }
+      ],
+      "control_tags": [
+        "danger_escalation",
+        "deadline_monotonicity",
+        "review_monotonicity",
+        "containment_monotonicity",
+        "closure_monotonicity"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expected_changed_paths": [
+        "component_overrides.runtime_status"
+      ],
+      "family": "runtime_reachability",
+      "mode": "NON_DECREASING",
+      "outcome": "PASSED",
+      "passed": true,
+      "property": "Changing reachable to loaded preserves or strengthens safeguards.",
+      "relation_id": "META-RUNTIME-LOADED-001",
+      "severity": "critical",
+      "transformed": {
+        "action": "ACT",
+        "containment_required": false,
+        "deadline_hours": 24.0,
+        "human_review_required": true,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001",
+          "RULE-RUNTIME-REACHABLE-001"
+        ],
+        "priority": "CRITICAL",
+        "prohibit_closure": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "transformed_case_id": "AEG-ASR-063-HC::META-RUNTIME-LOADED-001",
+      "violations": []
+    },
+    {
+      "baseline": {
+        "action": "ATTEND",
+        "containment_required": false,
+        "deadline_hours": 168.0,
+        "human_review_required": false,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001"
+        ],
+        "priority": "HIGH",
+        "prohibit_closure": false,
+        "supporting_evidence_ids": [
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "baseline_case_id": "AEG-ASR-001-HC",
+      "change_scope_valid": true,
+      "changed_paths": [
+        "asset_overrides.mission.mission_essential",
+        "operational_profile"
+      ],
+      "checks": [
+        {
+          "code": "TRANSFORMATION_SCOPE_EXACT",
+          "message": "Expected changed paths ['asset_overrides.mission.mission_essential', 'operational_profile']; received ['asset_overrides.mission.mission_essential', 'operational_profile'].",
+          "passed": true
+        },
+        {
+          "code": "BASELINE_INVARIANTS_PASS",
+          "message": "Baseline policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "TRANSFORMED_INVARIANTS_PASS",
+          "message": "Transformed policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "EXPECTED_RULES_TRIGGERED",
+          "message": "Expected transformed policy rules must trigger.",
+          "passed": true
+        },
+        {
+          "code": "ACTION_NOT_DECREASED",
+          "message": "Action rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "PRIORITY_NOT_DECREASED",
+          "message": "Priority rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "DEADLINE_NOT_LENGTHENED",
+          "message": "Response deadline must not lengthen.",
+          "passed": true
+        },
+        {
+          "code": "REVIEW_NOT_REMOVED",
+          "message": "Existing human review must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CONTAINMENT_NOT_REMOVED",
+          "message": "Existing containment must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CLOSURE_PROHIBITION_NOT_REMOVED",
+          "message": "Existing closure prohibition must not be removed.",
+          "passed": true
+        }
+      ],
+      "control_tags": [
+        "danger_escalation",
+        "deadline_monotonicity",
+        "review_monotonicity",
+        "containment_monotonicity",
+        "closure_monotonicity"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expected_changed_paths": [
+        "asset_overrides.mission.mission_essential",
+        "operational_profile"
+      ],
+      "family": "mission_escalation",
+      "mode": "NON_DECREASING",
+      "outcome": "PASSED",
+      "passed": true,
+      "property": "Increasing mission essentiality cannot weaken the decision.",
+      "relation_id": "META-MISSION-ESSENTIAL-001",
+      "severity": "critical",
+      "transformed": {
+        "action": "ATTEND",
+        "containment_required": false,
+        "deadline_hours": 72.0,
+        "human_review_required": false,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001",
+          "RULE-MISSION-ESSENTIAL-001"
+        ],
+        "priority": "HIGH",
+        "prohibit_closure": false,
+        "supporting_evidence_ids": [
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-REQ-000001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "transformed_case_id": "AEG-ASR-008-HC",
+      "violations": []
+    },
+    {
+      "baseline": {
+        "action": "ATTEND",
+        "containment_required": false,
+        "deadline_hours": 168.0,
+        "human_review_required": false,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001"
+        ],
+        "priority": "HIGH",
+        "prohibit_closure": false,
+        "supporting_evidence_ids": [
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "baseline_case_id": "AEG-ASR-001-HC",
+      "change_scope_valid": true,
+      "changed_paths": [
+        "asset_overrides.criticality.level",
+        "operational_profile"
+      ],
+      "checks": [
+        {
+          "code": "TRANSFORMATION_SCOPE_EXACT",
+          "message": "Expected changed paths ['asset_overrides.criticality.level', 'operational_profile']; received ['asset_overrides.criticality.level', 'operational_profile'].",
+          "passed": true
+        },
+        {
+          "code": "BASELINE_INVARIANTS_PASS",
+          "message": "Baseline policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "TRANSFORMED_INVARIANTS_PASS",
+          "message": "Transformed policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "EXPECTED_RULES_TRIGGERED",
+          "message": "Expected transformed policy rules must trigger.",
+          "passed": true
+        },
+        {
+          "code": "ACTION_NOT_DECREASED",
+          "message": "Action rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "PRIORITY_NOT_DECREASED",
+          "message": "Priority rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "DEADLINE_NOT_LENGTHENED",
+          "message": "Response deadline must not lengthen.",
+          "passed": true
+        },
+        {
+          "code": "REVIEW_NOT_REMOVED",
+          "message": "Existing human review must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CONTAINMENT_NOT_REMOVED",
+          "message": "Existing containment must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CLOSURE_PROHIBITION_NOT_REMOVED",
+          "message": "Existing closure prohibition must not be removed.",
+          "passed": true
+        }
+      ],
+      "control_tags": [
+        "danger_escalation",
+        "deadline_monotonicity",
+        "review_monotonicity",
+        "containment_monotonicity",
+        "closure_monotonicity"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expected_changed_paths": [
+        "asset_overrides.criticality.level",
+        "operational_profile"
+      ],
+      "family": "criticality_escalation",
+      "mode": "NON_DECREASING",
+      "outcome": "PASSED",
+      "passed": true,
+      "property": "Increasing asset criticality cannot lower priority.",
+      "relation_id": "META-CRITICALITY-HIGH-001",
+      "severity": "critical",
+      "transformed": {
+        "action": "ATTEND",
+        "containment_required": false,
+        "deadline_hours": 72.0,
+        "human_review_required": false,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001",
+          "RULE-HIGH-CRITICALITY-001"
+        ],
+        "priority": "HIGH",
+        "prohibit_closure": false,
+        "supporting_evidence_ids": [
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-REQ-000001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "transformed_case_id": "AEG-ASR-009-HC",
+      "violations": []
+    },
+    {
+      "baseline": {
+        "action": "ATTEND",
+        "containment_required": false,
+        "deadline_hours": 72.0,
+        "human_review_required": false,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001",
+          "RULE-HIGH-CRITICALITY-001"
+        ],
+        "priority": "HIGH",
+        "prohibit_closure": false,
+        "supporting_evidence_ids": [
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-REQ-000001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "baseline_case_id": "AEG-ASR-009-HC",
+      "change_scope_valid": true,
+      "changed_paths": [
+        "asset_overrides.criticality.level"
+      ],
+      "checks": [
+        {
+          "code": "TRANSFORMATION_SCOPE_EXACT",
+          "message": "Expected changed paths ['asset_overrides.criticality.level']; received ['asset_overrides.criticality.level'].",
+          "passed": true
+        },
+        {
+          "code": "BASELINE_INVARIANTS_PASS",
+          "message": "Baseline policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "TRANSFORMED_INVARIANTS_PASS",
+          "message": "Transformed policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "EXPECTED_RULES_TRIGGERED",
+          "message": "Expected transformed policy rules must trigger.",
+          "passed": true
+        },
+        {
+          "code": "ACTION_NOT_DECREASED",
+          "message": "Action rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "PRIORITY_NOT_DECREASED",
+          "message": "Priority rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "DEADLINE_NOT_LENGTHENED",
+          "message": "Response deadline must not lengthen.",
+          "passed": true
+        },
+        {
+          "code": "REVIEW_NOT_REMOVED",
+          "message": "Existing human review must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CONTAINMENT_NOT_REMOVED",
+          "message": "Existing containment must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CLOSURE_PROHIBITION_NOT_REMOVED",
+          "message": "Existing closure prohibition must not be removed.",
+          "passed": true
+        }
+      ],
+      "control_tags": [
+        "danger_escalation",
+        "deadline_monotonicity",
+        "review_monotonicity",
+        "containment_monotonicity",
+        "closure_monotonicity"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expected_changed_paths": [
+        "asset_overrides.criticality.level"
+      ],
+      "family": "criticality_escalation",
+      "mode": "NON_DECREASING",
+      "outcome": "PASSED",
+      "passed": true,
+      "property": "Increasing high criticality to very high cannot weaken safeguards.",
+      "relation_id": "META-CRITICALITY-VERY-HIGH-001",
+      "severity": "critical",
+      "transformed": {
+        "action": "ATTEND",
+        "containment_required": false,
+        "deadline_hours": 72.0,
+        "human_review_required": false,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001",
+          "RULE-HIGH-CRITICALITY-001"
+        ],
+        "priority": "HIGH",
+        "prohibit_closure": false,
+        "supporting_evidence_ids": [
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-REQ-000001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "transformed_case_id": "AEG-ASR-009-HC::META-CRITICALITY-VERY-HIGH-001",
+      "violations": []
+    },
+    {
+      "baseline": {
+        "action": "ATTEND",
+        "containment_required": false,
+        "deadline_hours": 168.0,
+        "human_review_required": false,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001"
+        ],
+        "priority": "HIGH",
+        "prohibit_closure": false,
+        "supporting_evidence_ids": [
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "baseline_case_id": "AEG-ASR-001-HC",
+      "change_scope_valid": true,
+      "changed_paths": [
+        "intelligence_overrides.cvss.metrics.0.base_score",
+        "intelligence_overrides.cvss.metrics.0.base_severity",
+        "operational_profile"
+      ],
+      "checks": [
+        {
+          "code": "TRANSFORMATION_SCOPE_EXACT",
+          "message": "Expected changed paths ['intelligence_overrides.cvss.metrics.0.base_score', 'intelligence_overrides.cvss.metrics.0.base_severity', 'operational_profile']; received ['intelligence_overrides.cvss.metrics.0.base_score', 'intelligence_overrides.cvss.metrics.0.base_severity', 'operational_profile'].",
+          "passed": true
+        },
+        {
+          "code": "BASELINE_INVARIANTS_PASS",
+          "message": "Baseline policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "TRANSFORMED_INVARIANTS_PASS",
+          "message": "Transformed policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "EXPECTED_RULES_TRIGGERED",
+          "message": "Expected transformed policy rules must trigger.",
+          "passed": true
+        },
+        {
+          "code": "ACTION_NOT_DECREASED",
+          "message": "Action rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "PRIORITY_NOT_DECREASED",
+          "message": "Priority rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "DEADLINE_NOT_LENGTHENED",
+          "message": "Response deadline must not lengthen.",
+          "passed": true
+        },
+        {
+          "code": "REVIEW_NOT_REMOVED",
+          "message": "Existing human review must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CONTAINMENT_NOT_REMOVED",
+          "message": "Existing containment must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CLOSURE_PROHIBITION_NOT_REMOVED",
+          "message": "Existing closure prohibition must not be removed.",
+          "passed": true
+        }
+      ],
+      "control_tags": [
+        "danger_escalation",
+        "deadline_monotonicity",
+        "review_monotonicity",
+        "containment_monotonicity",
+        "closure_monotonicity"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expected_changed_paths": [
+        "intelligence_overrides.cvss.metrics.0.base_score",
+        "intelligence_overrides.cvss.metrics.0.base_severity",
+        "operational_profile"
+      ],
+      "family": "cvss_escalation",
+      "mode": "NON_DECREASING",
+      "outcome": "PASSED",
+      "passed": true,
+      "property": "Increasing CVSS into the critical range cannot weaken the decision.",
+      "relation_id": "META-CVSS-INCREASE-001",
+      "severity": "critical",
+      "transformed": {
+        "action": "ATTEND",
+        "containment_required": false,
+        "deadline_hours": 72.0,
+        "human_review_required": false,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001",
+          "RULE-CRITICAL-CVSS-001"
+        ],
+        "priority": "HIGH",
+        "prohibit_closure": false,
+        "supporting_evidence_ids": [
+          "AEG-EVD-NVD-LOG4J-001",
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "transformed_case_id": "AEG-ASR-010-HC",
+      "violations": []
+    },
+    {
+      "baseline": {
+        "action": "ATTEND",
+        "containment_required": false,
+        "deadline_hours": 168.0,
+        "human_review_required": false,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001"
+        ],
+        "priority": "HIGH",
+        "prohibit_closure": false,
+        "supporting_evidence_ids": [
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "baseline_case_id": "AEG-ASR-001-HC",
+      "change_scope_valid": true,
+      "changed_paths": [
+        "intelligence_overrides.epss.percentile",
+        "intelligence_overrides.epss.probability"
+      ],
+      "checks": [
+        {
+          "code": "TRANSFORMATION_SCOPE_EXACT",
+          "message": "Expected changed paths ['intelligence_overrides.epss.percentile', 'intelligence_overrides.epss.probability']; received ['intelligence_overrides.epss.percentile', 'intelligence_overrides.epss.probability'].",
+          "passed": true
+        },
+        {
+          "code": "BASELINE_INVARIANTS_PASS",
+          "message": "Baseline policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "TRANSFORMED_INVARIANTS_PASS",
+          "message": "Transformed policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "EXPECTED_RULES_TRIGGERED",
+          "message": "Expected transformed policy rules must trigger.",
+          "passed": true
+        },
+        {
+          "code": "ACTION_NOT_DECREASED",
+          "message": "Action rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "PRIORITY_NOT_DECREASED",
+          "message": "Priority rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "DEADLINE_NOT_LENGTHENED",
+          "message": "Response deadline must not lengthen.",
+          "passed": true
+        },
+        {
+          "code": "REVIEW_NOT_REMOVED",
+          "message": "Existing human review must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CONTAINMENT_NOT_REMOVED",
+          "message": "Existing containment must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CLOSURE_PROHIBITION_NOT_REMOVED",
+          "message": "Existing closure prohibition must not be removed.",
+          "passed": true
+        }
+      ],
+      "control_tags": [
+        "danger_escalation",
+        "deadline_monotonicity",
+        "review_monotonicity",
+        "containment_monotonicity",
+        "closure_monotonicity"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expected_changed_paths": [
+        "intelligence_overrides.epss.percentile",
+        "intelligence_overrides.epss.probability"
+      ],
+      "family": "epss_monotonicity",
+      "mode": "NON_DECREASING",
+      "outcome": "PASSED",
+      "passed": true,
+      "property": "Increasing EPSS probability cannot reduce action or priority.",
+      "relation_id": "META-EPSS-INCREASE-001",
+      "severity": "critical",
+      "transformed": {
+        "action": "ATTEND",
+        "containment_required": false,
+        "deadline_hours": 168.0,
+        "human_review_required": false,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001"
+        ],
+        "priority": "HIGH",
+        "prohibit_closure": false,
+        "supporting_evidence_ids": [
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "transformed_case_id": "AEG-ASR-001-HC::META-EPSS-INCREASE-001",
+      "violations": []
+    },
+    {
+      "baseline": {
+        "action": "ATTEND",
+        "containment_required": false,
+        "deadline_hours": 168.0,
+        "human_review_required": false,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001"
+        ],
+        "priority": "HIGH",
+        "prohibit_closure": false,
+        "supporting_evidence_ids": [
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "baseline_case_id": "AEG-ASR-001-HC",
+      "change_scope_valid": true,
+      "changed_paths": [
+        "intelligence_overrides.epss.evidence_id",
+        "intelligence_overrides.epss.missing_reason",
+        "intelligence_overrides.epss.model_version",
+        "intelligence_overrides.epss.percentile",
+        "intelligence_overrides.epss.probability",
+        "intelligence_overrides.epss.score_date",
+        "intelligence_overrides.epss.status",
+        "operational_profile"
+      ],
+      "checks": [
+        {
+          "code": "TRANSFORMATION_SCOPE_EXACT",
+          "message": "Expected changed paths ['intelligence_overrides.epss.evidence_id', 'intelligence_overrides.epss.missing_reason', 'intelligence_overrides.epss.model_version', 'intelligence_overrides.epss.percentile', 'intelligence_overrides.epss.probability', 'intelligence_overrides.epss.score_date', 'intelligence_overrides.epss.status', 'operational_profile']; received ['intelligence_overrides.epss.evidence_id', 'intelligence_overrides.epss.missing_reason', 'intelligence_overrides.epss.model_version', 'intelligence_overrides.epss.percentile', 'intelligence_overrides.epss.probability', 'intelligence_overrides.epss.score_date', 'intelligence_overrides.epss.status', 'operational_profile'].",
+          "passed": true
+        },
+        {
+          "code": "BASELINE_INVARIANTS_PASS",
+          "message": "Baseline policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "TRANSFORMED_INVARIANTS_PASS",
+          "message": "Transformed policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "EXPECTED_RULES_TRIGGERED",
+          "message": "Expected transformed policy rules must trigger.",
+          "passed": true
+        },
+        {
+          "code": "ACTION_NOT_DECREASED",
+          "message": "Action rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "PRIORITY_NOT_DECREASED",
+          "message": "Priority rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "DEADLINE_NOT_LENGTHENED",
+          "message": "Response deadline must not lengthen.",
+          "passed": true
+        },
+        {
+          "code": "REVIEW_NOT_REMOVED",
+          "message": "Existing human review must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CONTAINMENT_NOT_REMOVED",
+          "message": "Existing containment must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CLOSURE_PROHIBITION_NOT_REMOVED",
+          "message": "Existing closure prohibition must not be removed.",
+          "passed": true
+        }
+      ],
+      "control_tags": [
+        "danger_escalation",
+        "uncertainty_escalation",
+        "deadline_monotonicity",
+        "review_monotonicity",
+        "containment_monotonicity",
+        "closure_monotonicity"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expected_changed_paths": [
+        "intelligence_overrides.epss.evidence_id",
+        "intelligence_overrides.epss.missing_reason",
+        "intelligence_overrides.epss.model_version",
+        "intelligence_overrides.epss.percentile",
+        "intelligence_overrides.epss.probability",
+        "intelligence_overrides.epss.score_date",
+        "intelligence_overrides.epss.status",
+        "operational_profile"
+      ],
+      "family": "missing_value_uncertainty",
+      "mode": "NON_DECREASING",
+      "outcome": "PASSED",
+      "passed": true,
+      "property": "Replacing known EPSS with missing cannot be treated as safer.",
+      "relation_id": "META-EPSS-MISSING-001",
+      "severity": "critical",
+      "transformed": {
+        "action": "ATTEND",
+        "containment_required": false,
+        "deadline_hours": 168.0,
+        "human_review_required": true,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001",
+          "RULE-EPSS-MISSING-AFFECTED-001"
+        ],
+        "priority": "HIGH",
+        "prohibit_closure": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "transformed_case_id": "AEG-ASR-065-HC",
+      "violations": []
+    },
+    {
+      "baseline": {
+        "action": "ATTEND",
+        "containment_required": false,
+        "deadline_hours": 168.0,
+        "human_review_required": false,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001"
+        ],
+        "priority": "HIGH",
+        "prohibit_closure": false,
+        "supporting_evidence_ids": [
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "baseline_case_id": "AEG-ASR-001-HC",
+      "change_scope_valid": true,
+      "changed_paths": [
+        "intelligence_overrides.remediation.status",
+        "operational_profile"
+      ],
+      "checks": [
+        {
+          "code": "TRANSFORMATION_SCOPE_EXACT",
+          "message": "Expected changed paths ['intelligence_overrides.remediation.status', 'operational_profile']; received ['intelligence_overrides.remediation.status', 'operational_profile'].",
+          "passed": true
+        },
+        {
+          "code": "BASELINE_INVARIANTS_PASS",
+          "message": "Baseline policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "TRANSFORMED_INVARIANTS_PASS",
+          "message": "Transformed policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "EXPECTED_RULES_TRIGGERED",
+          "message": "Expected transformed policy rules must trigger.",
+          "passed": true
+        },
+        {
+          "code": "ACTION_NOT_DECREASED",
+          "message": "Action rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "PRIORITY_NOT_DECREASED",
+          "message": "Priority rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "DEADLINE_NOT_LENGTHENED",
+          "message": "Response deadline must not lengthen.",
+          "passed": true
+        },
+        {
+          "code": "REVIEW_NOT_REMOVED",
+          "message": "Existing human review must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CONTAINMENT_NOT_REMOVED",
+          "message": "Existing containment must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CLOSURE_PROHIBITION_NOT_REMOVED",
+          "message": "Existing closure prohibition must not be removed.",
+          "passed": true
+        }
+      ],
+      "control_tags": [
+        "danger_escalation",
+        "deadline_monotonicity",
+        "review_monotonicity",
+        "containment_monotonicity",
+        "closure_monotonicity"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expected_changed_paths": [
+        "intelligence_overrides.remediation.status",
+        "operational_profile"
+      ],
+      "family": "remediation_removal",
+      "mode": "NON_DECREASING",
+      "outcome": "PASSED",
+      "passed": true,
+      "property": "Removing remediation availability cannot reduce urgency or containment.",
+      "relation_id": "META-NO-FIX-001",
+      "severity": "critical",
+      "transformed": {
+        "action": "ACT",
+        "containment_required": true,
+        "deadline_hours": 24.0,
+        "human_review_required": true,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001",
+          "RULE-NO-FIX-AVAILABLE-001"
+        ],
+        "priority": "CRITICAL",
+        "prohibit_closure": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-NVD-LOG4J-001",
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "transformed_case_id": "AEG-ASR-011-HC",
+      "violations": []
+    },
+    {
+      "baseline": {
+        "action": "ATTEND",
+        "containment_required": false,
+        "deadline_hours": 168.0,
+        "human_review_required": false,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001"
+        ],
+        "priority": "HIGH",
+        "prohibit_closure": false,
+        "supporting_evidence_ids": [
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "baseline_case_id": "AEG-ASR-001-HC",
+      "change_scope_valid": true,
+      "changed_paths": [
+        "intelligence_overrides.remediation.status"
+      ],
+      "checks": [
+        {
+          "code": "TRANSFORMATION_SCOPE_EXACT",
+          "message": "Expected changed paths ['intelligence_overrides.remediation.status']; received ['intelligence_overrides.remediation.status'].",
+          "passed": true
+        },
+        {
+          "code": "BASELINE_INVARIANTS_PASS",
+          "message": "Baseline policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "TRANSFORMED_INVARIANTS_PASS",
+          "message": "Transformed policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "EXPECTED_RULES_TRIGGERED",
+          "message": "Expected transformed policy rules must trigger.",
+          "passed": true
+        },
+        {
+          "code": "ACTION_NOT_DECREASED",
+          "message": "Action rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "PRIORITY_NOT_DECREASED",
+          "message": "Priority rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "DEADLINE_NOT_LENGTHENED",
+          "message": "Response deadline must not lengthen.",
+          "passed": true
+        },
+        {
+          "code": "REVIEW_NOT_REMOVED",
+          "message": "Existing human review must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CONTAINMENT_NOT_REMOVED",
+          "message": "Existing containment must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CLOSURE_PROHIBITION_NOT_REMOVED",
+          "message": "Existing closure prohibition must not be removed.",
+          "passed": true
+        }
+      ],
+      "control_tags": [
+        "danger_escalation",
+        "deadline_monotonicity",
+        "review_monotonicity",
+        "containment_monotonicity",
+        "closure_monotonicity"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expected_changed_paths": [
+        "intelligence_overrides.remediation.status"
+      ],
+      "family": "remediation_removal",
+      "mode": "NON_DECREASING",
+      "outcome": "PASSED",
+      "passed": true,
+      "property": "Changing fix available to end of life cannot weaken safeguards.",
+      "relation_id": "META-END-OF-LIFE-001",
+      "severity": "critical",
+      "transformed": {
+        "action": "ACT",
+        "containment_required": true,
+        "deadline_hours": 24.0,
+        "human_review_required": true,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001",
+          "RULE-NO-FIX-AVAILABLE-001"
+        ],
+        "priority": "CRITICAL",
+        "prohibit_closure": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "transformed_case_id": "AEG-ASR-001-HC::META-END-OF-LIFE-001",
+      "violations": []
+    },
+    {
+      "baseline": {
+        "action": "TRACK",
+        "containment_required": false,
+        "deadline_hours": 720.0,
+        "human_review_required": false,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-NEGATIVE-AFFECTEDNESS-001"
+        ],
+        "priority": "INFORMATIONAL",
+        "prohibit_closure": false,
+        "supporting_evidence_ids": [
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "baseline_case_id": "AEG-ASR-049-HC",
+      "change_scope_valid": true,
+      "changed_paths": [
+        "operational_profile",
+        "trust.action",
+        "trust.aggregate_score"
+      ],
+      "checks": [
+        {
+          "code": "TRANSFORMATION_SCOPE_EXACT",
+          "message": "Expected changed paths ['operational_profile', 'trust.action', 'trust.aggregate_score']; received ['operational_profile', 'trust.action', 'trust.aggregate_score'].",
+          "passed": true
+        },
+        {
+          "code": "BASELINE_INVARIANTS_PASS",
+          "message": "Baseline policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "TRANSFORMED_INVARIANTS_PASS",
+          "message": "Transformed policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "EXPECTED_RULES_TRIGGERED",
+          "message": "Expected transformed policy rules must trigger.",
+          "passed": true
+        },
+        {
+          "code": "ACTION_NOT_DECREASED",
+          "message": "Action rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "PRIORITY_NOT_DECREASED",
+          "message": "Priority rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "DEADLINE_NOT_LENGTHENED",
+          "message": "Response deadline must not lengthen.",
+          "passed": true
+        },
+        {
+          "code": "REVIEW_NOT_REMOVED",
+          "message": "Existing human review must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CONTAINMENT_NOT_REMOVED",
+          "message": "Existing containment must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CLOSURE_PROHIBITION_NOT_REMOVED",
+          "message": "Existing closure prohibition must not be removed.",
+          "passed": true
+        }
+      ],
+      "control_tags": [
+        "trust_degradation",
+        "deadline_monotonicity",
+        "review_monotonicity",
+        "containment_monotonicity",
+        "closure_monotonicity"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expected_changed_paths": [
+        "operational_profile",
+        "trust.action",
+        "trust.aggregate_score"
+      ],
+      "family": "trust_degradation",
+      "mode": "NON_DECREASING",
+      "outcome": "PASSED",
+      "passed": true,
+      "property": "Degrading accepted trust to accepted-with-warnings cannot ease automation.",
+      "relation_id": "META-TRUST-WARNINGS-001",
+      "severity": "critical",
+      "transformed": {
+        "action": "TRACK_STAR",
+        "containment_required": false,
+        "deadline_hours": 168.0,
+        "human_review_required": true,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-NEGATIVE-AFFECTEDNESS-001",
+          "RULE-TRUST-WARNINGS-001"
+        ],
+        "priority": "MEDIUM",
+        "prohibit_closure": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "transformed_case_id": "AEG-ASR-061-HC",
+      "violations": []
+    },
+    {
+      "baseline": {
+        "action": "TRACK_STAR",
+        "containment_required": false,
+        "deadline_hours": 168.0,
+        "human_review_required": true,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-NEGATIVE-AFFECTEDNESS-001",
+          "RULE-TRUST-WARNINGS-001"
+        ],
+        "priority": "MEDIUM",
+        "prohibit_closure": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "baseline_case_id": "AEG-ASR-061-HC",
+      "change_scope_valid": true,
+      "changed_paths": [
+        "trust.action",
+        "trust.aggregate_score"
+      ],
+      "checks": [
+        {
+          "code": "TRANSFORMATION_SCOPE_EXACT",
+          "message": "Expected changed paths ['trust.action', 'trust.aggregate_score']; received ['trust.action', 'trust.aggregate_score'].",
+          "passed": true
+        },
+        {
+          "code": "BASELINE_INVARIANTS_PASS",
+          "message": "Baseline policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "TRANSFORMED_INVARIANTS_PASS",
+          "message": "Transformed policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "EXPECTED_RULES_TRIGGERED",
+          "message": "Expected transformed policy rules must trigger.",
+          "passed": true
+        },
+        {
+          "code": "ACTION_NOT_DECREASED",
+          "message": "Action rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "PRIORITY_NOT_DECREASED",
+          "message": "Priority rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "DEADLINE_NOT_LENGTHENED",
+          "message": "Response deadline must not lengthen.",
+          "passed": true
+        },
+        {
+          "code": "REVIEW_NOT_REMOVED",
+          "message": "Existing human review must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CONTAINMENT_NOT_REMOVED",
+          "message": "Existing containment must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CLOSURE_PROHIBITION_NOT_REMOVED",
+          "message": "Existing closure prohibition must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "FAIL_CLOSED_HOLD",
+          "message": "Rejected or quarantined trust must force HOLD.",
+          "passed": true
+        },
+        {
+          "code": "FAIL_CLOSED_HIGH_PRIORITY",
+          "message": "Fail-closed handling requires at least High priority.",
+          "passed": true
+        },
+        {
+          "code": "FAIL_CLOSED_DEADLINE",
+          "message": "Fail-closed handling requires a four-hour deadline or shorter.",
+          "passed": true
+        },
+        {
+          "code": "FAIL_CLOSED_REVIEW",
+          "message": "Fail-closed handling requires human review.",
+          "passed": true
+        },
+        {
+          "code": "FAIL_CLOSED_NO_CLOSURE",
+          "message": "Fail-closed handling must prohibit closure.",
+          "passed": true
+        }
+      ],
+      "control_tags": [
+        "trust_degradation",
+        "trust_fail_closed",
+        "deadline_monotonicity",
+        "review_monotonicity",
+        "containment_monotonicity",
+        "closure_monotonicity"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expected_changed_paths": [
+        "trust.action",
+        "trust.aggregate_score"
+      ],
+      "family": "trust_degradation",
+      "mode": "FAIL_CLOSED",
+      "outcome": "PASSED",
+      "passed": true,
+      "property": "Degrading warning-level trust to quarantine must fail closed.",
+      "relation_id": "META-TRUST-QUARANTINE-001",
+      "severity": "critical",
+      "transformed": {
+        "action": "HOLD",
+        "containment_required": false,
+        "deadline_hours": 4.0,
+        "human_review_required": true,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-NEGATIVE-AFFECTEDNESS-001",
+          "RULE-TRUST-BLOCKED-001"
+        ],
+        "priority": "HIGH",
+        "prohibit_closure": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "transformed_case_id": "AEG-ASR-061-HC::META-TRUST-QUARANTINE-001",
+      "violations": []
+    },
+    {
+      "baseline": {
+        "action": "TRACK",
+        "containment_required": false,
+        "deadline_hours": 720.0,
+        "human_review_required": false,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-NEGATIVE-AFFECTEDNESS-001"
+        ],
+        "priority": "INFORMATIONAL",
+        "prohibit_closure": false,
+        "supporting_evidence_ids": [
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "baseline_case_id": "AEG-ASR-049-HC",
+      "change_scope_valid": true,
+      "changed_paths": [
+        "trust.action",
+        "trust.aggregate_score"
+      ],
+      "checks": [
+        {
+          "code": "TRANSFORMATION_SCOPE_EXACT",
+          "message": "Expected changed paths ['trust.action', 'trust.aggregate_score']; received ['trust.action', 'trust.aggregate_score'].",
+          "passed": true
+        },
+        {
+          "code": "BASELINE_INVARIANTS_PASS",
+          "message": "Baseline policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "TRANSFORMED_INVARIANTS_PASS",
+          "message": "Transformed policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "EXPECTED_RULES_TRIGGERED",
+          "message": "Expected transformed policy rules must trigger.",
+          "passed": true
+        },
+        {
+          "code": "ACTION_NOT_DECREASED",
+          "message": "Action rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "PRIORITY_NOT_DECREASED",
+          "message": "Priority rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "DEADLINE_NOT_LENGTHENED",
+          "message": "Response deadline must not lengthen.",
+          "passed": true
+        },
+        {
+          "code": "REVIEW_NOT_REMOVED",
+          "message": "Existing human review must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CONTAINMENT_NOT_REMOVED",
+          "message": "Existing containment must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CLOSURE_PROHIBITION_NOT_REMOVED",
+          "message": "Existing closure prohibition must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "FAIL_CLOSED_HOLD",
+          "message": "Rejected or quarantined trust must force HOLD.",
+          "passed": true
+        },
+        {
+          "code": "FAIL_CLOSED_HIGH_PRIORITY",
+          "message": "Fail-closed handling requires at least High priority.",
+          "passed": true
+        },
+        {
+          "code": "FAIL_CLOSED_DEADLINE",
+          "message": "Fail-closed handling requires a four-hour deadline or shorter.",
+          "passed": true
+        },
+        {
+          "code": "FAIL_CLOSED_REVIEW",
+          "message": "Fail-closed handling requires human review.",
+          "passed": true
+        },
+        {
+          "code": "FAIL_CLOSED_NO_CLOSURE",
+          "message": "Fail-closed handling must prohibit closure.",
+          "passed": true
+        }
+      ],
+      "control_tags": [
+        "trust_degradation",
+        "trust_fail_closed",
+        "deadline_monotonicity",
+        "review_monotonicity",
+        "containment_monotonicity",
+        "closure_monotonicity"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expected_changed_paths": [
+        "trust.action",
+        "trust.aggregate_score"
+      ],
+      "family": "trust_degradation",
+      "mode": "FAIL_CLOSED",
+      "outcome": "PASSED",
+      "passed": true,
+      "property": "Changing accepted trust to rejected must fail closed.",
+      "relation_id": "META-TRUST-REJECT-001",
+      "severity": "critical",
+      "transformed": {
+        "action": "HOLD",
+        "containment_required": false,
+        "deadline_hours": 4.0,
+        "human_review_required": true,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-NEGATIVE-AFFECTEDNESS-001",
+          "RULE-TRUST-BLOCKED-001"
+        ],
+        "priority": "HIGH",
+        "prohibit_closure": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "transformed_case_id": "AEG-ASR-049-HC::META-TRUST-REJECT-001",
+      "violations": []
+    },
+    {
+      "baseline": {
+        "action": "ATTEND",
+        "containment_required": false,
+        "deadline_hours": 168.0,
+        "human_review_required": false,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001"
+        ],
+        "priority": "HIGH",
+        "prohibit_closure": false,
+        "supporting_evidence_ids": [
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "baseline_case_id": "AEG-ASR-001-HC",
+      "change_scope_valid": true,
+      "changed_paths": [
+        "affectedness.confidence",
+        "affectedness.status",
+        "affectedness_profile"
+      ],
+      "checks": [
+        {
+          "code": "TRANSFORMATION_SCOPE_EXACT",
+          "message": "Expected changed paths ['affectedness.confidence', 'affectedness.status', 'affectedness_profile']; received ['affectedness.confidence', 'affectedness.status', 'affectedness_profile'].",
+          "passed": true
+        },
+        {
+          "code": "BASELINE_INVARIANTS_PASS",
+          "message": "Baseline policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "TRANSFORMED_INVARIANTS_PASS",
+          "message": "Transformed policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "EXPECTED_RULES_TRIGGERED",
+          "message": "Expected transformed policy rules must trigger.",
+          "passed": true
+        },
+        {
+          "code": "ACTION_NOT_DECREASED",
+          "message": "Action rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "PRIORITY_NOT_DECREASED",
+          "message": "Priority rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "DEADLINE_NOT_LENGTHENED",
+          "message": "Response deadline must not lengthen.",
+          "passed": true
+        },
+        {
+          "code": "REVIEW_NOT_REMOVED",
+          "message": "Existing human review must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CONTAINMENT_NOT_REMOVED",
+          "message": "Existing containment must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CLOSURE_PROHIBITION_NOT_REMOVED",
+          "message": "Existing closure prohibition must not be removed.",
+          "passed": true
+        }
+      ],
+      "control_tags": [
+        "danger_escalation",
+        "uncertainty_escalation",
+        "deadline_monotonicity",
+        "review_monotonicity",
+        "containment_monotonicity",
+        "closure_monotonicity"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expected_changed_paths": [
+        "affectedness.confidence",
+        "affectedness.status",
+        "affectedness_profile"
+      ],
+      "family": "affectedness_uncertainty",
+      "mode": "NON_DECREASING",
+      "outcome": "PASSED",
+      "passed": true,
+      "property": "Increasing affectedness uncertainty to probably affected cannot remove safeguards.",
+      "relation_id": "META-AFFECTED-PROBABLE-001",
+      "severity": "critical",
+      "transformed": {
+        "action": "ATTEND",
+        "containment_required": false,
+        "deadline_hours": 72.0,
+        "human_review_required": true,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-PROBABLY-AFFECTED-001"
+        ],
+        "priority": "HIGH",
+        "prohibit_closure": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "transformed_case_id": "AEG-ASR-013-HC",
+      "violations": []
+    },
+    {
+      "baseline": {
+        "action": "ATTEND",
+        "containment_required": false,
+        "deadline_hours": 168.0,
+        "human_review_required": false,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001"
+        ],
+        "priority": "HIGH",
+        "prohibit_closure": false,
+        "supporting_evidence_ids": [
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "baseline_case_id": "AEG-ASR-001-HC",
+      "change_scope_valid": true,
+      "changed_paths": [
+        "affectedness.confidence",
+        "affectedness.status",
+        "affectedness_profile"
+      ],
+      "checks": [
+        {
+          "code": "TRANSFORMATION_SCOPE_EXACT",
+          "message": "Expected changed paths ['affectedness.confidence', 'affectedness.status', 'affectedness_profile']; received ['affectedness.confidence', 'affectedness.status', 'affectedness_profile'].",
+          "passed": true
+        },
+        {
+          "code": "BASELINE_INVARIANTS_PASS",
+          "message": "Baseline policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "TRANSFORMED_INVARIANTS_PASS",
+          "message": "Transformed policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "EXPECTED_RULES_TRIGGERED",
+          "message": "Expected transformed policy rules must trigger.",
+          "passed": true
+        },
+        {
+          "code": "ACTION_NOT_DECREASED",
+          "message": "Action rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "PRIORITY_NOT_DECREASED",
+          "message": "Priority rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "DEADLINE_NOT_LENGTHENED",
+          "message": "Response deadline must not lengthen.",
+          "passed": true
+        },
+        {
+          "code": "REVIEW_NOT_REMOVED",
+          "message": "Existing human review must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CONTAINMENT_NOT_REMOVED",
+          "message": "Existing containment must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CLOSURE_PROHIBITION_NOT_REMOVED",
+          "message": "Existing closure prohibition must not be removed.",
+          "passed": true
+        }
+      ],
+      "control_tags": [
+        "danger_escalation",
+        "uncertainty_escalation",
+        "deadline_monotonicity",
+        "review_monotonicity",
+        "containment_monotonicity",
+        "closure_monotonicity"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expected_changed_paths": [
+        "affectedness.confidence",
+        "affectedness.status",
+        "affectedness_profile"
+      ],
+      "family": "affectedness_uncertainty",
+      "mode": "NON_DECREASING",
+      "outcome": "PASSED",
+      "passed": true,
+      "property": "Changing affected to unknown must not produce a permissive disposition.",
+      "relation_id": "META-AFFECTED-UNKNOWN-001",
+      "severity": "critical",
+      "transformed": {
+        "action": "HOLD",
+        "containment_required": false,
+        "deadline_hours": 24.0,
+        "human_review_required": true,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-UNKNOWN-AFFECTEDNESS-001"
+        ],
+        "priority": "HIGH",
+        "prohibit_closure": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "transformed_case_id": "AEG-ASR-025-HC",
+      "violations": []
+    },
+    {
+      "baseline": {
+        "action": "HOLD",
+        "containment_required": false,
+        "deadline_hours": 72.0,
+        "human_review_required": true,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-PROBABLY-NOT-AFFECTED-001"
+        ],
+        "priority": "MEDIUM",
+        "prohibit_closure": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "baseline_case_id": "AEG-ASR-037-HC",
+      "change_scope_valid": true,
+      "changed_paths": [
+        "affectedness.confidence",
+        "affectedness.status",
+        "affectedness_profile"
+      ],
+      "checks": [
+        {
+          "code": "TRANSFORMATION_SCOPE_EXACT",
+          "message": "Expected changed paths ['affectedness.confidence', 'affectedness.status', 'affectedness_profile']; received ['affectedness.confidence', 'affectedness.status', 'affectedness_profile'].",
+          "passed": true
+        },
+        {
+          "code": "BASELINE_INVARIANTS_PASS",
+          "message": "Baseline policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "TRANSFORMED_INVARIANTS_PASS",
+          "message": "Transformed policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "EXPECTED_RULES_TRIGGERED",
+          "message": "Expected transformed policy rules must trigger.",
+          "passed": true
+        },
+        {
+          "code": "ACTION_NOT_DECREASED",
+          "message": "Action rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "PRIORITY_NOT_DECREASED",
+          "message": "Priority rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "DEADLINE_NOT_LENGTHENED",
+          "message": "Response deadline must not lengthen.",
+          "passed": true
+        },
+        {
+          "code": "REVIEW_NOT_REMOVED",
+          "message": "Existing human review must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CONTAINMENT_NOT_REMOVED",
+          "message": "Existing containment must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CLOSURE_PROHIBITION_NOT_REMOVED",
+          "message": "Existing closure prohibition must not be removed.",
+          "passed": true
+        }
+      ],
+      "control_tags": [
+        "danger_escalation",
+        "uncertainty_escalation",
+        "deadline_monotonicity",
+        "review_monotonicity",
+        "containment_monotonicity",
+        "closure_monotonicity"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expected_changed_paths": [
+        "affectedness.confidence",
+        "affectedness.status",
+        "affectedness_profile"
+      ],
+      "family": "affectedness_uncertainty",
+      "mode": "NON_DECREASING",
+      "outcome": "PASSED",
+      "passed": true,
+      "property": "Increasing uncertainty from probably not affected to unknown cannot weaken safeguards.",
+      "relation_id": "META-PROBABLE-NOT-UNKNOWN-001",
+      "severity": "critical",
+      "transformed": {
+        "action": "HOLD",
+        "containment_required": false,
+        "deadline_hours": 24.0,
+        "human_review_required": true,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-UNKNOWN-AFFECTEDNESS-001"
+        ],
+        "priority": "HIGH",
+        "prohibit_closure": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "transformed_case_id": "AEG-ASR-025-HC",
+      "violations": []
+    },
+    {
+      "baseline": {
+        "action": "TRACK",
+        "containment_required": false,
+        "deadline_hours": 720.0,
+        "human_review_required": false,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-NEGATIVE-AFFECTEDNESS-001"
+        ],
+        "priority": "INFORMATIONAL",
+        "prohibit_closure": false,
+        "supporting_evidence_ids": [
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "baseline_case_id": "AEG-ASR-049-HC",
+      "change_scope_valid": true,
+      "changed_paths": [
+        "affectedness.confidence",
+        "affectedness.status",
+        "affectedness_profile"
+      ],
+      "checks": [
+        {
+          "code": "TRANSFORMATION_SCOPE_EXACT",
+          "message": "Expected changed paths ['affectedness.confidence', 'affectedness.status', 'affectedness_profile']; received ['affectedness.confidence', 'affectedness.status', 'affectedness_profile'].",
+          "passed": true
+        },
+        {
+          "code": "BASELINE_INVARIANTS_PASS",
+          "message": "Baseline policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "TRANSFORMED_INVARIANTS_PASS",
+          "message": "Transformed policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "EXPECTED_RULES_TRIGGERED",
+          "message": "Expected transformed policy rules must trigger.",
+          "passed": true
+        },
+        {
+          "code": "ACTION_NOT_DECREASED",
+          "message": "Action rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "PRIORITY_NOT_DECREASED",
+          "message": "Priority rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "DEADLINE_NOT_LENGTHENED",
+          "message": "Response deadline must not lengthen.",
+          "passed": true
+        },
+        {
+          "code": "REVIEW_NOT_REMOVED",
+          "message": "Existing human review must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CONTAINMENT_NOT_REMOVED",
+          "message": "Existing containment must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CLOSURE_PROHIBITION_NOT_REMOVED",
+          "message": "Existing closure prohibition must not be removed.",
+          "passed": true
+        }
+      ],
+      "control_tags": [
+        "danger_escalation",
+        "uncertainty_escalation",
+        "deadline_monotonicity",
+        "review_monotonicity",
+        "containment_monotonicity",
+        "closure_monotonicity"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expected_changed_paths": [
+        "affectedness.confidence",
+        "affectedness.status",
+        "affectedness_profile"
+      ],
+      "family": "affectedness_uncertainty",
+      "mode": "NON_DECREASING",
+      "outcome": "PASSED",
+      "passed": true,
+      "property": "Moving fixed to probably not affected must add review and closure controls.",
+      "relation_id": "META-FIXED-PROBABLE-NOT-001",
+      "severity": "critical",
+      "transformed": {
+        "action": "HOLD",
+        "containment_required": false,
+        "deadline_hours": 72.0,
+        "human_review_required": true,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-PROBABLY-NOT-AFFECTED-001"
+        ],
+        "priority": "MEDIUM",
+        "prohibit_closure": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "transformed_case_id": "AEG-ASR-037-HC",
+      "violations": []
+    },
+    {
+      "baseline": {
+        "action": "ATTEND",
+        "containment_required": false,
+        "deadline_hours": 168.0,
+        "human_review_required": false,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001"
+        ],
+        "priority": "HIGH",
+        "prohibit_closure": false,
+        "supporting_evidence_ids": [
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "baseline_case_id": "AEG-ASR-001-HC",
+      "change_scope_valid": true,
+      "changed_paths": [
+        "affectedness.supporting_evidence_ids"
+      ],
+      "checks": [
+        {
+          "code": "TRANSFORMATION_SCOPE_EXACT",
+          "message": "Expected changed paths ['affectedness.supporting_evidence_ids']; received ['affectedness.supporting_evidence_ids'].",
+          "passed": true
+        },
+        {
+          "code": "BASELINE_INVARIANTS_PASS",
+          "message": "Baseline policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "TRANSFORMED_INVARIANTS_PASS",
+          "message": "Transformed policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "EXPECTED_RULES_TRIGGERED",
+          "message": "Expected transformed policy rules must trigger.",
+          "passed": true
+        },
+        {
+          "code": "ACTION_NOT_DECREASED",
+          "message": "Action rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "PRIORITY_NOT_DECREASED",
+          "message": "Priority rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "DEADLINE_NOT_LENGTHENED",
+          "message": "Response deadline must not lengthen.",
+          "passed": true
+        },
+        {
+          "code": "REVIEW_NOT_REMOVED",
+          "message": "Existing human review must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CONTAINMENT_NOT_REMOVED",
+          "message": "Existing containment must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CLOSURE_PROHIBITION_NOT_REMOVED",
+          "message": "Existing closure prohibition must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "EVIDENCE_REFERENCE_COUNT_NOT_INCREASED",
+          "message": "The transformation must remove affectedness evidence.",
+          "passed": true
+        }
+      ],
+      "control_tags": [
+        "evidence_removal",
+        "deadline_monotonicity",
+        "review_monotonicity",
+        "containment_monotonicity",
+        "closure_monotonicity"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expected_changed_paths": [
+        "affectedness.supporting_evidence_ids"
+      ],
+      "family": "evidence_removal",
+      "mode": "EVIDENCE_REMOVAL",
+      "outcome": "PASSED",
+      "passed": true,
+      "property": "Removing one affectedness evidence reference cannot increase automation.",
+      "relation_id": "META-EVIDENCE-REMOVE-ONE-001",
+      "severity": "critical",
+      "transformed": {
+        "action": "ATTEND",
+        "containment_required": false,
+        "deadline_hours": 168.0,
+        "human_review_required": false,
+        "input_affectedness_evidence_count": 1,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001"
+        ],
+        "priority": "HIGH",
+        "prohibit_closure": false,
+        "supporting_evidence_ids": [
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "transformed_case_id": "AEG-ASR-001-HC::META-EVIDENCE-REMOVE-ONE-001",
+      "violations": []
+    },
+    {
+      "baseline": {
+        "action": "ATTEND",
+        "containment_required": false,
+        "deadline_hours": 168.0,
+        "human_review_required": false,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001"
+        ],
+        "priority": "HIGH",
+        "prohibit_closure": false,
+        "supporting_evidence_ids": [
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "baseline_case_id": "AEG-ASR-001-HC",
+      "change_scope_valid": true,
+      "changed_paths": [
+        "affectedness.supporting_evidence_ids"
+      ],
+      "checks": [
+        {
+          "code": "TRANSFORMATION_SCOPE_EXACT",
+          "message": "Expected changed paths ['affectedness.supporting_evidence_ids']; received ['affectedness.supporting_evidence_ids'].",
+          "passed": true
+        },
+        {
+          "code": "BASELINE_INVARIANTS_PASS",
+          "message": "Baseline policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "TRANSFORMED_INVARIANTS_PASS",
+          "message": "Transformed policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "EXPECTED_RULES_TRIGGERED",
+          "message": "Expected transformed policy rules must trigger.",
+          "passed": true
+        },
+        {
+          "code": "ACTION_NOT_DECREASED",
+          "message": "Action rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "PRIORITY_NOT_DECREASED",
+          "message": "Priority rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "DEADLINE_NOT_LENGTHENED",
+          "message": "Response deadline must not lengthen.",
+          "passed": true
+        },
+        {
+          "code": "REVIEW_NOT_REMOVED",
+          "message": "Existing human review must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CONTAINMENT_NOT_REMOVED",
+          "message": "Existing containment must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CLOSURE_PROHIBITION_NOT_REMOVED",
+          "message": "Existing closure prohibition must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "EVIDENCE_REFERENCE_COUNT_NOT_INCREASED",
+          "message": "The transformation must remove affectedness evidence.",
+          "passed": true
+        }
+      ],
+      "control_tags": [
+        "evidence_removal",
+        "deadline_monotonicity",
+        "review_monotonicity",
+        "containment_monotonicity",
+        "closure_monotonicity"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expected_changed_paths": [
+        "affectedness.supporting_evidence_ids"
+      ],
+      "family": "evidence_removal",
+      "mode": "EVIDENCE_REMOVAL",
+      "outcome": "PASSED",
+      "passed": true,
+      "property": "Removing all affectedness evidence references cannot increase confidence or ease handling.",
+      "relation_id": "META-EVIDENCE-REMOVE-ALL-001",
+      "severity": "critical",
+      "transformed": {
+        "action": "ATTEND",
+        "containment_required": false,
+        "deadline_hours": 168.0,
+        "human_review_required": false,
+        "input_affectedness_evidence_count": 0,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001"
+        ],
+        "priority": "HIGH",
+        "prohibit_closure": false,
+        "supporting_evidence_ids": [
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "transformed_case_id": "AEG-ASR-001-HC::META-EVIDENCE-REMOVE-ALL-001",
+      "violations": []
+    },
+    {
+      "baseline": {
+        "action": "ATTEND",
+        "containment_required": false,
+        "deadline_hours": 168.0,
+        "human_review_required": false,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001"
+        ],
+        "priority": "HIGH",
+        "prohibit_closure": false,
+        "supporting_evidence_ids": [
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "baseline_case_id": "AEG-ASR-001-HC",
+      "change_scope_valid": true,
+      "changed_paths": [
+        "trust.aggregate_score"
+      ],
+      "checks": [
+        {
+          "code": "TRANSFORMATION_SCOPE_EXACT",
+          "message": "Expected changed paths ['trust.aggregate_score']; received ['trust.aggregate_score'].",
+          "passed": true
+        },
+        {
+          "code": "BASELINE_INVARIANTS_PASS",
+          "message": "Baseline policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "TRANSFORMED_INVARIANTS_PASS",
+          "message": "Transformed policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "EXPECTED_RULES_TRIGGERED",
+          "message": "Expected transformed policy rules must trigger.",
+          "passed": true
+        },
+        {
+          "code": "ACTION_NOT_DECREASED",
+          "message": "Action rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "PRIORITY_NOT_DECREASED",
+          "message": "Priority rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "DEADLINE_NOT_LENGTHENED",
+          "message": "Response deadline must not lengthen.",
+          "passed": true
+        },
+        {
+          "code": "REVIEW_NOT_REMOVED",
+          "message": "Existing human review must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CONTAINMENT_NOT_REMOVED",
+          "message": "Existing containment must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CLOSURE_PROHIBITION_NOT_REMOVED",
+          "message": "Existing closure prohibition must not be removed.",
+          "passed": true
+        }
+      ],
+      "control_tags": [
+        "trust_degradation",
+        "deadline_monotonicity",
+        "review_monotonicity",
+        "containment_monotonicity",
+        "closure_monotonicity"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expected_changed_paths": [
+        "trust.aggregate_score"
+      ],
+      "family": "trust_score_degradation",
+      "mode": "NO_AUTOMATION_GAIN",
+      "outcome": "PASSED",
+      "passed": true,
+      "property": "Lowering trust score while disposition remains accepted cannot ease handling.",
+      "relation_id": "META-TRUST-SCORE-DECREASE-001",
+      "severity": "critical",
+      "transformed": {
+        "action": "ATTEND",
+        "containment_required": false,
+        "deadline_hours": 168.0,
+        "human_review_required": false,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001"
+        ],
+        "priority": "HIGH",
+        "prohibit_closure": false,
+        "supporting_evidence_ids": [
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "transformed_case_id": "AEG-ASR-001-HC::META-TRUST-SCORE-DECREASE-001",
+      "violations": []
+    },
+    {
+      "baseline": {
+        "action": "ATTEND",
+        "containment_required": false,
+        "deadline_hours": 168.0,
+        "human_review_required": false,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001"
+        ],
+        "priority": "HIGH",
+        "prohibit_closure": false,
+        "supporting_evidence_ids": [
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "baseline_case_id": "AEG-ASR-001-HC",
+      "change_scope_valid": true,
+      "changed_paths": [
+        "affectedness.confidence"
+      ],
+      "checks": [
+        {
+          "code": "TRANSFORMATION_SCOPE_EXACT",
+          "message": "Expected changed paths ['affectedness.confidence']; received ['affectedness.confidence'].",
+          "passed": true
+        },
+        {
+          "code": "BASELINE_INVARIANTS_PASS",
+          "message": "Baseline policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "TRANSFORMED_INVARIANTS_PASS",
+          "message": "Transformed policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "EXPECTED_RULES_TRIGGERED",
+          "message": "Expected transformed policy rules must trigger.",
+          "passed": true
+        },
+        {
+          "code": "ACTION_NOT_DECREASED",
+          "message": "Action rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "PRIORITY_NOT_DECREASED",
+          "message": "Priority rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "DEADLINE_NOT_LENGTHENED",
+          "message": "Response deadline must not lengthen.",
+          "passed": true
+        },
+        {
+          "code": "REVIEW_NOT_REMOVED",
+          "message": "Existing human review must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CONTAINMENT_NOT_REMOVED",
+          "message": "Existing containment must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CLOSURE_PROHIBITION_NOT_REMOVED",
+          "message": "Existing closure prohibition must not be removed.",
+          "passed": true
+        }
+      ],
+      "control_tags": [
+        "uncertainty_escalation",
+        "deadline_monotonicity",
+        "review_monotonicity",
+        "containment_monotonicity",
+        "closure_monotonicity"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expected_changed_paths": [
+        "affectedness.confidence"
+      ],
+      "family": "confidence_degradation",
+      "mode": "NO_AUTOMATION_GAIN",
+      "outcome": "PASSED",
+      "passed": true,
+      "property": "Lowering affectedness confidence cannot enable easier automation.",
+      "relation_id": "META-AFFECTEDNESS-CONFIDENCE-DECREASE-001",
+      "severity": "critical",
+      "transformed": {
+        "action": "ATTEND",
+        "containment_required": false,
+        "deadline_hours": 168.0,
+        "human_review_required": false,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001"
+        ],
+        "priority": "HIGH",
+        "prohibit_closure": false,
+        "supporting_evidence_ids": [
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "transformed_case_id": "AEG-ASR-001-HC::META-AFFECTEDNESS-CONFIDENCE-DECREASE-001",
+      "violations": []
+    },
+    {
+      "baseline": {
+        "action": "ACT",
+        "containment_required": false,
+        "deadline_hours": 24.0,
+        "human_review_required": true,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001",
+          "RULE-KEV-AFFECTED-001"
+        ],
+        "priority": "CRITICAL",
+        "prohibit_closure": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-KEV-ASR-001",
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "baseline_case_id": "AEG-ASR-002-HC",
+      "change_scope_valid": true,
+      "changed_paths": [
+        "asset_overrides.exposure.externally_accessible",
+        "asset_overrides.exposure.internet_accessible"
+      ],
+      "checks": [
+        {
+          "code": "TRANSFORMATION_SCOPE_EXACT",
+          "message": "Expected changed paths ['asset_overrides.exposure.externally_accessible', 'asset_overrides.exposure.internet_accessible']; received ['asset_overrides.exposure.externally_accessible', 'asset_overrides.exposure.internet_accessible'].",
+          "passed": true
+        },
+        {
+          "code": "BASELINE_INVARIANTS_PASS",
+          "message": "Baseline policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "TRANSFORMED_INVARIANTS_PASS",
+          "message": "Transformed policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "EXPECTED_RULES_TRIGGERED",
+          "message": "Expected transformed policy rules must trigger.",
+          "passed": true
+        },
+        {
+          "code": "ACTION_NOT_DECREASED",
+          "message": "Action rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "PRIORITY_NOT_DECREASED",
+          "message": "Priority rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "DEADLINE_NOT_LENGTHENED",
+          "message": "Response deadline must not lengthen.",
+          "passed": true
+        },
+        {
+          "code": "REVIEW_NOT_REMOVED",
+          "message": "Existing human review must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CONTAINMENT_NOT_REMOVED",
+          "message": "Existing containment must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CLOSURE_PROHIBITION_NOT_REMOVED",
+          "message": "Existing closure prohibition must not be removed.",
+          "passed": true
+        }
+      ],
+      "control_tags": [
+        "danger_escalation",
+        "deadline_monotonicity",
+        "review_monotonicity",
+        "containment_monotonicity",
+        "closure_monotonicity"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expected_changed_paths": [
+        "asset_overrides.exposure.externally_accessible",
+        "asset_overrides.exposure.internet_accessible"
+      ],
+      "family": "cumulative_escalation",
+      "mode": "NON_DECREASING",
+      "outcome": "PASSED",
+      "passed": true,
+      "property": "Adding internet exposure to a KEV-listed case cannot weaken safeguards.",
+      "relation_id": "META-KEV-INTERNET-CUMULATIVE-001",
+      "severity": "critical",
+      "transformed": {
+        "action": "ACT",
+        "containment_required": false,
+        "deadline_hours": 24.0,
+        "human_review_required": true,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001",
+          "RULE-KEV-AFFECTED-001",
+          "RULE-INTERNET-EXPOSED-001"
+        ],
+        "priority": "CRITICAL",
+        "prohibit_closure": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-KEV-ASR-001",
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "transformed_case_id": "AEG-ASR-002-HC::META-KEV-INTERNET-CUMULATIVE-001",
+      "violations": []
+    },
+    {
+      "baseline": {
+        "action": "ACT",
+        "containment_required": true,
+        "deadline_hours": 4.0,
+        "human_review_required": true,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001",
+          "RULE-ACTIVE-EXPLOITATION-001"
+        ],
+        "priority": "EMERGENCY",
+        "prohibit_closure": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-EXPLOIT-ASR-001",
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "baseline_case_id": "AEG-ASR-003-HC",
+      "change_scope_valid": true,
+      "changed_paths": [
+        "intelligence_overrides.remediation.status"
+      ],
+      "checks": [
+        {
+          "code": "TRANSFORMATION_SCOPE_EXACT",
+          "message": "Expected changed paths ['intelligence_overrides.remediation.status']; received ['intelligence_overrides.remediation.status'].",
+          "passed": true
+        },
+        {
+          "code": "BASELINE_INVARIANTS_PASS",
+          "message": "Baseline policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "TRANSFORMED_INVARIANTS_PASS",
+          "message": "Transformed policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "EXPECTED_RULES_TRIGGERED",
+          "message": "Expected transformed policy rules must trigger.",
+          "passed": true
+        },
+        {
+          "code": "ACTION_NOT_DECREASED",
+          "message": "Action rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "PRIORITY_NOT_DECREASED",
+          "message": "Priority rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "DEADLINE_NOT_LENGTHENED",
+          "message": "Response deadline must not lengthen.",
+          "passed": true
+        },
+        {
+          "code": "REVIEW_NOT_REMOVED",
+          "message": "Existing human review must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CONTAINMENT_NOT_REMOVED",
+          "message": "Existing containment must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CLOSURE_PROHIBITION_NOT_REMOVED",
+          "message": "Existing closure prohibition must not be removed.",
+          "passed": true
+        }
+      ],
+      "control_tags": [
+        "danger_escalation",
+        "deadline_monotonicity",
+        "review_monotonicity",
+        "containment_monotonicity",
+        "closure_monotonicity"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expected_changed_paths": [
+        "intelligence_overrides.remediation.status"
+      ],
+      "family": "cumulative_escalation",
+      "mode": "NON_DECREASING",
+      "outcome": "PASSED",
+      "passed": true,
+      "property": "Removing remediation during active exploitation cannot weaken emergency handling.",
+      "relation_id": "META-ACTIVE-NO-FIX-CUMULATIVE-001",
+      "severity": "critical",
+      "transformed": {
+        "action": "ACT",
+        "containment_required": true,
+        "deadline_hours": 4.0,
+        "human_review_required": true,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001",
+          "RULE-ACTIVE-EXPLOITATION-001",
+          "RULE-NO-FIX-AVAILABLE-001"
+        ],
+        "priority": "EMERGENCY",
+        "prohibit_closure": true,
+        "supporting_evidence_ids": [
+          "AEG-EVD-EXPLOIT-ASR-001",
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "transformed_case_id": "AEG-ASR-003-HC::META-ACTIVE-NO-FIX-CUMULATIVE-001",
+      "violations": []
+    },
+    {
+      "baseline": {
+        "action": "ATTEND",
+        "containment_required": false,
+        "deadline_hours": 72.0,
+        "human_review_required": false,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001",
+          "RULE-MISSION-ESSENTIAL-001"
+        ],
+        "priority": "HIGH",
+        "prohibit_closure": false,
+        "supporting_evidence_ids": [
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-REQ-000001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "baseline_case_id": "AEG-ASR-008-HC",
+      "change_scope_valid": true,
+      "changed_paths": [
+        "asset_overrides.criticality.level"
+      ],
+      "checks": [
+        {
+          "code": "TRANSFORMATION_SCOPE_EXACT",
+          "message": "Expected changed paths ['asset_overrides.criticality.level']; received ['asset_overrides.criticality.level'].",
+          "passed": true
+        },
+        {
+          "code": "BASELINE_INVARIANTS_PASS",
+          "message": "Baseline policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "TRANSFORMED_INVARIANTS_PASS",
+          "message": "Transformed policy invariants must pass.",
+          "passed": true
+        },
+        {
+          "code": "EXPECTED_RULES_TRIGGERED",
+          "message": "Expected transformed policy rules must trigger.",
+          "passed": true
+        },
+        {
+          "code": "ACTION_NOT_DECREASED",
+          "message": "Action rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "PRIORITY_NOT_DECREASED",
+          "message": "Priority rank must not decrease.",
+          "passed": true
+        },
+        {
+          "code": "DEADLINE_NOT_LENGTHENED",
+          "message": "Response deadline must not lengthen.",
+          "passed": true
+        },
+        {
+          "code": "REVIEW_NOT_REMOVED",
+          "message": "Existing human review must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CONTAINMENT_NOT_REMOVED",
+          "message": "Existing containment must not be removed.",
+          "passed": true
+        },
+        {
+          "code": "CLOSURE_PROHIBITION_NOT_REMOVED",
+          "message": "Existing closure prohibition must not be removed.",
+          "passed": true
+        }
+      ],
+      "control_tags": [
+        "danger_escalation",
+        "deadline_monotonicity",
+        "review_monotonicity",
+        "containment_monotonicity",
+        "closure_monotonicity"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expected_changed_paths": [
+        "asset_overrides.criticality.level"
+      ],
+      "family": "cumulative_escalation",
+      "mode": "NON_DECREASING",
+      "outcome": "PASSED",
+      "passed": true,
+      "property": "Adding high criticality to a mission-essential case cannot weaken the decision.",
+      "relation_id": "META-MISSION-CRITICALITY-CUMULATIVE-001",
+      "severity": "critical",
+      "transformed": {
+        "action": "ATTEND",
+        "containment_required": false,
+        "deadline_hours": 72.0,
+        "human_review_required": false,
+        "input_affectedness_evidence_count": 2,
+        "invariants_passed": true,
+        "matched_rule_ids": [
+          "RULE-AFFECTED-BASELINE-001",
+          "RULE-MISSION-ESSENTIAL-001",
+          "RULE-HIGH-CRITICALITY-001"
+        ],
+        "priority": "HIGH",
+        "prohibit_closure": false,
+        "supporting_evidence_ids": [
+          "AEG-EVD-OSV-LOG4J-001",
+          "AEG-EVD-REQ-000001",
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "transformed_case_id": "AEG-ASR-008-HC::META-MISSION-CRITICALITY-CUMULATIVE-001",
+      "violations": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "summary": {
+    "blocked_invalid_transformation_count": 0,
+    "closure_monotonicity_rate": 1.0,
+    "containment_monotonicity_rate": 1.0,
+    "critical_relation_count": 36,
+    "critical_relation_pass_rate": 1.0,
+    "danger_escalation_monotonicity_rate": 1.0,
+    "deadline_monotonicity_rate": 1.0,
+    "evidence_removal_no_confidence_gain_rate": 1.0,
+    "harness_error_count": 0,
+    "overall_passed": true,
+    "passed_count": 36,
+    "relation_count": 36,
+    "review_monotonicity_rate": 1.0,
+    "sector_neutrality_consistency_rate": 1.0,
+    "trust_degradation_fail_closed_rate": 1.0,
+    "trusted_input_integrity_passed": true,
+    "violated_count": 0
+  },
+  "violation_relation_ids": []
+}
