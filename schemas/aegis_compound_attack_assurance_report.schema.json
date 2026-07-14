@@ -1,0 +1,494 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aegissec.example/schemas/aegis-compound-attack-assurance-report-v1.0.0.json",
+  "title": "AegisSec Compound Attack Assurance Report v1.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "report_id",
+    "catalog",
+    "input_integrity_checks_before",
+    "input_integrity_checks_after",
+    "baseline_validation",
+    "summary",
+    "quality_gates",
+    "results",
+    "undetected_chain_ids",
+    "harness_error_chain_ids",
+    "unsafe_release_chain_ids",
+    "release_decision",
+    "limitations",
+    "generated_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "report_id": {
+      "type": "string",
+      "pattern": "^AEG-COMPOUND-[A-Z0-9._-]+$"
+    },
+    "catalog": {
+      "type": "object",
+      "required": [
+        "catalog_id",
+        "version",
+        "harness_version",
+        "relative_path",
+        "sha256"
+      ],
+      "properties": {
+        "catalog_id": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "harness_version": {
+          "type": "string"
+        },
+        "relative_path": {
+          "type": "string"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "input_integrity_checks_before": {
+      "$ref": "#/$defs/integrityMap"
+    },
+    "input_integrity_checks_after": {
+      "$ref": "#/$defs/integrityMap"
+    },
+    "baseline_validation": {
+      "type": "object",
+      "minProperties": 4,
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "metric",
+          "expected",
+          "observed",
+          "passed"
+        ],
+        "properties": {
+          "metric": {
+            "type": "string"
+          },
+          "expected": {},
+          "observed": {},
+          "passed": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "summary": {
+      "$ref": "#/$defs/summary"
+    },
+    "quality_gates": {
+      "type": "array",
+      "minItems": 9,
+      "items": {
+        "$ref": "#/$defs/gate"
+      }
+    },
+    "results": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/result"
+      }
+    },
+    "undetected_chain_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "harness_error_chain_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "unsafe_release_chain_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "release_decision": {
+      "type": "object",
+      "required": [
+        "stage_gate_status",
+        "production_readiness_status",
+        "blocking_reasons"
+      ],
+      "properties": {
+        "stage_gate_status": {
+          "enum": [
+            "PASS",
+            "FAIL"
+          ]
+        },
+        "production_readiness_status": {
+          "const": "BLOCKED"
+        },
+        "blocking_reasons": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "limitations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "$defs": {
+    "rate": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "integrityMap": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "relative_path",
+          "expected_sha256",
+          "actual_sha256",
+          "safe_path",
+          "exists",
+          "passed"
+        ],
+        "properties": {
+          "relative_path": {
+            "type": "string"
+          },
+          "expected_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "actual_sha256": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "safe_path": {
+            "type": "boolean"
+          },
+          "exists": {
+            "type": "boolean"
+          },
+          "passed": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "chain_count",
+        "critical_chain_count",
+        "defended_critical_count",
+        "blocked_before_decision_count",
+        "rejected_by_assurance_count",
+        "quarantined_count",
+        "undetected_count",
+        "harness_error_count",
+        "unsafe_decision_release_count",
+        "critical_compound_chain_defence_rate",
+        "fail_closed_chain_handling_rate",
+        "multi_control_detection_rate",
+        "order_sensitive_chain_consistency_rate",
+        "cross_layer_integrity_defence_rate",
+        "trusted_input_integrity_passed",
+        "overall_passed"
+      ],
+      "properties": {
+        "chain_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "critical_chain_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "defended_critical_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "blocked_before_decision_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "rejected_by_assurance_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "quarantined_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "undetected_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "harness_error_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "unsafe_decision_release_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "critical_compound_chain_defence_rate": {
+          "$ref": "#/$defs/rate"
+        },
+        "fail_closed_chain_handling_rate": {
+          "$ref": "#/$defs/rate"
+        },
+        "multi_control_detection_rate": {
+          "$ref": "#/$defs/rate"
+        },
+        "order_sensitive_chain_consistency_rate": {
+          "$ref": "#/$defs/rate"
+        },
+        "cross_layer_integrity_defence_rate": {
+          "$ref": "#/$defs/rate"
+        },
+        "trusted_input_integrity_passed": {
+          "type": "boolean"
+        },
+        "overall_passed": {
+          "type": "boolean"
+        }
+      }
+    },
+    "gate": {
+      "type": "object",
+      "required": [
+        "gate_id",
+        "operator",
+        "threshold",
+        "observed",
+        "passed"
+      ],
+      "properties": {
+        "gate_id": {
+          "type": "string"
+        },
+        "operator": {
+          "enum": [
+            "gte",
+            "lte",
+            "eq"
+          ]
+        },
+        "threshold": {},
+        "observed": {},
+        "passed": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "step": {
+      "type": "object",
+      "required": [
+        "source_id",
+        "layer",
+        "raw_outcome",
+        "defended",
+        "detection_oracles",
+        "finding_codes",
+        "details",
+        "error"
+      ],
+      "properties": {
+        "source_id": {
+          "type": "string"
+        },
+        "layer": {
+          "enum": [
+            "tamper",
+            "hostile_input",
+            "policy_mutation",
+            "metamorphic"
+          ]
+        },
+        "raw_outcome": {
+          "type": "string"
+        },
+        "defended": {
+          "type": "boolean"
+        },
+        "detection_oracles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "finding_codes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "details": {
+          "type": "object"
+        },
+        "error": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "result": {
+      "type": "object",
+      "required": [
+        "chain_id",
+        "title",
+        "family",
+        "severity",
+        "description",
+        "control_tags",
+        "ephemeral_only",
+        "outcome",
+        "defended",
+        "unsafe_decision_released",
+        "layers_activated",
+        "detection_oracles",
+        "multi_control_detected",
+        "first_blocking_control",
+        "order_consistent",
+        "forward_steps",
+        "reverse_steps",
+        "error"
+      ],
+      "properties": {
+        "chain_id": {
+          "type": "string",
+          "pattern": "^CHAIN-[A-Z0-9-]+$"
+        },
+        "title": {
+          "type": "string"
+        },
+        "family": {
+          "type": "string"
+        },
+        "severity": {
+          "const": "critical"
+        },
+        "description": {
+          "type": "string"
+        },
+        "control_tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "ephemeral_only": {
+          "const": true
+        },
+        "outcome": {
+          "enum": [
+            "BLOCKED_BEFORE_DECISION",
+            "REJECTED_BY_ASSURANCE",
+            "QUARANTINED",
+            "DETECTED_WITH_WARNING",
+            "UNDETECTED",
+            "HARNESS_ERROR"
+          ]
+        },
+        "defended": {
+          "type": "boolean"
+        },
+        "unsafe_decision_released": {
+          "type": "boolean"
+        },
+        "layers_activated": {
+          "type": "array",
+          "minItems": 2,
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "detection_oracles": {
+          "type": "array",
+          "minItems": 2,
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "multi_control_detected": {
+          "type": "boolean"
+        },
+        "first_blocking_control": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "order_consistent": {
+          "type": "boolean"
+        },
+        "forward_steps": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "$ref": "#/$defs/step"
+          }
+        },
+        "reverse_steps": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "$ref": "#/$defs/step"
+          }
+        },
+        "error": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

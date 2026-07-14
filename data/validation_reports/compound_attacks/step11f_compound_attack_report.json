@@ -1,0 +1,5117 @@
+{
+  "baseline_validation": {
+    "step11b_report": {
+      "expected": true,
+      "metric": "overall_passed",
+      "observed": true,
+      "passed": true
+    },
+    "step11c_report": {
+      "expected": true,
+      "metric": "overall_passed",
+      "observed": true,
+      "passed": true
+    },
+    "step11d_report": {
+      "expected": true,
+      "metric": "overall_passed",
+      "observed": true,
+      "passed": true
+    },
+    "step11e_report": {
+      "expected": true,
+      "metric": "overall_passed",
+      "observed": true,
+      "passed": true
+    }
+  },
+  "catalog": {
+    "catalog_id": "AEGIS-COMPOUND-ATTACK-CHAIN-CATALOG",
+    "harness_version": "1.0.0",
+    "relative_path": "policies/assurance/compound_attack_chain_catalog_v1.yaml",
+    "sha256": "4176dca2bcbad26f49c1d062e73c940a8b46aef478c38ac4ab10cc798aaa0a6f",
+    "version": "1.0.0"
+  },
+  "generated_at": "2026-07-14T16:30:46.116312+00:00",
+  "harness_error_chain_ids": [],
+  "input_integrity_checks_after": {
+    "assurance_corpus": {
+      "actual_sha256": "d51747056c4f920d5e0b6bfb51613b4e1ee1910de82770aa179dd3fe77f68ded",
+      "exists": true,
+      "expected_sha256": "d51747056c4f920d5e0b6bfb51613b4e1ee1910de82770aa179dd3fe77f68ded",
+      "passed": true,
+      "relative_path": "data/assurance/step11a_policy_rule_coverage_corpus.jsonl",
+      "safe_path": true
+    },
+    "assurance_manifest": {
+      "actual_sha256": "d1fdd9308b973e5248e464daf528a376bca6bc6c27b9d45f267b88f842797465",
+      "exists": true,
+      "expected_sha256": "d1fdd9308b973e5248e464daf528a376bca6bc6c27b9d45f267b88f842797465",
+      "passed": true,
+      "relative_path": "data/assurance/step11a_policy_rule_coverage_manifest.json",
+      "safe_path": true
+    },
+    "decision_policy": {
+      "actual_sha256": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f",
+      "exists": true,
+      "expected_sha256": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f",
+      "passed": true,
+      "relative_path": "policies/decision/federal_base_policy_v1.yaml",
+      "safe_path": true
+    },
+    "hostile_catalog": {
+      "actual_sha256": "c3ebeeae727c8613b76605edaf12912d1b9b5575f197a0dff03dd9e34b278ecb",
+      "exists": true,
+      "expected_sha256": "c3ebeeae727c8613b76605edaf12912d1b9b5575f197a0dff03dd9e34b278ecb",
+      "passed": true,
+      "relative_path": "policies/assurance/hostile_input_catalog_v1.yaml",
+      "safe_path": true
+    },
+    "hostile_module": {
+      "actual_sha256": "a216dcb72d589616554cb69e948be7b534d704d8314f63c84d1617ba05db091b",
+      "exists": true,
+      "expected_sha256": "a216dcb72d589616554cb69e948be7b534d704d8314f63c84d1617ba05db091b",
+      "passed": true,
+      "relative_path": "src/assurance/hostile_input_assurance.py",
+      "safe_path": true
+    },
+    "metamorphic_catalog": {
+      "actual_sha256": "d5f5be9616f1bbe97775d94e10b9699c31a0a4db6f449dac7687b2a3f38cc175",
+      "exists": true,
+      "expected_sha256": "d5f5be9616f1bbe97775d94e10b9699c31a0a4db6f449dac7687b2a3f38cc175",
+      "passed": true,
+      "relative_path": "policies/assurance/metamorphic_relation_catalog_v1.yaml",
+      "safe_path": true
+    },
+    "metamorphic_module": {
+      "actual_sha256": "8b27961efe2db50e52d1e57b86bc20f771802e5e5e254e20f8d90a52ed0f993b",
+      "exists": true,
+      "expected_sha256": "8b27961efe2db50e52d1e57b86bc20f771802e5e5e254e20f8d90a52ed0f993b",
+      "passed": true,
+      "relative_path": "src/assurance/metamorphic_assurance.py",
+      "safe_path": true
+    },
+    "mutation_catalog": {
+      "actual_sha256": "e8e050967e9aa6bc4be096745bae5c384d88b861116fb7df37868132741b17e9",
+      "exists": true,
+      "expected_sha256": "e8e050967e9aa6bc4be096745bae5c384d88b861116fb7df37868132741b17e9",
+      "passed": true,
+      "relative_path": "policies/assurance/policy_mutation_catalog_v1.yaml",
+      "safe_path": true
+    },
+    "policy_mutation_module": {
+      "actual_sha256": "e08f8a948104d462a12d9b2e114c0fc4219227bb68c6966e94a12974416f39ca",
+      "exists": true,
+      "expected_sha256": "e08f8a948104d462a12d9b2e114c0fc4219227bb68c6966e94a12974416f39ca",
+      "passed": true,
+      "relative_path": "src/assurance/policy_mutation.py",
+      "safe_path": true
+    },
+    "step11b_report": {
+      "actual_sha256": "73365a05f63fe4ee0cf51fed471c8a3846679f4ae737cc033be670220de5ceb1",
+      "exists": true,
+      "expected_sha256": "73365a05f63fe4ee0cf51fed471c8a3846679f4ae737cc033be670220de5ceb1",
+      "passed": true,
+      "relative_path": "data/validation_reports/mutation/step11b_policy_mutation_report.json",
+      "safe_path": true
+    },
+    "step11c_report": {
+      "actual_sha256": "74f0849ee40aa73f09b9abf23929bbaf4a355d51f00c9b01958b01f943867a23",
+      "exists": true,
+      "expected_sha256": "74f0849ee40aa73f09b9abf23929bbaf4a355d51f00c9b01958b01f943867a23",
+      "passed": true,
+      "relative_path": "data/validation_reports/tampering/step11c_tamper_assurance_report.json",
+      "safe_path": true
+    },
+    "step11d_report": {
+      "actual_sha256": "8c21529e07fa9b9b196a002d64fa302e7f9ec10da3e1fec9b7070bdd6d6b6f69",
+      "exists": true,
+      "expected_sha256": "8c21529e07fa9b9b196a002d64fa302e7f9ec10da3e1fec9b7070bdd6d6b6f69",
+      "passed": true,
+      "relative_path": "data/validation_reports/hostile_inputs/step11d_hostile_input_report.json",
+      "safe_path": true
+    },
+    "step11e_report": {
+      "actual_sha256": "18c1b8986c318a815d5d954df2686846b5d97ac30727fb94c24ac72e635e652e",
+      "exists": true,
+      "expected_sha256": "18c1b8986c318a815d5d954df2686846b5d97ac30727fb94c24ac72e635e652e",
+      "passed": true,
+      "relative_path": "data/validation_reports/metamorphic/step11e_metamorphic_assurance_report.json",
+      "safe_path": true
+    },
+    "tamper_catalog": {
+      "actual_sha256": "572acb31d30d4ff34b887a86c73b2f07714eb015af833d2b715da9ab239e6a24",
+      "exists": true,
+      "expected_sha256": "572acb31d30d4ff34b887a86c73b2f07714eb015af833d2b715da9ab239e6a24",
+      "passed": true,
+      "relative_path": "policies/assurance/tamper_scenario_catalog_v1.yaml",
+      "safe_path": true
+    },
+    "tamper_module": {
+      "actual_sha256": "2fd8a7e77075b90fb1ffe60aac797e26c382a399caf283082475d620f00d2370",
+      "exists": true,
+      "expected_sha256": "2fd8a7e77075b90fb1ffe60aac797e26c382a399caf283082475d620f00d2370",
+      "passed": true,
+      "relative_path": "src/assurance/tamper_assurance.py",
+      "safe_path": true
+    }
+  },
+  "input_integrity_checks_before": {
+    "assurance_corpus": {
+      "actual_sha256": "d51747056c4f920d5e0b6bfb51613b4e1ee1910de82770aa179dd3fe77f68ded",
+      "exists": true,
+      "expected_sha256": "d51747056c4f920d5e0b6bfb51613b4e1ee1910de82770aa179dd3fe77f68ded",
+      "passed": true,
+      "relative_path": "data/assurance/step11a_policy_rule_coverage_corpus.jsonl",
+      "safe_path": true
+    },
+    "assurance_manifest": {
+      "actual_sha256": "d1fdd9308b973e5248e464daf528a376bca6bc6c27b9d45f267b88f842797465",
+      "exists": true,
+      "expected_sha256": "d1fdd9308b973e5248e464daf528a376bca6bc6c27b9d45f267b88f842797465",
+      "passed": true,
+      "relative_path": "data/assurance/step11a_policy_rule_coverage_manifest.json",
+      "safe_path": true
+    },
+    "decision_policy": {
+      "actual_sha256": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f",
+      "exists": true,
+      "expected_sha256": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f",
+      "passed": true,
+      "relative_path": "policies/decision/federal_base_policy_v1.yaml",
+      "safe_path": true
+    },
+    "hostile_catalog": {
+      "actual_sha256": "c3ebeeae727c8613b76605edaf12912d1b9b5575f197a0dff03dd9e34b278ecb",
+      "exists": true,
+      "expected_sha256": "c3ebeeae727c8613b76605edaf12912d1b9b5575f197a0dff03dd9e34b278ecb",
+      "passed": true,
+      "relative_path": "policies/assurance/hostile_input_catalog_v1.yaml",
+      "safe_path": true
+    },
+    "hostile_module": {
+      "actual_sha256": "a216dcb72d589616554cb69e948be7b534d704d8314f63c84d1617ba05db091b",
+      "exists": true,
+      "expected_sha256": "a216dcb72d589616554cb69e948be7b534d704d8314f63c84d1617ba05db091b",
+      "passed": true,
+      "relative_path": "src/assurance/hostile_input_assurance.py",
+      "safe_path": true
+    },
+    "metamorphic_catalog": {
+      "actual_sha256": "d5f5be9616f1bbe97775d94e10b9699c31a0a4db6f449dac7687b2a3f38cc175",
+      "exists": true,
+      "expected_sha256": "d5f5be9616f1bbe97775d94e10b9699c31a0a4db6f449dac7687b2a3f38cc175",
+      "passed": true,
+      "relative_path": "policies/assurance/metamorphic_relation_catalog_v1.yaml",
+      "safe_path": true
+    },
+    "metamorphic_module": {
+      "actual_sha256": "8b27961efe2db50e52d1e57b86bc20f771802e5e5e254e20f8d90a52ed0f993b",
+      "exists": true,
+      "expected_sha256": "8b27961efe2db50e52d1e57b86bc20f771802e5e5e254e20f8d90a52ed0f993b",
+      "passed": true,
+      "relative_path": "src/assurance/metamorphic_assurance.py",
+      "safe_path": true
+    },
+    "mutation_catalog": {
+      "actual_sha256": "e8e050967e9aa6bc4be096745bae5c384d88b861116fb7df37868132741b17e9",
+      "exists": true,
+      "expected_sha256": "e8e050967e9aa6bc4be096745bae5c384d88b861116fb7df37868132741b17e9",
+      "passed": true,
+      "relative_path": "policies/assurance/policy_mutation_catalog_v1.yaml",
+      "safe_path": true
+    },
+    "policy_mutation_module": {
+      "actual_sha256": "e08f8a948104d462a12d9b2e114c0fc4219227bb68c6966e94a12974416f39ca",
+      "exists": true,
+      "expected_sha256": "e08f8a948104d462a12d9b2e114c0fc4219227bb68c6966e94a12974416f39ca",
+      "passed": true,
+      "relative_path": "src/assurance/policy_mutation.py",
+      "safe_path": true
+    },
+    "step11b_report": {
+      "actual_sha256": "73365a05f63fe4ee0cf51fed471c8a3846679f4ae737cc033be670220de5ceb1",
+      "exists": true,
+      "expected_sha256": "73365a05f63fe4ee0cf51fed471c8a3846679f4ae737cc033be670220de5ceb1",
+      "passed": true,
+      "relative_path": "data/validation_reports/mutation/step11b_policy_mutation_report.json",
+      "safe_path": true
+    },
+    "step11c_report": {
+      "actual_sha256": "74f0849ee40aa73f09b9abf23929bbaf4a355d51f00c9b01958b01f943867a23",
+      "exists": true,
+      "expected_sha256": "74f0849ee40aa73f09b9abf23929bbaf4a355d51f00c9b01958b01f943867a23",
+      "passed": true,
+      "relative_path": "data/validation_reports/tampering/step11c_tamper_assurance_report.json",
+      "safe_path": true
+    },
+    "step11d_report": {
+      "actual_sha256": "8c21529e07fa9b9b196a002d64fa302e7f9ec10da3e1fec9b7070bdd6d6b6f69",
+      "exists": true,
+      "expected_sha256": "8c21529e07fa9b9b196a002d64fa302e7f9ec10da3e1fec9b7070bdd6d6b6f69",
+      "passed": true,
+      "relative_path": "data/validation_reports/hostile_inputs/step11d_hostile_input_report.json",
+      "safe_path": true
+    },
+    "step11e_report": {
+      "actual_sha256": "18c1b8986c318a815d5d954df2686846b5d97ac30727fb94c24ac72e635e652e",
+      "exists": true,
+      "expected_sha256": "18c1b8986c318a815d5d954df2686846b5d97ac30727fb94c24ac72e635e652e",
+      "passed": true,
+      "relative_path": "data/validation_reports/metamorphic/step11e_metamorphic_assurance_report.json",
+      "safe_path": true
+    },
+    "tamper_catalog": {
+      "actual_sha256": "572acb31d30d4ff34b887a86c73b2f07714eb015af833d2b715da9ab239e6a24",
+      "exists": true,
+      "expected_sha256": "572acb31d30d4ff34b887a86c73b2f07714eb015af833d2b715da9ab239e6a24",
+      "passed": true,
+      "relative_path": "policies/assurance/tamper_scenario_catalog_v1.yaml",
+      "safe_path": true
+    },
+    "tamper_module": {
+      "actual_sha256": "2fd8a7e77075b90fb1ffe60aac797e26c382a399caf283082475d620f00d2370",
+      "exists": true,
+      "expected_sha256": "2fd8a7e77075b90fb1ffe60aac797e26c382a399caf283082475d620f00d2370",
+      "passed": true,
+      "relative_path": "src/assurance/tamper_assurance.py",
+      "safe_path": true
+    }
+  },
+  "limitations": [
+    "Controlled deterministic attack chains only; not a substitute for live adversarial testing.",
+    "Compound steps reuse real assurance handlers but do not emulate production network timing, concurrency, or operator behavior."
+  ],
+  "quality_gates": [
+    {
+      "gate_id": "COMPOUND-CRITICAL-DEFENCE",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "COMPOUND-UNDETECTED",
+      "observed": 0,
+      "operator": "lte",
+      "passed": true,
+      "threshold": 0
+    },
+    {
+      "gate_id": "COMPOUND-HARNESS-ERRORS",
+      "observed": 0,
+      "operator": "lte",
+      "passed": true,
+      "threshold": 0
+    },
+    {
+      "gate_id": "COMPOUND-UNSAFE-RELEASES",
+      "observed": 0,
+      "operator": "lte",
+      "passed": true,
+      "threshold": 0
+    },
+    {
+      "gate_id": "COMPOUND-FAIL-CLOSED",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "COMPOUND-MULTI-CONTROL",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "COMPOUND-ORDER-CONSISTENCY",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "COMPOUND-CROSS-LAYER-INTEGRITY",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "COMPOUND-TRUSTED-INTEGRITY",
+      "observed": true,
+      "operator": "eq",
+      "passed": true,
+      "threshold": true
+    }
+  ],
+  "release_decision": {
+    "blocking_reasons": [
+      "Real operational validation has not yet been completed.",
+      "Independent security review has not yet been completed."
+    ],
+    "production_readiness_status": "BLOCKED",
+    "stage_gate_status": "PASS"
+  },
+  "report_id": "AEG-COMPOUND-STEP11F-001",
+  "results": [
+    {
+      "chain_id": "CHAIN-TRUST-EXPLOITATION-SUPPRESSION-001",
+      "control_tags": [
+        "fail_closed",
+        "multi_control",
+        "cross_layer_integrity",
+        "order_sensitive"
+      ],
+      "defended": true,
+      "description": "Compound chain 1 combines multiple real assurance controls and must remain fail-closed.",
+      "detection_oracles": [
+        "ACTION_NOT_DECREASED",
+        "BASELINE_INVARIANTS_PASS",
+        "CASE_ORACLE",
+        "CLOSURE_PROHIBITION_NOT_REMOVED",
+        "CONTAINMENT_NOT_REMOVED",
+        "DEADLINE_NOT_LENGTHENED",
+        "EXPECTED_RULES_TRIGGERED",
+        "FAIL_CLOSED_DEADLINE",
+        "FAIL_CLOSED_HIGH_PRIORITY",
+        "FAIL_CLOSED_HOLD",
+        "FAIL_CLOSED_NO_CLOSURE",
+        "FAIL_CLOSED_REVIEW",
+        "METAMORPHIC_PROPERTY",
+        "POLICY_INVARIANT",
+        "PRIORITY_NOT_DECREASED",
+        "RELEASE_GATE",
+        "REVIEW_NOT_REMOVED",
+        "TRANSFORMATION_SCOPE_EXACT",
+        "TRANSFORMED_INVARIANTS_PASS",
+        "UNDER_TRIAGE_DETECTION",
+        "VALIDATION_ATTESTATION"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "family": "trust_exploitation_suppression",
+      "first_blocking_control": "tamper:TAMPER-VALIDATION-STATUS-FORGERY-001",
+      "forward_steps": [
+        {
+          "defended": true,
+          "details": {},
+          "detection_oracles": [
+            "VALIDATION_ATTESTATION"
+          ],
+          "error": null,
+          "finding_codes": [
+            "DECLARED_VALIDATION_STATUS_MISMATCH"
+          ],
+          "layer": "tamper",
+          "raw_outcome": "REJECTED",
+          "source_id": "TAMPER-VALIDATION-STATUS-FORGERY-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "executable": true,
+            "failed_case_count": 4
+          },
+          "detection_oracles": [
+            "CASE_ORACLE",
+            "POLICY_INVARIANT",
+            "RELEASE_GATE",
+            "UNDER_TRIAGE_DETECTION"
+          ],
+          "error": null,
+          "finding_codes": [],
+          "layer": "policy_mutation",
+          "raw_outcome": "KILLED_BY_ASSURANCE",
+          "source_id": "MUT-REJECTED-EVIDENCE-CONTINUE-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "baseline_case_id": "AEG-ASR-049-HC",
+            "changed_paths": [
+              "trust.action",
+              "trust.aggregate_score"
+            ],
+            "transformed_case_id": "AEG-ASR-049-HC::META-TRUST-REJECT-001"
+          },
+          "detection_oracles": [
+            "METAMORPHIC_PROPERTY",
+            "ACTION_NOT_DECREASED",
+            "BASELINE_INVARIANTS_PASS",
+            "CLOSURE_PROHIBITION_NOT_REMOVED",
+            "CONTAINMENT_NOT_REMOVED",
+            "DEADLINE_NOT_LENGTHENED",
+            "EXPECTED_RULES_TRIGGERED",
+            "FAIL_CLOSED_DEADLINE",
+            "FAIL_CLOSED_HIGH_PRIORITY",
+            "FAIL_CLOSED_HOLD",
+            "FAIL_CLOSED_NO_CLOSURE",
+            "FAIL_CLOSED_REVIEW",
+            "PRIORITY_NOT_DECREASED",
+            "REVIEW_NOT_REMOVED",
+            "TRANSFORMATION_SCOPE_EXACT",
+            "TRANSFORMED_INVARIANTS_PASS"
+          ],
+          "error": null,
+          "finding_codes": [],
+          "layer": "metamorphic",
+          "raw_outcome": "PASSED",
+          "source_id": "META-TRUST-REJECT-001"
+        }
+      ],
+      "layers_activated": [
+        "metamorphic",
+        "policy_mutation",
+        "tamper"
+      ],
+      "multi_control_detected": true,
+      "order_consistent": true,
+      "outcome": "REJECTED_BY_ASSURANCE",
+      "reverse_steps": [
+        {
+          "defended": true,
+          "details": {
+            "baseline_case_id": "AEG-ASR-049-HC",
+            "changed_paths": [
+              "trust.action",
+              "trust.aggregate_score"
+            ],
+            "transformed_case_id": "AEG-ASR-049-HC::META-TRUST-REJECT-001"
+          },
+          "detection_oracles": [
+            "METAMORPHIC_PROPERTY",
+            "ACTION_NOT_DECREASED",
+            "BASELINE_INVARIANTS_PASS",
+            "CLOSURE_PROHIBITION_NOT_REMOVED",
+            "CONTAINMENT_NOT_REMOVED",
+            "DEADLINE_NOT_LENGTHENED",
+            "EXPECTED_RULES_TRIGGERED",
+            "FAIL_CLOSED_DEADLINE",
+            "FAIL_CLOSED_HIGH_PRIORITY",
+            "FAIL_CLOSED_HOLD",
+            "FAIL_CLOSED_NO_CLOSURE",
+            "FAIL_CLOSED_REVIEW",
+            "PRIORITY_NOT_DECREASED",
+            "REVIEW_NOT_REMOVED",
+            "TRANSFORMATION_SCOPE_EXACT",
+            "TRANSFORMED_INVARIANTS_PASS"
+          ],
+          "error": null,
+          "finding_codes": [],
+          "layer": "metamorphic",
+          "raw_outcome": "PASSED",
+          "source_id": "META-TRUST-REJECT-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "executable": true,
+            "failed_case_count": 4
+          },
+          "detection_oracles": [
+            "CASE_ORACLE",
+            "POLICY_INVARIANT",
+            "RELEASE_GATE",
+            "UNDER_TRIAGE_DETECTION"
+          ],
+          "error": null,
+          "finding_codes": [],
+          "layer": "policy_mutation",
+          "raw_outcome": "KILLED_BY_ASSURANCE",
+          "source_id": "MUT-REJECTED-EVIDENCE-CONTINUE-001"
+        },
+        {
+          "defended": true,
+          "details": {},
+          "detection_oracles": [
+            "VALIDATION_ATTESTATION"
+          ],
+          "error": null,
+          "finding_codes": [
+            "DECLARED_VALIDATION_STATUS_MISMATCH"
+          ],
+          "layer": "tamper",
+          "raw_outcome": "REJECTED",
+          "source_id": "TAMPER-VALIDATION-STATUS-FORGERY-001"
+        }
+      ],
+      "severity": "critical",
+      "title": "Trust Exploitation Suppression",
+      "unsafe_decision_released": false
+    },
+    {
+      "chain_id": "CHAIN-KEV-EPSS-COERCION-001",
+      "control_tags": [
+        "fail_closed",
+        "multi_control",
+        "order_sensitive"
+      ],
+      "defended": true,
+      "description": "Compound chain 2 combines multiple real assurance controls and must remain fail-closed.",
+      "detection_oracles": [
+        "ACTION_NOT_DECREASED",
+        "BASELINE_INVARIANTS_PASS",
+        "CASE_ORACLE",
+        "CLOSURE_PROHIBITION_NOT_REMOVED",
+        "CONTAINMENT_NOT_REMOVED",
+        "DEADLINE_NOT_LENGTHENED",
+        "EXPECTED_RULES_TRIGGERED",
+        "METAMORPHIC_PROPERTY",
+        "POLICY_INVARIANT",
+        "PRIORITY_NOT_DECREASED",
+        "RELEASE_GATE",
+        "REVIEW_NOT_REMOVED",
+        "STATIC_SECURITY_CONTRACT",
+        "STRICT_PARSER",
+        "TRANSFORMATION_SCOPE_EXACT",
+        "TRANSFORMED_INVARIANTS_PASS"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "family": "kev_epss_coercion",
+      "first_blocking_control": "policy_mutation:MUT-KEV-ACTION-DOWNGRADE-001",
+      "forward_steps": [
+        {
+          "defended": true,
+          "details": {
+            "executable": true,
+            "failed_case_count": 4
+          },
+          "detection_oracles": [
+            "CASE_ORACLE",
+            "POLICY_INVARIANT",
+            "RELEASE_GATE",
+            "STATIC_SECURITY_CONTRACT"
+          ],
+          "error": null,
+          "finding_codes": [
+            "CRITICAL_ACTION_FLOOR_WEAKENED"
+          ],
+          "layer": "policy_mutation",
+          "raw_outcome": "KILLED_BY_ASSURANCE",
+          "source_id": "MUT-KEV-ACTION-DOWNGRADE-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "code": "VALUE_MISSING",
+            "normalized_text": "",
+            "status": "missing",
+            "value": null
+          },
+          "detection_oracles": [
+            "STRICT_PARSER"
+          ],
+          "error": null,
+          "finding_codes": [
+            "MISSING_VALUE_PRESERVED"
+          ],
+          "layer": "hostile_input",
+          "raw_outcome": "NORMALIZED_SAFE",
+          "source_id": "INPUT-MISSING-PROBABILITY-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "baseline_case_id": "AEG-ASR-001-HC",
+            "changed_paths": [
+              "intelligence_overrides.kev.catalog_version",
+              "intelligence_overrides.kev.date_added",
+              "intelligence_overrides.kev.due_date",
+              "intelligence_overrides.kev.evidence_id",
+              "intelligence_overrides.kev.required_action",
+              "intelligence_overrides.kev.status",
+              "operational_profile"
+            ],
+            "transformed_case_id": "AEG-ASR-002-HC"
+          },
+          "detection_oracles": [
+            "METAMORPHIC_PROPERTY",
+            "ACTION_NOT_DECREASED",
+            "BASELINE_INVARIANTS_PASS",
+            "CLOSURE_PROHIBITION_NOT_REMOVED",
+            "CONTAINMENT_NOT_REMOVED",
+            "DEADLINE_NOT_LENGTHENED",
+            "EXPECTED_RULES_TRIGGERED",
+            "PRIORITY_NOT_DECREASED",
+            "REVIEW_NOT_REMOVED",
+            "TRANSFORMATION_SCOPE_EXACT",
+            "TRANSFORMED_INVARIANTS_PASS"
+          ],
+          "error": null,
+          "finding_codes": [],
+          "layer": "metamorphic",
+          "raw_outcome": "PASSED",
+          "source_id": "META-KEV-ADD-001"
+        }
+      ],
+      "layers_activated": [
+        "hostile_input",
+        "metamorphic",
+        "policy_mutation"
+      ],
+      "multi_control_detected": true,
+      "order_consistent": true,
+      "outcome": "REJECTED_BY_ASSURANCE",
+      "reverse_steps": [
+        {
+          "defended": true,
+          "details": {
+            "baseline_case_id": "AEG-ASR-001-HC",
+            "changed_paths": [
+              "intelligence_overrides.kev.catalog_version",
+              "intelligence_overrides.kev.date_added",
+              "intelligence_overrides.kev.due_date",
+              "intelligence_overrides.kev.evidence_id",
+              "intelligence_overrides.kev.required_action",
+              "intelligence_overrides.kev.status",
+              "operational_profile"
+            ],
+            "transformed_case_id": "AEG-ASR-002-HC"
+          },
+          "detection_oracles": [
+            "METAMORPHIC_PROPERTY",
+            "ACTION_NOT_DECREASED",
+            "BASELINE_INVARIANTS_PASS",
+            "CLOSURE_PROHIBITION_NOT_REMOVED",
+            "CONTAINMENT_NOT_REMOVED",
+            "DEADLINE_NOT_LENGTHENED",
+            "EXPECTED_RULES_TRIGGERED",
+            "PRIORITY_NOT_DECREASED",
+            "REVIEW_NOT_REMOVED",
+            "TRANSFORMATION_SCOPE_EXACT",
+            "TRANSFORMED_INVARIANTS_PASS"
+          ],
+          "error": null,
+          "finding_codes": [],
+          "layer": "metamorphic",
+          "raw_outcome": "PASSED",
+          "source_id": "META-KEV-ADD-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "code": "VALUE_MISSING",
+            "normalized_text": "",
+            "status": "missing",
+            "value": null
+          },
+          "detection_oracles": [
+            "STRICT_PARSER"
+          ],
+          "error": null,
+          "finding_codes": [
+            "MISSING_VALUE_PRESERVED"
+          ],
+          "layer": "hostile_input",
+          "raw_outcome": "NORMALIZED_SAFE",
+          "source_id": "INPUT-MISSING-PROBABILITY-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "executable": true,
+            "failed_case_count": 4
+          },
+          "detection_oracles": [
+            "CASE_ORACLE",
+            "POLICY_INVARIANT",
+            "RELEASE_GATE",
+            "STATIC_SECURITY_CONTRACT"
+          ],
+          "error": null,
+          "finding_codes": [
+            "CRITICAL_ACTION_FLOOR_WEAKENED"
+          ],
+          "layer": "policy_mutation",
+          "raw_outcome": "KILLED_BY_ASSURANCE",
+          "source_id": "MUT-KEV-ACTION-DOWNGRADE-001"
+        }
+      ],
+      "severity": "critical",
+      "title": "Kev Epss Coercion",
+      "unsafe_decision_released": false
+    },
+    {
+      "chain_id": "CHAIN-AFFECTEDNESS-NO-FIX-001",
+      "control_tags": [
+        "fail_closed",
+        "multi_control",
+        "order_sensitive"
+      ],
+      "defended": true,
+      "description": "Compound chain 3 combines multiple real assurance controls and must remain fail-closed.",
+      "detection_oracles": [
+        "ACTION_NOT_DECREASED",
+        "BASELINE_INVARIANTS_PASS",
+        "CASE_ORACLE",
+        "CLOSURE_PROHIBITION_NOT_REMOVED",
+        "CONTAINMENT_NOT_REMOVED",
+        "DEADLINE_NOT_LENGTHENED",
+        "EXPECTED_RULES_TRIGGERED",
+        "METAMORPHIC_PROPERTY",
+        "POLICY_INVARIANT",
+        "PRIORITY_NOT_DECREASED",
+        "RELEASE_GATE",
+        "REVIEW_NOT_REMOVED",
+        "STATIC_SECURITY_CONTRACT",
+        "TRANSFORMATION_SCOPE_EXACT",
+        "TRANSFORMED_INVARIANTS_PASS",
+        "UNDER_TRIAGE_DETECTION"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "family": "affectedness_remediation_suppression",
+      "first_blocking_control": "policy_mutation:MUT-UNKNOWN-AFFECTEDNESS-TRACK-001",
+      "forward_steps": [
+        {
+          "defended": true,
+          "details": {
+            "executable": true,
+            "failed_case_count": 20
+          },
+          "detection_oracles": [
+            "CASE_ORACLE",
+            "POLICY_INVARIANT",
+            "RELEASE_GATE",
+            "STATIC_SECURITY_CONTRACT"
+          ],
+          "error": null,
+          "finding_codes": [
+            "CRITICAL_ACTION_FLOOR_WEAKENED"
+          ],
+          "layer": "policy_mutation",
+          "raw_outcome": "KILLED_BY_ASSURANCE",
+          "source_id": "MUT-UNKNOWN-AFFECTEDNESS-TRACK-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "executable": true,
+            "failed_case_count": 4
+          },
+          "detection_oracles": [
+            "CASE_ORACLE",
+            "RELEASE_GATE",
+            "STATIC_SECURITY_CONTRACT",
+            "UNDER_TRIAGE_DETECTION"
+          ],
+          "error": null,
+          "finding_codes": [
+            "CRITICAL_CONTAINMENT_REQUIRED_REMOVED"
+          ],
+          "layer": "policy_mutation",
+          "raw_outcome": "KILLED_BY_ASSURANCE",
+          "source_id": "MUT-NO-FIX-CONTAINMENT-REMOVAL-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "baseline_case_id": "AEG-ASR-001-HC",
+            "changed_paths": [
+              "intelligence_overrides.remediation.status",
+              "operational_profile"
+            ],
+            "transformed_case_id": "AEG-ASR-011-HC"
+          },
+          "detection_oracles": [
+            "METAMORPHIC_PROPERTY",
+            "ACTION_NOT_DECREASED",
+            "BASELINE_INVARIANTS_PASS",
+            "CLOSURE_PROHIBITION_NOT_REMOVED",
+            "CONTAINMENT_NOT_REMOVED",
+            "DEADLINE_NOT_LENGTHENED",
+            "EXPECTED_RULES_TRIGGERED",
+            "PRIORITY_NOT_DECREASED",
+            "REVIEW_NOT_REMOVED",
+            "TRANSFORMATION_SCOPE_EXACT",
+            "TRANSFORMED_INVARIANTS_PASS"
+          ],
+          "error": null,
+          "finding_codes": [],
+          "layer": "metamorphic",
+          "raw_outcome": "PASSED",
+          "source_id": "META-NO-FIX-001"
+        }
+      ],
+      "layers_activated": [
+        "metamorphic",
+        "policy_mutation"
+      ],
+      "multi_control_detected": true,
+      "order_consistent": true,
+      "outcome": "REJECTED_BY_ASSURANCE",
+      "reverse_steps": [
+        {
+          "defended": true,
+          "details": {
+            "baseline_case_id": "AEG-ASR-001-HC",
+            "changed_paths": [
+              "intelligence_overrides.remediation.status",
+              "operational_profile"
+            ],
+            "transformed_case_id": "AEG-ASR-011-HC"
+          },
+          "detection_oracles": [
+            "METAMORPHIC_PROPERTY",
+            "ACTION_NOT_DECREASED",
+            "BASELINE_INVARIANTS_PASS",
+            "CLOSURE_PROHIBITION_NOT_REMOVED",
+            "CONTAINMENT_NOT_REMOVED",
+            "DEADLINE_NOT_LENGTHENED",
+            "EXPECTED_RULES_TRIGGERED",
+            "PRIORITY_NOT_DECREASED",
+            "REVIEW_NOT_REMOVED",
+            "TRANSFORMATION_SCOPE_EXACT",
+            "TRANSFORMED_INVARIANTS_PASS"
+          ],
+          "error": null,
+          "finding_codes": [],
+          "layer": "metamorphic",
+          "raw_outcome": "PASSED",
+          "source_id": "META-NO-FIX-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "executable": true,
+            "failed_case_count": 4
+          },
+          "detection_oracles": [
+            "CASE_ORACLE",
+            "RELEASE_GATE",
+            "STATIC_SECURITY_CONTRACT",
+            "UNDER_TRIAGE_DETECTION"
+          ],
+          "error": null,
+          "finding_codes": [
+            "CRITICAL_CONTAINMENT_REQUIRED_REMOVED"
+          ],
+          "layer": "policy_mutation",
+          "raw_outcome": "KILLED_BY_ASSURANCE",
+          "source_id": "MUT-NO-FIX-CONTAINMENT-REMOVAL-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "executable": true,
+            "failed_case_count": 20
+          },
+          "detection_oracles": [
+            "CASE_ORACLE",
+            "POLICY_INVARIANT",
+            "RELEASE_GATE",
+            "STATIC_SECURITY_CONTRACT"
+          ],
+          "error": null,
+          "finding_codes": [
+            "CRITICAL_ACTION_FLOOR_WEAKENED"
+          ],
+          "layer": "policy_mutation",
+          "raw_outcome": "KILLED_BY_ASSURANCE",
+          "source_id": "MUT-UNKNOWN-AFFECTEDNESS-TRACK-001"
+        }
+      ],
+      "severity": "critical",
+      "title": "Affectedness Remediation Suppression",
+      "unsafe_decision_released": false
+    },
+    {
+      "chain_id": "CHAIN-EVIDENCE-TIMESTAMP-FORGERY-001",
+      "control_tags": [
+        "fail_closed",
+        "multi_control",
+        "cross_layer_integrity",
+        "order_sensitive"
+      ],
+      "defended": true,
+      "description": "Compound chain 4 combines multiple real assurance controls and must remain fail-closed.",
+      "detection_oracles": [
+        "EVIDENCE_ID_BINDING",
+        "INPUT_RECORD_HASH",
+        "TIMESTAMP_CONSISTENCY"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "family": "evidence_timestamp_forgery",
+      "first_blocking_control": "tamper:TAMPER-EVIDENCE-SUBSTITUTION-001",
+      "forward_steps": [
+        {
+          "defended": true,
+          "details": {},
+          "detection_oracles": [
+            "EVIDENCE_ID_BINDING",
+            "INPUT_RECORD_HASH"
+          ],
+          "error": null,
+          "finding_codes": [
+            "EVIDENCE_ID_CONTENT_BINDING_CHANGED",
+            "REFERENCED_EVIDENCE_HASH_MISMATCH"
+          ],
+          "layer": "tamper",
+          "raw_outcome": "REJECTED",
+          "source_id": "TAMPER-EVIDENCE-SUBSTITUTION-001"
+        },
+        {
+          "defended": true,
+          "details": {},
+          "detection_oracles": [
+            "TIMESTAMP_CONSISTENCY"
+          ],
+          "error": null,
+          "finding_codes": [
+            "COLLECTION_AFTER_FRESHNESS_EVALUATION"
+          ],
+          "layer": "tamper",
+          "raw_outcome": "REJECTED",
+          "source_id": "TAMPER-FUTURE-COLLECTION-TIMESTAMP-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "code": "DATETIME_PARSED",
+            "normalized_text": "2099-01-01T00:00:00Z",
+            "status": "parsed",
+            "value": "2099-01-01T00:00:00+00:00"
+          },
+          "detection_oracles": [
+            "TIMESTAMP_CONSISTENCY"
+          ],
+          "error": null,
+          "finding_codes": [
+            "IMPLAUSIBLE_FUTURE_TIMESTAMP"
+          ],
+          "layer": "hostile_input",
+          "raw_outcome": "QUARANTINED",
+          "source_id": "INPUT-DATETIME-FUTURE-001"
+        }
+      ],
+      "layers_activated": [
+        "hostile_input",
+        "tamper"
+      ],
+      "multi_control_detected": true,
+      "order_consistent": true,
+      "outcome": "QUARANTINED",
+      "reverse_steps": [
+        {
+          "defended": true,
+          "details": {
+            "code": "DATETIME_PARSED",
+            "normalized_text": "2099-01-01T00:00:00Z",
+            "status": "parsed",
+            "value": "2099-01-01T00:00:00+00:00"
+          },
+          "detection_oracles": [
+            "TIMESTAMP_CONSISTENCY"
+          ],
+          "error": null,
+          "finding_codes": [
+            "IMPLAUSIBLE_FUTURE_TIMESTAMP"
+          ],
+          "layer": "hostile_input",
+          "raw_outcome": "QUARANTINED",
+          "source_id": "INPUT-DATETIME-FUTURE-001"
+        },
+        {
+          "defended": true,
+          "details": {},
+          "detection_oracles": [
+            "TIMESTAMP_CONSISTENCY"
+          ],
+          "error": null,
+          "finding_codes": [
+            "COLLECTION_AFTER_FRESHNESS_EVALUATION"
+          ],
+          "layer": "tamper",
+          "raw_outcome": "REJECTED",
+          "source_id": "TAMPER-FUTURE-COLLECTION-TIMESTAMP-001"
+        },
+        {
+          "defended": true,
+          "details": {},
+          "detection_oracles": [
+            "EVIDENCE_ID_BINDING",
+            "INPUT_RECORD_HASH"
+          ],
+          "error": null,
+          "finding_codes": [
+            "EVIDENCE_ID_CONTENT_BINDING_CHANGED",
+            "REFERENCED_EVIDENCE_HASH_MISMATCH"
+          ],
+          "layer": "tamper",
+          "raw_outcome": "REJECTED",
+          "source_id": "TAMPER-EVIDENCE-SUBSTITUTION-001"
+        }
+      ],
+      "severity": "critical",
+      "title": "Evidence Timestamp Forgery",
+      "unsafe_decision_released": false
+    },
+    {
+      "chain_id": "CHAIN-ASSET-IMPACT-SUPPRESSION-001",
+      "control_tags": [
+        "fail_closed",
+        "multi_control",
+        "order_sensitive"
+      ],
+      "defended": true,
+      "description": "Compound chain 5 combines multiple real assurance controls and must remain fail-closed.",
+      "detection_oracles": [
+        "ACTION_NOT_DECREASED",
+        "BASELINE_INVARIANTS_PASS",
+        "CASE_ORACLE",
+        "CLOSURE_PROHIBITION_NOT_REMOVED",
+        "CONTAINMENT_NOT_REMOVED",
+        "DEADLINE_NOT_LENGTHENED",
+        "EXPECTED_RULES_TRIGGERED",
+        "METAMORPHIC_PROPERTY",
+        "PRIORITY_NOT_DECREASED",
+        "RELEASE_GATE",
+        "REVIEW_NOT_REMOVED",
+        "STATIC_SECURITY_CONTRACT",
+        "TRANSFORMATION_SCOPE_EXACT",
+        "TRANSFORMED_INVARIANTS_PASS",
+        "UNDER_TRIAGE_DETECTION"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "family": "asset_impact_suppression",
+      "first_blocking_control": "policy_mutation:MUT-CATASTROPHIC-PRIORITY-DOWNGRADE-001",
+      "forward_steps": [
+        {
+          "defended": true,
+          "details": {
+            "executable": true,
+            "failed_case_count": 4
+          },
+          "detection_oracles": [
+            "CASE_ORACLE",
+            "RELEASE_GATE",
+            "STATIC_SECURITY_CONTRACT",
+            "UNDER_TRIAGE_DETECTION"
+          ],
+          "error": null,
+          "finding_codes": [
+            "CRITICAL_PRIORITY_FLOOR_WEAKENED"
+          ],
+          "layer": "policy_mutation",
+          "raw_outcome": "KILLED_BY_ASSURANCE",
+          "source_id": "MUT-CATASTROPHIC-PRIORITY-DOWNGRADE-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "baseline_case_id": "AEG-ASR-008-HC",
+            "changed_paths": [
+              "asset_overrides.criticality.level"
+            ],
+            "transformed_case_id": "AEG-ASR-008-HC::META-MISSION-CRITICALITY-CUMULATIVE-001"
+          },
+          "detection_oracles": [
+            "METAMORPHIC_PROPERTY",
+            "ACTION_NOT_DECREASED",
+            "BASELINE_INVARIANTS_PASS",
+            "CLOSURE_PROHIBITION_NOT_REMOVED",
+            "CONTAINMENT_NOT_REMOVED",
+            "DEADLINE_NOT_LENGTHENED",
+            "EXPECTED_RULES_TRIGGERED",
+            "PRIORITY_NOT_DECREASED",
+            "REVIEW_NOT_REMOVED",
+            "TRANSFORMATION_SCOPE_EXACT",
+            "TRANSFORMED_INVARIANTS_PASS"
+          ],
+          "error": null,
+          "finding_codes": [],
+          "layer": "metamorphic",
+          "raw_outcome": "PASSED",
+          "source_id": "META-MISSION-CRITICALITY-CUMULATIVE-001"
+        }
+      ],
+      "layers_activated": [
+        "metamorphic",
+        "policy_mutation"
+      ],
+      "multi_control_detected": true,
+      "order_consistent": true,
+      "outcome": "REJECTED_BY_ASSURANCE",
+      "reverse_steps": [
+        {
+          "defended": true,
+          "details": {
+            "baseline_case_id": "AEG-ASR-008-HC",
+            "changed_paths": [
+              "asset_overrides.criticality.level"
+            ],
+            "transformed_case_id": "AEG-ASR-008-HC::META-MISSION-CRITICALITY-CUMULATIVE-001"
+          },
+          "detection_oracles": [
+            "METAMORPHIC_PROPERTY",
+            "ACTION_NOT_DECREASED",
+            "BASELINE_INVARIANTS_PASS",
+            "CLOSURE_PROHIBITION_NOT_REMOVED",
+            "CONTAINMENT_NOT_REMOVED",
+            "DEADLINE_NOT_LENGTHENED",
+            "EXPECTED_RULES_TRIGGERED",
+            "PRIORITY_NOT_DECREASED",
+            "REVIEW_NOT_REMOVED",
+            "TRANSFORMATION_SCOPE_EXACT",
+            "TRANSFORMED_INVARIANTS_PASS"
+          ],
+          "error": null,
+          "finding_codes": [],
+          "layer": "metamorphic",
+          "raw_outcome": "PASSED",
+          "source_id": "META-MISSION-CRITICALITY-CUMULATIVE-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "executable": true,
+            "failed_case_count": 4
+          },
+          "detection_oracles": [
+            "CASE_ORACLE",
+            "RELEASE_GATE",
+            "STATIC_SECURITY_CONTRACT",
+            "UNDER_TRIAGE_DETECTION"
+          ],
+          "error": null,
+          "finding_codes": [
+            "CRITICAL_PRIORITY_FLOOR_WEAKENED"
+          ],
+          "layer": "policy_mutation",
+          "raw_outcome": "KILLED_BY_ASSURANCE",
+          "source_id": "MUT-CATASTROPHIC-PRIORITY-DOWNGRADE-001"
+        }
+      ],
+      "severity": "critical",
+      "title": "Asset Impact Suppression",
+      "unsafe_decision_released": false
+    },
+    {
+      "chain_id": "CHAIN-EXPOSURE-REACHABILITY-SUPPRESSION-001",
+      "control_tags": [
+        "fail_closed",
+        "multi_control",
+        "order_sensitive"
+      ],
+      "defended": true,
+      "description": "Compound chain 6 combines multiple real assurance controls and must remain fail-closed.",
+      "detection_oracles": [
+        "ACTION_NOT_DECREASED",
+        "BASELINE_INVARIANTS_PASS",
+        "CASE_ORACLE",
+        "CLOSURE_PROHIBITION_NOT_REMOVED",
+        "CONTAINMENT_NOT_REMOVED",
+        "DEADLINE_NOT_LENGTHENED",
+        "EXPECTED_RULES_TRIGGERED",
+        "METAMORPHIC_PROPERTY",
+        "PRIORITY_NOT_DECREASED",
+        "RELEASE_GATE",
+        "REVIEW_NOT_REMOVED",
+        "STATIC_SECURITY_CONTRACT",
+        "TRANSFORMATION_SCOPE_EXACT",
+        "TRANSFORMED_INVARIANTS_PASS",
+        "UNDER_TRIAGE_DETECTION"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "family": "exposure_reachability_suppression",
+      "first_blocking_control": "metamorphic:META-EXPOSURE-INTERNET-001",
+      "forward_steps": [
+        {
+          "defended": true,
+          "details": {
+            "baseline_case_id": "AEG-ASR-001-HC",
+            "changed_paths": [
+              "asset_overrides.exposure.externally_accessible",
+              "asset_overrides.exposure.internet_accessible",
+              "operational_profile"
+            ],
+            "transformed_case_id": "AEG-ASR-004-HC"
+          },
+          "detection_oracles": [
+            "METAMORPHIC_PROPERTY",
+            "ACTION_NOT_DECREASED",
+            "BASELINE_INVARIANTS_PASS",
+            "CLOSURE_PROHIBITION_NOT_REMOVED",
+            "CONTAINMENT_NOT_REMOVED",
+            "DEADLINE_NOT_LENGTHENED",
+            "EXPECTED_RULES_TRIGGERED",
+            "PRIORITY_NOT_DECREASED",
+            "REVIEW_NOT_REMOVED",
+            "TRANSFORMATION_SCOPE_EXACT",
+            "TRANSFORMED_INVARIANTS_PASS"
+          ],
+          "error": null,
+          "finding_codes": [],
+          "layer": "metamorphic",
+          "raw_outcome": "PASSED",
+          "source_id": "META-EXPOSURE-INTERNET-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "baseline_case_id": "AEG-ASR-001-HC",
+            "changed_paths": [
+              "component_overrides.runtime_status",
+              "operational_profile"
+            ],
+            "transformed_case_id": "AEG-ASR-063-HC"
+          },
+          "detection_oracles": [
+            "METAMORPHIC_PROPERTY",
+            "ACTION_NOT_DECREASED",
+            "BASELINE_INVARIANTS_PASS",
+            "CLOSURE_PROHIBITION_NOT_REMOVED",
+            "CONTAINMENT_NOT_REMOVED",
+            "DEADLINE_NOT_LENGTHENED",
+            "EXPECTED_RULES_TRIGGERED",
+            "PRIORITY_NOT_DECREASED",
+            "REVIEW_NOT_REMOVED",
+            "TRANSFORMATION_SCOPE_EXACT",
+            "TRANSFORMED_INVARIANTS_PASS"
+          ],
+          "error": null,
+          "finding_codes": [],
+          "layer": "metamorphic",
+          "raw_outcome": "PASSED",
+          "source_id": "META-RUNTIME-REACHABLE-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "executable": true,
+            "failed_case_count": 4
+          },
+          "detection_oracles": [
+            "CASE_ORACLE",
+            "RELEASE_GATE",
+            "STATIC_SECURITY_CONTRACT",
+            "UNDER_TRIAGE_DETECTION"
+          ],
+          "error": null,
+          "finding_codes": [
+            "CRITICAL_DEADLINE_EXTENDED"
+          ],
+          "layer": "policy_mutation",
+          "raw_outcome": "KILLED_BY_ASSURANCE",
+          "source_id": "MUT-ACTIVE-DEADLINE-EXTENSION-001"
+        }
+      ],
+      "layers_activated": [
+        "metamorphic",
+        "policy_mutation"
+      ],
+      "multi_control_detected": true,
+      "order_consistent": true,
+      "outcome": "REJECTED_BY_ASSURANCE",
+      "reverse_steps": [
+        {
+          "defended": true,
+          "details": {
+            "executable": true,
+            "failed_case_count": 4
+          },
+          "detection_oracles": [
+            "CASE_ORACLE",
+            "RELEASE_GATE",
+            "STATIC_SECURITY_CONTRACT",
+            "UNDER_TRIAGE_DETECTION"
+          ],
+          "error": null,
+          "finding_codes": [
+            "CRITICAL_DEADLINE_EXTENDED"
+          ],
+          "layer": "policy_mutation",
+          "raw_outcome": "KILLED_BY_ASSURANCE",
+          "source_id": "MUT-ACTIVE-DEADLINE-EXTENSION-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "baseline_case_id": "AEG-ASR-001-HC",
+            "changed_paths": [
+              "component_overrides.runtime_status",
+              "operational_profile"
+            ],
+            "transformed_case_id": "AEG-ASR-063-HC"
+          },
+          "detection_oracles": [
+            "METAMORPHIC_PROPERTY",
+            "ACTION_NOT_DECREASED",
+            "BASELINE_INVARIANTS_PASS",
+            "CLOSURE_PROHIBITION_NOT_REMOVED",
+            "CONTAINMENT_NOT_REMOVED",
+            "DEADLINE_NOT_LENGTHENED",
+            "EXPECTED_RULES_TRIGGERED",
+            "PRIORITY_NOT_DECREASED",
+            "REVIEW_NOT_REMOVED",
+            "TRANSFORMATION_SCOPE_EXACT",
+            "TRANSFORMED_INVARIANTS_PASS"
+          ],
+          "error": null,
+          "finding_codes": [],
+          "layer": "metamorphic",
+          "raw_outcome": "PASSED",
+          "source_id": "META-RUNTIME-REACHABLE-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "baseline_case_id": "AEG-ASR-001-HC",
+            "changed_paths": [
+              "asset_overrides.exposure.externally_accessible",
+              "asset_overrides.exposure.internet_accessible",
+              "operational_profile"
+            ],
+            "transformed_case_id": "AEG-ASR-004-HC"
+          },
+          "detection_oracles": [
+            "METAMORPHIC_PROPERTY",
+            "ACTION_NOT_DECREASED",
+            "BASELINE_INVARIANTS_PASS",
+            "CLOSURE_PROHIBITION_NOT_REMOVED",
+            "CONTAINMENT_NOT_REMOVED",
+            "DEADLINE_NOT_LENGTHENED",
+            "EXPECTED_RULES_TRIGGERED",
+            "PRIORITY_NOT_DECREASED",
+            "REVIEW_NOT_REMOVED",
+            "TRANSFORMATION_SCOPE_EXACT",
+            "TRANSFORMED_INVARIANTS_PASS"
+          ],
+          "error": null,
+          "finding_codes": [],
+          "layer": "metamorphic",
+          "raw_outcome": "PASSED",
+          "source_id": "META-EXPOSURE-INTERNET-001"
+        }
+      ],
+      "severity": "critical",
+      "title": "Exposure Reachability Suppression",
+      "unsafe_decision_released": false
+    },
+    {
+      "chain_id": "CHAIN-REVIEW-CLOSURE-WEAKENING-001",
+      "control_tags": [
+        "fail_closed",
+        "multi_control",
+        "order_sensitive"
+      ],
+      "defended": true,
+      "description": "Compound chain 7 combines multiple real assurance controls and must remain fail-closed.",
+      "detection_oracles": [
+        "ACTION_NOT_DECREASED",
+        "BASELINE_INVARIANTS_PASS",
+        "CASE_ORACLE",
+        "CLOSURE_PROHIBITION_NOT_REMOVED",
+        "CONTAINMENT_NOT_REMOVED",
+        "DEADLINE_NOT_LENGTHENED",
+        "EXPECTED_RULES_TRIGGERED",
+        "FAIL_CLOSED_DEADLINE",
+        "FAIL_CLOSED_HIGH_PRIORITY",
+        "FAIL_CLOSED_HOLD",
+        "FAIL_CLOSED_NO_CLOSURE",
+        "FAIL_CLOSED_REVIEW",
+        "METAMORPHIC_PROPERTY",
+        "PRIORITY_NOT_DECREASED",
+        "RELEASE_GATE",
+        "REVIEW_NOT_REMOVED",
+        "STATIC_SECURITY_CONTRACT",
+        "TRANSFORMATION_SCOPE_EXACT",
+        "TRANSFORMED_INVARIANTS_PASS",
+        "UNDER_TRIAGE_DETECTION"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "family": "review_closure_weakening",
+      "first_blocking_control": "policy_mutation:MUT-ACTIVE-REVIEW-REMOVAL-001",
+      "forward_steps": [
+        {
+          "defended": true,
+          "details": {
+            "executable": true,
+            "failed_case_count": 2
+          },
+          "detection_oracles": [
+            "CASE_ORACLE",
+            "RELEASE_GATE",
+            "STATIC_SECURITY_CONTRACT",
+            "UNDER_TRIAGE_DETECTION"
+          ],
+          "error": null,
+          "finding_codes": [
+            "CRITICAL_HUMAN_REVIEW_REQUIRED_REMOVED"
+          ],
+          "layer": "policy_mutation",
+          "raw_outcome": "KILLED_BY_ASSURANCE",
+          "source_id": "MUT-ACTIVE-REVIEW-REMOVAL-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "executable": true,
+            "failed_case_count": 2
+          },
+          "detection_oracles": [
+            "CASE_ORACLE",
+            "RELEASE_GATE",
+            "STATIC_SECURITY_CONTRACT",
+            "UNDER_TRIAGE_DETECTION"
+          ],
+          "error": null,
+          "finding_codes": [
+            "CRITICAL_PROHIBIT_CLOSURE_REMOVED"
+          ],
+          "layer": "policy_mutation",
+          "raw_outcome": "KILLED_BY_ASSURANCE",
+          "source_id": "MUT-ACTIVE-CLOSURE-WEAKENING-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "baseline_case_id": "AEG-ASR-061-HC",
+            "changed_paths": [
+              "trust.action",
+              "trust.aggregate_score"
+            ],
+            "transformed_case_id": "AEG-ASR-061-HC::META-TRUST-QUARANTINE-001"
+          },
+          "detection_oracles": [
+            "METAMORPHIC_PROPERTY",
+            "ACTION_NOT_DECREASED",
+            "BASELINE_INVARIANTS_PASS",
+            "CLOSURE_PROHIBITION_NOT_REMOVED",
+            "CONTAINMENT_NOT_REMOVED",
+            "DEADLINE_NOT_LENGTHENED",
+            "EXPECTED_RULES_TRIGGERED",
+            "FAIL_CLOSED_DEADLINE",
+            "FAIL_CLOSED_HIGH_PRIORITY",
+            "FAIL_CLOSED_HOLD",
+            "FAIL_CLOSED_NO_CLOSURE",
+            "FAIL_CLOSED_REVIEW",
+            "PRIORITY_NOT_DECREASED",
+            "REVIEW_NOT_REMOVED",
+            "TRANSFORMATION_SCOPE_EXACT",
+            "TRANSFORMED_INVARIANTS_PASS"
+          ],
+          "error": null,
+          "finding_codes": [],
+          "layer": "metamorphic",
+          "raw_outcome": "PASSED",
+          "source_id": "META-TRUST-QUARANTINE-001"
+        }
+      ],
+      "layers_activated": [
+        "metamorphic",
+        "policy_mutation"
+      ],
+      "multi_control_detected": true,
+      "order_consistent": true,
+      "outcome": "REJECTED_BY_ASSURANCE",
+      "reverse_steps": [
+        {
+          "defended": true,
+          "details": {
+            "baseline_case_id": "AEG-ASR-061-HC",
+            "changed_paths": [
+              "trust.action",
+              "trust.aggregate_score"
+            ],
+            "transformed_case_id": "AEG-ASR-061-HC::META-TRUST-QUARANTINE-001"
+          },
+          "detection_oracles": [
+            "METAMORPHIC_PROPERTY",
+            "ACTION_NOT_DECREASED",
+            "BASELINE_INVARIANTS_PASS",
+            "CLOSURE_PROHIBITION_NOT_REMOVED",
+            "CONTAINMENT_NOT_REMOVED",
+            "DEADLINE_NOT_LENGTHENED",
+            "EXPECTED_RULES_TRIGGERED",
+            "FAIL_CLOSED_DEADLINE",
+            "FAIL_CLOSED_HIGH_PRIORITY",
+            "FAIL_CLOSED_HOLD",
+            "FAIL_CLOSED_NO_CLOSURE",
+            "FAIL_CLOSED_REVIEW",
+            "PRIORITY_NOT_DECREASED",
+            "REVIEW_NOT_REMOVED",
+            "TRANSFORMATION_SCOPE_EXACT",
+            "TRANSFORMED_INVARIANTS_PASS"
+          ],
+          "error": null,
+          "finding_codes": [],
+          "layer": "metamorphic",
+          "raw_outcome": "PASSED",
+          "source_id": "META-TRUST-QUARANTINE-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "executable": true,
+            "failed_case_count": 2
+          },
+          "detection_oracles": [
+            "CASE_ORACLE",
+            "RELEASE_GATE",
+            "STATIC_SECURITY_CONTRACT",
+            "UNDER_TRIAGE_DETECTION"
+          ],
+          "error": null,
+          "finding_codes": [
+            "CRITICAL_PROHIBIT_CLOSURE_REMOVED"
+          ],
+          "layer": "policy_mutation",
+          "raw_outcome": "KILLED_BY_ASSURANCE",
+          "source_id": "MUT-ACTIVE-CLOSURE-WEAKENING-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "executable": true,
+            "failed_case_count": 2
+          },
+          "detection_oracles": [
+            "CASE_ORACLE",
+            "RELEASE_GATE",
+            "STATIC_SECURITY_CONTRACT",
+            "UNDER_TRIAGE_DETECTION"
+          ],
+          "error": null,
+          "finding_codes": [
+            "CRITICAL_HUMAN_REVIEW_REQUIRED_REMOVED"
+          ],
+          "layer": "policy_mutation",
+          "raw_outcome": "KILLED_BY_ASSURANCE",
+          "source_id": "MUT-ACTIVE-REVIEW-REMOVAL-001"
+        }
+      ],
+      "severity": "critical",
+      "title": "Review Closure Weakening",
+      "unsafe_decision_released": false
+    },
+    {
+      "chain_id": "CHAIN-CONTAINMENT-DEADLINE-WEAKENING-001",
+      "control_tags": [
+        "fail_closed",
+        "multi_control",
+        "order_sensitive"
+      ],
+      "defended": true,
+      "description": "Compound chain 8 combines multiple real assurance controls and must remain fail-closed.",
+      "detection_oracles": [
+        "ACTION_NOT_DECREASED",
+        "BASELINE_INVARIANTS_PASS",
+        "CASE_ORACLE",
+        "CLOSURE_PROHIBITION_NOT_REMOVED",
+        "CONTAINMENT_NOT_REMOVED",
+        "DEADLINE_NOT_LENGTHENED",
+        "EXPECTED_RULES_TRIGGERED",
+        "METAMORPHIC_PROPERTY",
+        "PRIORITY_NOT_DECREASED",
+        "RELEASE_GATE",
+        "REVIEW_NOT_REMOVED",
+        "STATIC_SECURITY_CONTRACT",
+        "TRANSFORMATION_SCOPE_EXACT",
+        "TRANSFORMED_INVARIANTS_PASS",
+        "UNDER_TRIAGE_DETECTION"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "family": "containment_deadline_weakening",
+      "first_blocking_control": "policy_mutation:MUT-ACTIVE-CONTAINMENT-REMOVAL-001",
+      "forward_steps": [
+        {
+          "defended": true,
+          "details": {
+            "executable": true,
+            "failed_case_count": 4
+          },
+          "detection_oracles": [
+            "CASE_ORACLE",
+            "RELEASE_GATE",
+            "STATIC_SECURITY_CONTRACT",
+            "UNDER_TRIAGE_DETECTION"
+          ],
+          "error": null,
+          "finding_codes": [
+            "CRITICAL_CONTAINMENT_REQUIRED_REMOVED"
+          ],
+          "layer": "policy_mutation",
+          "raw_outcome": "KILLED_BY_ASSURANCE",
+          "source_id": "MUT-ACTIVE-CONTAINMENT-REMOVAL-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "executable": true,
+            "failed_case_count": 4
+          },
+          "detection_oracles": [
+            "CASE_ORACLE",
+            "RELEASE_GATE",
+            "STATIC_SECURITY_CONTRACT",
+            "UNDER_TRIAGE_DETECTION"
+          ],
+          "error": null,
+          "finding_codes": [
+            "CRITICAL_DEADLINE_EXTENDED"
+          ],
+          "layer": "policy_mutation",
+          "raw_outcome": "KILLED_BY_ASSURANCE",
+          "source_id": "MUT-ACTIVE-DEADLINE-EXTENSION-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "baseline_case_id": "AEG-ASR-062-HC",
+            "changed_paths": [
+              "intelligence_overrides.exploitation.confidence",
+              "intelligence_overrides.exploitation.evidence_ids",
+              "intelligence_overrides.exploitation.last_observed_at",
+              "intelligence_overrides.exploitation.status",
+              "operational_profile"
+            ],
+            "transformed_case_id": "AEG-ASR-003-HC"
+          },
+          "detection_oracles": [
+            "METAMORPHIC_PROPERTY",
+            "ACTION_NOT_DECREASED",
+            "BASELINE_INVARIANTS_PASS",
+            "CLOSURE_PROHIBITION_NOT_REMOVED",
+            "CONTAINMENT_NOT_REMOVED",
+            "DEADLINE_NOT_LENGTHENED",
+            "EXPECTED_RULES_TRIGGERED",
+            "PRIORITY_NOT_DECREASED",
+            "REVIEW_NOT_REMOVED",
+            "TRANSFORMATION_SCOPE_EXACT",
+            "TRANSFORMED_INVARIANTS_PASS"
+          ],
+          "error": null,
+          "finding_codes": [],
+          "layer": "metamorphic",
+          "raw_outcome": "PASSED",
+          "source_id": "META-EXPLOITATION-ACTIVE-001"
+        }
+      ],
+      "layers_activated": [
+        "metamorphic",
+        "policy_mutation"
+      ],
+      "multi_control_detected": true,
+      "order_consistent": true,
+      "outcome": "REJECTED_BY_ASSURANCE",
+      "reverse_steps": [
+        {
+          "defended": true,
+          "details": {
+            "baseline_case_id": "AEG-ASR-062-HC",
+            "changed_paths": [
+              "intelligence_overrides.exploitation.confidence",
+              "intelligence_overrides.exploitation.evidence_ids",
+              "intelligence_overrides.exploitation.last_observed_at",
+              "intelligence_overrides.exploitation.status",
+              "operational_profile"
+            ],
+            "transformed_case_id": "AEG-ASR-003-HC"
+          },
+          "detection_oracles": [
+            "METAMORPHIC_PROPERTY",
+            "ACTION_NOT_DECREASED",
+            "BASELINE_INVARIANTS_PASS",
+            "CLOSURE_PROHIBITION_NOT_REMOVED",
+            "CONTAINMENT_NOT_REMOVED",
+            "DEADLINE_NOT_LENGTHENED",
+            "EXPECTED_RULES_TRIGGERED",
+            "PRIORITY_NOT_DECREASED",
+            "REVIEW_NOT_REMOVED",
+            "TRANSFORMATION_SCOPE_EXACT",
+            "TRANSFORMED_INVARIANTS_PASS"
+          ],
+          "error": null,
+          "finding_codes": [],
+          "layer": "metamorphic",
+          "raw_outcome": "PASSED",
+          "source_id": "META-EXPLOITATION-ACTIVE-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "executable": true,
+            "failed_case_count": 4
+          },
+          "detection_oracles": [
+            "CASE_ORACLE",
+            "RELEASE_GATE",
+            "STATIC_SECURITY_CONTRACT",
+            "UNDER_TRIAGE_DETECTION"
+          ],
+          "error": null,
+          "finding_codes": [
+            "CRITICAL_DEADLINE_EXTENDED"
+          ],
+          "layer": "policy_mutation",
+          "raw_outcome": "KILLED_BY_ASSURANCE",
+          "source_id": "MUT-ACTIVE-DEADLINE-EXTENSION-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "executable": true,
+            "failed_case_count": 4
+          },
+          "detection_oracles": [
+            "CASE_ORACLE",
+            "RELEASE_GATE",
+            "STATIC_SECURITY_CONTRACT",
+            "UNDER_TRIAGE_DETECTION"
+          ],
+          "error": null,
+          "finding_codes": [
+            "CRITICAL_CONTAINMENT_REQUIRED_REMOVED"
+          ],
+          "layer": "policy_mutation",
+          "raw_outcome": "KILLED_BY_ASSURANCE",
+          "source_id": "MUT-ACTIVE-CONTAINMENT-REMOVAL-001"
+        }
+      ],
+      "severity": "critical",
+      "title": "Containment Deadline Weakening",
+      "unsafe_decision_released": false
+    },
+    {
+      "chain_id": "CHAIN-SECTOR-DECISION-INJECTION-001",
+      "control_tags": [
+        "fail_closed",
+        "multi_control",
+        "order_sensitive"
+      ],
+      "defended": true,
+      "description": "Compound chain 9 combines multiple real assurance controls and must remain fail-closed.",
+      "detection_oracles": [
+        "ACTION_EQUAL",
+        "BASELINE_INVARIANTS_PASS",
+        "CASE_ORACLE",
+        "CONTAINMENT_REQUIRED_EQUAL",
+        "DEADLINE_HOURS_EQUAL",
+        "EXPECTED_RULES_TRIGGERED",
+        "HUMAN_REVIEW_REQUIRED_EQUAL",
+        "MATCHED_RULES_EQUAL",
+        "METAMORPHIC_PROPERTY",
+        "POLICY_INVARIANT",
+        "PRIORITY_EQUAL",
+        "PROHIBIT_CLOSURE_EQUAL",
+        "RELEASE_GATE",
+        "RULE_COVERAGE",
+        "STATIC_SECURITY_CONTRACT",
+        "TRANSFORMATION_SCOPE_EXACT",
+        "TRANSFORMED_INVARIANTS_PASS"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "family": "sector_decision_injection",
+      "first_blocking_control": "policy_mutation:MUT-SECTOR-LABEL-INJECTION-001",
+      "forward_steps": [
+        {
+          "defended": true,
+          "details": {
+            "executable": true,
+            "failed_case_count": 130
+          },
+          "detection_oracles": [
+            "CASE_ORACLE",
+            "POLICY_INVARIANT",
+            "RELEASE_GATE",
+            "RULE_COVERAGE",
+            "STATIC_SECURITY_CONTRACT"
+          ],
+          "error": null,
+          "finding_codes": [
+            "FORBIDDEN_LABEL_GUARD_REMOVED",
+            "PROHIBITED_CONTEXT_FIELD_ALLOWED",
+            "PROHIBITED_RULE_INPUT"
+          ],
+          "layer": "policy_mutation",
+          "raw_outcome": "KILLED_BY_ASSURANCE",
+          "source_id": "MUT-SECTOR-LABEL-INJECTION-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "baseline_case_id": "AEG-ASR-003-HC",
+            "changed_paths": [
+              "asset_overrides.sector_context.primary_sector"
+            ],
+            "transformed_case_id": "AEG-ASR-003-DL"
+          },
+          "detection_oracles": [
+            "METAMORPHIC_PROPERTY",
+            "ACTION_EQUAL",
+            "BASELINE_INVARIANTS_PASS",
+            "CONTAINMENT_REQUIRED_EQUAL",
+            "DEADLINE_HOURS_EQUAL",
+            "EXPECTED_RULES_TRIGGERED",
+            "HUMAN_REVIEW_REQUIRED_EQUAL",
+            "MATCHED_RULES_EQUAL",
+            "PRIORITY_EQUAL",
+            "PROHIBIT_CLOSURE_EQUAL",
+            "TRANSFORMATION_SCOPE_EXACT",
+            "TRANSFORMED_INVARIANTS_PASS"
+          ],
+          "error": null,
+          "finding_codes": [],
+          "layer": "metamorphic",
+          "raw_outcome": "PASSED",
+          "source_id": "META-SECTOR-ACTIVE-001"
+        }
+      ],
+      "layers_activated": [
+        "metamorphic",
+        "policy_mutation"
+      ],
+      "multi_control_detected": true,
+      "order_consistent": true,
+      "outcome": "REJECTED_BY_ASSURANCE",
+      "reverse_steps": [
+        {
+          "defended": true,
+          "details": {
+            "baseline_case_id": "AEG-ASR-003-HC",
+            "changed_paths": [
+              "asset_overrides.sector_context.primary_sector"
+            ],
+            "transformed_case_id": "AEG-ASR-003-DL"
+          },
+          "detection_oracles": [
+            "METAMORPHIC_PROPERTY",
+            "ACTION_EQUAL",
+            "BASELINE_INVARIANTS_PASS",
+            "CONTAINMENT_REQUIRED_EQUAL",
+            "DEADLINE_HOURS_EQUAL",
+            "EXPECTED_RULES_TRIGGERED",
+            "HUMAN_REVIEW_REQUIRED_EQUAL",
+            "MATCHED_RULES_EQUAL",
+            "PRIORITY_EQUAL",
+            "PROHIBIT_CLOSURE_EQUAL",
+            "TRANSFORMATION_SCOPE_EXACT",
+            "TRANSFORMED_INVARIANTS_PASS"
+          ],
+          "error": null,
+          "finding_codes": [],
+          "layer": "metamorphic",
+          "raw_outcome": "PASSED",
+          "source_id": "META-SECTOR-ACTIVE-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "executable": true,
+            "failed_case_count": 130
+          },
+          "detection_oracles": [
+            "CASE_ORACLE",
+            "POLICY_INVARIANT",
+            "RELEASE_GATE",
+            "RULE_COVERAGE",
+            "STATIC_SECURITY_CONTRACT"
+          ],
+          "error": null,
+          "finding_codes": [
+            "FORBIDDEN_LABEL_GUARD_REMOVED",
+            "PROHIBITED_CONTEXT_FIELD_ALLOWED",
+            "PROHIBITED_RULE_INPUT"
+          ],
+          "layer": "policy_mutation",
+          "raw_outcome": "KILLED_BY_ASSURANCE",
+          "source_id": "MUT-SECTOR-LABEL-INJECTION-001"
+        }
+      ],
+      "severity": "critical",
+      "title": "Sector Decision Injection",
+      "unsafe_decision_released": false
+    },
+    {
+      "chain_id": "CHAIN-MANIFEST-EVIDENCE-SUBSTITUTION-001",
+      "control_tags": [
+        "fail_closed",
+        "multi_control",
+        "cross_layer_integrity",
+        "order_sensitive"
+      ],
+      "defended": true,
+      "description": "Compound chain 10 combines multiple real assurance controls and must remain fail-closed.",
+      "detection_oracles": [
+        "CASE_ORACLE",
+        "EVIDENCE_ID_BINDING",
+        "INPUT_RECORD_HASH",
+        "MANIFEST_HASH",
+        "POLICY_CONSISTENCY",
+        "STATIC_SECURITY_CONTRACT",
+        "TRUSTED_MANIFEST_HASH"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "family": "manifest_evidence_substitution",
+      "first_blocking_control": "tamper:TAMPER-MANIFEST-CORPUS-HASH-001",
+      "forward_steps": [
+        {
+          "defended": true,
+          "details": {},
+          "detection_oracles": [
+            "MANIFEST_HASH",
+            "TRUSTED_MANIFEST_HASH"
+          ],
+          "error": null,
+          "finding_codes": [
+            "TRUSTED_MANIFEST_MODIFIED",
+            "DECLARED_CORPUS_HASH_INVALID"
+          ],
+          "layer": "tamper",
+          "raw_outcome": "REJECTED",
+          "source_id": "TAMPER-MANIFEST-CORPUS-HASH-001"
+        },
+        {
+          "defended": true,
+          "details": {},
+          "detection_oracles": [
+            "EVIDENCE_ID_BINDING",
+            "INPUT_RECORD_HASH"
+          ],
+          "error": null,
+          "finding_codes": [
+            "EVIDENCE_ID_CONTENT_BINDING_CHANGED",
+            "REFERENCED_EVIDENCE_HASH_MISMATCH"
+          ],
+          "layer": "tamper",
+          "raw_outcome": "REJECTED",
+          "source_id": "TAMPER-EVIDENCE-SUBSTITUTION-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "executable": true,
+            "failed_case_count": 4
+          },
+          "detection_oracles": [
+            "CASE_ORACLE",
+            "POLICY_CONSISTENCY",
+            "STATIC_SECURITY_CONTRACT"
+          ],
+          "error": null,
+          "finding_codes": [
+            "REQUIRED_RULE_REMOVED"
+          ],
+          "layer": "policy_mutation",
+          "raw_outcome": "KILLED_BY_ASSURANCE",
+          "source_id": "MUT-AFFECTED-BASELINE-REMOVAL-001"
+        }
+      ],
+      "layers_activated": [
+        "policy_mutation",
+        "tamper"
+      ],
+      "multi_control_detected": true,
+      "order_consistent": true,
+      "outcome": "REJECTED_BY_ASSURANCE",
+      "reverse_steps": [
+        {
+          "defended": true,
+          "details": {
+            "executable": true,
+            "failed_case_count": 4
+          },
+          "detection_oracles": [
+            "CASE_ORACLE",
+            "POLICY_CONSISTENCY",
+            "STATIC_SECURITY_CONTRACT"
+          ],
+          "error": null,
+          "finding_codes": [
+            "REQUIRED_RULE_REMOVED"
+          ],
+          "layer": "policy_mutation",
+          "raw_outcome": "KILLED_BY_ASSURANCE",
+          "source_id": "MUT-AFFECTED-BASELINE-REMOVAL-001"
+        },
+        {
+          "defended": true,
+          "details": {},
+          "detection_oracles": [
+            "EVIDENCE_ID_BINDING",
+            "INPUT_RECORD_HASH"
+          ],
+          "error": null,
+          "finding_codes": [
+            "EVIDENCE_ID_CONTENT_BINDING_CHANGED",
+            "REFERENCED_EVIDENCE_HASH_MISMATCH"
+          ],
+          "layer": "tamper",
+          "raw_outcome": "REJECTED",
+          "source_id": "TAMPER-EVIDENCE-SUBSTITUTION-001"
+        },
+        {
+          "defended": true,
+          "details": {},
+          "detection_oracles": [
+            "MANIFEST_HASH",
+            "TRUSTED_MANIFEST_HASH"
+          ],
+          "error": null,
+          "finding_codes": [
+            "TRUSTED_MANIFEST_MODIFIED",
+            "DECLARED_CORPUS_HASH_INVALID"
+          ],
+          "layer": "tamper",
+          "raw_outcome": "REJECTED",
+          "source_id": "TAMPER-MANIFEST-CORPUS-HASH-001"
+        }
+      ],
+      "severity": "critical",
+      "title": "Manifest Evidence Substitution",
+      "unsafe_decision_released": false
+    },
+    {
+      "chain_id": "CHAIN-IDENTITY-STALE-REPLAY-001",
+      "control_tags": [
+        "fail_closed",
+        "multi_control",
+        "cross_layer_integrity",
+        "order_sensitive"
+      ],
+      "defended": true,
+      "description": "Compound chain 11 combines multiple real assurance controls and must remain fail-closed.",
+      "detection_oracles": [
+        "DECISION_VALIDATOR",
+        "DUPLICATE_ID",
+        "FRESHNESS_CONSISTENCY",
+        "INTELLIGENCE_VALIDATOR"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "family": "identity_stale_replay",
+      "first_blocking_control": "tamper:TAMPER-DUPLICATE-INPUT-REFERENCE-001",
+      "forward_steps": [
+        {
+          "defended": true,
+          "details": {},
+          "detection_oracles": [
+            "DECISION_VALIDATOR",
+            "DUPLICATE_ID"
+          ],
+          "error": null,
+          "finding_codes": [
+            "DECISION_RECORD_REJECTED",
+            "DUPLICATE_INPUT_REFERENCE"
+          ],
+          "layer": "tamper",
+          "raw_outcome": "REJECTED",
+          "source_id": "TAMPER-DUPLICATE-INPUT-REFERENCE-001"
+        },
+        {
+          "defended": true,
+          "details": {},
+          "detection_oracles": [
+            "FRESHNESS_CONSISTENCY"
+          ],
+          "error": null,
+          "finding_codes": [
+            "DECLARED_EVIDENCE_AGE_MISMATCH",
+            "STALE_EVIDENCE_DECLARED_CURRENT"
+          ],
+          "layer": "tamper",
+          "raw_outcome": "REJECTED",
+          "source_id": "TAMPER-STALE-AS-CURRENT-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "code": "DUPLICATE_ALIAS_AFTER_NORMALIZATION",
+            "status": "rejected",
+            "value": null
+          },
+          "detection_oracles": [
+            "INTELLIGENCE_VALIDATOR"
+          ],
+          "error": null,
+          "finding_codes": [
+            "DUPLICATE_ALIAS_AFTER_NORMALIZATION"
+          ],
+          "layer": "hostile_input",
+          "raw_outcome": "REJECTED",
+          "source_id": "INPUT-ALIASES-NORMALIZED-DUPLICATE-001"
+        }
+      ],
+      "layers_activated": [
+        "hostile_input",
+        "tamper"
+      ],
+      "multi_control_detected": true,
+      "order_consistent": true,
+      "outcome": "REJECTED_BY_ASSURANCE",
+      "reverse_steps": [
+        {
+          "defended": true,
+          "details": {
+            "code": "DUPLICATE_ALIAS_AFTER_NORMALIZATION",
+            "status": "rejected",
+            "value": null
+          },
+          "detection_oracles": [
+            "INTELLIGENCE_VALIDATOR"
+          ],
+          "error": null,
+          "finding_codes": [
+            "DUPLICATE_ALIAS_AFTER_NORMALIZATION"
+          ],
+          "layer": "hostile_input",
+          "raw_outcome": "REJECTED",
+          "source_id": "INPUT-ALIASES-NORMALIZED-DUPLICATE-001"
+        },
+        {
+          "defended": true,
+          "details": {},
+          "detection_oracles": [
+            "FRESHNESS_CONSISTENCY"
+          ],
+          "error": null,
+          "finding_codes": [
+            "DECLARED_EVIDENCE_AGE_MISMATCH",
+            "STALE_EVIDENCE_DECLARED_CURRENT"
+          ],
+          "layer": "tamper",
+          "raw_outcome": "REJECTED",
+          "source_id": "TAMPER-STALE-AS-CURRENT-001"
+        },
+        {
+          "defended": true,
+          "details": {},
+          "detection_oracles": [
+            "DECISION_VALIDATOR",
+            "DUPLICATE_ID"
+          ],
+          "error": null,
+          "finding_codes": [
+            "DECISION_RECORD_REJECTED",
+            "DUPLICATE_INPUT_REFERENCE"
+          ],
+          "layer": "tamper",
+          "raw_outcome": "REJECTED",
+          "source_id": "TAMPER-DUPLICATE-INPUT-REFERENCE-001"
+        }
+      ],
+      "severity": "critical",
+      "title": "Identity Stale Replay",
+      "unsafe_decision_released": false
+    },
+    {
+      "chain_id": "CHAIN-UNICODE-PATH-ESCAPE-001",
+      "control_tags": [
+        "fail_closed",
+        "multi_control",
+        "cross_layer_integrity",
+        "order_sensitive"
+      ],
+      "defended": true,
+      "description": "Compound chain 12 combines multiple real assurance controls and must remain fail-closed.",
+      "detection_oracles": [
+        "DECISION_VALIDATOR",
+        "SAFE_PATH",
+        "STRICT_PARSER"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "family": "unicode_path_escape",
+      "first_blocking_control": "hostile_input:INPUT-CVE-CYRILLIC-001",
+      "forward_steps": [
+        {
+          "defended": true,
+          "details": {
+            "code": "INVALID_CVE_IDENTIFIER",
+            "normalized_text": "СVE-2021-44228",
+            "status": "invalid",
+            "value": null
+          },
+          "detection_oracles": [
+            "STRICT_PARSER"
+          ],
+          "error": null,
+          "finding_codes": [
+            "INVALID_CVE_IDENTIFIER"
+          ],
+          "layer": "hostile_input",
+          "raw_outcome": "REJECTED",
+          "source_id": "INPUT-CVE-CYRILLIC-001"
+        },
+        {
+          "defended": true,
+          "details": {},
+          "detection_oracles": [
+            "DECISION_VALIDATOR",
+            "SAFE_PATH"
+          ],
+          "error": null,
+          "finding_codes": [
+            "PARENT_PATH_TRAVERSAL",
+            "REFERENCE_PATH_ESCAPE",
+            "DECISION_RECORD_REJECTED",
+            "INPUT_PATH_ESCAPE",
+            "COMPONENT_EVIDENCE_NOT_FOUND",
+            "AFFECTEDNESS_EVIDENCE_NOT_FOUND",
+            "POLICY_EVIDENCE_NOT_FOUND"
+          ],
+          "layer": "tamper",
+          "raw_outcome": "BLOCKED",
+          "source_id": "TAMPER-PATH-TRAVERSAL-001"
+        }
+      ],
+      "layers_activated": [
+        "hostile_input",
+        "tamper"
+      ],
+      "multi_control_detected": true,
+      "order_consistent": true,
+      "outcome": "BLOCKED_BEFORE_DECISION",
+      "reverse_steps": [
+        {
+          "defended": true,
+          "details": {},
+          "detection_oracles": [
+            "DECISION_VALIDATOR",
+            "SAFE_PATH"
+          ],
+          "error": null,
+          "finding_codes": [
+            "PARENT_PATH_TRAVERSAL",
+            "REFERENCE_PATH_ESCAPE",
+            "DECISION_RECORD_REJECTED",
+            "INPUT_PATH_ESCAPE",
+            "COMPONENT_EVIDENCE_NOT_FOUND",
+            "AFFECTEDNESS_EVIDENCE_NOT_FOUND",
+            "POLICY_EVIDENCE_NOT_FOUND"
+          ],
+          "layer": "tamper",
+          "raw_outcome": "BLOCKED",
+          "source_id": "TAMPER-PATH-TRAVERSAL-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "code": "INVALID_CVE_IDENTIFIER",
+            "normalized_text": "СVE-2021-44228",
+            "status": "invalid",
+            "value": null
+          },
+          "detection_oracles": [
+            "STRICT_PARSER"
+          ],
+          "error": null,
+          "finding_codes": [
+            "INVALID_CVE_IDENTIFIER"
+          ],
+          "layer": "hostile_input",
+          "raw_outcome": "REJECTED",
+          "source_id": "INPUT-CVE-CYRILLIC-001"
+        }
+      ],
+      "severity": "critical",
+      "title": "Unicode Path Escape",
+      "unsafe_decision_released": false
+    },
+    {
+      "chain_id": "CHAIN-OVERSIZED-VERSION-AMBIGUITY-001",
+      "control_tags": [
+        "fail_closed",
+        "multi_control",
+        "order_sensitive"
+      ],
+      "defended": true,
+      "description": "Compound chain 13 combines multiple real assurance controls and must remain fail-closed.",
+      "detection_oracles": [
+        "ACTION_NOT_DECREASED",
+        "BASELINE_INVARIANTS_PASS",
+        "CLOSURE_PROHIBITION_NOT_REMOVED",
+        "CONTAINMENT_NOT_REMOVED",
+        "DEADLINE_NOT_LENGTHENED",
+        "EXPECTED_RULES_TRIGGERED",
+        "FEATURE_ROW_PARSER",
+        "METAMORPHIC_PROPERTY",
+        "PRIORITY_NOT_DECREASED",
+        "REVIEW_NOT_REMOVED",
+        "TRANSFORMATION_SCOPE_EXACT",
+        "TRANSFORMED_INVARIANTS_PASS",
+        "VERSION_PARSER"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "family": "oversized_parser_ambiguity",
+      "first_blocking_control": "hostile_input:INPUT-COMPONENT-OVERSIZED-001",
+      "forward_steps": [
+        {
+          "defended": true,
+          "details": {
+            "code": "RAW_TEXT_ABOVE_SECURITY_LIMIT",
+            "status": "rejected",
+            "value": null
+          },
+          "detection_oracles": [
+            "FEATURE_ROW_PARSER"
+          ],
+          "error": null,
+          "finding_codes": [
+            "RAW_TEXT_ABOVE_SECURITY_LIMIT"
+          ],
+          "layer": "hostile_input",
+          "raw_outcome": "REJECTED",
+          "source_id": "INPUT-COMPONENT-OVERSIZED-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "code": "WILDCARD_VERSION_NOT_ALLOWED",
+            "status": "invalid",
+            "value": null
+          },
+          "detection_oracles": [
+            "VERSION_PARSER"
+          ],
+          "error": null,
+          "finding_codes": [
+            "WILDCARD_VERSION_NOT_ALLOWED"
+          ],
+          "layer": "hostile_input",
+          "raw_outcome": "REJECTED",
+          "source_id": "INPUT-VERSION-WILDCARD-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "baseline_case_id": "AEG-ASR-001-HC",
+            "changed_paths": [
+              "affectedness.confidence"
+            ],
+            "transformed_case_id": "AEG-ASR-001-HC::META-AFFECTEDNESS-CONFIDENCE-DECREASE-001"
+          },
+          "detection_oracles": [
+            "METAMORPHIC_PROPERTY",
+            "ACTION_NOT_DECREASED",
+            "BASELINE_INVARIANTS_PASS",
+            "CLOSURE_PROHIBITION_NOT_REMOVED",
+            "CONTAINMENT_NOT_REMOVED",
+            "DEADLINE_NOT_LENGTHENED",
+            "EXPECTED_RULES_TRIGGERED",
+            "PRIORITY_NOT_DECREASED",
+            "REVIEW_NOT_REMOVED",
+            "TRANSFORMATION_SCOPE_EXACT",
+            "TRANSFORMED_INVARIANTS_PASS"
+          ],
+          "error": null,
+          "finding_codes": [],
+          "layer": "metamorphic",
+          "raw_outcome": "PASSED",
+          "source_id": "META-AFFECTEDNESS-CONFIDENCE-DECREASE-001"
+        }
+      ],
+      "layers_activated": [
+        "hostile_input",
+        "metamorphic"
+      ],
+      "multi_control_detected": true,
+      "order_consistent": true,
+      "outcome": "REJECTED_BY_ASSURANCE",
+      "reverse_steps": [
+        {
+          "defended": true,
+          "details": {
+            "baseline_case_id": "AEG-ASR-001-HC",
+            "changed_paths": [
+              "affectedness.confidence"
+            ],
+            "transformed_case_id": "AEG-ASR-001-HC::META-AFFECTEDNESS-CONFIDENCE-DECREASE-001"
+          },
+          "detection_oracles": [
+            "METAMORPHIC_PROPERTY",
+            "ACTION_NOT_DECREASED",
+            "BASELINE_INVARIANTS_PASS",
+            "CLOSURE_PROHIBITION_NOT_REMOVED",
+            "CONTAINMENT_NOT_REMOVED",
+            "DEADLINE_NOT_LENGTHENED",
+            "EXPECTED_RULES_TRIGGERED",
+            "PRIORITY_NOT_DECREASED",
+            "REVIEW_NOT_REMOVED",
+            "TRANSFORMATION_SCOPE_EXACT",
+            "TRANSFORMED_INVARIANTS_PASS"
+          ],
+          "error": null,
+          "finding_codes": [],
+          "layer": "metamorphic",
+          "raw_outcome": "PASSED",
+          "source_id": "META-AFFECTEDNESS-CONFIDENCE-DECREASE-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "code": "WILDCARD_VERSION_NOT_ALLOWED",
+            "status": "invalid",
+            "value": null
+          },
+          "detection_oracles": [
+            "VERSION_PARSER"
+          ],
+          "error": null,
+          "finding_codes": [
+            "WILDCARD_VERSION_NOT_ALLOWED"
+          ],
+          "layer": "hostile_input",
+          "raw_outcome": "REJECTED",
+          "source_id": "INPUT-VERSION-WILDCARD-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "code": "RAW_TEXT_ABOVE_SECURITY_LIMIT",
+            "status": "rejected",
+            "value": null
+          },
+          "detection_oracles": [
+            "FEATURE_ROW_PARSER"
+          ],
+          "error": null,
+          "finding_codes": [
+            "RAW_TEXT_ABOVE_SECURITY_LIMIT"
+          ],
+          "layer": "hostile_input",
+          "raw_outcome": "REJECTED",
+          "source_id": "INPUT-COMPONENT-OVERSIZED-001"
+        }
+      ],
+      "severity": "critical",
+      "title": "Oversized Parser Ambiguity",
+      "unsafe_decision_released": false
+    },
+    {
+      "chain_id": "CHAIN-TRUST-ATTESTATION-FORGERY-001",
+      "control_tags": [
+        "fail_closed",
+        "multi_control",
+        "cross_layer_integrity",
+        "order_sensitive"
+      ],
+      "defended": true,
+      "description": "Compound chain 14 combines multiple real assurance controls and must remain fail-closed.",
+      "detection_oracles": [
+        "CASE_ORACLE",
+        "POLICY_INVARIANT",
+        "RELEASE_GATE",
+        "UNDER_TRIAGE_DETECTION",
+        "VALIDATION_ATTESTATION"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "family": "trust_attestation_forgery",
+      "first_blocking_control": "tamper:TAMPER-VALIDATION-STATUS-FORGERY-001",
+      "forward_steps": [
+        {
+          "defended": true,
+          "details": {},
+          "detection_oracles": [
+            "VALIDATION_ATTESTATION"
+          ],
+          "error": null,
+          "finding_codes": [
+            "DECLARED_VALIDATION_STATUS_MISMATCH"
+          ],
+          "layer": "tamper",
+          "raw_outcome": "REJECTED",
+          "source_id": "TAMPER-VALIDATION-STATUS-FORGERY-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "executable": true,
+            "failed_case_count": 4
+          },
+          "detection_oracles": [
+            "CASE_ORACLE",
+            "POLICY_INVARIANT",
+            "RELEASE_GATE",
+            "UNDER_TRIAGE_DETECTION"
+          ],
+          "error": null,
+          "finding_codes": [],
+          "layer": "policy_mutation",
+          "raw_outcome": "KILLED_BY_ASSURANCE",
+          "source_id": "MUT-REJECTED-EVIDENCE-CONTINUE-001"
+        }
+      ],
+      "layers_activated": [
+        "policy_mutation",
+        "tamper"
+      ],
+      "multi_control_detected": true,
+      "order_consistent": true,
+      "outcome": "REJECTED_BY_ASSURANCE",
+      "reverse_steps": [
+        {
+          "defended": true,
+          "details": {
+            "executable": true,
+            "failed_case_count": 4
+          },
+          "detection_oracles": [
+            "CASE_ORACLE",
+            "POLICY_INVARIANT",
+            "RELEASE_GATE",
+            "UNDER_TRIAGE_DETECTION"
+          ],
+          "error": null,
+          "finding_codes": [],
+          "layer": "policy_mutation",
+          "raw_outcome": "KILLED_BY_ASSURANCE",
+          "source_id": "MUT-REJECTED-EVIDENCE-CONTINUE-001"
+        },
+        {
+          "defended": true,
+          "details": {},
+          "detection_oracles": [
+            "VALIDATION_ATTESTATION"
+          ],
+          "error": null,
+          "finding_codes": [
+            "DECLARED_VALIDATION_STATUS_MISMATCH"
+          ],
+          "layer": "tamper",
+          "raw_outcome": "REJECTED",
+          "source_id": "TAMPER-VALIDATION-STATUS-FORGERY-001"
+        }
+      ],
+      "severity": "critical",
+      "title": "Trust Attestation Forgery",
+      "unsafe_decision_released": false
+    },
+    {
+      "chain_id": "CHAIN-POLICY-EVIDENCE-REMOVAL-001",
+      "control_tags": [
+        "fail_closed",
+        "multi_control",
+        "cross_layer_integrity",
+        "order_sensitive"
+      ],
+      "defended": true,
+      "description": "Compound chain 15 combines multiple real assurance controls and must remain fail-closed.",
+      "detection_oracles": [
+        "ACTION_NOT_DECREASED",
+        "BASELINE_INVARIANTS_PASS",
+        "CASE_ORACLE",
+        "CLOSURE_PROHIBITION_NOT_REMOVED",
+        "CONTAINMENT_NOT_REMOVED",
+        "DEADLINE_NOT_LENGTHENED",
+        "EVIDENCE_REFERENCE_COUNT_NOT_INCREASED",
+        "EXPECTED_RULES_TRIGGERED",
+        "METAMORPHIC_PROPERTY",
+        "POLICY_CONSISTENCY",
+        "PRIORITY_NOT_DECREASED",
+        "REFERENCE_SET_INTEGRITY",
+        "REVIEW_NOT_REMOVED",
+        "STATIC_SECURITY_CONTRACT",
+        "TRANSFORMATION_SCOPE_EXACT",
+        "TRANSFORMED_INVARIANTS_PASS"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "family": "policy_evidence_removal",
+      "first_blocking_control": "policy_mutation:MUT-AFFECTED-BASELINE-REMOVAL-001",
+      "forward_steps": [
+        {
+          "defended": true,
+          "details": {
+            "executable": true,
+            "failed_case_count": 4
+          },
+          "detection_oracles": [
+            "CASE_ORACLE",
+            "POLICY_CONSISTENCY",
+            "STATIC_SECURITY_CONTRACT"
+          ],
+          "error": null,
+          "finding_codes": [
+            "REQUIRED_RULE_REMOVED"
+          ],
+          "layer": "policy_mutation",
+          "raw_outcome": "KILLED_BY_ASSURANCE",
+          "source_id": "MUT-AFFECTED-BASELINE-REMOVAL-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "baseline_case_id": "AEG-ASR-001-HC",
+            "changed_paths": [
+              "affectedness.supporting_evidence_ids"
+            ],
+            "transformed_case_id": "AEG-ASR-001-HC::META-EVIDENCE-REMOVE-ALL-001"
+          },
+          "detection_oracles": [
+            "METAMORPHIC_PROPERTY",
+            "ACTION_NOT_DECREASED",
+            "BASELINE_INVARIANTS_PASS",
+            "CLOSURE_PROHIBITION_NOT_REMOVED",
+            "CONTAINMENT_NOT_REMOVED",
+            "DEADLINE_NOT_LENGTHENED",
+            "EVIDENCE_REFERENCE_COUNT_NOT_INCREASED",
+            "EXPECTED_RULES_TRIGGERED",
+            "PRIORITY_NOT_DECREASED",
+            "REVIEW_NOT_REMOVED",
+            "TRANSFORMATION_SCOPE_EXACT",
+            "TRANSFORMED_INVARIANTS_PASS"
+          ],
+          "error": null,
+          "finding_codes": [],
+          "layer": "metamorphic",
+          "raw_outcome": "PASSED",
+          "source_id": "META-EVIDENCE-REMOVE-ALL-001"
+        },
+        {
+          "defended": true,
+          "details": {},
+          "detection_oracles": [
+            "REFERENCE_SET_INTEGRITY"
+          ],
+          "error": null,
+          "finding_codes": [
+            "DECISION_REFERENCE_SET_CHANGED"
+          ],
+          "layer": "tamper",
+          "raw_outcome": "REJECTED",
+          "source_id": "TAMPER-REFERENCE-DELETION-001"
+        }
+      ],
+      "layers_activated": [
+        "metamorphic",
+        "policy_mutation",
+        "tamper"
+      ],
+      "multi_control_detected": true,
+      "order_consistent": true,
+      "outcome": "REJECTED_BY_ASSURANCE",
+      "reverse_steps": [
+        {
+          "defended": true,
+          "details": {},
+          "detection_oracles": [
+            "REFERENCE_SET_INTEGRITY"
+          ],
+          "error": null,
+          "finding_codes": [
+            "DECISION_REFERENCE_SET_CHANGED"
+          ],
+          "layer": "tamper",
+          "raw_outcome": "REJECTED",
+          "source_id": "TAMPER-REFERENCE-DELETION-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "baseline_case_id": "AEG-ASR-001-HC",
+            "changed_paths": [
+              "affectedness.supporting_evidence_ids"
+            ],
+            "transformed_case_id": "AEG-ASR-001-HC::META-EVIDENCE-REMOVE-ALL-001"
+          },
+          "detection_oracles": [
+            "METAMORPHIC_PROPERTY",
+            "ACTION_NOT_DECREASED",
+            "BASELINE_INVARIANTS_PASS",
+            "CLOSURE_PROHIBITION_NOT_REMOVED",
+            "CONTAINMENT_NOT_REMOVED",
+            "DEADLINE_NOT_LENGTHENED",
+            "EVIDENCE_REFERENCE_COUNT_NOT_INCREASED",
+            "EXPECTED_RULES_TRIGGERED",
+            "PRIORITY_NOT_DECREASED",
+            "REVIEW_NOT_REMOVED",
+            "TRANSFORMATION_SCOPE_EXACT",
+            "TRANSFORMED_INVARIANTS_PASS"
+          ],
+          "error": null,
+          "finding_codes": [],
+          "layer": "metamorphic",
+          "raw_outcome": "PASSED",
+          "source_id": "META-EVIDENCE-REMOVE-ALL-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "executable": true,
+            "failed_case_count": 4
+          },
+          "detection_oracles": [
+            "CASE_ORACLE",
+            "POLICY_CONSISTENCY",
+            "STATIC_SECURITY_CONTRACT"
+          ],
+          "error": null,
+          "finding_codes": [
+            "REQUIRED_RULE_REMOVED"
+          ],
+          "layer": "policy_mutation",
+          "raw_outcome": "KILLED_BY_ASSURANCE",
+          "source_id": "MUT-AFFECTED-BASELINE-REMOVAL-001"
+        }
+      ],
+      "severity": "critical",
+      "title": "Policy Evidence Removal",
+      "unsafe_decision_released": false
+    },
+    {
+      "chain_id": "CHAIN-SIGNATURE-REFERENCE-LOSS-001",
+      "control_tags": [
+        "fail_closed",
+        "multi_control",
+        "cross_layer_integrity",
+        "order_sensitive"
+      ],
+      "defended": true,
+      "description": "Compound chain 16 combines multiple real assurance controls and must remain fail-closed.",
+      "detection_oracles": [
+        "FEATURE_ROW_PARSER",
+        "REFERENCE_SET_INTEGRITY",
+        "SIGNATURE_POLICY"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "family": "signature_reference_loss",
+      "first_blocking_control": "tamper:TAMPER-SIGNATURE-INVALID-001",
+      "forward_steps": [
+        {
+          "defended": true,
+          "details": {},
+          "detection_oracles": [
+            "SIGNATURE_POLICY"
+          ],
+          "error": null,
+          "finding_codes": [
+            "INVALID_EVIDENCE_SIGNATURE"
+          ],
+          "layer": "tamper",
+          "raw_outcome": "REJECTED",
+          "source_id": "TAMPER-SIGNATURE-INVALID-001"
+        },
+        {
+          "defended": true,
+          "details": {},
+          "detection_oracles": [
+            "REFERENCE_SET_INTEGRITY"
+          ],
+          "error": null,
+          "finding_codes": [
+            "DECISION_REFERENCE_SET_CHANGED"
+          ],
+          "layer": "tamper",
+          "raw_outcome": "REJECTED",
+          "source_id": "TAMPER-REFERENCE-DELETION-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "code": "UNICODE_FORMAT_CONTROL_NOT_ALLOWED",
+            "status": "rejected",
+            "value": null
+          },
+          "detection_oracles": [
+            "FEATURE_ROW_PARSER"
+          ],
+          "error": null,
+          "finding_codes": [
+            "UNICODE_FORMAT_CONTROL_NOT_ALLOWED"
+          ],
+          "layer": "hostile_input",
+          "raw_outcome": "REJECTED",
+          "source_id": "INPUT-ASSET-BIDI-001"
+        }
+      ],
+      "layers_activated": [
+        "hostile_input",
+        "tamper"
+      ],
+      "multi_control_detected": true,
+      "order_consistent": true,
+      "outcome": "REJECTED_BY_ASSURANCE",
+      "reverse_steps": [
+        {
+          "defended": true,
+          "details": {
+            "code": "UNICODE_FORMAT_CONTROL_NOT_ALLOWED",
+            "status": "rejected",
+            "value": null
+          },
+          "detection_oracles": [
+            "FEATURE_ROW_PARSER"
+          ],
+          "error": null,
+          "finding_codes": [
+            "UNICODE_FORMAT_CONTROL_NOT_ALLOWED"
+          ],
+          "layer": "hostile_input",
+          "raw_outcome": "REJECTED",
+          "source_id": "INPUT-ASSET-BIDI-001"
+        },
+        {
+          "defended": true,
+          "details": {},
+          "detection_oracles": [
+            "REFERENCE_SET_INTEGRITY"
+          ],
+          "error": null,
+          "finding_codes": [
+            "DECISION_REFERENCE_SET_CHANGED"
+          ],
+          "layer": "tamper",
+          "raw_outcome": "REJECTED",
+          "source_id": "TAMPER-REFERENCE-DELETION-001"
+        },
+        {
+          "defended": true,
+          "details": {},
+          "detection_oracles": [
+            "SIGNATURE_POLICY"
+          ],
+          "error": null,
+          "finding_codes": [
+            "INVALID_EVIDENCE_SIGNATURE"
+          ],
+          "layer": "tamper",
+          "raw_outcome": "REJECTED",
+          "source_id": "TAMPER-SIGNATURE-INVALID-001"
+        }
+      ],
+      "severity": "critical",
+      "title": "Signature Reference Loss",
+      "unsafe_decision_released": false
+    },
+    {
+      "chain_id": "CHAIN-PROVENANCE-CYCLE-REPLACEMENT-001",
+      "control_tags": [
+        "fail_closed",
+        "multi_control",
+        "cross_layer_integrity",
+        "order_sensitive"
+      ],
+      "defended": true,
+      "description": "Compound chain 17 combines multiple real assurance controls and must remain fail-closed.",
+      "detection_oracles": [
+        "CHAIN_OF_CUSTODY",
+        "INTELLIGENCE_VALIDATOR",
+        "PROVENANCE_GRAPH"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "family": "provenance_cycle_replacement",
+      "first_blocking_control": "tamper:TAMPER-CHAIN-LINK-REPLACEMENT-001",
+      "forward_steps": [
+        {
+          "defended": true,
+          "details": {},
+          "detection_oracles": [
+            "CHAIN_OF_CUSTODY"
+          ],
+          "error": null,
+          "finding_codes": [
+            "DECISION_CHAIN_LINK_MISMATCH"
+          ],
+          "layer": "tamper",
+          "raw_outcome": "REJECTED",
+          "source_id": "TAMPER-CHAIN-LINK-REPLACEMENT-001"
+        },
+        {
+          "defended": true,
+          "details": {},
+          "detection_oracles": [
+            "PROVENANCE_GRAPH"
+          ],
+          "error": null,
+          "finding_codes": [
+            "SELF_REFERENTIAL_EVIDENCE_PROVENANCE"
+          ],
+          "layer": "tamper",
+          "raw_outcome": "REJECTED",
+          "source_id": "TAMPER-EVIDENCE-PARENT-CYCLE-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "code": "SCHEMA_VALIDATION_ERROR",
+            "status": "rejected",
+            "value": null
+          },
+          "detection_oracles": [
+            "INTELLIGENCE_VALIDATOR"
+          ],
+          "error": null,
+          "finding_codes": [
+            "SCHEMA_VALIDATION_ERROR"
+          ],
+          "layer": "hostile_input",
+          "raw_outcome": "REJECTED",
+          "source_id": "INPUT-CANONICAL-OBJECT-001"
+        }
+      ],
+      "layers_activated": [
+        "hostile_input",
+        "tamper"
+      ],
+      "multi_control_detected": true,
+      "order_consistent": true,
+      "outcome": "REJECTED_BY_ASSURANCE",
+      "reverse_steps": [
+        {
+          "defended": true,
+          "details": {
+            "code": "SCHEMA_VALIDATION_ERROR",
+            "status": "rejected",
+            "value": null
+          },
+          "detection_oracles": [
+            "INTELLIGENCE_VALIDATOR"
+          ],
+          "error": null,
+          "finding_codes": [
+            "SCHEMA_VALIDATION_ERROR"
+          ],
+          "layer": "hostile_input",
+          "raw_outcome": "REJECTED",
+          "source_id": "INPUT-CANONICAL-OBJECT-001"
+        },
+        {
+          "defended": true,
+          "details": {},
+          "detection_oracles": [
+            "PROVENANCE_GRAPH"
+          ],
+          "error": null,
+          "finding_codes": [
+            "SELF_REFERENTIAL_EVIDENCE_PROVENANCE"
+          ],
+          "layer": "tamper",
+          "raw_outcome": "REJECTED",
+          "source_id": "TAMPER-EVIDENCE-PARENT-CYCLE-001"
+        },
+        {
+          "defended": true,
+          "details": {},
+          "detection_oracles": [
+            "CHAIN_OF_CUSTODY"
+          ],
+          "error": null,
+          "finding_codes": [
+            "DECISION_CHAIN_LINK_MISMATCH"
+          ],
+          "layer": "tamper",
+          "raw_outcome": "REJECTED",
+          "source_id": "TAMPER-CHAIN-LINK-REPLACEMENT-001"
+        }
+      ],
+      "severity": "critical",
+      "title": "Provenance Cycle Replacement",
+      "unsafe_decision_released": false
+    },
+    {
+      "chain_id": "CHAIN-DECISION-HASH-REFERENCE-INJECTION-001",
+      "control_tags": [
+        "fail_closed",
+        "multi_control",
+        "cross_layer_integrity",
+        "order_sensitive"
+      ],
+      "defended": true,
+      "description": "Compound chain 18 combines multiple real assurance controls and must remain fail-closed.",
+      "detection_oracles": [
+        "ACTION_NOT_DECREASED",
+        "BASELINE_INVARIANTS_PASS",
+        "CLOSURE_PROHIBITION_NOT_REMOVED",
+        "CONTAINMENT_NOT_REMOVED",
+        "DEADLINE_NOT_LENGTHENED",
+        "DECISION_RECORD_HASH",
+        "DECISION_VALIDATOR",
+        "EVIDENCE_REFERENCE_COUNT_NOT_INCREASED",
+        "EXPECTED_RULES_TRIGGERED",
+        "METAMORPHIC_PROPERTY",
+        "PRIORITY_NOT_DECREASED",
+        "REFERENCE_SET_INTEGRITY",
+        "REVIEW_NOT_REMOVED",
+        "TRANSFORMATION_SCOPE_EXACT",
+        "TRANSFORMED_INVARIANTS_PASS"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "family": "decision_hash_reference_injection",
+      "first_blocking_control": "tamper:TAMPER-DECISION-CONTENT-MODIFICATION-001",
+      "forward_steps": [
+        {
+          "defended": true,
+          "details": {},
+          "detection_oracles": [
+            "DECISION_RECORD_HASH",
+            "DECISION_VALIDATOR"
+          ],
+          "error": null,
+          "finding_codes": [
+            "DECISION_RECORD_REJECTED",
+            "DECISION_RECORD_HASH_MISMATCH"
+          ],
+          "layer": "tamper",
+          "raw_outcome": "REJECTED",
+          "source_id": "TAMPER-DECISION-CONTENT-MODIFICATION-001"
+        },
+        {
+          "defended": true,
+          "details": {},
+          "detection_oracles": [
+            "REFERENCE_SET_INTEGRITY"
+          ],
+          "error": null,
+          "finding_codes": [
+            "DECISION_REFERENCE_SET_CHANGED"
+          ],
+          "layer": "tamper",
+          "raw_outcome": "REJECTED",
+          "source_id": "TAMPER-REFERENCE-INJECTION-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "baseline_case_id": "AEG-ASR-001-HC",
+            "changed_paths": [
+              "affectedness.supporting_evidence_ids"
+            ],
+            "transformed_case_id": "AEG-ASR-001-HC::META-EVIDENCE-REMOVE-ONE-001"
+          },
+          "detection_oracles": [
+            "METAMORPHIC_PROPERTY",
+            "ACTION_NOT_DECREASED",
+            "BASELINE_INVARIANTS_PASS",
+            "CLOSURE_PROHIBITION_NOT_REMOVED",
+            "CONTAINMENT_NOT_REMOVED",
+            "DEADLINE_NOT_LENGTHENED",
+            "EVIDENCE_REFERENCE_COUNT_NOT_INCREASED",
+            "EXPECTED_RULES_TRIGGERED",
+            "PRIORITY_NOT_DECREASED",
+            "REVIEW_NOT_REMOVED",
+            "TRANSFORMATION_SCOPE_EXACT",
+            "TRANSFORMED_INVARIANTS_PASS"
+          ],
+          "error": null,
+          "finding_codes": [],
+          "layer": "metamorphic",
+          "raw_outcome": "PASSED",
+          "source_id": "META-EVIDENCE-REMOVE-ONE-001"
+        }
+      ],
+      "layers_activated": [
+        "metamorphic",
+        "tamper"
+      ],
+      "multi_control_detected": true,
+      "order_consistent": true,
+      "outcome": "REJECTED_BY_ASSURANCE",
+      "reverse_steps": [
+        {
+          "defended": true,
+          "details": {
+            "baseline_case_id": "AEG-ASR-001-HC",
+            "changed_paths": [
+              "affectedness.supporting_evidence_ids"
+            ],
+            "transformed_case_id": "AEG-ASR-001-HC::META-EVIDENCE-REMOVE-ONE-001"
+          },
+          "detection_oracles": [
+            "METAMORPHIC_PROPERTY",
+            "ACTION_NOT_DECREASED",
+            "BASELINE_INVARIANTS_PASS",
+            "CLOSURE_PROHIBITION_NOT_REMOVED",
+            "CONTAINMENT_NOT_REMOVED",
+            "DEADLINE_NOT_LENGTHENED",
+            "EVIDENCE_REFERENCE_COUNT_NOT_INCREASED",
+            "EXPECTED_RULES_TRIGGERED",
+            "PRIORITY_NOT_DECREASED",
+            "REVIEW_NOT_REMOVED",
+            "TRANSFORMATION_SCOPE_EXACT",
+            "TRANSFORMED_INVARIANTS_PASS"
+          ],
+          "error": null,
+          "finding_codes": [],
+          "layer": "metamorphic",
+          "raw_outcome": "PASSED",
+          "source_id": "META-EVIDENCE-REMOVE-ONE-001"
+        },
+        {
+          "defended": true,
+          "details": {},
+          "detection_oracles": [
+            "REFERENCE_SET_INTEGRITY"
+          ],
+          "error": null,
+          "finding_codes": [
+            "DECISION_REFERENCE_SET_CHANGED"
+          ],
+          "layer": "tamper",
+          "raw_outcome": "REJECTED",
+          "source_id": "TAMPER-REFERENCE-INJECTION-001"
+        },
+        {
+          "defended": true,
+          "details": {},
+          "detection_oracles": [
+            "DECISION_RECORD_HASH",
+            "DECISION_VALIDATOR"
+          ],
+          "error": null,
+          "finding_codes": [
+            "DECISION_RECORD_REJECTED",
+            "DECISION_RECORD_HASH_MISMATCH"
+          ],
+          "layer": "tamper",
+          "raw_outcome": "REJECTED",
+          "source_id": "TAMPER-DECISION-CONTENT-MODIFICATION-001"
+        }
+      ],
+      "severity": "critical",
+      "title": "Decision Hash Reference Injection",
+      "unsafe_decision_released": false
+    },
+    {
+      "chain_id": "CHAIN-PURL-ENCODED-TRAVERSAL-001",
+      "control_tags": [
+        "fail_closed",
+        "multi_control",
+        "cross_layer_integrity",
+        "order_sensitive"
+      ],
+      "defended": true,
+      "description": "Compound chain 19 combines multiple real assurance controls and must remain fail-closed.",
+      "detection_oracles": [
+        "DECISION_VALIDATOR",
+        "ENCODED_PATH_POLICY",
+        "JSON_SCHEMA",
+        "SAFE_PATH",
+        "STRICT_PARSER"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "family": "purl_encoded_traversal",
+      "first_blocking_control": "hostile_input:INPUT-PURL-TRAVERSAL-001",
+      "forward_steps": [
+        {
+          "defended": true,
+          "details": {
+            "code": "PURL_PATH_TRAVERSAL_OR_EMPTY_SEGMENT",
+            "normalized_text": "pkg:maven/org.example/%2e%2e/secret",
+            "status": "invalid",
+            "value": null
+          },
+          "detection_oracles": [
+            "STRICT_PARSER"
+          ],
+          "error": null,
+          "finding_codes": [
+            "PURL_PATH_TRAVERSAL_OR_EMPTY_SEGMENT"
+          ],
+          "layer": "hostile_input",
+          "raw_outcome": "REJECTED",
+          "source_id": "INPUT-PURL-TRAVERSAL-001"
+        },
+        {
+          "defended": true,
+          "details": {},
+          "detection_oracles": [
+            "DECISION_VALIDATOR",
+            "ENCODED_PATH_POLICY",
+            "JSON_SCHEMA",
+            "SAFE_PATH"
+          ],
+          "error": null,
+          "finding_codes": [
+            "ENCODED_PATH_TRAVERSAL",
+            "PARENT_PATH_TRAVERSAL",
+            "REFERENCE_PATH_ESCAPE",
+            "DECISION_RECORD_REJECTED",
+            "SCHEMA_VALIDATION_ERROR"
+          ],
+          "layer": "tamper",
+          "raw_outcome": "BLOCKED",
+          "source_id": "TAMPER-ENCODED-PATH-TRAVERSAL-001"
+        }
+      ],
+      "layers_activated": [
+        "hostile_input",
+        "tamper"
+      ],
+      "multi_control_detected": true,
+      "order_consistent": true,
+      "outcome": "BLOCKED_BEFORE_DECISION",
+      "reverse_steps": [
+        {
+          "defended": true,
+          "details": {},
+          "detection_oracles": [
+            "DECISION_VALIDATOR",
+            "ENCODED_PATH_POLICY",
+            "JSON_SCHEMA",
+            "SAFE_PATH"
+          ],
+          "error": null,
+          "finding_codes": [
+            "ENCODED_PATH_TRAVERSAL",
+            "PARENT_PATH_TRAVERSAL",
+            "REFERENCE_PATH_ESCAPE",
+            "DECISION_RECORD_REJECTED",
+            "SCHEMA_VALIDATION_ERROR"
+          ],
+          "layer": "tamper",
+          "raw_outcome": "BLOCKED",
+          "source_id": "TAMPER-ENCODED-PATH-TRAVERSAL-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "code": "PURL_PATH_TRAVERSAL_OR_EMPTY_SEGMENT",
+            "normalized_text": "pkg:maven/org.example/%2e%2e/secret",
+            "status": "invalid",
+            "value": null
+          },
+          "detection_oracles": [
+            "STRICT_PARSER"
+          ],
+          "error": null,
+          "finding_codes": [
+            "PURL_PATH_TRAVERSAL_OR_EMPTY_SEGMENT"
+          ],
+          "layer": "hostile_input",
+          "raw_outcome": "REJECTED",
+          "source_id": "INPUT-PURL-TRAVERSAL-001"
+        }
+      ],
+      "severity": "critical",
+      "title": "Purl Encoded Traversal",
+      "unsafe_decision_released": false
+    },
+    {
+      "chain_id": "CHAIN-FORMULA-CONTROL-REFERENCE-001",
+      "control_tags": [
+        "fail_closed",
+        "multi_control",
+        "cross_layer_integrity",
+        "order_sensitive"
+      ],
+      "defended": true,
+      "description": "Compound chain 20 combines multiple real assurance controls and must remain fail-closed.",
+      "detection_oracles": [
+        "DECISION_RECORD_HASH",
+        "DECISION_VALIDATOR",
+        "FEATURE_ROW_PARSER",
+        "REFERENCE_ORDER_INTEGRITY"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "family": "formula_control_reference",
+      "first_blocking_control": "hostile_input:INPUT-FORMULA-COMPONENT-001",
+      "forward_steps": [
+        {
+          "defended": true,
+          "details": {
+            "code": "SPREADSHEET_FORMULA_PREFIX_NOT_ALLOWED",
+            "status": "rejected",
+            "value": null
+          },
+          "detection_oracles": [
+            "FEATURE_ROW_PARSER"
+          ],
+          "error": null,
+          "finding_codes": [
+            "SPREADSHEET_FORMULA_PREFIX_NOT_ALLOWED"
+          ],
+          "layer": "hostile_input",
+          "raw_outcome": "REJECTED",
+          "source_id": "INPUT-FORMULA-COMPONENT-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "code": "CONTROL_CHARACTER_NOT_ALLOWED",
+            "status": "rejected",
+            "value": null
+          },
+          "detection_oracles": [
+            "FEATURE_ROW_PARSER"
+          ],
+          "error": null,
+          "finding_codes": [
+            "CONTROL_CHARACTER_NOT_ALLOWED"
+          ],
+          "layer": "hostile_input",
+          "raw_outcome": "REJECTED",
+          "source_id": "INPUT-COMPONENT-NEWLINE-001"
+        },
+        {
+          "defended": true,
+          "details": {},
+          "detection_oracles": [
+            "DECISION_RECORD_HASH",
+            "DECISION_VALIDATOR",
+            "REFERENCE_ORDER_INTEGRITY"
+          ],
+          "error": null,
+          "finding_codes": [
+            "DECISION_RECORD_REJECTED",
+            "DECISION_RECORD_HASH_MISMATCH",
+            "EVIDENCE_REFERENCE_ORDER_CHANGED"
+          ],
+          "layer": "tamper",
+          "raw_outcome": "REJECTED",
+          "source_id": "TAMPER-REFERENCE-REORDERING-001"
+        }
+      ],
+      "layers_activated": [
+        "hostile_input",
+        "tamper"
+      ],
+      "multi_control_detected": true,
+      "order_consistent": true,
+      "outcome": "REJECTED_BY_ASSURANCE",
+      "reverse_steps": [
+        {
+          "defended": true,
+          "details": {},
+          "detection_oracles": [
+            "DECISION_RECORD_HASH",
+            "DECISION_VALIDATOR",
+            "REFERENCE_ORDER_INTEGRITY"
+          ],
+          "error": null,
+          "finding_codes": [
+            "DECISION_RECORD_REJECTED",
+            "DECISION_RECORD_HASH_MISMATCH",
+            "EVIDENCE_REFERENCE_ORDER_CHANGED"
+          ],
+          "layer": "tamper",
+          "raw_outcome": "REJECTED",
+          "source_id": "TAMPER-REFERENCE-REORDERING-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "code": "CONTROL_CHARACTER_NOT_ALLOWED",
+            "status": "rejected",
+            "value": null
+          },
+          "detection_oracles": [
+            "FEATURE_ROW_PARSER"
+          ],
+          "error": null,
+          "finding_codes": [
+            "CONTROL_CHARACTER_NOT_ALLOWED"
+          ],
+          "layer": "hostile_input",
+          "raw_outcome": "REJECTED",
+          "source_id": "INPUT-COMPONENT-NEWLINE-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "code": "SPREADSHEET_FORMULA_PREFIX_NOT_ALLOWED",
+            "status": "rejected",
+            "value": null
+          },
+          "detection_oracles": [
+            "FEATURE_ROW_PARSER"
+          ],
+          "error": null,
+          "finding_codes": [
+            "SPREADSHEET_FORMULA_PREFIX_NOT_ALLOWED"
+          ],
+          "layer": "hostile_input",
+          "raw_outcome": "REJECTED",
+          "source_id": "INPUT-FORMULA-COMPONENT-001"
+        }
+      ],
+      "severity": "critical",
+      "title": "Formula Control Reference",
+      "unsafe_decision_released": false
+    },
+    {
+      "chain_id": "CHAIN-NAN-EPSS-ZERO-001",
+      "control_tags": [
+        "fail_closed",
+        "multi_control",
+        "order_sensitive"
+      ],
+      "defended": true,
+      "description": "Compound chain 21 combines multiple real assurance controls and must remain fail-closed.",
+      "detection_oracles": [
+        "ACTION_NOT_DECREASED",
+        "BASELINE_INVARIANTS_PASS",
+        "CASE_ORACLE",
+        "CLOSURE_PROHIBITION_NOT_REMOVED",
+        "CONTAINMENT_NOT_REMOVED",
+        "DEADLINE_NOT_LENGTHENED",
+        "EXPECTED_RULES_TRIGGERED",
+        "METAMORPHIC_PROPERTY",
+        "PRIORITY_NOT_DECREASED",
+        "RELEASE_GATE",
+        "REVIEW_NOT_REMOVED",
+        "RULE_COVERAGE",
+        "STRICT_PARSER",
+        "TRANSFORMATION_SCOPE_EXACT",
+        "TRANSFORMED_INVARIANTS_PASS",
+        "UNDER_TRIAGE_DETECTION"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "family": "nan_epss_zero",
+      "first_blocking_control": "hostile_input:INPUT-NUMERIC-NAN-FLOAT-001",
+      "forward_steps": [
+        {
+          "defended": true,
+          "details": {
+            "code": "NON_FINITE_NUMERIC_VALUE",
+            "normalized_text": "nan",
+            "status": "invalid",
+            "value": null
+          },
+          "detection_oracles": [
+            "STRICT_PARSER"
+          ],
+          "error": null,
+          "finding_codes": [
+            "NON_FINITE_NUMERIC_VALUE"
+          ],
+          "layer": "hostile_input",
+          "raw_outcome": "REJECTED",
+          "source_id": "INPUT-NUMERIC-NAN-FLOAT-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "executable": true,
+            "failed_case_count": 2
+          },
+          "detection_oracles": [
+            "CASE_ORACLE",
+            "RELEASE_GATE",
+            "RULE_COVERAGE",
+            "UNDER_TRIAGE_DETECTION"
+          ],
+          "error": null,
+          "finding_codes": [],
+          "layer": "policy_mutation",
+          "raw_outcome": "KILLED_BY_ASSURANCE",
+          "source_id": "MUT-EPSS-MISSING-AS-ZERO-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "baseline_case_id": "AEG-ASR-001-HC",
+            "changed_paths": [
+              "intelligence_overrides.epss.evidence_id",
+              "intelligence_overrides.epss.missing_reason",
+              "intelligence_overrides.epss.model_version",
+              "intelligence_overrides.epss.percentile",
+              "intelligence_overrides.epss.probability",
+              "intelligence_overrides.epss.score_date",
+              "intelligence_overrides.epss.status",
+              "operational_profile"
+            ],
+            "transformed_case_id": "AEG-ASR-065-HC"
+          },
+          "detection_oracles": [
+            "METAMORPHIC_PROPERTY",
+            "ACTION_NOT_DECREASED",
+            "BASELINE_INVARIANTS_PASS",
+            "CLOSURE_PROHIBITION_NOT_REMOVED",
+            "CONTAINMENT_NOT_REMOVED",
+            "DEADLINE_NOT_LENGTHENED",
+            "EXPECTED_RULES_TRIGGERED",
+            "PRIORITY_NOT_DECREASED",
+            "REVIEW_NOT_REMOVED",
+            "TRANSFORMATION_SCOPE_EXACT",
+            "TRANSFORMED_INVARIANTS_PASS"
+          ],
+          "error": null,
+          "finding_codes": [],
+          "layer": "metamorphic",
+          "raw_outcome": "PASSED",
+          "source_id": "META-EPSS-MISSING-001"
+        }
+      ],
+      "layers_activated": [
+        "hostile_input",
+        "metamorphic",
+        "policy_mutation"
+      ],
+      "multi_control_detected": true,
+      "order_consistent": true,
+      "outcome": "REJECTED_BY_ASSURANCE",
+      "reverse_steps": [
+        {
+          "defended": true,
+          "details": {
+            "baseline_case_id": "AEG-ASR-001-HC",
+            "changed_paths": [
+              "intelligence_overrides.epss.evidence_id",
+              "intelligence_overrides.epss.missing_reason",
+              "intelligence_overrides.epss.model_version",
+              "intelligence_overrides.epss.percentile",
+              "intelligence_overrides.epss.probability",
+              "intelligence_overrides.epss.score_date",
+              "intelligence_overrides.epss.status",
+              "operational_profile"
+            ],
+            "transformed_case_id": "AEG-ASR-065-HC"
+          },
+          "detection_oracles": [
+            "METAMORPHIC_PROPERTY",
+            "ACTION_NOT_DECREASED",
+            "BASELINE_INVARIANTS_PASS",
+            "CLOSURE_PROHIBITION_NOT_REMOVED",
+            "CONTAINMENT_NOT_REMOVED",
+            "DEADLINE_NOT_LENGTHENED",
+            "EXPECTED_RULES_TRIGGERED",
+            "PRIORITY_NOT_DECREASED",
+            "REVIEW_NOT_REMOVED",
+            "TRANSFORMATION_SCOPE_EXACT",
+            "TRANSFORMED_INVARIANTS_PASS"
+          ],
+          "error": null,
+          "finding_codes": [],
+          "layer": "metamorphic",
+          "raw_outcome": "PASSED",
+          "source_id": "META-EPSS-MISSING-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "executable": true,
+            "failed_case_count": 2
+          },
+          "detection_oracles": [
+            "CASE_ORACLE",
+            "RELEASE_GATE",
+            "RULE_COVERAGE",
+            "UNDER_TRIAGE_DETECTION"
+          ],
+          "error": null,
+          "finding_codes": [],
+          "layer": "policy_mutation",
+          "raw_outcome": "KILLED_BY_ASSURANCE",
+          "source_id": "MUT-EPSS-MISSING-AS-ZERO-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "code": "NON_FINITE_NUMERIC_VALUE",
+            "normalized_text": "nan",
+            "status": "invalid",
+            "value": null
+          },
+          "detection_oracles": [
+            "STRICT_PARSER"
+          ],
+          "error": null,
+          "finding_codes": [
+            "NON_FINITE_NUMERIC_VALUE"
+          ],
+          "layer": "hostile_input",
+          "raw_outcome": "REJECTED",
+          "source_id": "INPUT-NUMERIC-NAN-FLOAT-001"
+        }
+      ],
+      "severity": "critical",
+      "title": "Nan Epss Zero",
+      "unsafe_decision_released": false
+    },
+    {
+      "chain_id": "CHAIN-RANK-IMPACT-DOWNGRADE-001",
+      "control_tags": [
+        "fail_closed",
+        "multi_control",
+        "order_sensitive"
+      ],
+      "defended": true,
+      "description": "Compound chain 22 combines multiple real assurance controls and must remain fail-closed.",
+      "detection_oracles": [
+        "ACTION_NOT_DECREASED",
+        "BASELINE_INVARIANTS_PASS",
+        "CASE_ORACLE",
+        "CLOSURE_PROHIBITION_NOT_REMOVED",
+        "CONTAINMENT_NOT_REMOVED",
+        "DEADLINE_NOT_LENGTHENED",
+        "EXPECTED_RULES_TRIGGERED",
+        "METAMORPHIC_PROPERTY",
+        "POLICY_INVARIANT",
+        "PRIORITY_NOT_DECREASED",
+        "RELEASE_GATE",
+        "REVIEW_NOT_REMOVED",
+        "STATIC_SECURITY_CONTRACT",
+        "TRANSFORMATION_SCOPE_EXACT",
+        "TRANSFORMED_INVARIANTS_PASS",
+        "UNDER_TRIAGE_DETECTION"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "family": "rank_impact_downgrade",
+      "first_blocking_control": "policy_mutation:MUT-HOLD-RANK-DOWNGRADE-001",
+      "forward_steps": [
+        {
+          "defended": true,
+          "details": {
+            "executable": true,
+            "failed_case_count": 54
+          },
+          "detection_oracles": [
+            "CASE_ORACLE",
+            "POLICY_INVARIANT",
+            "RELEASE_GATE",
+            "STATIC_SECURITY_CONTRACT"
+          ],
+          "error": null,
+          "finding_codes": [
+            "ACTION_RANKS_CHANGED"
+          ],
+          "layer": "policy_mutation",
+          "raw_outcome": "KILLED_BY_ASSURANCE",
+          "source_id": "MUT-HOLD-RANK-DOWNGRADE-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "executable": true,
+            "failed_case_count": 4
+          },
+          "detection_oracles": [
+            "CASE_ORACLE",
+            "RELEASE_GATE",
+            "STATIC_SECURITY_CONTRACT",
+            "UNDER_TRIAGE_DETECTION"
+          ],
+          "error": null,
+          "finding_codes": [
+            "CRITICAL_ACTION_FLOOR_WEAKENED"
+          ],
+          "layer": "policy_mutation",
+          "raw_outcome": "KILLED_BY_ASSURANCE",
+          "source_id": "MUT-CATASTROPHIC-ACTION-DOWNGRADE-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "baseline_case_id": "AEG-ASR-007-HC",
+            "changed_paths": [
+              "asset_overrides.impact_assessment.availability.severity",
+              "operational_profile"
+            ],
+            "transformed_case_id": "AEG-ASR-006-HC"
+          },
+          "detection_oracles": [
+            "METAMORPHIC_PROPERTY",
+            "ACTION_NOT_DECREASED",
+            "BASELINE_INVARIANTS_PASS",
+            "CLOSURE_PROHIBITION_NOT_REMOVED",
+            "CONTAINMENT_NOT_REMOVED",
+            "DEADLINE_NOT_LENGTHENED",
+            "EXPECTED_RULES_TRIGGERED",
+            "PRIORITY_NOT_DECREASED",
+            "REVIEW_NOT_REMOVED",
+            "TRANSFORMATION_SCOPE_EXACT",
+            "TRANSFORMED_INVARIANTS_PASS"
+          ],
+          "error": null,
+          "finding_codes": [],
+          "layer": "metamorphic",
+          "raw_outcome": "PASSED",
+          "source_id": "META-IMPACT-SEVERE-CATASTROPHIC-001"
+        }
+      ],
+      "layers_activated": [
+        "metamorphic",
+        "policy_mutation"
+      ],
+      "multi_control_detected": true,
+      "order_consistent": true,
+      "outcome": "REJECTED_BY_ASSURANCE",
+      "reverse_steps": [
+        {
+          "defended": true,
+          "details": {
+            "baseline_case_id": "AEG-ASR-007-HC",
+            "changed_paths": [
+              "asset_overrides.impact_assessment.availability.severity",
+              "operational_profile"
+            ],
+            "transformed_case_id": "AEG-ASR-006-HC"
+          },
+          "detection_oracles": [
+            "METAMORPHIC_PROPERTY",
+            "ACTION_NOT_DECREASED",
+            "BASELINE_INVARIANTS_PASS",
+            "CLOSURE_PROHIBITION_NOT_REMOVED",
+            "CONTAINMENT_NOT_REMOVED",
+            "DEADLINE_NOT_LENGTHENED",
+            "EXPECTED_RULES_TRIGGERED",
+            "PRIORITY_NOT_DECREASED",
+            "REVIEW_NOT_REMOVED",
+            "TRANSFORMATION_SCOPE_EXACT",
+            "TRANSFORMED_INVARIANTS_PASS"
+          ],
+          "error": null,
+          "finding_codes": [],
+          "layer": "metamorphic",
+          "raw_outcome": "PASSED",
+          "source_id": "META-IMPACT-SEVERE-CATASTROPHIC-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "executable": true,
+            "failed_case_count": 4
+          },
+          "detection_oracles": [
+            "CASE_ORACLE",
+            "RELEASE_GATE",
+            "STATIC_SECURITY_CONTRACT",
+            "UNDER_TRIAGE_DETECTION"
+          ],
+          "error": null,
+          "finding_codes": [
+            "CRITICAL_ACTION_FLOOR_WEAKENED"
+          ],
+          "layer": "policy_mutation",
+          "raw_outcome": "KILLED_BY_ASSURANCE",
+          "source_id": "MUT-CATASTROPHIC-ACTION-DOWNGRADE-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "executable": true,
+            "failed_case_count": 54
+          },
+          "detection_oracles": [
+            "CASE_ORACLE",
+            "POLICY_INVARIANT",
+            "RELEASE_GATE",
+            "STATIC_SECURITY_CONTRACT"
+          ],
+          "error": null,
+          "finding_codes": [
+            "ACTION_RANKS_CHANGED"
+          ],
+          "layer": "policy_mutation",
+          "raw_outcome": "KILLED_BY_ASSURANCE",
+          "source_id": "MUT-HOLD-RANK-DOWNGRADE-001"
+        }
+      ],
+      "severity": "critical",
+      "title": "Rank Impact Downgrade",
+      "unsafe_decision_released": false
+    },
+    {
+      "chain_id": "CHAIN-SYMLINK-FIXTURE-SUBSTITUTION-001",
+      "control_tags": [
+        "fail_closed",
+        "multi_control",
+        "cross_layer_integrity",
+        "order_sensitive"
+      ],
+      "defended": true,
+      "description": "Compound chain 23 combines multiple real assurance controls and must remain fail-closed.",
+      "detection_oracles": [
+        "DECISION_VALIDATOR",
+        "INPUT_ID_BINDING",
+        "INPUT_RECORD_HASH",
+        "INPUT_SCHEMA",
+        "SAFE_PATH",
+        "STRICT_PARSER"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "family": "symlink_fixture_substitution",
+      "first_blocking_control": "tamper:TAMPER-SYMLINK-ESCAPE-001",
+      "forward_steps": [
+        {
+          "defended": true,
+          "details": {},
+          "detection_oracles": [
+            "DECISION_VALIDATOR",
+            "SAFE_PATH"
+          ],
+          "error": null,
+          "finding_codes": [
+            "REFERENCE_PATH_ESCAPE",
+            "DECISION_RECORD_REJECTED",
+            "INPUT_PATH_ESCAPE",
+            "COMPONENT_EVIDENCE_NOT_FOUND",
+            "AFFECTEDNESS_EVIDENCE_NOT_FOUND",
+            "POLICY_EVIDENCE_NOT_FOUND"
+          ],
+          "layer": "tamper",
+          "raw_outcome": "BLOCKED",
+          "source_id": "TAMPER-SYMLINK-ESCAPE-001"
+        },
+        {
+          "defended": true,
+          "details": {},
+          "detection_oracles": [
+            "DECISION_VALIDATOR",
+            "INPUT_ID_BINDING",
+            "INPUT_RECORD_HASH",
+            "INPUT_SCHEMA"
+          ],
+          "error": null,
+          "finding_codes": [
+            "DECISION_RECORD_REJECTED",
+            "INPUT_RECORD_HASH_MISMATCH",
+            "INPUT_RECORD_ID_MISMATCH",
+            "INPUT_RECORD_VALIDATION_FAILED",
+            "INPUT_VALIDATION_STATUS_MISMATCH",
+            "POLICY_EVIDENCE_NOT_FOUND"
+          ],
+          "layer": "tamper",
+          "raw_outcome": "REJECTED",
+          "source_id": "TAMPER-FIXTURE-SUBSTITUTION-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "code": "NON_ASCII_PURL_NOT_ALLOWED",
+            "normalized_text": "pkg:maven/оrg.example/component",
+            "status": "invalid",
+            "value": null
+          },
+          "detection_oracles": [
+            "STRICT_PARSER"
+          ],
+          "error": null,
+          "finding_codes": [
+            "NON_ASCII_PURL_NOT_ALLOWED"
+          ],
+          "layer": "hostile_input",
+          "raw_outcome": "REJECTED",
+          "source_id": "INPUT-PURL-NON-ASCII-001"
+        }
+      ],
+      "layers_activated": [
+        "hostile_input",
+        "tamper"
+      ],
+      "multi_control_detected": true,
+      "order_consistent": true,
+      "outcome": "BLOCKED_BEFORE_DECISION",
+      "reverse_steps": [
+        {
+          "defended": true,
+          "details": {
+            "code": "NON_ASCII_PURL_NOT_ALLOWED",
+            "normalized_text": "pkg:maven/оrg.example/component",
+            "status": "invalid",
+            "value": null
+          },
+          "detection_oracles": [
+            "STRICT_PARSER"
+          ],
+          "error": null,
+          "finding_codes": [
+            "NON_ASCII_PURL_NOT_ALLOWED"
+          ],
+          "layer": "hostile_input",
+          "raw_outcome": "REJECTED",
+          "source_id": "INPUT-PURL-NON-ASCII-001"
+        },
+        {
+          "defended": true,
+          "details": {},
+          "detection_oracles": [
+            "DECISION_VALIDATOR",
+            "INPUT_ID_BINDING",
+            "INPUT_RECORD_HASH",
+            "INPUT_SCHEMA"
+          ],
+          "error": null,
+          "finding_codes": [
+            "DECISION_RECORD_REJECTED",
+            "INPUT_RECORD_HASH_MISMATCH",
+            "INPUT_RECORD_ID_MISMATCH",
+            "INPUT_RECORD_VALIDATION_FAILED",
+            "INPUT_VALIDATION_STATUS_MISMATCH",
+            "POLICY_EVIDENCE_NOT_FOUND"
+          ],
+          "layer": "tamper",
+          "raw_outcome": "REJECTED",
+          "source_id": "TAMPER-FIXTURE-SUBSTITUTION-001"
+        },
+        {
+          "defended": true,
+          "details": {},
+          "detection_oracles": [
+            "DECISION_VALIDATOR",
+            "SAFE_PATH"
+          ],
+          "error": null,
+          "finding_codes": [
+            "REFERENCE_PATH_ESCAPE",
+            "DECISION_RECORD_REJECTED",
+            "INPUT_PATH_ESCAPE",
+            "COMPONENT_EVIDENCE_NOT_FOUND",
+            "AFFECTEDNESS_EVIDENCE_NOT_FOUND",
+            "POLICY_EVIDENCE_NOT_FOUND"
+          ],
+          "layer": "tamper",
+          "raw_outcome": "BLOCKED",
+          "source_id": "TAMPER-SYMLINK-ESCAPE-001"
+        }
+      ],
+      "severity": "critical",
+      "title": "Symlink Fixture Substitution",
+      "unsafe_decision_released": false
+    },
+    {
+      "chain_id": "CHAIN-CORPUS-MANIFEST-COLLISION-001",
+      "control_tags": [
+        "fail_closed",
+        "multi_control",
+        "cross_layer_integrity",
+        "order_sensitive"
+      ],
+      "defended": true,
+      "description": "Compound chain 24 combines multiple real assurance controls and must remain fail-closed.",
+      "detection_oracles": [
+        "ACTION_EQUAL",
+        "BASELINE_INVARIANTS_PASS",
+        "CONTAINMENT_REQUIRED_EQUAL",
+        "DEADLINE_HOURS_EQUAL",
+        "DUPLICATE_ID",
+        "EXPECTED_RULES_TRIGGERED",
+        "FIXTURE_HASH",
+        "HUMAN_REVIEW_REQUIRED_EQUAL",
+        "MANIFEST_HASH",
+        "MATCHED_RULES_EQUAL",
+        "METAMORPHIC_PROPERTY",
+        "PRIORITY_EQUAL",
+        "PROHIBIT_CLOSURE_EQUAL",
+        "TRANSFORMATION_SCOPE_EXACT",
+        "TRANSFORMED_INVARIANTS_PASS",
+        "TRUSTED_MANIFEST_HASH"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "family": "corpus_manifest_collision",
+      "first_blocking_control": "tamper:TAMPER-DUPLICATE-CORPUS-CASE-ID-001",
+      "forward_steps": [
+        {
+          "defended": true,
+          "details": {},
+          "detection_oracles": [
+            "DUPLICATE_ID",
+            "MANIFEST_HASH"
+          ],
+          "error": null,
+          "finding_codes": [
+            "DUPLICATE_ASSURANCE_CASE_ID",
+            "CORPUS_MANIFEST_HASH_MISMATCH"
+          ],
+          "layer": "tamper",
+          "raw_outcome": "REJECTED",
+          "source_id": "TAMPER-DUPLICATE-CORPUS-CASE-ID-001"
+        },
+        {
+          "defended": true,
+          "details": {},
+          "detection_oracles": [
+            "FIXTURE_HASH",
+            "TRUSTED_MANIFEST_HASH"
+          ],
+          "error": null,
+          "finding_codes": [
+            "TRUSTED_MANIFEST_MODIFIED",
+            "DECLARED_FIXTURE_HASH_INVALID"
+          ],
+          "layer": "tamper",
+          "raw_outcome": "REJECTED",
+          "source_id": "TAMPER-MANIFEST-FIXTURE-HASH-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "baseline_case_id": "AEG-ASR-001-HC",
+            "changed_paths": [
+              "asset_overrides.sector_context.primary_sector"
+            ],
+            "transformed_case_id": "AEG-ASR-001-DL"
+          },
+          "detection_oracles": [
+            "METAMORPHIC_PROPERTY",
+            "ACTION_EQUAL",
+            "BASELINE_INVARIANTS_PASS",
+            "CONTAINMENT_REQUIRED_EQUAL",
+            "DEADLINE_HOURS_EQUAL",
+            "EXPECTED_RULES_TRIGGERED",
+            "HUMAN_REVIEW_REQUIRED_EQUAL",
+            "MATCHED_RULES_EQUAL",
+            "PRIORITY_EQUAL",
+            "PROHIBIT_CLOSURE_EQUAL",
+            "TRANSFORMATION_SCOPE_EXACT",
+            "TRANSFORMED_INVARIANTS_PASS"
+          ],
+          "error": null,
+          "finding_codes": [],
+          "layer": "metamorphic",
+          "raw_outcome": "PASSED",
+          "source_id": "META-SECTOR-BASELINE-001"
+        }
+      ],
+      "layers_activated": [
+        "metamorphic",
+        "tamper"
+      ],
+      "multi_control_detected": true,
+      "order_consistent": true,
+      "outcome": "REJECTED_BY_ASSURANCE",
+      "reverse_steps": [
+        {
+          "defended": true,
+          "details": {
+            "baseline_case_id": "AEG-ASR-001-HC",
+            "changed_paths": [
+              "asset_overrides.sector_context.primary_sector"
+            ],
+            "transformed_case_id": "AEG-ASR-001-DL"
+          },
+          "detection_oracles": [
+            "METAMORPHIC_PROPERTY",
+            "ACTION_EQUAL",
+            "BASELINE_INVARIANTS_PASS",
+            "CONTAINMENT_REQUIRED_EQUAL",
+            "DEADLINE_HOURS_EQUAL",
+            "EXPECTED_RULES_TRIGGERED",
+            "HUMAN_REVIEW_REQUIRED_EQUAL",
+            "MATCHED_RULES_EQUAL",
+            "PRIORITY_EQUAL",
+            "PROHIBIT_CLOSURE_EQUAL",
+            "TRANSFORMATION_SCOPE_EXACT",
+            "TRANSFORMED_INVARIANTS_PASS"
+          ],
+          "error": null,
+          "finding_codes": [],
+          "layer": "metamorphic",
+          "raw_outcome": "PASSED",
+          "source_id": "META-SECTOR-BASELINE-001"
+        },
+        {
+          "defended": true,
+          "details": {},
+          "detection_oracles": [
+            "FIXTURE_HASH",
+            "TRUSTED_MANIFEST_HASH"
+          ],
+          "error": null,
+          "finding_codes": [
+            "TRUSTED_MANIFEST_MODIFIED",
+            "DECLARED_FIXTURE_HASH_INVALID"
+          ],
+          "layer": "tamper",
+          "raw_outcome": "REJECTED",
+          "source_id": "TAMPER-MANIFEST-FIXTURE-HASH-001"
+        },
+        {
+          "defended": true,
+          "details": {},
+          "detection_oracles": [
+            "DUPLICATE_ID",
+            "MANIFEST_HASH"
+          ],
+          "error": null,
+          "finding_codes": [
+            "DUPLICATE_ASSURANCE_CASE_ID",
+            "CORPUS_MANIFEST_HASH_MISMATCH"
+          ],
+          "layer": "tamper",
+          "raw_outcome": "REJECTED",
+          "source_id": "TAMPER-DUPLICATE-CORPUS-CASE-ID-001"
+        }
+      ],
+      "severity": "critical",
+      "title": "Corpus Manifest Collision",
+      "unsafe_decision_released": false
+    },
+    {
+      "chain_id": "CHAIN-FRESHNESS-FUTURE-REPLAY-001",
+      "control_tags": [
+        "fail_closed",
+        "multi_control",
+        "cross_layer_integrity",
+        "order_sensitive"
+      ],
+      "defended": true,
+      "description": "Compound chain 25 combines multiple real assurance controls and must remain fail-closed.",
+      "detection_oracles": [
+        "FRESHNESS_CONSISTENCY",
+        "STRICT_PARSER",
+        "TIMESTAMP_CONSISTENCY"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "family": "freshness_future_replay",
+      "first_blocking_control": "tamper:TAMPER-STALE-AS-CURRENT-001",
+      "forward_steps": [
+        {
+          "defended": true,
+          "details": {},
+          "detection_oracles": [
+            "FRESHNESS_CONSISTENCY"
+          ],
+          "error": null,
+          "finding_codes": [
+            "DECLARED_EVIDENCE_AGE_MISMATCH",
+            "STALE_EVIDENCE_DECLARED_CURRENT"
+          ],
+          "layer": "tamper",
+          "raw_outcome": "REJECTED",
+          "source_id": "TAMPER-STALE-AS-CURRENT-001"
+        },
+        {
+          "defended": true,
+          "details": {},
+          "detection_oracles": [
+            "TIMESTAMP_CONSISTENCY"
+          ],
+          "error": null,
+          "finding_codes": [
+            "COLLECTION_AFTER_FRESHNESS_EVALUATION"
+          ],
+          "layer": "tamper",
+          "raw_outcome": "REJECTED",
+          "source_id": "TAMPER-FUTURE-COLLECTION-TIMESTAMP-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "code": "DATETIME_TIMEZONE_MISSING",
+            "normalized_text": "2026-07-13T17:00:00",
+            "status": "invalid",
+            "value": null
+          },
+          "detection_oracles": [
+            "STRICT_PARSER"
+          ],
+          "error": null,
+          "finding_codes": [
+            "DATETIME_TIMEZONE_MISSING"
+          ],
+          "layer": "hostile_input",
+          "raw_outcome": "REJECTED",
+          "source_id": "INPUT-DATETIME-NAIVE-001"
+        }
+      ],
+      "layers_activated": [
+        "hostile_input",
+        "tamper"
+      ],
+      "multi_control_detected": true,
+      "order_consistent": true,
+      "outcome": "REJECTED_BY_ASSURANCE",
+      "reverse_steps": [
+        {
+          "defended": true,
+          "details": {
+            "code": "DATETIME_TIMEZONE_MISSING",
+            "normalized_text": "2026-07-13T17:00:00",
+            "status": "invalid",
+            "value": null
+          },
+          "detection_oracles": [
+            "STRICT_PARSER"
+          ],
+          "error": null,
+          "finding_codes": [
+            "DATETIME_TIMEZONE_MISSING"
+          ],
+          "layer": "hostile_input",
+          "raw_outcome": "REJECTED",
+          "source_id": "INPUT-DATETIME-NAIVE-001"
+        },
+        {
+          "defended": true,
+          "details": {},
+          "detection_oracles": [
+            "TIMESTAMP_CONSISTENCY"
+          ],
+          "error": null,
+          "finding_codes": [
+            "COLLECTION_AFTER_FRESHNESS_EVALUATION"
+          ],
+          "layer": "tamper",
+          "raw_outcome": "REJECTED",
+          "source_id": "TAMPER-FUTURE-COLLECTION-TIMESTAMP-001"
+        },
+        {
+          "defended": true,
+          "details": {},
+          "detection_oracles": [
+            "FRESHNESS_CONSISTENCY"
+          ],
+          "error": null,
+          "finding_codes": [
+            "DECLARED_EVIDENCE_AGE_MISMATCH",
+            "STALE_EVIDENCE_DECLARED_CURRENT"
+          ],
+          "layer": "tamper",
+          "raw_outcome": "REJECTED",
+          "source_id": "TAMPER-STALE-AS-CURRENT-001"
+        }
+      ],
+      "severity": "critical",
+      "title": "Freshness Future Replay",
+      "unsafe_decision_released": false
+    },
+    {
+      "chain_id": "CHAIN-QUARANTINE-NO-FIX-001",
+      "control_tags": [
+        "fail_closed",
+        "multi_control",
+        "order_sensitive"
+      ],
+      "defended": true,
+      "description": "Compound chain 26 combines multiple real assurance controls and must remain fail-closed.",
+      "detection_oracles": [
+        "ACTION_NOT_DECREASED",
+        "BASELINE_INVARIANTS_PASS",
+        "CASE_ORACLE",
+        "CLOSURE_PROHIBITION_NOT_REMOVED",
+        "CONTAINMENT_NOT_REMOVED",
+        "DEADLINE_NOT_LENGTHENED",
+        "EXPECTED_RULES_TRIGGERED",
+        "FAIL_CLOSED_DEADLINE",
+        "FAIL_CLOSED_HIGH_PRIORITY",
+        "FAIL_CLOSED_HOLD",
+        "FAIL_CLOSED_NO_CLOSURE",
+        "FAIL_CLOSED_REVIEW",
+        "METAMORPHIC_PROPERTY",
+        "PRIORITY_NOT_DECREASED",
+        "RELEASE_GATE",
+        "REVIEW_NOT_REMOVED",
+        "STATIC_SECURITY_CONTRACT",
+        "TRANSFORMATION_SCOPE_EXACT",
+        "TRANSFORMED_INVARIANTS_PASS",
+        "UNDER_TRIAGE_DETECTION"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "family": "quarantine_no_fix",
+      "first_blocking_control": "metamorphic:META-TRUST-QUARANTINE-001",
+      "forward_steps": [
+        {
+          "defended": true,
+          "details": {
+            "baseline_case_id": "AEG-ASR-061-HC",
+            "changed_paths": [
+              "trust.action",
+              "trust.aggregate_score"
+            ],
+            "transformed_case_id": "AEG-ASR-061-HC::META-TRUST-QUARANTINE-001"
+          },
+          "detection_oracles": [
+            "METAMORPHIC_PROPERTY",
+            "ACTION_NOT_DECREASED",
+            "BASELINE_INVARIANTS_PASS",
+            "CLOSURE_PROHIBITION_NOT_REMOVED",
+            "CONTAINMENT_NOT_REMOVED",
+            "DEADLINE_NOT_LENGTHENED",
+            "EXPECTED_RULES_TRIGGERED",
+            "FAIL_CLOSED_DEADLINE",
+            "FAIL_CLOSED_HIGH_PRIORITY",
+            "FAIL_CLOSED_HOLD",
+            "FAIL_CLOSED_NO_CLOSURE",
+            "FAIL_CLOSED_REVIEW",
+            "PRIORITY_NOT_DECREASED",
+            "REVIEW_NOT_REMOVED",
+            "TRANSFORMATION_SCOPE_EXACT",
+            "TRANSFORMED_INVARIANTS_PASS"
+          ],
+          "error": null,
+          "finding_codes": [],
+          "layer": "metamorphic",
+          "raw_outcome": "PASSED",
+          "source_id": "META-TRUST-QUARANTINE-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "baseline_case_id": "AEG-ASR-001-HC",
+            "changed_paths": [
+              "intelligence_overrides.remediation.status",
+              "operational_profile"
+            ],
+            "transformed_case_id": "AEG-ASR-011-HC"
+          },
+          "detection_oracles": [
+            "METAMORPHIC_PROPERTY",
+            "ACTION_NOT_DECREASED",
+            "BASELINE_INVARIANTS_PASS",
+            "CLOSURE_PROHIBITION_NOT_REMOVED",
+            "CONTAINMENT_NOT_REMOVED",
+            "DEADLINE_NOT_LENGTHENED",
+            "EXPECTED_RULES_TRIGGERED",
+            "PRIORITY_NOT_DECREASED",
+            "REVIEW_NOT_REMOVED",
+            "TRANSFORMATION_SCOPE_EXACT",
+            "TRANSFORMED_INVARIANTS_PASS"
+          ],
+          "error": null,
+          "finding_codes": [],
+          "layer": "metamorphic",
+          "raw_outcome": "PASSED",
+          "source_id": "META-NO-FIX-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "executable": true,
+            "failed_case_count": 4
+          },
+          "detection_oracles": [
+            "CASE_ORACLE",
+            "RELEASE_GATE",
+            "STATIC_SECURITY_CONTRACT",
+            "UNDER_TRIAGE_DETECTION"
+          ],
+          "error": null,
+          "finding_codes": [
+            "CRITICAL_CONTAINMENT_REQUIRED_REMOVED"
+          ],
+          "layer": "policy_mutation",
+          "raw_outcome": "KILLED_BY_ASSURANCE",
+          "source_id": "MUT-NO-FIX-CONTAINMENT-REMOVAL-001"
+        }
+      ],
+      "layers_activated": [
+        "metamorphic",
+        "policy_mutation"
+      ],
+      "multi_control_detected": true,
+      "order_consistent": true,
+      "outcome": "REJECTED_BY_ASSURANCE",
+      "reverse_steps": [
+        {
+          "defended": true,
+          "details": {
+            "executable": true,
+            "failed_case_count": 4
+          },
+          "detection_oracles": [
+            "CASE_ORACLE",
+            "RELEASE_GATE",
+            "STATIC_SECURITY_CONTRACT",
+            "UNDER_TRIAGE_DETECTION"
+          ],
+          "error": null,
+          "finding_codes": [
+            "CRITICAL_CONTAINMENT_REQUIRED_REMOVED"
+          ],
+          "layer": "policy_mutation",
+          "raw_outcome": "KILLED_BY_ASSURANCE",
+          "source_id": "MUT-NO-FIX-CONTAINMENT-REMOVAL-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "baseline_case_id": "AEG-ASR-001-HC",
+            "changed_paths": [
+              "intelligence_overrides.remediation.status",
+              "operational_profile"
+            ],
+            "transformed_case_id": "AEG-ASR-011-HC"
+          },
+          "detection_oracles": [
+            "METAMORPHIC_PROPERTY",
+            "ACTION_NOT_DECREASED",
+            "BASELINE_INVARIANTS_PASS",
+            "CLOSURE_PROHIBITION_NOT_REMOVED",
+            "CONTAINMENT_NOT_REMOVED",
+            "DEADLINE_NOT_LENGTHENED",
+            "EXPECTED_RULES_TRIGGERED",
+            "PRIORITY_NOT_DECREASED",
+            "REVIEW_NOT_REMOVED",
+            "TRANSFORMATION_SCOPE_EXACT",
+            "TRANSFORMED_INVARIANTS_PASS"
+          ],
+          "error": null,
+          "finding_codes": [],
+          "layer": "metamorphic",
+          "raw_outcome": "PASSED",
+          "source_id": "META-NO-FIX-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "baseline_case_id": "AEG-ASR-061-HC",
+            "changed_paths": [
+              "trust.action",
+              "trust.aggregate_score"
+            ],
+            "transformed_case_id": "AEG-ASR-061-HC::META-TRUST-QUARANTINE-001"
+          },
+          "detection_oracles": [
+            "METAMORPHIC_PROPERTY",
+            "ACTION_NOT_DECREASED",
+            "BASELINE_INVARIANTS_PASS",
+            "CLOSURE_PROHIBITION_NOT_REMOVED",
+            "CONTAINMENT_NOT_REMOVED",
+            "DEADLINE_NOT_LENGTHENED",
+            "EXPECTED_RULES_TRIGGERED",
+            "FAIL_CLOSED_DEADLINE",
+            "FAIL_CLOSED_HIGH_PRIORITY",
+            "FAIL_CLOSED_HOLD",
+            "FAIL_CLOSED_NO_CLOSURE",
+            "FAIL_CLOSED_REVIEW",
+            "PRIORITY_NOT_DECREASED",
+            "REVIEW_NOT_REMOVED",
+            "TRANSFORMATION_SCOPE_EXACT",
+            "TRANSFORMED_INVARIANTS_PASS"
+          ],
+          "error": null,
+          "finding_codes": [],
+          "layer": "metamorphic",
+          "raw_outcome": "PASSED",
+          "source_id": "META-TRUST-QUARANTINE-001"
+        }
+      ],
+      "severity": "critical",
+      "title": "Quarantine No Fix",
+      "unsafe_decision_released": false
+    },
+    {
+      "chain_id": "CHAIN-END-OF-LIFE-CONTAINMENT-001",
+      "control_tags": [
+        "fail_closed",
+        "multi_control",
+        "order_sensitive"
+      ],
+      "defended": true,
+      "description": "Compound chain 27 combines multiple real assurance controls and must remain fail-closed.",
+      "detection_oracles": [
+        "ACTION_NOT_DECREASED",
+        "BASELINE_INVARIANTS_PASS",
+        "CASE_ORACLE",
+        "CLOSURE_PROHIBITION_NOT_REMOVED",
+        "CONTAINMENT_NOT_REMOVED",
+        "DEADLINE_NOT_LENGTHENED",
+        "EXPECTED_RULES_TRIGGERED",
+        "METAMORPHIC_PROPERTY",
+        "PRIORITY_NOT_DECREASED",
+        "RELEASE_GATE",
+        "REVIEW_NOT_REMOVED",
+        "STATIC_SECURITY_CONTRACT",
+        "TRANSFORMATION_SCOPE_EXACT",
+        "TRANSFORMED_INVARIANTS_PASS",
+        "UNDER_TRIAGE_DETECTION",
+        "VERSION_PARSER"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "family": "end_of_life_containment",
+      "first_blocking_control": "metamorphic:META-END-OF-LIFE-001",
+      "forward_steps": [
+        {
+          "defended": true,
+          "details": {
+            "baseline_case_id": "AEG-ASR-001-HC",
+            "changed_paths": [
+              "intelligence_overrides.remediation.status"
+            ],
+            "transformed_case_id": "AEG-ASR-001-HC::META-END-OF-LIFE-001"
+          },
+          "detection_oracles": [
+            "METAMORPHIC_PROPERTY",
+            "ACTION_NOT_DECREASED",
+            "BASELINE_INVARIANTS_PASS",
+            "CLOSURE_PROHIBITION_NOT_REMOVED",
+            "CONTAINMENT_NOT_REMOVED",
+            "DEADLINE_NOT_LENGTHENED",
+            "EXPECTED_RULES_TRIGGERED",
+            "PRIORITY_NOT_DECREASED",
+            "REVIEW_NOT_REMOVED",
+            "TRANSFORMATION_SCOPE_EXACT",
+            "TRANSFORMED_INVARIANTS_PASS"
+          ],
+          "error": null,
+          "finding_codes": [],
+          "layer": "metamorphic",
+          "raw_outcome": "PASSED",
+          "source_id": "META-END-OF-LIFE-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "executable": true,
+            "failed_case_count": 4
+          },
+          "detection_oracles": [
+            "CASE_ORACLE",
+            "RELEASE_GATE",
+            "STATIC_SECURITY_CONTRACT",
+            "UNDER_TRIAGE_DETECTION"
+          ],
+          "error": null,
+          "finding_codes": [
+            "CRITICAL_CONTAINMENT_REQUIRED_REMOVED"
+          ],
+          "layer": "policy_mutation",
+          "raw_outcome": "KILLED_BY_ASSURANCE",
+          "source_id": "MUT-ACTIVE-CONTAINMENT-REMOVAL-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "code": "VERSION_EXPRESSION_NOT_ALLOWED",
+            "status": "invalid",
+            "value": null
+          },
+          "detection_oracles": [
+            "VERSION_PARSER"
+          ],
+          "error": null,
+          "finding_codes": [
+            "VERSION_EXPRESSION_NOT_ALLOWED"
+          ],
+          "layer": "hostile_input",
+          "raw_outcome": "REJECTED",
+          "source_id": "INPUT-VERSION-COMPARATOR-001"
+        }
+      ],
+      "layers_activated": [
+        "hostile_input",
+        "metamorphic",
+        "policy_mutation"
+      ],
+      "multi_control_detected": true,
+      "order_consistent": true,
+      "outcome": "REJECTED_BY_ASSURANCE",
+      "reverse_steps": [
+        {
+          "defended": true,
+          "details": {
+            "code": "VERSION_EXPRESSION_NOT_ALLOWED",
+            "status": "invalid",
+            "value": null
+          },
+          "detection_oracles": [
+            "VERSION_PARSER"
+          ],
+          "error": null,
+          "finding_codes": [
+            "VERSION_EXPRESSION_NOT_ALLOWED"
+          ],
+          "layer": "hostile_input",
+          "raw_outcome": "REJECTED",
+          "source_id": "INPUT-VERSION-COMPARATOR-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "executable": true,
+            "failed_case_count": 4
+          },
+          "detection_oracles": [
+            "CASE_ORACLE",
+            "RELEASE_GATE",
+            "STATIC_SECURITY_CONTRACT",
+            "UNDER_TRIAGE_DETECTION"
+          ],
+          "error": null,
+          "finding_codes": [
+            "CRITICAL_CONTAINMENT_REQUIRED_REMOVED"
+          ],
+          "layer": "policy_mutation",
+          "raw_outcome": "KILLED_BY_ASSURANCE",
+          "source_id": "MUT-ACTIVE-CONTAINMENT-REMOVAL-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "baseline_case_id": "AEG-ASR-001-HC",
+            "changed_paths": [
+              "intelligence_overrides.remediation.status"
+            ],
+            "transformed_case_id": "AEG-ASR-001-HC::META-END-OF-LIFE-001"
+          },
+          "detection_oracles": [
+            "METAMORPHIC_PROPERTY",
+            "ACTION_NOT_DECREASED",
+            "BASELINE_INVARIANTS_PASS",
+            "CLOSURE_PROHIBITION_NOT_REMOVED",
+            "CONTAINMENT_NOT_REMOVED",
+            "DEADLINE_NOT_LENGTHENED",
+            "EXPECTED_RULES_TRIGGERED",
+            "PRIORITY_NOT_DECREASED",
+            "REVIEW_NOT_REMOVED",
+            "TRANSFORMATION_SCOPE_EXACT",
+            "TRANSFORMED_INVARIANTS_PASS"
+          ],
+          "error": null,
+          "finding_codes": [],
+          "layer": "metamorphic",
+          "raw_outcome": "PASSED",
+          "source_id": "META-END-OF-LIFE-001"
+        }
+      ],
+      "severity": "critical",
+      "title": "End Of Life Containment",
+      "unsafe_decision_released": false
+    },
+    {
+      "chain_id": "CHAIN-KEV-OVERRIDE-EXPLOITATION-001",
+      "control_tags": [
+        "fail_closed",
+        "multi_control",
+        "cross_layer_integrity",
+        "order_sensitive"
+      ],
+      "defended": true,
+      "description": "Compound chain 28 combines multiple real assurance controls and must remain fail-closed.",
+      "detection_oracles": [
+        "ACTION_NOT_DECREASED",
+        "BASELINE_INVARIANTS_PASS",
+        "CLOSURE_PROHIBITION_NOT_REMOVED",
+        "CONTAINMENT_NOT_REMOVED",
+        "DEADLINE_NOT_LENGTHENED",
+        "EXPECTED_RULES_TRIGGERED",
+        "METAMORPHIC_PROPERTY",
+        "PRIORITY_NOT_DECREASED",
+        "REFERENCE_SET_INTEGRITY",
+        "REVIEW_NOT_REMOVED",
+        "STATIC_SECURITY_CONTRACT",
+        "TRANSFORMATION_SCOPE_EXACT",
+        "TRANSFORMED_INVARIANTS_PASS"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "family": "kev_override_exploitation",
+      "first_blocking_control": "policy_mutation:MUT-KEV-OVERRIDABLE-001",
+      "forward_steps": [
+        {
+          "defended": true,
+          "details": {
+            "executable": true,
+            "failed_case_count": 0
+          },
+          "detection_oracles": [
+            "STATIC_SECURITY_CONTRACT"
+          ],
+          "error": null,
+          "finding_codes": [
+            "CRITICAL_RULE_MADE_OVERRIDABLE"
+          ],
+          "layer": "policy_mutation",
+          "raw_outcome": "KILLED_BY_ASSURANCE",
+          "source_id": "MUT-KEV-OVERRIDABLE-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "baseline_case_id": "AEG-ASR-062-HC",
+            "changed_paths": [
+              "intelligence_overrides.exploitation.confidence",
+              "intelligence_overrides.exploitation.evidence_ids",
+              "intelligence_overrides.exploitation.last_observed_at",
+              "intelligence_overrides.exploitation.status",
+              "operational_profile"
+            ],
+            "transformed_case_id": "AEG-ASR-003-HC"
+          },
+          "detection_oracles": [
+            "METAMORPHIC_PROPERTY",
+            "ACTION_NOT_DECREASED",
+            "BASELINE_INVARIANTS_PASS",
+            "CLOSURE_PROHIBITION_NOT_REMOVED",
+            "CONTAINMENT_NOT_REMOVED",
+            "DEADLINE_NOT_LENGTHENED",
+            "EXPECTED_RULES_TRIGGERED",
+            "PRIORITY_NOT_DECREASED",
+            "REVIEW_NOT_REMOVED",
+            "TRANSFORMATION_SCOPE_EXACT",
+            "TRANSFORMED_INVARIANTS_PASS"
+          ],
+          "error": null,
+          "finding_codes": [],
+          "layer": "metamorphic",
+          "raw_outcome": "PASSED",
+          "source_id": "META-EXPLOITATION-ACTIVE-001"
+        },
+        {
+          "defended": true,
+          "details": {},
+          "detection_oracles": [
+            "REFERENCE_SET_INTEGRITY"
+          ],
+          "error": null,
+          "finding_codes": [
+            "REQUIRED_INPUT_FLAG_CHANGED"
+          ],
+          "layer": "tamper",
+          "raw_outcome": "REJECTED",
+          "source_id": "TAMPER-REQUIRED-REFERENCE-FLAG-001"
+        }
+      ],
+      "layers_activated": [
+        "metamorphic",
+        "policy_mutation",
+        "tamper"
+      ],
+      "multi_control_detected": true,
+      "order_consistent": true,
+      "outcome": "REJECTED_BY_ASSURANCE",
+      "reverse_steps": [
+        {
+          "defended": true,
+          "details": {},
+          "detection_oracles": [
+            "REFERENCE_SET_INTEGRITY"
+          ],
+          "error": null,
+          "finding_codes": [
+            "REQUIRED_INPUT_FLAG_CHANGED"
+          ],
+          "layer": "tamper",
+          "raw_outcome": "REJECTED",
+          "source_id": "TAMPER-REQUIRED-REFERENCE-FLAG-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "baseline_case_id": "AEG-ASR-062-HC",
+            "changed_paths": [
+              "intelligence_overrides.exploitation.confidence",
+              "intelligence_overrides.exploitation.evidence_ids",
+              "intelligence_overrides.exploitation.last_observed_at",
+              "intelligence_overrides.exploitation.status",
+              "operational_profile"
+            ],
+            "transformed_case_id": "AEG-ASR-003-HC"
+          },
+          "detection_oracles": [
+            "METAMORPHIC_PROPERTY",
+            "ACTION_NOT_DECREASED",
+            "BASELINE_INVARIANTS_PASS",
+            "CLOSURE_PROHIBITION_NOT_REMOVED",
+            "CONTAINMENT_NOT_REMOVED",
+            "DEADLINE_NOT_LENGTHENED",
+            "EXPECTED_RULES_TRIGGERED",
+            "PRIORITY_NOT_DECREASED",
+            "REVIEW_NOT_REMOVED",
+            "TRANSFORMATION_SCOPE_EXACT",
+            "TRANSFORMED_INVARIANTS_PASS"
+          ],
+          "error": null,
+          "finding_codes": [],
+          "layer": "metamorphic",
+          "raw_outcome": "PASSED",
+          "source_id": "META-EXPLOITATION-ACTIVE-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "executable": true,
+            "failed_case_count": 0
+          },
+          "detection_oracles": [
+            "STATIC_SECURITY_CONTRACT"
+          ],
+          "error": null,
+          "finding_codes": [
+            "CRITICAL_RULE_MADE_OVERRIDABLE"
+          ],
+          "layer": "policy_mutation",
+          "raw_outcome": "KILLED_BY_ASSURANCE",
+          "source_id": "MUT-KEV-OVERRIDABLE-001"
+        }
+      ],
+      "severity": "critical",
+      "title": "Kev Override Exploitation",
+      "unsafe_decision_released": false
+    },
+    {
+      "chain_id": "CHAIN-ENUM-UNRANKED-POLICY-001",
+      "control_tags": [
+        "fail_closed",
+        "multi_control",
+        "order_sensitive"
+      ],
+      "defended": true,
+      "description": "Compound chain 29 combines multiple real assurance controls and must remain fail-closed.",
+      "detection_oracles": [
+        "POLICY_LOADER",
+        "STRICT_PARSER"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "family": "enum_unranked_policy",
+      "first_blocking_control": "hostile_input:INPUT-ENUM-UNKNOWN-001",
+      "forward_steps": [
+        {
+          "defended": true,
+          "details": {
+            "code": "ENUM_VALUE_NOT_ALLOWED",
+            "normalized_text": "ultra",
+            "status": "invalid",
+            "value": null
+          },
+          "detection_oracles": [
+            "STRICT_PARSER"
+          ],
+          "error": null,
+          "finding_codes": [
+            "ENUM_VALUE_NOT_ALLOWED"
+          ],
+          "layer": "hostile_input",
+          "raw_outcome": "REJECTED",
+          "source_id": "INPUT-ENUM-UNKNOWN-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "executable": false,
+            "failed_case_count": 0
+          },
+          "detection_oracles": [
+            "POLICY_LOADER"
+          ],
+          "error": "PolicyConfigurationError: RULE-KEV-AFFECTED-001 contains unranked action 'EXECUTE'.",
+          "finding_codes": [
+            "CRITICAL_ACTION_FLOOR_WEAKENED"
+          ],
+          "layer": "policy_mutation",
+          "raw_outcome": "BLOCKED_AT_LOAD",
+          "source_id": "MUT-UNRANKED-ACTION-TOKEN-001"
+        }
+      ],
+      "layers_activated": [
+        "hostile_input",
+        "policy_mutation"
+      ],
+      "multi_control_detected": true,
+      "order_consistent": true,
+      "outcome": "BLOCKED_BEFORE_DECISION",
+      "reverse_steps": [
+        {
+          "defended": true,
+          "details": {
+            "executable": false,
+            "failed_case_count": 0
+          },
+          "detection_oracles": [
+            "POLICY_LOADER"
+          ],
+          "error": "PolicyConfigurationError: RULE-KEV-AFFECTED-001 contains unranked action 'EXECUTE'.",
+          "finding_codes": [
+            "CRITICAL_ACTION_FLOOR_WEAKENED"
+          ],
+          "layer": "policy_mutation",
+          "raw_outcome": "BLOCKED_AT_LOAD",
+          "source_id": "MUT-UNRANKED-ACTION-TOKEN-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "code": "ENUM_VALUE_NOT_ALLOWED",
+            "normalized_text": "ultra",
+            "status": "invalid",
+            "value": null
+          },
+          "detection_oracles": [
+            "STRICT_PARSER"
+          ],
+          "error": null,
+          "finding_codes": [
+            "ENUM_VALUE_NOT_ALLOWED"
+          ],
+          "layer": "hostile_input",
+          "raw_outcome": "REJECTED",
+          "source_id": "INPUT-ENUM-UNKNOWN-001"
+        }
+      ],
+      "severity": "critical",
+      "title": "Enum Unranked Policy",
+      "unsafe_decision_released": false
+    },
+    {
+      "chain_id": "CHAIN-SECTOR-UNICODE-IDENTITY-001",
+      "control_tags": [
+        "fail_closed",
+        "multi_control",
+        "cross_layer_integrity",
+        "order_sensitive"
+      ],
+      "defended": true,
+      "description": "Compound chain 30 combines multiple real assurance controls and must remain fail-closed.",
+      "detection_oracles": [
+        "CASE_ORACLE",
+        "DUPLICATE_ID",
+        "POLICY_INVARIANT",
+        "RELEASE_GATE",
+        "RULE_COVERAGE",
+        "STATIC_SECURITY_CONTRACT",
+        "STRICT_PARSER"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "family": "sector_unicode_identity",
+      "first_blocking_control": "policy_mutation:MUT-SECTOR-LABEL-INJECTION-001",
+      "forward_steps": [
+        {
+          "defended": true,
+          "details": {
+            "executable": true,
+            "failed_case_count": 130
+          },
+          "detection_oracles": [
+            "CASE_ORACLE",
+            "POLICY_INVARIANT",
+            "RELEASE_GATE",
+            "RULE_COVERAGE",
+            "STATIC_SECURITY_CONTRACT"
+          ],
+          "error": null,
+          "finding_codes": [
+            "FORBIDDEN_LABEL_GUARD_REMOVED",
+            "PROHIBITED_CONTEXT_FIELD_ALLOWED",
+            "PROHIBITED_RULE_INPUT"
+          ],
+          "layer": "policy_mutation",
+          "raw_outcome": "KILLED_BY_ASSURANCE",
+          "source_id": "MUT-SECTOR-LABEL-INJECTION-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "code": "UNICODE_FORMAT_CONTROL_NOT_ALLOWED",
+            "normalized_text": "CVE-2021-44​228",
+            "status": "invalid",
+            "value": null
+          },
+          "detection_oracles": [
+            "STRICT_PARSER"
+          ],
+          "error": null,
+          "finding_codes": [
+            "UNICODE_FORMAT_CONTROL_NOT_ALLOWED"
+          ],
+          "layer": "hostile_input",
+          "raw_outcome": "REJECTED",
+          "source_id": "INPUT-CVE-ZERO-WIDTH-001"
+        },
+        {
+          "defended": true,
+          "details": {},
+          "detection_oracles": [
+            "DUPLICATE_ID"
+          ],
+          "error": null,
+          "finding_codes": [
+            "DUPLICATE_DECISION_ID"
+          ],
+          "layer": "tamper",
+          "raw_outcome": "REJECTED",
+          "source_id": "TAMPER-DUPLICATE-DECISION-ID-001"
+        }
+      ],
+      "layers_activated": [
+        "hostile_input",
+        "policy_mutation",
+        "tamper"
+      ],
+      "multi_control_detected": true,
+      "order_consistent": true,
+      "outcome": "REJECTED_BY_ASSURANCE",
+      "reverse_steps": [
+        {
+          "defended": true,
+          "details": {},
+          "detection_oracles": [
+            "DUPLICATE_ID"
+          ],
+          "error": null,
+          "finding_codes": [
+            "DUPLICATE_DECISION_ID"
+          ],
+          "layer": "tamper",
+          "raw_outcome": "REJECTED",
+          "source_id": "TAMPER-DUPLICATE-DECISION-ID-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "code": "UNICODE_FORMAT_CONTROL_NOT_ALLOWED",
+            "normalized_text": "CVE-2021-44​228",
+            "status": "invalid",
+            "value": null
+          },
+          "detection_oracles": [
+            "STRICT_PARSER"
+          ],
+          "error": null,
+          "finding_codes": [
+            "UNICODE_FORMAT_CONTROL_NOT_ALLOWED"
+          ],
+          "layer": "hostile_input",
+          "raw_outcome": "REJECTED",
+          "source_id": "INPUT-CVE-ZERO-WIDTH-001"
+        },
+        {
+          "defended": true,
+          "details": {
+            "executable": true,
+            "failed_case_count": 130
+          },
+          "detection_oracles": [
+            "CASE_ORACLE",
+            "POLICY_INVARIANT",
+            "RELEASE_GATE",
+            "RULE_COVERAGE",
+            "STATIC_SECURITY_CONTRACT"
+          ],
+          "error": null,
+          "finding_codes": [
+            "FORBIDDEN_LABEL_GUARD_REMOVED",
+            "PROHIBITED_CONTEXT_FIELD_ALLOWED",
+            "PROHIBITED_RULE_INPUT"
+          ],
+          "layer": "policy_mutation",
+          "raw_outcome": "KILLED_BY_ASSURANCE",
+          "source_id": "MUT-SECTOR-LABEL-INJECTION-001"
+        }
+      ],
+      "severity": "critical",
+      "title": "Sector Unicode Identity",
+      "unsafe_decision_released": false
+    }
+  ],
+  "schema_version": "1.0.0",
+  "summary": {
+    "blocked_before_decision_count": 4,
+    "chain_count": 30,
+    "critical_chain_count": 30,
+    "critical_compound_chain_defence_rate": 1.0,
+    "cross_layer_integrity_defence_rate": 1.0,
+    "defended_critical_count": 30,
+    "fail_closed_chain_handling_rate": 1.0,
+    "harness_error_count": 0,
+    "multi_control_detection_rate": 1.0,
+    "order_sensitive_chain_consistency_rate": 1.0,
+    "overall_passed": true,
+    "quarantined_count": 1,
+    "rejected_by_assurance_count": 25,
+    "trusted_input_integrity_passed": true,
+    "undetected_count": 0,
+    "unsafe_decision_release_count": 0
+  },
+  "undetected_chain_ids": [],
+  "unsafe_release_chain_ids": []
+}

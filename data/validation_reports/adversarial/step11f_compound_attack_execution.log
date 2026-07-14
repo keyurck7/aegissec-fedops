@@ -1,0 +1,25 @@
+AegisSec Step 11F Compound Attack-Chain Assurance
+Chains: 30
+Defended: 30
+Blocked before decision: 4
+Rejected by assurance: 25
+Quarantined: 1
+Undetected: 0
+Harness errors: 0
+Unsafe decision releases: 0
+Critical compound-chain defence rate: 1.0000
+Fail-closed chain handling rate: 1.0000
+Multi-control detection rate: 1.0000
+Order-sensitive chain consistency: 1.0000
+Cross-layer integrity defence rate: 1.0000
+Trusted inputs unchanged: True
+Stage gate: PASS
+Production readiness: BLOCKED
+Report: /home/jovyan/vault/aegissec-fedops/data/validation_reports/compound_attacks/step11f_compound_attack_report.json
+Results CSV: /home/jovyan/vault/aegissec-fedops/data/validation_reports/compound_attacks/step11f_chain_results.csv
+Undetected chains: /home/jovyan/vault/aegissec-fedops/data/validation_reports/compound_attacks/step11f_undetected_chains.json
+Integrity record: /home/jovyan/vault/aegissec-fedops/data/validation_reports/compound_attacks/step11f_trusted_baseline_integrity.sha256
+
+Remaining production blockers:
+ - Real operational validation has not yet been completed.
+ - Independent security review has not yet been completed.

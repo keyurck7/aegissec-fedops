@@ -1,0 +1,586 @@
+policy:
+  catalog_id: AEGIS-COMPOUND-ATTACK-CHAIN-CATALOG
+  version: 1.0.0
+  harness_version: 1.0.0
+  evaluated_at: '2026-07-14T00:00:00+00:00'
+trusted_inputs:
+  decision_policy:
+    relative_path: policies/decision/federal_base_policy_v1.yaml
+    expected_sha256: fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f
+  assurance_corpus:
+    relative_path: data/assurance/step11a_policy_rule_coverage_corpus.jsonl
+    expected_sha256: d51747056c4f920d5e0b6bfb51613b4e1ee1910de82770aa179dd3fe77f68ded
+  assurance_manifest:
+    relative_path: data/assurance/step11a_policy_rule_coverage_manifest.json
+    expected_sha256: d1fdd9308b973e5248e464daf528a376bca6bc6c27b9d45f267b88f842797465
+  mutation_catalog:
+    relative_path: policies/assurance/policy_mutation_catalog_v1.yaml
+    expected_sha256: e8e050967e9aa6bc4be096745bae5c384d88b861116fb7df37868132741b17e9
+  tamper_catalog:
+    relative_path: policies/assurance/tamper_scenario_catalog_v1.yaml
+    expected_sha256: 572acb31d30d4ff34b887a86c73b2f07714eb015af833d2b715da9ab239e6a24
+  hostile_catalog:
+    relative_path: policies/assurance/hostile_input_catalog_v1.yaml
+    expected_sha256: c3ebeeae727c8613b76605edaf12912d1b9b5575f197a0dff03dd9e34b278ecb
+  metamorphic_catalog:
+    relative_path: policies/assurance/metamorphic_relation_catalog_v1.yaml
+    expected_sha256: d5f5be9616f1bbe97775d94e10b9699c31a0a4db6f449dac7687b2a3f38cc175
+  step11b_report:
+    relative_path: data/validation_reports/mutation/step11b_policy_mutation_report.json
+    expected_sha256: 73365a05f63fe4ee0cf51fed471c8a3846679f4ae737cc033be670220de5ceb1
+  step11c_report:
+    relative_path: data/validation_reports/tampering/step11c_tamper_assurance_report.json
+    expected_sha256: 74f0849ee40aa73f09b9abf23929bbaf4a355d51f00c9b01958b01f943867a23
+  step11d_report:
+    relative_path: data/validation_reports/hostile_inputs/step11d_hostile_input_report.json
+    expected_sha256: 8c21529e07fa9b9b196a002d64fa302e7f9ec10da3e1fec9b7070bdd6d6b6f69
+  step11e_report:
+    relative_path: data/validation_reports/metamorphic/step11e_metamorphic_assurance_report.json
+    expected_sha256: 18c1b8986c318a815d5d954df2686846b5d97ac30727fb94c24ac72e635e652e
+  policy_mutation_module:
+    relative_path: src/assurance/policy_mutation.py
+    expected_sha256: e08f8a948104d462a12d9b2e114c0fc4219227bb68c6966e94a12974416f39ca
+  tamper_module:
+    relative_path: src/assurance/tamper_assurance.py
+    expected_sha256: 2fd8a7e77075b90fb1ffe60aac797e26c382a399caf283082475d620f00d2370
+  hostile_module:
+    relative_path: src/assurance/hostile_input_assurance.py
+    expected_sha256: a216dcb72d589616554cb69e948be7b534d704d8314f63c84d1617ba05db091b
+  metamorphic_module:
+    relative_path: src/assurance/metamorphic_assurance.py
+    expected_sha256: 8b27961efe2db50e52d1e57b86bc20f771802e5e5e254e20f8d90a52ed0f993b
+quality_gates:
+  critical_compound_chain_defence_rate_minimum: 1.0
+  undetected_critical_chains_maximum: 0
+  harness_errors_maximum: 0
+  unsafe_decision_release_count_maximum: 0
+  fail_closed_chain_handling_rate_minimum: 1.0
+  multi_control_detection_rate_minimum: 1.0
+  order_sensitive_chain_consistency_rate_minimum: 1.0
+  cross_layer_integrity_defence_rate_minimum: 1.0
+  trusted_input_integrity_required: true
+production_readiness:
+  blocking_reasons:
+  - Real operational validation has not yet been completed.
+  - Independent security review has not yet been completed.
+limitations:
+- Controlled deterministic attack chains only; not a substitute for live adversarial
+  testing.
+- Compound steps reuse real assurance handlers but do not emulate production network
+  timing, concurrency, or operator behavior.
+chains:
+- chain_id: CHAIN-TRUST-EXPLOITATION-SUPPRESSION-001
+  title: Trust Exploitation Suppression
+  family: trust_exploitation_suppression
+  severity: critical
+  description: Compound chain 1 combines multiple real assurance controls and must
+    remain fail-closed.
+  control_tags:
+  - fail_closed
+  - multi_control
+  - cross_layer_integrity
+  - order_sensitive
+  ordered_steps:
+  - layer: tamper
+    source_id: TAMPER-VALIDATION-STATUS-FORGERY-001
+  - layer: policy_mutation
+    source_id: MUT-REJECTED-EVIDENCE-CONTINUE-001
+  - layer: metamorphic
+    source_id: META-TRUST-REJECT-001
+- chain_id: CHAIN-KEV-EPSS-COERCION-001
+  title: Kev Epss Coercion
+  family: kev_epss_coercion
+  severity: critical
+  description: Compound chain 2 combines multiple real assurance controls and must
+    remain fail-closed.
+  control_tags:
+  - fail_closed
+  - multi_control
+  - order_sensitive
+  ordered_steps:
+  - layer: policy_mutation
+    source_id: MUT-KEV-ACTION-DOWNGRADE-001
+  - layer: hostile_input
+    source_id: INPUT-MISSING-PROBABILITY-001
+  - layer: metamorphic
+    source_id: META-KEV-ADD-001
+- chain_id: CHAIN-AFFECTEDNESS-NO-FIX-001
+  title: Affectedness Remediation Suppression
+  family: affectedness_remediation_suppression
+  severity: critical
+  description: Compound chain 3 combines multiple real assurance controls and must
+    remain fail-closed.
+  control_tags:
+  - fail_closed
+  - multi_control
+  - order_sensitive
+  ordered_steps:
+  - layer: policy_mutation
+    source_id: MUT-UNKNOWN-AFFECTEDNESS-TRACK-001
+  - layer: policy_mutation
+    source_id: MUT-NO-FIX-CONTAINMENT-REMOVAL-001
+  - layer: metamorphic
+    source_id: META-NO-FIX-001
+- chain_id: CHAIN-EVIDENCE-TIMESTAMP-FORGERY-001
+  title: Evidence Timestamp Forgery
+  family: evidence_timestamp_forgery
+  severity: critical
+  description: Compound chain 4 combines multiple real assurance controls and must
+    remain fail-closed.
+  control_tags:
+  - fail_closed
+  - multi_control
+  - cross_layer_integrity
+  - order_sensitive
+  ordered_steps:
+  - layer: tamper
+    source_id: TAMPER-EVIDENCE-SUBSTITUTION-001
+  - layer: tamper
+    source_id: TAMPER-FUTURE-COLLECTION-TIMESTAMP-001
+  - layer: hostile_input
+    source_id: INPUT-DATETIME-FUTURE-001
+- chain_id: CHAIN-ASSET-IMPACT-SUPPRESSION-001
+  title: Asset Impact Suppression
+  family: asset_impact_suppression
+  severity: critical
+  description: Compound chain 5 combines multiple real assurance controls and must
+    remain fail-closed.
+  control_tags:
+  - fail_closed
+  - multi_control
+  - order_sensitive
+  ordered_steps:
+  - layer: policy_mutation
+    source_id: MUT-CATASTROPHIC-PRIORITY-DOWNGRADE-001
+  - layer: metamorphic
+    source_id: META-MISSION-CRITICALITY-CUMULATIVE-001
+- chain_id: CHAIN-EXPOSURE-REACHABILITY-SUPPRESSION-001
+  title: Exposure Reachability Suppression
+  family: exposure_reachability_suppression
+  severity: critical
+  description: Compound chain 6 combines multiple real assurance controls and must
+    remain fail-closed.
+  control_tags:
+  - fail_closed
+  - multi_control
+  - order_sensitive
+  ordered_steps:
+  - layer: metamorphic
+    source_id: META-EXPOSURE-INTERNET-001
+  - layer: metamorphic
+    source_id: META-RUNTIME-REACHABLE-001
+  - layer: policy_mutation
+    source_id: MUT-ACTIVE-DEADLINE-EXTENSION-001
+- chain_id: CHAIN-REVIEW-CLOSURE-WEAKENING-001
+  title: Review Closure Weakening
+  family: review_closure_weakening
+  severity: critical
+  description: Compound chain 7 combines multiple real assurance controls and must
+    remain fail-closed.
+  control_tags:
+  - fail_closed
+  - multi_control
+  - order_sensitive
+  ordered_steps:
+  - layer: policy_mutation
+    source_id: MUT-ACTIVE-REVIEW-REMOVAL-001
+  - layer: policy_mutation
+    source_id: MUT-ACTIVE-CLOSURE-WEAKENING-001
+  - layer: metamorphic
+    source_id: META-TRUST-QUARANTINE-001
+- chain_id: CHAIN-CONTAINMENT-DEADLINE-WEAKENING-001
+  title: Containment Deadline Weakening
+  family: containment_deadline_weakening
+  severity: critical
+  description: Compound chain 8 combines multiple real assurance controls and must
+    remain fail-closed.
+  control_tags:
+  - fail_closed
+  - multi_control
+  - order_sensitive
+  ordered_steps:
+  - layer: policy_mutation
+    source_id: MUT-ACTIVE-CONTAINMENT-REMOVAL-001
+  - layer: policy_mutation
+    source_id: MUT-ACTIVE-DEADLINE-EXTENSION-001
+  - layer: metamorphic
+    source_id: META-EXPLOITATION-ACTIVE-001
+- chain_id: CHAIN-SECTOR-DECISION-INJECTION-001
+  title: Sector Decision Injection
+  family: sector_decision_injection
+  severity: critical
+  description: Compound chain 9 combines multiple real assurance controls and must
+    remain fail-closed.
+  control_tags:
+  - fail_closed
+  - multi_control
+  - order_sensitive
+  ordered_steps:
+  - layer: policy_mutation
+    source_id: MUT-SECTOR-LABEL-INJECTION-001
+  - layer: metamorphic
+    source_id: META-SECTOR-ACTIVE-001
+- chain_id: CHAIN-MANIFEST-EVIDENCE-SUBSTITUTION-001
+  title: Manifest Evidence Substitution
+  family: manifest_evidence_substitution
+  severity: critical
+  description: Compound chain 10 combines multiple real assurance controls and must
+    remain fail-closed.
+  control_tags:
+  - fail_closed
+  - multi_control
+  - cross_layer_integrity
+  - order_sensitive
+  ordered_steps:
+  - layer: tamper
+    source_id: TAMPER-MANIFEST-CORPUS-HASH-001
+  - layer: tamper
+    source_id: TAMPER-EVIDENCE-SUBSTITUTION-001
+  - layer: policy_mutation
+    source_id: MUT-AFFECTED-BASELINE-REMOVAL-001
+- chain_id: CHAIN-IDENTITY-STALE-REPLAY-001
+  title: Identity Stale Replay
+  family: identity_stale_replay
+  severity: critical
+  description: Compound chain 11 combines multiple real assurance controls and must
+    remain fail-closed.
+  control_tags:
+  - fail_closed
+  - multi_control
+  - cross_layer_integrity
+  - order_sensitive
+  ordered_steps:
+  - layer: tamper
+    source_id: TAMPER-DUPLICATE-INPUT-REFERENCE-001
+  - layer: tamper
+    source_id: TAMPER-STALE-AS-CURRENT-001
+  - layer: hostile_input
+    source_id: INPUT-ALIASES-NORMALIZED-DUPLICATE-001
+- chain_id: CHAIN-UNICODE-PATH-ESCAPE-001
+  title: Unicode Path Escape
+  family: unicode_path_escape
+  severity: critical
+  description: Compound chain 12 combines multiple real assurance controls and must
+    remain fail-closed.
+  control_tags:
+  - fail_closed
+  - multi_control
+  - cross_layer_integrity
+  - order_sensitive
+  ordered_steps:
+  - layer: hostile_input
+    source_id: INPUT-CVE-CYRILLIC-001
+  - layer: tamper
+    source_id: TAMPER-PATH-TRAVERSAL-001
+- chain_id: CHAIN-OVERSIZED-VERSION-AMBIGUITY-001
+  title: Oversized Parser Ambiguity
+  family: oversized_parser_ambiguity
+  severity: critical
+  description: Compound chain 13 combines multiple real assurance controls and must
+    remain fail-closed.
+  control_tags:
+  - fail_closed
+  - multi_control
+  - order_sensitive
+  ordered_steps:
+  - layer: hostile_input
+    source_id: INPUT-COMPONENT-OVERSIZED-001
+  - layer: hostile_input
+    source_id: INPUT-VERSION-WILDCARD-001
+  - layer: metamorphic
+    source_id: META-AFFECTEDNESS-CONFIDENCE-DECREASE-001
+- chain_id: CHAIN-TRUST-ATTESTATION-FORGERY-001
+  title: Trust Attestation Forgery
+  family: trust_attestation_forgery
+  severity: critical
+  description: Compound chain 14 combines multiple real assurance controls and must
+    remain fail-closed.
+  control_tags:
+  - fail_closed
+  - multi_control
+  - cross_layer_integrity
+  - order_sensitive
+  ordered_steps:
+  - layer: tamper
+    source_id: TAMPER-VALIDATION-STATUS-FORGERY-001
+  - layer: policy_mutation
+    source_id: MUT-REJECTED-EVIDENCE-CONTINUE-001
+- chain_id: CHAIN-POLICY-EVIDENCE-REMOVAL-001
+  title: Policy Evidence Removal
+  family: policy_evidence_removal
+  severity: critical
+  description: Compound chain 15 combines multiple real assurance controls and must
+    remain fail-closed.
+  control_tags:
+  - fail_closed
+  - multi_control
+  - cross_layer_integrity
+  - order_sensitive
+  ordered_steps:
+  - layer: policy_mutation
+    source_id: MUT-AFFECTED-BASELINE-REMOVAL-001
+  - layer: metamorphic
+    source_id: META-EVIDENCE-REMOVE-ALL-001
+  - layer: tamper
+    source_id: TAMPER-REFERENCE-DELETION-001
+- chain_id: CHAIN-SIGNATURE-REFERENCE-LOSS-001
+  title: Signature Reference Loss
+  family: signature_reference_loss
+  severity: critical
+  description: Compound chain 16 combines multiple real assurance controls and must
+    remain fail-closed.
+  control_tags:
+  - fail_closed
+  - multi_control
+  - cross_layer_integrity
+  - order_sensitive
+  ordered_steps:
+  - layer: tamper
+    source_id: TAMPER-SIGNATURE-INVALID-001
+  - layer: tamper
+    source_id: TAMPER-REFERENCE-DELETION-001
+  - layer: hostile_input
+    source_id: INPUT-ASSET-BIDI-001
+- chain_id: CHAIN-PROVENANCE-CYCLE-REPLACEMENT-001
+  title: Provenance Cycle Replacement
+  family: provenance_cycle_replacement
+  severity: critical
+  description: Compound chain 17 combines multiple real assurance controls and must
+    remain fail-closed.
+  control_tags:
+  - fail_closed
+  - multi_control
+  - cross_layer_integrity
+  - order_sensitive
+  ordered_steps:
+  - layer: tamper
+    source_id: TAMPER-CHAIN-LINK-REPLACEMENT-001
+  - layer: tamper
+    source_id: TAMPER-EVIDENCE-PARENT-CYCLE-001
+  - layer: hostile_input
+    source_id: INPUT-CANONICAL-OBJECT-001
+- chain_id: CHAIN-DECISION-HASH-REFERENCE-INJECTION-001
+  title: Decision Hash Reference Injection
+  family: decision_hash_reference_injection
+  severity: critical
+  description: Compound chain 18 combines multiple real assurance controls and must
+    remain fail-closed.
+  control_tags:
+  - fail_closed
+  - multi_control
+  - cross_layer_integrity
+  - order_sensitive
+  ordered_steps:
+  - layer: tamper
+    source_id: TAMPER-DECISION-CONTENT-MODIFICATION-001
+  - layer: tamper
+    source_id: TAMPER-REFERENCE-INJECTION-001
+  - layer: metamorphic
+    source_id: META-EVIDENCE-REMOVE-ONE-001
+- chain_id: CHAIN-PURL-ENCODED-TRAVERSAL-001
+  title: Purl Encoded Traversal
+  family: purl_encoded_traversal
+  severity: critical
+  description: Compound chain 19 combines multiple real assurance controls and must
+    remain fail-closed.
+  control_tags:
+  - fail_closed
+  - multi_control
+  - cross_layer_integrity
+  - order_sensitive
+  ordered_steps:
+  - layer: hostile_input
+    source_id: INPUT-PURL-TRAVERSAL-001
+  - layer: tamper
+    source_id: TAMPER-ENCODED-PATH-TRAVERSAL-001
+- chain_id: CHAIN-FORMULA-CONTROL-REFERENCE-001
+  title: Formula Control Reference
+  family: formula_control_reference
+  severity: critical
+  description: Compound chain 20 combines multiple real assurance controls and must
+    remain fail-closed.
+  control_tags:
+  - fail_closed
+  - multi_control
+  - cross_layer_integrity
+  - order_sensitive
+  ordered_steps:
+  - layer: hostile_input
+    source_id: INPUT-FORMULA-COMPONENT-001
+  - layer: hostile_input
+    source_id: INPUT-COMPONENT-NEWLINE-001
+  - layer: tamper
+    source_id: TAMPER-REFERENCE-REORDERING-001
+- chain_id: CHAIN-NAN-EPSS-ZERO-001
+  title: Nan Epss Zero
+  family: nan_epss_zero
+  severity: critical
+  description: Compound chain 21 combines multiple real assurance controls and must
+    remain fail-closed.
+  control_tags:
+  - fail_closed
+  - multi_control
+  - order_sensitive
+  ordered_steps:
+  - layer: hostile_input
+    source_id: INPUT-NUMERIC-NAN-FLOAT-001
+  - layer: policy_mutation
+    source_id: MUT-EPSS-MISSING-AS-ZERO-001
+  - layer: metamorphic
+    source_id: META-EPSS-MISSING-001
+- chain_id: CHAIN-RANK-IMPACT-DOWNGRADE-001
+  title: Rank Impact Downgrade
+  family: rank_impact_downgrade
+  severity: critical
+  description: Compound chain 22 combines multiple real assurance controls and must
+    remain fail-closed.
+  control_tags:
+  - fail_closed
+  - multi_control
+  - order_sensitive
+  ordered_steps:
+  - layer: policy_mutation
+    source_id: MUT-HOLD-RANK-DOWNGRADE-001
+  - layer: policy_mutation
+    source_id: MUT-CATASTROPHIC-ACTION-DOWNGRADE-001
+  - layer: metamorphic
+    source_id: META-IMPACT-SEVERE-CATASTROPHIC-001
+- chain_id: CHAIN-SYMLINK-FIXTURE-SUBSTITUTION-001
+  title: Symlink Fixture Substitution
+  family: symlink_fixture_substitution
+  severity: critical
+  description: Compound chain 23 combines multiple real assurance controls and must
+    remain fail-closed.
+  control_tags:
+  - fail_closed
+  - multi_control
+  - cross_layer_integrity
+  - order_sensitive
+  ordered_steps:
+  - layer: tamper
+    source_id: TAMPER-SYMLINK-ESCAPE-001
+  - layer: tamper
+    source_id: TAMPER-FIXTURE-SUBSTITUTION-001
+  - layer: hostile_input
+    source_id: INPUT-PURL-NON-ASCII-001
+- chain_id: CHAIN-CORPUS-MANIFEST-COLLISION-001
+  title: Corpus Manifest Collision
+  family: corpus_manifest_collision
+  severity: critical
+  description: Compound chain 24 combines multiple real assurance controls and must
+    remain fail-closed.
+  control_tags:
+  - fail_closed
+  - multi_control
+  - cross_layer_integrity
+  - order_sensitive
+  ordered_steps:
+  - layer: tamper
+    source_id: TAMPER-DUPLICATE-CORPUS-CASE-ID-001
+  - layer: tamper
+    source_id: TAMPER-MANIFEST-FIXTURE-HASH-001
+  - layer: metamorphic
+    source_id: META-SECTOR-BASELINE-001
+- chain_id: CHAIN-FRESHNESS-FUTURE-REPLAY-001
+  title: Freshness Future Replay
+  family: freshness_future_replay
+  severity: critical
+  description: Compound chain 25 combines multiple real assurance controls and must
+    remain fail-closed.
+  control_tags:
+  - fail_closed
+  - multi_control
+  - cross_layer_integrity
+  - order_sensitive
+  ordered_steps:
+  - layer: tamper
+    source_id: TAMPER-STALE-AS-CURRENT-001
+  - layer: tamper
+    source_id: TAMPER-FUTURE-COLLECTION-TIMESTAMP-001
+  - layer: hostile_input
+    source_id: INPUT-DATETIME-NAIVE-001
+- chain_id: CHAIN-QUARANTINE-NO-FIX-001
+  title: Quarantine No Fix
+  family: quarantine_no_fix
+  severity: critical
+  description: Compound chain 26 combines multiple real assurance controls and must
+    remain fail-closed.
+  control_tags:
+  - fail_closed
+  - multi_control
+  - order_sensitive
+  ordered_steps:
+  - layer: metamorphic
+    source_id: META-TRUST-QUARANTINE-001
+  - layer: metamorphic
+    source_id: META-NO-FIX-001
+  - layer: policy_mutation
+    source_id: MUT-NO-FIX-CONTAINMENT-REMOVAL-001
+- chain_id: CHAIN-END-OF-LIFE-CONTAINMENT-001
+  title: End Of Life Containment
+  family: end_of_life_containment
+  severity: critical
+  description: Compound chain 27 combines multiple real assurance controls and must
+    remain fail-closed.
+  control_tags:
+  - fail_closed
+  - multi_control
+  - order_sensitive
+  ordered_steps:
+  - layer: metamorphic
+    source_id: META-END-OF-LIFE-001
+  - layer: policy_mutation
+    source_id: MUT-ACTIVE-CONTAINMENT-REMOVAL-001
+  - layer: hostile_input
+    source_id: INPUT-VERSION-COMPARATOR-001
+- chain_id: CHAIN-KEV-OVERRIDE-EXPLOITATION-001
+  title: Kev Override Exploitation
+  family: kev_override_exploitation
+  severity: critical
+  description: Compound chain 28 combines multiple real assurance controls and must
+    remain fail-closed.
+  control_tags:
+  - fail_closed
+  - multi_control
+  - cross_layer_integrity
+  - order_sensitive
+  ordered_steps:
+  - layer: policy_mutation
+    source_id: MUT-KEV-OVERRIDABLE-001
+  - layer: metamorphic
+    source_id: META-EXPLOITATION-ACTIVE-001
+  - layer: tamper
+    source_id: TAMPER-REQUIRED-REFERENCE-FLAG-001
+- chain_id: CHAIN-ENUM-UNRANKED-POLICY-001
+  title: Enum Unranked Policy
+  family: enum_unranked_policy
+  severity: critical
+  description: Compound chain 29 combines multiple real assurance controls and must
+    remain fail-closed.
+  control_tags:
+  - fail_closed
+  - multi_control
+  - order_sensitive
+  ordered_steps:
+  - layer: hostile_input
+    source_id: INPUT-ENUM-UNKNOWN-001
+  - layer: policy_mutation
+    source_id: MUT-UNRANKED-ACTION-TOKEN-001
+- chain_id: CHAIN-SECTOR-UNICODE-IDENTITY-001
+  title: Sector Unicode Identity
+  family: sector_unicode_identity
+  severity: critical
+  description: Compound chain 30 combines multiple real assurance controls and must
+    remain fail-closed.
+  control_tags:
+  - fail_closed
+  - multi_control
+  - cross_layer_integrity
+  - order_sensitive
+  ordered_steps:
+  - layer: policy_mutation
+    source_id: MUT-SECTOR-LABEL-INJECTION-001
+  - layer: hostile_input
+    source_id: INPUT-CVE-ZERO-WIDTH-001
+  - layer: tamper
+    source_id: TAMPER-DUPLICATE-DECISION-ID-001
