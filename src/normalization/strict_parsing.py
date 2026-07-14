@@ -2,11 +2,13 @@ from __future__ import annotations
 
 import math
 import re
+import unicodedata
 from dataclasses import dataclass
 from datetime import date, datetime
 from decimal import Decimal, InvalidOperation
 from enum import Enum
-from typing import Any, Generic, Iterable, TypeVar
+from typing import Any, Generic, Iterable, Pattern, TypeVar
+from urllib.parse import unquote
 
 
 T = TypeVar("T")
@@ -56,6 +58,15 @@ FALSE_TOKENS = frozenset(
 
 
 CVE_PATTERN = re.compile(r"^CVE-[0-9]{4}-[0-9]{4,}$")
+PURL_PATTERN = re.compile(
+    r"^pkg:(?P<type>[a-z0-9][a-z0-9.+-]*)/"
+    r"(?P<path>[^@?#]+)"
+    r"(?:@(?P<version>[^?#]+))?"
+    r"(?:\?(?P<qualifiers>[^#]+))?"
+    r"(?:#(?P<subpath>.+))?$"
+)
+MAX_RAW_TOKEN_LENGTH = 10_000
+_FORMULA_PREFIXES = ("=", "+", "-", "@")
 
 
 @dataclass(frozen=True)
@@ -109,14 +120,66 @@ def _normalized_text(value: Any) -> str | None:
     return str(value).strip()
 
 
+def _text_security_issue(
+    value: Any,
+    maximum_raw_length: int = MAX_RAW_TOKEN_LENGTH,
+) -> tuple[str, str] | None:
+    """Return a fail-closed security finding for hostile text tokens."""
+    if not isinstance(value, str):
+        return None
+
+    if len(value) > maximum_raw_length:
+        return (
+            "RAW_TEXT_ABOVE_SECURITY_LIMIT",
+            f"Input exceeds the {maximum_raw_length}-character security limit.",
+        )
+
+    for character in value:
+        category = unicodedata.category(character)
+        if category == "Cs":
+            return (
+                "UNICODE_SURROGATE_NOT_ALLOWED",
+                "Unicode surrogate code points are not allowed.",
+            )
+        if category == "Cf":
+            return (
+                "UNICODE_FORMAT_CONTROL_NOT_ALLOWED",
+                "Unicode format, bidi, and zero-width controls are not allowed.",
+            )
+        if category == "Cc":
+            return (
+                "CONTROL_CHARACTER_NOT_ALLOWED",
+                "Control characters, including embedded line breaks and NUL bytes, are not allowed.",
+            )
+
+    return None
+
+
+def _guard_text_value(
+    value: Any,
+    field_name: str,
+    maximum_raw_length: int = MAX_RAW_TOKEN_LENGTH,
+) -> ParseOutcome[Any] | None:
+    issue = _text_security_issue(
+        value,
+        maximum_raw_length=maximum_raw_length,
+    )
+    if issue is None:
+        return None
+    code, message = issue
+    return _invalid_outcome(
+        field_name=field_name,
+        raw_value=value,
+        code=code,
+        message=f"{field_name}: {message}",
+    )
+
+
 def _is_missing(
     value: Any,
     missing_tokens: Iterable[str] = DEFAULT_MISSING_TOKENS,
 ) -> bool:
     if value is None:
-        return True
-
-    if isinstance(value, float) and math.isnan(value):
         return True
 
     if isinstance(value, str):
@@ -202,6 +265,10 @@ def parse_optional_boolean(
 
     if _is_missing(value):
         return _missing_outcome(field_name, value)
+
+    text_guard = _guard_text_value(value, field_name)
+    if text_guard is not None:
+        return text_guard
 
     if isinstance(value, bool):
         return _parsed_outcome(
@@ -316,6 +383,10 @@ def parse_optional_float(
     if _is_missing(value):
         return _missing_outcome(field_name, value)
 
+    text_guard = _guard_text_value(value, field_name)
+    if text_guard is not None:
+        return text_guard
+
     if isinstance(value, bool):
         return _invalid_outcome(
             field_name=field_name,
@@ -365,7 +436,23 @@ def parse_optional_float(
             ),
         )
 
-    parsed_value = float(decimal_value)
+    try:
+        parsed_value = float(decimal_value)
+    except (OverflowError, ValueError):
+        return _invalid_outcome(
+            field_name=field_name,
+            raw_value=value,
+            code="NUMERIC_CONVERSION_OVERFLOW",
+            message=f"{field_name} cannot be represented as a finite float.",
+        )
+
+    if not math.isfinite(parsed_value):
+        return _invalid_outcome(
+            field_name=field_name,
+            raw_value=value,
+            code="NUMERIC_CONVERSION_OVERFLOW",
+            message=f"{field_name} cannot be represented as a finite float.",
+        )
 
     if minimum is not None and parsed_value < minimum:
         return _invalid_outcome(
@@ -430,6 +517,10 @@ def parse_optional_integer(
     if _is_missing(value):
         return _missing_outcome(field_name, value)
 
+    text_guard = _guard_text_value(value, field_name)
+    if text_guard is not None:
+        return text_guard
+
     if isinstance(value, bool):
         return _invalid_outcome(
             field_name=field_name,
@@ -490,7 +581,15 @@ def parse_optional_integer(
             ),
         )
 
-    parsed_value = int(decimal_value)
+    try:
+        parsed_value = int(decimal_value)
+    except (OverflowError, ValueError):
+        return _invalid_outcome(
+            field_name=field_name,
+            raw_value=value,
+            code="INTEGER_CONVERSION_OVERFLOW",
+            message=f"{field_name} cannot be represented as an integer.",
+        )
 
     if minimum is not None and parsed_value < minimum:
         return _invalid_outcome(
@@ -558,6 +657,10 @@ def parse_optional_date(
 
     if _is_missing(value):
         return _missing_outcome(field_name, value)
+
+    text_guard = _guard_text_value(value, field_name)
+    if text_guard is not None:
+        return text_guard
 
     if isinstance(value, datetime):
         return _invalid_outcome(
@@ -633,6 +736,10 @@ def parse_optional_datetime(
     if _is_missing(value):
         return _missing_outcome(field_name, value)
 
+    text_guard = _guard_text_value(value, field_name)
+    if text_guard is not None:
+        return text_guard
+
     if isinstance(value, datetime):
         parsed_value = value
     elif isinstance(value, str):
@@ -685,6 +792,8 @@ def parse_optional_string(
     field_name: str,
     minimum_length: int = 1,
     maximum_length: int | None = None,
+    require_ascii: bool = False,
+    reject_formula_prefix: bool = False,
 ) -> ParseOutcome[str]:
     if _is_missing(value):
         return _missing_outcome(field_name, value)
@@ -700,7 +809,34 @@ def parse_optional_string(
             ),
         )
 
+    text_guard = _guard_text_value(
+        value,
+        field_name,
+        maximum_raw_length=(maximum_length or MAX_RAW_TOKEN_LENGTH),
+    )
+    if text_guard is not None:
+        return text_guard
+
     normalized = value.strip()
+
+    if require_ascii and not normalized.isascii():
+        return _invalid_outcome(
+            field_name=field_name,
+            raw_value=value,
+            code="NON_ASCII_SECURITY_IDENTIFIER",
+            message=f"{field_name} must use canonical ASCII characters.",
+        )
+
+    if reject_formula_prefix and normalized.startswith(_FORMULA_PREFIXES):
+        return _invalid_outcome(
+            field_name=field_name,
+            raw_value=value,
+            code="SPREADSHEET_FORMULA_PREFIX_NOT_ALLOWED",
+            message=(
+                f"{field_name} begins with a spreadsheet formula prefix and "
+                "cannot be exported safely without explicit escaping."
+            ),
+        )
 
     if len(normalized) < minimum_length:
         return _invalid_outcome(
@@ -740,12 +876,16 @@ def parse_required_string(
     field_name: str,
     minimum_length: int = 1,
     maximum_length: int | None = None,
+    require_ascii: bool = False,
+    reject_formula_prefix: bool = False,
 ) -> ParseOutcome[str]:
     result = parse_optional_string(
         value=value,
         field_name=field_name,
         minimum_length=minimum_length,
         maximum_length=maximum_length,
+        require_ascii=require_ascii,
+        reject_formula_prefix=reject_formula_prefix,
     )
 
     if result.status == ParseStatus.MISSING:
@@ -782,6 +922,10 @@ def parse_optional_enum(
                 f"{field_name} must be one of {allowed}."
             ),
         )
+
+    text_guard = _guard_text_value(value, field_name)
+    if text_guard is not None:
+        return text_guard
 
     normalized = value.strip().casefold()
     canonical_value = canonical_by_normalized.get(normalized)
@@ -837,4 +981,124 @@ def parse_cve_id(
         raw_value=value,
         value=canonical_value,
         code="CVE_ID_PARSED",
+    )
+
+
+
+def parse_ascii_identifier(
+    value: Any,
+    field_name: str,
+    pattern: str | Pattern[str],
+    minimum_length: int = 1,
+    maximum_length: int = 150,
+) -> ParseOutcome[str]:
+    """Parse a canonical ASCII security identifier against an allowlist."""
+    result = parse_required_string(
+        value=value,
+        field_name=field_name,
+        minimum_length=minimum_length,
+        maximum_length=maximum_length,
+        require_ascii=True,
+        reject_formula_prefix=True,
+    )
+    if not result.parsed:
+        return result
+
+    compiled = re.compile(pattern) if isinstance(pattern, str) else pattern
+    assert result.value is not None
+    if compiled.fullmatch(result.value) is None:
+        return _invalid_outcome(
+            field_name=field_name,
+            raw_value=value,
+            code="SECURITY_IDENTIFIER_PATTERN_MISMATCH",
+            message=f"{field_name} does not match its approved identifier grammar.",
+        )
+    return _parsed_outcome(
+        field_name=field_name,
+        raw_value=value,
+        value=result.value,
+        code="SECURITY_IDENTIFIER_PARSED",
+    )
+
+
+def parse_optional_purl(
+    value: Any,
+    field_name: str = "purl",
+) -> ParseOutcome[str]:
+    """Parse a bounded, traversal-resistant Package URL token."""
+    if _is_missing(value):
+        return _missing_outcome(field_name, value)
+    if not isinstance(value, str):
+        return _invalid_outcome(
+            field_name=field_name,
+            raw_value=value,
+            code="INVALID_PURL_TYPE",
+            message=f"{field_name} must be a Package URL string.",
+        )
+
+    text_guard = _guard_text_value(value, field_name, maximum_raw_length=2048)
+    if text_guard is not None:
+        return text_guard
+
+    normalized = value.strip()
+    if not normalized.isascii():
+        return _invalid_outcome(
+            field_name=field_name,
+            raw_value=value,
+            code="NON_ASCII_PURL_NOT_ALLOWED",
+            message=f"{field_name} must use ASCII or valid percent encoding.",
+        )
+    if any(character.isspace() for character in normalized):
+        return _invalid_outcome(
+            field_name=field_name,
+            raw_value=value,
+            code="PURL_WHITESPACE_NOT_ALLOWED",
+            message=f"{field_name} cannot contain whitespace.",
+        )
+    if "\\" in normalized:
+        return _invalid_outcome(
+            field_name=field_name,
+            raw_value=value,
+            code="PURL_BACKSLASH_NOT_ALLOWED",
+            message=f"{field_name} cannot contain backslashes.",
+        )
+    if re.search(r"%(?![0-9A-Fa-f]{2})", normalized):
+        return _invalid_outcome(
+            field_name=field_name,
+            raw_value=value,
+            code="INVALID_PURL_PERCENT_ENCODING",
+            message=f"{field_name} contains malformed percent encoding.",
+        )
+
+    match = PURL_PATTERN.fullmatch(normalized)
+    if match is None:
+        return _invalid_outcome(
+            field_name=field_name,
+            raw_value=value,
+            code="INVALID_PURL",
+            message=f"{field_name} does not match the Package URL grammar.",
+        )
+
+    decoded_path = unquote(match.group("path"))
+    path_segments = decoded_path.split("/")
+    if any(segment in {"", ".", ".."} for segment in path_segments):
+        return _invalid_outcome(
+            field_name=field_name,
+            raw_value=value,
+            code="PURL_PATH_TRAVERSAL_OR_EMPTY_SEGMENT",
+            message=f"{field_name} contains an unsafe or empty path segment.",
+        )
+    if "\\" in decoded_path:
+        return _invalid_outcome(
+            field_name=field_name,
+            raw_value=value,
+            code="PURL_DECODED_BACKSLASH_NOT_ALLOWED",
+            message=f"{field_name} decodes to an unsafe backslash path.",
+        )
+
+    return _parsed_outcome(
+        field_name=field_name,
+        raw_value=value,
+        value=normalized,
+        code="PURL_PARSED",
     )

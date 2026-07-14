@@ -1,0 +1,309 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aegissec.example/schemas/aegis-hostile-input-assurance-report-v1.0.0.json",
+  "title": "AegisSec Hostile Input Assurance Report v1.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "report_id",
+    "catalog",
+    "input_integrity_checks_before",
+    "input_integrity_checks_after",
+    "baseline_validation",
+    "summary",
+    "quality_gates",
+    "results",
+    "undetected_input_ids",
+    "harness_error_input_ids",
+    "release_decision",
+    "limitations",
+    "generated_at"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "report_id": {
+      "type": "string",
+      "pattern": "^AEG-HOSTILE-INPUT-[A-Z0-9._-]+$"
+    },
+    "catalog": {"$ref": "#/$defs/catalog"},
+    "input_integrity_checks_before": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {"$ref": "#/$defs/integrityCheck"}
+    },
+    "input_integrity_checks_after": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {"$ref": "#/$defs/integrityCheck"}
+    },
+    "baseline_validation": {"$ref": "#/$defs/baselineValidation"},
+    "summary": {"$ref": "#/$defs/summary"},
+    "quality_gates": {
+      "type": "array",
+      "minItems": 10,
+      "items": {"$ref": "#/$defs/gate"}
+    },
+    "results": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/result"}
+    },
+    "undetected_input_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string"}
+    },
+    "harness_error_input_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string"}
+    },
+    "release_decision": {"$ref": "#/$defs/releaseDecision"},
+    "limitations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 5}
+    },
+    "generated_at": {"type": "string", "format": "date-time"}
+  },
+  "$defs": {
+    "catalog": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "catalog_id",
+        "version",
+        "harness_version",
+        "relative_path",
+        "sha256"
+      ],
+      "properties": {
+        "catalog_id": {"type": "string"},
+        "version": {"type": "string"},
+        "harness_version": {"type": "string"},
+        "relative_path": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      }
+    },
+    "integrityCheck": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "relative_path",
+        "expected_sha256",
+        "actual_sha256",
+        "passed"
+      ],
+      "properties": {
+        "relative_path": {"type": "string"},
+        "expected_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "actual_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "passed": {"type": "boolean"}
+      }
+    },
+    "baselineValidation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "feature_row_accepted",
+        "intelligence_record_status",
+        "intelligence_record_valid",
+        "purl_parsed",
+        "version_parsed"
+      ],
+      "properties": {
+        "feature_row_accepted": {"const": true},
+        "intelligence_record_status": {"type": "string"},
+        "intelligence_record_valid": {"const": true},
+        "purl_parsed": {"const": true},
+        "version_parsed": {"const": true}
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scenario_count",
+        "critical_scenario_count",
+        "rejected_count",
+        "quarantined_count",
+        "normalized_safe_count",
+        "accepted_with_warning_count",
+        "undetected_count",
+        "harness_error_count",
+        "defended_critical_count",
+        "critical_hostile_input_defence_rate",
+        "nonfinite_numeric_scenario_count",
+        "nonfinite_numeric_defended_count",
+        "nonfinite_numeric_defence_rate",
+        "unicode_deception_scenario_count",
+        "unicode_deception_defended_count",
+        "unicode_deception_defence_rate",
+        "oversized_payload_scenario_count",
+        "oversized_payload_defended_count",
+        "oversized_payload_defence_rate",
+        "malformed_identifier_scenario_count",
+        "malformed_identifier_defended_count",
+        "malformed_identifier_defence_rate",
+        "missing_value_semantics_scenario_count",
+        "missing_value_semantics_defended_count",
+        "missing_value_semantics_defence_rate",
+        "type_confusion_scenario_count",
+        "type_confusion_defended_count",
+        "type_confusion_defence_rate",
+        "trusted_input_integrity_passed",
+        "overall_passed"
+      ],
+      "properties": {
+        "scenario_count": {"type": "integer", "minimum": 1},
+        "critical_scenario_count": {"type": "integer", "minimum": 1},
+        "rejected_count": {"type": "integer", "minimum": 0},
+        "quarantined_count": {"type": "integer", "minimum": 0},
+        "normalized_safe_count": {"type": "integer", "minimum": 0},
+        "accepted_with_warning_count": {"type": "integer", "minimum": 0},
+        "undetected_count": {"type": "integer", "minimum": 0},
+        "harness_error_count": {"type": "integer", "minimum": 0},
+        "defended_critical_count": {"type": "integer", "minimum": 0},
+        "critical_hostile_input_defence_rate": {"type": "number", "minimum": 0, "maximum": 1},
+        "nonfinite_numeric_scenario_count": {"type": "integer", "minimum": 0},
+        "nonfinite_numeric_defended_count": {"type": "integer", "minimum": 0},
+        "nonfinite_numeric_defence_rate": {"type": "number", "minimum": 0, "maximum": 1},
+        "unicode_deception_scenario_count": {"type": "integer", "minimum": 0},
+        "unicode_deception_defended_count": {"type": "integer", "minimum": 0},
+        "unicode_deception_defence_rate": {"type": "number", "minimum": 0, "maximum": 1},
+        "oversized_payload_scenario_count": {"type": "integer", "minimum": 0},
+        "oversized_payload_defended_count": {"type": "integer", "minimum": 0},
+        "oversized_payload_defence_rate": {"type": "number", "minimum": 0, "maximum": 1},
+        "malformed_identifier_scenario_count": {"type": "integer", "minimum": 0},
+        "malformed_identifier_defended_count": {"type": "integer", "minimum": 0},
+        "malformed_identifier_defence_rate": {"type": "number", "minimum": 0, "maximum": 1},
+        "missing_value_semantics_scenario_count": {"type": "integer", "minimum": 0},
+        "missing_value_semantics_defended_count": {"type": "integer", "minimum": 0},
+        "missing_value_semantics_defence_rate": {"type": "number", "minimum": 0, "maximum": 1},
+        "type_confusion_scenario_count": {"type": "integer", "minimum": 0},
+        "type_confusion_defended_count": {"type": "integer", "minimum": 0},
+        "type_confusion_defence_rate": {"type": "number", "minimum": 0, "maximum": 1},
+        "trusted_input_integrity_passed": {"type": "boolean"},
+        "overall_passed": {"type": "boolean"}
+      }
+    },
+    "gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["gate_id", "observed", "operator", "threshold", "passed"],
+      "properties": {
+        "gate_id": {"type": "string"},
+        "observed": {},
+        "operator": {"enum": ["gte", "lte", "eq"]},
+        "threshold": {},
+        "passed": {"type": "boolean"}
+      }
+    },
+    "finding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["code", "oracle", "message"],
+      "properties": {
+        "code": {"type": "string", "minLength": 3},
+        "oracle": {"type": "string", "minLength": 3},
+        "message": {"type": "string", "minLength": 5}
+      }
+    },
+    "result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scenario_id",
+        "title",
+        "family",
+        "severity",
+        "handler",
+        "control_tags",
+        "expected_outcomes",
+        "expected_oracles",
+        "ephemeral_only",
+        "outcome",
+        "defended",
+        "expectation_met",
+        "detection_oracles",
+        "findings",
+        "observed",
+        "error"
+      ],
+      "properties": {
+        "scenario_id": {"type": "string", "pattern": "^INPUT-[A-Z0-9._-]+$"},
+        "title": {"type": "string", "minLength": 5},
+        "family": {"type": "string", "minLength": 3},
+        "severity": {"const": "critical"},
+        "handler": {"type": "string", "minLength": 3},
+        "control_tags": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"type": "string"}
+        },
+        "expected_outcomes": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "REJECTED",
+              "QUARANTINED",
+              "NORMALIZED_SAFE",
+              "ACCEPTED_WITH_WARNING"
+            ]
+          }
+        },
+        "expected_oracles": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string"}
+        },
+        "ephemeral_only": {"const": true},
+        "outcome": {
+          "enum": [
+            "REJECTED",
+            "QUARANTINED",
+            "NORMALIZED_SAFE",
+            "ACCEPTED_WITH_WARNING",
+            "UNDETECTED",
+            "HARNESS_ERROR"
+          ]
+        },
+        "defended": {"type": "boolean"},
+        "expectation_met": {"type": "boolean"},
+        "detection_oracles": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"type": "string"}
+        },
+        "findings": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/finding"}
+        },
+        "observed": {"type": "object"},
+        "error": {"type": ["string", "null"]}
+      }
+    },
+    "releaseDecision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "stage_gate_status",
+        "production_readiness_status",
+        "blocking_reasons"
+      ],
+      "properties": {
+        "stage_gate_status": {"enum": ["PASS", "FAIL"]},
+        "production_readiness_status": {"const": "BLOCKED"},
+        "blocking_reasons": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string"}
+        }
+      }
+    }
+  }
+}

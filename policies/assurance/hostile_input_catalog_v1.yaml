@@ -1,0 +1,604 @@
+policy:
+  catalog_id: AEGIS-HOSTILE-INPUT-CATALOG
+  version: 1.0.0
+  harness_version: 1.0.0
+  description: Controlled hostile and malformed input scenarios for AegisSec parser and validation boundaries.
+trusted_inputs:
+  strict_parsing_module:
+    relative_path: src/normalization/strict_parsing.py
+    expected_sha256: 9f442aeda323f9917db6b5a88e61acce49f5d3235a694a9ccd4862c510f6fdcc
+  versioning_module:
+    relative_path: src/affectedness/versioning.py
+    expected_sha256: b11d7d492997001667cff5cbc8f27db1f046ffcfb12b0c0bccdf4c5a1365f033
+  feature_parser_module:
+    relative_path: src/ingestion/vulnerability_feature_parser.py
+    expected_sha256: 9ad5b77214627aaaa73b05bf3a86c0ed8e2543d78af040c239db4b3ded9a5bd2
+  intelligence_validator_module:
+    relative_path: src/validation/vulnerability_intelligence_validator.py
+    expected_sha256: 559be8fd5f2c68af468e051dc886ebbc1089f4ec3e31a101b9c1acb08974bbd0
+  intelligence_schema:
+    relative_path: schemas/aegis_vulnerability_intelligence.schema.json
+    expected_sha256: b488403d7c8947e7e2b3fd40a49b48403606ea7d06bb40475eeb29be5aaac01d
+  intelligence_fixture:
+    relative_path: data/sample_inputs/intelligence/valid_log4shell_intelligence.json
+    expected_sha256: e2204ab8ff8736c0826ffe24d518cef462a75dcea7e498943506b0fe7f41ff1f
+  strict_parsing_fixture:
+    relative_path: data/sample_inputs/parsing/strict_parsing_cases.csv
+    expected_sha256: 127c929cb4f881d345155a6e3da273063b28ff36d42b07647f53d7dcecf388e7
+  step11c_report:
+    relative_path: data/validation_reports/tampering/step11c_tamper_assurance_report.json
+    expected_sha256: 74f0849ee40aa73f09b9abf23929bbaf4a355d51f00c9b01958b01f943867a23
+release_gates:
+  critical_hostile_input_defence_rate_minimum: 1.0
+  undetected_critical_inputs_maximum: 0
+  harness_errors_maximum: 0
+  nonfinite_rejection_rate_minimum: 1.0
+  unicode_deception_detection_rate_minimum: 1.0
+  oversized_payload_defence_rate_minimum: 1.0
+  malformed_identifier_defence_rate_minimum: 1.0
+  missing_value_semantic_accuracy_minimum: 1.0
+  type_confusion_defence_rate_minimum: 1.0
+  require_trusted_inputs_unchanged: true
+  approved_remaining_production_blockers:
+  - Real operational validation has not yet been completed.
+  - Independent security review has not yet been completed.
+scenarios:
+- scenario_id: INPUT-BOOLEAN-FALSE-STRING-001
+  title: False string remains false
+  family: boolean_deception
+  severity: critical
+  handler: boolean_false_string
+  control_tags:
+  - boolean_semantics
+  expected_outcomes:
+  - NORMALIZED_SAFE
+  expected_oracles:
+  - STRICT_PARSER
+- scenario_id: INPUT-BOOLEAN-TRUE-WHITESPACE-001
+  title: Whitespace-wrapped true is canonicalized
+  family: boolean_deception
+  severity: critical
+  handler: boolean_true_whitespace
+  control_tags:
+  - boolean_semantics
+  expected_outcomes:
+  - NORMALIZED_SAFE
+  expected_oracles:
+  - STRICT_PARSER
+- scenario_id: INPUT-BOOLEAN-UNKNOWN-TOKEN-001
+  title: Unknown Boolean token is rejected
+  family: boolean_deception
+  severity: critical
+  handler: boolean_unknown_token
+  control_tags:
+  - boolean_semantics
+  expected_outcomes:
+  - REJECTED
+  expected_oracles:
+  - STRICT_PARSER
+- scenario_id: INPUT-BOOLEAN-LIST-TYPE-001
+  title: Boolean list type confusion is rejected
+  family: type_confusion
+  severity: critical
+  handler: boolean_list_type
+  control_tags:
+  - type_confusion
+  expected_outcomes:
+  - REJECTED
+  expected_oracles:
+  - STRICT_PARSER
+- scenario_id: INPUT-NUMERIC-NAN-STRING-001
+  title: NaN string is rejected
+  family: numeric_poisoning
+  severity: critical
+  handler: nan_string
+  control_tags:
+  - nonfinite_numeric
+  expected_outcomes:
+  - REJECTED
+  expected_oracles:
+  - STRICT_PARSER
+- scenario_id: INPUT-NUMERIC-NAN-FLOAT-001
+  title: Native NaN is invalid rather than missing
+  family: numeric_poisoning
+  severity: critical
+  handler: nan_float
+  control_tags:
+  - nonfinite_numeric
+  - missing_value_semantics
+  expected_outcomes:
+  - REJECTED
+  expected_oracles:
+  - STRICT_PARSER
+- scenario_id: INPUT-NUMERIC-INFINITY-001
+  title: Infinity is rejected
+  family: numeric_poisoning
+  severity: critical
+  handler: positive_infinity
+  control_tags:
+  - nonfinite_numeric
+  expected_outcomes:
+  - REJECTED
+  expected_oracles:
+  - STRICT_PARSER
+- scenario_id: INPUT-NUMERIC-OVERFLOW-001
+  title: Float conversion overflow is rejected
+  family: numeric_poisoning
+  severity: critical
+  handler: overflow_exponent
+  control_tags:
+  - nonfinite_numeric
+  - oversized_payload
+  expected_outcomes:
+  - REJECTED
+  expected_oracles:
+  - STRICT_PARSER
+- scenario_id: INPUT-NUMERIC-COMMA-001
+  title: Comma-formatted number is rejected
+  family: numeric_poisoning
+  severity: critical
+  handler: comma_number
+  control_tags:
+  - numeric_format
+  expected_outcomes:
+  - REJECTED
+  expected_oracles:
+  - STRICT_PARSER
+- scenario_id: INPUT-PROBABILITY-NEGATIVE-001
+  title: Negative probability is rejected
+  family: boundary_violation
+  severity: critical
+  handler: probability_negative
+  control_tags:
+  - numeric_boundary
+  expected_outcomes:
+  - REJECTED
+  expected_oracles:
+  - STRICT_PARSER
+- scenario_id: INPUT-PROBABILITY-ABOVE-ONE-001
+  title: Probability above one is rejected
+  family: boundary_violation
+  severity: critical
+  handler: probability_above_one
+  control_tags:
+  - numeric_boundary
+  expected_outcomes:
+  - REJECTED
+  expected_oracles:
+  - STRICT_PARSER
+- scenario_id: INPUT-NUMERIC-BOOLEAN-TYPE-001
+  title: Boolean cannot become numeric score
+  family: type_confusion
+  severity: critical
+  handler: number_boolean
+  control_tags:
+  - type_confusion
+  expected_outcomes:
+  - REJECTED
+  expected_oracles:
+  - STRICT_PARSER
+- scenario_id: INPUT-NUMERIC-HUGE-TOKEN-001
+  title: Oversized numeric token is rejected before conversion
+  family: parser_exhaustion
+  severity: critical
+  handler: huge_numeric_token
+  control_tags:
+  - oversized_payload
+  expected_outcomes:
+  - REJECTED
+  expected_oracles:
+  - STRICT_PARSER
+- scenario_id: INPUT-CVSS-NEGATIVE-001
+  title: Negative CVSS is rejected
+  family: boundary_violation
+  severity: critical
+  handler: cvss_negative
+  control_tags:
+  - numeric_boundary
+  expected_outcomes:
+  - REJECTED
+  expected_oracles:
+  - STRICT_PARSER
+- scenario_id: INPUT-CVSS-ABOVE-TEN-001
+  title: CVSS above ten is rejected
+  family: boundary_violation
+  severity: critical
+  handler: cvss_above_ten
+  control_tags:
+  - numeric_boundary
+  expected_outcomes:
+  - REJECTED
+  expected_oracles:
+  - STRICT_PARSER
+- scenario_id: INPUT-CVSS-BOUNDARY-TEN-001
+  title: Valid CVSS boundary remains ten
+  family: boundary_violation
+  severity: critical
+  handler: cvss_boundary_ten
+  control_tags:
+  - numeric_boundary
+  expected_outcomes:
+  - NORMALIZED_SAFE
+  expected_oracles:
+  - STRICT_PARSER
+- scenario_id: INPUT-DATE-AMBIGUOUS-001
+  title: Ambiguous slash date is rejected
+  family: date_ambiguity
+  severity: critical
+  handler: ambiguous_date
+  control_tags:
+  - date_time
+  expected_outcomes:
+  - REJECTED
+  expected_oracles:
+  - STRICT_PARSER
+- scenario_id: INPUT-DATE-INVALID-LEAP-001
+  title: Invalid leap date is rejected
+  family: date_ambiguity
+  severity: critical
+  handler: invalid_leap_date
+  control_tags:
+  - date_time
+  expected_outcomes:
+  - REJECTED
+  expected_oracles:
+  - STRICT_PARSER
+- scenario_id: INPUT-DATETIME-NAIVE-001
+  title: Timezone-free datetime is rejected
+  family: timestamp_manipulation
+  severity: critical
+  handler: naive_datetime
+  control_tags:
+  - date_time
+  expected_outcomes:
+  - REJECTED
+  expected_oracles:
+  - STRICT_PARSER
+- scenario_id: INPUT-DATETIME-FUTURE-001
+  title: Implausibly future timestamp is quarantined
+  family: timestamp_manipulation
+  severity: critical
+  handler: future_datetime
+  control_tags:
+  - date_time
+  expected_outcomes:
+  - QUARANTINED
+  expected_oracles:
+  - TIMESTAMP_CONSISTENCY
+- scenario_id: INPUT-DATETIME-BIDI-001
+  title: Bidi control in timestamp is rejected
+  family: unicode_deception
+  severity: critical
+  handler: bidi_datetime
+  control_tags:
+  - unicode_deception
+  - date_time
+  expected_outcomes:
+  - REJECTED
+  expected_oracles:
+  - STRICT_PARSER
+- scenario_id: INPUT-CVE-CYRILLIC-001
+  title: Cyrillic confusable CVE prefix is rejected
+  family: unicode_deception
+  severity: critical
+  handler: cyrillic_cve
+  control_tags:
+  - unicode_deception
+  - malformed_identifier
+  expected_outcomes:
+  - REJECTED
+  expected_oracles:
+  - STRICT_PARSER
+- scenario_id: INPUT-CVE-ZERO-WIDTH-001
+  title: Zero-width character in CVE is rejected
+  family: unicode_deception
+  severity: critical
+  handler: zero_width_cve
+  control_tags:
+  - unicode_deception
+  - malformed_identifier
+  expected_outcomes:
+  - REJECTED
+  expected_oracles:
+  - STRICT_PARSER
+- scenario_id: INPUT-ASSET-BIDI-001
+  title: Bidi control in asset identifier is rejected
+  family: unicode_deception
+  severity: critical
+  handler: bidi_asset_id
+  control_tags:
+  - unicode_deception
+  - malformed_identifier
+  expected_outcomes:
+  - REJECTED
+  expected_oracles:
+  - FEATURE_ROW_PARSER
+- scenario_id: INPUT-COMPONENT-NUL-001
+  title: NUL byte in component name is rejected
+  family: control_character_injection
+  severity: critical
+  handler: nul_component
+  control_tags:
+  - unicode_deception
+  expected_outcomes:
+  - REJECTED
+  expected_oracles:
+  - FEATURE_ROW_PARSER
+- scenario_id: INPUT-COMPONENT-NEWLINE-001
+  title: Embedded newline in component name is rejected
+  family: control_character_injection
+  severity: critical
+  handler: newline_component
+  control_tags:
+  - unicode_deception
+  expected_outcomes:
+  - REJECTED
+  expected_oracles:
+  - FEATURE_ROW_PARSER
+- scenario_id: INPUT-PURL-NON-ASCII-001
+  title: Non-ASCII PURL is rejected
+  family: purl_corruption
+  severity: critical
+  handler: non_ascii_purl
+  control_tags:
+  - unicode_deception
+  - malformed_identifier
+  expected_outcomes:
+  - REJECTED
+  expected_oracles:
+  - STRICT_PARSER
+- scenario_id: INPUT-PURL-BAD-PERCENT-001
+  title: Malformed PURL percent encoding is rejected
+  family: purl_corruption
+  severity: critical
+  handler: invalid_percent_purl
+  control_tags:
+  - malformed_identifier
+  expected_outcomes:
+  - REJECTED
+  expected_oracles:
+  - STRICT_PARSER
+- scenario_id: INPUT-PURL-TRAVERSAL-001
+  title: Decoded PURL traversal is rejected
+  family: purl_corruption
+  severity: critical
+  handler: traversal_purl
+  control_tags:
+  - malformed_identifier
+  expected_outcomes:
+  - REJECTED
+  expected_oracles:
+  - STRICT_PARSER
+- scenario_id: INPUT-COMPONENT-OVERSIZED-001
+  title: Oversized component name is rejected
+  family: oversized_input
+  severity: critical
+  handler: oversized_component
+  control_tags:
+  - oversized_payload
+  expected_outcomes:
+  - REJECTED
+  expected_oracles:
+  - FEATURE_ROW_PARSER
+- scenario_id: INPUT-VERSION-OVERSIZED-001
+  title: Oversized version token is rejected
+  family: oversized_input
+  severity: critical
+  handler: oversized_version
+  control_tags:
+  - oversized_payload
+  - version_ambiguity
+  expected_outcomes:
+  - REJECTED
+  expected_oracles:
+  - VERSION_PARSER
+- scenario_id: INPUT-ALIASES-EXCESSIVE-001
+  title: Excessive alias collection is rejected
+  family: parser_exhaustion
+  severity: critical
+  handler: excessive_aliases
+  control_tags:
+  - oversized_payload
+  expected_outcomes:
+  - REJECTED
+  expected_oracles:
+  - INTELLIGENCE_VALIDATOR
+- scenario_id: INPUT-OBSERVATIONS-EXCESSIVE-001
+  title: Excessive observation collection is rejected
+  family: parser_exhaustion
+  severity: critical
+  handler: excessive_observations
+  control_tags:
+  - oversized_payload
+  expected_outcomes:
+  - REJECTED
+  expected_oracles:
+  - INTELLIGENCE_VALIDATOR
+- scenario_id: INPUT-CANONICAL-OBJECT-001
+  title: Object supplied as canonical ID is rejected
+  family: type_confusion
+  severity: critical
+  handler: canonical_object
+  control_tags:
+  - type_confusion
+  - malformed_identifier
+  expected_outcomes:
+  - REJECTED
+  expected_oracles:
+  - INTELLIGENCE_VALIDATOR
+- scenario_id: INPUT-INTEGER-GIANT-001
+  title: Giant integer token is bounded and rejected
+  family: parser_exhaustion
+  severity: critical
+  handler: giant_integer
+  control_tags:
+  - oversized_payload
+  expected_outcomes:
+  - REJECTED
+  expected_oracles:
+  - STRICT_PARSER
+- scenario_id: INPUT-CVE-BAD-PREFIX-001
+  title: Malformed CVE prefix is rejected
+  family: cve_corruption
+  severity: critical
+  handler: malformed_cve_prefix
+  control_tags:
+  - malformed_identifier
+  expected_outcomes:
+  - REJECTED
+  expected_oracles:
+  - STRICT_PARSER
+- scenario_id: INPUT-CVE-SHORT-SUFFIX-001
+  title: Short CVE numeric suffix is rejected
+  family: cve_corruption
+  severity: critical
+  handler: short_cve_suffix
+  control_tags:
+  - malformed_identifier
+  expected_outcomes:
+  - REJECTED
+  expected_oracles:
+  - STRICT_PARSER
+- scenario_id: INPUT-ALIASES-NORMALIZED-DUPLICATE-001
+  title: Case-insensitive duplicate aliases are rejected
+  family: duplicate_identity
+  severity: critical
+  handler: duplicate_aliases_normalized
+  control_tags:
+  - malformed_identifier
+  expected_outcomes:
+  - REJECTED
+  expected_oracles:
+  - INTELLIGENCE_VALIDATOR
+- scenario_id: INPUT-ALIASES-CANONICAL-DUPLICATE-001
+  title: Canonical CVE repeated as alias is rejected
+  family: duplicate_identity
+  severity: critical
+  handler: canonical_duplicate_alias
+  control_tags:
+  - malformed_identifier
+  expected_outcomes:
+  - REJECTED
+  expected_oracles:
+  - INTELLIGENCE_VALIDATOR
+- scenario_id: INPUT-PURL-DUPLICATE-001
+  title: Duplicate affected-package PURL is rejected
+  family: duplicate_identity
+  severity: critical
+  handler: duplicate_purl
+  control_tags:
+  - malformed_identifier
+  expected_outcomes:
+  - REJECTED
+  expected_oracles:
+  - INTELLIGENCE_VALIDATOR
+- scenario_id: INPUT-ENUM-UNKNOWN-001
+  title: Unknown enum token is rejected
+  family: enum_poisoning
+  severity: critical
+  handler: unknown_enum
+  control_tags:
+  - enum_semantics
+  expected_outcomes:
+  - REJECTED
+  expected_oracles:
+  - STRICT_PARSER
+- scenario_id: INPUT-ENUM-WHITESPACE-001
+  title: Whitespace enum is normalized to canonical value
+  family: enum_poisoning
+  severity: critical
+  handler: enum_whitespace
+  control_tags:
+  - enum_semantics
+  expected_outcomes:
+  - NORMALIZED_SAFE
+  expected_oracles:
+  - STRICT_PARSER
+- scenario_id: INPUT-FORMULA-COMPONENT-001
+  title: Spreadsheet formula prefix is rejected
+  family: formula_injection
+  severity: critical
+  handler: formula_component
+  control_tags:
+  - formula_injection
+  expected_outcomes:
+  - REJECTED
+  expected_oracles:
+  - FEATURE_ROW_PARSER
+- scenario_id: INPUT-COMPONENT-OBJECT-001
+  title: Object supplied as component name is rejected
+  family: type_confusion
+  severity: critical
+  handler: object_component
+  control_tags:
+  - type_confusion
+  expected_outcomes:
+  - REJECTED
+  expected_oracles:
+  - FEATURE_ROW_PARSER
+- scenario_id: INPUT-VERSION-WILDCARD-001
+  title: Wildcard version is treated as ambiguous
+  family: version_ambiguity
+  severity: critical
+  handler: wildcard_version
+  control_tags:
+  - version_ambiguity
+  expected_outcomes:
+  - REJECTED
+  expected_oracles:
+  - VERSION_PARSER
+- scenario_id: INPUT-VERSION-COMPARATOR-001
+  title: Comparator expression is not guessed as a version
+  family: version_ambiguity
+  severity: critical
+  handler: comparison_version
+  control_tags:
+  - version_ambiguity
+  expected_outcomes:
+  - REJECTED
+  expected_oracles:
+  - VERSION_PARSER
+- scenario_id: INPUT-RANGE-CONFLICTING-BOUNDS-001
+  title: Conflicting version upper bounds are rejected
+  family: version_ambiguity
+  severity: critical
+  handler: conflicting_range
+  control_tags:
+  - version_ambiguity
+  expected_outcomes:
+  - REJECTED
+  expected_oracles:
+  - INTELLIGENCE_VALIDATOR
+- scenario_id: INPUT-RANGE-UNSUPPORTED-TYPE-001
+  title: Unsupported range type forces abstention
+  family: unsupported_version_scheme
+  severity: critical
+  handler: unsupported_range_type
+  control_tags:
+  - version_ambiguity
+  expected_outcomes:
+  - QUARANTINED
+  expected_oracles:
+  - VERSION_RANGE_ENGINE
+- scenario_id: INPUT-MISSING-PROBABILITY-001
+  title: Blank probability remains missing
+  family: missing_value_confusion
+  severity: critical
+  handler: missing_probability
+  control_tags:
+  - missing_value_semantics
+  expected_outcomes:
+  - NORMALIZED_SAFE
+  expected_oracles:
+  - STRICT_PARSER
+- scenario_id: INPUT-ZERO-PROBABILITY-001
+  title: Real zero probability remains zero
+  family: missing_value_confusion
+  severity: critical
+  handler: zero_probability
+  control_tags:
+  - missing_value_semantics
+  expected_outcomes:
+  - NORMALIZED_SAFE
+  expected_oracles:
+  - STRICT_PARSER

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import re
+import unicodedata
 from dataclasses import dataclass
 from typing import Any
 
@@ -53,6 +54,10 @@ class RangeEvaluation:
         }
 
 
+MAX_VERSION_LENGTH = 150
+_UNSUPPORTED_VERSION_TOKENS = re.compile(r"[<>=~^*,|\\/\[\]{}()\s]")
+
+
 def normalize_version_text(value: str) -> str:
     """
     Normalize a limited set of common version forms.
@@ -73,15 +78,26 @@ def normalize_version_text(value: str) -> str:
 
 
 def parse_version(value: Any) -> ParsedVersion | None:
-    if value is None:
+    """Parse a bounded, unambiguous version token without guessing."""
+    if value is None or not isinstance(value, str):
         return None
 
-    if not isinstance(value, str):
-        value = str(value)
+    if len(value) > MAX_VERSION_LENGTH:
+        return None
+
+    for character in value:
+        if unicodedata.category(character) in {"Cc", "Cf", "Cs"}:
+            return None
+
+    if not value.isascii():
+        return None
 
     normalized = normalize_version_text(value)
 
     if not normalized:
+        return None
+
+    if _UNSUPPORTED_VERSION_TOKENS.search(normalized):
         return None
 
     try:

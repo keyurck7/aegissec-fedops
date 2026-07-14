@@ -1,0 +1,2093 @@
+{
+  "baseline_validation": {
+    "feature_row_accepted": true,
+    "intelligence_record_status": "accepted_with_warnings",
+    "intelligence_record_valid": true,
+    "purl_parsed": true,
+    "version_parsed": true
+  },
+  "catalog": {
+    "catalog_id": "AEGIS-HOSTILE-INPUT-CATALOG",
+    "harness_version": "1.0.0",
+    "relative_path": "policies/assurance/hostile_input_catalog_v1.yaml",
+    "sha256": "c3ebeeae727c8613b76605edaf12912d1b9b5575f197a0dff03dd9e34b278ecb",
+    "version": "1.0.0"
+  },
+  "generated_at": "2026-07-14T00:19:25.270684+00:00",
+  "harness_error_input_ids": [],
+  "input_integrity_checks_after": {
+    "feature_parser_module": {
+      "actual_sha256": "9ad5b77214627aaaa73b05bf3a86c0ed8e2543d78af040c239db4b3ded9a5bd2",
+      "expected_sha256": "9ad5b77214627aaaa73b05bf3a86c0ed8e2543d78af040c239db4b3ded9a5bd2",
+      "passed": true,
+      "relative_path": "src/ingestion/vulnerability_feature_parser.py"
+    },
+    "intelligence_fixture": {
+      "actual_sha256": "e2204ab8ff8736c0826ffe24d518cef462a75dcea7e498943506b0fe7f41ff1f",
+      "expected_sha256": "e2204ab8ff8736c0826ffe24d518cef462a75dcea7e498943506b0fe7f41ff1f",
+      "passed": true,
+      "relative_path": "data/sample_inputs/intelligence/valid_log4shell_intelligence.json"
+    },
+    "intelligence_schema": {
+      "actual_sha256": "b488403d7c8947e7e2b3fd40a49b48403606ea7d06bb40475eeb29be5aaac01d",
+      "expected_sha256": "b488403d7c8947e7e2b3fd40a49b48403606ea7d06bb40475eeb29be5aaac01d",
+      "passed": true,
+      "relative_path": "schemas/aegis_vulnerability_intelligence.schema.json"
+    },
+    "intelligence_validator_module": {
+      "actual_sha256": "559be8fd5f2c68af468e051dc886ebbc1089f4ec3e31a101b9c1acb08974bbd0",
+      "expected_sha256": "559be8fd5f2c68af468e051dc886ebbc1089f4ec3e31a101b9c1acb08974bbd0",
+      "passed": true,
+      "relative_path": "src/validation/vulnerability_intelligence_validator.py"
+    },
+    "step11c_report": {
+      "actual_sha256": "74f0849ee40aa73f09b9abf23929bbaf4a355d51f00c9b01958b01f943867a23",
+      "expected_sha256": "74f0849ee40aa73f09b9abf23929bbaf4a355d51f00c9b01958b01f943867a23",
+      "passed": true,
+      "relative_path": "data/validation_reports/tampering/step11c_tamper_assurance_report.json"
+    },
+    "strict_parsing_fixture": {
+      "actual_sha256": "127c929cb4f881d345155a6e3da273063b28ff36d42b07647f53d7dcecf388e7",
+      "expected_sha256": "127c929cb4f881d345155a6e3da273063b28ff36d42b07647f53d7dcecf388e7",
+      "passed": true,
+      "relative_path": "data/sample_inputs/parsing/strict_parsing_cases.csv"
+    },
+    "strict_parsing_module": {
+      "actual_sha256": "9f442aeda323f9917db6b5a88e61acce49f5d3235a694a9ccd4862c510f6fdcc",
+      "expected_sha256": "9f442aeda323f9917db6b5a88e61acce49f5d3235a694a9ccd4862c510f6fdcc",
+      "passed": true,
+      "relative_path": "src/normalization/strict_parsing.py"
+    },
+    "versioning_module": {
+      "actual_sha256": "b11d7d492997001667cff5cbc8f27db1f046ffcfb12b0c0bccdf4c5a1365f033",
+      "expected_sha256": "b11d7d492997001667cff5cbc8f27db1f046ffcfb12b0c0bccdf4c5a1365f033",
+      "passed": true,
+      "relative_path": "src/affectedness/versioning.py"
+    }
+  },
+  "input_integrity_checks_before": {
+    "feature_parser_module": {
+      "actual_sha256": "9ad5b77214627aaaa73b05bf3a86c0ed8e2543d78af040c239db4b3ded9a5bd2",
+      "expected_sha256": "9ad5b77214627aaaa73b05bf3a86c0ed8e2543d78af040c239db4b3ded9a5bd2",
+      "passed": true,
+      "relative_path": "src/ingestion/vulnerability_feature_parser.py"
+    },
+    "intelligence_fixture": {
+      "actual_sha256": "e2204ab8ff8736c0826ffe24d518cef462a75dcea7e498943506b0fe7f41ff1f",
+      "expected_sha256": "e2204ab8ff8736c0826ffe24d518cef462a75dcea7e498943506b0fe7f41ff1f",
+      "passed": true,
+      "relative_path": "data/sample_inputs/intelligence/valid_log4shell_intelligence.json"
+    },
+    "intelligence_schema": {
+      "actual_sha256": "b488403d7c8947e7e2b3fd40a49b48403606ea7d06bb40475eeb29be5aaac01d",
+      "expected_sha256": "b488403d7c8947e7e2b3fd40a49b48403606ea7d06bb40475eeb29be5aaac01d",
+      "passed": true,
+      "relative_path": "schemas/aegis_vulnerability_intelligence.schema.json"
+    },
+    "intelligence_validator_module": {
+      "actual_sha256": "559be8fd5f2c68af468e051dc886ebbc1089f4ec3e31a101b9c1acb08974bbd0",
+      "expected_sha256": "559be8fd5f2c68af468e051dc886ebbc1089f4ec3e31a101b9c1acb08974bbd0",
+      "passed": true,
+      "relative_path": "src/validation/vulnerability_intelligence_validator.py"
+    },
+    "step11c_report": {
+      "actual_sha256": "74f0849ee40aa73f09b9abf23929bbaf4a355d51f00c9b01958b01f943867a23",
+      "expected_sha256": "74f0849ee40aa73f09b9abf23929bbaf4a355d51f00c9b01958b01f943867a23",
+      "passed": true,
+      "relative_path": "data/validation_reports/tampering/step11c_tamper_assurance_report.json"
+    },
+    "strict_parsing_fixture": {
+      "actual_sha256": "127c929cb4f881d345155a6e3da273063b28ff36d42b07647f53d7dcecf388e7",
+      "expected_sha256": "127c929cb4f881d345155a6e3da273063b28ff36d42b07647f53d7dcecf388e7",
+      "passed": true,
+      "relative_path": "data/sample_inputs/parsing/strict_parsing_cases.csv"
+    },
+    "strict_parsing_module": {
+      "actual_sha256": "9f442aeda323f9917db6b5a88e61acce49f5d3235a694a9ccd4862c510f6fdcc",
+      "expected_sha256": "9f442aeda323f9917db6b5a88e61acce49f5d3235a694a9ccd4862c510f6fdcc",
+      "passed": true,
+      "relative_path": "src/normalization/strict_parsing.py"
+    },
+    "versioning_module": {
+      "actual_sha256": "b11d7d492997001667cff5cbc8f27db1f046ffcfb12b0c0bccdf4c5a1365f033",
+      "expected_sha256": "b11d7d492997001667cff5cbc8f27db1f046ffcfb12b0c0bccdf4c5a1365f033",
+      "passed": true,
+      "relative_path": "src/affectedness/versioning.py"
+    }
+  },
+  "limitations": [
+    "The campaign uses controlled repository fixtures and does not replace live operational testing.",
+    "Resource-exhaustion scenarios use bounded representative payloads rather than destructive denial-of-service loads.",
+    "PURL validation implements a strict security profile and is not a complete conformance certification for every Package URL extension.",
+    "Passing Step 11D does not replace independent security assessment or authorization to operate."
+  ],
+  "quality_gates": [
+    {
+      "gate_id": "GATE-CRITICAL-HOSTILE-INPUT-DEFENCE",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "GATE-UNDETECTED-CRITICAL-INPUTS",
+      "observed": 0,
+      "operator": "lte",
+      "passed": true,
+      "threshold": 0
+    },
+    {
+      "gate_id": "GATE-HARNESS-ERRORS",
+      "observed": 0,
+      "operator": "lte",
+      "passed": true,
+      "threshold": 0
+    },
+    {
+      "gate_id": "GATE-NONFINITE-NUMERIC",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "GATE-UNICODE-DECEPTION",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "GATE-OVERSIZED-PAYLOAD",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "GATE-MALFORMED-IDENTIFIER",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "GATE-MISSING-VALUE-SEMANTICS",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "GATE-TYPE-CONFUSION",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "GATE-TRUSTED-INPUT-INTEGRITY",
+      "observed": true,
+      "operator": "eq",
+      "passed": true,
+      "threshold": true
+    }
+  ],
+  "release_decision": {
+    "blocking_reasons": [
+      "Real operational validation has not yet been completed.",
+      "Independent security review has not yet been completed."
+    ],
+    "production_readiness_status": "BLOCKED",
+    "stage_gate_status": "PASS"
+  },
+  "report_id": "AEG-HOSTILE-INPUT-STEP11D-001",
+  "results": [
+    {
+      "control_tags": [
+        "boolean_semantics"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "STRICT_PARSER"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "STRICT_PARSER"
+      ],
+      "expected_outcomes": [
+        "NORMALIZED_SAFE"
+      ],
+      "family": "boolean_deception",
+      "findings": [
+        {
+          "code": "FALSE_TOKEN_PRESERVED",
+          "message": "The string False was parsed as Boolean false.",
+          "oracle": "STRICT_PARSER"
+        }
+      ],
+      "handler": "boolean_false_string",
+      "observed": {
+        "code": "BOOLEAN_PARSED",
+        "normalized_text": "False",
+        "status": "parsed",
+        "value": false
+      },
+      "outcome": "NORMALIZED_SAFE",
+      "scenario_id": "INPUT-BOOLEAN-FALSE-STRING-001",
+      "severity": "critical",
+      "title": "False string remains false"
+    },
+    {
+      "control_tags": [
+        "boolean_semantics"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "STRICT_PARSER"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "STRICT_PARSER"
+      ],
+      "expected_outcomes": [
+        "NORMALIZED_SAFE"
+      ],
+      "family": "boolean_deception",
+      "findings": [
+        {
+          "code": "TRUE_TOKEN_CANONICALIZED",
+          "message": "Whitespace was removed and true remained Boolean true.",
+          "oracle": "STRICT_PARSER"
+        }
+      ],
+      "handler": "boolean_true_whitespace",
+      "observed": {
+        "code": "BOOLEAN_PARSED",
+        "normalized_text": "true",
+        "status": "parsed",
+        "value": true
+      },
+      "outcome": "NORMALIZED_SAFE",
+      "scenario_id": "INPUT-BOOLEAN-TRUE-WHITESPACE-001",
+      "severity": "critical",
+      "title": "Whitespace-wrapped true is canonicalized"
+    },
+    {
+      "control_tags": [
+        "boolean_semantics"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "STRICT_PARSER"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "STRICT_PARSER"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "boolean_deception",
+      "findings": [
+        {
+          "code": "UNRECOGNIZED_BOOLEAN_TOKEN",
+          "message": "kev_flag contains unrecognized Boolean token 'maybe'.",
+          "oracle": "STRICT_PARSER"
+        }
+      ],
+      "handler": "boolean_unknown_token",
+      "observed": {
+        "code": "UNRECOGNIZED_BOOLEAN_TOKEN",
+        "normalized_text": "maybe",
+        "status": "invalid",
+        "value": null
+      },
+      "outcome": "REJECTED",
+      "scenario_id": "INPUT-BOOLEAN-UNKNOWN-TOKEN-001",
+      "severity": "critical",
+      "title": "Unknown Boolean token is rejected"
+    },
+    {
+      "control_tags": [
+        "type_confusion"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "STRICT_PARSER"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "STRICT_PARSER"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "type_confusion",
+      "findings": [
+        {
+          "code": "INVALID_BOOLEAN_TYPE",
+          "message": "kev_flag must be a Boolean or recognized Boolean token, not list.",
+          "oracle": "STRICT_PARSER"
+        }
+      ],
+      "handler": "boolean_list_type",
+      "observed": {
+        "code": "INVALID_BOOLEAN_TYPE",
+        "normalized_text": "['false']",
+        "status": "invalid",
+        "value": null
+      },
+      "outcome": "REJECTED",
+      "scenario_id": "INPUT-BOOLEAN-LIST-TYPE-001",
+      "severity": "critical",
+      "title": "Boolean list type confusion is rejected"
+    },
+    {
+      "control_tags": [
+        "nonfinite_numeric"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "STRICT_PARSER"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "STRICT_PARSER"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "numeric_poisoning",
+      "findings": [
+        {
+          "code": "NON_FINITE_NUMERIC_VALUE",
+          "message": "epss cannot contain NaN or infinity.",
+          "oracle": "STRICT_PARSER"
+        }
+      ],
+      "handler": "nan_string",
+      "observed": {
+        "code": "NON_FINITE_NUMERIC_VALUE",
+        "normalized_text": "NaN",
+        "status": "invalid",
+        "value": null
+      },
+      "outcome": "REJECTED",
+      "scenario_id": "INPUT-NUMERIC-NAN-STRING-001",
+      "severity": "critical",
+      "title": "NaN string is rejected"
+    },
+    {
+      "control_tags": [
+        "nonfinite_numeric",
+        "missing_value_semantics"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "STRICT_PARSER"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "STRICT_PARSER"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "numeric_poisoning",
+      "findings": [
+        {
+          "code": "NON_FINITE_NUMERIC_VALUE",
+          "message": "epss cannot contain NaN or infinity.",
+          "oracle": "STRICT_PARSER"
+        }
+      ],
+      "handler": "nan_float",
+      "observed": {
+        "code": "NON_FINITE_NUMERIC_VALUE",
+        "normalized_text": "nan",
+        "status": "invalid",
+        "value": null
+      },
+      "outcome": "REJECTED",
+      "scenario_id": "INPUT-NUMERIC-NAN-FLOAT-001",
+      "severity": "critical",
+      "title": "Native NaN is invalid rather than missing"
+    },
+    {
+      "control_tags": [
+        "nonfinite_numeric"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "STRICT_PARSER"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "STRICT_PARSER"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "numeric_poisoning",
+      "findings": [
+        {
+          "code": "NON_FINITE_NUMERIC_VALUE",
+          "message": "score cannot contain NaN or infinity.",
+          "oracle": "STRICT_PARSER"
+        }
+      ],
+      "handler": "positive_infinity",
+      "observed": {
+        "code": "NON_FINITE_NUMERIC_VALUE",
+        "normalized_text": "inf",
+        "status": "invalid",
+        "value": null
+      },
+      "outcome": "REJECTED",
+      "scenario_id": "INPUT-NUMERIC-INFINITY-001",
+      "severity": "critical",
+      "title": "Infinity is rejected"
+    },
+    {
+      "control_tags": [
+        "nonfinite_numeric",
+        "oversized_payload"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "STRICT_PARSER"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "STRICT_PARSER"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "numeric_poisoning",
+      "findings": [
+        {
+          "code": "NUMERIC_CONVERSION_OVERFLOW",
+          "message": "score cannot be represented as a finite float.",
+          "oracle": "STRICT_PARSER"
+        }
+      ],
+      "handler": "overflow_exponent",
+      "observed": {
+        "code": "NUMERIC_CONVERSION_OVERFLOW",
+        "normalized_text": "1e1000000",
+        "status": "invalid",
+        "value": null
+      },
+      "outcome": "REJECTED",
+      "scenario_id": "INPUT-NUMERIC-OVERFLOW-001",
+      "severity": "critical",
+      "title": "Float conversion overflow is rejected"
+    },
+    {
+      "control_tags": [
+        "numeric_format"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "STRICT_PARSER"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "STRICT_PARSER"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "numeric_poisoning",
+      "findings": [
+        {
+          "code": "AMBIGUOUS_NUMERIC_FORMAT",
+          "message": "score contains a comma. Use a period as the decimal separator and do not use thousands separators.",
+          "oracle": "STRICT_PARSER"
+        }
+      ],
+      "handler": "comma_number",
+      "observed": {
+        "code": "AMBIGUOUS_NUMERIC_FORMAT",
+        "normalized_text": "1,000",
+        "status": "invalid",
+        "value": null
+      },
+      "outcome": "REJECTED",
+      "scenario_id": "INPUT-NUMERIC-COMMA-001",
+      "severity": "critical",
+      "title": "Comma-formatted number is rejected"
+    },
+    {
+      "control_tags": [
+        "numeric_boundary"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "STRICT_PARSER"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "STRICT_PARSER"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "boundary_violation",
+      "findings": [
+        {
+          "code": "NUMERIC_VALUE_BELOW_MINIMUM",
+          "message": "epss must be at least 0.0, but received -0.01.",
+          "oracle": "STRICT_PARSER"
+        }
+      ],
+      "handler": "probability_negative",
+      "observed": {
+        "code": "NUMERIC_VALUE_BELOW_MINIMUM",
+        "normalized_text": "-0.01",
+        "status": "invalid",
+        "value": null
+      },
+      "outcome": "REJECTED",
+      "scenario_id": "INPUT-PROBABILITY-NEGATIVE-001",
+      "severity": "critical",
+      "title": "Negative probability is rejected"
+    },
+    {
+      "control_tags": [
+        "numeric_boundary"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "STRICT_PARSER"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "STRICT_PARSER"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "boundary_violation",
+      "findings": [
+        {
+          "code": "NUMERIC_VALUE_ABOVE_MAXIMUM",
+          "message": "epss must be no greater than 1.0, but received 1.01.",
+          "oracle": "STRICT_PARSER"
+        }
+      ],
+      "handler": "probability_above_one",
+      "observed": {
+        "code": "NUMERIC_VALUE_ABOVE_MAXIMUM",
+        "normalized_text": "1.01",
+        "status": "invalid",
+        "value": null
+      },
+      "outcome": "REJECTED",
+      "scenario_id": "INPUT-PROBABILITY-ABOVE-ONE-001",
+      "severity": "critical",
+      "title": "Probability above one is rejected"
+    },
+    {
+      "control_tags": [
+        "type_confusion"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "STRICT_PARSER"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "STRICT_PARSER"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "type_confusion",
+      "findings": [
+        {
+          "code": "BOOLEAN_NOT_ALLOWED_AS_NUMBER",
+          "message": "score cannot use a Boolean as a numeric value.",
+          "oracle": "STRICT_PARSER"
+        }
+      ],
+      "handler": "number_boolean",
+      "observed": {
+        "code": "BOOLEAN_NOT_ALLOWED_AS_NUMBER",
+        "normalized_text": "True",
+        "status": "invalid",
+        "value": null
+      },
+      "outcome": "REJECTED",
+      "scenario_id": "INPUT-NUMERIC-BOOLEAN-TYPE-001",
+      "severity": "critical",
+      "title": "Boolean cannot become numeric score"
+    },
+    {
+      "control_tags": [
+        "oversized_payload"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "STRICT_PARSER"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "STRICT_PARSER"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "parser_exhaustion",
+      "findings": [
+        {
+          "code": "RAW_TEXT_ABOVE_SECURITY_LIMIT",
+          "message": "score: Input exceeds the 10000-character security limit.",
+          "oracle": "STRICT_PARSER"
+        }
+      ],
+      "handler": "huge_numeric_token",
+      "observed": {
+        "code": "RAW_TEXT_ABOVE_SECURITY_LIMIT",
+        "normalized_text": "99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999",
+        "status": "invalid",
+        "value": null
+      },
+      "outcome": "REJECTED",
+      "scenario_id": "INPUT-NUMERIC-HUGE-TOKEN-001",
+      "severity": "critical",
+      "title": "Oversized numeric token is rejected before conversion"
+    },
+    {
+      "control_tags": [
+        "numeric_boundary"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "STRICT_PARSER"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "STRICT_PARSER"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "boundary_violation",
+      "findings": [
+        {
+          "code": "NUMERIC_VALUE_BELOW_MINIMUM",
+          "message": "cvss_score must be at least 0.0, but received -0.1.",
+          "oracle": "STRICT_PARSER"
+        }
+      ],
+      "handler": "cvss_negative",
+      "observed": {
+        "code": "NUMERIC_VALUE_BELOW_MINIMUM",
+        "normalized_text": "-0.1",
+        "status": "invalid",
+        "value": null
+      },
+      "outcome": "REJECTED",
+      "scenario_id": "INPUT-CVSS-NEGATIVE-001",
+      "severity": "critical",
+      "title": "Negative CVSS is rejected"
+    },
+    {
+      "control_tags": [
+        "numeric_boundary"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "STRICT_PARSER"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "STRICT_PARSER"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "boundary_violation",
+      "findings": [
+        {
+          "code": "NUMERIC_VALUE_ABOVE_MAXIMUM",
+          "message": "cvss_score must be no greater than 10.0, but received 10.1.",
+          "oracle": "STRICT_PARSER"
+        }
+      ],
+      "handler": "cvss_above_ten",
+      "observed": {
+        "code": "NUMERIC_VALUE_ABOVE_MAXIMUM",
+        "normalized_text": "10.1",
+        "status": "invalid",
+        "value": null
+      },
+      "outcome": "REJECTED",
+      "scenario_id": "INPUT-CVSS-ABOVE-TEN-001",
+      "severity": "critical",
+      "title": "CVSS above ten is rejected"
+    },
+    {
+      "control_tags": [
+        "numeric_boundary"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "STRICT_PARSER"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "STRICT_PARSER"
+      ],
+      "expected_outcomes": [
+        "NORMALIZED_SAFE"
+      ],
+      "family": "boundary_violation",
+      "findings": [
+        {
+          "code": "CVSS_BOUNDARY_PRESERVED",
+          "message": "The valid maximum CVSS score remained 10.0.",
+          "oracle": "STRICT_PARSER"
+        }
+      ],
+      "handler": "cvss_boundary_ten",
+      "observed": {
+        "code": "FLOAT_PARSED",
+        "normalized_text": "10.0",
+        "status": "parsed",
+        "value": 10.0
+      },
+      "outcome": "NORMALIZED_SAFE",
+      "scenario_id": "INPUT-CVSS-BOUNDARY-TEN-001",
+      "severity": "critical",
+      "title": "Valid CVSS boundary remains ten"
+    },
+    {
+      "control_tags": [
+        "date_time"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "STRICT_PARSER"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "STRICT_PARSER"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "date_ambiguity",
+      "findings": [
+        {
+          "code": "NON_ISO_DATE_FORMAT",
+          "message": "score_date must use YYYY-MM-DD format.",
+          "oracle": "STRICT_PARSER"
+        }
+      ],
+      "handler": "ambiguous_date",
+      "observed": {
+        "code": "NON_ISO_DATE_FORMAT",
+        "normalized_text": "07/08/2026",
+        "status": "invalid",
+        "value": null
+      },
+      "outcome": "REJECTED",
+      "scenario_id": "INPUT-DATE-AMBIGUOUS-001",
+      "severity": "critical",
+      "title": "Ambiguous slash date is rejected"
+    },
+    {
+      "control_tags": [
+        "date_time"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "STRICT_PARSER"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "STRICT_PARSER"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "date_ambiguity",
+      "findings": [
+        {
+          "code": "INVALID_CALENDAR_DATE",
+          "message": "score_date contains an invalid calendar date.",
+          "oracle": "STRICT_PARSER"
+        }
+      ],
+      "handler": "invalid_leap_date",
+      "observed": {
+        "code": "INVALID_CALENDAR_DATE",
+        "normalized_text": "2025-02-29",
+        "status": "invalid",
+        "value": null
+      },
+      "outcome": "REJECTED",
+      "scenario_id": "INPUT-DATE-INVALID-LEAP-001",
+      "severity": "critical",
+      "title": "Invalid leap date is rejected"
+    },
+    {
+      "control_tags": [
+        "date_time"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "STRICT_PARSER"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "STRICT_PARSER"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "timestamp_manipulation",
+      "findings": [
+        {
+          "code": "DATETIME_TIMEZONE_MISSING",
+          "message": "retrieved_at requires an explicit timezone.",
+          "oracle": "STRICT_PARSER"
+        }
+      ],
+      "handler": "naive_datetime",
+      "observed": {
+        "code": "DATETIME_TIMEZONE_MISSING",
+        "normalized_text": "2026-07-13T17:00:00",
+        "status": "invalid",
+        "value": null
+      },
+      "outcome": "REJECTED",
+      "scenario_id": "INPUT-DATETIME-NAIVE-001",
+      "severity": "critical",
+      "title": "Timezone-free datetime is rejected"
+    },
+    {
+      "control_tags": [
+        "date_time"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "TIMESTAMP_CONSISTENCY"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "TIMESTAMP_CONSISTENCY"
+      ],
+      "expected_outcomes": [
+        "QUARANTINED"
+      ],
+      "family": "timestamp_manipulation",
+      "findings": [
+        {
+          "code": "IMPLAUSIBLE_FUTURE_TIMESTAMP",
+          "message": "Timestamp is beyond the approved evaluation horizon.",
+          "oracle": "TIMESTAMP_CONSISTENCY"
+        }
+      ],
+      "handler": "future_datetime",
+      "observed": {
+        "code": "DATETIME_PARSED",
+        "normalized_text": "2099-01-01T00:00:00Z",
+        "status": "parsed",
+        "value": "2099-01-01T00:00:00+00:00"
+      },
+      "outcome": "QUARANTINED",
+      "scenario_id": "INPUT-DATETIME-FUTURE-001",
+      "severity": "critical",
+      "title": "Implausibly future timestamp is quarantined"
+    },
+    {
+      "control_tags": [
+        "unicode_deception",
+        "date_time"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "STRICT_PARSER"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "STRICT_PARSER"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "unicode_deception",
+      "findings": [
+        {
+          "code": "UNICODE_FORMAT_CONTROL_NOT_ALLOWED",
+          "message": "retrieved_at: Unicode format, bidi, and zero-width controls are not allowed.",
+          "oracle": "STRICT_PARSER"
+        }
+      ],
+      "handler": "bidi_datetime",
+      "observed": {
+        "code": "UNICODE_FORMAT_CONTROL_NOT_ALLOWED",
+        "normalized_text": "2026-07-13T17:00:00Z\u202e",
+        "status": "invalid",
+        "value": null
+      },
+      "outcome": "REJECTED",
+      "scenario_id": "INPUT-DATETIME-BIDI-001",
+      "severity": "critical",
+      "title": "Bidi control in timestamp is rejected"
+    },
+    {
+      "control_tags": [
+        "unicode_deception",
+        "malformed_identifier"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "STRICT_PARSER"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "STRICT_PARSER"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "unicode_deception",
+      "findings": [
+        {
+          "code": "INVALID_CVE_IDENTIFIER",
+          "message": "canonical_id must match CVE-YYYY-NNNN or a longer numeric suffix.",
+          "oracle": "STRICT_PARSER"
+        }
+      ],
+      "handler": "cyrillic_cve",
+      "observed": {
+        "code": "INVALID_CVE_IDENTIFIER",
+        "normalized_text": "\u0421VE-2021-44228",
+        "status": "invalid",
+        "value": null
+      },
+      "outcome": "REJECTED",
+      "scenario_id": "INPUT-CVE-CYRILLIC-001",
+      "severity": "critical",
+      "title": "Cyrillic confusable CVE prefix is rejected"
+    },
+    {
+      "control_tags": [
+        "unicode_deception",
+        "malformed_identifier"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "STRICT_PARSER"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "STRICT_PARSER"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "unicode_deception",
+      "findings": [
+        {
+          "code": "UNICODE_FORMAT_CONTROL_NOT_ALLOWED",
+          "message": "canonical_id: Unicode format, bidi, and zero-width controls are not allowed.",
+          "oracle": "STRICT_PARSER"
+        }
+      ],
+      "handler": "zero_width_cve",
+      "observed": {
+        "code": "UNICODE_FORMAT_CONTROL_NOT_ALLOWED",
+        "normalized_text": "CVE-2021-44\u200b228",
+        "status": "invalid",
+        "value": null
+      },
+      "outcome": "REJECTED",
+      "scenario_id": "INPUT-CVE-ZERO-WIDTH-001",
+      "severity": "critical",
+      "title": "Zero-width character in CVE is rejected"
+    },
+    {
+      "control_tags": [
+        "unicode_deception",
+        "malformed_identifier"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "FEATURE_ROW_PARSER"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "FEATURE_ROW_PARSER"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "unicode_deception",
+      "findings": [
+        {
+          "code": "UNICODE_FORMAT_CONTROL_NOT_ALLOWED",
+          "message": "asset_id: Unicode format, bidi, and zero-width controls are not allowed.",
+          "oracle": "FEATURE_ROW_PARSER"
+        }
+      ],
+      "handler": "bidi_asset_id",
+      "observed": {
+        "code": "UNICODE_FORMAT_CONTROL_NOT_ALLOWED",
+        "status": "rejected",
+        "value": null
+      },
+      "outcome": "REJECTED",
+      "scenario_id": "INPUT-ASSET-BIDI-001",
+      "severity": "critical",
+      "title": "Bidi control in asset identifier is rejected"
+    },
+    {
+      "control_tags": [
+        "unicode_deception"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "FEATURE_ROW_PARSER"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "FEATURE_ROW_PARSER"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "control_character_injection",
+      "findings": [
+        {
+          "code": "CONTROL_CHARACTER_NOT_ALLOWED",
+          "message": "component_name: Control characters, including embedded line breaks and NUL bytes, are not allowed.",
+          "oracle": "FEATURE_ROW_PARSER"
+        }
+      ],
+      "handler": "nul_component",
+      "observed": {
+        "code": "CONTROL_CHARACTER_NOT_ALLOWED",
+        "status": "rejected",
+        "value": null
+      },
+      "outcome": "REJECTED",
+      "scenario_id": "INPUT-COMPONENT-NUL-001",
+      "severity": "critical",
+      "title": "NUL byte in component name is rejected"
+    },
+    {
+      "control_tags": [
+        "unicode_deception"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "FEATURE_ROW_PARSER"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "FEATURE_ROW_PARSER"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "control_character_injection",
+      "findings": [
+        {
+          "code": "CONTROL_CHARACTER_NOT_ALLOWED",
+          "message": "component_name: Control characters, including embedded line breaks and NUL bytes, are not allowed.",
+          "oracle": "FEATURE_ROW_PARSER"
+        }
+      ],
+      "handler": "newline_component",
+      "observed": {
+        "code": "CONTROL_CHARACTER_NOT_ALLOWED",
+        "status": "rejected",
+        "value": null
+      },
+      "outcome": "REJECTED",
+      "scenario_id": "INPUT-COMPONENT-NEWLINE-001",
+      "severity": "critical",
+      "title": "Embedded newline in component name is rejected"
+    },
+    {
+      "control_tags": [
+        "unicode_deception",
+        "malformed_identifier"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "STRICT_PARSER"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "STRICT_PARSER"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "purl_corruption",
+      "findings": [
+        {
+          "code": "NON_ASCII_PURL_NOT_ALLOWED",
+          "message": "purl must use ASCII or valid percent encoding.",
+          "oracle": "STRICT_PARSER"
+        }
+      ],
+      "handler": "non_ascii_purl",
+      "observed": {
+        "code": "NON_ASCII_PURL_NOT_ALLOWED",
+        "normalized_text": "pkg:maven/\u043erg.example/component",
+        "status": "invalid",
+        "value": null
+      },
+      "outcome": "REJECTED",
+      "scenario_id": "INPUT-PURL-NON-ASCII-001",
+      "severity": "critical",
+      "title": "Non-ASCII PURL is rejected"
+    },
+    {
+      "control_tags": [
+        "malformed_identifier"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "STRICT_PARSER"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "STRICT_PARSER"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "purl_corruption",
+      "findings": [
+        {
+          "code": "INVALID_PURL_PERCENT_ENCODING",
+          "message": "purl contains malformed percent encoding.",
+          "oracle": "STRICT_PARSER"
+        }
+      ],
+      "handler": "invalid_percent_purl",
+      "observed": {
+        "code": "INVALID_PURL_PERCENT_ENCODING",
+        "normalized_text": "pkg:maven/org.example/log%ZZ",
+        "status": "invalid",
+        "value": null
+      },
+      "outcome": "REJECTED",
+      "scenario_id": "INPUT-PURL-BAD-PERCENT-001",
+      "severity": "critical",
+      "title": "Malformed PURL percent encoding is rejected"
+    },
+    {
+      "control_tags": [
+        "malformed_identifier"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "STRICT_PARSER"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "STRICT_PARSER"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "purl_corruption",
+      "findings": [
+        {
+          "code": "PURL_PATH_TRAVERSAL_OR_EMPTY_SEGMENT",
+          "message": "purl contains an unsafe or empty path segment.",
+          "oracle": "STRICT_PARSER"
+        }
+      ],
+      "handler": "traversal_purl",
+      "observed": {
+        "code": "PURL_PATH_TRAVERSAL_OR_EMPTY_SEGMENT",
+        "normalized_text": "pkg:maven/org.example/%2e%2e/secret",
+        "status": "invalid",
+        "value": null
+      },
+      "outcome": "REJECTED",
+      "scenario_id": "INPUT-PURL-TRAVERSAL-001",
+      "severity": "critical",
+      "title": "Decoded PURL traversal is rejected"
+    },
+    {
+      "control_tags": [
+        "oversized_payload"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "FEATURE_ROW_PARSER"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "FEATURE_ROW_PARSER"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "oversized_input",
+      "findings": [
+        {
+          "code": "RAW_TEXT_ABOVE_SECURITY_LIMIT",
+          "message": "component_name: Input exceeds the 500-character security limit.",
+          "oracle": "FEATURE_ROW_PARSER"
+        }
+      ],
+      "handler": "oversized_component",
+      "observed": {
+        "code": "RAW_TEXT_ABOVE_SECURITY_LIMIT",
+        "status": "rejected",
+        "value": null
+      },
+      "outcome": "REJECTED",
+      "scenario_id": "INPUT-COMPONENT-OVERSIZED-001",
+      "severity": "critical",
+      "title": "Oversized component name is rejected"
+    },
+    {
+      "control_tags": [
+        "oversized_payload",
+        "version_ambiguity"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "VERSION_PARSER"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "VERSION_PARSER"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "oversized_input",
+      "findings": [
+        {
+          "code": "VERSION_TOKEN_ABOVE_SECURITY_LIMIT",
+          "message": "Version token exceeded the 150-character limit.",
+          "oracle": "VERSION_PARSER"
+        }
+      ],
+      "handler": "oversized_version",
+      "observed": {
+        "code": "VERSION_TOKEN_ABOVE_SECURITY_LIMIT",
+        "status": "invalid",
+        "value": null
+      },
+      "outcome": "REJECTED",
+      "scenario_id": "INPUT-VERSION-OVERSIZED-001",
+      "severity": "critical",
+      "title": "Oversized version token is rejected"
+    },
+    {
+      "control_tags": [
+        "oversized_payload"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "INTELLIGENCE_VALIDATOR"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "INTELLIGENCE_VALIDATOR"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "parser_exhaustion",
+      "findings": [
+        {
+          "code": "ALIAS_COLLECTION_ABOVE_SECURITY_LIMIT",
+          "message": "Alias collection exceeds the 100-item security limit.",
+          "oracle": "INTELLIGENCE_VALIDATOR"
+        }
+      ],
+      "handler": "excessive_aliases",
+      "observed": {
+        "code": "ALIAS_COLLECTION_ABOVE_SECURITY_LIMIT",
+        "status": "rejected",
+        "value": null
+      },
+      "outcome": "REJECTED",
+      "scenario_id": "INPUT-ALIASES-EXCESSIVE-001",
+      "severity": "critical",
+      "title": "Excessive alias collection is rejected"
+    },
+    {
+      "control_tags": [
+        "oversized_payload"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "INTELLIGENCE_VALIDATOR"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "INTELLIGENCE_VALIDATOR"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "parser_exhaustion",
+      "findings": [
+        {
+          "code": "OBSERVATION_COLLECTION_ABOVE_SECURITY_LIMIT",
+          "message": "Observation collection exceeds the 500-item security limit.",
+          "oracle": "INTELLIGENCE_VALIDATOR"
+        },
+        {
+          "code": "AUTHORITATIVE_SOURCE_COUNT_MISMATCH",
+          "message": "authoritative_source_count does not match the actual observations.",
+          "oracle": "INTELLIGENCE_VALIDATOR"
+        },
+        {
+          "code": "PROVENANCE_EVIDENCE_NOT_OBSERVED",
+          "message": "Provenance references evidence IDs that are not present in the source observations: ['AEG-EVD-KEV-LOG4J-001', 'AEG-EVD-OSV-LOG4J-001']",
+          "oracle": "INTELLIGENCE_VALIDATOR"
+        }
+      ],
+      "handler": "excessive_observations",
+      "observed": {
+        "code": "OBSERVATION_COLLECTION_ABOVE_SECURITY_LIMIT",
+        "status": "rejected",
+        "value": null
+      },
+      "outcome": "REJECTED",
+      "scenario_id": "INPUT-OBSERVATIONS-EXCESSIVE-001",
+      "severity": "critical",
+      "title": "Excessive observation collection is rejected"
+    },
+    {
+      "control_tags": [
+        "type_confusion",
+        "malformed_identifier"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "INTELLIGENCE_VALIDATOR"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "INTELLIGENCE_VALIDATOR"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "type_confusion",
+      "findings": [
+        {
+          "code": "SCHEMA_VALIDATION_ERROR",
+          "message": "{'cve': 'CVE-2021-44228'} is not of type 'string'",
+          "oracle": "INTELLIGENCE_VALIDATOR"
+        }
+      ],
+      "handler": "canonical_object",
+      "observed": {
+        "code": "SCHEMA_VALIDATION_ERROR",
+        "status": "rejected",
+        "value": null
+      },
+      "outcome": "REJECTED",
+      "scenario_id": "INPUT-CANONICAL-OBJECT-001",
+      "severity": "critical",
+      "title": "Object supplied as canonical ID is rejected"
+    },
+    {
+      "control_tags": [
+        "oversized_payload"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "STRICT_PARSER"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "STRICT_PARSER"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "parser_exhaustion",
+      "findings": [
+        {
+          "code": "RAW_TEXT_ABOVE_SECURITY_LIMIT",
+          "message": "source_count: Input exceeds the 10000-character security limit.",
+          "oracle": "STRICT_PARSER"
+        }
+      ],
+      "handler": "giant_integer",
+      "observed": {
+        "code": "RAW_TEXT_ABOVE_SECURITY_LIMIT",
+        "normalized_text": "99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999",
+        "status": "invalid",
+        "value": null
+      },
+      "outcome": "REJECTED",
+      "scenario_id": "INPUT-INTEGER-GIANT-001",
+      "severity": "critical",
+      "title": "Giant integer token is bounded and rejected"
+    },
+    {
+      "control_tags": [
+        "malformed_identifier"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "STRICT_PARSER"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "STRICT_PARSER"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "cve_corruption",
+      "findings": [
+        {
+          "code": "INVALID_CVE_IDENTIFIER",
+          "message": "canonical_id must match CVE-YYYY-NNNN or a longer numeric suffix.",
+          "oracle": "STRICT_PARSER"
+        }
+      ],
+      "handler": "malformed_cve_prefix",
+      "observed": {
+        "code": "INVALID_CVE_IDENTIFIER",
+        "normalized_text": "CVE_2021_44228",
+        "status": "invalid",
+        "value": null
+      },
+      "outcome": "REJECTED",
+      "scenario_id": "INPUT-CVE-BAD-PREFIX-001",
+      "severity": "critical",
+      "title": "Malformed CVE prefix is rejected"
+    },
+    {
+      "control_tags": [
+        "malformed_identifier"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "STRICT_PARSER"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "STRICT_PARSER"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "cve_corruption",
+      "findings": [
+        {
+          "code": "STRING_BELOW_MINIMUM_LENGTH",
+          "message": "canonical_id must contain at least 13 character(s).",
+          "oracle": "STRICT_PARSER"
+        }
+      ],
+      "handler": "short_cve_suffix",
+      "observed": {
+        "code": "STRING_BELOW_MINIMUM_LENGTH",
+        "normalized_text": "CVE-2021-123",
+        "status": "invalid",
+        "value": null
+      },
+      "outcome": "REJECTED",
+      "scenario_id": "INPUT-CVE-SHORT-SUFFIX-001",
+      "severity": "critical",
+      "title": "Short CVE numeric suffix is rejected"
+    },
+    {
+      "control_tags": [
+        "malformed_identifier"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "INTELLIGENCE_VALIDATOR"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "INTELLIGENCE_VALIDATOR"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "duplicate_identity",
+      "findings": [
+        {
+          "code": "DUPLICATE_ALIAS_AFTER_NORMALIZATION",
+          "message": "Vulnerability aliases collide after canonical case and whitespace normalization.",
+          "oracle": "INTELLIGENCE_VALIDATOR"
+        }
+      ],
+      "handler": "duplicate_aliases_normalized",
+      "observed": {
+        "code": "DUPLICATE_ALIAS_AFTER_NORMALIZATION",
+        "status": "rejected",
+        "value": null
+      },
+      "outcome": "REJECTED",
+      "scenario_id": "INPUT-ALIASES-NORMALIZED-DUPLICATE-001",
+      "severity": "critical",
+      "title": "Case-insensitive duplicate aliases are rejected"
+    },
+    {
+      "control_tags": [
+        "malformed_identifier"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "INTELLIGENCE_VALIDATOR"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "INTELLIGENCE_VALIDATOR"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "duplicate_identity",
+      "findings": [
+        {
+          "code": "CANONICAL_ID_DUPLICATED_AS_ALIAS",
+          "message": "The canonical vulnerability identifier must not be repeated in the aliases collection.",
+          "oracle": "INTELLIGENCE_VALIDATOR"
+        }
+      ],
+      "handler": "canonical_duplicate_alias",
+      "observed": {
+        "code": "CANONICAL_ID_DUPLICATED_AS_ALIAS",
+        "status": "rejected",
+        "value": null
+      },
+      "outcome": "REJECTED",
+      "scenario_id": "INPUT-ALIASES-CANONICAL-DUPLICATE-001",
+      "severity": "critical",
+      "title": "Canonical CVE repeated as alias is rejected"
+    },
+    {
+      "control_tags": [
+        "malformed_identifier"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "INTELLIGENCE_VALIDATOR"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "INTELLIGENCE_VALIDATOR"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "duplicate_identity",
+      "findings": [
+        {
+          "code": "DUPLICATE_AFFECTED_PACKAGE_PURL",
+          "message": "Affected-package PURLs must be unique after canonical normalization.",
+          "oracle": "INTELLIGENCE_VALIDATOR"
+        }
+      ],
+      "handler": "duplicate_purl",
+      "observed": {
+        "code": "DUPLICATE_AFFECTED_PACKAGE_PURL",
+        "status": "rejected",
+        "value": null
+      },
+      "outcome": "REJECTED",
+      "scenario_id": "INPUT-PURL-DUPLICATE-001",
+      "severity": "critical",
+      "title": "Duplicate affected-package PURL is rejected"
+    },
+    {
+      "control_tags": [
+        "enum_semantics"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "STRICT_PARSER"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "STRICT_PARSER"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "enum_poisoning",
+      "findings": [
+        {
+          "code": "ENUM_VALUE_NOT_ALLOWED",
+          "message": "criticality value 'ultra' is not allowed. Expected one of ['high', 'medium', 'low'].",
+          "oracle": "STRICT_PARSER"
+        }
+      ],
+      "handler": "unknown_enum",
+      "observed": {
+        "code": "ENUM_VALUE_NOT_ALLOWED",
+        "normalized_text": "ultra",
+        "status": "invalid",
+        "value": null
+      },
+      "outcome": "REJECTED",
+      "scenario_id": "INPUT-ENUM-UNKNOWN-001",
+      "severity": "critical",
+      "title": "Unknown enum token is rejected"
+    },
+    {
+      "control_tags": [
+        "enum_semantics"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "STRICT_PARSER"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "STRICT_PARSER"
+      ],
+      "expected_outcomes": [
+        "NORMALIZED_SAFE"
+      ],
+      "family": "enum_poisoning",
+      "findings": [
+        {
+          "code": "ENUM_CANONICALIZED",
+          "message": "Whitespace and case were normalized to the canonical enum.",
+          "oracle": "STRICT_PARSER"
+        }
+      ],
+      "handler": "enum_whitespace",
+      "observed": {
+        "code": "ENUM_PARSED",
+        "normalized_text": "HIGH",
+        "status": "parsed",
+        "value": "high"
+      },
+      "outcome": "NORMALIZED_SAFE",
+      "scenario_id": "INPUT-ENUM-WHITESPACE-001",
+      "severity": "critical",
+      "title": "Whitespace enum is normalized to canonical value"
+    },
+    {
+      "control_tags": [
+        "formula_injection"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "FEATURE_ROW_PARSER"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "FEATURE_ROW_PARSER"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "formula_injection",
+      "findings": [
+        {
+          "code": "SPREADSHEET_FORMULA_PREFIX_NOT_ALLOWED",
+          "message": "component_name begins with a spreadsheet formula prefix and cannot be exported safely without explicit escaping.",
+          "oracle": "FEATURE_ROW_PARSER"
+        }
+      ],
+      "handler": "formula_component",
+      "observed": {
+        "code": "SPREADSHEET_FORMULA_PREFIX_NOT_ALLOWED",
+        "status": "rejected",
+        "value": null
+      },
+      "outcome": "REJECTED",
+      "scenario_id": "INPUT-FORMULA-COMPONENT-001",
+      "severity": "critical",
+      "title": "Spreadsheet formula prefix is rejected"
+    },
+    {
+      "control_tags": [
+        "type_confusion"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "FEATURE_ROW_PARSER"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "FEATURE_ROW_PARSER"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "type_confusion",
+      "findings": [
+        {
+          "code": "INVALID_STRING_TYPE",
+          "message": "component_name must be a string, not dict.",
+          "oracle": "FEATURE_ROW_PARSER"
+        }
+      ],
+      "handler": "object_component",
+      "observed": {
+        "code": "INVALID_STRING_TYPE",
+        "status": "rejected",
+        "value": null
+      },
+      "outcome": "REJECTED",
+      "scenario_id": "INPUT-COMPONENT-OBJECT-001",
+      "severity": "critical",
+      "title": "Object supplied as component name is rejected"
+    },
+    {
+      "control_tags": [
+        "version_ambiguity"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "VERSION_PARSER"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "VERSION_PARSER"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "version_ambiguity",
+      "findings": [
+        {
+          "code": "WILDCARD_VERSION_NOT_ALLOWED",
+          "message": "Ambiguous or unsupported version token was not guessed.",
+          "oracle": "VERSION_PARSER"
+        }
+      ],
+      "handler": "wildcard_version",
+      "observed": {
+        "code": "WILDCARD_VERSION_NOT_ALLOWED",
+        "status": "invalid",
+        "value": null
+      },
+      "outcome": "REJECTED",
+      "scenario_id": "INPUT-VERSION-WILDCARD-001",
+      "severity": "critical",
+      "title": "Wildcard version is treated as ambiguous"
+    },
+    {
+      "control_tags": [
+        "version_ambiguity"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "VERSION_PARSER"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "VERSION_PARSER"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "version_ambiguity",
+      "findings": [
+        {
+          "code": "VERSION_EXPRESSION_NOT_ALLOWED",
+          "message": "Ambiguous or unsupported version token was not guessed.",
+          "oracle": "VERSION_PARSER"
+        }
+      ],
+      "handler": "comparison_version",
+      "observed": {
+        "code": "VERSION_EXPRESSION_NOT_ALLOWED",
+        "status": "invalid",
+        "value": null
+      },
+      "outcome": "REJECTED",
+      "scenario_id": "INPUT-VERSION-COMPARATOR-001",
+      "severity": "critical",
+      "title": "Comparator expression is not guessed as a version"
+    },
+    {
+      "control_tags": [
+        "version_ambiguity"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "INTELLIGENCE_VALIDATOR"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "INTELLIGENCE_VALIDATOR"
+      ],
+      "expected_outcomes": [
+        "REJECTED"
+      ],
+      "family": "version_ambiguity",
+      "findings": [
+        {
+          "code": "AMBIGUOUS_VERSION_RANGE_UPPER_BOUND",
+          "message": "A version range cannot declare both fixed and last_affected boundaries.",
+          "oracle": "INTELLIGENCE_VALIDATOR"
+        }
+      ],
+      "handler": "conflicting_range",
+      "observed": {
+        "code": "AMBIGUOUS_VERSION_RANGE_UPPER_BOUND",
+        "status": "rejected",
+        "value": null
+      },
+      "outcome": "REJECTED",
+      "scenario_id": "INPUT-RANGE-CONFLICTING-BOUNDS-001",
+      "severity": "critical",
+      "title": "Conflicting version upper bounds are rejected"
+    },
+    {
+      "control_tags": [
+        "version_ambiguity"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "VERSION_RANGE_ENGINE"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "VERSION_RANGE_ENGINE"
+      ],
+      "expected_outcomes": [
+        "QUARANTINED"
+      ],
+      "family": "unsupported_version_scheme",
+      "findings": [
+        {
+          "code": "UNSUPPORTED_RANGE_TYPE",
+          "message": "Unsupported range type forced an abstaining result.",
+          "oracle": "VERSION_RANGE_ENGINE"
+        }
+      ],
+      "handler": "unsupported_range_type",
+      "observed": {
+        "code": "UNSUPPORTED_RANGE_TYPE",
+        "status": "invalid",
+        "value": null
+      },
+      "outcome": "QUARANTINED",
+      "scenario_id": "INPUT-RANGE-UNSUPPORTED-TYPE-001",
+      "severity": "critical",
+      "title": "Unsupported range type forces abstention"
+    },
+    {
+      "control_tags": [
+        "missing_value_semantics"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "STRICT_PARSER"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "STRICT_PARSER"
+      ],
+      "expected_outcomes": [
+        "NORMALIZED_SAFE"
+      ],
+      "family": "missing_value_confusion",
+      "findings": [
+        {
+          "code": "MISSING_VALUE_PRESERVED",
+          "message": "Blank EPSS remained missing and no score was invented.",
+          "oracle": "STRICT_PARSER"
+        }
+      ],
+      "handler": "missing_probability",
+      "observed": {
+        "code": "VALUE_MISSING",
+        "normalized_text": "",
+        "status": "missing",
+        "value": null
+      },
+      "outcome": "NORMALIZED_SAFE",
+      "scenario_id": "INPUT-MISSING-PROBABILITY-001",
+      "severity": "critical",
+      "title": "Blank probability remains missing"
+    },
+    {
+      "control_tags": [
+        "missing_value_semantics"
+      ],
+      "defended": true,
+      "detection_oracles": [
+        "STRICT_PARSER"
+      ],
+      "ephemeral_only": true,
+      "error": null,
+      "expectation_met": true,
+      "expected_oracles": [
+        "STRICT_PARSER"
+      ],
+      "expected_outcomes": [
+        "NORMALIZED_SAFE"
+      ],
+      "family": "missing_value_confusion",
+      "findings": [
+        {
+          "code": "REAL_ZERO_PRESERVED",
+          "message": "A real zero EPSS score remained zero rather than missing.",
+          "oracle": "STRICT_PARSER"
+        }
+      ],
+      "handler": "zero_probability",
+      "observed": {
+        "code": "FLOAT_PARSED",
+        "normalized_text": "0",
+        "status": "parsed",
+        "value": 0.0
+      },
+      "outcome": "NORMALIZED_SAFE",
+      "scenario_id": "INPUT-ZERO-PROBABILITY-001",
+      "severity": "critical",
+      "title": "Real zero probability remains zero"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "summary": {
+    "accepted_with_warning_count": 0,
+    "critical_hostile_input_defence_rate": 1.0,
+    "critical_scenario_count": 50,
+    "defended_critical_count": 50,
+    "harness_error_count": 0,
+    "malformed_identifier_defence_rate": 1.0,
+    "malformed_identifier_defended_count": 12,
+    "malformed_identifier_scenario_count": 12,
+    "missing_value_semantics_defence_rate": 1.0,
+    "missing_value_semantics_defended_count": 3,
+    "missing_value_semantics_scenario_count": 3,
+    "nonfinite_numeric_defence_rate": 1.0,
+    "nonfinite_numeric_defended_count": 4,
+    "nonfinite_numeric_scenario_count": 4,
+    "normalized_safe_count": 6,
+    "overall_passed": true,
+    "oversized_payload_defence_rate": 1.0,
+    "oversized_payload_defended_count": 7,
+    "oversized_payload_scenario_count": 7,
+    "quarantined_count": 2,
+    "rejected_count": 42,
+    "scenario_count": 50,
+    "trusted_input_integrity_passed": true,
+    "type_confusion_defence_rate": 1.0,
+    "type_confusion_defended_count": 4,
+    "type_confusion_scenario_count": 4,
+    "undetected_count": 0,
+    "unicode_deception_defence_rate": 1.0,
+    "unicode_deception_defended_count": 7,
+    "unicode_deception_scenario_count": 7
+  },
+  "undetected_input_ids": []
+}
