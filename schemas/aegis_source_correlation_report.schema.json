@@ -1,0 +1,136 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aegissec.example/schemas/aegis_source_correlation_report.schema.json",
+  "title": "AegisSec Official Source Correlation Report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "report_id",
+    "generated_at",
+    "target",
+    "source_run",
+    "source_inventory",
+    "exact_target_matches",
+    "adjacent_records",
+    "controls",
+    "conflicts",
+    "assertion_differences",
+    "freshness",
+    "quality_gates",
+    "canonical_record",
+    "release_decision",
+    "limitations"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "report_id": {"type": "string", "pattern": "^AEG-SCR-[A-F0-9]{24}$"},
+    "generated_at": {"type": "string", "format": "date-time"},
+    "target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["cve_id", "component"],
+      "properties": {
+        "cve_id": {"type": "string", "pattern": "^CVE-[0-9]{4}-[0-9]{4,}$"},
+        "component": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["package_name", "ecosystem", "version"],
+          "properties": {
+            "package_name": {"type": "string", "minLength": 1},
+            "ecosystem": {"type": "string", "minLength": 1},
+            "version": {"type": "string", "minLength": 1}
+          }
+        }
+      }
+    },
+    "source_run": {"type": "object"},
+    "source_inventory": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "object"}},
+    "exact_target_matches": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["OSV", "NVD", "CISA_KEV", "FIRST_EPSS"],
+      "properties": {
+        "OSV": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+        "NVD": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+        "CISA_KEV": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+        "FIRST_EPSS": {"type": "array", "uniqueItems": true, "items": {"type": "string"}}
+      }
+    },
+    "adjacent_records": {"type": "array", "items": {"type": "object"}},
+    "controls": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "exact_target_correlation_required",
+        "source_count_is_consensus",
+        "consensus_inference_permitted",
+        "adjacent_record_isolation",
+        "missing_numeric_values_coerced_to_zero"
+      ],
+      "properties": {
+        "exact_target_correlation_required": {"const": true},
+        "source_count_is_consensus": {"const": false},
+        "consensus_inference_permitted": {"const": false},
+        "adjacent_record_isolation": {"const": true},
+        "missing_numeric_values_coerced_to_zero": {"const": false}
+      }
+    },
+    "conflicts": {"type": "array", "items": {"type": "object"}},
+    "assertion_differences": {"type": "array", "items": {"type": "object"}},
+    "freshness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reference_time", "checks", "blocking_findings"],
+      "properties": {
+        "reference_time": {"type": "string", "format": "date-time"},
+        "checks": {"type": "array", "minItems": 7, "items": {"type": "object"}},
+        "blocking_findings": {"type": "array", "uniqueItems": true, "items": {"type": "string"}}
+      }
+    },
+    "quality_gates": {
+      "type": "array",
+      "minItems": 8,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["gate_id", "metric", "observed", "expected", "pass"],
+        "properties": {
+          "gate_id": {"type": "string", "pattern": "^M12B-[A-Z0-9-]+$"},
+          "metric": {"type": "string", "minLength": 2},
+          "observed": {},
+          "expected": {},
+          "pass": {"type": "boolean"}
+        }
+      }
+    },
+    "canonical_record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["record_id", "filename", "sha256"],
+      "properties": {
+        "record_id": {"type": "string", "pattern": "^AEG-CVI-[A-F0-9]{24}$"},
+        "filename": {
+          "type": "string",
+          "pattern": "^aeg-cvi-[a-f0-9]{24}\\.canonical\\.json$"
+        },
+        "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      }
+    },
+    "release_decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["stage_gate", "production_readiness", "blocking_reasons"],
+      "properties": {
+        "stage_gate": {"enum": ["PASS", "FAIL"]},
+        "production_readiness": {"const": "BLOCKED"},
+        "blocking_reasons": {
+          "type": "array",
+          "minItems": 3,
+          "items": {"type": "string", "minLength": 10, "maxLength": 2000}
+        }
+      }
+    },
+    "limitations": {"type": "array", "minItems": 5, "items": {"type": "string"}}
+  }
+}

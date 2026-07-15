@@ -25,3 +25,12 @@ reports/*.pdf
 # OS/editor
 .DS_Store
 .vscode/
+
+# ---------------------------------------------------------------------------
+# Live official-source retrieval payloads
+# Ephemeral, refreshable and potentially large. Never commit raw API payloads.
+# ---------------------------------------------------------------------------
+data/raw/official_sources/*
+!data/raw/official_sources/.gitkeep
+data/raw/official_sources/
+data/processed/canonical_intelligence/
