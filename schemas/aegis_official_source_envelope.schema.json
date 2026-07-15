@@ -1,0 +1,122 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aegissec.example/schemas/aegis_official_source_envelope.schema.json",
+  "title": "AegisSec Official Source Retrieval Envelope",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "envelope_id",
+    "source",
+    "request",
+    "retrieval",
+    "artifact",
+    "records",
+    "validation",
+    "provenance"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "envelope_id": {
+      "type": "string",
+      "pattern": "^AEG-OSI-[A-F0-9]{24}$"
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_name", "source_category", "source_authority", "endpoint"],
+      "properties": {
+        "source_name": {
+          "type": "string",
+          "enum": ["OSV", "NVD", "CISA_KEV", "FIRST_EPSS"]
+        },
+        "source_category": {
+          "type": "string",
+          "enum": ["official_government", "official_public_service", "open_source_project"]
+        },
+        "source_authority": {
+          "type": "string",
+          "enum": ["authoritative", "high"]
+        },
+        "endpoint": {"type": "string", "format": "uri", "pattern": "^https://"}
+      }
+    },
+    "request": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["method", "parameters", "body", "headers", "timeout_seconds", "max_attempts"],
+      "properties": {
+        "method": {"type": "string", "enum": ["GET", "POST"]},
+        "parameters": {"type": "object"},
+        "body": {},
+        "headers": {"type": "object"},
+        "timeout_seconds": {"type": "number", "exclusiveMinimum": 0, "maximum": 120},
+        "max_attempts": {"type": "integer", "minimum": 1, "maximum": 5}
+      }
+    },
+    "retrieval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mode", "status", "retrieved_at", "http_status", "attempt_count", "response_headers"],
+      "properties": {
+        "mode": {"const": "live"},
+        "status": {"const": "success"},
+        "retrieved_at": {"type": "string", "format": "date-time"},
+        "http_status": {"type": "integer", "minimum": 200, "maximum": 299},
+        "attempt_count": {"type": "integer", "minimum": 1, "maximum": 5},
+        "response_headers": {"type": "object", "additionalProperties": {"type": "string"}}
+      }
+    },
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["media_type", "size_bytes", "sha256", "payload_filename"],
+      "properties": {
+        "media_type": {"const": "application/json"},
+        "size_bytes": {"type": "integer", "minimum": 2},
+        "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "payload_filename": {
+          "type": "string",
+          "pattern": "^aeg-osi-[a-f0-9]{24}\\.payload\\.json$"
+        }
+      }
+    },
+    "records": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["record_count", "record_ids"],
+      "properties": {
+        "record_count": {"type": "integer", "minimum": 0},
+        "record_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 2, "maxLength": 300}
+        }
+      }
+    },
+    "validation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "errors", "warnings"],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["accepted", "accepted_with_warnings", "rejected"]
+        },
+        "errors": {"type": "array", "items": {"type": "string", "maxLength": 1000}},
+        "warnings": {"type": "array", "items": {"type": "string", "maxLength": 1000}}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["collector", "collector_version", "network_used", "credential_material_persisted"],
+      "properties": {
+        "collector": {"type": "string", "minLength": 2, "maxLength": 200},
+        "collector_version": {"type": "string", "minLength": 1, "maxLength": 50},
+        "network_used": {"const": true},
+        "credential_material_persisted": {"const": false}
+      }
+    }
+  }
+}
