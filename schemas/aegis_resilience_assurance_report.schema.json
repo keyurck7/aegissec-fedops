@@ -1,0 +1,663 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aegissec.example/schemas/aegis-resilience-assurance-report-v1.0.0.json",
+  "title": "AegisSec Resilience Assurance Report v1.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "report_id",
+    "catalog",
+    "runtime_policy",
+    "deterministic_clock",
+    "input_integrity_checks_before",
+    "input_integrity_checks_after",
+    "baseline_validation",
+    "summary",
+    "quality_gates",
+    "results",
+    "undetected_scenario_ids",
+    "harness_error_scenario_ids",
+    "unsafe_release_scenario_ids",
+    "silent_data_loss_scenario_ids",
+    "unbounded_retry_scenario_ids",
+    "release_decision",
+    "limitations",
+    "generated_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "report_id": {
+      "type": "string",
+      "pattern": "^AEG-RESILIENCE-[A-Z0-9._-]+$"
+    },
+    "catalog": {
+      "$ref": "#/$defs/artifactIdentity"
+    },
+    "runtime_policy": {
+      "$ref": "#/$defs/policyIdentity"
+    },
+    "deterministic_clock": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evaluation_time",
+        "wall_clock_reads_used_for_scenarios",
+        "sleep_based_retries_used"
+      ],
+      "properties": {
+        "evaluation_time": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "wall_clock_reads_used_for_scenarios": {
+          "const": false
+        },
+        "sleep_based_retries_used": {
+          "const": false
+        }
+      }
+    },
+    "input_integrity_checks_before": {
+      "$ref": "#/$defs/integrityMap"
+    },
+    "input_integrity_checks_after": {
+      "$ref": "#/$defs/integrityMap"
+    },
+    "baseline_validation": {
+      "$ref": "#/$defs/baselineMap"
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scenario_count",
+        "critical_scenario_count",
+        "defended_critical_count",
+        "completed_normally_count",
+        "completed_degraded_review_required_count",
+        "retry_scheduled_count",
+        "circuit_open_count",
+        "rolled_back_count",
+        "quarantined_count",
+        "recovered_idempotently_count",
+        "blocked_dependency_failure_count",
+        "blocked_audit_failure_count",
+        "blocked_integrity_failure_count",
+        "unsafe_decision_release_count",
+        "silent_data_loss_count",
+        "unbounded_retry_count",
+        "undetected_count",
+        "harness_error_count",
+        "critical_fault_scenario_defence_rate",
+        "rollback_correctness_rate",
+        "idempotent_recovery_rate",
+        "audit_continuity_preservation_rate",
+        "cache_integrity_enforcement_rate",
+        "dependency_failure_fail_closed_rate",
+        "degraded_mode_governance_rate",
+        "poison_message_isolation_rate",
+        "restart_recovery_consistency_rate",
+        "bounded_retry_enforcement_rate",
+        "circuit_breaker_enforcement_rate",
+        "trusted_input_integrity_passed",
+        "baseline_validation_passed",
+        "overall_passed"
+      ],
+      "properties": {
+        "scenario_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "critical_scenario_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "defended_critical_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "completed_normally_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "completed_degraded_review_required_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "retry_scheduled_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "circuit_open_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "rolled_back_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "quarantined_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "recovered_idempotently_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "blocked_dependency_failure_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "blocked_audit_failure_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "blocked_integrity_failure_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "unsafe_decision_release_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "silent_data_loss_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "unbounded_retry_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "undetected_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "harness_error_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "critical_fault_scenario_defence_rate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "rollback_correctness_rate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "idempotent_recovery_rate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "audit_continuity_preservation_rate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "cache_integrity_enforcement_rate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "dependency_failure_fail_closed_rate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "degraded_mode_governance_rate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "poison_message_isolation_rate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "restart_recovery_consistency_rate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "bounded_retry_enforcement_rate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "circuit_breaker_enforcement_rate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "trusted_input_integrity_passed": {
+          "type": "boolean"
+        },
+        "baseline_validation_passed": {
+          "type": "boolean"
+        },
+        "overall_passed": {
+          "type": "boolean"
+        }
+      }
+    },
+    "quality_gates": {
+      "type": "array",
+      "minItems": 17,
+      "items": {
+        "$ref": "#/$defs/gate"
+      }
+    },
+    "results": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/result"
+      }
+    },
+    "undetected_scenario_ids": {
+      "$ref": "#/$defs/idArray"
+    },
+    "harness_error_scenario_ids": {
+      "$ref": "#/$defs/idArray"
+    },
+    "unsafe_release_scenario_ids": {
+      "$ref": "#/$defs/idArray"
+    },
+    "silent_data_loss_scenario_ids": {
+      "$ref": "#/$defs/idArray"
+    },
+    "unbounded_retry_scenario_ids": {
+      "$ref": "#/$defs/idArray"
+    },
+    "release_decision": {
+      "$ref": "#/$defs/releaseDecision"
+    },
+    "limitations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "idArray": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "artifactIdentity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "catalog_id",
+        "version",
+        "harness_version",
+        "relative_path",
+        "sha256"
+      ],
+      "properties": {
+        "catalog_id": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "harness_version": {
+          "type": "string"
+        },
+        "relative_path": {
+          "type": "string"
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "policyIdentity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "policy_id",
+        "version",
+        "relative_path",
+        "sha256"
+      ],
+      "properties": {
+        "policy_id": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "relative_path": {
+          "type": "string"
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "integrityMap": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "relative_path",
+          "expected_sha256",
+          "actual_sha256",
+          "safe_path",
+          "exists",
+          "passed"
+        ],
+        "properties": {
+          "relative_path": {
+            "type": "string"
+          },
+          "expected_sha256": {
+            "$ref": "#/$defs/sha256"
+          },
+          "actual_sha256": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/sha256"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "safe_path": {
+            "type": "boolean"
+          },
+          "exists": {
+            "type": "boolean"
+          },
+          "passed": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "baselineMap": {
+      "type": "object",
+      "minProperties": 8,
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "metric",
+          "expected",
+          "observed",
+          "passed"
+        ],
+        "properties": {
+          "metric": {
+            "type": "string"
+          },
+          "expected": {},
+          "observed": {},
+          "passed": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "gate_id",
+        "metric",
+        "operator",
+        "threshold",
+        "observed",
+        "passed"
+      ],
+      "properties": {
+        "gate_id": {
+          "type": "string"
+        },
+        "metric": {
+          "type": "string"
+        },
+        "operator": {
+          "enum": [
+            "eq",
+            "gte",
+            "lte"
+          ]
+        },
+        "threshold": {},
+        "observed": {},
+        "passed": {
+          "type": "boolean"
+        }
+      }
+    },
+    "finding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "code",
+        "control",
+        "message",
+        "severity"
+      ],
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "control": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "severity": {
+          "enum": [
+            "critical",
+            "high",
+            "medium",
+            "low",
+            "informational"
+          ]
+        }
+      }
+    },
+    "result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scenario_id",
+        "family",
+        "handler",
+        "severity",
+        "description",
+        "control_tags",
+        "expected_outcomes",
+        "outcome",
+        "defended",
+        "expectation_met",
+        "unsafe_decision_released",
+        "silent_data_loss",
+        "unbounded_retry",
+        "human_review_required",
+        "prohibit_closure",
+        "degraded_mode",
+        "automated_release",
+        "retry_attempts",
+        "detection_oracles",
+        "finding_codes",
+        "findings",
+        "residual_risks",
+        "details"
+      ],
+      "properties": {
+        "scenario_id": {
+          "type": "string"
+        },
+        "family": {
+          "type": "string"
+        },
+        "handler": {
+          "enum": [
+            "dependency",
+            "retry_circuit",
+            "persistence",
+            "cache",
+            "audit",
+            "recovery",
+            "queue_resource"
+          ]
+        },
+        "severity": {
+          "const": "critical"
+        },
+        "description": {
+          "type": "string"
+        },
+        "control_tags": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "expected_outcomes": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "outcome": {
+          "enum": [
+            "COMPLETED_NORMALLY",
+            "COMPLETED_DEGRADED_REVIEW_REQUIRED",
+            "RETRY_SCHEDULED",
+            "CIRCUIT_OPEN",
+            "ROLLED_BACK",
+            "QUARANTINED",
+            "RECOVERED_IDEMPOTENTLY",
+            "BLOCKED_DEPENDENCY_FAILURE",
+            "BLOCKED_AUDIT_FAILURE",
+            "BLOCKED_INTEGRITY_FAILURE",
+            "UNSAFE_RELEASE",
+            "UNDETECTED",
+            "HARNESS_ERROR"
+          ]
+        },
+        "defended": {
+          "type": "boolean"
+        },
+        "expectation_met": {
+          "type": "boolean"
+        },
+        "unsafe_decision_released": {
+          "type": "boolean"
+        },
+        "silent_data_loss": {
+          "type": "boolean"
+        },
+        "unbounded_retry": {
+          "type": "boolean"
+        },
+        "human_review_required": {
+          "type": "boolean"
+        },
+        "prohibit_closure": {
+          "type": "boolean"
+        },
+        "degraded_mode": {
+          "type": "boolean"
+        },
+        "automated_release": {
+          "type": "boolean"
+        },
+        "retry_attempts": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "detection_oracles": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "finding_codes": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "findings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/finding"
+          }
+        },
+        "residual_risks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "details": {
+          "type": "object"
+        }
+      }
+    },
+    "releaseDecision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "stage_gate_status",
+        "production_readiness_status",
+        "blocking_reasons"
+      ],
+      "properties": {
+        "stage_gate_status": {
+          "enum": [
+            "PASS",
+            "FAIL"
+          ]
+        },
+        "production_readiness_status": {
+          "enum": [
+            "BLOCKED",
+            "READY"
+          ]
+        },
+        "blocking_reasons": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+AegisSec Step 11H Fault-Injection, Resilience, and Recovery Assurance
+Scenarios: 42
+Defended: 42
+Completed normally: 2
+Completed degraded, review required: 4
+Retry scheduled: 3
+Circuit open: 3
+Rolled back: 5
+Quarantined: 7
+Recovered idempotently: 4
+Blocked dependency failures: 8
+Blocked audit failures: 3
+Blocked integrity failures: 3
+Unsafe decision releases: 0
+Silent data loss: 0
+Unbounded retries: 0
+Undetected: 0
+Harness errors: 0
+Critical fault-scenario defence rate: 1.0000
+Rollback correctness rate: 1.0000
+Idempotent recovery rate: 1.0000
+Audit-continuity preservation rate: 1.0000
+Cache-integrity enforcement rate: 1.0000
+Dependency-failure fail-closed rate: 1.0000
+Degraded-mode governance rate: 1.0000
+Poison-message isolation rate: 1.0000
+Restart-recovery consistency rate: 1.0000
+Bounded-retry enforcement rate: 1.0000
+Circuit-breaker enforcement rate: 1.0000
+Trusted inputs unchanged: True
+Stage gate: PASS
+Production readiness: BLOCKED
+Report: /home/jovyan/vault/aegissec-fedops/data/validation_reports/resilience/step11h_resilience_assurance_report.json
+Results CSV: /home/jovyan/vault/aegissec-fedops/data/validation_reports/resilience/step11h_fault_results.csv
+Unsafe-release record: /home/jovyan/vault/aegissec-fedops/data/validation_reports/resilience/step11h_unsafe_releases.json
+Recovery record: /home/jovyan/vault/aegissec-fedops/data/validation_reports/resilience/step11h_recovery_results.json
+Integrity record: /home/jovyan/vault/aegissec-fedops/data/validation_reports/resilience/step11h_trusted_baseline_integrity.sha256
+
+Remaining production blockers:
+ - Real operational validation has not yet been completed.
+ - Independent security review has not yet been completed.

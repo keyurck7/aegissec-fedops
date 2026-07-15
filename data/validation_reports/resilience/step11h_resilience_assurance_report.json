@@ -1,0 +1,2568 @@
+{
+  "baseline_validation": {
+    "decision_fixture": {
+      "expected": true,
+      "metric": "decision_fixture.valid",
+      "observed": true,
+      "passed": true
+    },
+    "decision_hash": {
+      "expected": true,
+      "metric": "decision_fixture.hash_valid",
+      "observed": true,
+      "passed": true
+    },
+    "deterministic_clock": {
+      "expected": false,
+      "metric": "scenario_wall_clock_dependency",
+      "observed": false,
+      "passed": true
+    },
+    "evidence_fixture": {
+      "expected": true,
+      "metric": "evidence_fixture.valid",
+      "observed": true,
+      "passed": true
+    },
+    "evidence_trust": {
+      "expected": "ACCEPT",
+      "metric": "evidence_fixture.trust_action",
+      "observed": "ACCEPT_WITH_WARNINGS",
+      "passed": true
+    },
+    "runtime_policy": {
+      "expected": "1.0.0",
+      "metric": "resilience_runtime_policy.version",
+      "observed": "1.0.0",
+      "passed": true
+    },
+    "step11c_report": {
+      "expected": true,
+      "metric": "summary.overall_passed",
+      "observed": true,
+      "passed": true
+    },
+    "step11d_report": {
+      "expected": true,
+      "metric": "summary.overall_passed",
+      "observed": true,
+      "passed": true
+    },
+    "step11e_report": {
+      "expected": true,
+      "metric": "summary.overall_passed",
+      "observed": true,
+      "passed": true
+    },
+    "step11f_report": {
+      "expected": true,
+      "metric": "summary.overall_passed",
+      "observed": true,
+      "passed": true
+    },
+    "step11g_report": {
+      "expected": true,
+      "metric": "summary.overall_passed",
+      "observed": true,
+      "passed": true
+    }
+  },
+  "catalog": {
+    "catalog_id": "AEGIS-RESILIENCE-FAULT-SCENARIO-CATALOG",
+    "harness_version": "0.1.0",
+    "relative_path": "policies/assurance/resilience_fault_scenario_catalog_v1.yaml",
+    "sha256": "c6a613dc06504702a699abe627790f154fbd56f6c7f0b65506487ac2538d2b7e",
+    "version": "1.0.0"
+  },
+  "deterministic_clock": {
+    "evaluation_time": "2026-07-15T10:00:00+00:00",
+    "sleep_based_retries_used": false,
+    "wall_clock_reads_used_for_scenarios": false
+  },
+  "generated_at": "2026-07-15T11:44:51.806082+00:00",
+  "harness_error_scenario_ids": [],
+  "input_integrity_checks_after": {
+    "assurance_corpus": {
+      "actual_sha256": "d51747056c4f920d5e0b6bfb51613b4e1ee1910de82770aa179dd3fe77f68ded",
+      "exists": true,
+      "expected_sha256": "d51747056c4f920d5e0b6bfb51613b4e1ee1910de82770aa179dd3fe77f68ded",
+      "passed": true,
+      "relative_path": "data/assurance/step11a_policy_rule_coverage_corpus.jsonl",
+      "safe_path": true
+    },
+    "assurance_manifest": {
+      "actual_sha256": "d1fdd9308b973e5248e464daf528a376bca6bc6c27b9d45f267b88f842797465",
+      "exists": true,
+      "expected_sha256": "d1fdd9308b973e5248e464daf528a376bca6bc6c27b9d45f267b88f842797465",
+      "passed": true,
+      "relative_path": "data/assurance/step11a_policy_rule_coverage_manifest.json",
+      "safe_path": true
+    },
+    "decision_fixture": {
+      "actual_sha256": "7d557b127eb2cb6ae097be75273cad3e3d0cd0876385dd74d2439c762254f37a",
+      "exists": true,
+      "expected_sha256": "7d557b127eb2cb6ae097be75273cad3e3d0cd0876385dd74d2439c762254f37a",
+      "passed": true,
+      "relative_path": "data/sample_inputs/decisions/valid_log4shell_decision_record_policy.json",
+      "safe_path": true
+    },
+    "decision_hashing_module": {
+      "actual_sha256": "3b0a1eff5d2b97064d6dfb43936dde0bf2b1c23574a447afae13e2b02886853f",
+      "exists": true,
+      "expected_sha256": "3b0a1eff5d2b97064d6dfb43936dde0bf2b1c23574a447afae13e2b02886853f",
+      "passed": true,
+      "relative_path": "src/domain/decision_hashing.py",
+      "safe_path": true
+    },
+    "decision_policy": {
+      "actual_sha256": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f",
+      "exists": true,
+      "expected_sha256": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f",
+      "passed": true,
+      "relative_path": "policies/decision/federal_base_policy_v1.yaml",
+      "safe_path": true
+    },
+    "decision_schema": {
+      "actual_sha256": "e54a394ef9c772d3dce070f359051d6accf5761b1983ca9721e03e80a9e54ba3",
+      "exists": true,
+      "expected_sha256": "e54a394ef9c772d3dce070f359051d6accf5761b1983ca9721e03e80a9e54ba3",
+      "passed": true,
+      "relative_path": "schemas/aegis_decision_record.schema.json",
+      "safe_path": true
+    },
+    "decision_validator": {
+      "actual_sha256": "f1ef851a8f875680fc5e919b9276effc8d7c2feb00005b893f163ed47136806f",
+      "exists": true,
+      "expected_sha256": "f1ef851a8f875680fc5e919b9276effc8d7c2feb00005b893f163ed47136806f",
+      "passed": true,
+      "relative_path": "src/validation/decision_record_validator.py",
+      "safe_path": true
+    },
+    "evidence_fixture": {
+      "actual_sha256": "21ed78284567bc33bb463fb2525941829b80c7e21144d17677f022d168a3c2de",
+      "exists": true,
+      "expected_sha256": "21ed78284567bc33bb463fb2525941829b80c7e21144d17677f022d168a3c2de",
+      "passed": true,
+      "relative_path": "data/sample_inputs/evidence/valid_log4j_sbom_evidence.json",
+      "safe_path": true
+    },
+    "evidence_schema": {
+      "actual_sha256": "adaef9c4a1a837fddebee3d40cc03d6d99592682b3c42f1c24dded2fc74ce772",
+      "exists": true,
+      "expected_sha256": "adaef9c4a1a837fddebee3d40cc03d6d99592682b3c42f1c24dded2fc74ce772",
+      "passed": true,
+      "relative_path": "schemas/aegis_evidence_record.schema.json",
+      "safe_path": true
+    },
+    "evidence_trust_engine": {
+      "actual_sha256": "78943367308a8fcc07e085da0e45fe75013f216d23f0fac3f1e749f148c74fc7",
+      "exists": true,
+      "expected_sha256": "78943367308a8fcc07e085da0e45fe75013f216d23f0fac3f1e749f148c74fc7",
+      "passed": true,
+      "relative_path": "src/governance/evidence_trust_engine.py",
+      "safe_path": true
+    },
+    "osv_client": {
+      "actual_sha256": "26daa6892a852705f5dd2dc5c9f7ec9642ba4f5a6b5f8d5a2ba49290f027c83f",
+      "exists": true,
+      "expected_sha256": "26daa6892a852705f5dd2dc5c9f7ec9642ba4f5a6b5f8d5a2ba49290f027c83f",
+      "passed": true,
+      "relative_path": "src/intelligence/osv_client.py",
+      "safe_path": true
+    },
+    "resilience_runtime_policy": {
+      "actual_sha256": "c0449072f9dff7ec9991e1a9ba7dc1ddfd9a8791fbef19246e027821f3543387",
+      "exists": true,
+      "expected_sha256": "c0449072f9dff7ec9991e1a9ba7dc1ddfd9a8791fbef19246e027821f3543387",
+      "passed": true,
+      "relative_path": "policies/assurance/resilience_runtime_policy_v1.yaml",
+      "safe_path": true
+    },
+    "step11c_report": {
+      "actual_sha256": "74f0849ee40aa73f09b9abf23929bbaf4a355d51f00c9b01958b01f943867a23",
+      "exists": true,
+      "expected_sha256": "74f0849ee40aa73f09b9abf23929bbaf4a355d51f00c9b01958b01f943867a23",
+      "passed": true,
+      "relative_path": "data/validation_reports/tampering/step11c_tamper_assurance_report.json",
+      "safe_path": true
+    },
+    "step11d_report": {
+      "actual_sha256": "8c21529e07fa9b9b196a002d64fa302e7f9ec10da3e1fec9b7070bdd6d6b6f69",
+      "exists": true,
+      "expected_sha256": "8c21529e07fa9b9b196a002d64fa302e7f9ec10da3e1fec9b7070bdd6d6b6f69",
+      "passed": true,
+      "relative_path": "data/validation_reports/hostile_inputs/step11d_hostile_input_report.json",
+      "safe_path": true
+    },
+    "step11e_report": {
+      "actual_sha256": "18c1b8986c318a815d5d954df2686846b5d97ac30727fb94c24ac72e635e652e",
+      "exists": true,
+      "expected_sha256": "18c1b8986c318a815d5d954df2686846b5d97ac30727fb94c24ac72e635e652e",
+      "passed": true,
+      "relative_path": "data/validation_reports/metamorphic/step11e_metamorphic_assurance_report.json",
+      "safe_path": true
+    },
+    "step11f_report": {
+      "actual_sha256": "2b67f31c55bbe51ed52c83b8bba01fc8ad41b424b24f55d750d7bf2e6f03379f",
+      "exists": true,
+      "expected_sha256": "2b67f31c55bbe51ed52c83b8bba01fc8ad41b424b24f55d750d7bf2e6f03379f",
+      "passed": true,
+      "relative_path": "data/validation_reports/compound_attacks/step11f_compound_attack_report.json",
+      "safe_path": true
+    },
+    "step11g_report": {
+      "actual_sha256": "eb2a2f8f8de52b087e1a95dee123aca9cfb00bdb2344776aac2da156698b3de1",
+      "exists": true,
+      "expected_sha256": "eb2a2f8f8de52b087e1a95dee123aca9cfb00bdb2344776aac2da156698b3de1",
+      "passed": true,
+      "relative_path": "data/validation_reports/temporal/step11g_temporal_assurance_report.json",
+      "safe_path": true
+    },
+    "temporal_guard": {
+      "actual_sha256": "6172039fad2683f8d0c7dec8a279c20b123771277cdf37568cfe3e629ea077f9",
+      "exists": true,
+      "expected_sha256": "6172039fad2683f8d0c7dec8a279c20b123771277cdf37568cfe3e629ea077f9",
+      "passed": true,
+      "relative_path": "src/governance/temporal_guard.py",
+      "safe_path": true
+    },
+    "trust_policy": {
+      "actual_sha256": "6a4b41df0d5084bdc8a82c6c82714376253af9229ab1474dc73727d966359249",
+      "exists": true,
+      "expected_sha256": "6a4b41df0d5084bdc8a82c6c82714376253af9229ab1474dc73727d966359249",
+      "passed": true,
+      "relative_path": "policies/trust/evidence_trust_policy_v1.yaml",
+      "safe_path": true
+    }
+  },
+  "input_integrity_checks_before": {
+    "assurance_corpus": {
+      "actual_sha256": "d51747056c4f920d5e0b6bfb51613b4e1ee1910de82770aa179dd3fe77f68ded",
+      "exists": true,
+      "expected_sha256": "d51747056c4f920d5e0b6bfb51613b4e1ee1910de82770aa179dd3fe77f68ded",
+      "passed": true,
+      "relative_path": "data/assurance/step11a_policy_rule_coverage_corpus.jsonl",
+      "safe_path": true
+    },
+    "assurance_manifest": {
+      "actual_sha256": "d1fdd9308b973e5248e464daf528a376bca6bc6c27b9d45f267b88f842797465",
+      "exists": true,
+      "expected_sha256": "d1fdd9308b973e5248e464daf528a376bca6bc6c27b9d45f267b88f842797465",
+      "passed": true,
+      "relative_path": "data/assurance/step11a_policy_rule_coverage_manifest.json",
+      "safe_path": true
+    },
+    "decision_fixture": {
+      "actual_sha256": "7d557b127eb2cb6ae097be75273cad3e3d0cd0876385dd74d2439c762254f37a",
+      "exists": true,
+      "expected_sha256": "7d557b127eb2cb6ae097be75273cad3e3d0cd0876385dd74d2439c762254f37a",
+      "passed": true,
+      "relative_path": "data/sample_inputs/decisions/valid_log4shell_decision_record_policy.json",
+      "safe_path": true
+    },
+    "decision_hashing_module": {
+      "actual_sha256": "3b0a1eff5d2b97064d6dfb43936dde0bf2b1c23574a447afae13e2b02886853f",
+      "exists": true,
+      "expected_sha256": "3b0a1eff5d2b97064d6dfb43936dde0bf2b1c23574a447afae13e2b02886853f",
+      "passed": true,
+      "relative_path": "src/domain/decision_hashing.py",
+      "safe_path": true
+    },
+    "decision_policy": {
+      "actual_sha256": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f",
+      "exists": true,
+      "expected_sha256": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f",
+      "passed": true,
+      "relative_path": "policies/decision/federal_base_policy_v1.yaml",
+      "safe_path": true
+    },
+    "decision_schema": {
+      "actual_sha256": "e54a394ef9c772d3dce070f359051d6accf5761b1983ca9721e03e80a9e54ba3",
+      "exists": true,
+      "expected_sha256": "e54a394ef9c772d3dce070f359051d6accf5761b1983ca9721e03e80a9e54ba3",
+      "passed": true,
+      "relative_path": "schemas/aegis_decision_record.schema.json",
+      "safe_path": true
+    },
+    "decision_validator": {
+      "actual_sha256": "f1ef851a8f875680fc5e919b9276effc8d7c2feb00005b893f163ed47136806f",
+      "exists": true,
+      "expected_sha256": "f1ef851a8f875680fc5e919b9276effc8d7c2feb00005b893f163ed47136806f",
+      "passed": true,
+      "relative_path": "src/validation/decision_record_validator.py",
+      "safe_path": true
+    },
+    "evidence_fixture": {
+      "actual_sha256": "21ed78284567bc33bb463fb2525941829b80c7e21144d17677f022d168a3c2de",
+      "exists": true,
+      "expected_sha256": "21ed78284567bc33bb463fb2525941829b80c7e21144d17677f022d168a3c2de",
+      "passed": true,
+      "relative_path": "data/sample_inputs/evidence/valid_log4j_sbom_evidence.json",
+      "safe_path": true
+    },
+    "evidence_schema": {
+      "actual_sha256": "adaef9c4a1a837fddebee3d40cc03d6d99592682b3c42f1c24dded2fc74ce772",
+      "exists": true,
+      "expected_sha256": "adaef9c4a1a837fddebee3d40cc03d6d99592682b3c42f1c24dded2fc74ce772",
+      "passed": true,
+      "relative_path": "schemas/aegis_evidence_record.schema.json",
+      "safe_path": true
+    },
+    "evidence_trust_engine": {
+      "actual_sha256": "78943367308a8fcc07e085da0e45fe75013f216d23f0fac3f1e749f148c74fc7",
+      "exists": true,
+      "expected_sha256": "78943367308a8fcc07e085da0e45fe75013f216d23f0fac3f1e749f148c74fc7",
+      "passed": true,
+      "relative_path": "src/governance/evidence_trust_engine.py",
+      "safe_path": true
+    },
+    "osv_client": {
+      "actual_sha256": "26daa6892a852705f5dd2dc5c9f7ec9642ba4f5a6b5f8d5a2ba49290f027c83f",
+      "exists": true,
+      "expected_sha256": "26daa6892a852705f5dd2dc5c9f7ec9642ba4f5a6b5f8d5a2ba49290f027c83f",
+      "passed": true,
+      "relative_path": "src/intelligence/osv_client.py",
+      "safe_path": true
+    },
+    "resilience_runtime_policy": {
+      "actual_sha256": "c0449072f9dff7ec9991e1a9ba7dc1ddfd9a8791fbef19246e027821f3543387",
+      "exists": true,
+      "expected_sha256": "c0449072f9dff7ec9991e1a9ba7dc1ddfd9a8791fbef19246e027821f3543387",
+      "passed": true,
+      "relative_path": "policies/assurance/resilience_runtime_policy_v1.yaml",
+      "safe_path": true
+    },
+    "step11c_report": {
+      "actual_sha256": "74f0849ee40aa73f09b9abf23929bbaf4a355d51f00c9b01958b01f943867a23",
+      "exists": true,
+      "expected_sha256": "74f0849ee40aa73f09b9abf23929bbaf4a355d51f00c9b01958b01f943867a23",
+      "passed": true,
+      "relative_path": "data/validation_reports/tampering/step11c_tamper_assurance_report.json",
+      "safe_path": true
+    },
+    "step11d_report": {
+      "actual_sha256": "8c21529e07fa9b9b196a002d64fa302e7f9ec10da3e1fec9b7070bdd6d6b6f69",
+      "exists": true,
+      "expected_sha256": "8c21529e07fa9b9b196a002d64fa302e7f9ec10da3e1fec9b7070bdd6d6b6f69",
+      "passed": true,
+      "relative_path": "data/validation_reports/hostile_inputs/step11d_hostile_input_report.json",
+      "safe_path": true
+    },
+    "step11e_report": {
+      "actual_sha256": "18c1b8986c318a815d5d954df2686846b5d97ac30727fb94c24ac72e635e652e",
+      "exists": true,
+      "expected_sha256": "18c1b8986c318a815d5d954df2686846b5d97ac30727fb94c24ac72e635e652e",
+      "passed": true,
+      "relative_path": "data/validation_reports/metamorphic/step11e_metamorphic_assurance_report.json",
+      "safe_path": true
+    },
+    "step11f_report": {
+      "actual_sha256": "2b67f31c55bbe51ed52c83b8bba01fc8ad41b424b24f55d750d7bf2e6f03379f",
+      "exists": true,
+      "expected_sha256": "2b67f31c55bbe51ed52c83b8bba01fc8ad41b424b24f55d750d7bf2e6f03379f",
+      "passed": true,
+      "relative_path": "data/validation_reports/compound_attacks/step11f_compound_attack_report.json",
+      "safe_path": true
+    },
+    "step11g_report": {
+      "actual_sha256": "eb2a2f8f8de52b087e1a95dee123aca9cfb00bdb2344776aac2da156698b3de1",
+      "exists": true,
+      "expected_sha256": "eb2a2f8f8de52b087e1a95dee123aca9cfb00bdb2344776aac2da156698b3de1",
+      "passed": true,
+      "relative_path": "data/validation_reports/temporal/step11g_temporal_assurance_report.json",
+      "safe_path": true
+    },
+    "temporal_guard": {
+      "actual_sha256": "6172039fad2683f8d0c7dec8a279c20b123771277cdf37568cfe3e629ea077f9",
+      "exists": true,
+      "expected_sha256": "6172039fad2683f8d0c7dec8a279c20b123771277cdf37568cfe3e629ea077f9",
+      "passed": true,
+      "relative_path": "src/governance/temporal_guard.py",
+      "safe_path": true
+    },
+    "trust_policy": {
+      "actual_sha256": "6a4b41df0d5084bdc8a82c6c82714376253af9229ab1474dc73727d966359249",
+      "exists": true,
+      "expected_sha256": "6a4b41df0d5084bdc8a82c6c82714376253af9229ab1474dc73727d966359249",
+      "passed": true,
+      "relative_path": "policies/trust/evidence_trust_policy_v1.yaml",
+      "safe_path": true
+    }
+  },
+  "limitations": [
+    "Faults are deterministically injected into isolated temporary directories and in-memory adapters.",
+    "No production database, message broker, distributed filesystem, or live external dependency is disrupted.",
+    "Operational chaos testing and independent security review remain mandatory before deployment."
+  ],
+  "quality_gates": [
+    {
+      "gate_id": "STEP11H-CRITICAL-DEFENCE",
+      "metric": "critical_fault_scenario_defence_rate",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "STEP11H-UNSAFE-RELEASE",
+      "metric": "unsafe_decision_release_count",
+      "observed": 0,
+      "operator": "eq",
+      "passed": true,
+      "threshold": 0
+    },
+    {
+      "gate_id": "STEP11H-SILENT-DATA-LOSS",
+      "metric": "silent_data_loss_count",
+      "observed": 0,
+      "operator": "eq",
+      "passed": true,
+      "threshold": 0
+    },
+    {
+      "gate_id": "STEP11H-UNBOUNDED-RETRY",
+      "metric": "unbounded_retry_count",
+      "observed": 0,
+      "operator": "eq",
+      "passed": true,
+      "threshold": 0
+    },
+    {
+      "gate_id": "STEP11H-ROLLBACK",
+      "metric": "rollback_correctness_rate",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "STEP11H-IDEMPOTENT-RECOVERY",
+      "metric": "idempotent_recovery_rate",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "STEP11H-AUDIT-CONTINUITY",
+      "metric": "audit_continuity_preservation_rate",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "STEP11H-CACHE-INTEGRITY",
+      "metric": "cache_integrity_enforcement_rate",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "STEP11H-DEPENDENCY-FAIL-CLOSED",
+      "metric": "dependency_failure_fail_closed_rate",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "STEP11H-DEGRADED-GOVERNANCE",
+      "metric": "degraded_mode_governance_rate",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "STEP11H-POISON-ISOLATION",
+      "metric": "poison_message_isolation_rate",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "STEP11H-RESTART-RECOVERY",
+      "metric": "restart_recovery_consistency_rate",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "STEP11H-RETRY-BOUNDED",
+      "metric": "bounded_retry_enforcement_rate",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "STEP11H-CIRCUIT",
+      "metric": "circuit_breaker_enforcement_rate",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "STEP11H-UNDETECTED",
+      "metric": "undetected_count",
+      "observed": 0,
+      "operator": "eq",
+      "passed": true,
+      "threshold": 0
+    },
+    {
+      "gate_id": "STEP11H-HARNESS",
+      "metric": "harness_error_count",
+      "observed": 0,
+      "operator": "eq",
+      "passed": true,
+      "threshold": 0
+    },
+    {
+      "gate_id": "STEP11H-INTEGRITY",
+      "metric": "trusted_input_integrity_passed",
+      "observed": true,
+      "operator": "eq",
+      "passed": true,
+      "threshold": true
+    }
+  ],
+  "release_decision": {
+    "blocking_reasons": [
+      "Real operational validation has not yet been completed.",
+      "Independent security review has not yet been completed."
+    ],
+    "production_readiness_status": "BLOCKED",
+    "stage_gate_status": "PASS"
+  },
+  "report_id": "AEG-RESILIENCE-STEP11H-001",
+  "results": [
+    {
+      "automated_release": false,
+      "control_tags": [
+        "dependency_failure",
+        "retry_bounded"
+      ],
+      "defended": true,
+      "degraded_mode": false,
+      "description": "A transient timeout schedules only a bounded retry.",
+      "details": {
+        "current_attempt": 1,
+        "dependency": "vulnerability_intelligence",
+        "fault": "timeout",
+        "max_attempts": 3,
+        "next_attempt": 2,
+        "next_backoff_seconds": 1
+      },
+      "detection_oracles": [
+        "RETRY_BUDGET"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "RETRY_SCHEDULED"
+      ],
+      "family": "dependency_timeout_retry",
+      "finding_codes": [
+        "BOUNDED_RETRY_SCHEDULED"
+      ],
+      "findings": [
+        {
+          "code": "BOUNDED_RETRY_SCHEDULED",
+          "control": "RETRY_BUDGET",
+          "message": "vulnerability_intelligence will be retried within the bounded policy.",
+          "severity": "critical"
+        }
+      ],
+      "handler": "dependency",
+      "human_review_required": true,
+      "outcome": "RETRY_SCHEDULED",
+      "prohibit_closure": true,
+      "residual_risks": [
+        "vulnerability_intelligence has not yet produced authoritative evidence."
+      ],
+      "retry_attempts": 1,
+      "scenario_id": "RES-DEP-TIMEOUT-RETRY-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "dependency_failure",
+        "degraded_mode",
+        "cache_integrity"
+      ],
+      "defended": true,
+      "degraded_mode": true,
+      "description": "A verified fresh cache permits only governed degraded operation.",
+      "details": {
+        "dependency": "vulnerability_intelligence",
+        "fallback_age_seconds": 120,
+        "fallback_source": "integrity_verified_cache",
+        "fault": "unavailable",
+        "missing_dependencies": [
+          "live_vulnerability_intelligence"
+        ]
+      },
+      "detection_oracles": [
+        "DEGRADED_MODE_GOVERNANCE"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "COMPLETED_DEGRADED_REVIEW_REQUIRED"
+      ],
+      "family": "verified_degraded_fallback",
+      "finding_codes": [
+        "VERIFIED_DEGRADED_FALLBACK"
+      ],
+      "findings": [
+        {
+          "code": "VERIFIED_DEGRADED_FALLBACK",
+          "control": "DEGRADED_MODE_GOVERNANCE",
+          "message": "A verified, fresh fallback was used under mandatory review controls.",
+          "severity": "critical"
+        }
+      ],
+      "handler": "dependency",
+      "human_review_required": true,
+      "outcome": "COMPLETED_DEGRADED_REVIEW_REQUIRED",
+      "prohibit_closure": true,
+      "residual_risks": [
+        "Live vulnerability_intelligence evidence was unavailable.",
+        "The decision must not be automatically released or closed."
+      ],
+      "retry_attempts": 3,
+      "scenario_id": "RES-DEP-UNAVAILABLE-DEGRADED-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "dependency_failure",
+        "retry_bounded"
+      ],
+      "defended": true,
+      "degraded_mode": false,
+      "description": "Rate limiting schedules a bounded retry without sleep-based looping.",
+      "details": {
+        "current_attempt": 2,
+        "dependency": "vulnerability_intelligence",
+        "fault": "rate_limit",
+        "max_attempts": 3,
+        "next_attempt": 3,
+        "next_backoff_seconds": 2
+      },
+      "detection_oracles": [
+        "RETRY_BUDGET"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "RETRY_SCHEDULED"
+      ],
+      "family": "rate_limit_retry",
+      "finding_codes": [
+        "BOUNDED_RETRY_SCHEDULED"
+      ],
+      "findings": [
+        {
+          "code": "BOUNDED_RETRY_SCHEDULED",
+          "control": "RETRY_BUDGET",
+          "message": "vulnerability_intelligence will be retried within the bounded policy.",
+          "severity": "critical"
+        }
+      ],
+      "handler": "dependency",
+      "human_review_required": true,
+      "outcome": "RETRY_SCHEDULED",
+      "prohibit_closure": true,
+      "residual_risks": [
+        "vulnerability_intelligence has not yet produced authoritative evidence."
+      ],
+      "retry_attempts": 2,
+      "scenario_id": "RES-DEP-RATE-LIMIT-RETRY-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "dependency_failure"
+      ],
+      "defended": true,
+      "degraded_mode": false,
+      "description": "Authentication rejection is not retried or converted into empty evidence.",
+      "details": {
+        "dependency": "vulnerability_intelligence",
+        "fallback_authorized": false,
+        "fallback_present": false,
+        "fault": "authentication_rejected"
+      },
+      "detection_oracles": [
+        "DEPENDENCY_GATE"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "BLOCKED_DEPENDENCY_FAILURE"
+      ],
+      "family": "authentication_failure",
+      "finding_codes": [
+        "DEPENDENCY_FAIL_CLOSED"
+      ],
+      "findings": [
+        {
+          "code": "DEPENDENCY_FAIL_CLOSED",
+          "control": "DEPENDENCY_GATE",
+          "message": "vulnerability_intelligence failure cannot be safely resolved or substituted.",
+          "severity": "critical"
+        }
+      ],
+      "handler": "dependency",
+      "human_review_required": true,
+      "outcome": "BLOCKED_DEPENDENCY_FAILURE",
+      "prohibit_closure": true,
+      "residual_risks": [
+        "Authoritative vulnerability_intelligence evidence is unavailable.",
+        "No automated release is permitted."
+      ],
+      "retry_attempts": 1,
+      "scenario_id": "RES-DEP-AUTH-BLOCK-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "dependency_failure"
+      ],
+      "defended": true,
+      "degraded_mode": false,
+      "description": "Malformed upstream evidence is blocked rather than defaulted.",
+      "details": {
+        "dependency": "vulnerability_intelligence",
+        "fallback_authorized": false,
+        "fallback_present": false,
+        "fault": "malformed_response"
+      },
+      "detection_oracles": [
+        "DEPENDENCY_GATE"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "BLOCKED_DEPENDENCY_FAILURE"
+      ],
+      "family": "malformed_dependency_response",
+      "finding_codes": [
+        "DEPENDENCY_FAIL_CLOSED"
+      ],
+      "findings": [
+        {
+          "code": "DEPENDENCY_FAIL_CLOSED",
+          "control": "DEPENDENCY_GATE",
+          "message": "vulnerability_intelligence failure cannot be safely resolved or substituted.",
+          "severity": "critical"
+        }
+      ],
+      "handler": "dependency",
+      "human_review_required": true,
+      "outcome": "BLOCKED_DEPENDENCY_FAILURE",
+      "prohibit_closure": true,
+      "residual_risks": [
+        "Authoritative vulnerability_intelligence evidence is unavailable.",
+        "No automated release is permitted."
+      ],
+      "retry_attempts": 1,
+      "scenario_id": "RES-DEP-MALFORMED-BLOCK-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "dependency_failure",
+        "restart_recovery"
+      ],
+      "defended": true,
+      "degraded_mode": false,
+      "description": "A missing pinned policy blocks evaluation and release.",
+      "details": {
+        "dependency": "vulnerability_intelligence",
+        "fallback_authorized": false,
+        "fallback_present": false,
+        "fault": "policy_store_unavailable"
+      },
+      "detection_oracles": [
+        "DEPENDENCY_GATE"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "BLOCKED_DEPENDENCY_FAILURE"
+      ],
+      "family": "policy_store_outage",
+      "finding_codes": [
+        "DEPENDENCY_FAIL_CLOSED"
+      ],
+      "findings": [
+        {
+          "code": "DEPENDENCY_FAIL_CLOSED",
+          "control": "DEPENDENCY_GATE",
+          "message": "vulnerability_intelligence failure cannot be safely resolved or substituted.",
+          "severity": "critical"
+        }
+      ],
+      "handler": "dependency",
+      "human_review_required": true,
+      "outcome": "BLOCKED_DEPENDENCY_FAILURE",
+      "prohibit_closure": true,
+      "residual_risks": [
+        "Authoritative vulnerability_intelligence evidence is unavailable.",
+        "No automated release is permitted."
+      ],
+      "retry_attempts": 1,
+      "scenario_id": "RES-DEP-POLICY-STORE-BLOCK-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "dependency_failure"
+      ],
+      "defended": true,
+      "degraded_mode": false,
+      "description": "Unavailable validation schema blocks unvalidated records.",
+      "details": {
+        "dependency": "vulnerability_intelligence",
+        "fallback_authorized": false,
+        "fallback_present": false,
+        "fault": "schema_registry_unavailable"
+      },
+      "detection_oracles": [
+        "DEPENDENCY_GATE"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "BLOCKED_DEPENDENCY_FAILURE"
+      ],
+      "family": "schema_registry_outage",
+      "finding_codes": [
+        "DEPENDENCY_FAIL_CLOSED"
+      ],
+      "findings": [
+        {
+          "code": "DEPENDENCY_FAIL_CLOSED",
+          "control": "DEPENDENCY_GATE",
+          "message": "vulnerability_intelligence failure cannot be safely resolved or substituted.",
+          "severity": "critical"
+        }
+      ],
+      "handler": "dependency",
+      "human_review_required": true,
+      "outcome": "BLOCKED_DEPENDENCY_FAILURE",
+      "prohibit_closure": true,
+      "residual_risks": [
+        "Authoritative vulnerability_intelligence evidence is unavailable.",
+        "No automated release is permitted."
+      ],
+      "retry_attempts": 1,
+      "scenario_id": "RES-DEP-SCHEMA-REGISTRY-BLOCK-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "dependency_failure",
+        "cache_integrity"
+      ],
+      "defended": true,
+      "degraded_mode": false,
+      "description": "Integrity verification cannot be bypassed when its service is unavailable.",
+      "details": {
+        "dependency": "vulnerability_intelligence",
+        "fallback_authorized": false,
+        "fallback_present": false,
+        "fault": "integrity_service_unavailable"
+      },
+      "detection_oracles": [
+        "INTEGRITY_GATE"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "BLOCKED_INTEGRITY_FAILURE"
+      ],
+      "family": "integrity_service_outage",
+      "finding_codes": [
+        "INTEGRITY_SERVICE_REQUIRED"
+      ],
+      "findings": [
+        {
+          "code": "INTEGRITY_SERVICE_REQUIRED",
+          "control": "INTEGRITY_GATE",
+          "message": "vulnerability_intelligence failure cannot be safely resolved or substituted.",
+          "severity": "critical"
+        }
+      ],
+      "handler": "dependency",
+      "human_review_required": true,
+      "outcome": "BLOCKED_INTEGRITY_FAILURE",
+      "prohibit_closure": true,
+      "residual_risks": [
+        "Authoritative vulnerability_intelligence evidence is unavailable.",
+        "No automated release is permitted."
+      ],
+      "retry_attempts": 1,
+      "scenario_id": "RES-DEP-INTEGRITY-SERVICE-BLOCK-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "dependency_failure",
+        "restart_recovery"
+      ],
+      "defended": true,
+      "degraded_mode": false,
+      "description": "A missing trusted evaluation clock blocks freshness-sensitive release.",
+      "details": {
+        "dependency": "vulnerability_intelligence",
+        "fallback_authorized": false,
+        "fallback_present": false,
+        "fault": "clock_service_unavailable"
+      },
+      "detection_oracles": [
+        "DEPENDENCY_GATE"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "BLOCKED_DEPENDENCY_FAILURE"
+      ],
+      "family": "trusted_clock_outage",
+      "finding_codes": [
+        "DEPENDENCY_FAIL_CLOSED"
+      ],
+      "findings": [
+        {
+          "code": "DEPENDENCY_FAIL_CLOSED",
+          "control": "DEPENDENCY_GATE",
+          "message": "vulnerability_intelligence failure cannot be safely resolved or substituted.",
+          "severity": "critical"
+        }
+      ],
+      "handler": "dependency",
+      "human_review_required": true,
+      "outcome": "BLOCKED_DEPENDENCY_FAILURE",
+      "prohibit_closure": true,
+      "residual_risks": [
+        "Authoritative vulnerability_intelligence evidence is unavailable.",
+        "No automated release is permitted."
+      ],
+      "retry_attempts": 1,
+      "scenario_id": "RES-DEP-CLOCK-SERVICE-BLOCK-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "dependency_failure",
+        "degraded_mode",
+        "cache_integrity"
+      ],
+      "defended": true,
+      "degraded_mode": true,
+      "description": "A fresh integrity-verified cache discloses the missing live source and forces review.",
+      "details": {
+        "dependency": "vulnerability_intelligence",
+        "fallback_age_seconds": 120,
+        "fallback_source": "integrity_verified_cache",
+        "fault": "timeout",
+        "missing_dependencies": [
+          "live_vulnerability_intelligence"
+        ]
+      },
+      "detection_oracles": [
+        "DEGRADED_MODE_GOVERNANCE"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "COMPLETED_DEGRADED_REVIEW_REQUIRED"
+      ],
+      "family": "verified_cache_fallback",
+      "finding_codes": [
+        "VERIFIED_DEGRADED_FALLBACK"
+      ],
+      "findings": [
+        {
+          "code": "VERIFIED_DEGRADED_FALLBACK",
+          "control": "DEGRADED_MODE_GOVERNANCE",
+          "message": "A verified, fresh fallback was used under mandatory review controls.",
+          "severity": "critical"
+        }
+      ],
+      "handler": "dependency",
+      "human_review_required": true,
+      "outcome": "COMPLETED_DEGRADED_REVIEW_REQUIRED",
+      "prohibit_closure": true,
+      "residual_risks": [
+        "Live vulnerability_intelligence evidence was unavailable.",
+        "The decision must not be automatically released or closed."
+      ],
+      "retry_attempts": 3,
+      "scenario_id": "RES-DEP-VERIFIED-CACHE-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "dependency_failure",
+        "cache_integrity"
+      ],
+      "defended": true,
+      "degraded_mode": false,
+      "description": "A stale cache cannot authorize degraded operation.",
+      "details": {
+        "dependency": "vulnerability_intelligence",
+        "fallback_authorized": false,
+        "fallback_present": true,
+        "fault": "unavailable"
+      },
+      "detection_oracles": [
+        "DEPENDENCY_GATE"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "BLOCKED_DEPENDENCY_FAILURE"
+      ],
+      "family": "stale_cache_fallback",
+      "finding_codes": [
+        "DEPENDENCY_FAIL_CLOSED"
+      ],
+      "findings": [
+        {
+          "code": "DEPENDENCY_FAIL_CLOSED",
+          "control": "DEPENDENCY_GATE",
+          "message": "vulnerability_intelligence failure cannot be safely resolved or substituted.",
+          "severity": "critical"
+        }
+      ],
+      "handler": "dependency",
+      "human_review_required": true,
+      "outcome": "BLOCKED_DEPENDENCY_FAILURE",
+      "prohibit_closure": true,
+      "residual_risks": [
+        "Authoritative vulnerability_intelligence evidence is unavailable.",
+        "No automated release is permitted."
+      ],
+      "retry_attempts": 3,
+      "scenario_id": "RES-DEP-STALE-CACHE-BLOCK-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "dependency_failure",
+        "cache_integrity"
+      ],
+      "defended": true,
+      "degraded_mode": false,
+      "description": "An integrity-failed cache cannot substitute for a live dependency.",
+      "details": {
+        "dependency": "vulnerability_intelligence",
+        "fallback_authorized": false,
+        "fallback_present": true,
+        "fault": "unavailable"
+      },
+      "detection_oracles": [
+        "DEPENDENCY_GATE"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "BLOCKED_DEPENDENCY_FAILURE"
+      ],
+      "family": "unverified_cache_fallback",
+      "finding_codes": [
+        "DEPENDENCY_FAIL_CLOSED"
+      ],
+      "findings": [
+        {
+          "code": "DEPENDENCY_FAIL_CLOSED",
+          "control": "DEPENDENCY_GATE",
+          "message": "vulnerability_intelligence failure cannot be safely resolved or substituted.",
+          "severity": "critical"
+        }
+      ],
+      "handler": "dependency",
+      "human_review_required": true,
+      "outcome": "BLOCKED_DEPENDENCY_FAILURE",
+      "prohibit_closure": true,
+      "residual_risks": [
+        "Authoritative vulnerability_intelligence evidence is unavailable.",
+        "No automated release is permitted."
+      ],
+      "retry_attempts": 3,
+      "scenario_id": "RES-DEP-CACHE-HASH-BLOCK-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "retry_bounded"
+      ],
+      "defended": true,
+      "degraded_mode": false,
+      "description": "A second attempt remains within the deterministic retry budget.",
+      "details": {
+        "current_attempt": 2,
+        "dependency": "external_intelligence",
+        "fault": "timeout",
+        "max_attempts": 3,
+        "next_attempt": 3,
+        "next_backoff_seconds": 2
+      },
+      "detection_oracles": [
+        "RETRY_BUDGET"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "RETRY_SCHEDULED"
+      ],
+      "family": "bounded_second_attempt",
+      "finding_codes": [
+        "BOUNDED_RETRY_SCHEDULED"
+      ],
+      "findings": [
+        {
+          "code": "BOUNDED_RETRY_SCHEDULED",
+          "control": "RETRY_BUDGET",
+          "message": "external_intelligence will be retried within the bounded policy.",
+          "severity": "critical"
+        }
+      ],
+      "handler": "retry_circuit",
+      "human_review_required": true,
+      "outcome": "RETRY_SCHEDULED",
+      "prohibit_closure": true,
+      "residual_risks": [
+        "external_intelligence has not yet produced authoritative evidence."
+      ],
+      "retry_attempts": 2,
+      "scenario_id": "RES-RETRY-SECOND-ATTEMPT-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "retry_bounded",
+        "degraded_mode"
+      ],
+      "defended": true,
+      "degraded_mode": true,
+      "description": "Exhausted retries can use only an authorized degraded fallback.",
+      "details": {
+        "dependency": "external_intelligence",
+        "fallback_age_seconds": 120,
+        "fallback_source": "integrity_verified_cache",
+        "fault": "rate_limit",
+        "missing_dependencies": [
+          "live_vulnerability_intelligence"
+        ]
+      },
+      "detection_oracles": [
+        "DEGRADED_MODE_GOVERNANCE"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "COMPLETED_DEGRADED_REVIEW_REQUIRED"
+      ],
+      "family": "retry_exhausted_degraded",
+      "finding_codes": [
+        "VERIFIED_DEGRADED_FALLBACK"
+      ],
+      "findings": [
+        {
+          "code": "VERIFIED_DEGRADED_FALLBACK",
+          "control": "DEGRADED_MODE_GOVERNANCE",
+          "message": "A verified, fresh fallback was used under mandatory review controls.",
+          "severity": "critical"
+        }
+      ],
+      "handler": "retry_circuit",
+      "human_review_required": true,
+      "outcome": "COMPLETED_DEGRADED_REVIEW_REQUIRED",
+      "prohibit_closure": true,
+      "residual_risks": [
+        "Live external_intelligence evidence was unavailable.",
+        "The decision must not be automatically released or closed."
+      ],
+      "retry_attempts": 3,
+      "scenario_id": "RES-RETRY-EXHAUSTED-DEGRADED-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "circuit_breaker",
+        "dependency_failure"
+      ],
+      "defended": true,
+      "degraded_mode": false,
+      "description": "The circuit opens at the configured failure threshold.",
+      "details": {
+        "consecutive_failures": 3,
+        "dependency": "external_intelligence",
+        "failure_threshold": 3,
+        "fault": "unavailable"
+      },
+      "detection_oracles": [
+        "CIRCUIT_BREAKER"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "CIRCUIT_OPEN"
+      ],
+      "family": "circuit_threshold",
+      "finding_codes": [
+        "DEPENDENCY_CIRCUIT_OPEN"
+      ],
+      "findings": [
+        {
+          "code": "DEPENDENCY_CIRCUIT_OPEN",
+          "control": "CIRCUIT_BREAKER",
+          "message": "external_intelligence exceeded the governed failure threshold.",
+          "severity": "critical"
+        }
+      ],
+      "handler": "retry_circuit",
+      "human_review_required": true,
+      "outcome": "CIRCUIT_OPEN",
+      "prohibit_closure": true,
+      "residual_risks": [
+        "external_intelligence remains unavailable until a governed probe succeeds."
+      ],
+      "retry_attempts": 0,
+      "scenario_id": "RES-CIRCUIT-THRESHOLD-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "circuit_breaker",
+        "dependency_failure"
+      ],
+      "defended": true,
+      "degraded_mode": false,
+      "description": "An already failing dependency remains blocked by the open circuit.",
+      "details": {
+        "consecutive_failures": 5,
+        "dependency": "external_intelligence",
+        "failure_threshold": 3,
+        "fault": "timeout"
+      },
+      "detection_oracles": [
+        "CIRCUIT_BREAKER"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "CIRCUIT_OPEN"
+      ],
+      "family": "circuit_open_rejection",
+      "finding_codes": [
+        "DEPENDENCY_CIRCUIT_OPEN"
+      ],
+      "findings": [
+        {
+          "code": "DEPENDENCY_CIRCUIT_OPEN",
+          "control": "CIRCUIT_BREAKER",
+          "message": "external_intelligence exceeded the governed failure threshold.",
+          "severity": "critical"
+        }
+      ],
+      "handler": "retry_circuit",
+      "human_review_required": true,
+      "outcome": "CIRCUIT_OPEN",
+      "prohibit_closure": true,
+      "residual_risks": [
+        "external_intelligence remains unavailable until a governed probe succeeds."
+      ],
+      "retry_attempts": 0,
+      "scenario_id": "RES-CIRCUIT-OPEN-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "circuit_breaker",
+        "dependency_failure"
+      ],
+      "defended": true,
+      "degraded_mode": false,
+      "description": "A failed governed probe reopens the circuit.",
+      "details": {
+        "consecutive_failures": 3,
+        "dependency": "external_intelligence",
+        "failure_threshold": 3,
+        "fault": "unavailable"
+      },
+      "detection_oracles": [
+        "CIRCUIT_BREAKER"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "CIRCUIT_OPEN"
+      ],
+      "family": "half_open_probe_failure",
+      "finding_codes": [
+        "DEPENDENCY_CIRCUIT_OPEN"
+      ],
+      "findings": [
+        {
+          "code": "DEPENDENCY_CIRCUIT_OPEN",
+          "control": "CIRCUIT_BREAKER",
+          "message": "external_intelligence exceeded the governed failure threshold.",
+          "severity": "critical"
+        }
+      ],
+      "handler": "retry_circuit",
+      "human_review_required": true,
+      "outcome": "CIRCUIT_OPEN",
+      "prohibit_closure": true,
+      "residual_risks": [
+        "external_intelligence remains unavailable until a governed probe succeeds."
+      ],
+      "retry_attempts": 0,
+      "scenario_id": "RES-CIRCUIT-HALF-OPEN-FAIL-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    },
+    {
+      "automated_release": true,
+      "control_tags": [
+        "circuit_breaker",
+        "restart_recovery"
+      ],
+      "defended": true,
+      "degraded_mode": false,
+      "description": "A successful probe resets circuit state without duplicating a decision.",
+      "details": {
+        "prerequisites": {
+          "audit_durable": true,
+          "checkpoint_durable": true,
+          "dependency_resolved": true,
+          "integrity_verified": true
+        }
+      },
+      "detection_oracles": [
+        "RELEASE_GATE"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "COMPLETED_NORMALLY"
+      ],
+      "family": "circuit_success_reset",
+      "finding_codes": [
+        "RELEASE_PREREQUISITES_SATISFIED"
+      ],
+      "findings": [
+        {
+          "code": "RELEASE_PREREQUISITES_SATISFIED",
+          "control": "RELEASE_GATE",
+          "message": "All durable governance prerequisites are satisfied.",
+          "severity": "informational"
+        }
+      ],
+      "handler": "retry_circuit",
+      "human_review_required": false,
+      "outcome": "COMPLETED_NORMALLY",
+      "prohibit_closure": false,
+      "residual_risks": [],
+      "retry_attempts": 0,
+      "scenario_id": "RES-CIRCUIT-SUCCESS-RESET-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "rollback",
+        "restart_recovery"
+      ],
+      "defended": true,
+      "degraded_mode": false,
+      "description": "Failure after temporary-file fsync preserves the previous durable file.",
+      "details": {
+        "fault_point": "after_temp_fsync",
+        "rollback_correct": true,
+        "silent_data_loss": false
+      },
+      "detection_oracles": [
+        "ATOMIC_PERSISTENCE"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "ROLLED_BACK"
+      ],
+      "family": "temporary_write_failure",
+      "finding_codes": [
+        "ATOMIC_WRITE_ROLLED_BACK"
+      ],
+      "findings": [
+        {
+          "code": "ATOMIC_WRITE_ROLLED_BACK",
+          "control": "ATOMIC_PERSISTENCE",
+          "message": "Injected persistence failure restored the prior durable state.",
+          "severity": "critical"
+        }
+      ],
+      "handler": "persistence",
+      "human_review_required": true,
+      "outcome": "ROLLED_BACK",
+      "prohibit_closure": true,
+      "residual_risks": [
+        "The transaction must be retried or reviewed."
+      ],
+      "retry_attempts": 0,
+      "scenario_id": "RES-PERSIST-TEMP-WRITE-FAIL-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "rollback",
+        "resource_budget"
+      ],
+      "defended": true,
+      "degraded_mode": false,
+      "description": "Injected disk-capacity failure cannot leave a partial report.",
+      "details": {
+        "fault_point": "after_temp_fsync",
+        "rollback_correct": true,
+        "silent_data_loss": false
+      },
+      "detection_oracles": [
+        "ATOMIC_PERSISTENCE"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "ROLLED_BACK"
+      ],
+      "family": "disk_capacity_exhaustion",
+      "finding_codes": [
+        "ATOMIC_WRITE_ROLLED_BACK"
+      ],
+      "findings": [
+        {
+          "code": "ATOMIC_WRITE_ROLLED_BACK",
+          "control": "ATOMIC_PERSISTENCE",
+          "message": "Injected persistence failure restored the prior durable state.",
+          "severity": "critical"
+        }
+      ],
+      "handler": "persistence",
+      "human_review_required": true,
+      "outcome": "ROLLED_BACK",
+      "prohibit_closure": true,
+      "residual_risks": [
+        "The transaction must be retried or reviewed."
+      ],
+      "retry_attempts": 0,
+      "scenario_id": "RES-PERSIST-DISK-FULL-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "rollback"
+      ],
+      "defended": true,
+      "degraded_mode": false,
+      "description": "A read-only storage failure leaves trusted state unchanged.",
+      "details": {
+        "fault_point": "before_write",
+        "rollback_correct": true,
+        "silent_data_loss": false
+      },
+      "detection_oracles": [
+        "ATOMIC_PERSISTENCE"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "ROLLED_BACK"
+      ],
+      "family": "read_only_storage",
+      "finding_codes": [
+        "STORAGE_PRECONDITION_FAILED"
+      ],
+      "findings": [
+        {
+          "code": "STORAGE_PRECONDITION_FAILED",
+          "control": "ATOMIC_PERSISTENCE",
+          "message": "Persistence was blocked before mutating durable state.",
+          "severity": "critical"
+        }
+      ],
+      "handler": "persistence",
+      "human_review_required": true,
+      "outcome": "ROLLED_BACK",
+      "prohibit_closure": true,
+      "residual_risks": [
+        "Durable output was not produced."
+      ],
+      "retry_attempts": 0,
+      "scenario_id": "RES-PERSIST-READ-ONLY-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "rollback",
+        "restart_recovery"
+      ],
+      "defended": true,
+      "degraded_mode": false,
+      "description": "A failure after replacement restores the previous durable value.",
+      "details": {
+        "fault_point": "after_replace",
+        "rollback_correct": true,
+        "silent_data_loss": false
+      },
+      "detection_oracles": [
+        "ATOMIC_PERSISTENCE"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "ROLLED_BACK"
+      ],
+      "family": "post_replace_failure",
+      "finding_codes": [
+        "ATOMIC_WRITE_ROLLED_BACK"
+      ],
+      "findings": [
+        {
+          "code": "ATOMIC_WRITE_ROLLED_BACK",
+          "control": "ATOMIC_PERSISTENCE",
+          "message": "Injected persistence failure restored the prior durable state.",
+          "severity": "critical"
+        }
+      ],
+      "handler": "persistence",
+      "human_review_required": true,
+      "outcome": "ROLLED_BACK",
+      "prohibit_closure": true,
+      "residual_risks": [
+        "The transaction must be retried or reviewed."
+      ],
+      "retry_attempts": 0,
+      "scenario_id": "RES-PERSIST-AFTER-REPLACE-FAIL-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "rollback",
+        "audit_continuity"
+      ],
+      "defended": true,
+      "degraded_mode": false,
+      "description": "Payload and manifest are treated as one governed commit boundary.",
+      "details": {
+        "fault_point": "manifest_failure",
+        "rollback_correct": true,
+        "silent_data_loss": false
+      },
+      "detection_oracles": [
+        "ATOMIC_PERSISTENCE"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "ROLLED_BACK"
+      ],
+      "family": "manifest_commit_failure",
+      "finding_codes": [
+        "ATOMIC_WRITE_ROLLED_BACK"
+      ],
+      "findings": [
+        {
+          "code": "ATOMIC_WRITE_ROLLED_BACK",
+          "control": "ATOMIC_PERSISTENCE",
+          "message": "Injected persistence failure restored the prior durable state.",
+          "severity": "critical"
+        }
+      ],
+      "handler": "persistence",
+      "human_review_required": true,
+      "outcome": "ROLLED_BACK",
+      "prohibit_closure": true,
+      "residual_risks": [
+        "The transaction must be retried or reviewed."
+      ],
+      "retry_attempts": 0,
+      "scenario_id": "RES-PERSIST-MANIFEST-FAIL-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    },
+    {
+      "automated_release": true,
+      "control_tags": [
+        "rollback",
+        "restart_recovery"
+      ],
+      "defended": true,
+      "degraded_mode": false,
+      "description": "A successful atomic write produces exactly one durable value.",
+      "details": {
+        "fault_point": "none",
+        "rollback_correct": true,
+        "silent_data_loss": false
+      },
+      "detection_oracles": [
+        "ATOMIC_PERSISTENCE"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "COMPLETED_NORMALLY"
+      ],
+      "family": "atomic_persistence_success",
+      "finding_codes": [
+        "ATOMIC_WRITE_COMMITTED"
+      ],
+      "findings": [
+        {
+          "code": "ATOMIC_WRITE_COMMITTED",
+          "control": "ATOMIC_PERSISTENCE",
+          "message": "The durable file was atomically replaced.",
+          "severity": "informational"
+        }
+      ],
+      "handler": "persistence",
+      "human_review_required": false,
+      "outcome": "COMPLETED_NORMALLY",
+      "prohibit_closure": false,
+      "residual_risks": [],
+      "retry_attempts": 0,
+      "scenario_id": "RES-PERSIST-ATOMIC-SUCCESS-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "rollback",
+        "poison_message"
+      ],
+      "defended": true,
+      "degraded_mode": false,
+      "description": "Structurally invalid output is quarantined before persistence.",
+      "details": {
+        "silent_data_loss": false,
+        "write_attempted": false
+      },
+      "detection_oracles": [
+        "PRE_PERSISTENCE_VALIDATION"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "QUARANTINED"
+      ],
+      "family": "invalid_report_before_write",
+      "finding_codes": [
+        "OUTPUT_SCHEMA_INVALID"
+      ],
+      "findings": [
+        {
+          "code": "OUTPUT_SCHEMA_INVALID",
+          "control": "PRE_PERSISTENCE_VALIDATION",
+          "message": "Invalid output was quarantined before persistence.",
+          "severity": "critical"
+        }
+      ],
+      "handler": "persistence",
+      "human_review_required": true,
+      "outcome": "QUARANTINED",
+      "prohibit_closure": true,
+      "residual_risks": [
+        "The invalid output requires investigation."
+      ],
+      "retry_attempts": 0,
+      "scenario_id": "RES-PERSIST-SCHEMA-FAIL-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "cache_integrity"
+      ],
+      "defended": true,
+      "degraded_mode": false,
+      "description": "A cache payload hash mismatch blocks use.",
+      "details": {},
+      "detection_oracles": [
+        "CACHE_INTEGRITY"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "BLOCKED_INTEGRITY_FAILURE"
+      ],
+      "family": "cache_hash_mismatch",
+      "finding_codes": [
+        "CACHE_HASH_MISMATCH"
+      ],
+      "findings": [
+        {
+          "code": "CACHE_HASH_MISMATCH",
+          "control": "CACHE_INTEGRITY",
+          "message": "Tampered cache content failed SHA-256 verification.",
+          "severity": "critical"
+        }
+      ],
+      "handler": "cache",
+      "human_review_required": true,
+      "outcome": "BLOCKED_INTEGRITY_FAILURE",
+      "prohibit_closure": true,
+      "residual_risks": [
+        "Cached intelligence is untrusted."
+      ],
+      "retry_attempts": 0,
+      "scenario_id": "RES-CACHE-HASH-MISMATCH-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "cache_integrity"
+      ],
+      "defended": true,
+      "degraded_mode": false,
+      "description": "A cache entry without integrity metadata is quarantined.",
+      "details": {},
+      "detection_oracles": [
+        "CACHE_INTEGRITY"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "QUARANTINED"
+      ],
+      "family": "cache_metadata_missing",
+      "finding_codes": [
+        "CACHE_METADATA_MISSING"
+      ],
+      "findings": [
+        {
+          "code": "CACHE_METADATA_MISSING",
+          "control": "CACHE_INTEGRITY",
+          "message": "Cache entry without hash metadata was quarantined.",
+          "severity": "critical"
+        }
+      ],
+      "handler": "cache",
+      "human_review_required": true,
+      "outcome": "QUARANTINED",
+      "prohibit_closure": true,
+      "residual_risks": [
+        "Live evidence must be reacquired."
+      ],
+      "retry_attempts": 0,
+      "scenario_id": "RES-CACHE-METADATA-MISSING-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "cache_integrity",
+        "dependency_failure"
+      ],
+      "defended": true,
+      "degraded_mode": false,
+      "description": "An expired cache cannot silently become current evidence.",
+      "details": {},
+      "detection_oracles": [
+        "CACHE_FRESHNESS"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "BLOCKED_DEPENDENCY_FAILURE"
+      ],
+      "family": "cache_staleness",
+      "finding_codes": [
+        "CACHE_STALE"
+      ],
+      "findings": [
+        {
+          "code": "CACHE_STALE",
+          "control": "CACHE_FRESHNESS",
+          "message": "Stale cache evidence was blocked.",
+          "severity": "critical"
+        }
+      ],
+      "handler": "cache",
+      "human_review_required": true,
+      "outcome": "BLOCKED_DEPENDENCY_FAILURE",
+      "prohibit_closure": true,
+      "residual_risks": [
+        "Current vulnerability intelligence is unavailable."
+      ],
+      "retry_attempts": 0,
+      "scenario_id": "RES-CACHE-STALE-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "cache_integrity"
+      ],
+      "defended": true,
+      "degraded_mode": false,
+      "description": "Missing cache payload or index is isolated from decision inputs.",
+      "details": {},
+      "detection_oracles": [
+        "CACHE_INTEGRITY"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "QUARANTINED"
+      ],
+      "family": "cache_index_missing",
+      "finding_codes": [
+        "CACHE_PAYLOAD_MISSING"
+      ],
+      "findings": [
+        {
+          "code": "CACHE_PAYLOAD_MISSING",
+          "control": "CACHE_INTEGRITY",
+          "message": "Orphaned cache metadata was quarantined.",
+          "severity": "critical"
+        }
+      ],
+      "handler": "cache",
+      "human_review_required": true,
+      "outcome": "QUARANTINED",
+      "prohibit_closure": true,
+      "residual_risks": [
+        "The cache index and payload are inconsistent."
+      ],
+      "retry_attempts": 0,
+      "scenario_id": "RES-CACHE-INDEX-MISSING-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "cache_integrity",
+        "degraded_mode"
+      ],
+      "defended": true,
+      "degraded_mode": true,
+      "description": "A verified cache fallback is review-only and closure-prohibited.",
+      "details": {
+        "dependency": "OSV",
+        "fallback_age_seconds": 0,
+        "fallback_source": "osv_cache",
+        "fault": "unavailable",
+        "missing_dependencies": [
+          "live_osv"
+        ]
+      },
+      "detection_oracles": [
+        "DEGRADED_MODE_GOVERNANCE"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "COMPLETED_DEGRADED_REVIEW_REQUIRED"
+      ],
+      "family": "cache_verified_fallback",
+      "finding_codes": [
+        "VERIFIED_DEGRADED_FALLBACK"
+      ],
+      "findings": [
+        {
+          "code": "VERIFIED_DEGRADED_FALLBACK",
+          "control": "DEGRADED_MODE_GOVERNANCE",
+          "message": "A verified, fresh fallback was used under mandatory review controls.",
+          "severity": "critical"
+        }
+      ],
+      "handler": "cache",
+      "human_review_required": true,
+      "outcome": "COMPLETED_DEGRADED_REVIEW_REQUIRED",
+      "prohibit_closure": true,
+      "residual_risks": [
+        "Live OSV evidence was unavailable.",
+        "The decision must not be automatically released or closed."
+      ],
+      "retry_attempts": 3,
+      "scenario_id": "RES-CACHE-VERIFIED-FALLBACK-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "audit_continuity"
+      ],
+      "defended": true,
+      "degraded_mode": false,
+      "description": "A decision cannot be released when its audit event is not durable.",
+      "details": {
+        "failed_prerequisites": [
+          "audit_durable"
+        ]
+      },
+      "detection_oracles": [
+        "AUDIT_RELEASE_GATE"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "BLOCKED_AUDIT_FAILURE"
+      ],
+      "family": "audit_write_failure",
+      "finding_codes": [
+        "AUDIT_NOT_DURABLE"
+      ],
+      "findings": [
+        {
+          "code": "AUDIT_NOT_DURABLE",
+          "control": "AUDIT_RELEASE_GATE",
+          "message": "Decision release was blocked because durable governance prerequisites were missing.",
+          "severity": "critical"
+        }
+      ],
+      "handler": "audit",
+      "human_review_required": true,
+      "outcome": "BLOCKED_AUDIT_FAILURE",
+      "prohibit_closure": true,
+      "residual_risks": [
+        "Missing release prerequisites: audit_durable."
+      ],
+      "retry_attempts": 0,
+      "scenario_id": "RES-AUDIT-WRITE-FAIL-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "audit_continuity"
+      ],
+      "defended": true,
+      "degraded_mode": false,
+      "description": "An audit sequence gap is detected and blocks release.",
+      "details": {
+        "failed_prerequisites": [
+          "audit_durable"
+        ]
+      },
+      "detection_oracles": [
+        "AUDIT_RELEASE_GATE"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "BLOCKED_AUDIT_FAILURE"
+      ],
+      "family": "audit_sequence_gap",
+      "finding_codes": [
+        "AUDIT_NOT_DURABLE"
+      ],
+      "findings": [
+        {
+          "code": "AUDIT_NOT_DURABLE",
+          "control": "AUDIT_RELEASE_GATE",
+          "message": "Decision release was blocked because durable governance prerequisites were missing.",
+          "severity": "critical"
+        }
+      ],
+      "handler": "audit",
+      "human_review_required": true,
+      "outcome": "BLOCKED_AUDIT_FAILURE",
+      "prohibit_closure": true,
+      "residual_risks": [
+        "Missing release prerequisites: audit_durable."
+      ],
+      "retry_attempts": 0,
+      "scenario_id": "RES-AUDIT-SEQUENCE-GAP-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "audit_continuity",
+        "cache_integrity"
+      ],
+      "defended": true,
+      "degraded_mode": false,
+      "description": "Tampered audit linkage is detected before release.",
+      "details": {
+        "failed_prerequisites": [
+          "audit_durable"
+        ]
+      },
+      "detection_oracles": [
+        "AUDIT_RELEASE_GATE"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "BLOCKED_AUDIT_FAILURE"
+      ],
+      "family": "audit_hash_chain_break",
+      "finding_codes": [
+        "AUDIT_NOT_DURABLE"
+      ],
+      "findings": [
+        {
+          "code": "AUDIT_NOT_DURABLE",
+          "control": "AUDIT_RELEASE_GATE",
+          "message": "Decision release was blocked because durable governance prerequisites were missing.",
+          "severity": "critical"
+        }
+      ],
+      "handler": "audit",
+      "human_review_required": true,
+      "outcome": "BLOCKED_AUDIT_FAILURE",
+      "prohibit_closure": true,
+      "residual_risks": [
+        "Missing release prerequisites: audit_durable."
+      ],
+      "retry_attempts": 0,
+      "scenario_id": "RES-AUDIT-HASH-BREAK-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "audit_continuity",
+        "poison_message"
+      ],
+      "defended": true,
+      "degraded_mode": false,
+      "description": "Audit event ID reuse with changed content is quarantined.",
+      "details": {},
+      "detection_oracles": [
+        "AUDIT_CONTINUITY"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "QUARANTINED"
+      ],
+      "family": "audit_event_id_conflict",
+      "finding_codes": [
+        "AUDIT_EVENT_ID_CONFLICT"
+      ],
+      "findings": [
+        {
+          "code": "AUDIT_EVENT_ID_CONFLICT",
+          "control": "AUDIT_CONTINUITY",
+          "message": "Conflicting audit event redelivery was quarantined.",
+          "severity": "critical"
+        }
+      ],
+      "handler": "audit",
+      "human_review_required": true,
+      "outcome": "QUARANTINED",
+      "prohibit_closure": true,
+      "residual_risks": [
+        "The conflicting producer requires investigation."
+      ],
+      "retry_attempts": 0,
+      "scenario_id": "RES-AUDIT-DUPLICATE-CONFLICT-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "audit_continuity",
+        "idempotent_recovery"
+      ],
+      "defended": true,
+      "degraded_mode": false,
+      "description": "Redelivery of the identical audit event is an idempotent no-op.",
+      "details": {
+        "event_count": 1
+      },
+      "detection_oracles": [
+        "AUDIT_CONTINUITY"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "RECOVERED_IDEMPOTENTLY"
+      ],
+      "family": "audit_idempotent_redrive",
+      "finding_codes": [
+        "AUDIT_REDRIVE_IDEMPOTENT"
+      ],
+      "findings": [
+        {
+          "code": "AUDIT_REDRIVE_IDEMPOTENT",
+          "control": "AUDIT_CONTINUITY",
+          "message": "Identical audit redelivery produced no duplicate event.",
+          "severity": "informational"
+        }
+      ],
+      "handler": "audit",
+      "human_review_required": false,
+      "outcome": "RECOVERED_IDEMPOTENTLY",
+      "prohibit_closure": false,
+      "residual_risks": [],
+      "retry_attempts": 0,
+      "scenario_id": "RES-AUDIT-IDEMPOTENT-REDRIVE-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "idempotent_recovery",
+        "restart_recovery"
+      ],
+      "defended": true,
+      "degraded_mode": false,
+      "description": "An interrupted operation resumes from a verified checkpoint exactly once.",
+      "details": {
+        "completed": true,
+        "duplicate_decisions": 0
+      },
+      "detection_oracles": [
+        "RECOVERY_CHECKPOINT"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "RECOVERED_IDEMPOTENTLY"
+      ],
+      "family": "worker_crash_recovery",
+      "finding_codes": [
+        "WORKER_CRASH_RECOVERED"
+      ],
+      "findings": [
+        {
+          "code": "WORKER_CRASH_RECOVERED",
+          "control": "RECOVERY_CHECKPOINT",
+          "message": "Interrupted work resumed from a verified checkpoint.",
+          "severity": "informational"
+        }
+      ],
+      "handler": "recovery",
+      "human_review_required": false,
+      "outcome": "RECOVERED_IDEMPOTENTLY",
+      "prohibit_closure": false,
+      "residual_risks": [],
+      "retry_attempts": 0,
+      "scenario_id": "RES-RECOVERY-WORKER-CRASH-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "idempotent_recovery",
+        "restart_recovery"
+      ],
+      "defended": true,
+      "degraded_mode": false,
+      "description": "A repeated recovery of a completed checkpoint is a no-op.",
+      "details": {
+        "duplicate_decisions": 0
+      },
+      "detection_oracles": [
+        "RECOVERY_CHECKPOINT"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "RECOVERED_IDEMPOTENTLY"
+      ],
+      "family": "duplicate_recovery",
+      "finding_codes": [
+        "COMPLETED_RECOVERY_IDEMPOTENT"
+      ],
+      "findings": [
+        {
+          "code": "COMPLETED_RECOVERY_IDEMPOTENT",
+          "control": "RECOVERY_CHECKPOINT",
+          "message": "Completed recovery replay was a no-op.",
+          "severity": "informational"
+        }
+      ],
+      "handler": "recovery",
+      "human_review_required": false,
+      "outcome": "RECOVERED_IDEMPOTENTLY",
+      "prohibit_closure": false,
+      "residual_risks": [],
+      "retry_attempts": 0,
+      "scenario_id": "RES-RECOVERY-DUPLICATE-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "idempotent_recovery",
+        "restart_recovery"
+      ],
+      "defended": true,
+      "degraded_mode": false,
+      "description": "Competing recovery owners are quarantined rather than both committing.",
+      "details": {
+        "duplicate_decisions": 0
+      },
+      "detection_oracles": [
+        "RECOVERY_CHECKPOINT"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "QUARANTINED"
+      ],
+      "family": "split_brain_recovery",
+      "finding_codes": [
+        "RECOVERY_OWNER_CONFLICT"
+      ],
+      "findings": [
+        {
+          "code": "RECOVERY_OWNER_CONFLICT",
+          "control": "RECOVERY_CHECKPOINT",
+          "message": "Competing recovery owner was quarantined.",
+          "severity": "critical"
+        }
+      ],
+      "handler": "recovery",
+      "human_review_required": true,
+      "outcome": "QUARANTINED",
+      "prohibit_closure": true,
+      "residual_risks": [
+        "Recovery ownership requires reconciliation."
+      ],
+      "retry_attempts": 0,
+      "scenario_id": "RES-RECOVERY-SPLIT-BRAIN-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "idempotent_recovery",
+        "restart_recovery",
+        "cache_integrity"
+      ],
+      "defended": true,
+      "degraded_mode": false,
+      "description": "A corrupted checkpoint cannot authorize restart recovery.",
+      "details": {
+        "duplicate_decisions": 0
+      },
+      "detection_oracles": [
+        "RECOVERY_CHECKPOINT"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "BLOCKED_INTEGRITY_FAILURE"
+      ],
+      "family": "corrupt_recovery_checkpoint",
+      "finding_codes": [
+        "RECOVERY_CHECKPOINT_HASH_MISMATCH"
+      ],
+      "findings": [
+        {
+          "code": "RECOVERY_CHECKPOINT_HASH_MISMATCH",
+          "control": "RECOVERY_CHECKPOINT",
+          "message": "Corrupted recovery state failed integrity verification.",
+          "severity": "critical"
+        }
+      ],
+      "handler": "recovery",
+      "human_review_required": true,
+      "outcome": "BLOCKED_INTEGRITY_FAILURE",
+      "prohibit_closure": true,
+      "residual_risks": [
+        "Interrupted work cannot be trusted for automatic recovery."
+      ],
+      "retry_attempts": 0,
+      "scenario_id": "RES-RECOVERY-CORRUPT-CHECKPOINT-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "idempotent_recovery",
+        "restart_recovery"
+      ],
+      "defended": true,
+      "degraded_mode": false,
+      "description": "A completed checkpoint replay cannot create a duplicate decision.",
+      "details": {
+        "duplicate_decisions": 0
+      },
+      "detection_oracles": [
+        "RECOVERY_CHECKPOINT"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "RECOVERED_IDEMPOTENTLY"
+      ],
+      "family": "completed_checkpoint_replay",
+      "finding_codes": [
+        "COMPLETED_RECOVERY_IDEMPOTENT"
+      ],
+      "findings": [
+        {
+          "code": "COMPLETED_RECOVERY_IDEMPOTENT",
+          "control": "RECOVERY_CHECKPOINT",
+          "message": "Completed recovery replay was a no-op.",
+          "severity": "informational"
+        }
+      ],
+      "handler": "recovery",
+      "human_review_required": false,
+      "outcome": "RECOVERED_IDEMPOTENTLY",
+      "prohibit_closure": false,
+      "residual_risks": [],
+      "retry_attempts": 0,
+      "scenario_id": "RES-RECOVERY-COMPLETED-REPLAY-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "poison_message"
+      ],
+      "defended": true,
+      "degraded_mode": false,
+      "description": "A poison message is quarantined while the following valid event is processed.",
+      "details": {
+        "processed_message_ids": [
+          "M-001",
+          "M-003"
+        ],
+        "quarantined_message_ids": [
+          "M-002"
+        ],
+        "queue_continued": true
+      },
+      "detection_oracles": [
+        "QUEUE_ISOLATION"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "QUARANTINED"
+      ],
+      "family": "poison_message_isolation",
+      "finding_codes": [
+        "POISON_MESSAGE_ISOLATED"
+      ],
+      "findings": [
+        {
+          "code": "POISON_MESSAGE_ISOLATED",
+          "control": "QUEUE_ISOLATION",
+          "message": "Poison message was quarantined without blocking later work.",
+          "severity": "critical"
+        }
+      ],
+      "handler": "queue_resource",
+      "human_review_required": true,
+      "outcome": "QUARANTINED",
+      "prohibit_closure": true,
+      "residual_risks": [
+        "The quarantined producer payload requires review."
+      ],
+      "retry_attempts": 0,
+      "scenario_id": "RES-QUEUE-POISON-ISOLATION-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "resource_budget",
+        "poison_message"
+      ],
+      "defended": true,
+      "degraded_mode": false,
+      "description": "A payload exceeding the deterministic resource budget is quarantined.",
+      "details": {
+        "maximum_size": 1048576,
+        "payload_size": 1048577
+      },
+      "detection_oracles": [
+        "RESOURCE_GUARD"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "QUARANTINED"
+      ],
+      "family": "resource_budget_exhaustion",
+      "finding_codes": [
+        "RESOURCE_BUDGET_EXCEEDED"
+      ],
+      "findings": [
+        {
+          "code": "RESOURCE_BUDGET_EXCEEDED",
+          "control": "RESOURCE_GUARD",
+          "message": "Oversized work item was quarantined at the deterministic budget.",
+          "severity": "critical"
+        }
+      ],
+      "handler": "queue_resource",
+      "human_review_required": true,
+      "outcome": "QUARANTINED",
+      "prohibit_closure": true,
+      "residual_risks": [
+        "The oversized payload requires offline inspection."
+      ],
+      "retry_attempts": 0,
+      "scenario_id": "RES-RESOURCE-BUDGET-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    }
+  ],
+  "runtime_policy": {
+    "policy_id": "AEGIS-RESILIENCE-RUNTIME-POLICY",
+    "relative_path": "policies/assurance/resilience_runtime_policy_v1.yaml",
+    "sha256": "c0449072f9dff7ec9991e1a9ba7dc1ddfd9a8791fbef19246e027821f3543387",
+    "version": "1.0.0"
+  },
+  "schema_version": "1.0.0",
+  "silent_data_loss_scenario_ids": [],
+  "summary": {
+    "audit_continuity_preservation_rate": 1.0,
+    "baseline_validation_passed": true,
+    "blocked_audit_failure_count": 3,
+    "blocked_dependency_failure_count": 8,
+    "blocked_integrity_failure_count": 3,
+    "bounded_retry_enforcement_rate": 1.0,
+    "cache_integrity_enforcement_rate": 1.0,
+    "circuit_breaker_enforcement_rate": 1.0,
+    "circuit_open_count": 3,
+    "completed_degraded_review_required_count": 4,
+    "completed_normally_count": 2,
+    "critical_fault_scenario_defence_rate": 1.0,
+    "critical_scenario_count": 42,
+    "defended_critical_count": 42,
+    "degraded_mode_governance_rate": 1.0,
+    "dependency_failure_fail_closed_rate": 1.0,
+    "harness_error_count": 0,
+    "idempotent_recovery_rate": 1.0,
+    "overall_passed": true,
+    "poison_message_isolation_rate": 1.0,
+    "quarantined_count": 7,
+    "recovered_idempotently_count": 4,
+    "restart_recovery_consistency_rate": 1.0,
+    "retry_scheduled_count": 3,
+    "rollback_correctness_rate": 1.0,
+    "rolled_back_count": 5,
+    "scenario_count": 42,
+    "silent_data_loss_count": 0,
+    "trusted_input_integrity_passed": true,
+    "unbounded_retry_count": 0,
+    "undetected_count": 0,
+    "unsafe_decision_release_count": 0
+  },
+  "unbounded_retry_scenario_ids": [],
+  "undetected_scenario_ids": [],
+  "unsafe_release_scenario_ids": []
+}

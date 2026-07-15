@@ -1,0 +1,57 @@
+policy:
+  policy_id: AEGIS-RESILIENCE-RUNTIME-POLICY
+  version: 1.0.0
+  description: Deterministic fail-closed runtime controls for dependency failures, retries, circuit breaking, atomic persistence, recovery, cache integrity, and audit continuity.
+deterministic_clock:
+  evaluation_time: '2026-07-15T10:00:00Z'
+retry:
+  max_attempts: 3
+  deterministic_backoff_seconds: [0, 1, 2]
+  retryable_faults: [timeout, unavailable, rate_limit]
+  wall_clock_sleep_permitted: false
+circuit_breaker:
+  failure_threshold: 3
+  reset_after_seconds: 60
+  half_open_probe_limit: 1
+dependency_fallback:
+  verified_cache_permitted: true
+  integrity_verification_required: true
+  freshness_verification_required: true
+  missing_dependency_disclosure_required: true
+  automated_release_permitted: false
+degraded_mode:
+  human_review_required: true
+  prohibit_closure: true
+  automated_release: false
+  residual_risk_required: true
+  missing_dependencies_required: true
+persistence:
+  atomic_replace_required: true
+  file_fsync_required: true
+  directory_fsync_required: true
+  rollback_on_failure: true
+  temporary_file_same_directory: true
+cache:
+  sha256_sidecar_required: true
+  stale_cache_fail_closed: true
+  missing_metadata_fail_closed: true
+audit:
+  hash_algorithm: sha256
+  sequence_continuity_required: true
+  previous_hash_required: true
+  duplicate_event_id_reuse_prohibited: true
+  release_without_durable_audit: false
+recovery:
+  checkpoint_hash_required: true
+  transaction_binding_required: true
+  owner_conflict_policy: quarantine
+  completed_checkpoint_replay_policy: idempotent_noop
+  input_hash_mismatch_policy: quarantine
+queue:
+  poison_message_policy: quarantine_and_continue
+  resource_budget_policy: quarantine
+release_gate:
+  dependency_resolution_required: true
+  audit_durability_required: true
+  integrity_verification_required: true
+  checkpoint_durability_required: true

@@ -1,0 +1,741 @@
+{
+  "recovery_result_count": 16,
+  "recovery_results": [
+    {
+      "automated_release": false,
+      "control_tags": [
+        "dependency_failure",
+        "restart_recovery"
+      ],
+      "defended": true,
+      "degraded_mode": false,
+      "description": "A missing pinned policy blocks evaluation and release.",
+      "details": {
+        "dependency": "vulnerability_intelligence",
+        "fallback_authorized": false,
+        "fallback_present": false,
+        "fault": "policy_store_unavailable"
+      },
+      "detection_oracles": [
+        "DEPENDENCY_GATE"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "BLOCKED_DEPENDENCY_FAILURE"
+      ],
+      "family": "policy_store_outage",
+      "finding_codes": [
+        "DEPENDENCY_FAIL_CLOSED"
+      ],
+      "findings": [
+        {
+          "code": "DEPENDENCY_FAIL_CLOSED",
+          "control": "DEPENDENCY_GATE",
+          "message": "vulnerability_intelligence failure cannot be safely resolved or substituted.",
+          "severity": "critical"
+        }
+      ],
+      "handler": "dependency",
+      "human_review_required": true,
+      "outcome": "BLOCKED_DEPENDENCY_FAILURE",
+      "prohibit_closure": true,
+      "residual_risks": [
+        "Authoritative vulnerability_intelligence evidence is unavailable.",
+        "No automated release is permitted."
+      ],
+      "retry_attempts": 1,
+      "scenario_id": "RES-DEP-POLICY-STORE-BLOCK-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "dependency_failure",
+        "restart_recovery"
+      ],
+      "defended": true,
+      "degraded_mode": false,
+      "description": "A missing trusted evaluation clock blocks freshness-sensitive release.",
+      "details": {
+        "dependency": "vulnerability_intelligence",
+        "fallback_authorized": false,
+        "fallback_present": false,
+        "fault": "clock_service_unavailable"
+      },
+      "detection_oracles": [
+        "DEPENDENCY_GATE"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "BLOCKED_DEPENDENCY_FAILURE"
+      ],
+      "family": "trusted_clock_outage",
+      "finding_codes": [
+        "DEPENDENCY_FAIL_CLOSED"
+      ],
+      "findings": [
+        {
+          "code": "DEPENDENCY_FAIL_CLOSED",
+          "control": "DEPENDENCY_GATE",
+          "message": "vulnerability_intelligence failure cannot be safely resolved or substituted.",
+          "severity": "critical"
+        }
+      ],
+      "handler": "dependency",
+      "human_review_required": true,
+      "outcome": "BLOCKED_DEPENDENCY_FAILURE",
+      "prohibit_closure": true,
+      "residual_risks": [
+        "Authoritative vulnerability_intelligence evidence is unavailable.",
+        "No automated release is permitted."
+      ],
+      "retry_attempts": 1,
+      "scenario_id": "RES-DEP-CLOCK-SERVICE-BLOCK-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    },
+    {
+      "automated_release": true,
+      "control_tags": [
+        "circuit_breaker",
+        "restart_recovery"
+      ],
+      "defended": true,
+      "degraded_mode": false,
+      "description": "A successful probe resets circuit state without duplicating a decision.",
+      "details": {
+        "prerequisites": {
+          "audit_durable": true,
+          "checkpoint_durable": true,
+          "dependency_resolved": true,
+          "integrity_verified": true
+        }
+      },
+      "detection_oracles": [
+        "RELEASE_GATE"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "COMPLETED_NORMALLY"
+      ],
+      "family": "circuit_success_reset",
+      "finding_codes": [
+        "RELEASE_PREREQUISITES_SATISFIED"
+      ],
+      "findings": [
+        {
+          "code": "RELEASE_PREREQUISITES_SATISFIED",
+          "control": "RELEASE_GATE",
+          "message": "All durable governance prerequisites are satisfied.",
+          "severity": "informational"
+        }
+      ],
+      "handler": "retry_circuit",
+      "human_review_required": false,
+      "outcome": "COMPLETED_NORMALLY",
+      "prohibit_closure": false,
+      "residual_risks": [],
+      "retry_attempts": 0,
+      "scenario_id": "RES-CIRCUIT-SUCCESS-RESET-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "rollback",
+        "restart_recovery"
+      ],
+      "defended": true,
+      "degraded_mode": false,
+      "description": "Failure after temporary-file fsync preserves the previous durable file.",
+      "details": {
+        "fault_point": "after_temp_fsync",
+        "rollback_correct": true,
+        "silent_data_loss": false
+      },
+      "detection_oracles": [
+        "ATOMIC_PERSISTENCE"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "ROLLED_BACK"
+      ],
+      "family": "temporary_write_failure",
+      "finding_codes": [
+        "ATOMIC_WRITE_ROLLED_BACK"
+      ],
+      "findings": [
+        {
+          "code": "ATOMIC_WRITE_ROLLED_BACK",
+          "control": "ATOMIC_PERSISTENCE",
+          "message": "Injected persistence failure restored the prior durable state.",
+          "severity": "critical"
+        }
+      ],
+      "handler": "persistence",
+      "human_review_required": true,
+      "outcome": "ROLLED_BACK",
+      "prohibit_closure": true,
+      "residual_risks": [
+        "The transaction must be retried or reviewed."
+      ],
+      "retry_attempts": 0,
+      "scenario_id": "RES-PERSIST-TEMP-WRITE-FAIL-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "rollback",
+        "resource_budget"
+      ],
+      "defended": true,
+      "degraded_mode": false,
+      "description": "Injected disk-capacity failure cannot leave a partial report.",
+      "details": {
+        "fault_point": "after_temp_fsync",
+        "rollback_correct": true,
+        "silent_data_loss": false
+      },
+      "detection_oracles": [
+        "ATOMIC_PERSISTENCE"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "ROLLED_BACK"
+      ],
+      "family": "disk_capacity_exhaustion",
+      "finding_codes": [
+        "ATOMIC_WRITE_ROLLED_BACK"
+      ],
+      "findings": [
+        {
+          "code": "ATOMIC_WRITE_ROLLED_BACK",
+          "control": "ATOMIC_PERSISTENCE",
+          "message": "Injected persistence failure restored the prior durable state.",
+          "severity": "critical"
+        }
+      ],
+      "handler": "persistence",
+      "human_review_required": true,
+      "outcome": "ROLLED_BACK",
+      "prohibit_closure": true,
+      "residual_risks": [
+        "The transaction must be retried or reviewed."
+      ],
+      "retry_attempts": 0,
+      "scenario_id": "RES-PERSIST-DISK-FULL-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "rollback"
+      ],
+      "defended": true,
+      "degraded_mode": false,
+      "description": "A read-only storage failure leaves trusted state unchanged.",
+      "details": {
+        "fault_point": "before_write",
+        "rollback_correct": true,
+        "silent_data_loss": false
+      },
+      "detection_oracles": [
+        "ATOMIC_PERSISTENCE"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "ROLLED_BACK"
+      ],
+      "family": "read_only_storage",
+      "finding_codes": [
+        "STORAGE_PRECONDITION_FAILED"
+      ],
+      "findings": [
+        {
+          "code": "STORAGE_PRECONDITION_FAILED",
+          "control": "ATOMIC_PERSISTENCE",
+          "message": "Persistence was blocked before mutating durable state.",
+          "severity": "critical"
+        }
+      ],
+      "handler": "persistence",
+      "human_review_required": true,
+      "outcome": "ROLLED_BACK",
+      "prohibit_closure": true,
+      "residual_risks": [
+        "Durable output was not produced."
+      ],
+      "retry_attempts": 0,
+      "scenario_id": "RES-PERSIST-READ-ONLY-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "rollback",
+        "restart_recovery"
+      ],
+      "defended": true,
+      "degraded_mode": false,
+      "description": "A failure after replacement restores the previous durable value.",
+      "details": {
+        "fault_point": "after_replace",
+        "rollback_correct": true,
+        "silent_data_loss": false
+      },
+      "detection_oracles": [
+        "ATOMIC_PERSISTENCE"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "ROLLED_BACK"
+      ],
+      "family": "post_replace_failure",
+      "finding_codes": [
+        "ATOMIC_WRITE_ROLLED_BACK"
+      ],
+      "findings": [
+        {
+          "code": "ATOMIC_WRITE_ROLLED_BACK",
+          "control": "ATOMIC_PERSISTENCE",
+          "message": "Injected persistence failure restored the prior durable state.",
+          "severity": "critical"
+        }
+      ],
+      "handler": "persistence",
+      "human_review_required": true,
+      "outcome": "ROLLED_BACK",
+      "prohibit_closure": true,
+      "residual_risks": [
+        "The transaction must be retried or reviewed."
+      ],
+      "retry_attempts": 0,
+      "scenario_id": "RES-PERSIST-AFTER-REPLACE-FAIL-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "rollback",
+        "audit_continuity"
+      ],
+      "defended": true,
+      "degraded_mode": false,
+      "description": "Payload and manifest are treated as one governed commit boundary.",
+      "details": {
+        "fault_point": "manifest_failure",
+        "rollback_correct": true,
+        "silent_data_loss": false
+      },
+      "detection_oracles": [
+        "ATOMIC_PERSISTENCE"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "ROLLED_BACK"
+      ],
+      "family": "manifest_commit_failure",
+      "finding_codes": [
+        "ATOMIC_WRITE_ROLLED_BACK"
+      ],
+      "findings": [
+        {
+          "code": "ATOMIC_WRITE_ROLLED_BACK",
+          "control": "ATOMIC_PERSISTENCE",
+          "message": "Injected persistence failure restored the prior durable state.",
+          "severity": "critical"
+        }
+      ],
+      "handler": "persistence",
+      "human_review_required": true,
+      "outcome": "ROLLED_BACK",
+      "prohibit_closure": true,
+      "residual_risks": [
+        "The transaction must be retried or reviewed."
+      ],
+      "retry_attempts": 0,
+      "scenario_id": "RES-PERSIST-MANIFEST-FAIL-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    },
+    {
+      "automated_release": true,
+      "control_tags": [
+        "rollback",
+        "restart_recovery"
+      ],
+      "defended": true,
+      "degraded_mode": false,
+      "description": "A successful atomic write produces exactly one durable value.",
+      "details": {
+        "fault_point": "none",
+        "rollback_correct": true,
+        "silent_data_loss": false
+      },
+      "detection_oracles": [
+        "ATOMIC_PERSISTENCE"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "COMPLETED_NORMALLY"
+      ],
+      "family": "atomic_persistence_success",
+      "finding_codes": [
+        "ATOMIC_WRITE_COMMITTED"
+      ],
+      "findings": [
+        {
+          "code": "ATOMIC_WRITE_COMMITTED",
+          "control": "ATOMIC_PERSISTENCE",
+          "message": "The durable file was atomically replaced.",
+          "severity": "informational"
+        }
+      ],
+      "handler": "persistence",
+      "human_review_required": false,
+      "outcome": "COMPLETED_NORMALLY",
+      "prohibit_closure": false,
+      "residual_risks": [],
+      "retry_attempts": 0,
+      "scenario_id": "RES-PERSIST-ATOMIC-SUCCESS-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "rollback",
+        "poison_message"
+      ],
+      "defended": true,
+      "degraded_mode": false,
+      "description": "Structurally invalid output is quarantined before persistence.",
+      "details": {
+        "silent_data_loss": false,
+        "write_attempted": false
+      },
+      "detection_oracles": [
+        "PRE_PERSISTENCE_VALIDATION"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "QUARANTINED"
+      ],
+      "family": "invalid_report_before_write",
+      "finding_codes": [
+        "OUTPUT_SCHEMA_INVALID"
+      ],
+      "findings": [
+        {
+          "code": "OUTPUT_SCHEMA_INVALID",
+          "control": "PRE_PERSISTENCE_VALIDATION",
+          "message": "Invalid output was quarantined before persistence.",
+          "severity": "critical"
+        }
+      ],
+      "handler": "persistence",
+      "human_review_required": true,
+      "outcome": "QUARANTINED",
+      "prohibit_closure": true,
+      "residual_risks": [
+        "The invalid output requires investigation."
+      ],
+      "retry_attempts": 0,
+      "scenario_id": "RES-PERSIST-SCHEMA-FAIL-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "audit_continuity",
+        "idempotent_recovery"
+      ],
+      "defended": true,
+      "degraded_mode": false,
+      "description": "Redelivery of the identical audit event is an idempotent no-op.",
+      "details": {
+        "event_count": 1
+      },
+      "detection_oracles": [
+        "AUDIT_CONTINUITY"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "RECOVERED_IDEMPOTENTLY"
+      ],
+      "family": "audit_idempotent_redrive",
+      "finding_codes": [
+        "AUDIT_REDRIVE_IDEMPOTENT"
+      ],
+      "findings": [
+        {
+          "code": "AUDIT_REDRIVE_IDEMPOTENT",
+          "control": "AUDIT_CONTINUITY",
+          "message": "Identical audit redelivery produced no duplicate event.",
+          "severity": "informational"
+        }
+      ],
+      "handler": "audit",
+      "human_review_required": false,
+      "outcome": "RECOVERED_IDEMPOTENTLY",
+      "prohibit_closure": false,
+      "residual_risks": [],
+      "retry_attempts": 0,
+      "scenario_id": "RES-AUDIT-IDEMPOTENT-REDRIVE-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "idempotent_recovery",
+        "restart_recovery"
+      ],
+      "defended": true,
+      "degraded_mode": false,
+      "description": "An interrupted operation resumes from a verified checkpoint exactly once.",
+      "details": {
+        "completed": true,
+        "duplicate_decisions": 0
+      },
+      "detection_oracles": [
+        "RECOVERY_CHECKPOINT"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "RECOVERED_IDEMPOTENTLY"
+      ],
+      "family": "worker_crash_recovery",
+      "finding_codes": [
+        "WORKER_CRASH_RECOVERED"
+      ],
+      "findings": [
+        {
+          "code": "WORKER_CRASH_RECOVERED",
+          "control": "RECOVERY_CHECKPOINT",
+          "message": "Interrupted work resumed from a verified checkpoint.",
+          "severity": "informational"
+        }
+      ],
+      "handler": "recovery",
+      "human_review_required": false,
+      "outcome": "RECOVERED_IDEMPOTENTLY",
+      "prohibit_closure": false,
+      "residual_risks": [],
+      "retry_attempts": 0,
+      "scenario_id": "RES-RECOVERY-WORKER-CRASH-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "idempotent_recovery",
+        "restart_recovery"
+      ],
+      "defended": true,
+      "degraded_mode": false,
+      "description": "A repeated recovery of a completed checkpoint is a no-op.",
+      "details": {
+        "duplicate_decisions": 0
+      },
+      "detection_oracles": [
+        "RECOVERY_CHECKPOINT"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "RECOVERED_IDEMPOTENTLY"
+      ],
+      "family": "duplicate_recovery",
+      "finding_codes": [
+        "COMPLETED_RECOVERY_IDEMPOTENT"
+      ],
+      "findings": [
+        {
+          "code": "COMPLETED_RECOVERY_IDEMPOTENT",
+          "control": "RECOVERY_CHECKPOINT",
+          "message": "Completed recovery replay was a no-op.",
+          "severity": "informational"
+        }
+      ],
+      "handler": "recovery",
+      "human_review_required": false,
+      "outcome": "RECOVERED_IDEMPOTENTLY",
+      "prohibit_closure": false,
+      "residual_risks": [],
+      "retry_attempts": 0,
+      "scenario_id": "RES-RECOVERY-DUPLICATE-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "idempotent_recovery",
+        "restart_recovery"
+      ],
+      "defended": true,
+      "degraded_mode": false,
+      "description": "Competing recovery owners are quarantined rather than both committing.",
+      "details": {
+        "duplicate_decisions": 0
+      },
+      "detection_oracles": [
+        "RECOVERY_CHECKPOINT"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "QUARANTINED"
+      ],
+      "family": "split_brain_recovery",
+      "finding_codes": [
+        "RECOVERY_OWNER_CONFLICT"
+      ],
+      "findings": [
+        {
+          "code": "RECOVERY_OWNER_CONFLICT",
+          "control": "RECOVERY_CHECKPOINT",
+          "message": "Competing recovery owner was quarantined.",
+          "severity": "critical"
+        }
+      ],
+      "handler": "recovery",
+      "human_review_required": true,
+      "outcome": "QUARANTINED",
+      "prohibit_closure": true,
+      "residual_risks": [
+        "Recovery ownership requires reconciliation."
+      ],
+      "retry_attempts": 0,
+      "scenario_id": "RES-RECOVERY-SPLIT-BRAIN-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "idempotent_recovery",
+        "restart_recovery",
+        "cache_integrity"
+      ],
+      "defended": true,
+      "degraded_mode": false,
+      "description": "A corrupted checkpoint cannot authorize restart recovery.",
+      "details": {
+        "duplicate_decisions": 0
+      },
+      "detection_oracles": [
+        "RECOVERY_CHECKPOINT"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "BLOCKED_INTEGRITY_FAILURE"
+      ],
+      "family": "corrupt_recovery_checkpoint",
+      "finding_codes": [
+        "RECOVERY_CHECKPOINT_HASH_MISMATCH"
+      ],
+      "findings": [
+        {
+          "code": "RECOVERY_CHECKPOINT_HASH_MISMATCH",
+          "control": "RECOVERY_CHECKPOINT",
+          "message": "Corrupted recovery state failed integrity verification.",
+          "severity": "critical"
+        }
+      ],
+      "handler": "recovery",
+      "human_review_required": true,
+      "outcome": "BLOCKED_INTEGRITY_FAILURE",
+      "prohibit_closure": true,
+      "residual_risks": [
+        "Interrupted work cannot be trusted for automatic recovery."
+      ],
+      "retry_attempts": 0,
+      "scenario_id": "RES-RECOVERY-CORRUPT-CHECKPOINT-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "idempotent_recovery",
+        "restart_recovery"
+      ],
+      "defended": true,
+      "degraded_mode": false,
+      "description": "A completed checkpoint replay cannot create a duplicate decision.",
+      "details": {
+        "duplicate_decisions": 0
+      },
+      "detection_oracles": [
+        "RECOVERY_CHECKPOINT"
+      ],
+      "expectation_met": true,
+      "expected_outcomes": [
+        "RECOVERED_IDEMPOTENTLY"
+      ],
+      "family": "completed_checkpoint_replay",
+      "finding_codes": [
+        "COMPLETED_RECOVERY_IDEMPOTENT"
+      ],
+      "findings": [
+        {
+          "code": "COMPLETED_RECOVERY_IDEMPOTENT",
+          "control": "RECOVERY_CHECKPOINT",
+          "message": "Completed recovery replay was a no-op.",
+          "severity": "informational"
+        }
+      ],
+      "handler": "recovery",
+      "human_review_required": false,
+      "outcome": "RECOVERED_IDEMPOTENTLY",
+      "prohibit_closure": false,
+      "residual_risks": [],
+      "retry_attempts": 0,
+      "scenario_id": "RES-RECOVERY-COMPLETED-REPLAY-001",
+      "severity": "critical",
+      "silent_data_loss": false,
+      "unbounded_retry": false,
+      "unsafe_decision_released": false
+    }
+  ],
+  "report_id": "AEG-RESILIENCE-STEP11H-001"
+}

@@ -1,0 +1,706 @@
+policy:
+  catalog_id: AEGIS-RESILIENCE-FAULT-SCENARIO-CATALOG
+  version: 1.0.0
+  harness_version: 0.1.0
+  description: Deterministic fault-injection, fail-closed resilience, atomic recovery, cache-integrity, and audit-continuity assurance.
+deterministic_clock:
+  evaluation_time: '2026-07-15T10:00:00Z'
+  timezone: UTC
+runtime_policy_path: policies/assurance/resilience_runtime_policy_v1.yaml
+trusted_inputs:
+  decision_policy:
+    relative_path: policies/decision/federal_base_policy_v1.yaml
+    expected_sha256: fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f
+  trust_policy:
+    relative_path: policies/trust/evidence_trust_policy_v1.yaml
+    expected_sha256: 6a4b41df0d5084bdc8a82c6c82714376253af9229ab1474dc73727d966359249
+  resilience_runtime_policy:
+    relative_path: policies/assurance/resilience_runtime_policy_v1.yaml
+    expected_sha256: c0449072f9dff7ec9991e1a9ba7dc1ddfd9a8791fbef19246e027821f3543387
+  decision_schema:
+    relative_path: schemas/aegis_decision_record.schema.json
+    expected_sha256: e54a394ef9c772d3dce070f359051d6accf5761b1983ca9721e03e80a9e54ba3
+  evidence_schema:
+    relative_path: schemas/aegis_evidence_record.schema.json
+    expected_sha256: adaef9c4a1a837fddebee3d40cc03d6d99592682b3c42f1c24dded2fc74ce772
+  evidence_fixture:
+    relative_path: data/sample_inputs/evidence/valid_log4j_sbom_evidence.json
+    expected_sha256: 21ed78284567bc33bb463fb2525941829b80c7e21144d17677f022d168a3c2de
+  decision_fixture:
+    relative_path: data/sample_inputs/decisions/valid_log4shell_decision_record_policy.json
+    expected_sha256: 7d557b127eb2cb6ae097be75273cad3e3d0cd0876385dd74d2439c762254f37a
+  assurance_corpus:
+    relative_path: data/assurance/step11a_policy_rule_coverage_corpus.jsonl
+    expected_sha256: d51747056c4f920d5e0b6bfb51613b4e1ee1910de82770aa179dd3fe77f68ded
+  assurance_manifest:
+    relative_path: data/assurance/step11a_policy_rule_coverage_manifest.json
+    expected_sha256: d1fdd9308b973e5248e464daf528a376bca6bc6c27b9d45f267b88f842797465
+  step11c_report:
+    relative_path: data/validation_reports/tampering/step11c_tamper_assurance_report.json
+    expected_sha256: 74f0849ee40aa73f09b9abf23929bbaf4a355d51f00c9b01958b01f943867a23
+  step11d_report:
+    relative_path: data/validation_reports/hostile_inputs/step11d_hostile_input_report.json
+    expected_sha256: 8c21529e07fa9b9b196a002d64fa302e7f9ec10da3e1fec9b7070bdd6d6b6f69
+  step11e_report:
+    relative_path: data/validation_reports/metamorphic/step11e_metamorphic_assurance_report.json
+    expected_sha256: 18c1b8986c318a815d5d954df2686846b5d97ac30727fb94c24ac72e635e652e
+  step11f_report:
+    relative_path: data/validation_reports/compound_attacks/step11f_compound_attack_report.json
+    expected_sha256: 2b67f31c55bbe51ed52c83b8bba01fc8ad41b424b24f55d750d7bf2e6f03379f
+  step11g_report:
+    relative_path: data/validation_reports/temporal/step11g_temporal_assurance_report.json
+    expected_sha256: eb2a2f8f8de52b087e1a95dee123aca9cfb00bdb2344776aac2da156698b3de1
+  decision_hashing_module:
+    relative_path: src/domain/decision_hashing.py
+    expected_sha256: 3b0a1eff5d2b97064d6dfb43936dde0bf2b1c23574a447afae13e2b02886853f
+  evidence_trust_engine:
+    relative_path: src/governance/evidence_trust_engine.py
+    expected_sha256: 78943367308a8fcc07e085da0e45fe75013f216d23f0fac3f1e749f148c74fc7
+  temporal_guard:
+    relative_path: src/governance/temporal_guard.py
+    expected_sha256: 6172039fad2683f8d0c7dec8a279c20b123771277cdf37568cfe3e629ea077f9
+  decision_validator:
+    relative_path: src/validation/decision_record_validator.py
+    expected_sha256: f1ef851a8f875680fc5e919b9276effc8d7c2feb00005b893f163ed47136806f
+  osv_client:
+    relative_path: src/intelligence/osv_client.py
+    expected_sha256: 26daa6892a852705f5dd2dc5c9f7ec9642ba4f5a6b5f8d5a2ba49290f027c83f
+quality_gates:
+- gate_id: STEP11H-CRITICAL-DEFENCE
+  metric: critical_fault_scenario_defence_rate
+  operator: gte
+  threshold: 1.0
+- gate_id: STEP11H-UNSAFE-RELEASE
+  metric: unsafe_decision_release_count
+  operator: eq
+  threshold: 0
+- gate_id: STEP11H-SILENT-DATA-LOSS
+  metric: silent_data_loss_count
+  operator: eq
+  threshold: 0
+- gate_id: STEP11H-UNBOUNDED-RETRY
+  metric: unbounded_retry_count
+  operator: eq
+  threshold: 0
+- gate_id: STEP11H-ROLLBACK
+  metric: rollback_correctness_rate
+  operator: gte
+  threshold: 1.0
+- gate_id: STEP11H-IDEMPOTENT-RECOVERY
+  metric: idempotent_recovery_rate
+  operator: gte
+  threshold: 1.0
+- gate_id: STEP11H-AUDIT-CONTINUITY
+  metric: audit_continuity_preservation_rate
+  operator: gte
+  threshold: 1.0
+- gate_id: STEP11H-CACHE-INTEGRITY
+  metric: cache_integrity_enforcement_rate
+  operator: gte
+  threshold: 1.0
+- gate_id: STEP11H-DEPENDENCY-FAIL-CLOSED
+  metric: dependency_failure_fail_closed_rate
+  operator: gte
+  threshold: 1.0
+- gate_id: STEP11H-DEGRADED-GOVERNANCE
+  metric: degraded_mode_governance_rate
+  operator: gte
+  threshold: 1.0
+- gate_id: STEP11H-POISON-ISOLATION
+  metric: poison_message_isolation_rate
+  operator: gte
+  threshold: 1.0
+- gate_id: STEP11H-RESTART-RECOVERY
+  metric: restart_recovery_consistency_rate
+  operator: gte
+  threshold: 1.0
+- gate_id: STEP11H-RETRY-BOUNDED
+  metric: bounded_retry_enforcement_rate
+  operator: gte
+  threshold: 1.0
+- gate_id: STEP11H-CIRCUIT
+  metric: circuit_breaker_enforcement_rate
+  operator: gte
+  threshold: 1.0
+- gate_id: STEP11H-UNDETECTED
+  metric: undetected_count
+  operator: eq
+  threshold: 0
+- gate_id: STEP11H-HARNESS
+  metric: harness_error_count
+  operator: eq
+  threshold: 0
+- gate_id: STEP11H-INTEGRITY
+  metric: trusted_input_integrity_passed
+  operator: eq
+  threshold: true
+production_readiness:
+  status: BLOCKED
+  blocking_reasons:
+  - Real operational validation has not yet been completed.
+  - Independent security review has not yet been completed.
+limitations:
+- Faults are deterministically injected into isolated temporary directories and in-memory adapters.
+- No production database, message broker, distributed filesystem, or live external dependency is disrupted.
+- Operational chaos testing and independent security review remain mandatory before deployment.
+scenarios:
+- scenario_id: RES-DEP-TIMEOUT-RETRY-001
+  family: dependency_timeout_retry
+  severity: critical
+  handler: dependency
+  expected_outcomes:
+  - RETRY_SCHEDULED
+  control_tags:
+  - dependency_failure
+  - retry_bounded
+  description: A transient timeout schedules only a bounded retry.
+  parameters:
+    fault: timeout
+    attempt: 1
+    consecutive_failures: 0
+    fallback: none
+- scenario_id: RES-DEP-UNAVAILABLE-DEGRADED-001
+  family: verified_degraded_fallback
+  severity: critical
+  handler: dependency
+  expected_outcomes:
+  - COMPLETED_DEGRADED_REVIEW_REQUIRED
+  control_tags:
+  - dependency_failure
+  - degraded_mode
+  - cache_integrity
+  description: A verified fresh cache permits only governed degraded operation.
+  parameters:
+    fault: unavailable
+    attempt: 3
+    consecutive_failures: 0
+    fallback: verified
+- scenario_id: RES-DEP-RATE-LIMIT-RETRY-001
+  family: rate_limit_retry
+  severity: critical
+  handler: dependency
+  expected_outcomes:
+  - RETRY_SCHEDULED
+  control_tags:
+  - dependency_failure
+  - retry_bounded
+  description: Rate limiting schedules a bounded retry without sleep-based looping.
+  parameters:
+    fault: rate_limit
+    attempt: 2
+    consecutive_failures: 0
+    fallback: none
+- scenario_id: RES-DEP-AUTH-BLOCK-001
+  family: authentication_failure
+  severity: critical
+  handler: dependency
+  expected_outcomes:
+  - BLOCKED_DEPENDENCY_FAILURE
+  control_tags:
+  - dependency_failure
+  description: Authentication rejection is not retried or converted into empty evidence.
+  parameters:
+    fault: authentication_rejected
+    attempt: 1
+    consecutive_failures: 0
+    fallback: none
+- scenario_id: RES-DEP-MALFORMED-BLOCK-001
+  family: malformed_dependency_response
+  severity: critical
+  handler: dependency
+  expected_outcomes:
+  - BLOCKED_DEPENDENCY_FAILURE
+  control_tags:
+  - dependency_failure
+  description: Malformed upstream evidence is blocked rather than defaulted.
+  parameters:
+    fault: malformed_response
+    attempt: 1
+    consecutive_failures: 0
+    fallback: none
+- scenario_id: RES-DEP-POLICY-STORE-BLOCK-001
+  family: policy_store_outage
+  severity: critical
+  handler: dependency
+  expected_outcomes:
+  - BLOCKED_DEPENDENCY_FAILURE
+  control_tags:
+  - dependency_failure
+  - restart_recovery
+  description: A missing pinned policy blocks evaluation and release.
+  parameters:
+    fault: policy_store_unavailable
+    attempt: 1
+    consecutive_failures: 0
+    fallback: none
+- scenario_id: RES-DEP-SCHEMA-REGISTRY-BLOCK-001
+  family: schema_registry_outage
+  severity: critical
+  handler: dependency
+  expected_outcomes:
+  - BLOCKED_DEPENDENCY_FAILURE
+  control_tags:
+  - dependency_failure
+  description: Unavailable validation schema blocks unvalidated records.
+  parameters:
+    fault: schema_registry_unavailable
+    attempt: 1
+    consecutive_failures: 0
+    fallback: none
+- scenario_id: RES-DEP-INTEGRITY-SERVICE-BLOCK-001
+  family: integrity_service_outage
+  severity: critical
+  handler: dependency
+  expected_outcomes:
+  - BLOCKED_INTEGRITY_FAILURE
+  control_tags:
+  - dependency_failure
+  - cache_integrity
+  description: Integrity verification cannot be bypassed when its service is unavailable.
+  parameters:
+    fault: integrity_service_unavailable
+    attempt: 1
+    consecutive_failures: 0
+    fallback: none
+- scenario_id: RES-DEP-CLOCK-SERVICE-BLOCK-001
+  family: trusted_clock_outage
+  severity: critical
+  handler: dependency
+  expected_outcomes:
+  - BLOCKED_DEPENDENCY_FAILURE
+  control_tags:
+  - dependency_failure
+  - restart_recovery
+  description: A missing trusted evaluation clock blocks freshness-sensitive release.
+  parameters:
+    fault: clock_service_unavailable
+    attempt: 1
+    consecutive_failures: 0
+    fallback: none
+- scenario_id: RES-DEP-VERIFIED-CACHE-001
+  family: verified_cache_fallback
+  severity: critical
+  handler: dependency
+  expected_outcomes:
+  - COMPLETED_DEGRADED_REVIEW_REQUIRED
+  control_tags:
+  - dependency_failure
+  - degraded_mode
+  - cache_integrity
+  description: A fresh integrity-verified cache discloses the missing live source and forces review.
+  parameters:
+    fault: timeout
+    attempt: 3
+    consecutive_failures: 0
+    fallback: verified
+- scenario_id: RES-DEP-STALE-CACHE-BLOCK-001
+  family: stale_cache_fallback
+  severity: critical
+  handler: dependency
+  expected_outcomes:
+  - BLOCKED_DEPENDENCY_FAILURE
+  control_tags:
+  - dependency_failure
+  - cache_integrity
+  description: A stale cache cannot authorize degraded operation.
+  parameters:
+    fault: unavailable
+    attempt: 3
+    consecutive_failures: 0
+    fallback: stale
+- scenario_id: RES-DEP-CACHE-HASH-BLOCK-001
+  family: unverified_cache_fallback
+  severity: critical
+  handler: dependency
+  expected_outcomes:
+  - BLOCKED_DEPENDENCY_FAILURE
+  control_tags:
+  - dependency_failure
+  - cache_integrity
+  description: An integrity-failed cache cannot substitute for a live dependency.
+  parameters:
+    fault: unavailable
+    attempt: 3
+    consecutive_failures: 0
+    fallback: unverified
+- scenario_id: RES-RETRY-SECOND-ATTEMPT-001
+  family: bounded_second_attempt
+  severity: critical
+  handler: retry_circuit
+  expected_outcomes:
+  - RETRY_SCHEDULED
+  control_tags:
+  - retry_bounded
+  description: A second attempt remains within the deterministic retry budget.
+  parameters:
+    mode: retry
+    fault: timeout
+    attempt: 2
+    consecutive_failures: 0
+- scenario_id: RES-RETRY-EXHAUSTED-DEGRADED-001
+  family: retry_exhausted_degraded
+  severity: critical
+  handler: retry_circuit
+  expected_outcomes:
+  - COMPLETED_DEGRADED_REVIEW_REQUIRED
+  control_tags:
+  - retry_bounded
+  - degraded_mode
+  description: Exhausted retries can use only an authorized degraded fallback.
+  parameters:
+    mode: retry_exhausted
+    fault: rate_limit
+    attempt: 3
+    consecutive_failures: 0
+- scenario_id: RES-CIRCUIT-THRESHOLD-001
+  family: circuit_threshold
+  severity: critical
+  handler: retry_circuit
+  expected_outcomes:
+  - CIRCUIT_OPEN
+  control_tags:
+  - circuit_breaker
+  - dependency_failure
+  description: The circuit opens at the configured failure threshold.
+  parameters:
+    mode: circuit
+    fault: unavailable
+    attempt: 1
+    consecutive_failures: 2
+- scenario_id: RES-CIRCUIT-OPEN-001
+  family: circuit_open_rejection
+  severity: critical
+  handler: retry_circuit
+  expected_outcomes:
+  - CIRCUIT_OPEN
+  control_tags:
+  - circuit_breaker
+  - dependency_failure
+  description: An already failing dependency remains blocked by the open circuit.
+  parameters:
+    mode: circuit
+    fault: timeout
+    attempt: 1
+    consecutive_failures: 4
+- scenario_id: RES-CIRCUIT-HALF-OPEN-FAIL-001
+  family: half_open_probe_failure
+  severity: critical
+  handler: retry_circuit
+  expected_outcomes:
+  - CIRCUIT_OPEN
+  control_tags:
+  - circuit_breaker
+  - dependency_failure
+  description: A failed governed probe reopens the circuit.
+  parameters:
+    mode: circuit
+    fault: unavailable
+    attempt: 1
+    consecutive_failures: 2
+- scenario_id: RES-CIRCUIT-SUCCESS-RESET-001
+  family: circuit_success_reset
+  severity: critical
+  handler: retry_circuit
+  expected_outcomes:
+  - COMPLETED_NORMALLY
+  control_tags:
+  - circuit_breaker
+  - restart_recovery
+  description: A successful probe resets circuit state without duplicating a decision.
+  parameters:
+    mode: success_reset
+    fault: timeout
+    attempt: 1
+    consecutive_failures: 2
+- scenario_id: RES-PERSIST-TEMP-WRITE-FAIL-001
+  family: temporary_write_failure
+  severity: critical
+  handler: persistence
+  expected_outcomes:
+  - ROLLED_BACK
+  control_tags:
+  - rollback
+  - restart_recovery
+  description: Failure after temporary-file fsync preserves the previous durable file.
+  parameters:
+    fault_point: after_temp_fsync
+    prior_exists: true
+- scenario_id: RES-PERSIST-DISK-FULL-001
+  family: disk_capacity_exhaustion
+  severity: critical
+  handler: persistence
+  expected_outcomes:
+  - ROLLED_BACK
+  control_tags:
+  - rollback
+  - resource_budget
+  description: Injected disk-capacity failure cannot leave a partial report.
+  parameters:
+    fault_point: after_temp_fsync
+    prior_exists: false
+- scenario_id: RES-PERSIST-READ-ONLY-001
+  family: read_only_storage
+  severity: critical
+  handler: persistence
+  expected_outcomes:
+  - ROLLED_BACK
+  control_tags:
+  - rollback
+  description: A read-only storage failure leaves trusted state unchanged.
+  parameters:
+    fault_point: before_write
+    prior_exists: true
+- scenario_id: RES-PERSIST-AFTER-REPLACE-FAIL-001
+  family: post_replace_failure
+  severity: critical
+  handler: persistence
+  expected_outcomes:
+  - ROLLED_BACK
+  control_tags:
+  - rollback
+  - restart_recovery
+  description: A failure after replacement restores the previous durable value.
+  parameters:
+    fault_point: after_replace
+    prior_exists: true
+- scenario_id: RES-PERSIST-MANIFEST-FAIL-001
+  family: manifest_commit_failure
+  severity: critical
+  handler: persistence
+  expected_outcomes:
+  - ROLLED_BACK
+  control_tags:
+  - rollback
+  - audit_continuity
+  description: Payload and manifest are treated as one governed commit boundary.
+  parameters:
+    fault_point: manifest_failure
+    prior_exists: true
+- scenario_id: RES-PERSIST-ATOMIC-SUCCESS-001
+  family: atomic_persistence_success
+  severity: critical
+  handler: persistence
+  expected_outcomes:
+  - COMPLETED_NORMALLY
+  control_tags:
+  - rollback
+  - restart_recovery
+  description: A successful atomic write produces exactly one durable value.
+  parameters:
+    fault_point: none
+    prior_exists: true
+- scenario_id: RES-PERSIST-SCHEMA-FAIL-001
+  family: invalid_report_before_write
+  severity: critical
+  handler: persistence
+  expected_outcomes:
+  - QUARANTINED
+  control_tags:
+  - rollback
+  - poison_message
+  description: Structurally invalid output is quarantined before persistence.
+  parameters:
+    fault_point: schema_invalid
+    prior_exists: true
+- scenario_id: RES-CACHE-HASH-MISMATCH-001
+  family: cache_hash_mismatch
+  severity: critical
+  handler: cache
+  expected_outcomes:
+  - BLOCKED_INTEGRITY_FAILURE
+  control_tags:
+  - cache_integrity
+  description: A cache payload hash mismatch blocks use.
+  parameters:
+    cache_fault: hash_mismatch
+- scenario_id: RES-CACHE-METADATA-MISSING-001
+  family: cache_metadata_missing
+  severity: critical
+  handler: cache
+  expected_outcomes:
+  - QUARANTINED
+  control_tags:
+  - cache_integrity
+  description: A cache entry without integrity metadata is quarantined.
+  parameters:
+    cache_fault: metadata_missing
+- scenario_id: RES-CACHE-STALE-001
+  family: cache_staleness
+  severity: critical
+  handler: cache
+  expected_outcomes:
+  - BLOCKED_DEPENDENCY_FAILURE
+  control_tags:
+  - cache_integrity
+  - dependency_failure
+  description: An expired cache cannot silently become current evidence.
+  parameters:
+    cache_fault: stale
+- scenario_id: RES-CACHE-INDEX-MISSING-001
+  family: cache_index_missing
+  severity: critical
+  handler: cache
+  expected_outcomes:
+  - QUARANTINED
+  control_tags:
+  - cache_integrity
+  description: Missing cache payload or index is isolated from decision inputs.
+  parameters:
+    cache_fault: index_missing
+- scenario_id: RES-CACHE-VERIFIED-FALLBACK-001
+  family: cache_verified_fallback
+  severity: critical
+  handler: cache
+  expected_outcomes:
+  - COMPLETED_DEGRADED_REVIEW_REQUIRED
+  control_tags:
+  - cache_integrity
+  - degraded_mode
+  description: A verified cache fallback is review-only and closure-prohibited.
+  parameters:
+    cache_fault: verified
+- scenario_id: RES-AUDIT-WRITE-FAIL-001
+  family: audit_write_failure
+  severity: critical
+  handler: audit
+  expected_outcomes:
+  - BLOCKED_AUDIT_FAILURE
+  control_tags:
+  - audit_continuity
+  description: A decision cannot be released when its audit event is not durable.
+  parameters:
+    audit_fault: write_failure
+- scenario_id: RES-AUDIT-SEQUENCE-GAP-001
+  family: audit_sequence_gap
+  severity: critical
+  handler: audit
+  expected_outcomes:
+  - BLOCKED_AUDIT_FAILURE
+  control_tags:
+  - audit_continuity
+  description: An audit sequence gap is detected and blocks release.
+  parameters:
+    audit_fault: sequence_gap
+- scenario_id: RES-AUDIT-HASH-BREAK-001
+  family: audit_hash_chain_break
+  severity: critical
+  handler: audit
+  expected_outcomes:
+  - BLOCKED_AUDIT_FAILURE
+  control_tags:
+  - audit_continuity
+  - cache_integrity
+  description: Tampered audit linkage is detected before release.
+  parameters:
+    audit_fault: hash_break
+- scenario_id: RES-AUDIT-DUPLICATE-CONFLICT-001
+  family: audit_event_id_conflict
+  severity: critical
+  handler: audit
+  expected_outcomes:
+  - QUARANTINED
+  control_tags:
+  - audit_continuity
+  - poison_message
+  description: Audit event ID reuse with changed content is quarantined.
+  parameters:
+    audit_fault: duplicate_conflict
+- scenario_id: RES-AUDIT-IDEMPOTENT-REDRIVE-001
+  family: audit_idempotent_redrive
+  severity: critical
+  handler: audit
+  expected_outcomes:
+  - RECOVERED_IDEMPOTENTLY
+  control_tags:
+  - audit_continuity
+  - idempotent_recovery
+  description: Redelivery of the identical audit event is an idempotent no-op.
+  parameters:
+    audit_fault: idempotent_redrive
+- scenario_id: RES-RECOVERY-WORKER-CRASH-001
+  family: worker_crash_recovery
+  severity: critical
+  handler: recovery
+  expected_outcomes:
+  - RECOVERED_IDEMPOTENTLY
+  control_tags:
+  - idempotent_recovery
+  - restart_recovery
+  description: An interrupted operation resumes from a verified checkpoint exactly once.
+  parameters:
+    recovery_fault: worker_crash
+- scenario_id: RES-RECOVERY-DUPLICATE-001
+  family: duplicate_recovery
+  severity: critical
+  handler: recovery
+  expected_outcomes:
+  - RECOVERED_IDEMPOTENTLY
+  control_tags:
+  - idempotent_recovery
+  - restart_recovery
+  description: A repeated recovery of a completed checkpoint is a no-op.
+  parameters:
+    recovery_fault: duplicate
+- scenario_id: RES-RECOVERY-SPLIT-BRAIN-001
+  family: split_brain_recovery
+  severity: critical
+  handler: recovery
+  expected_outcomes:
+  - QUARANTINED
+  control_tags:
+  - idempotent_recovery
+  - restart_recovery
+  description: Competing recovery owners are quarantined rather than both committing.
+  parameters:
+    recovery_fault: split_brain
+- scenario_id: RES-RECOVERY-CORRUPT-CHECKPOINT-001
+  family: corrupt_recovery_checkpoint
+  severity: critical
+  handler: recovery
+  expected_outcomes:
+  - BLOCKED_INTEGRITY_FAILURE
+  control_tags:
+  - idempotent_recovery
+  - restart_recovery
+  - cache_integrity
+  description: A corrupted checkpoint cannot authorize restart recovery.
+  parameters:
+    recovery_fault: corrupt
+- scenario_id: RES-RECOVERY-COMPLETED-REPLAY-001
+  family: completed_checkpoint_replay
+  severity: critical
+  handler: recovery
+  expected_outcomes:
+  - RECOVERED_IDEMPOTENTLY
+  control_tags:
+  - idempotent_recovery
+  - restart_recovery
+  description: A completed checkpoint replay cannot create a duplicate decision.
+  parameters:
+    recovery_fault: completed_replay
+- scenario_id: RES-QUEUE-POISON-ISOLATION-001
+  family: poison_message_isolation
+  severity: critical
+  handler: queue_resource
+  expected_outcomes:
+  - QUARANTINED
+  control_tags:
+  - poison_message
+  description: A poison message is quarantined while the following valid event is processed.
+  parameters:
+    mode: poison_message
+    message_count: 3
+- scenario_id: RES-RESOURCE-BUDGET-001
+  family: resource_budget_exhaustion
+  severity: critical
+  handler: queue_resource
+  expected_outcomes:
+  - QUARANTINED
+  control_tags:
+  - resource_budget
+  - poison_message
+  description: A payload exceeding the deterministic resource budget is quarantined.
+  parameters:
+    mode: resource_budget
+    payload_size: 1048577
+    maximum_size: 1048576
