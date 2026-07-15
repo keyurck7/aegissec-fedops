@@ -1,0 +1,595 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aegissec.example/schemas/aegis-temporal-assurance-report-v1.0.0.json",
+  "title": "AegisSec Temporal Assurance Report v1.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "report_id",
+    "catalog",
+    "deterministic_clock",
+    "input_integrity_checks_before",
+    "input_integrity_checks_after",
+    "baseline_validation",
+    "summary",
+    "quality_gates",
+    "results",
+    "undetected_scenario_ids",
+    "harness_error_scenario_ids",
+    "unsafe_release_scenario_ids",
+    "release_decision",
+    "limitations",
+    "generated_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "report_id": {
+      "type": "string",
+      "pattern": "^AEG-TEMPORAL-[A-Z0-9._-]+$"
+    },
+    "catalog": {
+      "$ref": "#/$defs/catalog"
+    },
+    "deterministic_clock": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evaluation_time",
+        "wall_clock_reads_used_for_scenarios"
+      ],
+      "properties": {
+        "evaluation_time": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "wall_clock_reads_used_for_scenarios": {
+          "const": false
+        }
+      }
+    },
+    "input_integrity_checks_before": {
+      "$ref": "#/$defs/integrityMap"
+    },
+    "input_integrity_checks_after": {
+      "$ref": "#/$defs/integrityMap"
+    },
+    "baseline_validation": {
+      "$ref": "#/$defs/baselineMap"
+    },
+    "summary": {
+      "$ref": "#/$defs/summary"
+    },
+    "quality_gates": {
+      "type": "array",
+      "minItems": 12,
+      "items": {
+        "$ref": "#/$defs/gate"
+      }
+    },
+    "results": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/result"
+      }
+    },
+    "undetected_scenario_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "harness_error_scenario_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "unsafe_release_scenario_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "release_decision": {
+      "$ref": "#/$defs/releaseDecision"
+    },
+    "limitations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "$defs": {
+    "rate": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "catalog": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "catalog_id",
+        "version",
+        "harness_version",
+        "relative_path",
+        "sha256"
+      ],
+      "properties": {
+        "catalog_id": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "harness_version": {
+          "type": "string"
+        },
+        "relative_path": {
+          "type": "string"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      }
+    },
+    "integrityMap": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "relative_path",
+          "expected_sha256",
+          "actual_sha256",
+          "safe_path",
+          "exists",
+          "passed"
+        ],
+        "properties": {
+          "relative_path": {
+            "type": "string"
+          },
+          "expected_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "actual_sha256": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "safe_path": {
+            "type": "boolean"
+          },
+          "exists": {
+            "type": "boolean"
+          },
+          "passed": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "baselineMap": {
+      "type": "object",
+      "minProperties": 8,
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "metric",
+          "expected",
+          "observed",
+          "passed"
+        ],
+        "properties": {
+          "metric": {
+            "type": "string"
+          },
+          "expected": {},
+          "observed": {},
+          "passed": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scenario_count",
+        "critical_scenario_count",
+        "defended_critical_count",
+        "accepted_current_count",
+        "rejected_stale_count",
+        "rejected_replay_count",
+        "quarantined_conflict_count",
+        "blocked_version_drift_count",
+        "blocked_integrity_change_count",
+        "retry_required_count",
+        "undetected_count",
+        "harness_error_count",
+        "unsafe_decision_release_count",
+        "critical_temporal_scenario_defence_rate",
+        "stale_evidence_rejection_rate",
+        "replay_detection_rate",
+        "toctou_detection_rate",
+        "policy_version_consistency_rate",
+        "concurrent_conflict_containment_rate",
+        "idempotency_consistency_rate",
+        "event_order_integrity_rate",
+        "trusted_input_integrity_passed",
+        "overall_passed"
+      ],
+      "properties": {
+        "scenario_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "critical_scenario_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "defended_critical_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "accepted_current_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "rejected_stale_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "rejected_replay_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "quarantined_conflict_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "blocked_version_drift_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "blocked_integrity_change_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "retry_required_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "undetected_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "harness_error_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "unsafe_decision_release_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "critical_temporal_scenario_defence_rate": {
+          "$ref": "#/$defs/rate"
+        },
+        "stale_evidence_rejection_rate": {
+          "$ref": "#/$defs/rate"
+        },
+        "replay_detection_rate": {
+          "$ref": "#/$defs/rate"
+        },
+        "toctou_detection_rate": {
+          "$ref": "#/$defs/rate"
+        },
+        "policy_version_consistency_rate": {
+          "$ref": "#/$defs/rate"
+        },
+        "concurrent_conflict_containment_rate": {
+          "$ref": "#/$defs/rate"
+        },
+        "idempotency_consistency_rate": {
+          "$ref": "#/$defs/rate"
+        },
+        "event_order_integrity_rate": {
+          "$ref": "#/$defs/rate"
+        },
+        "trusted_input_integrity_passed": {
+          "type": "boolean"
+        },
+        "overall_passed": {
+          "type": "boolean"
+        }
+      }
+    },
+    "gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "gate_id",
+        "metric",
+        "operator",
+        "threshold",
+        "observed",
+        "passed"
+      ],
+      "properties": {
+        "gate_id": {
+          "type": "string"
+        },
+        "metric": {
+          "type": "string"
+        },
+        "operator": {
+          "enum": [
+            "gte",
+            "lte",
+            "eq"
+          ]
+        },
+        "threshold": {},
+        "observed": {},
+        "passed": {
+          "type": "boolean"
+        }
+      }
+    },
+    "finding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "code",
+        "control",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "control": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scenario_id",
+        "family",
+        "severity",
+        "handler",
+        "description",
+        "control_tags",
+        "expected_outcomes",
+        "outcome",
+        "raw_outcome",
+        "expectation_met",
+        "defended",
+        "unsafe_decision_released",
+        "logical_evaluation_time",
+        "source_event_time",
+        "ingestion_time",
+        "policy_version",
+        "evidence_revision",
+        "sequence_identifier",
+        "detection_oracles",
+        "finding_codes",
+        "findings",
+        "first_blocking_control",
+        "idempotency_consistent",
+        "state_before",
+        "state_after",
+        "details",
+        "error"
+      ],
+      "properties": {
+        "scenario_id": {
+          "type": "string",
+          "pattern": "^TEMP-[A-Z0-9._-]+$"
+        },
+        "family": {
+          "type": "string"
+        },
+        "severity": {
+          "const": "critical"
+        },
+        "handler": {
+          "enum": [
+            "freshness",
+            "event",
+            "snapshot",
+            "policy_pin",
+            "decision_replay"
+          ]
+        },
+        "description": {
+          "type": "string"
+        },
+        "control_tags": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "expected_outcomes": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "ACCEPTED_CURRENT",
+              "REJECTED_STALE",
+              "REJECTED_REPLAY",
+              "QUARANTINED_CONFLICT",
+              "BLOCKED_VERSION_DRIFT",
+              "BLOCKED_INTEGRITY_CHANGE",
+              "RETRY_REQUIRED"
+            ]
+          }
+        },
+        "outcome": {
+          "enum": [
+            "ACCEPTED_CURRENT",
+            "REJECTED_STALE",
+            "REJECTED_REPLAY",
+            "QUARANTINED_CONFLICT",
+            "BLOCKED_VERSION_DRIFT",
+            "BLOCKED_INTEGRITY_CHANGE",
+            "RETRY_REQUIRED",
+            "UNDETECTED",
+            "HARNESS_ERROR"
+          ]
+        },
+        "raw_outcome": {
+          "type": "string"
+        },
+        "expectation_met": {
+          "type": "boolean"
+        },
+        "defended": {
+          "type": "boolean"
+        },
+        "unsafe_decision_released": {
+          "type": "boolean"
+        },
+        "logical_evaluation_time": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "source_event_time": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "ingestion_time": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "policy_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_revision": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "sequence_identifier": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "detection_oracles": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "finding_codes": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "findings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/finding"
+          }
+        },
+        "first_blocking_control": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "idempotency_consistent": {
+          "type": "boolean"
+        },
+        "state_before": {
+          "type": "object"
+        },
+        "state_after": {
+          "type": "object"
+        },
+        "details": {
+          "type": "object"
+        },
+        "error": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "releaseDecision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "stage_gate_status",
+        "production_readiness_status",
+        "blocking_reasons"
+      ],
+      "properties": {
+        "stage_gate_status": {
+          "enum": [
+            "PASS",
+            "FAIL"
+          ]
+        },
+        "production_readiness_status": {
+          "const": "BLOCKED"
+        },
+        "blocking_reasons": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,829 @@
+policy:
+  catalog_id: AEGIS-TEMPORAL-REPLAY-SCENARIO-CATALOG
+  version: 1.0.0
+  harness_version: 0.1.0
+  description: Deterministic temporal, replay, concurrency, policy pinning, TOCTOU, revocation and atomic snapshot assurance.
+deterministic_clock:
+  evaluation_time: '2026-07-13T17:03:00Z'
+  timezone: UTC
+temporal_policy:
+  max_future_skew_seconds: 300
+  max_clock_skew_seconds: 120
+  max_snapshot_skew_seconds: 60
+  expiry_boundary_inclusive: true
+trusted_inputs:
+  decision_policy:
+    relative_path: policies/decision/federal_base_policy_v1.yaml
+    expected_sha256: fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f
+  trust_policy:
+    relative_path: policies/trust/evidence_trust_policy_v1.yaml
+    expected_sha256: 6a4b41df0d5084bdc8a82c6c82714376253af9229ab1474dc73727d966359249
+  decision_schema:
+    relative_path: schemas/aegis_decision_record.schema.json
+    expected_sha256: e54a394ef9c772d3dce070f359051d6accf5761b1983ca9721e03e80a9e54ba3
+  evidence_schema:
+    relative_path: schemas/aegis_evidence_record.schema.json
+    expected_sha256: adaef9c4a1a837fddebee3d40cc03d6d99592682b3c42f1c24dded2fc74ce772
+  evidence_fixture:
+    relative_path: data/sample_inputs/evidence/valid_log4j_sbom_evidence.json
+    expected_sha256: 21ed78284567bc33bb463fb2525941829b80c7e21144d17677f022d168a3c2de
+  intelligence_fixture:
+    relative_path: data/sample_inputs/intelligence/valid_log4shell_intelligence.json
+    expected_sha256: e2204ab8ff8736c0826ffe24d518cef462a75dcea7e498943506b0fe7f41ff1f
+  asset_fixture:
+    relative_path: data/sample_inputs/assets/valid_healthcare_asset.json
+    expected_sha256: bc9cb98980010ca2bc1c123e808296a2e17bb34a5735cf42cd07e1efcfc64395
+  decision_fixture:
+    relative_path: data/sample_inputs/decisions/valid_log4shell_decision_record_policy.json
+    expected_sha256: 7d557b127eb2cb6ae097be75273cad3e3d0cd0876385dd74d2439c762254f37a
+  assurance_corpus:
+    relative_path: data/assurance/step11a_policy_rule_coverage_corpus.jsonl
+    expected_sha256: d51747056c4f920d5e0b6bfb51613b4e1ee1910de82770aa179dd3fe77f68ded
+  assurance_manifest:
+    relative_path: data/assurance/step11a_policy_rule_coverage_manifest.json
+    expected_sha256: d1fdd9308b973e5248e464daf528a376bca6bc6c27b9d45f267b88f842797465
+  step11c_report:
+    relative_path: data/validation_reports/tampering/step11c_tamper_assurance_report.json
+    expected_sha256: 74f0849ee40aa73f09b9abf23929bbaf4a355d51f00c9b01958b01f943867a23
+  step11d_report:
+    relative_path: data/validation_reports/hostile_inputs/step11d_hostile_input_report.json
+    expected_sha256: 8c21529e07fa9b9b196a002d64fa302e7f9ec10da3e1fec9b7070bdd6d6b6f69
+  step11e_report:
+    relative_path: data/validation_reports/metamorphic/step11e_metamorphic_assurance_report.json
+    expected_sha256: 18c1b8986c318a815d5d954df2686846b5d97ac30727fb94c24ac72e635e652e
+  step11f_report:
+    relative_path: data/validation_reports/compound_attacks/step11f_compound_attack_report.json
+    expected_sha256: 2b67f31c55bbe51ed52c83b8bba01fc8ad41b424b24f55d750d7bf2e6f03379f
+  decision_hashing_module:
+    relative_path: src/domain/decision_hashing.py
+    expected_sha256: 3b0a1eff5d2b97064d6dfb43936dde0bf2b1c23574a447afae13e2b02886853f
+  evidence_trust_engine:
+    relative_path: src/governance/evidence_trust_engine.py
+    expected_sha256: 78943367308a8fcc07e085da0e45fe75013f216d23f0fac3f1e749f148c74fc7
+  decision_validator:
+    relative_path: src/validation/decision_record_validator.py
+    expected_sha256: f1ef851a8f875680fc5e919b9276effc8d7c2feb00005b893f163ed47136806f
+quality_gates:
+- gate_id: STEP11G-CRITICAL-DEFENCE
+  metric: critical_temporal_scenario_defence_rate
+  operator: gte
+  threshold: 1.0
+- gate_id: STEP11G-STALE-REJECTION
+  metric: stale_evidence_rejection_rate
+  operator: gte
+  threshold: 1.0
+- gate_id: STEP11G-REPLAY-DETECTION
+  metric: replay_detection_rate
+  operator: gte
+  threshold: 1.0
+- gate_id: STEP11G-TOCTOU
+  metric: toctou_detection_rate
+  operator: gte
+  threshold: 1.0
+- gate_id: STEP11G-POLICY-PIN
+  metric: policy_version_consistency_rate
+  operator: gte
+  threshold: 1.0
+- gate_id: STEP11G-CONCURRENCY
+  metric: concurrent_conflict_containment_rate
+  operator: gte
+  threshold: 1.0
+- gate_id: STEP11G-IDEMPOTENCY
+  metric: idempotency_consistency_rate
+  operator: gte
+  threshold: 1.0
+- gate_id: STEP11G-EVENT-ORDER
+  metric: event_order_integrity_rate
+  operator: gte
+  threshold: 1.0
+- gate_id: STEP11G-UNSAFE-RELEASE
+  metric: unsafe_decision_release_count
+  operator: eq
+  threshold: 0
+- gate_id: STEP11G-UNDETECTED
+  metric: undetected_count
+  operator: eq
+  threshold: 0
+- gate_id: STEP11G-HARNESS
+  metric: harness_error_count
+  operator: eq
+  threshold: 0
+- gate_id: STEP11G-INTEGRITY
+  metric: trusted_input_integrity_passed
+  operator: eq
+  threshold: true
+production_readiness:
+  status: BLOCKED
+  blocking_reasons:
+  - Real operational validation has not yet been completed.
+  - Independent security review has not yet been completed.
+limitations:
+- The campaign uses deterministic synthetic event streams and controlled fixtures.
+- No distributed database, message broker, hardware clock, or production cache is exercised.
+- Operational validation and independent security review remain mandatory before deployment.
+scenarios:
+- scenario_id: TEMP-FRESH-CURRENT-001
+  family: current_freshness
+  severity: critical
+  handler: freshness
+  expected_outcomes:
+  - ACCEPTED_CURRENT
+  control_tags:
+  - freshness
+  - idempotency
+  description: Current evidence remains acceptable at the injected evaluation time.
+  parameters:
+    observed_at: '2026-07-13T17:01:00Z'
+    maximum_age_seconds: 86400
+- scenario_id: TEMP-FRESH-STALE-001
+  family: stale_evidence_replay
+  severity: critical
+  handler: freshness
+  expected_outcomes:
+  - REJECTED_STALE
+  control_tags:
+  - stale_evidence
+  - freshness
+  description: Evidence older than its permitted window is rejected.
+  parameters:
+    observed_at: '2026-07-12T16:00:00Z'
+    maximum_age_seconds: 86400
+- scenario_id: TEMP-FRESH-EXPIRED-001
+  family: expiry_enforcement
+  severity: critical
+  handler: freshness
+  expected_outcomes:
+  - REJECTED_STALE
+  control_tags:
+  - stale_evidence
+  - freshness
+  description: Expired evidence cannot remain current.
+  parameters:
+    observed_at: '2026-07-13T17:01:00Z'
+    maximum_age_seconds: 86400
+    expires_at: '2026-07-13T17:02:59Z'
+- scenario_id: TEMP-FRESH-BOUNDARY-001
+  family: expiry_boundary
+  severity: critical
+  handler: freshness
+  expected_outcomes:
+  - ACCEPTED_CURRENT
+  control_tags:
+  - freshness
+  - idempotency
+  description: The exact inclusive expiry boundary is handled deterministically.
+  parameters:
+    observed_at: '2026-07-13T17:01:00Z'
+    maximum_age_seconds: 86400
+    expires_at: '2026-07-13T17:03:00Z'
+- scenario_id: TEMP-FRESH-FUTURE-001
+  family: future_timestamp
+  severity: critical
+  handler: freshness
+  expected_outcomes:
+  - QUARANTINED_CONFLICT
+  control_tags:
+  - event_order
+  - concurrency
+  description: A materially future-dated observation is quarantined.
+  parameters:
+    observed_at: '2026-07-13T17:20:00Z'
+    maximum_age_seconds: 86400
+- scenario_id: TEMP-FRESH-WINDOW-001
+  family: freshness_window
+  severity: critical
+  handler: freshness
+  expected_outcomes:
+  - REJECTED_STALE
+  control_tags:
+  - stale_evidence
+  - freshness
+  description: A short freshness window cannot be silently extended.
+  parameters:
+    observed_at: '2026-07-13T15:00:00Z'
+    maximum_age_seconds: 3600
+- scenario_id: TEMP-FRESH-INTEL-001
+  family: intelligence_staleness
+  severity: critical
+  handler: freshness
+  expected_outcomes:
+  - REJECTED_STALE
+  control_tags:
+  - stale_evidence
+  - freshness
+  description: Stale vulnerability intelligence is rejected before policy use.
+  parameters:
+    observed_at: '2026-07-13T10:00:00Z'
+    maximum_age_seconds: 21600
+- scenario_id: TEMP-FRESH-DECISION-001
+  family: decision_staleness
+  severity: critical
+  handler: freshness
+  expected_outcomes:
+  - REJECTED_STALE
+  control_tags:
+  - stale_evidence
+  - replay
+  description: A decision outside its replay window cannot be released.
+  parameters:
+    observed_at: '2026-07-13T15:00:00Z'
+    maximum_age_seconds: 3600
+- scenario_id: TEMP-REPLAY-IDEMPOTENT-001
+  family: idempotent_replay
+  severity: critical
+  handler: event
+  expected_outcomes:
+  - ACCEPTED_CURRENT
+  control_tags:
+  - replay
+  - idempotency
+  description: An identical event replay is a no-op.
+  parameters:
+    seed_events:
+    - &id001
+      event_id: EV-001
+      stream_id: EVIDENCE-LOG4J
+      sequence: 1
+      revision: 1
+      event_time: '2026-07-13T17:00:00Z'
+      ingestion_time: '2026-07-13T17:00:10Z'
+      payload: baseline
+      policy_version: 1.0.0
+      transaction_id: TX-001
+    event: *id001
+- scenario_id: TEMP-REPLAY-ID-REUSE-001
+  family: event_id_reuse
+  severity: critical
+  handler: event
+  expected_outcomes:
+  - REJECTED_REPLAY
+  control_tags:
+  - replay
+  description: An event ID cannot be reused with altered content.
+  parameters:
+    seed_events:
+    - *id001
+    event:
+      event_id: EV-001
+      stream_id: EVIDENCE-LOG4J
+      sequence: 1
+      revision: 1
+      event_time: '2026-07-13T17:00:00Z'
+      ingestion_time: '2026-07-13T17:00:10Z'
+      payload: changed
+      policy_version: 1.0.0
+      transaction_id: TX-001
+- scenario_id: TEMP-REPLAY-PAYLOAD-001
+  family: payload_replay
+  severity: critical
+  handler: event
+  expected_outcomes:
+  - REJECTED_REPLAY
+  control_tags:
+  - replay
+  description: The same payload cannot be replayed under a new event ID.
+  parameters:
+    seed_events:
+    - *id001
+    event:
+      event_id: EV-002
+      stream_id: EVIDENCE-LOG4J
+      sequence: 2
+      revision: 2
+      event_time: '2026-07-13T17:00:00Z'
+      ingestion_time: '2026-07-13T17:00:10Z'
+      payload: baseline
+      policy_version: 1.0.0
+      transaction_id: TX-001
+- scenario_id: TEMP-ORDER-SEQUENCE-ROLLBACK-001
+  family: sequence_rollback
+  severity: critical
+  handler: event
+  expected_outcomes:
+  - REJECTED_REPLAY
+  control_tags:
+  - replay
+  - event_order
+  description: A stream sequence cannot move backwards.
+  parameters:
+    seed_events:
+    - *id001
+    - &id002
+      event_id: EV-002
+      stream_id: EVIDENCE-LOG4J
+      sequence: 2
+      revision: 2
+      event_time: '2026-07-13T17:00:20Z'
+      ingestion_time: '2026-07-13T17:00:30Z'
+      payload: state-2
+      policy_version: 1.0.0
+      transaction_id: TX-001
+    event:
+      event_id: EV-003
+      stream_id: EVIDENCE-LOG4J
+      sequence: 1
+      revision: 3
+      event_time: '2026-07-13T17:00:00Z'
+      ingestion_time: '2026-07-13T17:00:10Z'
+      payload: rollback
+      policy_version: 1.0.0
+      transaction_id: TX-001
+- scenario_id: TEMP-ORDER-REVISION-ROLLBACK-001
+  family: revision_rollback
+  severity: critical
+  handler: event
+  expected_outcomes:
+  - REJECTED_STALE
+  control_tags:
+  - stale_evidence
+  - event_order
+  description: A later event must advance the authoritative revision.
+  parameters:
+    seed_events:
+    - *id001
+    - *id002
+    event:
+      event_id: EV-003
+      stream_id: EVIDENCE-LOG4J
+      sequence: 3
+      revision: 1
+      event_time: '2026-07-13T17:00:40Z'
+      ingestion_time: '2026-07-13T17:00:50Z'
+      payload: stale-rev
+      policy_version: 1.0.0
+      transaction_id: TX-001
+- scenario_id: TEMP-ORDER-SEQUENCE-GAP-001
+  family: sequence_gap
+  severity: critical
+  handler: event
+  expected_outcomes:
+  - QUARANTINED_CONFLICT
+  control_tags:
+  - event_order
+  - concurrency
+  description: Missing sequence numbers force quarantine.
+  parameters:
+    seed_events:
+    - *id001
+    - *id002
+    event:
+      event_id: EV-004
+      stream_id: EVIDENCE-LOG4J
+      sequence: 4
+      revision: 3
+      event_time: '2026-07-13T17:00:40Z'
+      ingestion_time: '2026-07-13T17:00:50Z'
+      payload: gap
+      policy_version: 1.0.0
+      transaction_id: TX-001
+- scenario_id: TEMP-CONCURRENT-SAME-SEQUENCE-001
+  family: concurrent_same_sequence
+  severity: critical
+  handler: event
+  expected_outcomes:
+  - QUARANTINED_CONFLICT
+  control_tags:
+  - concurrency
+  - event_order
+  description: Conflicting content at one sequence cannot be auto-resolved.
+  parameters:
+    seed_events:
+    - *id001
+    - *id002
+    event:
+      event_id: EV-003
+      stream_id: EVIDENCE-LOG4J
+      sequence: 2
+      revision: 3
+      event_time: '2026-07-13T17:00:40Z'
+      ingestion_time: '2026-07-13T17:00:50Z'
+      payload: conflict
+      policy_version: 1.0.0
+      transaction_id: TX-001
+- scenario_id: TEMP-ORDER-TIMESTAMP-ROLLBACK-001
+  family: timestamp_rollback
+  severity: critical
+  handler: event
+  expected_outcomes:
+  - QUARANTINED_CONFLICT
+  control_tags:
+  - event_order
+  - concurrency
+  description: Later sequence with materially older time is quarantined.
+  parameters:
+    seed_events:
+    - *id001
+    - *id002
+    event:
+      event_id: EV-003
+      stream_id: EVIDENCE-LOG4J
+      sequence: 3
+      revision: 3
+      event_time: '2026-07-13T16:50:00Z'
+      ingestion_time: '2026-07-13T17:00:50Z'
+      payload: time-rb
+      policy_version: 1.0.0
+      transaction_id: TX-001
+- scenario_id: TEMP-CLOCK-ALLOWED-SKEW-001
+  family: allowed_clock_skew
+  severity: critical
+  handler: event
+  expected_outcomes:
+  - ACCEPTED_CURRENT
+  control_tags:
+  - event_order
+  - idempotency
+  description: Clock skew inside the declared tolerance is accepted.
+  parameters:
+    seed_events:
+    - *id001
+    event:
+      event_id: EV-002
+      stream_id: EVIDENCE-LOG4J
+      sequence: 2
+      revision: 2
+      event_time: '2026-07-13T17:01:00Z'
+      ingestion_time: '2026-07-13T17:00:00Z'
+      payload: allowed-skew
+      policy_version: 1.0.0
+      transaction_id: TX-001
+- scenario_id: TEMP-CLOCK-INGESTION-LEAD-001
+  family: ingestion_clock_conflict
+  severity: critical
+  handler: event
+  expected_outcomes:
+  - QUARANTINED_CONFLICT
+  control_tags:
+  - event_order
+  - concurrency
+  description: Ingestion cannot precede event time beyond the skew budget.
+  parameters:
+    seed_events:
+    - *id001
+    event:
+      event_id: EV-002
+      stream_id: EVIDENCE-LOG4J
+      sequence: 2
+      revision: 2
+      event_time: '2026-07-13T17:02:30Z'
+      ingestion_time: '2026-07-13T17:00:00Z'
+      payload: bad-ingest
+      policy_version: 1.0.0
+      transaction_id: TX-001
+- scenario_id: TEMP-CLOCK-FUTURE-EVENT-001
+  family: future_event
+  severity: critical
+  handler: event
+  expected_outcomes:
+  - QUARANTINED_CONFLICT
+  control_tags:
+  - event_order
+  - concurrency
+  description: Future event time beyond tolerance is quarantined.
+  parameters:
+    seed_events:
+    - *id001
+    event:
+      event_id: EV-002
+      stream_id: EVIDENCE-LOG4J
+      sequence: 2
+      revision: 2
+      event_time: '2026-07-13T17:20:00Z'
+      ingestion_time: '2026-07-13T17:20:05Z'
+      payload: future
+      policy_version: 1.0.0
+      transaction_id: TX-001
+- scenario_id: TEMP-REVOCATION-UPDATE-001
+  family: update_after_revocation
+  severity: critical
+  handler: event
+  expected_outcomes:
+  - BLOCKED_INTEGRITY_CHANGE
+  control_tags:
+  - toctou
+  - concurrency
+  description: Ordinary updates after revocation are blocked.
+  parameters:
+    seed_events:
+    - *id001
+    - event_id: EV-002
+      stream_id: EVIDENCE-LOG4J
+      sequence: 2
+      revision: 2
+      event_time: '2026-07-13T17:00:20Z'
+      ingestion_time: '2026-07-13T17:00:30Z'
+      payload: revoked
+      policy_version: 1.0.0
+      transaction_id: TX-001
+      event_type: revocation
+    event:
+      event_id: EV-003
+      stream_id: EVIDENCE-LOG4J
+      sequence: 3
+      revision: 3
+      event_time: '2026-07-13T17:00:40Z'
+      ingestion_time: '2026-07-13T17:00:50Z'
+      payload: after-revoke
+      policy_version: 1.0.0
+      transaction_id: TX-001
+- scenario_id: TEMP-SNAPSHOT-ATOMIC-001
+  family: atomic_snapshot
+  severity: critical
+  handler: snapshot
+  expected_outcomes:
+  - ACCEPTED_CURRENT
+  control_tags:
+  - idempotency
+  - concurrency
+  description: A coherent atomic snapshot is accepted.
+  parameters:
+    logical_times: &id005
+      asset: '2026-07-13T17:02:30Z'
+      evidence: '2026-07-13T17:02:40Z'
+      intelligence: '2026-07-13T17:02:50Z'
+    policy_version_start: 1.0.0
+    policy_version_end: 1.0.0
+    expected_policy_version: 1.0.0
+    transaction_committed: true
+    manifest_committed: true
+    changes: &id003 {}
+    revoked_record_ids: &id004 []
+    cache_revision: 3
+    required_revision: 3
+- scenario_id: TEMP-SNAPSHOT-MIXED-TIME-001
+  family: mixed_logical_time
+  severity: critical
+  handler: snapshot
+  expected_outcomes:
+  - RETRY_REQUIRED
+  control_tags:
+  - concurrency
+  - event_order
+  description: Inputs from incompatible logical times require retry.
+  parameters:
+    logical_times:
+      asset: '2026-07-13T17:00:00Z'
+      evidence: '2026-07-13T17:05:00Z'
+      intelligence: '2026-07-13T17:00:10Z'
+    policy_version_start: 1.0.0
+    policy_version_end: 1.0.0
+    expected_policy_version: 1.0.0
+    transaction_committed: true
+    manifest_committed: true
+    changes: *id003
+    revoked_record_ids: *id004
+    cache_revision: 3
+    required_revision: 3
+- scenario_id: TEMP-SNAPSHOT-PARTIAL-TX-001
+  family: partial_transaction
+  severity: critical
+  handler: snapshot
+  expected_outcomes:
+  - RETRY_REQUIRED
+  control_tags:
+  - concurrency
+  description: A partial transaction cannot produce a releasable decision.
+  parameters:
+    logical_times: *id005
+    policy_version_start: 1.0.0
+    policy_version_end: 1.0.0
+    expected_policy_version: 1.0.0
+    transaction_committed: false
+    manifest_committed: true
+    changes: *id003
+    revoked_record_ids: *id004
+    cache_revision: 3
+    required_revision: 3
+- scenario_id: TEMP-SNAPSHOT-MANIFEST-GAP-001
+  family: manifest_commit_gap
+  severity: critical
+  handler: snapshot
+  expected_outcomes:
+  - RETRY_REQUIRED
+  control_tags:
+  - concurrency
+  - toctou
+  description: A missing manifest commit requires retry.
+  parameters:
+    logical_times: *id005
+    policy_version_start: 1.0.0
+    policy_version_end: 1.0.0
+    expected_policy_version: 1.0.0
+    transaction_committed: true
+    manifest_committed: false
+    changes: *id003
+    revoked_record_ids: *id004
+    cache_revision: 3
+    required_revision: 3
+- scenario_id: TEMP-CACHE-STALE-001
+  family: cache_staleness
+  severity: critical
+  handler: snapshot
+  expected_outcomes:
+  - REJECTED_STALE
+  control_tags:
+  - stale_evidence
+  - concurrency
+  description: An older cache revision cannot override authoritative state.
+  parameters:
+    logical_times: *id005
+    policy_version_start: 1.0.0
+    policy_version_end: 1.0.0
+    expected_policy_version: 1.0.0
+    transaction_committed: true
+    manifest_committed: true
+    changes: *id003
+    revoked_record_ids: *id004
+    cache_revision: 2
+    required_revision: 3
+- scenario_id: TEMP-TOCTOU-EVIDENCE-001
+  family: evidence_toctou
+  severity: critical
+  handler: snapshot
+  expected_outcomes:
+  - BLOCKED_INTEGRITY_CHANGE
+  control_tags:
+  - toctou
+  description: Evidence changing after validation blocks release.
+  parameters:
+    logical_times: *id005
+    policy_version_start: 1.0.0
+    policy_version_end: 1.0.0
+    expected_policy_version: 1.0.0
+    transaction_committed: true
+    manifest_committed: true
+    changes:
+      evidence_fixture: changed
+    revoked_record_ids: *id004
+    cache_revision: 3
+    required_revision: 3
+- scenario_id: TEMP-TOCTOU-POLICY-BYTES-001
+  family: policy_toctou
+  severity: critical
+  handler: policy_pin
+  expected_outcomes:
+  - BLOCKED_INTEGRITY_CHANGE
+  control_tags:
+  - toctou
+  - policy_version
+  description: Policy bytes changing without a version bump are blocked.
+  parameters:
+    expected_version: 1.0.0
+    observed_version: 1.0.0
+    change_sha: true
+- scenario_id: TEMP-REVOCATION-RACE-001
+  family: revocation_race
+  severity: critical
+  handler: snapshot
+  expected_outcomes:
+  - BLOCKED_INTEGRITY_CHANGE
+  control_tags:
+  - toctou
+  - concurrency
+  description: Revocation before release invalidates the snapshot.
+  parameters:
+    logical_times: *id005
+    policy_version_start: 1.0.0
+    policy_version_end: 1.0.0
+    expected_policy_version: 1.0.0
+    transaction_committed: true
+    manifest_committed: true
+    changes: *id003
+    revoked_record_ids:
+    - AEG-EVD-SBOM-LOG4J-001
+    cache_revision: 3
+    required_revision: 3
+- scenario_id: TEMP-DECISION-INPUT-REPLAY-001
+  family: decision_input_replay
+  severity: critical
+  handler: decision_replay
+  expected_outcomes:
+  - REJECTED_REPLAY
+  control_tags:
+  - replay
+  - toctou
+  description: A decision cannot be replayed after an input hash changes.
+  parameters:
+    variant: input_hash_changed
+- scenario_id: TEMP-POLICY-DECISION-VERSION-001
+  family: decision_policy_version_drift
+  severity: critical
+  handler: decision_replay
+  expected_outcomes:
+  - BLOCKED_VERSION_DRIFT
+  control_tags:
+  - policy_version
+  description: Decision policy version must match the active pinned policy.
+  parameters:
+    variant: decision_policy_version_mismatch
+- scenario_id: TEMP-POLICY-MID-EVAL-001
+  family: mid_evaluation_policy_change
+  severity: critical
+  handler: snapshot
+  expected_outcomes:
+  - BLOCKED_VERSION_DRIFT
+  control_tags:
+  - policy_version
+  - concurrency
+  description: Policy version changes during evaluation block release.
+  parameters:
+    logical_times: *id005
+    policy_version_start: 1.0.0
+    policy_version_end: 1.1.0
+    expected_policy_version: 1.0.0
+    transaction_committed: true
+    manifest_committed: true
+    changes: *id003
+    revoked_record_ids: *id004
+    cache_revision: 3
+    required_revision: 3
+- scenario_id: TEMP-POLICY-EVENT-VERSION-001
+  family: event_policy_version_drift
+  severity: critical
+  handler: event
+  expected_outcomes:
+  - BLOCKED_VERSION_DRIFT
+  control_tags:
+  - policy_version
+  description: Events from an unpinned policy version are blocked.
+  parameters:
+    seed_events:
+    - *id001
+    event:
+      event_id: EV-002
+      stream_id: EVIDENCE-LOG4J
+      sequence: 2
+      revision: 2
+      event_time: '2026-07-13T17:00:20Z'
+      ingestion_time: '2026-07-13T17:00:30Z'
+      payload: policy-drift
+      policy_version: 1.1.0
+      transaction_id: TX-001
+- scenario_id: TEMP-POLICY-SNAPSHOT-PIN-001
+  family: snapshot_policy_pin_mismatch
+  severity: critical
+  handler: snapshot
+  expected_outcomes:
+  - BLOCKED_VERSION_DRIFT
+  control_tags:
+  - policy_version
+  description: Snapshot start version must equal the expected pin.
+  parameters:
+    logical_times: *id005
+    policy_version_start: 0.9.0
+    policy_version_end: 0.9.0
+    expected_policy_version: 1.0.0
+    transaction_committed: true
+    manifest_committed: true
+    changes: *id003
+    revoked_record_ids: *id004
+    cache_revision: 3
+    required_revision: 3
+- scenario_id: TEMP-POLICY-PIN-VALID-001
+  family: valid_policy_pin
+  severity: critical
+  handler: policy_pin
+  expected_outcomes:
+  - ACCEPTED_CURRENT
+  control_tags:
+  - policy_version
+  - idempotency
+  description: An exact policy version and byte pin is accepted.
+  parameters:
+    expected_version: 1.0.0
+    observed_version: 1.0.0
+    change_sha: false
+- scenario_id: TEMP-DECISION-SUPERSEDED-001
+  family: superseded_decision_replay
+  severity: critical
+  handler: decision_replay
+  expected_outcomes:
+  - REJECTED_REPLAY
+  control_tags:
+  - replay
+  description: A superseded decision hash cannot be reused.
+  parameters:
+    variant: superseded_decision
+- scenario_id: TEMP-IDEMPOTENT-TRANSACTION-001
+  family: idempotent_transaction_retry
+  severity: critical
+  handler: event
+  expected_outcomes:
+  - ACCEPTED_CURRENT
+  control_tags:
+  - replay
+  - idempotency
+  description: Retrying an identical committed transaction is a no-op.
+  parameters:
+    seed_events:
+    - &id006
+      event_id: EV-TX-001
+      stream_id: EVIDENCE-LOG4J
+      sequence: 1
+      revision: 1
+      event_time: '2026-07-13T17:00:00Z'
+      ingestion_time: '2026-07-13T17:00:10Z'
+      payload: transaction
+      policy_version: 1.0.0
+      transaction_id: TX-IDEMPOTENT-001
+    event: *id006

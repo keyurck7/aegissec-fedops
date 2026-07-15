@@ -1,0 +1,32 @@
+AegisSec Step 11G Temporal, Replay, and Concurrency Assurance
+Scenarios: 36
+Defended: 36
+Accepted current: 7
+Rejected stale: 7
+Rejected replay: 5
+Quarantined conflicts: 6
+Blocked version drift: 4
+Blocked integrity changes: 4
+Retry required: 3
+Undetected: 0
+Harness errors: 0
+Unsafe decision releases: 0
+Critical temporal scenario defence rate: 1.0000
+Stale evidence rejection rate: 1.0000
+Replay detection rate: 1.0000
+TOCTOU detection rate: 1.0000
+Policy-version consistency rate: 1.0000
+Concurrent conflict containment rate: 1.0000
+Idempotency consistency rate: 1.0000
+Event-order integrity rate: 1.0000
+Trusted inputs unchanged: True
+Stage gate: PASS
+Production readiness: BLOCKED
+Report: /home/jovyan/vault/aegissec-fedops/data/validation_reports/temporal/step11g_temporal_assurance_report.json
+Results CSV: /home/jovyan/vault/aegissec-fedops/data/validation_reports/temporal/step11g_temporal_results.csv
+Undetected scenarios: /home/jovyan/vault/aegissec-fedops/data/validation_reports/temporal/step11g_undetected_scenarios.json
+Integrity record: /home/jovyan/vault/aegissec-fedops/data/validation_reports/temporal/step11g_trusted_baseline_integrity.sha256
+
+Remaining production blockers:
+ - Real operational validation has not yet been completed.
+ - Independent security review has not yet been completed.

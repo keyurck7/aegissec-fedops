@@ -1,0 +1,2501 @@
+{
+  "baseline_validation": {
+    "clock_timezone": {
+      "expected": true,
+      "metric": "deterministic_clock.timezone_aware",
+      "observed": true,
+      "passed": true
+    },
+    "decision_fixture": {
+      "expected": true,
+      "metric": "decision_fixture.valid",
+      "observed": true,
+      "passed": true
+    },
+    "decision_hash": {
+      "expected": true,
+      "metric": "decision_fixture.hash_valid",
+      "observed": true,
+      "passed": true
+    },
+    "evidence_fixture": {
+      "expected": true,
+      "metric": "evidence_fixture.valid",
+      "observed": true,
+      "passed": true
+    },
+    "policy_version": {
+      "expected": "1.0.0",
+      "metric": "decision_policy.version",
+      "observed": "1.0.0",
+      "passed": true
+    },
+    "step11c_report": {
+      "expected": true,
+      "metric": "summary.overall_passed",
+      "observed": true,
+      "passed": true
+    },
+    "step11d_report": {
+      "expected": true,
+      "metric": "summary.overall_passed",
+      "observed": true,
+      "passed": true
+    },
+    "step11e_report": {
+      "expected": true,
+      "metric": "summary.overall_passed",
+      "observed": true,
+      "passed": true
+    },
+    "step11f_report": {
+      "expected": true,
+      "metric": "summary.overall_passed",
+      "observed": true,
+      "passed": true
+    }
+  },
+  "catalog": {
+    "catalog_id": "AEGIS-TEMPORAL-REPLAY-SCENARIO-CATALOG",
+    "harness_version": "0.1.0",
+    "relative_path": "policies/assurance/temporal_replay_scenario_catalog_v1.yaml",
+    "sha256": "cc0227316b2d74480ae911a5bb3b49b37b14c8966c3b07082d133bee65d8b853",
+    "version": "1.0.0"
+  },
+  "deterministic_clock": {
+    "evaluation_time": "2026-07-13T17:03:00+00:00",
+    "wall_clock_reads_used_for_scenarios": false
+  },
+  "generated_at": "2026-07-15T10:51:53.060418+00:00",
+  "harness_error_scenario_ids": [],
+  "input_integrity_checks_after": {
+    "asset_fixture": {
+      "actual_sha256": "bc9cb98980010ca2bc1c123e808296a2e17bb34a5735cf42cd07e1efcfc64395",
+      "exists": true,
+      "expected_sha256": "bc9cb98980010ca2bc1c123e808296a2e17bb34a5735cf42cd07e1efcfc64395",
+      "passed": true,
+      "relative_path": "data/sample_inputs/assets/valid_healthcare_asset.json",
+      "safe_path": true
+    },
+    "assurance_corpus": {
+      "actual_sha256": "d51747056c4f920d5e0b6bfb51613b4e1ee1910de82770aa179dd3fe77f68ded",
+      "exists": true,
+      "expected_sha256": "d51747056c4f920d5e0b6bfb51613b4e1ee1910de82770aa179dd3fe77f68ded",
+      "passed": true,
+      "relative_path": "data/assurance/step11a_policy_rule_coverage_corpus.jsonl",
+      "safe_path": true
+    },
+    "assurance_manifest": {
+      "actual_sha256": "d1fdd9308b973e5248e464daf528a376bca6bc6c27b9d45f267b88f842797465",
+      "exists": true,
+      "expected_sha256": "d1fdd9308b973e5248e464daf528a376bca6bc6c27b9d45f267b88f842797465",
+      "passed": true,
+      "relative_path": "data/assurance/step11a_policy_rule_coverage_manifest.json",
+      "safe_path": true
+    },
+    "decision_fixture": {
+      "actual_sha256": "7d557b127eb2cb6ae097be75273cad3e3d0cd0876385dd74d2439c762254f37a",
+      "exists": true,
+      "expected_sha256": "7d557b127eb2cb6ae097be75273cad3e3d0cd0876385dd74d2439c762254f37a",
+      "passed": true,
+      "relative_path": "data/sample_inputs/decisions/valid_log4shell_decision_record_policy.json",
+      "safe_path": true
+    },
+    "decision_hashing_module": {
+      "actual_sha256": "3b0a1eff5d2b97064d6dfb43936dde0bf2b1c23574a447afae13e2b02886853f",
+      "exists": true,
+      "expected_sha256": "3b0a1eff5d2b97064d6dfb43936dde0bf2b1c23574a447afae13e2b02886853f",
+      "passed": true,
+      "relative_path": "src/domain/decision_hashing.py",
+      "safe_path": true
+    },
+    "decision_policy": {
+      "actual_sha256": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f",
+      "exists": true,
+      "expected_sha256": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f",
+      "passed": true,
+      "relative_path": "policies/decision/federal_base_policy_v1.yaml",
+      "safe_path": true
+    },
+    "decision_schema": {
+      "actual_sha256": "e54a394ef9c772d3dce070f359051d6accf5761b1983ca9721e03e80a9e54ba3",
+      "exists": true,
+      "expected_sha256": "e54a394ef9c772d3dce070f359051d6accf5761b1983ca9721e03e80a9e54ba3",
+      "passed": true,
+      "relative_path": "schemas/aegis_decision_record.schema.json",
+      "safe_path": true
+    },
+    "decision_validator": {
+      "actual_sha256": "f1ef851a8f875680fc5e919b9276effc8d7c2feb00005b893f163ed47136806f",
+      "exists": true,
+      "expected_sha256": "f1ef851a8f875680fc5e919b9276effc8d7c2feb00005b893f163ed47136806f",
+      "passed": true,
+      "relative_path": "src/validation/decision_record_validator.py",
+      "safe_path": true
+    },
+    "evidence_fixture": {
+      "actual_sha256": "21ed78284567bc33bb463fb2525941829b80c7e21144d17677f022d168a3c2de",
+      "exists": true,
+      "expected_sha256": "21ed78284567bc33bb463fb2525941829b80c7e21144d17677f022d168a3c2de",
+      "passed": true,
+      "relative_path": "data/sample_inputs/evidence/valid_log4j_sbom_evidence.json",
+      "safe_path": true
+    },
+    "evidence_schema": {
+      "actual_sha256": "adaef9c4a1a837fddebee3d40cc03d6d99592682b3c42f1c24dded2fc74ce772",
+      "exists": true,
+      "expected_sha256": "adaef9c4a1a837fddebee3d40cc03d6d99592682b3c42f1c24dded2fc74ce772",
+      "passed": true,
+      "relative_path": "schemas/aegis_evidence_record.schema.json",
+      "safe_path": true
+    },
+    "evidence_trust_engine": {
+      "actual_sha256": "78943367308a8fcc07e085da0e45fe75013f216d23f0fac3f1e749f148c74fc7",
+      "exists": true,
+      "expected_sha256": "78943367308a8fcc07e085da0e45fe75013f216d23f0fac3f1e749f148c74fc7",
+      "passed": true,
+      "relative_path": "src/governance/evidence_trust_engine.py",
+      "safe_path": true
+    },
+    "intelligence_fixture": {
+      "actual_sha256": "e2204ab8ff8736c0826ffe24d518cef462a75dcea7e498943506b0fe7f41ff1f",
+      "exists": true,
+      "expected_sha256": "e2204ab8ff8736c0826ffe24d518cef462a75dcea7e498943506b0fe7f41ff1f",
+      "passed": true,
+      "relative_path": "data/sample_inputs/intelligence/valid_log4shell_intelligence.json",
+      "safe_path": true
+    },
+    "step11c_report": {
+      "actual_sha256": "74f0849ee40aa73f09b9abf23929bbaf4a355d51f00c9b01958b01f943867a23",
+      "exists": true,
+      "expected_sha256": "74f0849ee40aa73f09b9abf23929bbaf4a355d51f00c9b01958b01f943867a23",
+      "passed": true,
+      "relative_path": "data/validation_reports/tampering/step11c_tamper_assurance_report.json",
+      "safe_path": true
+    },
+    "step11d_report": {
+      "actual_sha256": "8c21529e07fa9b9b196a002d64fa302e7f9ec10da3e1fec9b7070bdd6d6b6f69",
+      "exists": true,
+      "expected_sha256": "8c21529e07fa9b9b196a002d64fa302e7f9ec10da3e1fec9b7070bdd6d6b6f69",
+      "passed": true,
+      "relative_path": "data/validation_reports/hostile_inputs/step11d_hostile_input_report.json",
+      "safe_path": true
+    },
+    "step11e_report": {
+      "actual_sha256": "18c1b8986c318a815d5d954df2686846b5d97ac30727fb94c24ac72e635e652e",
+      "exists": true,
+      "expected_sha256": "18c1b8986c318a815d5d954df2686846b5d97ac30727fb94c24ac72e635e652e",
+      "passed": true,
+      "relative_path": "data/validation_reports/metamorphic/step11e_metamorphic_assurance_report.json",
+      "safe_path": true
+    },
+    "step11f_report": {
+      "actual_sha256": "2b67f31c55bbe51ed52c83b8bba01fc8ad41b424b24f55d750d7bf2e6f03379f",
+      "exists": true,
+      "expected_sha256": "2b67f31c55bbe51ed52c83b8bba01fc8ad41b424b24f55d750d7bf2e6f03379f",
+      "passed": true,
+      "relative_path": "data/validation_reports/compound_attacks/step11f_compound_attack_report.json",
+      "safe_path": true
+    },
+    "trust_policy": {
+      "actual_sha256": "6a4b41df0d5084bdc8a82c6c82714376253af9229ab1474dc73727d966359249",
+      "exists": true,
+      "expected_sha256": "6a4b41df0d5084bdc8a82c6c82714376253af9229ab1474dc73727d966359249",
+      "passed": true,
+      "relative_path": "policies/trust/evidence_trust_policy_v1.yaml",
+      "safe_path": true
+    }
+  },
+  "input_integrity_checks_before": {
+    "asset_fixture": {
+      "actual_sha256": "bc9cb98980010ca2bc1c123e808296a2e17bb34a5735cf42cd07e1efcfc64395",
+      "exists": true,
+      "expected_sha256": "bc9cb98980010ca2bc1c123e808296a2e17bb34a5735cf42cd07e1efcfc64395",
+      "passed": true,
+      "relative_path": "data/sample_inputs/assets/valid_healthcare_asset.json",
+      "safe_path": true
+    },
+    "assurance_corpus": {
+      "actual_sha256": "d51747056c4f920d5e0b6bfb51613b4e1ee1910de82770aa179dd3fe77f68ded",
+      "exists": true,
+      "expected_sha256": "d51747056c4f920d5e0b6bfb51613b4e1ee1910de82770aa179dd3fe77f68ded",
+      "passed": true,
+      "relative_path": "data/assurance/step11a_policy_rule_coverage_corpus.jsonl",
+      "safe_path": true
+    },
+    "assurance_manifest": {
+      "actual_sha256": "d1fdd9308b973e5248e464daf528a376bca6bc6c27b9d45f267b88f842797465",
+      "exists": true,
+      "expected_sha256": "d1fdd9308b973e5248e464daf528a376bca6bc6c27b9d45f267b88f842797465",
+      "passed": true,
+      "relative_path": "data/assurance/step11a_policy_rule_coverage_manifest.json",
+      "safe_path": true
+    },
+    "decision_fixture": {
+      "actual_sha256": "7d557b127eb2cb6ae097be75273cad3e3d0cd0876385dd74d2439c762254f37a",
+      "exists": true,
+      "expected_sha256": "7d557b127eb2cb6ae097be75273cad3e3d0cd0876385dd74d2439c762254f37a",
+      "passed": true,
+      "relative_path": "data/sample_inputs/decisions/valid_log4shell_decision_record_policy.json",
+      "safe_path": true
+    },
+    "decision_hashing_module": {
+      "actual_sha256": "3b0a1eff5d2b97064d6dfb43936dde0bf2b1c23574a447afae13e2b02886853f",
+      "exists": true,
+      "expected_sha256": "3b0a1eff5d2b97064d6dfb43936dde0bf2b1c23574a447afae13e2b02886853f",
+      "passed": true,
+      "relative_path": "src/domain/decision_hashing.py",
+      "safe_path": true
+    },
+    "decision_policy": {
+      "actual_sha256": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f",
+      "exists": true,
+      "expected_sha256": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f",
+      "passed": true,
+      "relative_path": "policies/decision/federal_base_policy_v1.yaml",
+      "safe_path": true
+    },
+    "decision_schema": {
+      "actual_sha256": "e54a394ef9c772d3dce070f359051d6accf5761b1983ca9721e03e80a9e54ba3",
+      "exists": true,
+      "expected_sha256": "e54a394ef9c772d3dce070f359051d6accf5761b1983ca9721e03e80a9e54ba3",
+      "passed": true,
+      "relative_path": "schemas/aegis_decision_record.schema.json",
+      "safe_path": true
+    },
+    "decision_validator": {
+      "actual_sha256": "f1ef851a8f875680fc5e919b9276effc8d7c2feb00005b893f163ed47136806f",
+      "exists": true,
+      "expected_sha256": "f1ef851a8f875680fc5e919b9276effc8d7c2feb00005b893f163ed47136806f",
+      "passed": true,
+      "relative_path": "src/validation/decision_record_validator.py",
+      "safe_path": true
+    },
+    "evidence_fixture": {
+      "actual_sha256": "21ed78284567bc33bb463fb2525941829b80c7e21144d17677f022d168a3c2de",
+      "exists": true,
+      "expected_sha256": "21ed78284567bc33bb463fb2525941829b80c7e21144d17677f022d168a3c2de",
+      "passed": true,
+      "relative_path": "data/sample_inputs/evidence/valid_log4j_sbom_evidence.json",
+      "safe_path": true
+    },
+    "evidence_schema": {
+      "actual_sha256": "adaef9c4a1a837fddebee3d40cc03d6d99592682b3c42f1c24dded2fc74ce772",
+      "exists": true,
+      "expected_sha256": "adaef9c4a1a837fddebee3d40cc03d6d99592682b3c42f1c24dded2fc74ce772",
+      "passed": true,
+      "relative_path": "schemas/aegis_evidence_record.schema.json",
+      "safe_path": true
+    },
+    "evidence_trust_engine": {
+      "actual_sha256": "78943367308a8fcc07e085da0e45fe75013f216d23f0fac3f1e749f148c74fc7",
+      "exists": true,
+      "expected_sha256": "78943367308a8fcc07e085da0e45fe75013f216d23f0fac3f1e749f148c74fc7",
+      "passed": true,
+      "relative_path": "src/governance/evidence_trust_engine.py",
+      "safe_path": true
+    },
+    "intelligence_fixture": {
+      "actual_sha256": "e2204ab8ff8736c0826ffe24d518cef462a75dcea7e498943506b0fe7f41ff1f",
+      "exists": true,
+      "expected_sha256": "e2204ab8ff8736c0826ffe24d518cef462a75dcea7e498943506b0fe7f41ff1f",
+      "passed": true,
+      "relative_path": "data/sample_inputs/intelligence/valid_log4shell_intelligence.json",
+      "safe_path": true
+    },
+    "step11c_report": {
+      "actual_sha256": "74f0849ee40aa73f09b9abf23929bbaf4a355d51f00c9b01958b01f943867a23",
+      "exists": true,
+      "expected_sha256": "74f0849ee40aa73f09b9abf23929bbaf4a355d51f00c9b01958b01f943867a23",
+      "passed": true,
+      "relative_path": "data/validation_reports/tampering/step11c_tamper_assurance_report.json",
+      "safe_path": true
+    },
+    "step11d_report": {
+      "actual_sha256": "8c21529e07fa9b9b196a002d64fa302e7f9ec10da3e1fec9b7070bdd6d6b6f69",
+      "exists": true,
+      "expected_sha256": "8c21529e07fa9b9b196a002d64fa302e7f9ec10da3e1fec9b7070bdd6d6b6f69",
+      "passed": true,
+      "relative_path": "data/validation_reports/hostile_inputs/step11d_hostile_input_report.json",
+      "safe_path": true
+    },
+    "step11e_report": {
+      "actual_sha256": "18c1b8986c318a815d5d954df2686846b5d97ac30727fb94c24ac72e635e652e",
+      "exists": true,
+      "expected_sha256": "18c1b8986c318a815d5d954df2686846b5d97ac30727fb94c24ac72e635e652e",
+      "passed": true,
+      "relative_path": "data/validation_reports/metamorphic/step11e_metamorphic_assurance_report.json",
+      "safe_path": true
+    },
+    "step11f_report": {
+      "actual_sha256": "2b67f31c55bbe51ed52c83b8bba01fc8ad41b424b24f55d750d7bf2e6f03379f",
+      "exists": true,
+      "expected_sha256": "2b67f31c55bbe51ed52c83b8bba01fc8ad41b424b24f55d750d7bf2e6f03379f",
+      "passed": true,
+      "relative_path": "data/validation_reports/compound_attacks/step11f_compound_attack_report.json",
+      "safe_path": true
+    },
+    "trust_policy": {
+      "actual_sha256": "6a4b41df0d5084bdc8a82c6c82714376253af9229ab1474dc73727d966359249",
+      "exists": true,
+      "expected_sha256": "6a4b41df0d5084bdc8a82c6c82714376253af9229ab1474dc73727d966359249",
+      "passed": true,
+      "relative_path": "policies/trust/evidence_trust_policy_v1.yaml",
+      "safe_path": true
+    }
+  },
+  "limitations": [
+    "The campaign uses deterministic synthetic event streams and controlled fixtures.",
+    "No distributed database, message broker, hardware clock, or production cache is exercised.",
+    "Operational validation and independent security review remain mandatory before deployment."
+  ],
+  "quality_gates": [
+    {
+      "gate_id": "STEP11G-CRITICAL-DEFENCE",
+      "metric": "critical_temporal_scenario_defence_rate",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "STEP11G-STALE-REJECTION",
+      "metric": "stale_evidence_rejection_rate",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "STEP11G-REPLAY-DETECTION",
+      "metric": "replay_detection_rate",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "STEP11G-TOCTOU",
+      "metric": "toctou_detection_rate",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "STEP11G-POLICY-PIN",
+      "metric": "policy_version_consistency_rate",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "STEP11G-CONCURRENCY",
+      "metric": "concurrent_conflict_containment_rate",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "STEP11G-IDEMPOTENCY",
+      "metric": "idempotency_consistency_rate",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "STEP11G-EVENT-ORDER",
+      "metric": "event_order_integrity_rate",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "STEP11G-UNSAFE-RELEASE",
+      "metric": "unsafe_decision_release_count",
+      "observed": 0,
+      "operator": "eq",
+      "passed": true,
+      "threshold": 0
+    },
+    {
+      "gate_id": "STEP11G-UNDETECTED",
+      "metric": "undetected_count",
+      "observed": 0,
+      "operator": "eq",
+      "passed": true,
+      "threshold": 0
+    },
+    {
+      "gate_id": "STEP11G-HARNESS",
+      "metric": "harness_error_count",
+      "observed": 0,
+      "operator": "eq",
+      "passed": true,
+      "threshold": 0
+    },
+    {
+      "gate_id": "STEP11G-INTEGRITY",
+      "metric": "trusted_input_integrity_passed",
+      "observed": true,
+      "operator": "eq",
+      "passed": true,
+      "threshold": true
+    }
+  ],
+  "release_decision": {
+    "blocking_reasons": [
+      "Real operational validation has not yet been completed.",
+      "Independent security review has not yet been completed."
+    ],
+    "production_readiness_status": "BLOCKED",
+    "stage_gate_status": "PASS"
+  },
+  "report_id": "AEG-TEMPORAL-STEP11G-001",
+  "results": [
+    {
+      "control_tags": [
+        "freshness",
+        "idempotency"
+      ],
+      "defended": true,
+      "description": "Current evidence remains acceptable at the injected evaluation time.",
+      "details": {
+        "age_seconds": 120.0,
+        "evaluated_at": "2026-07-13T17:03:00+00:00",
+        "evidence_schema_status": "accepted_with_warnings",
+        "evidence_trust_action": "ACCEPT_WITH_WARNINGS",
+        "evidence_trust_level": "high",
+        "maximum_age_seconds": 86400,
+        "observed_at": "2026-07-13T17:01:00+00:00"
+      },
+      "detection_oracles": [
+        "FRESHNESS_GUARD"
+      ],
+      "error": null,
+      "evidence_revision": null,
+      "expectation_met": true,
+      "expected_outcomes": [
+        "ACCEPTED_CURRENT"
+      ],
+      "family": "current_freshness",
+      "finding_codes": [
+        "RECORD_WITHIN_FRESHNESS_WINDOW"
+      ],
+      "findings": [
+        {
+          "code": "RECORD_WITHIN_FRESHNESS_WINDOW",
+          "control": "FRESHNESS_GUARD",
+          "message": "The record is current at the injected evaluation time."
+        }
+      ],
+      "first_blocking_control": null,
+      "handler": "freshness",
+      "idempotency_consistent": true,
+      "ingestion_time": null,
+      "logical_evaluation_time": "2026-07-13T17:03:00+00:00",
+      "outcome": "ACCEPTED_CURRENT",
+      "policy_version": null,
+      "raw_outcome": "ACCEPTED_CURRENT",
+      "scenario_id": "TEMP-FRESH-CURRENT-001",
+      "sequence_identifier": null,
+      "severity": "critical",
+      "source_event_time": null,
+      "state_after": {},
+      "state_before": {},
+      "unsafe_decision_released": false
+    },
+    {
+      "control_tags": [
+        "freshness",
+        "stale_evidence"
+      ],
+      "defended": true,
+      "description": "Evidence older than its permitted window is rejected.",
+      "details": {
+        "age_seconds": 90180.0,
+        "evaluated_at": "2026-07-13T17:03:00+00:00",
+        "evidence_schema_status": "rejected",
+        "evidence_trust_action": "QUARANTINE",
+        "evidence_trust_level": "low",
+        "maximum_age_seconds": 86400,
+        "observed_at": "2026-07-12T16:00:00+00:00"
+      },
+      "detection_oracles": [
+        "EVIDENCE_TRUST_ENGINE",
+        "FRESHNESS_GUARD"
+      ],
+      "error": null,
+      "evidence_revision": null,
+      "expectation_met": true,
+      "expected_outcomes": [
+        "REJECTED_STALE"
+      ],
+      "family": "stale_evidence_replay",
+      "finding_codes": [
+        "FRESHNESS_WINDOW_EXCEEDED"
+      ],
+      "findings": [
+        {
+          "code": "FRESHNESS_WINDOW_EXCEEDED",
+          "control": "FRESHNESS_GUARD",
+          "message": "The record exceeds its permitted freshness window."
+        }
+      ],
+      "first_blocking_control": "EVIDENCE_TRUST_ENGINE",
+      "handler": "freshness",
+      "idempotency_consistent": true,
+      "ingestion_time": null,
+      "logical_evaluation_time": "2026-07-13T17:03:00+00:00",
+      "outcome": "REJECTED_STALE",
+      "policy_version": null,
+      "raw_outcome": "REJECTED_STALE",
+      "scenario_id": "TEMP-FRESH-STALE-001",
+      "sequence_identifier": null,
+      "severity": "critical",
+      "source_event_time": null,
+      "state_after": {},
+      "state_before": {},
+      "unsafe_decision_released": false
+    },
+    {
+      "control_tags": [
+        "freshness",
+        "stale_evidence"
+      ],
+      "defended": true,
+      "description": "Expired evidence cannot remain current.",
+      "details": {
+        "evaluated_at": "2026-07-13T17:03:00+00:00",
+        "evidence_schema_status": "rejected",
+        "evidence_trust_action": "QUARANTINE",
+        "evidence_trust_level": "low",
+        "expires_at": "2026-07-13T17:02:59+00:00",
+        "observed_at": "2026-07-13T17:01:00+00:00"
+      },
+      "detection_oracles": [
+        "EVIDENCE_TRUST_ENGINE",
+        "EXPIRY_GUARD"
+      ],
+      "error": null,
+      "evidence_revision": null,
+      "expectation_met": true,
+      "expected_outcomes": [
+        "REJECTED_STALE"
+      ],
+      "family": "expiry_enforcement",
+      "finding_codes": [
+        "EVIDENCE_EXPIRED"
+      ],
+      "findings": [
+        {
+          "code": "EVIDENCE_EXPIRED",
+          "control": "EXPIRY_GUARD",
+          "message": "The record expired before temporal evaluation."
+        }
+      ],
+      "first_blocking_control": "EVIDENCE_TRUST_ENGINE",
+      "handler": "freshness",
+      "idempotency_consistent": true,
+      "ingestion_time": null,
+      "logical_evaluation_time": "2026-07-13T17:03:00+00:00",
+      "outcome": "REJECTED_STALE",
+      "policy_version": null,
+      "raw_outcome": "REJECTED_STALE",
+      "scenario_id": "TEMP-FRESH-EXPIRED-001",
+      "sequence_identifier": null,
+      "severity": "critical",
+      "source_event_time": null,
+      "state_after": {},
+      "state_before": {},
+      "unsafe_decision_released": false
+    },
+    {
+      "control_tags": [
+        "freshness",
+        "idempotency"
+      ],
+      "defended": true,
+      "description": "The exact inclusive expiry boundary is handled deterministically.",
+      "details": {
+        "age_seconds": 120.0,
+        "evaluated_at": "2026-07-13T17:03:00+00:00",
+        "evidence_schema_status": "accepted_with_warnings",
+        "evidence_trust_action": "ACCEPT_WITH_WARNINGS",
+        "evidence_trust_level": "high",
+        "maximum_age_seconds": 86400,
+        "observed_at": "2026-07-13T17:01:00+00:00"
+      },
+      "detection_oracles": [
+        "FRESHNESS_GUARD"
+      ],
+      "error": null,
+      "evidence_revision": null,
+      "expectation_met": true,
+      "expected_outcomes": [
+        "ACCEPTED_CURRENT"
+      ],
+      "family": "expiry_boundary",
+      "finding_codes": [
+        "RECORD_WITHIN_FRESHNESS_WINDOW"
+      ],
+      "findings": [
+        {
+          "code": "RECORD_WITHIN_FRESHNESS_WINDOW",
+          "control": "FRESHNESS_GUARD",
+          "message": "The record is current at the injected evaluation time."
+        }
+      ],
+      "first_blocking_control": null,
+      "handler": "freshness",
+      "idempotency_consistent": true,
+      "ingestion_time": null,
+      "logical_evaluation_time": "2026-07-13T17:03:00+00:00",
+      "outcome": "ACCEPTED_CURRENT",
+      "policy_version": null,
+      "raw_outcome": "ACCEPTED_CURRENT",
+      "scenario_id": "TEMP-FRESH-BOUNDARY-001",
+      "sequence_identifier": null,
+      "severity": "critical",
+      "source_event_time": null,
+      "state_after": {},
+      "state_before": {},
+      "unsafe_decision_released": false
+    },
+    {
+      "control_tags": [
+        "concurrency",
+        "event_order"
+      ],
+      "defended": true,
+      "description": "A materially future-dated observation is quarantined.",
+      "details": {
+        "evaluated_at": "2026-07-13T17:03:00+00:00",
+        "evidence_schema_status": "accepted_with_warnings",
+        "evidence_trust_action": "QUARANTINE",
+        "evidence_trust_level": "low",
+        "future_skew_seconds": 1020.0,
+        "observed_at": "2026-07-13T17:20:00+00:00"
+      },
+      "detection_oracles": [
+        "CLOCK_SKEW_GUARD",
+        "EVIDENCE_TRUST_ENGINE",
+        "TIMESTAMP_CONSISTENCY"
+      ],
+      "error": null,
+      "evidence_revision": null,
+      "expectation_met": true,
+      "expected_outcomes": [
+        "QUARANTINED_CONFLICT"
+      ],
+      "family": "future_timestamp",
+      "finding_codes": [
+        "COLLECTION_AFTER_FRESHNESS_EVALUATION",
+        "FUTURE_OBSERVATION_EXCEEDS_SKEW"
+      ],
+      "findings": [
+        {
+          "code": "FUTURE_OBSERVATION_EXCEEDS_SKEW",
+          "control": "CLOCK_SKEW_GUARD",
+          "message": "Observation time exceeds the permitted future skew."
+        }
+      ],
+      "first_blocking_control": "CLOCK_SKEW_GUARD",
+      "handler": "freshness",
+      "idempotency_consistent": true,
+      "ingestion_time": null,
+      "logical_evaluation_time": "2026-07-13T17:03:00+00:00",
+      "outcome": "QUARANTINED_CONFLICT",
+      "policy_version": null,
+      "raw_outcome": "QUARANTINED_CONFLICT",
+      "scenario_id": "TEMP-FRESH-FUTURE-001",
+      "sequence_identifier": null,
+      "severity": "critical",
+      "source_event_time": null,
+      "state_after": {},
+      "state_before": {},
+      "unsafe_decision_released": false
+    },
+    {
+      "control_tags": [
+        "freshness",
+        "stale_evidence"
+      ],
+      "defended": true,
+      "description": "A short freshness window cannot be silently extended.",
+      "details": {
+        "age_seconds": 7380.0,
+        "evaluated_at": "2026-07-13T17:03:00+00:00",
+        "evidence_schema_status": "rejected",
+        "evidence_trust_action": "QUARANTINE",
+        "evidence_trust_level": "low",
+        "maximum_age_seconds": 3600,
+        "observed_at": "2026-07-13T15:00:00+00:00"
+      },
+      "detection_oracles": [
+        "EVIDENCE_TRUST_ENGINE",
+        "FRESHNESS_GUARD"
+      ],
+      "error": null,
+      "evidence_revision": null,
+      "expectation_met": true,
+      "expected_outcomes": [
+        "REJECTED_STALE"
+      ],
+      "family": "freshness_window",
+      "finding_codes": [
+        "FRESHNESS_WINDOW_EXCEEDED"
+      ],
+      "findings": [
+        {
+          "code": "FRESHNESS_WINDOW_EXCEEDED",
+          "control": "FRESHNESS_GUARD",
+          "message": "The record exceeds its permitted freshness window."
+        }
+      ],
+      "first_blocking_control": "EVIDENCE_TRUST_ENGINE",
+      "handler": "freshness",
+      "idempotency_consistent": true,
+      "ingestion_time": null,
+      "logical_evaluation_time": "2026-07-13T17:03:00+00:00",
+      "outcome": "REJECTED_STALE",
+      "policy_version": null,
+      "raw_outcome": "REJECTED_STALE",
+      "scenario_id": "TEMP-FRESH-WINDOW-001",
+      "sequence_identifier": null,
+      "severity": "critical",
+      "source_event_time": null,
+      "state_after": {},
+      "state_before": {},
+      "unsafe_decision_released": false
+    },
+    {
+      "control_tags": [
+        "freshness",
+        "stale_evidence"
+      ],
+      "defended": true,
+      "description": "Stale vulnerability intelligence is rejected before policy use.",
+      "details": {
+        "age_seconds": 25380.0,
+        "evaluated_at": "2026-07-13T17:03:00+00:00",
+        "evidence_schema_status": "rejected",
+        "evidence_trust_action": "QUARANTINE",
+        "evidence_trust_level": "low",
+        "maximum_age_seconds": 21600,
+        "observed_at": "2026-07-13T10:00:00+00:00"
+      },
+      "detection_oracles": [
+        "EVIDENCE_TRUST_ENGINE",
+        "FRESHNESS_GUARD"
+      ],
+      "error": null,
+      "evidence_revision": null,
+      "expectation_met": true,
+      "expected_outcomes": [
+        "REJECTED_STALE"
+      ],
+      "family": "intelligence_staleness",
+      "finding_codes": [
+        "FRESHNESS_WINDOW_EXCEEDED"
+      ],
+      "findings": [
+        {
+          "code": "FRESHNESS_WINDOW_EXCEEDED",
+          "control": "FRESHNESS_GUARD",
+          "message": "The record exceeds its permitted freshness window."
+        }
+      ],
+      "first_blocking_control": "EVIDENCE_TRUST_ENGINE",
+      "handler": "freshness",
+      "idempotency_consistent": true,
+      "ingestion_time": null,
+      "logical_evaluation_time": "2026-07-13T17:03:00+00:00",
+      "outcome": "REJECTED_STALE",
+      "policy_version": null,
+      "raw_outcome": "REJECTED_STALE",
+      "scenario_id": "TEMP-FRESH-INTEL-001",
+      "sequence_identifier": null,
+      "severity": "critical",
+      "source_event_time": null,
+      "state_after": {},
+      "state_before": {},
+      "unsafe_decision_released": false
+    },
+    {
+      "control_tags": [
+        "replay",
+        "stale_evidence"
+      ],
+      "defended": true,
+      "description": "A decision outside its replay window cannot be released.",
+      "details": {
+        "age_seconds": 7380.0,
+        "evaluated_at": "2026-07-13T17:03:00+00:00",
+        "evidence_schema_status": "rejected",
+        "evidence_trust_action": "QUARANTINE",
+        "evidence_trust_level": "low",
+        "maximum_age_seconds": 3600,
+        "observed_at": "2026-07-13T15:00:00+00:00"
+      },
+      "detection_oracles": [
+        "EVIDENCE_TRUST_ENGINE",
+        "FRESHNESS_GUARD"
+      ],
+      "error": null,
+      "evidence_revision": null,
+      "expectation_met": true,
+      "expected_outcomes": [
+        "REJECTED_STALE"
+      ],
+      "family": "decision_staleness",
+      "finding_codes": [
+        "FRESHNESS_WINDOW_EXCEEDED"
+      ],
+      "findings": [
+        {
+          "code": "FRESHNESS_WINDOW_EXCEEDED",
+          "control": "FRESHNESS_GUARD",
+          "message": "The record exceeds its permitted freshness window."
+        }
+      ],
+      "first_blocking_control": "EVIDENCE_TRUST_ENGINE",
+      "handler": "freshness",
+      "idempotency_consistent": true,
+      "ingestion_time": null,
+      "logical_evaluation_time": "2026-07-13T17:03:00+00:00",
+      "outcome": "REJECTED_STALE",
+      "policy_version": null,
+      "raw_outcome": "REJECTED_STALE",
+      "scenario_id": "TEMP-FRESH-DECISION-001",
+      "sequence_identifier": null,
+      "severity": "critical",
+      "source_event_time": null,
+      "state_after": {},
+      "state_before": {},
+      "unsafe_decision_released": false
+    },
+    {
+      "control_tags": [
+        "idempotency",
+        "replay"
+      ],
+      "defended": true,
+      "description": "An identical event replay is a no-op.",
+      "details": {
+        "state_changed": false
+      },
+      "detection_oracles": [
+        "IDEMPOTENCY_GUARD"
+      ],
+      "error": null,
+      "evidence_revision": 1,
+      "expectation_met": true,
+      "expected_outcomes": [
+        "ACCEPTED_CURRENT"
+      ],
+      "family": "idempotent_replay",
+      "finding_codes": [
+        "IDEMPOTENT_EVENT_REPLAY_NOOP"
+      ],
+      "findings": [
+        {
+          "code": "IDEMPOTENT_EVENT_REPLAY_NOOP",
+          "control": "IDEMPOTENCY_GUARD",
+          "message": "An identical replay was treated as a no-op."
+        }
+      ],
+      "first_blocking_control": null,
+      "handler": "event",
+      "idempotency_consistent": true,
+      "ingestion_time": "2026-07-13T17:00:10+00:00",
+      "logical_evaluation_time": "2026-07-13T17:03:00+00:00",
+      "outcome": "ACCEPTED_CURRENT",
+      "policy_version": "1.0.0",
+      "raw_outcome": "ACCEPTED_CURRENT",
+      "scenario_id": "TEMP-REPLAY-IDEMPOTENT-001",
+      "sequence_identifier": 1,
+      "severity": "critical",
+      "source_event_time": "2026-07-13T17:00:00+00:00",
+      "state_after": {
+        "last_event_time": "2026-07-13T17:00:00+00:00",
+        "last_revision": 1,
+        "last_sequence": 1,
+        "revoked": false
+      },
+      "state_before": {
+        "last_event_time": "2026-07-13T17:00:00+00:00",
+        "last_revision": 1,
+        "last_sequence": 1,
+        "revoked": false
+      },
+      "unsafe_decision_released": false
+    },
+    {
+      "control_tags": [
+        "replay"
+      ],
+      "defended": true,
+      "description": "An event ID cannot be reused with altered content.",
+      "details": {
+        "state_changed": false
+      },
+      "detection_oracles": [
+        "REPLAY_GUARD"
+      ],
+      "error": null,
+      "evidence_revision": 1,
+      "expectation_met": true,
+      "expected_outcomes": [
+        "REJECTED_REPLAY"
+      ],
+      "family": "event_id_reuse",
+      "finding_codes": [
+        "EVENT_ID_REUSED_WITH_DIFFERENT_CONTENT"
+      ],
+      "findings": [
+        {
+          "code": "EVENT_ID_REUSED_WITH_DIFFERENT_CONTENT",
+          "control": "REPLAY_GUARD",
+          "message": "The same event identifier was reused with different content."
+        }
+      ],
+      "first_blocking_control": "REPLAY_GUARD",
+      "handler": "event",
+      "idempotency_consistent": true,
+      "ingestion_time": "2026-07-13T17:00:10+00:00",
+      "logical_evaluation_time": "2026-07-13T17:03:00+00:00",
+      "outcome": "REJECTED_REPLAY",
+      "policy_version": "1.0.0",
+      "raw_outcome": "REJECTED_REPLAY",
+      "scenario_id": "TEMP-REPLAY-ID-REUSE-001",
+      "sequence_identifier": 1,
+      "severity": "critical",
+      "source_event_time": "2026-07-13T17:00:00+00:00",
+      "state_after": {
+        "last_event_time": "2026-07-13T17:00:00+00:00",
+        "last_revision": 1,
+        "last_sequence": 1,
+        "revoked": false
+      },
+      "state_before": {
+        "last_event_time": "2026-07-13T17:00:00+00:00",
+        "last_revision": 1,
+        "last_sequence": 1,
+        "revoked": false
+      },
+      "unsafe_decision_released": false
+    },
+    {
+      "control_tags": [
+        "replay"
+      ],
+      "defended": true,
+      "description": "The same payload cannot be replayed under a new event ID.",
+      "details": {
+        "state_changed": false
+      },
+      "detection_oracles": [
+        "REPLAY_GUARD"
+      ],
+      "error": null,
+      "evidence_revision": 2,
+      "expectation_met": true,
+      "expected_outcomes": [
+        "REJECTED_REPLAY"
+      ],
+      "family": "payload_replay",
+      "finding_codes": [
+        "PAYLOAD_REPLAYED_UNDER_NEW_EVENT_ID"
+      ],
+      "findings": [
+        {
+          "code": "PAYLOAD_REPLAYED_UNDER_NEW_EVENT_ID",
+          "control": "REPLAY_GUARD",
+          "message": "Previously accepted content was replayed under a new event ID."
+        }
+      ],
+      "first_blocking_control": "REPLAY_GUARD",
+      "handler": "event",
+      "idempotency_consistent": true,
+      "ingestion_time": "2026-07-13T17:00:10+00:00",
+      "logical_evaluation_time": "2026-07-13T17:03:00+00:00",
+      "outcome": "REJECTED_REPLAY",
+      "policy_version": "1.0.0",
+      "raw_outcome": "REJECTED_REPLAY",
+      "scenario_id": "TEMP-REPLAY-PAYLOAD-001",
+      "sequence_identifier": 2,
+      "severity": "critical",
+      "source_event_time": "2026-07-13T17:00:00+00:00",
+      "state_after": {
+        "last_event_time": "2026-07-13T17:00:00+00:00",
+        "last_revision": 1,
+        "last_sequence": 1,
+        "revoked": false
+      },
+      "state_before": {
+        "last_event_time": "2026-07-13T17:00:00+00:00",
+        "last_revision": 1,
+        "last_sequence": 1,
+        "revoked": false
+      },
+      "unsafe_decision_released": false
+    },
+    {
+      "control_tags": [
+        "event_order",
+        "replay"
+      ],
+      "defended": true,
+      "description": "A stream sequence cannot move backwards.",
+      "details": {
+        "state_changed": false
+      },
+      "detection_oracles": [
+        "EVENT_ORDER_GUARD"
+      ],
+      "error": null,
+      "evidence_revision": 3,
+      "expectation_met": true,
+      "expected_outcomes": [
+        "REJECTED_REPLAY"
+      ],
+      "family": "sequence_rollback",
+      "finding_codes": [
+        "EVENT_SEQUENCE_ROLLBACK"
+      ],
+      "findings": [
+        {
+          "code": "EVENT_SEQUENCE_ROLLBACK",
+          "control": "EVENT_ORDER_GUARD",
+          "message": "Event sequence moved backwards."
+        }
+      ],
+      "first_blocking_control": "EVENT_ORDER_GUARD",
+      "handler": "event",
+      "idempotency_consistent": true,
+      "ingestion_time": "2026-07-13T17:00:10+00:00",
+      "logical_evaluation_time": "2026-07-13T17:03:00+00:00",
+      "outcome": "REJECTED_REPLAY",
+      "policy_version": "1.0.0",
+      "raw_outcome": "REJECTED_REPLAY",
+      "scenario_id": "TEMP-ORDER-SEQUENCE-ROLLBACK-001",
+      "sequence_identifier": 1,
+      "severity": "critical",
+      "source_event_time": "2026-07-13T17:00:00+00:00",
+      "state_after": {
+        "last_event_time": "2026-07-13T17:00:20+00:00",
+        "last_revision": 2,
+        "last_sequence": 2,
+        "revoked": false
+      },
+      "state_before": {
+        "last_event_time": "2026-07-13T17:00:20+00:00",
+        "last_revision": 2,
+        "last_sequence": 2,
+        "revoked": false
+      },
+      "unsafe_decision_released": false
+    },
+    {
+      "control_tags": [
+        "event_order",
+        "stale_evidence"
+      ],
+      "defended": true,
+      "description": "A later event must advance the authoritative revision.",
+      "details": {
+        "state_changed": false
+      },
+      "detection_oracles": [
+        "REVISION_GUARD"
+      ],
+      "error": null,
+      "evidence_revision": 1,
+      "expectation_met": true,
+      "expected_outcomes": [
+        "REJECTED_STALE"
+      ],
+      "family": "revision_rollback",
+      "finding_codes": [
+        "EVENT_REVISION_NOT_MONOTONIC"
+      ],
+      "findings": [
+        {
+          "code": "EVENT_REVISION_NOT_MONOTONIC",
+          "control": "REVISION_GUARD",
+          "message": "The new event does not advance the stream revision."
+        }
+      ],
+      "first_blocking_control": "REVISION_GUARD",
+      "handler": "event",
+      "idempotency_consistent": true,
+      "ingestion_time": "2026-07-13T17:00:50+00:00",
+      "logical_evaluation_time": "2026-07-13T17:03:00+00:00",
+      "outcome": "REJECTED_STALE",
+      "policy_version": "1.0.0",
+      "raw_outcome": "REJECTED_STALE",
+      "scenario_id": "TEMP-ORDER-REVISION-ROLLBACK-001",
+      "sequence_identifier": 3,
+      "severity": "critical",
+      "source_event_time": "2026-07-13T17:00:40+00:00",
+      "state_after": {
+        "last_event_time": "2026-07-13T17:00:20+00:00",
+        "last_revision": 2,
+        "last_sequence": 2,
+        "revoked": false
+      },
+      "state_before": {
+        "last_event_time": "2026-07-13T17:00:20+00:00",
+        "last_revision": 2,
+        "last_sequence": 2,
+        "revoked": false
+      },
+      "unsafe_decision_released": false
+    },
+    {
+      "control_tags": [
+        "concurrency",
+        "event_order"
+      ],
+      "defended": true,
+      "description": "Missing sequence numbers force quarantine.",
+      "details": {
+        "state_changed": false
+      },
+      "detection_oracles": [
+        "EVENT_ORDER_GUARD"
+      ],
+      "error": null,
+      "evidence_revision": 3,
+      "expectation_met": true,
+      "expected_outcomes": [
+        "QUARANTINED_CONFLICT"
+      ],
+      "family": "sequence_gap",
+      "finding_codes": [
+        "EVENT_SEQUENCE_GAP"
+      ],
+      "findings": [
+        {
+          "code": "EVENT_SEQUENCE_GAP",
+          "control": "EVENT_ORDER_GUARD",
+          "message": "A sequence gap prevents a complete state reconstruction."
+        }
+      ],
+      "first_blocking_control": "EVENT_ORDER_GUARD",
+      "handler": "event",
+      "idempotency_consistent": true,
+      "ingestion_time": "2026-07-13T17:00:50+00:00",
+      "logical_evaluation_time": "2026-07-13T17:03:00+00:00",
+      "outcome": "QUARANTINED_CONFLICT",
+      "policy_version": "1.0.0",
+      "raw_outcome": "QUARANTINED_CONFLICT",
+      "scenario_id": "TEMP-ORDER-SEQUENCE-GAP-001",
+      "sequence_identifier": 4,
+      "severity": "critical",
+      "source_event_time": "2026-07-13T17:00:40+00:00",
+      "state_after": {
+        "last_event_time": "2026-07-13T17:00:20+00:00",
+        "last_revision": 2,
+        "last_sequence": 2,
+        "revoked": false
+      },
+      "state_before": {
+        "last_event_time": "2026-07-13T17:00:20+00:00",
+        "last_revision": 2,
+        "last_sequence": 2,
+        "revoked": false
+      },
+      "unsafe_decision_released": false
+    },
+    {
+      "control_tags": [
+        "concurrency",
+        "event_order"
+      ],
+      "defended": true,
+      "description": "Conflicting content at one sequence cannot be auto-resolved.",
+      "details": {
+        "state_changed": false
+      },
+      "detection_oracles": [
+        "CONCURRENCY_GUARD"
+      ],
+      "error": null,
+      "evidence_revision": 3,
+      "expectation_met": true,
+      "expected_outcomes": [
+        "QUARANTINED_CONFLICT"
+      ],
+      "family": "concurrent_same_sequence",
+      "finding_codes": [
+        "CONFLICTING_UPDATE_FOR_CURRENT_SEQUENCE"
+      ],
+      "findings": [
+        {
+          "code": "CONFLICTING_UPDATE_FOR_CURRENT_SEQUENCE",
+          "control": "CONCURRENCY_GUARD",
+          "message": "Concurrent content conflicts at the current sequence."
+        }
+      ],
+      "first_blocking_control": "CONCURRENCY_GUARD",
+      "handler": "event",
+      "idempotency_consistent": true,
+      "ingestion_time": "2026-07-13T17:00:50+00:00",
+      "logical_evaluation_time": "2026-07-13T17:03:00+00:00",
+      "outcome": "QUARANTINED_CONFLICT",
+      "policy_version": "1.0.0",
+      "raw_outcome": "QUARANTINED_CONFLICT",
+      "scenario_id": "TEMP-CONCURRENT-SAME-SEQUENCE-001",
+      "sequence_identifier": 2,
+      "severity": "critical",
+      "source_event_time": "2026-07-13T17:00:40+00:00",
+      "state_after": {
+        "last_event_time": "2026-07-13T17:00:20+00:00",
+        "last_revision": 2,
+        "last_sequence": 2,
+        "revoked": false
+      },
+      "state_before": {
+        "last_event_time": "2026-07-13T17:00:20+00:00",
+        "last_revision": 2,
+        "last_sequence": 2,
+        "revoked": false
+      },
+      "unsafe_decision_released": false
+    },
+    {
+      "control_tags": [
+        "concurrency",
+        "event_order"
+      ],
+      "defended": true,
+      "description": "Later sequence with materially older time is quarantined.",
+      "details": {
+        "state_changed": false
+      },
+      "detection_oracles": [
+        "EVENT_ORDER_GUARD"
+      ],
+      "error": null,
+      "evidence_revision": 3,
+      "expectation_met": true,
+      "expected_outcomes": [
+        "QUARANTINED_CONFLICT"
+      ],
+      "family": "timestamp_rollback",
+      "finding_codes": [
+        "EVENT_TIME_ROLLBACK"
+      ],
+      "findings": [
+        {
+          "code": "EVENT_TIME_ROLLBACK",
+          "control": "EVENT_ORDER_GUARD",
+          "message": "A later sequence carries a materially older event time."
+        }
+      ],
+      "first_blocking_control": "EVENT_ORDER_GUARD",
+      "handler": "event",
+      "idempotency_consistent": true,
+      "ingestion_time": "2026-07-13T17:00:50+00:00",
+      "logical_evaluation_time": "2026-07-13T17:03:00+00:00",
+      "outcome": "QUARANTINED_CONFLICT",
+      "policy_version": "1.0.0",
+      "raw_outcome": "QUARANTINED_CONFLICT",
+      "scenario_id": "TEMP-ORDER-TIMESTAMP-ROLLBACK-001",
+      "sequence_identifier": 3,
+      "severity": "critical",
+      "source_event_time": "2026-07-13T16:50:00+00:00",
+      "state_after": {
+        "last_event_time": "2026-07-13T17:00:20+00:00",
+        "last_revision": 2,
+        "last_sequence": 2,
+        "revoked": false
+      },
+      "state_before": {
+        "last_event_time": "2026-07-13T17:00:20+00:00",
+        "last_revision": 2,
+        "last_sequence": 2,
+        "revoked": false
+      },
+      "unsafe_decision_released": false
+    },
+    {
+      "control_tags": [
+        "event_order",
+        "idempotency"
+      ],
+      "defended": true,
+      "description": "Clock skew inside the declared tolerance is accepted.",
+      "details": {
+        "state_changed": true
+      },
+      "detection_oracles": [
+        "EVENT_ORDER_GUARD"
+      ],
+      "error": null,
+      "evidence_revision": 2,
+      "expectation_met": true,
+      "expected_outcomes": [
+        "ACCEPTED_CURRENT"
+      ],
+      "family": "allowed_clock_skew",
+      "finding_codes": [
+        "EVENT_ACCEPTED_MONOTONICALLY"
+      ],
+      "findings": [
+        {
+          "code": "EVENT_ACCEPTED_MONOTONICALLY",
+          "control": "EVENT_ORDER_GUARD",
+          "message": "The event advanced the stream monotonically."
+        }
+      ],
+      "first_blocking_control": null,
+      "handler": "event",
+      "idempotency_consistent": true,
+      "ingestion_time": "2026-07-13T17:00:00+00:00",
+      "logical_evaluation_time": "2026-07-13T17:03:00+00:00",
+      "outcome": "ACCEPTED_CURRENT",
+      "policy_version": "1.0.0",
+      "raw_outcome": "ACCEPTED_CURRENT",
+      "scenario_id": "TEMP-CLOCK-ALLOWED-SKEW-001",
+      "sequence_identifier": 2,
+      "severity": "critical",
+      "source_event_time": "2026-07-13T17:01:00+00:00",
+      "state_after": {
+        "last_event_time": "2026-07-13T17:01:00+00:00",
+        "last_revision": 2,
+        "last_sequence": 2,
+        "revoked": false
+      },
+      "state_before": {
+        "last_event_time": "2026-07-13T17:00:00+00:00",
+        "last_revision": 1,
+        "last_sequence": 1,
+        "revoked": false
+      },
+      "unsafe_decision_released": false
+    },
+    {
+      "control_tags": [
+        "concurrency",
+        "event_order"
+      ],
+      "defended": true,
+      "description": "Ingestion cannot precede event time beyond the skew budget.",
+      "details": {
+        "state_changed": false
+      },
+      "detection_oracles": [
+        "CLOCK_SKEW_GUARD"
+      ],
+      "error": null,
+      "evidence_revision": 2,
+      "expectation_met": true,
+      "expected_outcomes": [
+        "QUARANTINED_CONFLICT"
+      ],
+      "family": "ingestion_clock_conflict",
+      "finding_codes": [
+        "INGESTION_PRECEDES_EVENT_BEYOND_SKEW"
+      ],
+      "findings": [
+        {
+          "code": "INGESTION_PRECEDES_EVENT_BEYOND_SKEW",
+          "control": "CLOCK_SKEW_GUARD",
+          "message": "Ingestion precedes the claimed event time beyond tolerance."
+        }
+      ],
+      "first_blocking_control": "CLOCK_SKEW_GUARD",
+      "handler": "event",
+      "idempotency_consistent": true,
+      "ingestion_time": "2026-07-13T17:00:00+00:00",
+      "logical_evaluation_time": "2026-07-13T17:03:00+00:00",
+      "outcome": "QUARANTINED_CONFLICT",
+      "policy_version": "1.0.0",
+      "raw_outcome": "QUARANTINED_CONFLICT",
+      "scenario_id": "TEMP-CLOCK-INGESTION-LEAD-001",
+      "sequence_identifier": 2,
+      "severity": "critical",
+      "source_event_time": "2026-07-13T17:02:30+00:00",
+      "state_after": {
+        "last_event_time": "2026-07-13T17:00:00+00:00",
+        "last_revision": 1,
+        "last_sequence": 1,
+        "revoked": false
+      },
+      "state_before": {
+        "last_event_time": "2026-07-13T17:00:00+00:00",
+        "last_revision": 1,
+        "last_sequence": 1,
+        "revoked": false
+      },
+      "unsafe_decision_released": false
+    },
+    {
+      "control_tags": [
+        "concurrency",
+        "event_order"
+      ],
+      "defended": true,
+      "description": "Future event time beyond tolerance is quarantined.",
+      "details": {
+        "state_changed": false
+      },
+      "detection_oracles": [
+        "CLOCK_SKEW_GUARD"
+      ],
+      "error": null,
+      "evidence_revision": 2,
+      "expectation_met": true,
+      "expected_outcomes": [
+        "QUARANTINED_CONFLICT"
+      ],
+      "family": "future_event",
+      "finding_codes": [
+        "EVENT_TIME_EXCEEDS_FUTURE_SKEW"
+      ],
+      "findings": [
+        {
+          "code": "EVENT_TIME_EXCEEDS_FUTURE_SKEW",
+          "control": "CLOCK_SKEW_GUARD",
+          "message": "Event time exceeds the permitted future skew."
+        }
+      ],
+      "first_blocking_control": "CLOCK_SKEW_GUARD",
+      "handler": "event",
+      "idempotency_consistent": true,
+      "ingestion_time": "2026-07-13T17:20:05+00:00",
+      "logical_evaluation_time": "2026-07-13T17:03:00+00:00",
+      "outcome": "QUARANTINED_CONFLICT",
+      "policy_version": "1.0.0",
+      "raw_outcome": "QUARANTINED_CONFLICT",
+      "scenario_id": "TEMP-CLOCK-FUTURE-EVENT-001",
+      "sequence_identifier": 2,
+      "severity": "critical",
+      "source_event_time": "2026-07-13T17:20:00+00:00",
+      "state_after": {
+        "last_event_time": "2026-07-13T17:00:00+00:00",
+        "last_revision": 1,
+        "last_sequence": 1,
+        "revoked": false
+      },
+      "state_before": {
+        "last_event_time": "2026-07-13T17:00:00+00:00",
+        "last_revision": 1,
+        "last_sequence": 1,
+        "revoked": false
+      },
+      "unsafe_decision_released": false
+    },
+    {
+      "control_tags": [
+        "concurrency",
+        "toctou"
+      ],
+      "defended": true,
+      "description": "Ordinary updates after revocation are blocked.",
+      "details": {
+        "state_changed": false
+      },
+      "detection_oracles": [
+        "REVOCATION_GUARD"
+      ],
+      "error": null,
+      "evidence_revision": 3,
+      "expectation_met": true,
+      "expected_outcomes": [
+        "BLOCKED_INTEGRITY_CHANGE"
+      ],
+      "family": "update_after_revocation",
+      "finding_codes": [
+        "UPDATE_AFTER_REVOCATION"
+      ],
+      "findings": [
+        {
+          "code": "UPDATE_AFTER_REVOCATION",
+          "control": "REVOCATION_GUARD",
+          "message": "A revoked stream cannot receive an ordinary update."
+        }
+      ],
+      "first_blocking_control": "REVOCATION_GUARD",
+      "handler": "event",
+      "idempotency_consistent": true,
+      "ingestion_time": "2026-07-13T17:00:50+00:00",
+      "logical_evaluation_time": "2026-07-13T17:03:00+00:00",
+      "outcome": "BLOCKED_INTEGRITY_CHANGE",
+      "policy_version": "1.0.0",
+      "raw_outcome": "BLOCKED_INTEGRITY_CHANGE",
+      "scenario_id": "TEMP-REVOCATION-UPDATE-001",
+      "sequence_identifier": 3,
+      "severity": "critical",
+      "source_event_time": "2026-07-13T17:00:40+00:00",
+      "state_after": {
+        "last_event_time": "2026-07-13T17:00:20+00:00",
+        "last_revision": 2,
+        "last_sequence": 2,
+        "revoked": true
+      },
+      "state_before": {
+        "last_event_time": "2026-07-13T17:00:20+00:00",
+        "last_revision": 2,
+        "last_sequence": 2,
+        "revoked": true
+      },
+      "unsafe_decision_released": false
+    },
+    {
+      "control_tags": [
+        "concurrency",
+        "idempotency"
+      ],
+      "defended": true,
+      "description": "A coherent atomic snapshot is accepted.",
+      "details": {},
+      "detection_oracles": [
+        "SNAPSHOT_CONSISTENCY_GUARD"
+      ],
+      "error": null,
+      "evidence_revision": null,
+      "expectation_met": true,
+      "expected_outcomes": [
+        "ACCEPTED_CURRENT"
+      ],
+      "family": "atomic_snapshot",
+      "finding_codes": [
+        "ATOMIC_SNAPSHOT_ACCEPTED"
+      ],
+      "findings": [
+        {
+          "code": "ATOMIC_SNAPSHOT_ACCEPTED",
+          "control": "SNAPSHOT_CONSISTENCY_GUARD",
+          "message": "The decision snapshot is coherent and unchanged."
+        }
+      ],
+      "first_blocking_control": null,
+      "handler": "snapshot",
+      "idempotency_consistent": true,
+      "ingestion_time": null,
+      "logical_evaluation_time": "2026-07-13T17:03:00+00:00",
+      "outcome": "ACCEPTED_CURRENT",
+      "policy_version": "1.0.0",
+      "raw_outcome": "ACCEPTED_CURRENT",
+      "scenario_id": "TEMP-SNAPSHOT-ATOMIC-001",
+      "sequence_identifier": null,
+      "severity": "critical",
+      "source_event_time": null,
+      "state_after": {
+        "content_hashes": {
+          "asset_fixture": "bc9cb98980010ca2bc1c123e808296a2e17bb34a5735cf42cd07e1efcfc64395",
+          "assurance_manifest": "d1fdd9308b973e5248e464daf528a376bca6bc6c27b9d45f267b88f842797465",
+          "decision_policy": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f",
+          "evidence_fixture": "21ed78284567bc33bb463fb2525941829b80c7e21144d17677f022d168a3c2de",
+          "intelligence_fixture": "e2204ab8ff8736c0826ffe24d518cef462a75dcea7e498943506b0fe7f41ff1f"
+        }
+      },
+      "state_before": {
+        "content_hashes": {
+          "asset_fixture": "bc9cb98980010ca2bc1c123e808296a2e17bb34a5735cf42cd07e1efcfc64395",
+          "assurance_manifest": "d1fdd9308b973e5248e464daf528a376bca6bc6c27b9d45f267b88f842797465",
+          "decision_policy": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f",
+          "evidence_fixture": "21ed78284567bc33bb463fb2525941829b80c7e21144d17677f022d168a3c2de",
+          "intelligence_fixture": "e2204ab8ff8736c0826ffe24d518cef462a75dcea7e498943506b0fe7f41ff1f"
+        }
+      },
+      "unsafe_decision_released": false
+    },
+    {
+      "control_tags": [
+        "concurrency",
+        "event_order"
+      ],
+      "defended": true,
+      "description": "Inputs from incompatible logical times require retry.",
+      "details": {
+        "logical_time_spread_seconds": 300.0
+      },
+      "detection_oracles": [
+        "SNAPSHOT_CONSISTENCY_GUARD"
+      ],
+      "error": null,
+      "evidence_revision": null,
+      "expectation_met": true,
+      "expected_outcomes": [
+        "RETRY_REQUIRED"
+      ],
+      "family": "mixed_logical_time",
+      "finding_codes": [
+        "SNAPSHOT_LOGICAL_TIME_SKEW"
+      ],
+      "findings": [
+        {
+          "code": "SNAPSHOT_LOGICAL_TIME_SKEW",
+          "control": "SNAPSHOT_CONSISTENCY_GUARD",
+          "message": "Decision inputs are not from one coherent logical time."
+        }
+      ],
+      "first_blocking_control": "SNAPSHOT_CONSISTENCY_GUARD",
+      "handler": "snapshot",
+      "idempotency_consistent": true,
+      "ingestion_time": null,
+      "logical_evaluation_time": "2026-07-13T17:03:00+00:00",
+      "outcome": "RETRY_REQUIRED",
+      "policy_version": "1.0.0",
+      "raw_outcome": "RETRY_REQUIRED",
+      "scenario_id": "TEMP-SNAPSHOT-MIXED-TIME-001",
+      "sequence_identifier": null,
+      "severity": "critical",
+      "source_event_time": null,
+      "state_after": {
+        "content_hashes": {
+          "asset_fixture": "bc9cb98980010ca2bc1c123e808296a2e17bb34a5735cf42cd07e1efcfc64395",
+          "assurance_manifest": "d1fdd9308b973e5248e464daf528a376bca6bc6c27b9d45f267b88f842797465",
+          "decision_policy": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f",
+          "evidence_fixture": "21ed78284567bc33bb463fb2525941829b80c7e21144d17677f022d168a3c2de",
+          "intelligence_fixture": "e2204ab8ff8736c0826ffe24d518cef462a75dcea7e498943506b0fe7f41ff1f"
+        }
+      },
+      "state_before": {
+        "content_hashes": {
+          "asset_fixture": "bc9cb98980010ca2bc1c123e808296a2e17bb34a5735cf42cd07e1efcfc64395",
+          "assurance_manifest": "d1fdd9308b973e5248e464daf528a376bca6bc6c27b9d45f267b88f842797465",
+          "decision_policy": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f",
+          "evidence_fixture": "21ed78284567bc33bb463fb2525941829b80c7e21144d17677f022d168a3c2de",
+          "intelligence_fixture": "e2204ab8ff8736c0826ffe24d518cef462a75dcea7e498943506b0fe7f41ff1f"
+        }
+      },
+      "unsafe_decision_released": false
+    },
+    {
+      "control_tags": [
+        "concurrency"
+      ],
+      "defended": true,
+      "description": "A partial transaction cannot produce a releasable decision.",
+      "details": {},
+      "detection_oracles": [
+        "ATOMICITY_GUARD"
+      ],
+      "error": null,
+      "evidence_revision": null,
+      "expectation_met": true,
+      "expected_outcomes": [
+        "RETRY_REQUIRED"
+      ],
+      "family": "partial_transaction",
+      "finding_codes": [
+        "ATOMIC_SNAPSHOT_NOT_COMMITTED"
+      ],
+      "findings": [
+        {
+          "code": "ATOMIC_SNAPSHOT_NOT_COMMITTED",
+          "control": "ATOMICITY_GUARD",
+          "message": "The decision snapshot is incomplete and must be retried."
+        }
+      ],
+      "first_blocking_control": "ATOMICITY_GUARD",
+      "handler": "snapshot",
+      "idempotency_consistent": true,
+      "ingestion_time": null,
+      "logical_evaluation_time": "2026-07-13T17:03:00+00:00",
+      "outcome": "RETRY_REQUIRED",
+      "policy_version": "1.0.0",
+      "raw_outcome": "RETRY_REQUIRED",
+      "scenario_id": "TEMP-SNAPSHOT-PARTIAL-TX-001",
+      "sequence_identifier": null,
+      "severity": "critical",
+      "source_event_time": null,
+      "state_after": {
+        "content_hashes": {
+          "asset_fixture": "bc9cb98980010ca2bc1c123e808296a2e17bb34a5735cf42cd07e1efcfc64395",
+          "assurance_manifest": "d1fdd9308b973e5248e464daf528a376bca6bc6c27b9d45f267b88f842797465",
+          "decision_policy": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f",
+          "evidence_fixture": "21ed78284567bc33bb463fb2525941829b80c7e21144d17677f022d168a3c2de",
+          "intelligence_fixture": "e2204ab8ff8736c0826ffe24d518cef462a75dcea7e498943506b0fe7f41ff1f"
+        }
+      },
+      "state_before": {
+        "content_hashes": {
+          "asset_fixture": "bc9cb98980010ca2bc1c123e808296a2e17bb34a5735cf42cd07e1efcfc64395",
+          "assurance_manifest": "d1fdd9308b973e5248e464daf528a376bca6bc6c27b9d45f267b88f842797465",
+          "decision_policy": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f",
+          "evidence_fixture": "21ed78284567bc33bb463fb2525941829b80c7e21144d17677f022d168a3c2de",
+          "intelligence_fixture": "e2204ab8ff8736c0826ffe24d518cef462a75dcea7e498943506b0fe7f41ff1f"
+        }
+      },
+      "unsafe_decision_released": false
+    },
+    {
+      "control_tags": [
+        "concurrency",
+        "toctou"
+      ],
+      "defended": true,
+      "description": "A missing manifest commit requires retry.",
+      "details": {},
+      "detection_oracles": [
+        "ATOMICITY_GUARD"
+      ],
+      "error": null,
+      "evidence_revision": null,
+      "expectation_met": true,
+      "expected_outcomes": [
+        "RETRY_REQUIRED"
+      ],
+      "family": "manifest_commit_gap",
+      "finding_codes": [
+        "ATOMIC_SNAPSHOT_NOT_COMMITTED"
+      ],
+      "findings": [
+        {
+          "code": "ATOMIC_SNAPSHOT_NOT_COMMITTED",
+          "control": "ATOMICITY_GUARD",
+          "message": "The decision snapshot is incomplete and must be retried."
+        }
+      ],
+      "first_blocking_control": "ATOMICITY_GUARD",
+      "handler": "snapshot",
+      "idempotency_consistent": true,
+      "ingestion_time": null,
+      "logical_evaluation_time": "2026-07-13T17:03:00+00:00",
+      "outcome": "RETRY_REQUIRED",
+      "policy_version": "1.0.0",
+      "raw_outcome": "RETRY_REQUIRED",
+      "scenario_id": "TEMP-SNAPSHOT-MANIFEST-GAP-001",
+      "sequence_identifier": null,
+      "severity": "critical",
+      "source_event_time": null,
+      "state_after": {
+        "content_hashes": {
+          "asset_fixture": "bc9cb98980010ca2bc1c123e808296a2e17bb34a5735cf42cd07e1efcfc64395",
+          "assurance_manifest": "d1fdd9308b973e5248e464daf528a376bca6bc6c27b9d45f267b88f842797465",
+          "decision_policy": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f",
+          "evidence_fixture": "21ed78284567bc33bb463fb2525941829b80c7e21144d17677f022d168a3c2de",
+          "intelligence_fixture": "e2204ab8ff8736c0826ffe24d518cef462a75dcea7e498943506b0fe7f41ff1f"
+        }
+      },
+      "state_before": {
+        "content_hashes": {
+          "asset_fixture": "bc9cb98980010ca2bc1c123e808296a2e17bb34a5735cf42cd07e1efcfc64395",
+          "assurance_manifest": "d1fdd9308b973e5248e464daf528a376bca6bc6c27b9d45f267b88f842797465",
+          "decision_policy": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f",
+          "evidence_fixture": "21ed78284567bc33bb463fb2525941829b80c7e21144d17677f022d168a3c2de",
+          "intelligence_fixture": "e2204ab8ff8736c0826ffe24d518cef462a75dcea7e498943506b0fe7f41ff1f"
+        }
+      },
+      "unsafe_decision_released": false
+    },
+    {
+      "control_tags": [
+        "concurrency",
+        "stale_evidence"
+      ],
+      "defended": true,
+      "description": "An older cache revision cannot override authoritative state.",
+      "details": {},
+      "detection_oracles": [
+        "CACHE_FRESHNESS_GUARD"
+      ],
+      "error": null,
+      "evidence_revision": null,
+      "expectation_met": true,
+      "expected_outcomes": [
+        "REJECTED_STALE"
+      ],
+      "family": "cache_staleness",
+      "finding_codes": [
+        "CACHE_REVISION_STALE"
+      ],
+      "findings": [
+        {
+          "code": "CACHE_REVISION_STALE",
+          "control": "CACHE_FRESHNESS_GUARD",
+          "message": "Cached state is older than the required authoritative revision."
+        }
+      ],
+      "first_blocking_control": "CACHE_FRESHNESS_GUARD",
+      "handler": "snapshot",
+      "idempotency_consistent": true,
+      "ingestion_time": null,
+      "logical_evaluation_time": "2026-07-13T17:03:00+00:00",
+      "outcome": "REJECTED_STALE",
+      "policy_version": "1.0.0",
+      "raw_outcome": "REJECTED_STALE",
+      "scenario_id": "TEMP-CACHE-STALE-001",
+      "sequence_identifier": null,
+      "severity": "critical",
+      "source_event_time": null,
+      "state_after": {
+        "content_hashes": {
+          "asset_fixture": "bc9cb98980010ca2bc1c123e808296a2e17bb34a5735cf42cd07e1efcfc64395",
+          "assurance_manifest": "d1fdd9308b973e5248e464daf528a376bca6bc6c27b9d45f267b88f842797465",
+          "decision_policy": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f",
+          "evidence_fixture": "21ed78284567bc33bb463fb2525941829b80c7e21144d17677f022d168a3c2de",
+          "intelligence_fixture": "e2204ab8ff8736c0826ffe24d518cef462a75dcea7e498943506b0fe7f41ff1f"
+        }
+      },
+      "state_before": {
+        "content_hashes": {
+          "asset_fixture": "bc9cb98980010ca2bc1c123e808296a2e17bb34a5735cf42cd07e1efcfc64395",
+          "assurance_manifest": "d1fdd9308b973e5248e464daf528a376bca6bc6c27b9d45f267b88f842797465",
+          "decision_policy": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f",
+          "evidence_fixture": "21ed78284567bc33bb463fb2525941829b80c7e21144d17677f022d168a3c2de",
+          "intelligence_fixture": "e2204ab8ff8736c0826ffe24d518cef462a75dcea7e498943506b0fe7f41ff1f"
+        }
+      },
+      "unsafe_decision_released": false
+    },
+    {
+      "control_tags": [
+        "toctou"
+      ],
+      "defended": true,
+      "description": "Evidence changing after validation blocks release.",
+      "details": {
+        "changed_inputs": [
+          "evidence_fixture"
+        ]
+      },
+      "detection_oracles": [
+        "TOCTOU_GUARD"
+      ],
+      "error": null,
+      "evidence_revision": null,
+      "expectation_met": true,
+      "expected_outcomes": [
+        "BLOCKED_INTEGRITY_CHANGE"
+      ],
+      "family": "evidence_toctou",
+      "finding_codes": [
+        "SNAPSHOT_CONTENT_CHANGED_AFTER_VALIDATION"
+      ],
+      "findings": [
+        {
+          "code": "SNAPSHOT_CONTENT_CHANGED_AFTER_VALIDATION",
+          "control": "TOCTOU_GUARD",
+          "message": "One or more decision inputs changed after validation."
+        }
+      ],
+      "first_blocking_control": "TOCTOU_GUARD",
+      "handler": "snapshot",
+      "idempotency_consistent": true,
+      "ingestion_time": null,
+      "logical_evaluation_time": "2026-07-13T17:03:00+00:00",
+      "outcome": "BLOCKED_INTEGRITY_CHANGE",
+      "policy_version": "1.0.0",
+      "raw_outcome": "BLOCKED_INTEGRITY_CHANGE",
+      "scenario_id": "TEMP-TOCTOU-EVIDENCE-001",
+      "sequence_identifier": null,
+      "severity": "critical",
+      "source_event_time": null,
+      "state_after": {
+        "content_hashes": {
+          "asset_fixture": "bc9cb98980010ca2bc1c123e808296a2e17bb34a5735cf42cd07e1efcfc64395",
+          "assurance_manifest": "d1fdd9308b973e5248e464daf528a376bca6bc6c27b9d45f267b88f842797465",
+          "decision_policy": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f",
+          "evidence_fixture": "6af9a5decbb4494cd1ff080ce526f755ba398da00cbb5db2e57b96b823459d0c",
+          "intelligence_fixture": "e2204ab8ff8736c0826ffe24d518cef462a75dcea7e498943506b0fe7f41ff1f"
+        }
+      },
+      "state_before": {
+        "content_hashes": {
+          "asset_fixture": "bc9cb98980010ca2bc1c123e808296a2e17bb34a5735cf42cd07e1efcfc64395",
+          "assurance_manifest": "d1fdd9308b973e5248e464daf528a376bca6bc6c27b9d45f267b88f842797465",
+          "decision_policy": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f",
+          "evidence_fixture": "21ed78284567bc33bb463fb2525941829b80c7e21144d17677f022d168a3c2de",
+          "intelligence_fixture": "e2204ab8ff8736c0826ffe24d518cef462a75dcea7e498943506b0fe7f41ff1f"
+        }
+      },
+      "unsafe_decision_released": false
+    },
+    {
+      "control_tags": [
+        "policy_version",
+        "toctou"
+      ],
+      "defended": true,
+      "description": "Policy bytes changing without a version bump are blocked.",
+      "details": {},
+      "detection_oracles": [
+        "TOCTOU_GUARD"
+      ],
+      "error": null,
+      "evidence_revision": null,
+      "expectation_met": true,
+      "expected_outcomes": [
+        "BLOCKED_INTEGRITY_CHANGE"
+      ],
+      "family": "policy_toctou",
+      "finding_codes": [
+        "POLICY_BYTES_CHANGED_WITHOUT_VERSION_CHANGE"
+      ],
+      "findings": [
+        {
+          "code": "POLICY_BYTES_CHANGED_WITHOUT_VERSION_CHANGE",
+          "control": "TOCTOU_GUARD",
+          "message": "Policy content changed while retaining the same version."
+        }
+      ],
+      "first_blocking_control": "TOCTOU_GUARD",
+      "handler": "policy_pin",
+      "idempotency_consistent": true,
+      "ingestion_time": null,
+      "logical_evaluation_time": "2026-07-13T17:03:00+00:00",
+      "outcome": "BLOCKED_INTEGRITY_CHANGE",
+      "policy_version": "1.0.0",
+      "raw_outcome": "BLOCKED_INTEGRITY_CHANGE",
+      "scenario_id": "TEMP-TOCTOU-POLICY-BYTES-001",
+      "sequence_identifier": null,
+      "severity": "critical",
+      "source_event_time": null,
+      "state_after": {
+        "policy_sha256": "08b3903b9dcec8c36aedf8a6f5073011082edfccd9b9e17dad0ff3f4a688262f"
+      },
+      "state_before": {
+        "policy_sha256": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f"
+      },
+      "unsafe_decision_released": false
+    },
+    {
+      "control_tags": [
+        "concurrency",
+        "toctou"
+      ],
+      "defended": true,
+      "description": "Revocation before release invalidates the snapshot.",
+      "details": {
+        "revoked_record_ids": [
+          "AEG-EVD-SBOM-LOG4J-001"
+        ]
+      },
+      "detection_oracles": [
+        "REVOCATION_GUARD"
+      ],
+      "error": null,
+      "evidence_revision": null,
+      "expectation_met": true,
+      "expected_outcomes": [
+        "BLOCKED_INTEGRITY_CHANGE"
+      ],
+      "family": "revocation_race",
+      "finding_codes": [
+        "SNAPSHOT_CONTAINS_REVOKED_RECORD"
+      ],
+      "findings": [
+        {
+          "code": "SNAPSHOT_CONTAINS_REVOKED_RECORD",
+          "control": "REVOCATION_GUARD",
+          "message": "A record was revoked before decision release."
+        }
+      ],
+      "first_blocking_control": "REVOCATION_GUARD",
+      "handler": "snapshot",
+      "idempotency_consistent": true,
+      "ingestion_time": null,
+      "logical_evaluation_time": "2026-07-13T17:03:00+00:00",
+      "outcome": "BLOCKED_INTEGRITY_CHANGE",
+      "policy_version": "1.0.0",
+      "raw_outcome": "BLOCKED_INTEGRITY_CHANGE",
+      "scenario_id": "TEMP-REVOCATION-RACE-001",
+      "sequence_identifier": null,
+      "severity": "critical",
+      "source_event_time": null,
+      "state_after": {
+        "content_hashes": {
+          "asset_fixture": "bc9cb98980010ca2bc1c123e808296a2e17bb34a5735cf42cd07e1efcfc64395",
+          "assurance_manifest": "d1fdd9308b973e5248e464daf528a376bca6bc6c27b9d45f267b88f842797465",
+          "decision_policy": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f",
+          "evidence_fixture": "21ed78284567bc33bb463fb2525941829b80c7e21144d17677f022d168a3c2de",
+          "intelligence_fixture": "e2204ab8ff8736c0826ffe24d518cef462a75dcea7e498943506b0fe7f41ff1f"
+        }
+      },
+      "state_before": {
+        "content_hashes": {
+          "asset_fixture": "bc9cb98980010ca2bc1c123e808296a2e17bb34a5735cf42cd07e1efcfc64395",
+          "assurance_manifest": "d1fdd9308b973e5248e464daf528a376bca6bc6c27b9d45f267b88f842797465",
+          "decision_policy": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f",
+          "evidence_fixture": "21ed78284567bc33bb463fb2525941829b80c7e21144d17677f022d168a3c2de",
+          "intelligence_fixture": "e2204ab8ff8736c0826ffe24d518cef462a75dcea7e498943506b0fe7f41ff1f"
+        }
+      },
+      "unsafe_decision_released": false
+    },
+    {
+      "control_tags": [
+        "replay",
+        "toctou"
+      ],
+      "defended": true,
+      "description": "A decision cannot be replayed after an input hash changes.",
+      "details": {
+        "calculated_decision_hash": "0356a26dcd7f1dd3aabc8e645b575520f95e266e85559c1b7710bc3b2dc306e3",
+        "decision_hash_valid": true,
+        "decision_validation_status": "accepted_with_warnings",
+        "stored_decision_hash": "0356a26dcd7f1dd3aabc8e645b575520f95e266e85559c1b7710bc3b2dc306e3",
+        "variant": "input_hash_changed"
+      },
+      "detection_oracles": [
+        "DECISION_RECORD_HASH",
+        "DECISION_RECORD_VALIDATOR",
+        "DECISION_REPLAY_GUARD"
+      ],
+      "error": null,
+      "evidence_revision": null,
+      "expectation_met": true,
+      "expected_outcomes": [
+        "REJECTED_REPLAY"
+      ],
+      "family": "decision_input_replay",
+      "finding_codes": [
+        "DECISION_INPUT_HASH_SUPERSEDED"
+      ],
+      "findings": [
+        {
+          "code": "DECISION_INPUT_HASH_SUPERSEDED",
+          "control": "DECISION_REPLAY_GUARD",
+          "message": "A referenced input hash differs from the current authoritative hash."
+        }
+      ],
+      "first_blocking_control": "DECISION_RECORD_HASH",
+      "handler": "decision_replay",
+      "idempotency_consistent": true,
+      "ingestion_time": null,
+      "logical_evaluation_time": "2026-07-13T17:03:00+00:00",
+      "outcome": "REJECTED_REPLAY",
+      "policy_version": "1.0.0",
+      "raw_outcome": "REJECTED_REPLAY",
+      "scenario_id": "TEMP-DECISION-INPUT-REPLAY-001",
+      "sequence_identifier": null,
+      "severity": "critical",
+      "source_event_time": null,
+      "state_after": {
+        "decision_hash": "9a1bf993b18a1223b8dcc0f2eaefac319cbabe445ff670c1871fb9cdf79e7a3d"
+      },
+      "state_before": {
+        "decision_hash": "0356a26dcd7f1dd3aabc8e645b575520f95e266e85559c1b7710bc3b2dc306e3"
+      },
+      "unsafe_decision_released": false
+    },
+    {
+      "control_tags": [
+        "policy_version"
+      ],
+      "defended": true,
+      "description": "Decision policy version must match the active pinned policy.",
+      "details": {
+        "calculated_decision_hash": "0356a26dcd7f1dd3aabc8e645b575520f95e266e85559c1b7710bc3b2dc306e3",
+        "decision_hash_valid": true,
+        "decision_validation_status": "accepted_with_warnings",
+        "stored_decision_hash": "0356a26dcd7f1dd3aabc8e645b575520f95e266e85559c1b7710bc3b2dc306e3",
+        "variant": "decision_policy_version_mismatch"
+      },
+      "detection_oracles": [
+        "DECISION_RECORD_HASH",
+        "DECISION_RECORD_VALIDATOR",
+        "POLICY_VERSION_PIN"
+      ],
+      "error": null,
+      "evidence_revision": null,
+      "expectation_met": true,
+      "expected_outcomes": [
+        "BLOCKED_VERSION_DRIFT"
+      ],
+      "family": "decision_policy_version_drift",
+      "finding_codes": [
+        "DECISION_POLICY_VERSION_NOT_CURRENT"
+      ],
+      "findings": [
+        {
+          "code": "DECISION_POLICY_VERSION_NOT_CURRENT",
+          "control": "POLICY_VERSION_PIN",
+          "message": "The decision was produced under a non-current policy version."
+        }
+      ],
+      "first_blocking_control": "DECISION_RECORD_HASH",
+      "handler": "decision_replay",
+      "idempotency_consistent": true,
+      "ingestion_time": null,
+      "logical_evaluation_time": "2026-07-13T17:03:00+00:00",
+      "outcome": "BLOCKED_VERSION_DRIFT",
+      "policy_version": "0.9.0",
+      "raw_outcome": "BLOCKED_VERSION_DRIFT",
+      "scenario_id": "TEMP-POLICY-DECISION-VERSION-001",
+      "sequence_identifier": null,
+      "severity": "critical",
+      "source_event_time": null,
+      "state_after": {
+        "decision_hash": "0356a26dcd7f1dd3aabc8e645b575520f95e266e85559c1b7710bc3b2dc306e3"
+      },
+      "state_before": {
+        "decision_hash": "0356a26dcd7f1dd3aabc8e645b575520f95e266e85559c1b7710bc3b2dc306e3"
+      },
+      "unsafe_decision_released": false
+    },
+    {
+      "control_tags": [
+        "concurrency",
+        "policy_version"
+      ],
+      "defended": true,
+      "description": "Policy version changes during evaluation block release.",
+      "details": {},
+      "detection_oracles": [
+        "POLICY_VERSION_PIN"
+      ],
+      "error": null,
+      "evidence_revision": null,
+      "expectation_met": true,
+      "expected_outcomes": [
+        "BLOCKED_VERSION_DRIFT"
+      ],
+      "family": "mid_evaluation_policy_change",
+      "finding_codes": [
+        "POLICY_CHANGED_DURING_EVALUATION"
+      ],
+      "findings": [
+        {
+          "code": "POLICY_CHANGED_DURING_EVALUATION",
+          "control": "POLICY_VERSION_PIN",
+          "message": "Policy version changed while the decision was evaluated."
+        }
+      ],
+      "first_blocking_control": "POLICY_VERSION_PIN",
+      "handler": "snapshot",
+      "idempotency_consistent": true,
+      "ingestion_time": null,
+      "logical_evaluation_time": "2026-07-13T17:03:00+00:00",
+      "outcome": "BLOCKED_VERSION_DRIFT",
+      "policy_version": "1.0.0",
+      "raw_outcome": "BLOCKED_VERSION_DRIFT",
+      "scenario_id": "TEMP-POLICY-MID-EVAL-001",
+      "sequence_identifier": null,
+      "severity": "critical",
+      "source_event_time": null,
+      "state_after": {
+        "content_hashes": {
+          "asset_fixture": "bc9cb98980010ca2bc1c123e808296a2e17bb34a5735cf42cd07e1efcfc64395",
+          "assurance_manifest": "d1fdd9308b973e5248e464daf528a376bca6bc6c27b9d45f267b88f842797465",
+          "decision_policy": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f",
+          "evidence_fixture": "21ed78284567bc33bb463fb2525941829b80c7e21144d17677f022d168a3c2de",
+          "intelligence_fixture": "e2204ab8ff8736c0826ffe24d518cef462a75dcea7e498943506b0fe7f41ff1f"
+        }
+      },
+      "state_before": {
+        "content_hashes": {
+          "asset_fixture": "bc9cb98980010ca2bc1c123e808296a2e17bb34a5735cf42cd07e1efcfc64395",
+          "assurance_manifest": "d1fdd9308b973e5248e464daf528a376bca6bc6c27b9d45f267b88f842797465",
+          "decision_policy": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f",
+          "evidence_fixture": "21ed78284567bc33bb463fb2525941829b80c7e21144d17677f022d168a3c2de",
+          "intelligence_fixture": "e2204ab8ff8736c0826ffe24d518cef462a75dcea7e498943506b0fe7f41ff1f"
+        }
+      },
+      "unsafe_decision_released": false
+    },
+    {
+      "control_tags": [
+        "policy_version"
+      ],
+      "defended": true,
+      "description": "Events from an unpinned policy version are blocked.",
+      "details": {
+        "state_changed": false
+      },
+      "detection_oracles": [
+        "POLICY_VERSION_PIN"
+      ],
+      "error": null,
+      "evidence_revision": 2,
+      "expectation_met": true,
+      "expected_outcomes": [
+        "BLOCKED_VERSION_DRIFT"
+      ],
+      "family": "event_policy_version_drift",
+      "finding_codes": [
+        "EVENT_POLICY_VERSION_DRIFT"
+      ],
+      "findings": [
+        {
+          "code": "EVENT_POLICY_VERSION_DRIFT",
+          "control": "POLICY_VERSION_PIN",
+          "message": "The event policy version differs from the pinned stream version."
+        }
+      ],
+      "first_blocking_control": "POLICY_VERSION_PIN",
+      "handler": "event",
+      "idempotency_consistent": true,
+      "ingestion_time": "2026-07-13T17:00:30+00:00",
+      "logical_evaluation_time": "2026-07-13T17:03:00+00:00",
+      "outcome": "BLOCKED_VERSION_DRIFT",
+      "policy_version": "1.1.0",
+      "raw_outcome": "BLOCKED_VERSION_DRIFT",
+      "scenario_id": "TEMP-POLICY-EVENT-VERSION-001",
+      "sequence_identifier": 2,
+      "severity": "critical",
+      "source_event_time": "2026-07-13T17:00:20+00:00",
+      "state_after": {
+        "last_event_time": "2026-07-13T17:00:00+00:00",
+        "last_revision": 1,
+        "last_sequence": 1,
+        "revoked": false
+      },
+      "state_before": {
+        "last_event_time": "2026-07-13T17:00:00+00:00",
+        "last_revision": 1,
+        "last_sequence": 1,
+        "revoked": false
+      },
+      "unsafe_decision_released": false
+    },
+    {
+      "control_tags": [
+        "policy_version"
+      ],
+      "defended": true,
+      "description": "Snapshot start version must equal the expected pin.",
+      "details": {},
+      "detection_oracles": [
+        "POLICY_VERSION_PIN"
+      ],
+      "error": null,
+      "evidence_revision": null,
+      "expectation_met": true,
+      "expected_outcomes": [
+        "BLOCKED_VERSION_DRIFT"
+      ],
+      "family": "snapshot_policy_pin_mismatch",
+      "finding_codes": [
+        "SNAPSHOT_POLICY_VERSION_NOT_PINNED"
+      ],
+      "findings": [
+        {
+          "code": "SNAPSHOT_POLICY_VERSION_NOT_PINNED",
+          "control": "POLICY_VERSION_PIN",
+          "message": "Snapshot began under an unexpected policy version."
+        }
+      ],
+      "first_blocking_control": "POLICY_VERSION_PIN",
+      "handler": "snapshot",
+      "idempotency_consistent": true,
+      "ingestion_time": null,
+      "logical_evaluation_time": "2026-07-13T17:03:00+00:00",
+      "outcome": "BLOCKED_VERSION_DRIFT",
+      "policy_version": "0.9.0",
+      "raw_outcome": "BLOCKED_VERSION_DRIFT",
+      "scenario_id": "TEMP-POLICY-SNAPSHOT-PIN-001",
+      "sequence_identifier": null,
+      "severity": "critical",
+      "source_event_time": null,
+      "state_after": {
+        "content_hashes": {
+          "asset_fixture": "bc9cb98980010ca2bc1c123e808296a2e17bb34a5735cf42cd07e1efcfc64395",
+          "assurance_manifest": "d1fdd9308b973e5248e464daf528a376bca6bc6c27b9d45f267b88f842797465",
+          "decision_policy": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f",
+          "evidence_fixture": "21ed78284567bc33bb463fb2525941829b80c7e21144d17677f022d168a3c2de",
+          "intelligence_fixture": "e2204ab8ff8736c0826ffe24d518cef462a75dcea7e498943506b0fe7f41ff1f"
+        }
+      },
+      "state_before": {
+        "content_hashes": {
+          "asset_fixture": "bc9cb98980010ca2bc1c123e808296a2e17bb34a5735cf42cd07e1efcfc64395",
+          "assurance_manifest": "d1fdd9308b973e5248e464daf528a376bca6bc6c27b9d45f267b88f842797465",
+          "decision_policy": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f",
+          "evidence_fixture": "21ed78284567bc33bb463fb2525941829b80c7e21144d17677f022d168a3c2de",
+          "intelligence_fixture": "e2204ab8ff8736c0826ffe24d518cef462a75dcea7e498943506b0fe7f41ff1f"
+        }
+      },
+      "unsafe_decision_released": false
+    },
+    {
+      "control_tags": [
+        "idempotency",
+        "policy_version"
+      ],
+      "defended": true,
+      "description": "An exact policy version and byte pin is accepted.",
+      "details": {},
+      "detection_oracles": [
+        "POLICY_VERSION_PIN"
+      ],
+      "error": null,
+      "evidence_revision": null,
+      "expectation_met": true,
+      "expected_outcomes": [
+        "ACCEPTED_CURRENT"
+      ],
+      "family": "valid_policy_pin",
+      "finding_codes": [
+        "POLICY_VERSION_PIN_VERIFIED"
+      ],
+      "findings": [
+        {
+          "code": "POLICY_VERSION_PIN_VERIFIED",
+          "control": "POLICY_VERSION_PIN",
+          "message": "Policy version and content pin are consistent."
+        }
+      ],
+      "first_blocking_control": null,
+      "handler": "policy_pin",
+      "idempotency_consistent": true,
+      "ingestion_time": null,
+      "logical_evaluation_time": "2026-07-13T17:03:00+00:00",
+      "outcome": "ACCEPTED_CURRENT",
+      "policy_version": "1.0.0",
+      "raw_outcome": "ACCEPTED_CURRENT",
+      "scenario_id": "TEMP-POLICY-PIN-VALID-001",
+      "sequence_identifier": null,
+      "severity": "critical",
+      "source_event_time": null,
+      "state_after": {
+        "policy_sha256": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f"
+      },
+      "state_before": {
+        "policy_sha256": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f"
+      },
+      "unsafe_decision_released": false
+    },
+    {
+      "control_tags": [
+        "replay"
+      ],
+      "defended": true,
+      "description": "A superseded decision hash cannot be reused.",
+      "details": {
+        "calculated_decision_hash": "0356a26dcd7f1dd3aabc8e645b575520f95e266e85559c1b7710bc3b2dc306e3",
+        "decision_hash_valid": true,
+        "decision_validation_status": "accepted_with_warnings",
+        "stored_decision_hash": "0356a26dcd7f1dd3aabc8e645b575520f95e266e85559c1b7710bc3b2dc306e3",
+        "variant": "superseded_decision"
+      },
+      "detection_oracles": [
+        "DECISION_RECORD_HASH",
+        "DECISION_RECORD_VALIDATOR",
+        "DECISION_REPLAY_GUARD"
+      ],
+      "error": null,
+      "evidence_revision": null,
+      "expectation_met": true,
+      "expected_outcomes": [
+        "REJECTED_REPLAY"
+      ],
+      "family": "superseded_decision_replay",
+      "finding_codes": [
+        "DECISION_RECORD_SUPERSEDED"
+      ],
+      "findings": [
+        {
+          "code": "DECISION_RECORD_SUPERSEDED",
+          "control": "DECISION_REPLAY_GUARD",
+          "message": "A newer authoritative Decision Record supersedes this record hash."
+        }
+      ],
+      "first_blocking_control": "DECISION_RECORD_HASH",
+      "handler": "decision_replay",
+      "idempotency_consistent": true,
+      "ingestion_time": null,
+      "logical_evaluation_time": "2026-07-13T17:03:00+00:00",
+      "outcome": "REJECTED_REPLAY",
+      "policy_version": "1.0.0",
+      "raw_outcome": "REJECTED_REPLAY",
+      "scenario_id": "TEMP-DECISION-SUPERSEDED-001",
+      "sequence_identifier": null,
+      "severity": "critical",
+      "source_event_time": null,
+      "state_after": {
+        "decision_hash": "9a1bf993b18a1223b8dcc0f2eaefac319cbabe445ff670c1871fb9cdf79e7a3d"
+      },
+      "state_before": {
+        "decision_hash": "0356a26dcd7f1dd3aabc8e645b575520f95e266e85559c1b7710bc3b2dc306e3"
+      },
+      "unsafe_decision_released": false
+    },
+    {
+      "control_tags": [
+        "idempotency",
+        "replay"
+      ],
+      "defended": true,
+      "description": "Retrying an identical committed transaction is a no-op.",
+      "details": {
+        "state_changed": false
+      },
+      "detection_oracles": [
+        "IDEMPOTENCY_GUARD"
+      ],
+      "error": null,
+      "evidence_revision": 1,
+      "expectation_met": true,
+      "expected_outcomes": [
+        "ACCEPTED_CURRENT"
+      ],
+      "family": "idempotent_transaction_retry",
+      "finding_codes": [
+        "IDEMPOTENT_EVENT_REPLAY_NOOP"
+      ],
+      "findings": [
+        {
+          "code": "IDEMPOTENT_EVENT_REPLAY_NOOP",
+          "control": "IDEMPOTENCY_GUARD",
+          "message": "An identical replay was treated as a no-op."
+        }
+      ],
+      "first_blocking_control": null,
+      "handler": "event",
+      "idempotency_consistent": true,
+      "ingestion_time": "2026-07-13T17:00:10+00:00",
+      "logical_evaluation_time": "2026-07-13T17:03:00+00:00",
+      "outcome": "ACCEPTED_CURRENT",
+      "policy_version": "1.0.0",
+      "raw_outcome": "ACCEPTED_CURRENT",
+      "scenario_id": "TEMP-IDEMPOTENT-TRANSACTION-001",
+      "sequence_identifier": 1,
+      "severity": "critical",
+      "source_event_time": "2026-07-13T17:00:00+00:00",
+      "state_after": {
+        "last_event_time": "2026-07-13T17:00:00+00:00",
+        "last_revision": 1,
+        "last_sequence": 1,
+        "revoked": false
+      },
+      "state_before": {
+        "last_event_time": "2026-07-13T17:00:00+00:00",
+        "last_revision": 1,
+        "last_sequence": 1,
+        "revoked": false
+      },
+      "unsafe_decision_released": false
+    }
+  ],
+  "schema_version": "1.0.0",
+  "summary": {
+    "accepted_current_count": 7,
+    "blocked_integrity_change_count": 4,
+    "blocked_version_drift_count": 4,
+    "concurrent_conflict_containment_rate": 1.0,
+    "critical_scenario_count": 36,
+    "critical_temporal_scenario_defence_rate": 1.0,
+    "defended_critical_count": 36,
+    "event_order_integrity_rate": 1.0,
+    "harness_error_count": 0,
+    "idempotency_consistency_rate": 1.0,
+    "overall_passed": true,
+    "policy_version_consistency_rate": 1.0,
+    "quarantined_conflict_count": 6,
+    "rejected_replay_count": 5,
+    "rejected_stale_count": 7,
+    "replay_detection_rate": 1.0,
+    "retry_required_count": 3,
+    "scenario_count": 36,
+    "stale_evidence_rejection_rate": 1.0,
+    "toctou_detection_rate": 1.0,
+    "trusted_input_integrity_passed": true,
+    "undetected_count": 0,
+    "unsafe_decision_release_count": 0
+  },
+  "undetected_scenario_ids": [],
+  "unsafe_release_scenario_ids": []
+}
