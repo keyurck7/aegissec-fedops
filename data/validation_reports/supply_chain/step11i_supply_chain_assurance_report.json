@@ -1,0 +1,5401 @@
+{
+  "catalog": {
+    "catalog_id": "AEGIS-SUPPLY-CHAIN-SCENARIO-CATALOG",
+    "path": "policies/assurance/supply_chain_scenario_catalog_v1.yaml",
+    "sha256": "66e28ce6e25b453f732a126ec547ea0e7f657f9532d3ee56bee7b7d5c36ad90f",
+    "version": "1.0.0"
+  },
+  "deterministic_clock": {
+    "evaluation_time": "2026-07-15T12:00:00+00:00",
+    "network_requests_used_for_scenarios": false,
+    "production_signing_keys_used": false,
+    "wall_clock_reads_used_for_scenarios": false
+  },
+  "generated_at": "2026-07-15T12:00:00+00:00",
+  "harness_error_scenario_ids": [],
+  "input_integrity_checks_after": {
+    "decision_hashing": {
+      "actual_sha256": "3b0a1eff5d2b97064d6dfb43936dde0bf2b1c23574a447afae13e2b02886853f",
+      "exists": true,
+      "expected_sha256": "3b0a1eff5d2b97064d6dfb43936dde0bf2b1c23574a447afae13e2b02886853f",
+      "passed": true,
+      "relative_path": "src/domain/decision_hashing.py",
+      "safe_path": true
+    },
+    "decision_policy": {
+      "actual_sha256": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f",
+      "exists": true,
+      "expected_sha256": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f",
+      "passed": true,
+      "relative_path": "policies/decision/federal_base_policy_v1.yaml",
+      "safe_path": true
+    },
+    "evidence_schema": {
+      "actual_sha256": "adaef9c4a1a837fddebee3d40cc03d6d99592682b3c42f1c24dded2fc74ce772",
+      "exists": true,
+      "expected_sha256": "adaef9c4a1a837fddebee3d40cc03d6d99592682b3c42f1c24dded2fc74ce772",
+      "passed": true,
+      "relative_path": "schemas/aegis_evidence_record.schema.json",
+      "safe_path": true
+    },
+    "evidence_trust_engine": {
+      "actual_sha256": "78943367308a8fcc07e085da0e45fe75013f216d23f0fac3f1e749f148c74fc7",
+      "exists": true,
+      "expected_sha256": "78943367308a8fcc07e085da0e45fe75013f216d23f0fac3f1e749f148c74fc7",
+      "passed": true,
+      "relative_path": "src/governance/evidence_trust_engine.py",
+      "safe_path": true
+    },
+    "osv_client": {
+      "actual_sha256": "26daa6892a852705f5dd2dc5c9f7ec9642ba4f5a6b5f8d5a2ba49290f027c83f",
+      "exists": true,
+      "expected_sha256": "26daa6892a852705f5dd2dc5c9f7ec9642ba4f5a6b5f8d5a2ba49290f027c83f",
+      "passed": true,
+      "relative_path": "src/intelligence/osv_client.py",
+      "safe_path": true
+    },
+    "package_json_parser": {
+      "actual_sha256": "031171c1d8b3c5ad7353ba802f89a196130d1e3a5f55697dec2fdedd45c130a7",
+      "exists": true,
+      "expected_sha256": "031171c1d8b3c5ad7353ba802f89a196130d1e3a5f55697dec2fdedd45c130a7",
+      "passed": true,
+      "relative_path": "src/ingestion/package_json_parser.py",
+      "safe_path": true
+    },
+    "provenance_verifier": {
+      "actual_sha256": "32e8ecb10969512f2154b06110e27c756835aea0c996f7f6bbe00c70e21b14ee",
+      "exists": true,
+      "expected_sha256": "32e8ecb10969512f2154b06110e27c756835aea0c996f7f6bbe00c70e21b14ee",
+      "passed": true,
+      "relative_path": "src/governance/provenance_verifier.py",
+      "safe_path": true
+    },
+    "release_integrity": {
+      "actual_sha256": "e848f3da19ff905080fad990dd89d34380b6af5e22b1dfbd7e497e57e1fd6912",
+      "exists": true,
+      "expected_sha256": "e848f3da19ff905080fad990dd89d34380b6af5e22b1dfbd7e497e57e1fd6912",
+      "passed": true,
+      "relative_path": "src/governance/release_integrity.py",
+      "safe_path": true
+    },
+    "requirements_manifest": {
+      "actual_sha256": "244bf8706459056e77a57548a623a298501994f4d6183d8f6459c835509eda41",
+      "exists": true,
+      "expected_sha256": "244bf8706459056e77a57548a623a298501994f4d6183d8f6459c835509eda41",
+      "passed": true,
+      "relative_path": "requirements.txt",
+      "safe_path": true
+    },
+    "requirements_parser": {
+      "actual_sha256": "92338e01ed63ba48887736f01a8a16dd0942d7de3f2a3f29b26c0d9acc69c498",
+      "exists": true,
+      "expected_sha256": "92338e01ed63ba48887736f01a8a16dd0942d7de3f2a3f29b26c0d9acc69c498",
+      "passed": true,
+      "relative_path": "src/ingestion/requirements_parser.py",
+      "safe_path": true
+    },
+    "resilience_policy": {
+      "actual_sha256": "c0449072f9dff7ec9991e1a9ba7dc1ddfd9a8791fbef19246e027821f3543387",
+      "exists": true,
+      "expected_sha256": "c0449072f9dff7ec9991e1a9ba7dc1ddfd9a8791fbef19246e027821f3543387",
+      "passed": true,
+      "relative_path": "policies/assurance/resilience_runtime_policy_v1.yaml",
+      "safe_path": true
+    },
+    "resilience_schema": {
+      "actual_sha256": "934be60113f6da4f6eecc97962dc281651758ea6d25df4162b932ff535ed3b4e",
+      "exists": true,
+      "expected_sha256": "934be60113f6da4f6eecc97962dc281651758ea6d25df4162b932ff535ed3b4e",
+      "passed": true,
+      "relative_path": "schemas/aegis_resilience_assurance_report.schema.json",
+      "safe_path": true
+    },
+    "step11h_report": {
+      "actual_sha256": "8b177fed1a8396fb44ad86710d9552e4cdd50fe6ca21cde40f45e44935f20578",
+      "exists": true,
+      "expected_sha256": "8b177fed1a8396fb44ad86710d9552e4cdd50fe6ca21cde40f45e44935f20578",
+      "passed": true,
+      "relative_path": "data/validation_reports/resilience/step11h_resilience_assurance_report.json",
+      "safe_path": true
+    },
+    "supply_chain_assurance": {
+      "actual_sha256": "3966e16f44abc02145ee7fd5660e500c811db9a479e46673c0683717bb99db73",
+      "exists": true,
+      "expected_sha256": "3966e16f44abc02145ee7fd5660e500c811db9a479e46673c0683717bb99db73",
+      "passed": true,
+      "relative_path": "src/assurance/supply_chain_assurance.py",
+      "safe_path": true
+    },
+    "supply_chain_guard": {
+      "actual_sha256": "b5a499dca944c3ae71b4dbff4e1b346304afd3a45351661e3dcdf65612c1f4bc",
+      "exists": true,
+      "expected_sha256": "b5a499dca944c3ae71b4dbff4e1b346304afd3a45351661e3dcdf65612c1f4bc",
+      "passed": true,
+      "relative_path": "src/governance/supply_chain_guard.py",
+      "safe_path": true
+    },
+    "supply_chain_policy": {
+      "actual_sha256": "8426db44a03c6ab2de4215abe7f00af72504fd2260bbce85873baa754176e07c",
+      "exists": true,
+      "expected_sha256": "8426db44a03c6ab2de4215abe7f00af72504fd2260bbce85873baa754176e07c",
+      "passed": true,
+      "relative_path": "policies/assurance/supply_chain_release_policy_v1.yaml",
+      "safe_path": true
+    },
+    "supply_chain_runner": {
+      "actual_sha256": "48100a7f2ac1415bcdcfea854aa00d84fabf671681e8df4efa21181567a34522",
+      "exists": true,
+      "expected_sha256": "48100a7f2ac1415bcdcfea854aa00d84fabf671681e8df4efa21181567a34522",
+      "passed": true,
+      "relative_path": "scripts/run_step11i_supply_chain_assurance.py",
+      "safe_path": true
+    },
+    "supply_chain_schema": {
+      "actual_sha256": "e05183d8688a8d8819a0ccf35a540689c4003d5499c56fe246a0edcef3065b5f",
+      "exists": true,
+      "expected_sha256": "e05183d8688a8d8819a0ccf35a540689c4003d5499c56fe246a0edcef3065b5f",
+      "passed": true,
+      "relative_path": "schemas/aegis_supply_chain_assurance_report.schema.json",
+      "safe_path": true
+    }
+  },
+  "input_integrity_checks_before": {
+    "decision_hashing": {
+      "actual_sha256": "3b0a1eff5d2b97064d6dfb43936dde0bf2b1c23574a447afae13e2b02886853f",
+      "exists": true,
+      "expected_sha256": "3b0a1eff5d2b97064d6dfb43936dde0bf2b1c23574a447afae13e2b02886853f",
+      "passed": true,
+      "relative_path": "src/domain/decision_hashing.py",
+      "safe_path": true
+    },
+    "decision_policy": {
+      "actual_sha256": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f",
+      "exists": true,
+      "expected_sha256": "fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f",
+      "passed": true,
+      "relative_path": "policies/decision/federal_base_policy_v1.yaml",
+      "safe_path": true
+    },
+    "evidence_schema": {
+      "actual_sha256": "adaef9c4a1a837fddebee3d40cc03d6d99592682b3c42f1c24dded2fc74ce772",
+      "exists": true,
+      "expected_sha256": "adaef9c4a1a837fddebee3d40cc03d6d99592682b3c42f1c24dded2fc74ce772",
+      "passed": true,
+      "relative_path": "schemas/aegis_evidence_record.schema.json",
+      "safe_path": true
+    },
+    "evidence_trust_engine": {
+      "actual_sha256": "78943367308a8fcc07e085da0e45fe75013f216d23f0fac3f1e749f148c74fc7",
+      "exists": true,
+      "expected_sha256": "78943367308a8fcc07e085da0e45fe75013f216d23f0fac3f1e749f148c74fc7",
+      "passed": true,
+      "relative_path": "src/governance/evidence_trust_engine.py",
+      "safe_path": true
+    },
+    "osv_client": {
+      "actual_sha256": "26daa6892a852705f5dd2dc5c9f7ec9642ba4f5a6b5f8d5a2ba49290f027c83f",
+      "exists": true,
+      "expected_sha256": "26daa6892a852705f5dd2dc5c9f7ec9642ba4f5a6b5f8d5a2ba49290f027c83f",
+      "passed": true,
+      "relative_path": "src/intelligence/osv_client.py",
+      "safe_path": true
+    },
+    "package_json_parser": {
+      "actual_sha256": "031171c1d8b3c5ad7353ba802f89a196130d1e3a5f55697dec2fdedd45c130a7",
+      "exists": true,
+      "expected_sha256": "031171c1d8b3c5ad7353ba802f89a196130d1e3a5f55697dec2fdedd45c130a7",
+      "passed": true,
+      "relative_path": "src/ingestion/package_json_parser.py",
+      "safe_path": true
+    },
+    "provenance_verifier": {
+      "actual_sha256": "32e8ecb10969512f2154b06110e27c756835aea0c996f7f6bbe00c70e21b14ee",
+      "exists": true,
+      "expected_sha256": "32e8ecb10969512f2154b06110e27c756835aea0c996f7f6bbe00c70e21b14ee",
+      "passed": true,
+      "relative_path": "src/governance/provenance_verifier.py",
+      "safe_path": true
+    },
+    "release_integrity": {
+      "actual_sha256": "e848f3da19ff905080fad990dd89d34380b6af5e22b1dfbd7e497e57e1fd6912",
+      "exists": true,
+      "expected_sha256": "e848f3da19ff905080fad990dd89d34380b6af5e22b1dfbd7e497e57e1fd6912",
+      "passed": true,
+      "relative_path": "src/governance/release_integrity.py",
+      "safe_path": true
+    },
+    "requirements_manifest": {
+      "actual_sha256": "244bf8706459056e77a57548a623a298501994f4d6183d8f6459c835509eda41",
+      "exists": true,
+      "expected_sha256": "244bf8706459056e77a57548a623a298501994f4d6183d8f6459c835509eda41",
+      "passed": true,
+      "relative_path": "requirements.txt",
+      "safe_path": true
+    },
+    "requirements_parser": {
+      "actual_sha256": "92338e01ed63ba48887736f01a8a16dd0942d7de3f2a3f29b26c0d9acc69c498",
+      "exists": true,
+      "expected_sha256": "92338e01ed63ba48887736f01a8a16dd0942d7de3f2a3f29b26c0d9acc69c498",
+      "passed": true,
+      "relative_path": "src/ingestion/requirements_parser.py",
+      "safe_path": true
+    },
+    "resilience_policy": {
+      "actual_sha256": "c0449072f9dff7ec9991e1a9ba7dc1ddfd9a8791fbef19246e027821f3543387",
+      "exists": true,
+      "expected_sha256": "c0449072f9dff7ec9991e1a9ba7dc1ddfd9a8791fbef19246e027821f3543387",
+      "passed": true,
+      "relative_path": "policies/assurance/resilience_runtime_policy_v1.yaml",
+      "safe_path": true
+    },
+    "resilience_schema": {
+      "actual_sha256": "934be60113f6da4f6eecc97962dc281651758ea6d25df4162b932ff535ed3b4e",
+      "exists": true,
+      "expected_sha256": "934be60113f6da4f6eecc97962dc281651758ea6d25df4162b932ff535ed3b4e",
+      "passed": true,
+      "relative_path": "schemas/aegis_resilience_assurance_report.schema.json",
+      "safe_path": true
+    },
+    "step11h_report": {
+      "actual_sha256": "8b177fed1a8396fb44ad86710d9552e4cdd50fe6ca21cde40f45e44935f20578",
+      "exists": true,
+      "expected_sha256": "8b177fed1a8396fb44ad86710d9552e4cdd50fe6ca21cde40f45e44935f20578",
+      "passed": true,
+      "relative_path": "data/validation_reports/resilience/step11h_resilience_assurance_report.json",
+      "safe_path": true
+    },
+    "supply_chain_assurance": {
+      "actual_sha256": "3966e16f44abc02145ee7fd5660e500c811db9a479e46673c0683717bb99db73",
+      "exists": true,
+      "expected_sha256": "3966e16f44abc02145ee7fd5660e500c811db9a479e46673c0683717bb99db73",
+      "passed": true,
+      "relative_path": "src/assurance/supply_chain_assurance.py",
+      "safe_path": true
+    },
+    "supply_chain_guard": {
+      "actual_sha256": "b5a499dca944c3ae71b4dbff4e1b346304afd3a45351661e3dcdf65612c1f4bc",
+      "exists": true,
+      "expected_sha256": "b5a499dca944c3ae71b4dbff4e1b346304afd3a45351661e3dcdf65612c1f4bc",
+      "passed": true,
+      "relative_path": "src/governance/supply_chain_guard.py",
+      "safe_path": true
+    },
+    "supply_chain_policy": {
+      "actual_sha256": "8426db44a03c6ab2de4215abe7f00af72504fd2260bbce85873baa754176e07c",
+      "exists": true,
+      "expected_sha256": "8426db44a03c6ab2de4215abe7f00af72504fd2260bbce85873baa754176e07c",
+      "passed": true,
+      "relative_path": "policies/assurance/supply_chain_release_policy_v1.yaml",
+      "safe_path": true
+    },
+    "supply_chain_runner": {
+      "actual_sha256": "48100a7f2ac1415bcdcfea854aa00d84fabf671681e8df4efa21181567a34522",
+      "exists": true,
+      "expected_sha256": "48100a7f2ac1415bcdcfea854aa00d84fabf671681e8df4efa21181567a34522",
+      "passed": true,
+      "relative_path": "scripts/run_step11i_supply_chain_assurance.py",
+      "safe_path": true
+    },
+    "supply_chain_schema": {
+      "actual_sha256": "e05183d8688a8d8819a0ccf35a540689c4003d5499c56fe246a0edcef3065b5f",
+      "exists": true,
+      "expected_sha256": "e05183d8688a8d8819a0ccf35a540689c4003d5499c56fe246a0edcef3065b5f",
+      "passed": true,
+      "relative_path": "schemas/aegis_supply_chain_assurance_report.schema.json",
+      "safe_path": true
+    }
+  },
+  "limitations": [
+    "Scenarios use controlled local files, deterministic Ed25519 fixture keys, and no production signing material.",
+    "No live package registry, transparency log, CI platform, artifact registry, or model registry is modified.",
+    "Independent operational verification of production builders, signing identities, and reproducible builds remains mandatory."
+  ],
+  "quality_gates": [
+    {
+      "gate_id": "STEP11I-CRITICAL-DEFENCE",
+      "metric": "critical_supply_chain_scenario_defence_rate",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "STEP11I-ARTIFACT-DIGEST",
+      "metric": "artifact_digest_verification_rate",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "STEP11I-DEPENDENCY-INTEGRITY",
+      "metric": "dependency_integrity_enforcement_rate",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "STEP11I-PROVENANCE",
+      "metric": "build_provenance_verification_rate",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "STEP11I-BUILDER",
+      "metric": "builder_identity_enforcement_rate",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "STEP11I-SOURCE-BINDING",
+      "metric": "source_to_artifact_binding_rate",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "STEP11I-SBOM",
+      "metric": "sbom_to_build_reconciliation_rate",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "STEP11I-WORKFLOW",
+      "metric": "ci_workflow_integrity_rate",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "STEP11I-MODEL",
+      "metric": "model_data_provenance_enforcement_rate",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "STEP11I-MANIFEST",
+      "metric": "release_manifest_atomicity_rate",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "STEP11I-ROLLBACK",
+      "metric": "rollback_protection_rate",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "STEP11I-REPRODUCIBILITY",
+      "metric": "reproducibility_consistency_rate",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "STEP11I-SIGNATURE",
+      "metric": "signature_enforcement_rate",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "STEP11I-CONFLICT",
+      "metric": "release_conflict_containment_rate",
+      "observed": 1.0,
+      "operator": "gte",
+      "passed": true,
+      "threshold": 1.0
+    },
+    {
+      "gate_id": "STEP11I-UNSAFE-RELEASE",
+      "metric": "unsafe_release_count",
+      "observed": 0,
+      "operator": "eq",
+      "passed": true,
+      "threshold": 0
+    },
+    {
+      "gate_id": "STEP11I-UNVERIFIED-RELEASE",
+      "metric": "unverified_artifact_release_count",
+      "observed": 0,
+      "operator": "eq",
+      "passed": true,
+      "threshold": 0
+    },
+    {
+      "gate_id": "STEP11I-UNDETECTED",
+      "metric": "undetected_count",
+      "observed": 0,
+      "operator": "eq",
+      "passed": true,
+      "threshold": 0
+    },
+    {
+      "gate_id": "STEP11I-HARNESS",
+      "metric": "harness_error_count",
+      "observed": 0,
+      "operator": "eq",
+      "passed": true,
+      "threshold": 0
+    },
+    {
+      "gate_id": "STEP11I-INTEGRITY",
+      "metric": "trusted_input_integrity_passed",
+      "observed": true,
+      "operator": "eq",
+      "passed": true,
+      "threshold": true
+    }
+  ],
+  "release_decision": {
+    "blocking_reasons": [
+      "Real operational validation has not yet been completed.",
+      "Independent security review has not yet been completed.",
+      "Production CI signing identity, transparency-log verification, and reproducible-build infrastructure have not yet been independently validated."
+    ],
+    "production_readiness_status": "BLOCKED",
+    "stage_gate_status": "PASS"
+  },
+  "release_policy": {
+    "path": "policies/assurance/supply_chain_release_policy_v1.yaml",
+    "policy_id": "AEGIS-SUPPLY-CHAIN-RELEASE-POLICY",
+    "sha256": "8426db44a03c6ab2de4215abe7f00af72504fd2260bbce85873baa754176e07c",
+    "version": "1.0.0"
+  },
+  "report_id": "AEG-SUPPLY-CHAIN-STEP11I-001",
+  "results": [
+    {
+      "automated_release": true,
+      "control_tags": [
+        "dependency_integrity",
+        "artifact_digest",
+        "provenance",
+        "builder_identity",
+        "source_binding",
+        "sbom",
+        "workflow_integrity",
+        "model_provenance",
+        "manifest_atomicity",
+        "rollback_protection",
+        "reproducibility",
+        "signature",
+        "release_conflict"
+      ],
+      "defended": true,
+      "description": "A completely pinned, signed, provenance-bound release is verified.",
+      "expected_outcomes": [
+        "RELEASE_VERIFIED"
+      ],
+      "family": "verified_release",
+      "finding_codes": [],
+      "handler": "dependency",
+      "human_review_required": false,
+      "mutation": "baseline_verified",
+      "outcome": "RELEASE_VERIFIED",
+      "prohibit_closure": false,
+      "scenario_id": "SCI-001",
+      "severity": "critical",
+      "signature_verified": true,
+      "unsafe_release": false,
+      "unverified_artifact_release": false,
+      "verification_results": {
+        "dependency": {
+          "findings": [],
+          "metadata": {
+            "actual_lock_digest": "31b5048af9d98f7d726cf4c28a146d3f6da3e3d7ce5bacfbb61a1eb387d8ee9f",
+            "dependency_count": 3,
+            "verified_artifact_count": 3
+          },
+          "passed": true
+        },
+        "model": {
+          "findings": [],
+          "metadata": {
+            "verified_model_file_count": 1
+          },
+          "passed": true
+        },
+        "provenance": {
+          "findings": [],
+          "metadata": {
+            "signature_verified": true,
+            "statement_present": true
+          },
+          "passed": true
+        },
+        "release": {
+          "findings": [],
+          "metadata": {
+            "actual_manifest_digest": "b2545e491fcc8325165dbe347b492a97bd984fa8cc7f16b6c626dea422e805fd",
+            "observed_evidence_roles": [
+              "dependency_lock",
+              "model_manifest",
+              "provenance",
+              "sbom",
+              "workflow"
+            ],
+            "verified_artifact_count": 1
+          },
+          "passed": true
+        },
+        "reproducibility": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "sbom": {
+          "findings": [],
+          "metadata": {
+            "matched_components": 3,
+            "missing_components": [],
+            "unexpected_components": []
+          },
+          "passed": true
+        },
+        "source": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "workflow": {
+          "findings": [],
+          "metadata": {
+            "actual_workflow_sha256": "f6a66524890b51b715a4d86ce56855a8158a1c93ee3ed4dd644d307eb64be2a3"
+          },
+          "passed": true
+        }
+      }
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "dependency_integrity"
+      ],
+      "defended": true,
+      "description": "A version range cannot enter the release.",
+      "expected_outcomes": [
+        "BLOCKED_UNPINNED_DEPENDENCY"
+      ],
+      "family": "dependency_range",
+      "finding_codes": [
+        "DEPENDENCY_NOT_EXACTLY_PINNED",
+        "SBOM_DEPENDENCY_MISSING",
+        "SBOM_UNEXPECTED_COMPONENT"
+      ],
+      "handler": "dependency",
+      "human_review_required": false,
+      "mutation": "dependency_range",
+      "outcome": "BLOCKED_UNPINNED_DEPENDENCY",
+      "prohibit_closure": false,
+      "scenario_id": "SCI-002",
+      "severity": "critical",
+      "signature_verified": true,
+      "unsafe_release": false,
+      "unverified_artifact_release": false,
+      "verification_results": {
+        "dependency": {
+          "findings": [
+            {
+              "code": "DEPENDENCY_NOT_EXACTLY_PINNED",
+              "field_path": "dependencies[0].version",
+              "message": "Dependency version is not an immutable exact version.",
+              "severity": "critical"
+            }
+          ],
+          "metadata": {
+            "actual_lock_digest": "ab66b0cd638a9f2159feb2459dc6b6aab2b8a8e959dd4a473b56653a50ee42d4",
+            "dependency_count": 3,
+            "verified_artifact_count": 3
+          },
+          "passed": false
+        },
+        "model": {
+          "findings": [],
+          "metadata": {
+            "verified_model_file_count": 1
+          },
+          "passed": true
+        },
+        "provenance": {
+          "findings": [],
+          "metadata": {
+            "signature_verified": true,
+            "statement_present": true
+          },
+          "passed": true
+        },
+        "release": {
+          "findings": [],
+          "metadata": {
+            "actual_manifest_digest": "3d488c239ea56b5de4e3583cb2b0ede4609a1e71f2f408e670d18fec984f370d",
+            "observed_evidence_roles": [
+              "dependency_lock",
+              "model_manifest",
+              "provenance",
+              "sbom",
+              "workflow"
+            ],
+            "verified_artifact_count": 1
+          },
+          "passed": true
+        },
+        "reproducibility": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "sbom": {
+          "findings": [
+            {
+              "code": "SBOM_DEPENDENCY_MISSING",
+              "field_path": "components",
+              "message": "Locked dependencies are absent from the SBOM: ['pandas@>=2.0'].",
+              "severity": "critical"
+            },
+            {
+              "code": "SBOM_UNEXPECTED_COMPONENT",
+              "field_path": "components",
+              "message": "SBOM contains components absent from the dependency lock: ['pandas@2.3.3'].",
+              "severity": "critical"
+            }
+          ],
+          "metadata": {
+            "matched_components": 2,
+            "missing_components": [
+              "pandas@>=2.0"
+            ],
+            "unexpected_components": [
+              "pandas@2.3.3"
+            ]
+          },
+          "passed": false
+        },
+        "source": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "workflow": {
+          "findings": [],
+          "metadata": {
+            "actual_workflow_sha256": "f6a66524890b51b715a4d86ce56855a8158a1c93ee3ed4dd644d307eb64be2a3"
+          },
+          "passed": true
+        }
+      }
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "dependency_integrity"
+      ],
+      "defended": true,
+      "description": "A wildcard dependency cannot enter the release.",
+      "expected_outcomes": [
+        "BLOCKED_UNPINNED_DEPENDENCY"
+      ],
+      "family": "dependency_wildcard",
+      "finding_codes": [
+        "DEPENDENCY_NOT_EXACTLY_PINNED",
+        "SBOM_DEPENDENCY_MISSING",
+        "SBOM_UNEXPECTED_COMPONENT"
+      ],
+      "handler": "dependency",
+      "human_review_required": false,
+      "mutation": "dependency_wildcard",
+      "outcome": "BLOCKED_UNPINNED_DEPENDENCY",
+      "prohibit_closure": false,
+      "scenario_id": "SCI-003",
+      "severity": "critical",
+      "signature_verified": true,
+      "unsafe_release": false,
+      "unverified_artifact_release": false,
+      "verification_results": {
+        "dependency": {
+          "findings": [
+            {
+              "code": "DEPENDENCY_NOT_EXACTLY_PINNED",
+              "field_path": "dependencies[0].version",
+              "message": "Dependency version is not an immutable exact version.",
+              "severity": "critical"
+            }
+          ],
+          "metadata": {
+            "actual_lock_digest": "80a94c3adf16d2f9cf0bb4a356e376ee75e9171bfe1865a61c41be3a4604125f",
+            "dependency_count": 3,
+            "verified_artifact_count": 3
+          },
+          "passed": false
+        },
+        "model": {
+          "findings": [],
+          "metadata": {
+            "verified_model_file_count": 1
+          },
+          "passed": true
+        },
+        "provenance": {
+          "findings": [],
+          "metadata": {
+            "signature_verified": true,
+            "statement_present": true
+          },
+          "passed": true
+        },
+        "release": {
+          "findings": [],
+          "metadata": {
+            "actual_manifest_digest": "7cb2f2f6565f69b45e79d9da7104ad2cb576dd2c2e00cb9e4f9e4190dde488a2",
+            "observed_evidence_roles": [
+              "dependency_lock",
+              "model_manifest",
+              "provenance",
+              "sbom",
+              "workflow"
+            ],
+            "verified_artifact_count": 1
+          },
+          "passed": true
+        },
+        "reproducibility": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "sbom": {
+          "findings": [
+            {
+              "code": "SBOM_DEPENDENCY_MISSING",
+              "field_path": "components",
+              "message": "Locked dependencies are absent from the SBOM: ['pandas@2.*'].",
+              "severity": "critical"
+            },
+            {
+              "code": "SBOM_UNEXPECTED_COMPONENT",
+              "field_path": "components",
+              "message": "SBOM contains components absent from the dependency lock: ['pandas@2.3.3'].",
+              "severity": "critical"
+            }
+          ],
+          "metadata": {
+            "matched_components": 2,
+            "missing_components": [
+              "pandas@2.*"
+            ],
+            "unexpected_components": [
+              "pandas@2.3.3"
+            ]
+          },
+          "passed": false
+        },
+        "source": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "workflow": {
+          "findings": [],
+          "metadata": {
+            "actual_workflow_sha256": "f6a66524890b51b715a4d86ce56855a8158a1c93ee3ed4dd644d307eb64be2a3"
+          },
+          "passed": true
+        }
+      }
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "dependency_integrity"
+      ],
+      "defended": true,
+      "description": "A dependency without SHA-256 is blocked.",
+      "expected_outcomes": [
+        "BLOCKED_DEPENDENCY_HASH_FAILURE"
+      ],
+      "family": "dependency_missing_hash",
+      "finding_codes": [
+        "DEPENDENCY_SHA256_MISSING_OR_INVALID",
+        "SBOM_UNEXPECTED_COMPONENT"
+      ],
+      "handler": "dependency",
+      "human_review_required": false,
+      "mutation": "dependency_missing_hash",
+      "outcome": "BLOCKED_DEPENDENCY_HASH_FAILURE",
+      "prohibit_closure": false,
+      "scenario_id": "SCI-004",
+      "severity": "critical",
+      "signature_verified": true,
+      "unsafe_release": false,
+      "unverified_artifact_release": false,
+      "verification_results": {
+        "dependency": {
+          "findings": [
+            {
+              "code": "DEPENDENCY_SHA256_MISSING_OR_INVALID",
+              "field_path": "dependencies[0].hashes.sha256",
+              "message": "Dependency artifact requires a lowercase SHA-256 digest.",
+              "severity": "critical"
+            }
+          ],
+          "metadata": {
+            "actual_lock_digest": "14576139ee12ec59a062c2bebd68c1516a284ed8dcb6c9b22f5b53d2ab3924c3",
+            "dependency_count": 3,
+            "verified_artifact_count": 2
+          },
+          "passed": false
+        },
+        "model": {
+          "findings": [],
+          "metadata": {
+            "verified_model_file_count": 1
+          },
+          "passed": true
+        },
+        "provenance": {
+          "findings": [],
+          "metadata": {
+            "signature_verified": true,
+            "statement_present": true
+          },
+          "passed": true
+        },
+        "release": {
+          "findings": [],
+          "metadata": {
+            "actual_manifest_digest": "8f5019bf1ed54fc0ef1923907f5780ff35424df95d31d0d44bb90ad7091e9510",
+            "observed_evidence_roles": [
+              "dependency_lock",
+              "model_manifest",
+              "provenance",
+              "sbom",
+              "workflow"
+            ],
+            "verified_artifact_count": 1
+          },
+          "passed": true
+        },
+        "reproducibility": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "sbom": {
+          "findings": [
+            {
+              "code": "SBOM_UNEXPECTED_COMPONENT",
+              "field_path": "components",
+              "message": "SBOM contains components absent from the dependency lock: ['pandas@2.3.3'].",
+              "severity": "critical"
+            }
+          ],
+          "metadata": {
+            "matched_components": 2,
+            "missing_components": [],
+            "unexpected_components": [
+              "pandas@2.3.3"
+            ]
+          },
+          "passed": false
+        },
+        "source": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "workflow": {
+          "findings": [],
+          "metadata": {
+            "actual_workflow_sha256": "f6a66524890b51b715a4d86ce56855a8158a1c93ee3ed4dd644d307eb64be2a3"
+          },
+          "passed": true
+        }
+      }
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "dependency_integrity"
+      ],
+      "defended": true,
+      "description": "A dependency artifact whose bytes differ from the lock is blocked.",
+      "expected_outcomes": [
+        "BLOCKED_DEPENDENCY_HASH_FAILURE"
+      ],
+      "family": "dependency_hash_mismatch",
+      "finding_codes": [
+        "DEPENDENCY_ARTIFACT_HASH_MISMATCH",
+        "SBOM_COMPONENT_HASH_MISMATCH"
+      ],
+      "handler": "dependency",
+      "human_review_required": false,
+      "mutation": "dependency_hash_mismatch",
+      "outcome": "BLOCKED_DEPENDENCY_HASH_FAILURE",
+      "prohibit_closure": false,
+      "scenario_id": "SCI-005",
+      "severity": "critical",
+      "signature_verified": true,
+      "unsafe_release": false,
+      "unverified_artifact_release": false,
+      "verification_results": {
+        "dependency": {
+          "findings": [
+            {
+              "code": "DEPENDENCY_ARTIFACT_HASH_MISMATCH",
+              "field_path": "dependencies[0].hashes.sha256",
+              "message": "Dependency artifact digest does not match the lock entry.",
+              "severity": "critical"
+            }
+          ],
+          "metadata": {
+            "actual_lock_digest": "b1443a8d44cdaa084a988a501ff9e61c47958cd9055f8e50ccabc5782fcd3989",
+            "dependency_count": 3,
+            "verified_artifact_count": 2
+          },
+          "passed": false
+        },
+        "model": {
+          "findings": [],
+          "metadata": {
+            "verified_model_file_count": 1
+          },
+          "passed": true
+        },
+        "provenance": {
+          "findings": [],
+          "metadata": {
+            "signature_verified": true,
+            "statement_present": true
+          },
+          "passed": true
+        },
+        "release": {
+          "findings": [],
+          "metadata": {
+            "actual_manifest_digest": "98cb4cfed74ac4afc0216f4e8ba9a32e8b3dc069ade5aed33bd6ba9710a8971a",
+            "observed_evidence_roles": [
+              "dependency_lock",
+              "model_manifest",
+              "provenance",
+              "sbom",
+              "workflow"
+            ],
+            "verified_artifact_count": 1
+          },
+          "passed": true
+        },
+        "reproducibility": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "sbom": {
+          "findings": [
+            {
+              "code": "SBOM_COMPONENT_HASH_MISMATCH",
+              "field_path": "components",
+              "message": "SBOM digest does not match locked artifact for pandas@2.3.3.",
+              "severity": "critical"
+            }
+          ],
+          "metadata": {
+            "matched_components": 2,
+            "missing_components": [],
+            "unexpected_components": []
+          },
+          "passed": false
+        },
+        "source": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "workflow": {
+          "findings": [],
+          "metadata": {
+            "actual_workflow_sha256": "f6a66524890b51b715a4d86ce56855a8158a1c93ee3ed4dd644d307eb64be2a3"
+          },
+          "passed": true
+        }
+      }
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "dependency_integrity"
+      ],
+      "defended": true,
+      "description": "An unapproved direct URL dependency is blocked.",
+      "expected_outcomes": [
+        "BLOCKED_DEPENDENCY_HASH_FAILURE"
+      ],
+      "family": "dependency_direct_url",
+      "finding_codes": [
+        "DEPENDENCY_DIRECT_REFERENCE_PROHIBITED"
+      ],
+      "handler": "dependency",
+      "human_review_required": false,
+      "mutation": "dependency_direct_url",
+      "outcome": "BLOCKED_DEPENDENCY_HASH_FAILURE",
+      "prohibit_closure": false,
+      "scenario_id": "SCI-006",
+      "severity": "critical",
+      "signature_verified": true,
+      "unsafe_release": false,
+      "unverified_artifact_release": false,
+      "verification_results": {
+        "dependency": {
+          "findings": [
+            {
+              "code": "DEPENDENCY_DIRECT_REFERENCE_PROHIBITED",
+              "field_path": "dependencies[0].source.type",
+              "message": "Direct URL, VCS, and local-path dependencies are prohibited by policy.",
+              "severity": "critical"
+            }
+          ],
+          "metadata": {
+            "actual_lock_digest": "424b80c287dc5f905aa266759bf3dc7222893ade3efd5f101f964be15fc005d3",
+            "dependency_count": 3,
+            "verified_artifact_count": 3
+          },
+          "passed": false
+        },
+        "model": {
+          "findings": [],
+          "metadata": {
+            "verified_model_file_count": 1
+          },
+          "passed": true
+        },
+        "provenance": {
+          "findings": [],
+          "metadata": {
+            "signature_verified": true,
+            "statement_present": true
+          },
+          "passed": true
+        },
+        "release": {
+          "findings": [],
+          "metadata": {
+            "actual_manifest_digest": "d11635829611ed3edf594aa80316c593dac4b8d076564ea3af8c164854d1915e",
+            "observed_evidence_roles": [
+              "dependency_lock",
+              "model_manifest",
+              "provenance",
+              "sbom",
+              "workflow"
+            ],
+            "verified_artifact_count": 1
+          },
+          "passed": true
+        },
+        "reproducibility": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "sbom": {
+          "findings": [],
+          "metadata": {
+            "matched_components": 3,
+            "missing_components": [],
+            "unexpected_components": []
+          },
+          "passed": true
+        },
+        "source": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "workflow": {
+          "findings": [],
+          "metadata": {
+            "actual_workflow_sha256": "f6a66524890b51b715a4d86ce56855a8158a1c93ee3ed4dd644d307eb64be2a3"
+          },
+          "passed": true
+        }
+      }
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "dependency_integrity"
+      ],
+      "defended": true,
+      "description": "A dependency from an unapproved registry is blocked.",
+      "expected_outcomes": [
+        "BLOCKED_DEPENDENCY_HASH_FAILURE"
+      ],
+      "family": "dependency_bad_registry",
+      "finding_codes": [
+        "DEPENDENCY_REGISTRY_NOT_ALLOWED"
+      ],
+      "handler": "dependency",
+      "human_review_required": false,
+      "mutation": "dependency_bad_registry",
+      "outcome": "BLOCKED_DEPENDENCY_HASH_FAILURE",
+      "prohibit_closure": false,
+      "scenario_id": "SCI-007",
+      "severity": "critical",
+      "signature_verified": true,
+      "unsafe_release": false,
+      "unverified_artifact_release": false,
+      "verification_results": {
+        "dependency": {
+          "findings": [
+            {
+              "code": "DEPENDENCY_REGISTRY_NOT_ALLOWED",
+              "field_path": "dependencies[0].source.url",
+              "message": "Dependency registry host is not allowlisted: 'evil.invalid'.",
+              "severity": "critical"
+            }
+          ],
+          "metadata": {
+            "actual_lock_digest": "4d8abded50760a01ba47ee64ebe5d014d8093267803e5adba7087a134ff50731",
+            "dependency_count": 3,
+            "verified_artifact_count": 3
+          },
+          "passed": false
+        },
+        "model": {
+          "findings": [],
+          "metadata": {
+            "verified_model_file_count": 1
+          },
+          "passed": true
+        },
+        "provenance": {
+          "findings": [],
+          "metadata": {
+            "signature_verified": true,
+            "statement_present": true
+          },
+          "passed": true
+        },
+        "release": {
+          "findings": [],
+          "metadata": {
+            "actual_manifest_digest": "c8d2b2ffc686edfae090005b59a2c3d7deba536192d14b60b3bd08300224cfcc",
+            "observed_evidence_roles": [
+              "dependency_lock",
+              "model_manifest",
+              "provenance",
+              "sbom",
+              "workflow"
+            ],
+            "verified_artifact_count": 1
+          },
+          "passed": true
+        },
+        "reproducibility": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "sbom": {
+          "findings": [],
+          "metadata": {
+            "matched_components": 3,
+            "missing_components": [],
+            "unexpected_components": []
+          },
+          "passed": true
+        },
+        "source": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "workflow": {
+          "findings": [],
+          "metadata": {
+            "actual_workflow_sha256": "f6a66524890b51b715a4d86ce56855a8158a1c93ee3ed4dd644d307eb64be2a3"
+          },
+          "passed": true
+        }
+      }
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "dependency_integrity"
+      ],
+      "defended": true,
+      "description": "A tampered lock digest is blocked.",
+      "expected_outcomes": [
+        "BLOCKED_DEPENDENCY_HASH_FAILURE"
+      ],
+      "family": "dependency_lock_digest_tamper",
+      "finding_codes": [
+        "DEPENDENCY_LOCK_DIGEST_MISMATCH"
+      ],
+      "handler": "dependency",
+      "human_review_required": false,
+      "mutation": "dependency_lock_digest_tamper",
+      "outcome": "BLOCKED_DEPENDENCY_HASH_FAILURE",
+      "prohibit_closure": false,
+      "scenario_id": "SCI-008",
+      "severity": "critical",
+      "signature_verified": true,
+      "unsafe_release": false,
+      "unverified_artifact_release": false,
+      "verification_results": {
+        "dependency": {
+          "findings": [
+            {
+              "code": "DEPENDENCY_LOCK_DIGEST_MISMATCH",
+              "field_path": "lock_digest",
+              "message": "Dependency lock canonical digest does not match its content.",
+              "severity": "critical"
+            }
+          ],
+          "metadata": {
+            "actual_lock_digest": "31b5048af9d98f7d726cf4c28a146d3f6da3e3d7ce5bacfbb61a1eb387d8ee9f",
+            "dependency_count": 3,
+            "verified_artifact_count": 3
+          },
+          "passed": false
+        },
+        "model": {
+          "findings": [],
+          "metadata": {
+            "verified_model_file_count": 1
+          },
+          "passed": true
+        },
+        "provenance": {
+          "findings": [],
+          "metadata": {
+            "signature_verified": true,
+            "statement_present": true
+          },
+          "passed": true
+        },
+        "release": {
+          "findings": [],
+          "metadata": {
+            "actual_manifest_digest": "c95700336920349525ecfb4c93ec55715015db73c0b54812563f1aed0c6b4833",
+            "observed_evidence_roles": [
+              "dependency_lock",
+              "model_manifest",
+              "provenance",
+              "sbom",
+              "workflow"
+            ],
+            "verified_artifact_count": 1
+          },
+          "passed": true
+        },
+        "reproducibility": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "sbom": {
+          "findings": [],
+          "metadata": {
+            "matched_components": 3,
+            "missing_components": [],
+            "unexpected_components": []
+          },
+          "passed": true
+        },
+        "source": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "workflow": {
+          "findings": [],
+          "metadata": {
+            "actual_workflow_sha256": "f6a66524890b51b715a4d86ce56855a8158a1c93ee3ed4dd644d307eb64be2a3"
+          },
+          "passed": true
+        }
+      }
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "dependency_integrity"
+      ],
+      "defended": true,
+      "description": "Conflicting normalized package identities are blocked.",
+      "expected_outcomes": [
+        "BLOCKED_DEPENDENCY_HASH_FAILURE"
+      ],
+      "family": "dependency_normalization_conflict",
+      "finding_codes": [
+        "DEPENDENCY_NORMALIZED_NAME_CONFLICT",
+        "SBOM_DEPENDENCY_MISSING"
+      ],
+      "handler": "dependency",
+      "human_review_required": false,
+      "mutation": "dependency_normalization_conflict",
+      "outcome": "BLOCKED_DEPENDENCY_HASH_FAILURE",
+      "prohibit_closure": false,
+      "scenario_id": "SCI-009",
+      "severity": "critical",
+      "signature_verified": true,
+      "unsafe_release": false,
+      "unverified_artifact_release": false,
+      "verification_results": {
+        "dependency": {
+          "findings": [
+            {
+              "code": "DEPENDENCY_NORMALIZED_NAME_CONFLICT",
+              "field_path": "dependencies[3].name",
+              "message": "Equivalent normalized package names resolve to conflicting versions.",
+              "severity": "critical"
+            }
+          ],
+          "metadata": {
+            "actual_lock_digest": "933597cfe8dc62cb45417f59d27b2b5cac72480dc4183396c73444414a941500",
+            "dependency_count": 4,
+            "verified_artifact_count": 4
+          },
+          "passed": false
+        },
+        "model": {
+          "findings": [],
+          "metadata": {
+            "verified_model_file_count": 1
+          },
+          "passed": true
+        },
+        "provenance": {
+          "findings": [],
+          "metadata": {
+            "signature_verified": true,
+            "statement_present": true
+          },
+          "passed": true
+        },
+        "release": {
+          "findings": [],
+          "metadata": {
+            "actual_manifest_digest": "d1c5d30251905903590e2f5d890f69f6be779c733e93100b2cc00601c8cf26a2",
+            "observed_evidence_roles": [
+              "dependency_lock",
+              "model_manifest",
+              "provenance",
+              "sbom",
+              "workflow"
+            ],
+            "verified_artifact_count": 1
+          },
+          "passed": true
+        },
+        "reproducibility": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "sbom": {
+          "findings": [
+            {
+              "code": "SBOM_DEPENDENCY_MISSING",
+              "field_path": "components",
+              "message": "Locked dependencies are absent from the SBOM: ['pandas@1.0.0'].",
+              "severity": "critical"
+            }
+          ],
+          "metadata": {
+            "matched_components": 3,
+            "missing_components": [
+              "pandas@1.0.0"
+            ],
+            "unexpected_components": []
+          },
+          "passed": false
+        },
+        "source": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "workflow": {
+          "findings": [],
+          "metadata": {
+            "actual_workflow_sha256": "f6a66524890b51b715a4d86ce56855a8158a1c93ee3ed4dd644d307eb64be2a3"
+          },
+          "passed": true
+        }
+      }
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "dependency_integrity"
+      ],
+      "defended": true,
+      "description": "A lock entry without a verifiable artifact is blocked.",
+      "expected_outcomes": [
+        "BLOCKED_DEPENDENCY_HASH_FAILURE"
+      ],
+      "family": "dependency_missing_artifact",
+      "finding_codes": [
+        "DEPENDENCY_ARTIFACT_MISSING_OR_UNSAFE"
+      ],
+      "handler": "dependency",
+      "human_review_required": false,
+      "mutation": "dependency_missing_artifact",
+      "outcome": "BLOCKED_DEPENDENCY_HASH_FAILURE",
+      "prohibit_closure": false,
+      "scenario_id": "SCI-010",
+      "severity": "critical",
+      "signature_verified": true,
+      "unsafe_release": false,
+      "unverified_artifact_release": false,
+      "verification_results": {
+        "dependency": {
+          "findings": [
+            {
+              "code": "DEPENDENCY_ARTIFACT_MISSING_OR_UNSAFE",
+              "field_path": "dependencies[0].artifact_path",
+              "message": "Dependency artifact path is missing, unsafe, or does not exist.",
+              "severity": "critical"
+            }
+          ],
+          "metadata": {
+            "actual_lock_digest": "fc87679d1da8ea8432248c3f55532a4672b5c71ab0efa794c0a078ce882a3c40",
+            "dependency_count": 3,
+            "verified_artifact_count": 2
+          },
+          "passed": false
+        },
+        "model": {
+          "findings": [],
+          "metadata": {
+            "verified_model_file_count": 1
+          },
+          "passed": true
+        },
+        "provenance": {
+          "findings": [],
+          "metadata": {
+            "signature_verified": true,
+            "statement_present": true
+          },
+          "passed": true
+        },
+        "release": {
+          "findings": [],
+          "metadata": {
+            "actual_manifest_digest": "c0d9a48ce473b7e6027a8fe9450bc192b37478a0207971f883383c9e19e4671b",
+            "observed_evidence_roles": [
+              "dependency_lock",
+              "model_manifest",
+              "provenance",
+              "sbom",
+              "workflow"
+            ],
+            "verified_artifact_count": 1
+          },
+          "passed": true
+        },
+        "reproducibility": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "sbom": {
+          "findings": [],
+          "metadata": {
+            "matched_components": 3,
+            "missing_components": [],
+            "unexpected_components": []
+          },
+          "passed": true
+        },
+        "source": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "workflow": {
+          "findings": [],
+          "metadata": {
+            "actual_workflow_sha256": "f6a66524890b51b715a4d86ce56855a8158a1c93ee3ed4dd644d307eb64be2a3"
+          },
+          "passed": true
+        }
+      }
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "provenance"
+      ],
+      "defended": true,
+      "description": "Missing provenance blocks release.",
+      "expected_outcomes": [
+        "BLOCKED_PROVENANCE_FAILURE"
+      ],
+      "family": "provenance_missing",
+      "finding_codes": [
+        "DSSE_PAYLOAD_INVALID",
+        "DSSE_PAYLOAD_TYPE_MISMATCH"
+      ],
+      "handler": "provenance",
+      "human_review_required": false,
+      "mutation": "provenance_missing",
+      "outcome": "BLOCKED_PROVENANCE_FAILURE",
+      "prohibit_closure": false,
+      "scenario_id": "SCI-011",
+      "severity": "critical",
+      "signature_verified": false,
+      "unsafe_release": false,
+      "unverified_artifact_release": false,
+      "verification_results": {
+        "dependency": {
+          "findings": [],
+          "metadata": {
+            "actual_lock_digest": "31b5048af9d98f7d726cf4c28a146d3f6da3e3d7ce5bacfbb61a1eb387d8ee9f",
+            "dependency_count": 3,
+            "verified_artifact_count": 3
+          },
+          "passed": true
+        },
+        "model": {
+          "findings": [],
+          "metadata": {
+            "verified_model_file_count": 1
+          },
+          "passed": true
+        },
+        "provenance": {
+          "findings": [
+            {
+              "code": "DSSE_PAYLOAD_TYPE_MISMATCH",
+              "field_path": "payloadType",
+              "message": "DSSE payload type is not the authorized in-toto media type.",
+              "severity": "critical"
+            },
+            {
+              "code": "DSSE_PAYLOAD_INVALID",
+              "field_path": "payload",
+              "message": "payload must be base64 text.",
+              "severity": "critical"
+            }
+          ],
+          "metadata": {
+            "signature_verified": false,
+            "statement_present": false
+          },
+          "passed": false
+        },
+        "release": {
+          "findings": [],
+          "metadata": {
+            "actual_manifest_digest": "c5025a94530228d5f49a300f1ba989a980387d08795000ea827097b437a04a43",
+            "observed_evidence_roles": [
+              "dependency_lock",
+              "model_manifest",
+              "provenance",
+              "sbom",
+              "workflow"
+            ],
+            "verified_artifact_count": 1
+          },
+          "passed": true
+        },
+        "reproducibility": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "sbom": {
+          "findings": [],
+          "metadata": {
+            "matched_components": 3,
+            "missing_components": [],
+            "unexpected_components": []
+          },
+          "passed": true
+        },
+        "source": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "workflow": {
+          "findings": [],
+          "metadata": {
+            "actual_workflow_sha256": "f6a66524890b51b715a4d86ce56855a8158a1c93ee3ed4dd644d307eb64be2a3"
+          },
+          "passed": true
+        }
+      }
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "provenance"
+      ],
+      "defended": true,
+      "description": "Unexpected provenance predicate type is rejected.",
+      "expected_outcomes": [
+        "BLOCKED_PROVENANCE_FAILURE"
+      ],
+      "family": "provenance_predicate_type",
+      "finding_codes": [
+        "PROVENANCE_PREDICATE_TYPE_MISMATCH"
+      ],
+      "handler": "provenance",
+      "human_review_required": false,
+      "mutation": "provenance_predicate_type",
+      "outcome": "BLOCKED_PROVENANCE_FAILURE",
+      "prohibit_closure": false,
+      "scenario_id": "SCI-012",
+      "severity": "critical",
+      "signature_verified": true,
+      "unsafe_release": false,
+      "unverified_artifact_release": false,
+      "verification_results": {
+        "dependency": {
+          "findings": [],
+          "metadata": {
+            "actual_lock_digest": "31b5048af9d98f7d726cf4c28a146d3f6da3e3d7ce5bacfbb61a1eb387d8ee9f",
+            "dependency_count": 3,
+            "verified_artifact_count": 3
+          },
+          "passed": true
+        },
+        "model": {
+          "findings": [],
+          "metadata": {
+            "verified_model_file_count": 1
+          },
+          "passed": true
+        },
+        "provenance": {
+          "findings": [
+            {
+              "code": "PROVENANCE_PREDICATE_TYPE_MISMATCH",
+              "field_path": "predicateType",
+              "message": "Provenance predicate type does not match policy.",
+              "severity": "critical"
+            }
+          ],
+          "metadata": {
+            "signature_verified": true,
+            "statement_present": true
+          },
+          "passed": false
+        },
+        "release": {
+          "findings": [],
+          "metadata": {
+            "actual_manifest_digest": "a80e1ae471d43e47f317d2b809e6294ba71cfbdecc8068125e762d4e7b4b5719",
+            "observed_evidence_roles": [
+              "dependency_lock",
+              "model_manifest",
+              "provenance",
+              "sbom",
+              "workflow"
+            ],
+            "verified_artifact_count": 1
+          },
+          "passed": true
+        },
+        "reproducibility": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "sbom": {
+          "findings": [],
+          "metadata": {
+            "matched_components": 3,
+            "missing_components": [],
+            "unexpected_components": []
+          },
+          "passed": true
+        },
+        "source": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "workflow": {
+          "findings": [],
+          "metadata": {
+            "actual_workflow_sha256": "f6a66524890b51b715a4d86ce56855a8158a1c93ee3ed4dd644d307eb64be2a3"
+          },
+          "passed": true
+        }
+      }
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "provenance",
+        "artifact_digest",
+        "source_binding"
+      ],
+      "defended": true,
+      "description": "Provenance subject digest must bind the artifact.",
+      "expected_outcomes": [
+        "BLOCKED_PROVENANCE_FAILURE"
+      ],
+      "family": "provenance_subject_mismatch",
+      "finding_codes": [
+        "PROVENANCE_SUBJECT_DIGEST_MISMATCH"
+      ],
+      "handler": "provenance",
+      "human_review_required": false,
+      "mutation": "provenance_subject_mismatch",
+      "outcome": "BLOCKED_PROVENANCE_FAILURE",
+      "prohibit_closure": false,
+      "scenario_id": "SCI-013",
+      "severity": "critical",
+      "signature_verified": true,
+      "unsafe_release": false,
+      "unverified_artifact_release": false,
+      "verification_results": {
+        "dependency": {
+          "findings": [],
+          "metadata": {
+            "actual_lock_digest": "31b5048af9d98f7d726cf4c28a146d3f6da3e3d7ce5bacfbb61a1eb387d8ee9f",
+            "dependency_count": 3,
+            "verified_artifact_count": 3
+          },
+          "passed": true
+        },
+        "model": {
+          "findings": [],
+          "metadata": {
+            "verified_model_file_count": 1
+          },
+          "passed": true
+        },
+        "provenance": {
+          "findings": [
+            {
+              "code": "PROVENANCE_SUBJECT_DIGEST_MISMATCH",
+              "field_path": "subject",
+              "message": "Provenance subject does not bind the expected artifact digest.",
+              "severity": "critical"
+            }
+          ],
+          "metadata": {
+            "signature_verified": true,
+            "statement_present": true
+          },
+          "passed": false
+        },
+        "release": {
+          "findings": [],
+          "metadata": {
+            "actual_manifest_digest": "9ff5f8800bf19ae025e309fb58f437c551e04095edeaf210a1d157ee02549646",
+            "observed_evidence_roles": [
+              "dependency_lock",
+              "model_manifest",
+              "provenance",
+              "sbom",
+              "workflow"
+            ],
+            "verified_artifact_count": 1
+          },
+          "passed": true
+        },
+        "reproducibility": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "sbom": {
+          "findings": [],
+          "metadata": {
+            "matched_components": 3,
+            "missing_components": [],
+            "unexpected_components": []
+          },
+          "passed": true
+        },
+        "source": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "workflow": {
+          "findings": [],
+          "metadata": {
+            "actual_workflow_sha256": "f6a66524890b51b715a4d86ce56855a8158a1c93ee3ed4dd644d307eb64be2a3"
+          },
+          "passed": true
+        }
+      }
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "provenance",
+        "builder_identity"
+      ],
+      "defended": true,
+      "description": "Untrusted builder identity is rejected.",
+      "expected_outcomes": [
+        "BLOCKED_PROVENANCE_FAILURE"
+      ],
+      "family": "provenance_builder_mismatch",
+      "finding_codes": [
+        "PROVENANCE_BUILDER_NOT_ALLOWED"
+      ],
+      "handler": "provenance",
+      "human_review_required": false,
+      "mutation": "provenance_builder_mismatch",
+      "outcome": "BLOCKED_PROVENANCE_FAILURE",
+      "prohibit_closure": false,
+      "scenario_id": "SCI-014",
+      "severity": "critical",
+      "signature_verified": true,
+      "unsafe_release": false,
+      "unverified_artifact_release": false,
+      "verification_results": {
+        "dependency": {
+          "findings": [],
+          "metadata": {
+            "actual_lock_digest": "31b5048af9d98f7d726cf4c28a146d3f6da3e3d7ce5bacfbb61a1eb387d8ee9f",
+            "dependency_count": 3,
+            "verified_artifact_count": 3
+          },
+          "passed": true
+        },
+        "model": {
+          "findings": [],
+          "metadata": {
+            "verified_model_file_count": 1
+          },
+          "passed": true
+        },
+        "provenance": {
+          "findings": [
+            {
+              "code": "PROVENANCE_BUILDER_NOT_ALLOWED",
+              "field_path": "predicate.runDetails.builder.id",
+              "message": "Builder identity is not allowlisted.",
+              "severity": "critical"
+            }
+          ],
+          "metadata": {
+            "signature_verified": true,
+            "statement_present": true
+          },
+          "passed": false
+        },
+        "release": {
+          "findings": [],
+          "metadata": {
+            "actual_manifest_digest": "f6089214198033989b046b0ffd24d6db7eb8bae5327f8bc19a4be04ce7c6357b",
+            "observed_evidence_roles": [
+              "dependency_lock",
+              "model_manifest",
+              "provenance",
+              "sbom",
+              "workflow"
+            ],
+            "verified_artifact_count": 1
+          },
+          "passed": true
+        },
+        "reproducibility": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "sbom": {
+          "findings": [],
+          "metadata": {
+            "matched_components": 3,
+            "missing_components": [],
+            "unexpected_components": []
+          },
+          "passed": true
+        },
+        "source": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "workflow": {
+          "findings": [],
+          "metadata": {
+            "actual_workflow_sha256": "f6a66524890b51b715a4d86ce56855a8158a1c93ee3ed4dd644d307eb64be2a3"
+          },
+          "passed": true
+        }
+      }
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "provenance"
+      ],
+      "defended": true,
+      "description": "Unapproved build type is rejected.",
+      "expected_outcomes": [
+        "BLOCKED_PROVENANCE_FAILURE"
+      ],
+      "family": "provenance_build_type_mismatch",
+      "finding_codes": [
+        "PROVENANCE_BUILD_TYPE_NOT_ALLOWED"
+      ],
+      "handler": "provenance",
+      "human_review_required": false,
+      "mutation": "provenance_build_type_mismatch",
+      "outcome": "BLOCKED_PROVENANCE_FAILURE",
+      "prohibit_closure": false,
+      "scenario_id": "SCI-015",
+      "severity": "critical",
+      "signature_verified": true,
+      "unsafe_release": false,
+      "unverified_artifact_release": false,
+      "verification_results": {
+        "dependency": {
+          "findings": [],
+          "metadata": {
+            "actual_lock_digest": "31b5048af9d98f7d726cf4c28a146d3f6da3e3d7ce5bacfbb61a1eb387d8ee9f",
+            "dependency_count": 3,
+            "verified_artifact_count": 3
+          },
+          "passed": true
+        },
+        "model": {
+          "findings": [],
+          "metadata": {
+            "verified_model_file_count": 1
+          },
+          "passed": true
+        },
+        "provenance": {
+          "findings": [
+            {
+              "code": "PROVENANCE_BUILD_TYPE_NOT_ALLOWED",
+              "field_path": "predicate.buildDefinition.buildType",
+              "message": "Build type is not allowlisted.",
+              "severity": "critical"
+            }
+          ],
+          "metadata": {
+            "signature_verified": true,
+            "statement_present": true
+          },
+          "passed": false
+        },
+        "release": {
+          "findings": [],
+          "metadata": {
+            "actual_manifest_digest": "49815df3934da19c3e974d82d7461f12ab263d37f67ed7b0b2fc0671476450ef",
+            "observed_evidence_roles": [
+              "dependency_lock",
+              "model_manifest",
+              "provenance",
+              "sbom",
+              "workflow"
+            ],
+            "verified_artifact_count": 1
+          },
+          "passed": true
+        },
+        "reproducibility": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "sbom": {
+          "findings": [],
+          "metadata": {
+            "matched_components": 3,
+            "missing_components": [],
+            "unexpected_components": []
+          },
+          "passed": true
+        },
+        "source": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "workflow": {
+          "findings": [],
+          "metadata": {
+            "actual_workflow_sha256": "f6a66524890b51b715a4d86ce56855a8158a1c93ee3ed4dd644d307eb64be2a3"
+          },
+          "passed": true
+        }
+      }
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "provenance",
+        "source_binding"
+      ],
+      "defended": true,
+      "description": "Wrong source revision is rejected.",
+      "expected_outcomes": [
+        "BLOCKED_PROVENANCE_FAILURE"
+      ],
+      "family": "provenance_source_revision_mismatch",
+      "finding_codes": [
+        "PROVENANCE_SOURCE_BINDING_MISMATCH"
+      ],
+      "handler": "provenance",
+      "human_review_required": false,
+      "mutation": "provenance_source_revision_mismatch",
+      "outcome": "BLOCKED_PROVENANCE_FAILURE",
+      "prohibit_closure": false,
+      "scenario_id": "SCI-016",
+      "severity": "critical",
+      "signature_verified": true,
+      "unsafe_release": false,
+      "unverified_artifact_release": false,
+      "verification_results": {
+        "dependency": {
+          "findings": [],
+          "metadata": {
+            "actual_lock_digest": "31b5048af9d98f7d726cf4c28a146d3f6da3e3d7ce5bacfbb61a1eb387d8ee9f",
+            "dependency_count": 3,
+            "verified_artifact_count": 3
+          },
+          "passed": true
+        },
+        "model": {
+          "findings": [],
+          "metadata": {
+            "verified_model_file_count": 1
+          },
+          "passed": true
+        },
+        "provenance": {
+          "findings": [
+            {
+              "code": "PROVENANCE_SOURCE_BINDING_MISMATCH",
+              "field_path": "predicate.buildDefinition.resolvedDependencies",
+              "message": "Resolved source material does not match the authorized source URI, revision, and digest.",
+              "severity": "critical"
+            }
+          ],
+          "metadata": {
+            "signature_verified": true,
+            "statement_present": true
+          },
+          "passed": false
+        },
+        "release": {
+          "findings": [],
+          "metadata": {
+            "actual_manifest_digest": "9887ae53513ca4fbb824dcd59017969aab580ed426e0c8246e9947751298b7f1",
+            "observed_evidence_roles": [
+              "dependency_lock",
+              "model_manifest",
+              "provenance",
+              "sbom",
+              "workflow"
+            ],
+            "verified_artifact_count": 1
+          },
+          "passed": true
+        },
+        "reproducibility": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "sbom": {
+          "findings": [],
+          "metadata": {
+            "matched_components": 3,
+            "missing_components": [],
+            "unexpected_components": []
+          },
+          "passed": true
+        },
+        "source": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "workflow": {
+          "findings": [],
+          "metadata": {
+            "actual_workflow_sha256": "f6a66524890b51b715a4d86ce56855a8158a1c93ee3ed4dd644d307eb64be2a3"
+          },
+          "passed": true
+        }
+      }
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "provenance",
+        "source_binding"
+      ],
+      "defended": true,
+      "description": "Wrong source material digest is rejected.",
+      "expected_outcomes": [
+        "BLOCKED_PROVENANCE_FAILURE"
+      ],
+      "family": "provenance_material_digest_mismatch",
+      "finding_codes": [
+        "PROVENANCE_SOURCE_BINDING_MISMATCH"
+      ],
+      "handler": "provenance",
+      "human_review_required": false,
+      "mutation": "provenance_material_digest_mismatch",
+      "outcome": "BLOCKED_PROVENANCE_FAILURE",
+      "prohibit_closure": false,
+      "scenario_id": "SCI-017",
+      "severity": "critical",
+      "signature_verified": true,
+      "unsafe_release": false,
+      "unverified_artifact_release": false,
+      "verification_results": {
+        "dependency": {
+          "findings": [],
+          "metadata": {
+            "actual_lock_digest": "31b5048af9d98f7d726cf4c28a146d3f6da3e3d7ce5bacfbb61a1eb387d8ee9f",
+            "dependency_count": 3,
+            "verified_artifact_count": 3
+          },
+          "passed": true
+        },
+        "model": {
+          "findings": [],
+          "metadata": {
+            "verified_model_file_count": 1
+          },
+          "passed": true
+        },
+        "provenance": {
+          "findings": [
+            {
+              "code": "PROVENANCE_SOURCE_BINDING_MISMATCH",
+              "field_path": "predicate.buildDefinition.resolvedDependencies",
+              "message": "Resolved source material does not match the authorized source URI, revision, and digest.",
+              "severity": "critical"
+            }
+          ],
+          "metadata": {
+            "signature_verified": true,
+            "statement_present": true
+          },
+          "passed": false
+        },
+        "release": {
+          "findings": [],
+          "metadata": {
+            "actual_manifest_digest": "07a81f151598ad41f11ea66874b2cc5f492a6122844413e22ee62ae2c32ce4ab",
+            "observed_evidence_roles": [
+              "dependency_lock",
+              "model_manifest",
+              "provenance",
+              "sbom",
+              "workflow"
+            ],
+            "verified_artifact_count": 1
+          },
+          "passed": true
+        },
+        "reproducibility": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "sbom": {
+          "findings": [],
+          "metadata": {
+            "matched_components": 3,
+            "missing_components": [],
+            "unexpected_components": []
+          },
+          "passed": true
+        },
+        "source": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "workflow": {
+          "findings": [],
+          "metadata": {
+            "actual_workflow_sha256": "f6a66524890b51b715a4d86ce56855a8158a1c93ee3ed4dd644d307eb64be2a3"
+          },
+          "passed": true
+        }
+      }
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "provenance"
+      ],
+      "defended": true,
+      "description": "Missing invocation identity is rejected.",
+      "expected_outcomes": [
+        "BLOCKED_PROVENANCE_FAILURE"
+      ],
+      "family": "provenance_invocation_missing",
+      "finding_codes": [
+        "PROVENANCE_INVOCATION_ID_MISSING"
+      ],
+      "handler": "provenance",
+      "human_review_required": false,
+      "mutation": "provenance_invocation_missing",
+      "outcome": "BLOCKED_PROVENANCE_FAILURE",
+      "prohibit_closure": false,
+      "scenario_id": "SCI-018",
+      "severity": "critical",
+      "signature_verified": true,
+      "unsafe_release": false,
+      "unverified_artifact_release": false,
+      "verification_results": {
+        "dependency": {
+          "findings": [],
+          "metadata": {
+            "actual_lock_digest": "31b5048af9d98f7d726cf4c28a146d3f6da3e3d7ce5bacfbb61a1eb387d8ee9f",
+            "dependency_count": 3,
+            "verified_artifact_count": 3
+          },
+          "passed": true
+        },
+        "model": {
+          "findings": [],
+          "metadata": {
+            "verified_model_file_count": 1
+          },
+          "passed": true
+        },
+        "provenance": {
+          "findings": [
+            {
+              "code": "PROVENANCE_INVOCATION_ID_MISSING",
+              "field_path": "predicate.runDetails.metadata.invocationId",
+              "message": "Unique build invocation identity is required.",
+              "severity": "critical"
+            }
+          ],
+          "metadata": {
+            "signature_verified": true,
+            "statement_present": true
+          },
+          "passed": false
+        },
+        "release": {
+          "findings": [],
+          "metadata": {
+            "actual_manifest_digest": "85cdc564904e5bd6c060dd1b6e13901bb3d9294b137ce7d5f03bfc95bcb7345f",
+            "observed_evidence_roles": [
+              "dependency_lock",
+              "model_manifest",
+              "provenance",
+              "sbom",
+              "workflow"
+            ],
+            "verified_artifact_count": 1
+          },
+          "passed": true
+        },
+        "reproducibility": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "sbom": {
+          "findings": [],
+          "metadata": {
+            "matched_components": 3,
+            "missing_components": [],
+            "unexpected_components": []
+          },
+          "passed": true
+        },
+        "source": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "workflow": {
+          "findings": [],
+          "metadata": {
+            "actual_workflow_sha256": "f6a66524890b51b715a4d86ce56855a8158a1c93ee3ed4dd644d307eb64be2a3"
+          },
+          "passed": true
+        }
+      }
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "signature",
+        "provenance"
+      ],
+      "defended": true,
+      "description": "Invalid DSSE signature is rejected.",
+      "expected_outcomes": [
+        "BLOCKED_SIGNATURE_FAILURE"
+      ],
+      "family": "signature_invalid",
+      "finding_codes": [
+        "SIGNATURE_VERIFICATION_FAILED"
+      ],
+      "handler": "provenance",
+      "human_review_required": false,
+      "mutation": "signature_invalid",
+      "outcome": "BLOCKED_SIGNATURE_FAILURE",
+      "prohibit_closure": false,
+      "scenario_id": "SCI-019",
+      "severity": "critical",
+      "signature_verified": false,
+      "unsafe_release": false,
+      "unverified_artifact_release": false,
+      "verification_results": {
+        "dependency": {
+          "findings": [],
+          "metadata": {
+            "actual_lock_digest": "31b5048af9d98f7d726cf4c28a146d3f6da3e3d7ce5bacfbb61a1eb387d8ee9f",
+            "dependency_count": 3,
+            "verified_artifact_count": 3
+          },
+          "passed": true
+        },
+        "model": {
+          "findings": [],
+          "metadata": {
+            "verified_model_file_count": 1
+          },
+          "passed": true
+        },
+        "provenance": {
+          "findings": [
+            {
+              "code": "SIGNATURE_VERIFICATION_FAILED",
+              "field_path": "signatures[0].sig",
+              "message": "DSSE provenance signature verification failed.",
+              "severity": "critical"
+            }
+          ],
+          "metadata": {
+            "signature_verified": false,
+            "statement_present": true
+          },
+          "passed": false
+        },
+        "release": {
+          "findings": [],
+          "metadata": {
+            "actual_manifest_digest": "74bdabc641aba561057eaa5af3f83a2c2f3b844a2ea77b070e922a213eadc681",
+            "observed_evidence_roles": [
+              "dependency_lock",
+              "model_manifest",
+              "provenance",
+              "sbom",
+              "workflow"
+            ],
+            "verified_artifact_count": 1
+          },
+          "passed": true
+        },
+        "reproducibility": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "sbom": {
+          "findings": [],
+          "metadata": {
+            "matched_components": 3,
+            "missing_components": [],
+            "unexpected_components": []
+          },
+          "passed": true
+        },
+        "source": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "workflow": {
+          "findings": [],
+          "metadata": {
+            "actual_workflow_sha256": "f6a66524890b51b715a4d86ce56855a8158a1c93ee3ed4dd644d307eb64be2a3"
+          },
+          "passed": true
+        }
+      }
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "signature",
+        "provenance"
+      ],
+      "defended": true,
+      "description": "Unknown signing identity is rejected.",
+      "expected_outcomes": [
+        "BLOCKED_SIGNATURE_FAILURE"
+      ],
+      "family": "signature_untrusted_key",
+      "finding_codes": [
+        "SIGNING_KEY_NOT_TRUSTED"
+      ],
+      "handler": "provenance",
+      "human_review_required": false,
+      "mutation": "signature_untrusted_key",
+      "outcome": "BLOCKED_SIGNATURE_FAILURE",
+      "prohibit_closure": false,
+      "scenario_id": "SCI-020",
+      "severity": "critical",
+      "signature_verified": false,
+      "unsafe_release": false,
+      "unverified_artifact_release": false,
+      "verification_results": {
+        "dependency": {
+          "findings": [],
+          "metadata": {
+            "actual_lock_digest": "31b5048af9d98f7d726cf4c28a146d3f6da3e3d7ce5bacfbb61a1eb387d8ee9f",
+            "dependency_count": 3,
+            "verified_artifact_count": 3
+          },
+          "passed": true
+        },
+        "model": {
+          "findings": [],
+          "metadata": {
+            "verified_model_file_count": 1
+          },
+          "passed": true
+        },
+        "provenance": {
+          "findings": [
+            {
+              "code": "SIGNING_KEY_NOT_TRUSTED",
+              "field_path": "signatures[0].keyid",
+              "message": "Release signing key is not present in the trusted key policy.",
+              "severity": "critical"
+            }
+          ],
+          "metadata": {
+            "signature_verified": false,
+            "statement_present": true
+          },
+          "passed": false
+        },
+        "release": {
+          "findings": [],
+          "metadata": {
+            "actual_manifest_digest": "96ef216540b858874994204cbda21ff840f1b7774f471539fd37165607cb576c",
+            "observed_evidence_roles": [
+              "dependency_lock",
+              "model_manifest",
+              "provenance",
+              "sbom",
+              "workflow"
+            ],
+            "verified_artifact_count": 1
+          },
+          "passed": true
+        },
+        "reproducibility": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "sbom": {
+          "findings": [],
+          "metadata": {
+            "matched_components": 3,
+            "missing_components": [],
+            "unexpected_components": []
+          },
+          "passed": true
+        },
+        "source": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "workflow": {
+          "findings": [],
+          "metadata": {
+            "actual_workflow_sha256": "f6a66524890b51b715a4d86ce56855a8158a1c93ee3ed4dd644d307eb64be2a3"
+          },
+          "passed": true
+        }
+      }
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "workflow_integrity"
+      ],
+      "defended": true,
+      "description": "Mutable CI action references are rejected.",
+      "expected_outcomes": [
+        "BLOCKED_BUILD_POLICY_VIOLATION"
+      ],
+      "family": "workflow_mutable_action",
+      "finding_codes": [
+        "WORKFLOW_ACTION_NOT_COMMIT_PINNED",
+        "WORKFLOW_DIGEST_MISMATCH"
+      ],
+      "handler": "build_ci",
+      "human_review_required": false,
+      "mutation": "workflow_mutable_action",
+      "outcome": "BLOCKED_BUILD_POLICY_VIOLATION",
+      "prohibit_closure": false,
+      "scenario_id": "SCI-021",
+      "severity": "critical",
+      "signature_verified": true,
+      "unsafe_release": false,
+      "unverified_artifact_release": false,
+      "verification_results": {
+        "dependency": {
+          "findings": [],
+          "metadata": {
+            "actual_lock_digest": "31b5048af9d98f7d726cf4c28a146d3f6da3e3d7ce5bacfbb61a1eb387d8ee9f",
+            "dependency_count": 3,
+            "verified_artifact_count": 3
+          },
+          "passed": true
+        },
+        "model": {
+          "findings": [],
+          "metadata": {
+            "verified_model_file_count": 1
+          },
+          "passed": true
+        },
+        "provenance": {
+          "findings": [],
+          "metadata": {
+            "signature_verified": true,
+            "statement_present": true
+          },
+          "passed": true
+        },
+        "release": {
+          "findings": [],
+          "metadata": {
+            "actual_manifest_digest": "d0b681fef25376d0fe207e31c912ed4c7c28a3fab37455ff31893eaf0699bf51",
+            "observed_evidence_roles": [
+              "dependency_lock",
+              "model_manifest",
+              "provenance",
+              "sbom",
+              "workflow"
+            ],
+            "verified_artifact_count": 1
+          },
+          "passed": true
+        },
+        "reproducibility": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "sbom": {
+          "findings": [],
+          "metadata": {
+            "matched_components": 3,
+            "missing_components": [],
+            "unexpected_components": []
+          },
+          "passed": true
+        },
+        "source": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "workflow": {
+          "findings": [
+            {
+              "code": "WORKFLOW_DIGEST_MISMATCH",
+              "field_path": "workflow.sha256",
+              "message": "Build workflow digest differs from the authorized workflow.",
+              "severity": "critical"
+            },
+            {
+              "code": "WORKFLOW_ACTION_NOT_COMMIT_PINNED",
+              "field_path": "workflow.uses",
+              "message": "Third-party action reference must be pinned to a full commit SHA.",
+              "severity": "critical"
+            }
+          ],
+          "metadata": {
+            "actual_workflow_sha256": "d456ef399c39cc5995bc9742fe100e758fb7bd479c3a21ea1e4bd0733bbf4bcf"
+          },
+          "passed": false
+        }
+      }
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "workflow_integrity"
+      ],
+      "defended": true,
+      "description": "Mutable build container references are rejected.",
+      "expected_outcomes": [
+        "BLOCKED_BUILD_POLICY_VIOLATION"
+      ],
+      "family": "workflow_mutable_container",
+      "finding_codes": [
+        "WORKFLOW_CONTAINER_NOT_DIGEST_PINNED",
+        "WORKFLOW_DIGEST_MISMATCH"
+      ],
+      "handler": "build_ci",
+      "human_review_required": false,
+      "mutation": "workflow_mutable_container",
+      "outcome": "BLOCKED_BUILD_POLICY_VIOLATION",
+      "prohibit_closure": false,
+      "scenario_id": "SCI-022",
+      "severity": "critical",
+      "signature_verified": true,
+      "unsafe_release": false,
+      "unverified_artifact_release": false,
+      "verification_results": {
+        "dependency": {
+          "findings": [],
+          "metadata": {
+            "actual_lock_digest": "31b5048af9d98f7d726cf4c28a146d3f6da3e3d7ce5bacfbb61a1eb387d8ee9f",
+            "dependency_count": 3,
+            "verified_artifact_count": 3
+          },
+          "passed": true
+        },
+        "model": {
+          "findings": [],
+          "metadata": {
+            "verified_model_file_count": 1
+          },
+          "passed": true
+        },
+        "provenance": {
+          "findings": [],
+          "metadata": {
+            "signature_verified": true,
+            "statement_present": true
+          },
+          "passed": true
+        },
+        "release": {
+          "findings": [],
+          "metadata": {
+            "actual_manifest_digest": "d3790fd20411d63d45030d6515122ea93736e6de1b9d0c610ab1a4b5ca9a012e",
+            "observed_evidence_roles": [
+              "dependency_lock",
+              "model_manifest",
+              "provenance",
+              "sbom",
+              "workflow"
+            ],
+            "verified_artifact_count": 1
+          },
+          "passed": true
+        },
+        "reproducibility": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "sbom": {
+          "findings": [],
+          "metadata": {
+            "matched_components": 3,
+            "missing_components": [],
+            "unexpected_components": []
+          },
+          "passed": true
+        },
+        "source": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "workflow": {
+          "findings": [
+            {
+              "code": "WORKFLOW_DIGEST_MISMATCH",
+              "field_path": "workflow.sha256",
+              "message": "Build workflow digest differs from the authorized workflow.",
+              "severity": "critical"
+            },
+            {
+              "code": "WORKFLOW_CONTAINER_NOT_DIGEST_PINNED",
+              "field_path": "workflow.container",
+              "message": "Container image must be pinned by SHA-256 digest.",
+              "severity": "critical"
+            }
+          ],
+          "metadata": {
+            "actual_workflow_sha256": "d2ce5b530d263dd3b8312a05ba7174fdc1803e9831ea9b228f843e5ef0f8d562"
+          },
+          "passed": false
+        }
+      }
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "workflow_integrity"
+      ],
+      "defended": true,
+      "description": "Workflow content not matching the approved digest is rejected.",
+      "expected_outcomes": [
+        "BLOCKED_BUILD_POLICY_VIOLATION"
+      ],
+      "family": "workflow_digest_tamper",
+      "finding_codes": [
+        "WORKFLOW_DIGEST_MISMATCH"
+      ],
+      "handler": "build_ci",
+      "human_review_required": false,
+      "mutation": "workflow_digest_tamper",
+      "outcome": "BLOCKED_BUILD_POLICY_VIOLATION",
+      "prohibit_closure": false,
+      "scenario_id": "SCI-023",
+      "severity": "critical",
+      "signature_verified": true,
+      "unsafe_release": false,
+      "unverified_artifact_release": false,
+      "verification_results": {
+        "dependency": {
+          "findings": [],
+          "metadata": {
+            "actual_lock_digest": "31b5048af9d98f7d726cf4c28a146d3f6da3e3d7ce5bacfbb61a1eb387d8ee9f",
+            "dependency_count": 3,
+            "verified_artifact_count": 3
+          },
+          "passed": true
+        },
+        "model": {
+          "findings": [],
+          "metadata": {
+            "verified_model_file_count": 1
+          },
+          "passed": true
+        },
+        "provenance": {
+          "findings": [],
+          "metadata": {
+            "signature_verified": true,
+            "statement_present": true
+          },
+          "passed": true
+        },
+        "release": {
+          "findings": [],
+          "metadata": {
+            "actual_manifest_digest": "3657a9334f9a369cc674ee7048b451d3c0725d759d77d4d0cbcd1baf2d1da021",
+            "observed_evidence_roles": [
+              "dependency_lock",
+              "model_manifest",
+              "provenance",
+              "sbom",
+              "workflow"
+            ],
+            "verified_artifact_count": 1
+          },
+          "passed": true
+        },
+        "reproducibility": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "sbom": {
+          "findings": [],
+          "metadata": {
+            "matched_components": 3,
+            "missing_components": [],
+            "unexpected_components": []
+          },
+          "passed": true
+        },
+        "source": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "workflow": {
+          "findings": [
+            {
+              "code": "WORKFLOW_DIGEST_MISMATCH",
+              "field_path": "workflow.sha256",
+              "message": "Build workflow digest differs from the authorized workflow.",
+              "severity": "critical"
+            }
+          ],
+          "metadata": {
+            "actual_workflow_sha256": "ce984d936081b24a8537b8d91ebfc1f65171f8075358bf511ed0f8ff09c1ac8d"
+          },
+          "passed": false
+        }
+      }
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "workflow_integrity"
+      ],
+      "defended": true,
+      "description": "Dangerous CI trigger is rejected.",
+      "expected_outcomes": [
+        "BLOCKED_BUILD_POLICY_VIOLATION"
+      ],
+      "family": "workflow_forbidden_trigger",
+      "finding_codes": [
+        "WORKFLOW_DIGEST_MISMATCH",
+        "WORKFLOW_FORBIDDEN_TRIGGER"
+      ],
+      "handler": "build_ci",
+      "human_review_required": false,
+      "mutation": "workflow_forbidden_trigger",
+      "outcome": "BLOCKED_BUILD_POLICY_VIOLATION",
+      "prohibit_closure": false,
+      "scenario_id": "SCI-024",
+      "severity": "critical",
+      "signature_verified": true,
+      "unsafe_release": false,
+      "unverified_artifact_release": false,
+      "verification_results": {
+        "dependency": {
+          "findings": [],
+          "metadata": {
+            "actual_lock_digest": "31b5048af9d98f7d726cf4c28a146d3f6da3e3d7ce5bacfbb61a1eb387d8ee9f",
+            "dependency_count": 3,
+            "verified_artifact_count": 3
+          },
+          "passed": true
+        },
+        "model": {
+          "findings": [],
+          "metadata": {
+            "verified_model_file_count": 1
+          },
+          "passed": true
+        },
+        "provenance": {
+          "findings": [],
+          "metadata": {
+            "signature_verified": true,
+            "statement_present": true
+          },
+          "passed": true
+        },
+        "release": {
+          "findings": [],
+          "metadata": {
+            "actual_manifest_digest": "c074338cef607299b078ee01b3abfed48a702b7dcfc059fdc8c17577611a7f25",
+            "observed_evidence_roles": [
+              "dependency_lock",
+              "model_manifest",
+              "provenance",
+              "sbom",
+              "workflow"
+            ],
+            "verified_artifact_count": 1
+          },
+          "passed": true
+        },
+        "reproducibility": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "sbom": {
+          "findings": [],
+          "metadata": {
+            "matched_components": 3,
+            "missing_components": [],
+            "unexpected_components": []
+          },
+          "passed": true
+        },
+        "source": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "workflow": {
+          "findings": [
+            {
+              "code": "WORKFLOW_DIGEST_MISMATCH",
+              "field_path": "workflow.sha256",
+              "message": "Build workflow digest differs from the authorized workflow.",
+              "severity": "critical"
+            },
+            {
+              "code": "WORKFLOW_FORBIDDEN_TRIGGER",
+              "field_path": "workflow.trigger",
+              "message": "Forbidden workflow trigger detected: pull_request_target.",
+              "severity": "critical"
+            }
+          ],
+          "metadata": {
+            "actual_workflow_sha256": "8dd4a0e3e66d906d356d5e794313a86264c4b85af3accd2170cb5a788b3aed9d"
+          },
+          "passed": false
+        }
+      }
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "workflow_integrity"
+      ],
+      "defended": true,
+      "description": "Network-enabled build violates hermetic policy.",
+      "expected_outcomes": [
+        "BLOCKED_BUILD_POLICY_VIOLATION"
+      ],
+      "family": "build_network_enabled",
+      "finding_codes": [
+        "BUILD_NETWORK_POLICY_VIOLATION"
+      ],
+      "handler": "build_ci",
+      "human_review_required": false,
+      "mutation": "build_network_enabled",
+      "outcome": "BLOCKED_BUILD_POLICY_VIOLATION",
+      "prohibit_closure": false,
+      "scenario_id": "SCI-025",
+      "severity": "critical",
+      "signature_verified": true,
+      "unsafe_release": false,
+      "unverified_artifact_release": false,
+      "verification_results": {
+        "dependency": {
+          "findings": [],
+          "metadata": {
+            "actual_lock_digest": "31b5048af9d98f7d726cf4c28a146d3f6da3e3d7ce5bacfbb61a1eb387d8ee9f",
+            "dependency_count": 3,
+            "verified_artifact_count": 3
+          },
+          "passed": true
+        },
+        "model": {
+          "findings": [],
+          "metadata": {
+            "verified_model_file_count": 1
+          },
+          "passed": true
+        },
+        "provenance": {
+          "findings": [],
+          "metadata": {
+            "signature_verified": true,
+            "statement_present": true
+          },
+          "passed": true
+        },
+        "release": {
+          "findings": [],
+          "metadata": {
+            "actual_manifest_digest": "b2545e491fcc8325165dbe347b492a97bd984fa8cc7f16b6c626dea422e805fd",
+            "observed_evidence_roles": [
+              "dependency_lock",
+              "model_manifest",
+              "provenance",
+              "sbom",
+              "workflow"
+            ],
+            "verified_artifact_count": 1
+          },
+          "passed": true
+        },
+        "reproducibility": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "sbom": {
+          "findings": [],
+          "metadata": {
+            "matched_components": 3,
+            "missing_components": [],
+            "unexpected_components": []
+          },
+          "passed": true
+        },
+        "source": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "workflow": {
+          "findings": [
+            {
+              "code": "BUILD_NETWORK_POLICY_VIOLATION",
+              "field_path": "workflow.network_disabled",
+              "message": "Build network access was enabled contrary to policy.",
+              "severity": "critical"
+            }
+          ],
+          "metadata": {
+            "actual_workflow_sha256": "f6a66524890b51b715a4d86ce56855a8158a1c93ee3ed4dd644d307eb64be2a3"
+          },
+          "passed": false
+        }
+      }
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "workflow_integrity"
+      ],
+      "defended": true,
+      "description": "Non-hermetic build is rejected.",
+      "expected_outcomes": [
+        "BLOCKED_BUILD_POLICY_VIOLATION"
+      ],
+      "family": "build_nonhermetic",
+      "finding_codes": [
+        "BUILD_NOT_HERMETIC"
+      ],
+      "handler": "build_ci",
+      "human_review_required": false,
+      "mutation": "build_nonhermetic",
+      "outcome": "BLOCKED_BUILD_POLICY_VIOLATION",
+      "prohibit_closure": false,
+      "scenario_id": "SCI-026",
+      "severity": "critical",
+      "signature_verified": true,
+      "unsafe_release": false,
+      "unverified_artifact_release": false,
+      "verification_results": {
+        "dependency": {
+          "findings": [],
+          "metadata": {
+            "actual_lock_digest": "31b5048af9d98f7d726cf4c28a146d3f6da3e3d7ce5bacfbb61a1eb387d8ee9f",
+            "dependency_count": 3,
+            "verified_artifact_count": 3
+          },
+          "passed": true
+        },
+        "model": {
+          "findings": [],
+          "metadata": {
+            "verified_model_file_count": 1
+          },
+          "passed": true
+        },
+        "provenance": {
+          "findings": [],
+          "metadata": {
+            "signature_verified": true,
+            "statement_present": true
+          },
+          "passed": true
+        },
+        "release": {
+          "findings": [],
+          "metadata": {
+            "actual_manifest_digest": "b2545e491fcc8325165dbe347b492a97bd984fa8cc7f16b6c626dea422e805fd",
+            "observed_evidence_roles": [
+              "dependency_lock",
+              "model_manifest",
+              "provenance",
+              "sbom",
+              "workflow"
+            ],
+            "verified_artifact_count": 1
+          },
+          "passed": true
+        },
+        "reproducibility": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "sbom": {
+          "findings": [],
+          "metadata": {
+            "matched_components": 3,
+            "missing_components": [],
+            "unexpected_components": []
+          },
+          "passed": true
+        },
+        "source": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "workflow": {
+          "findings": [
+            {
+              "code": "BUILD_NOT_HERMETIC",
+              "field_path": "workflow.hermetic",
+              "message": "Build environment was not hermetic.",
+              "severity": "critical"
+            }
+          ],
+          "metadata": {
+            "actual_workflow_sha256": "f6a66524890b51b715a4d86ce56855a8158a1c93ee3ed4dd644d307eb64be2a3"
+          },
+          "passed": false
+        }
+      }
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "workflow_integrity",
+        "source_binding"
+      ],
+      "defended": true,
+      "description": "Dirty source state is rejected.",
+      "expected_outcomes": [
+        "BLOCKED_BUILD_POLICY_VIOLATION"
+      ],
+      "family": "source_dirty",
+      "finding_codes": [
+        "SOURCE_WORKTREE_DIRTY"
+      ],
+      "handler": "build_ci",
+      "human_review_required": false,
+      "mutation": "source_dirty",
+      "outcome": "BLOCKED_BUILD_POLICY_VIOLATION",
+      "prohibit_closure": false,
+      "scenario_id": "SCI-027",
+      "severity": "critical",
+      "signature_verified": true,
+      "unsafe_release": false,
+      "unverified_artifact_release": false,
+      "verification_results": {
+        "dependency": {
+          "findings": [],
+          "metadata": {
+            "actual_lock_digest": "31b5048af9d98f7d726cf4c28a146d3f6da3e3d7ce5bacfbb61a1eb387d8ee9f",
+            "dependency_count": 3,
+            "verified_artifact_count": 3
+          },
+          "passed": true
+        },
+        "model": {
+          "findings": [],
+          "metadata": {
+            "verified_model_file_count": 1
+          },
+          "passed": true
+        },
+        "provenance": {
+          "findings": [],
+          "metadata": {
+            "signature_verified": true,
+            "statement_present": true
+          },
+          "passed": true
+        },
+        "release": {
+          "findings": [],
+          "metadata": {
+            "actual_manifest_digest": "b2545e491fcc8325165dbe347b492a97bd984fa8cc7f16b6c626dea422e805fd",
+            "observed_evidence_roles": [
+              "dependency_lock",
+              "model_manifest",
+              "provenance",
+              "sbom",
+              "workflow"
+            ],
+            "verified_artifact_count": 1
+          },
+          "passed": true
+        },
+        "reproducibility": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "sbom": {
+          "findings": [],
+          "metadata": {
+            "matched_components": 3,
+            "missing_components": [],
+            "unexpected_components": []
+          },
+          "passed": true
+        },
+        "source": {
+          "findings": [
+            {
+              "code": "SOURCE_WORKTREE_DIRTY",
+              "field_path": "source.clean",
+              "message": "Uncommitted source changes are prohibited build inputs.",
+              "severity": "critical"
+            }
+          ],
+          "metadata": {},
+          "passed": false
+        },
+        "workflow": {
+          "findings": [],
+          "metadata": {
+            "actual_workflow_sha256": "f6a66524890b51b715a4d86ce56855a8158a1c93ee3ed4dd644d307eb64be2a3"
+          },
+          "passed": true
+        }
+      }
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "workflow_integrity",
+        "source_binding"
+      ],
+      "defended": true,
+      "description": "Uncommitted build input is rejected.",
+      "expected_outcomes": [
+        "BLOCKED_BUILD_POLICY_VIOLATION"
+      ],
+      "family": "source_uncommitted_input",
+      "finding_codes": [
+        "UNCOMMITTED_BUILD_INPUT"
+      ],
+      "handler": "build_ci",
+      "human_review_required": false,
+      "mutation": "source_uncommitted_input",
+      "outcome": "BLOCKED_BUILD_POLICY_VIOLATION",
+      "prohibit_closure": false,
+      "scenario_id": "SCI-028",
+      "severity": "critical",
+      "signature_verified": true,
+      "unsafe_release": false,
+      "unverified_artifact_release": false,
+      "verification_results": {
+        "dependency": {
+          "findings": [],
+          "metadata": {
+            "actual_lock_digest": "31b5048af9d98f7d726cf4c28a146d3f6da3e3d7ce5bacfbb61a1eb387d8ee9f",
+            "dependency_count": 3,
+            "verified_artifact_count": 3
+          },
+          "passed": true
+        },
+        "model": {
+          "findings": [],
+          "metadata": {
+            "verified_model_file_count": 1
+          },
+          "passed": true
+        },
+        "provenance": {
+          "findings": [],
+          "metadata": {
+            "signature_verified": true,
+            "statement_present": true
+          },
+          "passed": true
+        },
+        "release": {
+          "findings": [],
+          "metadata": {
+            "actual_manifest_digest": "b2545e491fcc8325165dbe347b492a97bd984fa8cc7f16b6c626dea422e805fd",
+            "observed_evidence_roles": [
+              "dependency_lock",
+              "model_manifest",
+              "provenance",
+              "sbom",
+              "workflow"
+            ],
+            "verified_artifact_count": 1
+          },
+          "passed": true
+        },
+        "reproducibility": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "sbom": {
+          "findings": [],
+          "metadata": {
+            "matched_components": 3,
+            "missing_components": [],
+            "unexpected_components": []
+          },
+          "passed": true
+        },
+        "source": {
+          "findings": [
+            {
+              "code": "UNCOMMITTED_BUILD_INPUT",
+              "field_path": "source.committed_inputs_only",
+              "message": "Build consumed inputs not bound to the source revision.",
+              "severity": "critical"
+            }
+          ],
+          "metadata": {},
+          "passed": false
+        },
+        "workflow": {
+          "findings": [],
+          "metadata": {
+            "actual_workflow_sha256": "f6a66524890b51b715a4d86ce56855a8158a1c93ee3ed4dd644d307eb64be2a3"
+          },
+          "passed": true
+        }
+      }
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "artifact_digest"
+      ],
+      "defended": true,
+      "description": "Tampered artifact bytes are blocked.",
+      "expected_outcomes": [
+        "BLOCKED_ARTIFACT_DIGEST_FAILURE"
+      ],
+      "family": "artifact_bytes_tamper",
+      "finding_codes": [
+        "RELEASE_ARTIFACT_DIGEST_MISMATCH",
+        "RELEASE_ARTIFACT_SIZE_MISMATCH"
+      ],
+      "handler": "release",
+      "human_review_required": false,
+      "mutation": "artifact_bytes_tamper",
+      "outcome": "BLOCKED_ARTIFACT_DIGEST_FAILURE",
+      "prohibit_closure": false,
+      "scenario_id": "SCI-029",
+      "severity": "critical",
+      "signature_verified": true,
+      "unsafe_release": false,
+      "unverified_artifact_release": false,
+      "verification_results": {
+        "dependency": {
+          "findings": [],
+          "metadata": {
+            "actual_lock_digest": "31b5048af9d98f7d726cf4c28a146d3f6da3e3d7ce5bacfbb61a1eb387d8ee9f",
+            "dependency_count": 3,
+            "verified_artifact_count": 3
+          },
+          "passed": true
+        },
+        "model": {
+          "findings": [],
+          "metadata": {
+            "verified_model_file_count": 1
+          },
+          "passed": true
+        },
+        "provenance": {
+          "findings": [],
+          "metadata": {
+            "signature_verified": true,
+            "statement_present": true
+          },
+          "passed": true
+        },
+        "release": {
+          "findings": [
+            {
+              "code": "RELEASE_ARTIFACT_SIZE_MISMATCH",
+              "field_path": "artifacts[0].size_bytes",
+              "message": "Release artifact size does not match the manifest.",
+              "severity": "critical"
+            },
+            {
+              "code": "RELEASE_ARTIFACT_DIGEST_MISMATCH",
+              "field_path": "artifacts[0].sha256",
+              "message": "Release artifact bytes do not match the manifest digest.",
+              "severity": "critical"
+            }
+          ],
+          "metadata": {
+            "actual_manifest_digest": "b2545e491fcc8325165dbe347b492a97bd984fa8cc7f16b6c626dea422e805fd",
+            "observed_evidence_roles": [
+              "dependency_lock",
+              "model_manifest",
+              "provenance",
+              "sbom",
+              "workflow"
+            ],
+            "verified_artifact_count": 0
+          },
+          "passed": false
+        },
+        "reproducibility": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "sbom": {
+          "findings": [],
+          "metadata": {
+            "matched_components": 3,
+            "missing_components": [],
+            "unexpected_components": []
+          },
+          "passed": true
+        },
+        "source": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "workflow": {
+          "findings": [],
+          "metadata": {
+            "actual_workflow_sha256": "f6a66524890b51b715a4d86ce56855a8158a1c93ee3ed4dd644d307eb64be2a3"
+          },
+          "passed": true
+        }
+      }
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "artifact_digest"
+      ],
+      "defended": true,
+      "description": "Artifact without digest is blocked.",
+      "expected_outcomes": [
+        "BLOCKED_ARTIFACT_DIGEST_FAILURE"
+      ],
+      "family": "artifact_hash_missing",
+      "finding_codes": [
+        "RELEASE_ARTIFACT_HASH_MISSING"
+      ],
+      "handler": "release",
+      "human_review_required": false,
+      "mutation": "artifact_hash_missing",
+      "outcome": "BLOCKED_ARTIFACT_DIGEST_FAILURE",
+      "prohibit_closure": false,
+      "scenario_id": "SCI-030",
+      "severity": "critical",
+      "signature_verified": true,
+      "unsafe_release": false,
+      "unverified_artifact_release": false,
+      "verification_results": {
+        "dependency": {
+          "findings": [],
+          "metadata": {
+            "actual_lock_digest": "31b5048af9d98f7d726cf4c28a146d3f6da3e3d7ce5bacfbb61a1eb387d8ee9f",
+            "dependency_count": 3,
+            "verified_artifact_count": 3
+          },
+          "passed": true
+        },
+        "model": {
+          "findings": [],
+          "metadata": {
+            "verified_model_file_count": 1
+          },
+          "passed": true
+        },
+        "provenance": {
+          "findings": [],
+          "metadata": {
+            "signature_verified": true,
+            "statement_present": true
+          },
+          "passed": true
+        },
+        "release": {
+          "findings": [
+            {
+              "code": "RELEASE_ARTIFACT_HASH_MISSING",
+              "field_path": "artifacts[0].sha256",
+              "message": "Release artifact requires a SHA-256 digest.",
+              "severity": "critical"
+            }
+          ],
+          "metadata": {
+            "actual_manifest_digest": "d384c32bf99d6f7ecaaaca244ccc93bcde1b19e8b879e26239332f3cd08c0a30",
+            "observed_evidence_roles": [
+              "dependency_lock",
+              "model_manifest",
+              "provenance",
+              "sbom",
+              "workflow"
+            ],
+            "verified_artifact_count": 0
+          },
+          "passed": false
+        },
+        "reproducibility": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "sbom": {
+          "findings": [],
+          "metadata": {
+            "matched_components": 3,
+            "missing_components": [],
+            "unexpected_components": []
+          },
+          "passed": true
+        },
+        "source": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "workflow": {
+          "findings": [],
+          "metadata": {
+            "actual_workflow_sha256": "f6a66524890b51b715a4d86ce56855a8158a1c93ee3ed4dd644d307eb64be2a3"
+          },
+          "passed": true
+        }
+      }
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "artifact_digest",
+        "manifest_atomicity"
+      ],
+      "defended": true,
+      "description": "Tampered release manifest digest is blocked.",
+      "expected_outcomes": [
+        "BLOCKED_ARTIFACT_DIGEST_FAILURE"
+      ],
+      "family": "manifest_digest_tamper",
+      "finding_codes": [
+        "RELEASE_MANIFEST_DIGEST_MISMATCH"
+      ],
+      "handler": "release",
+      "human_review_required": false,
+      "mutation": "manifest_digest_tamper",
+      "outcome": "BLOCKED_ARTIFACT_DIGEST_FAILURE",
+      "prohibit_closure": false,
+      "scenario_id": "SCI-031",
+      "severity": "critical",
+      "signature_verified": true,
+      "unsafe_release": false,
+      "unverified_artifact_release": false,
+      "verification_results": {
+        "dependency": {
+          "findings": [],
+          "metadata": {
+            "actual_lock_digest": "31b5048af9d98f7d726cf4c28a146d3f6da3e3d7ce5bacfbb61a1eb387d8ee9f",
+            "dependency_count": 3,
+            "verified_artifact_count": 3
+          },
+          "passed": true
+        },
+        "model": {
+          "findings": [],
+          "metadata": {
+            "verified_model_file_count": 1
+          },
+          "passed": true
+        },
+        "provenance": {
+          "findings": [],
+          "metadata": {
+            "signature_verified": true,
+            "statement_present": true
+          },
+          "passed": true
+        },
+        "release": {
+          "findings": [
+            {
+              "code": "RELEASE_MANIFEST_DIGEST_MISMATCH",
+              "field_path": "manifest_digest",
+              "message": "Release manifest canonical digest does not match its content.",
+              "severity": "critical"
+            }
+          ],
+          "metadata": {
+            "actual_manifest_digest": "b2545e491fcc8325165dbe347b492a97bd984fa8cc7f16b6c626dea422e805fd",
+            "observed_evidence_roles": [
+              "dependency_lock",
+              "model_manifest",
+              "provenance",
+              "sbom",
+              "workflow"
+            ],
+            "verified_artifact_count": 1
+          },
+          "passed": false
+        },
+        "reproducibility": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "sbom": {
+          "findings": [],
+          "metadata": {
+            "matched_components": 3,
+            "missing_components": [],
+            "unexpected_components": []
+          },
+          "passed": true
+        },
+        "source": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "workflow": {
+          "findings": [],
+          "metadata": {
+            "actual_workflow_sha256": "f6a66524890b51b715a4d86ce56855a8158a1c93ee3ed4dd644d307eb64be2a3"
+          },
+          "passed": true
+        }
+      }
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "release_conflict",
+        "manifest_atomicity"
+      ],
+      "defended": true,
+      "description": "Duplicate artifact identity is quarantined.",
+      "expected_outcomes": [
+        "QUARANTINED_RELEASE_CONFLICT"
+      ],
+      "family": "release_duplicate_artifact",
+      "finding_codes": [
+        "RELEASE_ARTIFACT_DUPLICATE"
+      ],
+      "handler": "release",
+      "human_review_required": false,
+      "mutation": "release_duplicate_artifact",
+      "outcome": "QUARANTINED_RELEASE_CONFLICT",
+      "prohibit_closure": false,
+      "scenario_id": "SCI-032",
+      "severity": "critical",
+      "signature_verified": true,
+      "unsafe_release": false,
+      "unverified_artifact_release": false,
+      "verification_results": {
+        "dependency": {
+          "findings": [],
+          "metadata": {
+            "actual_lock_digest": "31b5048af9d98f7d726cf4c28a146d3f6da3e3d7ce5bacfbb61a1eb387d8ee9f",
+            "dependency_count": 3,
+            "verified_artifact_count": 3
+          },
+          "passed": true
+        },
+        "model": {
+          "findings": [],
+          "metadata": {
+            "verified_model_file_count": 1
+          },
+          "passed": true
+        },
+        "provenance": {
+          "findings": [],
+          "metadata": {
+            "signature_verified": true,
+            "statement_present": true
+          },
+          "passed": true
+        },
+        "release": {
+          "findings": [
+            {
+              "code": "RELEASE_ARTIFACT_DUPLICATE",
+              "field_path": "artifacts[1].name",
+              "message": "Duplicate artifact identity creates a release conflict.",
+              "severity": "critical"
+            }
+          ],
+          "metadata": {
+            "actual_manifest_digest": "698a6888ccc79dd1b09ea8e074d5109f23a0a14a4a750126ffc00b3ca241361b",
+            "observed_evidence_roles": [
+              "dependency_lock",
+              "model_manifest",
+              "provenance",
+              "sbom",
+              "workflow"
+            ],
+            "verified_artifact_count": 2
+          },
+          "passed": false
+        },
+        "reproducibility": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "sbom": {
+          "findings": [],
+          "metadata": {
+            "matched_components": 3,
+            "missing_components": [],
+            "unexpected_components": []
+          },
+          "passed": true
+        },
+        "source": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "workflow": {
+          "findings": [],
+          "metadata": {
+            "actual_workflow_sha256": "f6a66524890b51b715a4d86ce56855a8158a1c93ee3ed4dd644d307eb64be2a3"
+          },
+          "passed": true
+        }
+      }
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "release_conflict"
+      ],
+      "defended": true,
+      "description": "Unauthorized release exception is quarantined.",
+      "expected_outcomes": [
+        "QUARANTINED_RELEASE_CONFLICT"
+      ],
+      "family": "release_unauthorized_exception",
+      "finding_codes": [
+        "UNAUTHORIZED_RELEASE_EXCEPTION"
+      ],
+      "handler": "release",
+      "human_review_required": false,
+      "mutation": "release_unauthorized_exception",
+      "outcome": "QUARANTINED_RELEASE_CONFLICT",
+      "prohibit_closure": false,
+      "scenario_id": "SCI-033",
+      "severity": "critical",
+      "signature_verified": true,
+      "unsafe_release": false,
+      "unverified_artifact_release": false,
+      "verification_results": {
+        "dependency": {
+          "findings": [],
+          "metadata": {
+            "actual_lock_digest": "31b5048af9d98f7d726cf4c28a146d3f6da3e3d7ce5bacfbb61a1eb387d8ee9f",
+            "dependency_count": 3,
+            "verified_artifact_count": 3
+          },
+          "passed": true
+        },
+        "model": {
+          "findings": [],
+          "metadata": {
+            "verified_model_file_count": 1
+          },
+          "passed": true
+        },
+        "provenance": {
+          "findings": [],
+          "metadata": {
+            "signature_verified": true,
+            "statement_present": true
+          },
+          "passed": true
+        },
+        "release": {
+          "findings": [
+            {
+              "code": "UNAUTHORIZED_RELEASE_EXCEPTION",
+              "field_path": "authorized_exception",
+              "message": "Release exception is absent from the authorized exception policy.",
+              "severity": "critical"
+            }
+          ],
+          "metadata": {
+            "actual_manifest_digest": "f9e7e3c335bd756e8eb49c3b12bbad3add6f6fddea380b5f21392d1a7d2fd5a0",
+            "observed_evidence_roles": [
+              "dependency_lock",
+              "model_manifest",
+              "provenance",
+              "sbom",
+              "workflow"
+            ],
+            "verified_artifact_count": 1
+          },
+          "passed": false
+        },
+        "reproducibility": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "sbom": {
+          "findings": [],
+          "metadata": {
+            "matched_components": 3,
+            "missing_components": [],
+            "unexpected_components": []
+          },
+          "passed": true
+        },
+        "source": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "workflow": {
+          "findings": [],
+          "metadata": {
+            "actual_workflow_sha256": "f6a66524890b51b715a4d86ce56855a8158a1c93ee3ed4dd644d307eb64be2a3"
+          },
+          "passed": true
+        }
+      }
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "rollback_protection",
+        "reproducibility"
+      ],
+      "defended": true,
+      "description": "Rollback to a prior release sequence is blocked.",
+      "expected_outcomes": [
+        "BLOCKED_REPRODUCIBILITY_FAILURE"
+      ],
+      "family": "release_rollback",
+      "finding_codes": [
+        "RELEASE_ROLLBACK_DETECTED"
+      ],
+      "handler": "release",
+      "human_review_required": false,
+      "mutation": "release_rollback",
+      "outcome": "BLOCKED_REPRODUCIBILITY_FAILURE",
+      "prohibit_closure": false,
+      "scenario_id": "SCI-034",
+      "severity": "critical",
+      "signature_verified": true,
+      "unsafe_release": false,
+      "unverified_artifact_release": false,
+      "verification_results": {
+        "dependency": {
+          "findings": [],
+          "metadata": {
+            "actual_lock_digest": "31b5048af9d98f7d726cf4c28a146d3f6da3e3d7ce5bacfbb61a1eb387d8ee9f",
+            "dependency_count": 3,
+            "verified_artifact_count": 3
+          },
+          "passed": true
+        },
+        "model": {
+          "findings": [],
+          "metadata": {
+            "verified_model_file_count": 1
+          },
+          "passed": true
+        },
+        "provenance": {
+          "findings": [],
+          "metadata": {
+            "signature_verified": true,
+            "statement_present": true
+          },
+          "passed": true
+        },
+        "release": {
+          "findings": [
+            {
+              "code": "RELEASE_ROLLBACK_DETECTED",
+              "field_path": "release_sequence",
+              "message": "Release sequence does not advance beyond the trusted baseline.",
+              "severity": "critical"
+            }
+          ],
+          "metadata": {
+            "actual_manifest_digest": "4330aab37abf0fc12a17b889e0e5041e32bf7fa8204c020ed58c7848b38bd3a7",
+            "observed_evidence_roles": [
+              "dependency_lock",
+              "model_manifest",
+              "provenance",
+              "sbom",
+              "workflow"
+            ],
+            "verified_artifact_count": 1
+          },
+          "passed": false
+        },
+        "reproducibility": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "sbom": {
+          "findings": [],
+          "metadata": {
+            "matched_components": 3,
+            "missing_components": [],
+            "unexpected_components": []
+          },
+          "passed": true
+        },
+        "source": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "workflow": {
+          "findings": [],
+          "metadata": {
+            "actual_workflow_sha256": "f6a66524890b51b715a4d86ce56855a8158a1c93ee3ed4dd644d307eb64be2a3"
+          },
+          "passed": true
+        }
+      }
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "artifact_digest"
+      ],
+      "defended": true,
+      "description": "Unapproved artifact media type is quarantined.",
+      "expected_outcomes": [
+        "QUARANTINED_UNTRUSTED_ARTIFACT"
+      ],
+      "family": "release_untrusted_media",
+      "finding_codes": [
+        "RELEASE_ARTIFACT_MEDIA_TYPE_NOT_ALLOWED"
+      ],
+      "handler": "release",
+      "human_review_required": false,
+      "mutation": "release_untrusted_media",
+      "outcome": "QUARANTINED_UNTRUSTED_ARTIFACT",
+      "prohibit_closure": false,
+      "scenario_id": "SCI-035",
+      "severity": "critical",
+      "signature_verified": true,
+      "unsafe_release": false,
+      "unverified_artifact_release": false,
+      "verification_results": {
+        "dependency": {
+          "findings": [],
+          "metadata": {
+            "actual_lock_digest": "31b5048af9d98f7d726cf4c28a146d3f6da3e3d7ce5bacfbb61a1eb387d8ee9f",
+            "dependency_count": 3,
+            "verified_artifact_count": 3
+          },
+          "passed": true
+        },
+        "model": {
+          "findings": [],
+          "metadata": {
+            "verified_model_file_count": 1
+          },
+          "passed": true
+        },
+        "provenance": {
+          "findings": [],
+          "metadata": {
+            "signature_verified": true,
+            "statement_present": true
+          },
+          "passed": true
+        },
+        "release": {
+          "findings": [
+            {
+              "code": "RELEASE_ARTIFACT_MEDIA_TYPE_NOT_ALLOWED",
+              "field_path": "artifacts[0].media_type",
+              "message": "Release artifact media type is not allowlisted.",
+              "severity": "critical"
+            }
+          ],
+          "metadata": {
+            "actual_manifest_digest": "1d3ec80e4f707f2c070da3baa813f81ac8f63f93349dd137710140218562e6c7",
+            "observed_evidence_roles": [
+              "dependency_lock",
+              "model_manifest",
+              "provenance",
+              "sbom",
+              "workflow"
+            ],
+            "verified_artifact_count": 1
+          },
+          "passed": false
+        },
+        "reproducibility": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "sbom": {
+          "findings": [],
+          "metadata": {
+            "matched_components": 3,
+            "missing_components": [],
+            "unexpected_components": []
+          },
+          "passed": true
+        },
+        "source": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "workflow": {
+          "findings": [],
+          "metadata": {
+            "actual_workflow_sha256": "f6a66524890b51b715a4d86ce56855a8158a1c93ee3ed4dd644d307eb64be2a3"
+          },
+          "passed": true
+        }
+      }
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "reproducibility"
+      ],
+      "defended": true,
+      "description": "Non-reproducible build output is blocked.",
+      "expected_outcomes": [
+        "BLOCKED_REPRODUCIBILITY_FAILURE"
+      ],
+      "family": "reproducibility_mismatch",
+      "finding_codes": [
+        "REPRODUCIBLE_BUILD_DIGEST_MISMATCH"
+      ],
+      "handler": "release",
+      "human_review_required": false,
+      "mutation": "reproducibility_mismatch",
+      "outcome": "BLOCKED_REPRODUCIBILITY_FAILURE",
+      "prohibit_closure": false,
+      "scenario_id": "SCI-036",
+      "severity": "critical",
+      "signature_verified": true,
+      "unsafe_release": false,
+      "unverified_artifact_release": false,
+      "verification_results": {
+        "dependency": {
+          "findings": [],
+          "metadata": {
+            "actual_lock_digest": "31b5048af9d98f7d726cf4c28a146d3f6da3e3d7ce5bacfbb61a1eb387d8ee9f",
+            "dependency_count": 3,
+            "verified_artifact_count": 3
+          },
+          "passed": true
+        },
+        "model": {
+          "findings": [],
+          "metadata": {
+            "verified_model_file_count": 1
+          },
+          "passed": true
+        },
+        "provenance": {
+          "findings": [],
+          "metadata": {
+            "signature_verified": true,
+            "statement_present": true
+          },
+          "passed": true
+        },
+        "release": {
+          "findings": [],
+          "metadata": {
+            "actual_manifest_digest": "b2545e491fcc8325165dbe347b492a97bd984fa8cc7f16b6c626dea422e805fd",
+            "observed_evidence_roles": [
+              "dependency_lock",
+              "model_manifest",
+              "provenance",
+              "sbom",
+              "workflow"
+            ],
+            "verified_artifact_count": 1
+          },
+          "passed": true
+        },
+        "reproducibility": {
+          "findings": [
+            {
+              "code": "REPRODUCIBLE_BUILD_DIGEST_MISMATCH",
+              "field_path": "reproducibility",
+              "message": "Independent deterministic builds produced different artifact digests.",
+              "severity": "critical"
+            }
+          ],
+          "metadata": {},
+          "passed": false
+        },
+        "sbom": {
+          "findings": [],
+          "metadata": {
+            "matched_components": 3,
+            "missing_components": [],
+            "unexpected_components": []
+          },
+          "passed": true
+        },
+        "source": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "workflow": {
+          "findings": [],
+          "metadata": {
+            "actual_workflow_sha256": "f6a66524890b51b715a4d86ce56855a8158a1c93ee3ed4dd644d307eb64be2a3"
+          },
+          "passed": true
+        }
+      }
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "sbom"
+      ],
+      "defended": true,
+      "description": "Locked component absent from SBOM is blocked.",
+      "expected_outcomes": [
+        "BLOCKED_SBOM_RECONCILIATION_FAILURE"
+      ],
+      "family": "sbom_missing_component",
+      "finding_codes": [
+        "SBOM_DEPENDENCY_MISSING"
+      ],
+      "handler": "sbom",
+      "human_review_required": false,
+      "mutation": "sbom_missing_component",
+      "outcome": "BLOCKED_SBOM_RECONCILIATION_FAILURE",
+      "prohibit_closure": false,
+      "scenario_id": "SCI-037",
+      "severity": "critical",
+      "signature_verified": true,
+      "unsafe_release": false,
+      "unverified_artifact_release": false,
+      "verification_results": {
+        "dependency": {
+          "findings": [],
+          "metadata": {
+            "actual_lock_digest": "31b5048af9d98f7d726cf4c28a146d3f6da3e3d7ce5bacfbb61a1eb387d8ee9f",
+            "dependency_count": 3,
+            "verified_artifact_count": 3
+          },
+          "passed": true
+        },
+        "model": {
+          "findings": [],
+          "metadata": {
+            "verified_model_file_count": 1
+          },
+          "passed": true
+        },
+        "provenance": {
+          "findings": [],
+          "metadata": {
+            "signature_verified": true,
+            "statement_present": true
+          },
+          "passed": true
+        },
+        "release": {
+          "findings": [],
+          "metadata": {
+            "actual_manifest_digest": "b69f09816491260d0281fb392796e84be3c9a93ca305a4018239d8cd14592a90",
+            "observed_evidence_roles": [
+              "dependency_lock",
+              "model_manifest",
+              "provenance",
+              "sbom",
+              "workflow"
+            ],
+            "verified_artifact_count": 1
+          },
+          "passed": true
+        },
+        "reproducibility": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "sbom": {
+          "findings": [
+            {
+              "code": "SBOM_DEPENDENCY_MISSING",
+              "field_path": "components",
+              "message": "Locked dependencies are absent from the SBOM: ['pyyaml@6.0.3'].",
+              "severity": "critical"
+            }
+          ],
+          "metadata": {
+            "matched_components": 2,
+            "missing_components": [
+              "pyyaml@6.0.3"
+            ],
+            "unexpected_components": []
+          },
+          "passed": false
+        },
+        "source": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "workflow": {
+          "findings": [],
+          "metadata": {
+            "actual_workflow_sha256": "f6a66524890b51b715a4d86ce56855a8158a1c93ee3ed4dd644d307eb64be2a3"
+          },
+          "passed": true
+        }
+      }
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "sbom"
+      ],
+      "defended": true,
+      "description": "Unexpected SBOM component is blocked.",
+      "expected_outcomes": [
+        "BLOCKED_SBOM_RECONCILIATION_FAILURE"
+      ],
+      "family": "sbom_unexpected_component",
+      "finding_codes": [
+        "SBOM_UNEXPECTED_COMPONENT"
+      ],
+      "handler": "sbom",
+      "human_review_required": false,
+      "mutation": "sbom_unexpected_component",
+      "outcome": "BLOCKED_SBOM_RECONCILIATION_FAILURE",
+      "prohibit_closure": false,
+      "scenario_id": "SCI-038",
+      "severity": "critical",
+      "signature_verified": true,
+      "unsafe_release": false,
+      "unverified_artifact_release": false,
+      "verification_results": {
+        "dependency": {
+          "findings": [],
+          "metadata": {
+            "actual_lock_digest": "31b5048af9d98f7d726cf4c28a146d3f6da3e3d7ce5bacfbb61a1eb387d8ee9f",
+            "dependency_count": 3,
+            "verified_artifact_count": 3
+          },
+          "passed": true
+        },
+        "model": {
+          "findings": [],
+          "metadata": {
+            "verified_model_file_count": 1
+          },
+          "passed": true
+        },
+        "provenance": {
+          "findings": [],
+          "metadata": {
+            "signature_verified": true,
+            "statement_present": true
+          },
+          "passed": true
+        },
+        "release": {
+          "findings": [],
+          "metadata": {
+            "actual_manifest_digest": "c248e7360a68e34db3690a1e428de27511867030fecdc17bd14e7efe3a9343b7",
+            "observed_evidence_roles": [
+              "dependency_lock",
+              "model_manifest",
+              "provenance",
+              "sbom",
+              "workflow"
+            ],
+            "verified_artifact_count": 1
+          },
+          "passed": true
+        },
+        "reproducibility": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "sbom": {
+          "findings": [
+            {
+              "code": "SBOM_UNEXPECTED_COMPONENT",
+              "field_path": "components",
+              "message": "SBOM contains components absent from the dependency lock: ['unexpected@1.0.0'].",
+              "severity": "critical"
+            }
+          ],
+          "metadata": {
+            "matched_components": 3,
+            "missing_components": [],
+            "unexpected_components": [
+              "unexpected@1.0.0"
+            ]
+          },
+          "passed": false
+        },
+        "source": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "workflow": {
+          "findings": [],
+          "metadata": {
+            "actual_workflow_sha256": "f6a66524890b51b715a4d86ce56855a8158a1c93ee3ed4dd644d307eb64be2a3"
+          },
+          "passed": true
+        }
+      }
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "sbom"
+      ],
+      "defended": true,
+      "description": "SBOM version substitution is blocked.",
+      "expected_outcomes": [
+        "BLOCKED_SBOM_RECONCILIATION_FAILURE"
+      ],
+      "family": "sbom_version_mismatch",
+      "finding_codes": [
+        "SBOM_DEPENDENCY_MISSING",
+        "SBOM_UNEXPECTED_COMPONENT"
+      ],
+      "handler": "sbom",
+      "human_review_required": false,
+      "mutation": "sbom_version_mismatch",
+      "outcome": "BLOCKED_SBOM_RECONCILIATION_FAILURE",
+      "prohibit_closure": false,
+      "scenario_id": "SCI-039",
+      "severity": "critical",
+      "signature_verified": true,
+      "unsafe_release": false,
+      "unverified_artifact_release": false,
+      "verification_results": {
+        "dependency": {
+          "findings": [],
+          "metadata": {
+            "actual_lock_digest": "31b5048af9d98f7d726cf4c28a146d3f6da3e3d7ce5bacfbb61a1eb387d8ee9f",
+            "dependency_count": 3,
+            "verified_artifact_count": 3
+          },
+          "passed": true
+        },
+        "model": {
+          "findings": [],
+          "metadata": {
+            "verified_model_file_count": 1
+          },
+          "passed": true
+        },
+        "provenance": {
+          "findings": [],
+          "metadata": {
+            "signature_verified": true,
+            "statement_present": true
+          },
+          "passed": true
+        },
+        "release": {
+          "findings": [],
+          "metadata": {
+            "actual_manifest_digest": "81aa1663d0c37a4a4bb41974a35cef74d6704a37338663bdbda85f33d126a71f",
+            "observed_evidence_roles": [
+              "dependency_lock",
+              "model_manifest",
+              "provenance",
+              "sbom",
+              "workflow"
+            ],
+            "verified_artifact_count": 1
+          },
+          "passed": true
+        },
+        "reproducibility": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "sbom": {
+          "findings": [
+            {
+              "code": "SBOM_DEPENDENCY_MISSING",
+              "field_path": "components",
+              "message": "Locked dependencies are absent from the SBOM: ['pandas@2.3.3'].",
+              "severity": "critical"
+            },
+            {
+              "code": "SBOM_UNEXPECTED_COMPONENT",
+              "field_path": "components",
+              "message": "SBOM contains components absent from the dependency lock: ['pandas@1.0.0'].",
+              "severity": "critical"
+            }
+          ],
+          "metadata": {
+            "matched_components": 2,
+            "missing_components": [
+              "pandas@2.3.3"
+            ],
+            "unexpected_components": [
+              "pandas@1.0.0"
+            ]
+          },
+          "passed": false
+        },
+        "source": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "workflow": {
+          "findings": [],
+          "metadata": {
+            "actual_workflow_sha256": "f6a66524890b51b715a4d86ce56855a8158a1c93ee3ed4dd644d307eb64be2a3"
+          },
+          "passed": true
+        }
+      }
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "sbom"
+      ],
+      "defended": true,
+      "description": "SBOM component hash mismatch is blocked.",
+      "expected_outcomes": [
+        "BLOCKED_SBOM_RECONCILIATION_FAILURE"
+      ],
+      "family": "sbom_component_hash_mismatch",
+      "finding_codes": [
+        "SBOM_COMPONENT_HASH_MISMATCH"
+      ],
+      "handler": "sbom",
+      "human_review_required": false,
+      "mutation": "sbom_component_hash_mismatch",
+      "outcome": "BLOCKED_SBOM_RECONCILIATION_FAILURE",
+      "prohibit_closure": false,
+      "scenario_id": "SCI-040",
+      "severity": "critical",
+      "signature_verified": true,
+      "unsafe_release": false,
+      "unverified_artifact_release": false,
+      "verification_results": {
+        "dependency": {
+          "findings": [],
+          "metadata": {
+            "actual_lock_digest": "31b5048af9d98f7d726cf4c28a146d3f6da3e3d7ce5bacfbb61a1eb387d8ee9f",
+            "dependency_count": 3,
+            "verified_artifact_count": 3
+          },
+          "passed": true
+        },
+        "model": {
+          "findings": [],
+          "metadata": {
+            "verified_model_file_count": 1
+          },
+          "passed": true
+        },
+        "provenance": {
+          "findings": [],
+          "metadata": {
+            "signature_verified": true,
+            "statement_present": true
+          },
+          "passed": true
+        },
+        "release": {
+          "findings": [],
+          "metadata": {
+            "actual_manifest_digest": "ff8b35201598ed978efac5ae3b8e8f534c48f411db38db11643ea86146e96eef",
+            "observed_evidence_roles": [
+              "dependency_lock",
+              "model_manifest",
+              "provenance",
+              "sbom",
+              "workflow"
+            ],
+            "verified_artifact_count": 1
+          },
+          "passed": true
+        },
+        "reproducibility": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "sbom": {
+          "findings": [
+            {
+              "code": "SBOM_COMPONENT_HASH_MISMATCH",
+              "field_path": "components",
+              "message": "SBOM digest does not match locked artifact for pandas@2.3.3.",
+              "severity": "critical"
+            }
+          ],
+          "metadata": {
+            "matched_components": 2,
+            "missing_components": [],
+            "unexpected_components": []
+          },
+          "passed": false
+        },
+        "source": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "workflow": {
+          "findings": [],
+          "metadata": {
+            "actual_workflow_sha256": "f6a66524890b51b715a4d86ce56855a8158a1c93ee3ed4dd644d307eb64be2a3"
+          },
+          "passed": true
+        }
+      }
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "sbom"
+      ],
+      "defended": true,
+      "description": "SBOM generated for a different artifact is blocked.",
+      "expected_outcomes": [
+        "BLOCKED_SBOM_RECONCILIATION_FAILURE"
+      ],
+      "family": "sbom_subject_mismatch",
+      "finding_codes": [
+        "SBOM_SUBJECT_BINDING_MISMATCH"
+      ],
+      "handler": "sbom",
+      "human_review_required": false,
+      "mutation": "sbom_subject_mismatch",
+      "outcome": "BLOCKED_SBOM_RECONCILIATION_FAILURE",
+      "prohibit_closure": false,
+      "scenario_id": "SCI-041",
+      "severity": "critical",
+      "signature_verified": true,
+      "unsafe_release": false,
+      "unverified_artifact_release": false,
+      "verification_results": {
+        "dependency": {
+          "findings": [],
+          "metadata": {
+            "actual_lock_digest": "31b5048af9d98f7d726cf4c28a146d3f6da3e3d7ce5bacfbb61a1eb387d8ee9f",
+            "dependency_count": 3,
+            "verified_artifact_count": 3
+          },
+          "passed": true
+        },
+        "model": {
+          "findings": [],
+          "metadata": {
+            "verified_model_file_count": 1
+          },
+          "passed": true
+        },
+        "provenance": {
+          "findings": [],
+          "metadata": {
+            "signature_verified": true,
+            "statement_present": true
+          },
+          "passed": true
+        },
+        "release": {
+          "findings": [],
+          "metadata": {
+            "actual_manifest_digest": "f00a8b438bd77bad17f96f955f770c5328c5f5dd60007fc38fc2c942cdfe149d",
+            "observed_evidence_roles": [
+              "dependency_lock",
+              "model_manifest",
+              "provenance",
+              "sbom",
+              "workflow"
+            ],
+            "verified_artifact_count": 1
+          },
+          "passed": true
+        },
+        "reproducibility": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "sbom": {
+          "findings": [
+            {
+              "code": "SBOM_SUBJECT_BINDING_MISMATCH",
+              "field_path": "metadata.component",
+              "message": "SBOM metadata does not bind the expected release artifact.",
+              "severity": "critical"
+            }
+          ],
+          "metadata": {
+            "matched_components": 3,
+            "missing_components": [],
+            "unexpected_components": []
+          },
+          "passed": false
+        },
+        "source": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "workflow": {
+          "findings": [],
+          "metadata": {
+            "actual_workflow_sha256": "f6a66524890b51b715a4d86ce56855a8158a1c93ee3ed4dd644d307eb64be2a3"
+          },
+          "passed": true
+        }
+      }
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "sbom"
+      ],
+      "defended": true,
+      "description": "Unsupported SBOM specification is blocked.",
+      "expected_outcomes": [
+        "BLOCKED_SBOM_RECONCILIATION_FAILURE"
+      ],
+      "family": "sbom_old_spec",
+      "finding_codes": [
+        "SBOM_SPEC_VERSION_UNSUPPORTED"
+      ],
+      "handler": "sbom",
+      "human_review_required": false,
+      "mutation": "sbom_old_spec",
+      "outcome": "BLOCKED_SBOM_RECONCILIATION_FAILURE",
+      "prohibit_closure": false,
+      "scenario_id": "SCI-042",
+      "severity": "critical",
+      "signature_verified": true,
+      "unsafe_release": false,
+      "unverified_artifact_release": false,
+      "verification_results": {
+        "dependency": {
+          "findings": [],
+          "metadata": {
+            "actual_lock_digest": "31b5048af9d98f7d726cf4c28a146d3f6da3e3d7ce5bacfbb61a1eb387d8ee9f",
+            "dependency_count": 3,
+            "verified_artifact_count": 3
+          },
+          "passed": true
+        },
+        "model": {
+          "findings": [],
+          "metadata": {
+            "verified_model_file_count": 1
+          },
+          "passed": true
+        },
+        "provenance": {
+          "findings": [],
+          "metadata": {
+            "signature_verified": true,
+            "statement_present": true
+          },
+          "passed": true
+        },
+        "release": {
+          "findings": [],
+          "metadata": {
+            "actual_manifest_digest": "65ba670e9ed2966853e8e3b312ff8f92f7267e2bfab0975203f179217f88a246",
+            "observed_evidence_roles": [
+              "dependency_lock",
+              "model_manifest",
+              "provenance",
+              "sbom",
+              "workflow"
+            ],
+            "verified_artifact_count": 1
+          },
+          "passed": true
+        },
+        "reproducibility": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "sbom": {
+          "findings": [
+            {
+              "code": "SBOM_SPEC_VERSION_UNSUPPORTED",
+              "field_path": "specVersion",
+              "message": "CycloneDX specification version must be 1.5 or newer.",
+              "severity": "critical"
+            }
+          ],
+          "metadata": {
+            "matched_components": 3,
+            "missing_components": [],
+            "unexpected_components": []
+          },
+          "passed": false
+        },
+        "source": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "workflow": {
+          "findings": [],
+          "metadata": {
+            "actual_workflow_sha256": "f6a66524890b51b715a4d86ce56855a8158a1c93ee3ed4dd644d307eb64be2a3"
+          },
+          "passed": true
+        }
+      }
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "model_provenance"
+      ],
+      "defended": true,
+      "description": "Unpinned model revision is blocked.",
+      "expected_outcomes": [
+        "BLOCKED_MODEL_PROVENANCE_FAILURE"
+      ],
+      "family": "model_unpinned_revision",
+      "finding_codes": [
+        "MODEL_REVISION_NOT_IMMUTABLE"
+      ],
+      "handler": "model",
+      "human_review_required": false,
+      "mutation": "model_unpinned_revision",
+      "outcome": "BLOCKED_MODEL_PROVENANCE_FAILURE",
+      "prohibit_closure": false,
+      "scenario_id": "SCI-043",
+      "severity": "critical",
+      "signature_verified": true,
+      "unsafe_release": false,
+      "unverified_artifact_release": false,
+      "verification_results": {
+        "dependency": {
+          "findings": [],
+          "metadata": {
+            "actual_lock_digest": "31b5048af9d98f7d726cf4c28a146d3f6da3e3d7ce5bacfbb61a1eb387d8ee9f",
+            "dependency_count": 3,
+            "verified_artifact_count": 3
+          },
+          "passed": true
+        },
+        "model": {
+          "findings": [
+            {
+              "code": "MODEL_REVISION_NOT_IMMUTABLE",
+              "field_path": "revision",
+              "message": "Model revision must be an immutable commit-like identifier.",
+              "severity": "critical"
+            }
+          ],
+          "metadata": {
+            "verified_model_file_count": 1
+          },
+          "passed": false
+        },
+        "provenance": {
+          "findings": [],
+          "metadata": {
+            "signature_verified": true,
+            "statement_present": true
+          },
+          "passed": true
+        },
+        "release": {
+          "findings": [],
+          "metadata": {
+            "actual_manifest_digest": "239a952735ca1aff75997d5d413d44f3a259073ff82dc7f0d1933c01518bbe37",
+            "observed_evidence_roles": [
+              "dependency_lock",
+              "model_manifest",
+              "provenance",
+              "sbom",
+              "workflow"
+            ],
+            "verified_artifact_count": 1
+          },
+          "passed": true
+        },
+        "reproducibility": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "sbom": {
+          "findings": [],
+          "metadata": {
+            "matched_components": 3,
+            "missing_components": [],
+            "unexpected_components": []
+          },
+          "passed": true
+        },
+        "source": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "workflow": {
+          "findings": [],
+          "metadata": {
+            "actual_workflow_sha256": "f6a66524890b51b715a4d86ce56855a8158a1c93ee3ed4dd644d307eb64be2a3"
+          },
+          "passed": true
+        }
+      }
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "model_provenance"
+      ],
+      "defended": true,
+      "description": "Model artifact hash mismatch is blocked.",
+      "expected_outcomes": [
+        "BLOCKED_MODEL_PROVENANCE_FAILURE"
+      ],
+      "family": "model_hash_mismatch",
+      "finding_codes": [
+        "MODEL_FILE_HASH_MISMATCH"
+      ],
+      "handler": "model",
+      "human_review_required": false,
+      "mutation": "model_hash_mismatch",
+      "outcome": "BLOCKED_MODEL_PROVENANCE_FAILURE",
+      "prohibit_closure": false,
+      "scenario_id": "SCI-044",
+      "severity": "critical",
+      "signature_verified": true,
+      "unsafe_release": false,
+      "unverified_artifact_release": false,
+      "verification_results": {
+        "dependency": {
+          "findings": [],
+          "metadata": {
+            "actual_lock_digest": "31b5048af9d98f7d726cf4c28a146d3f6da3e3d7ce5bacfbb61a1eb387d8ee9f",
+            "dependency_count": 3,
+            "verified_artifact_count": 3
+          },
+          "passed": true
+        },
+        "model": {
+          "findings": [
+            {
+              "code": "MODEL_FILE_HASH_MISMATCH",
+              "field_path": "files[0].sha256",
+              "message": "Model file digest does not match its manifest.",
+              "severity": "critical"
+            }
+          ],
+          "metadata": {
+            "verified_model_file_count": 0
+          },
+          "passed": false
+        },
+        "provenance": {
+          "findings": [],
+          "metadata": {
+            "signature_verified": true,
+            "statement_present": true
+          },
+          "passed": true
+        },
+        "release": {
+          "findings": [],
+          "metadata": {
+            "actual_manifest_digest": "4fba65af052af441a9bf6889ca0112f7a615cde8795e923d25d8b899d06d9e4d",
+            "observed_evidence_roles": [
+              "dependency_lock",
+              "model_manifest",
+              "provenance",
+              "sbom",
+              "workflow"
+            ],
+            "verified_artifact_count": 1
+          },
+          "passed": true
+        },
+        "reproducibility": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "sbom": {
+          "findings": [],
+          "metadata": {
+            "matched_components": 3,
+            "missing_components": [],
+            "unexpected_components": []
+          },
+          "passed": true
+        },
+        "source": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "workflow": {
+          "findings": [],
+          "metadata": {
+            "actual_workflow_sha256": "f6a66524890b51b715a4d86ce56855a8158a1c93ee3ed4dd644d307eb64be2a3"
+          },
+          "passed": true
+        }
+      }
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "model_provenance"
+      ],
+      "defended": true,
+      "description": "Remote model code execution is blocked.",
+      "expected_outcomes": [
+        "BLOCKED_MODEL_PROVENANCE_FAILURE"
+      ],
+      "family": "model_remote_code",
+      "finding_codes": [
+        "MODEL_REMOTE_CODE_PROHIBITED"
+      ],
+      "handler": "model",
+      "human_review_required": false,
+      "mutation": "model_remote_code",
+      "outcome": "BLOCKED_MODEL_PROVENANCE_FAILURE",
+      "prohibit_closure": false,
+      "scenario_id": "SCI-045",
+      "severity": "critical",
+      "signature_verified": true,
+      "unsafe_release": false,
+      "unverified_artifact_release": false,
+      "verification_results": {
+        "dependency": {
+          "findings": [],
+          "metadata": {
+            "actual_lock_digest": "31b5048af9d98f7d726cf4c28a146d3f6da3e3d7ce5bacfbb61a1eb387d8ee9f",
+            "dependency_count": 3,
+            "verified_artifact_count": 3
+          },
+          "passed": true
+        },
+        "model": {
+          "findings": [
+            {
+              "code": "MODEL_REMOTE_CODE_PROHIBITED",
+              "field_path": "trust_remote_code",
+              "message": "Remote model code execution is prohibited.",
+              "severity": "critical"
+            }
+          ],
+          "metadata": {
+            "verified_model_file_count": 1
+          },
+          "passed": false
+        },
+        "provenance": {
+          "findings": [],
+          "metadata": {
+            "signature_verified": true,
+            "statement_present": true
+          },
+          "passed": true
+        },
+        "release": {
+          "findings": [],
+          "metadata": {
+            "actual_manifest_digest": "1281cf6276098c954b3986b637046c9ec463f775274a29684ea43dcaf5a11bf0",
+            "observed_evidence_roles": [
+              "dependency_lock",
+              "model_manifest",
+              "provenance",
+              "sbom",
+              "workflow"
+            ],
+            "verified_artifact_count": 1
+          },
+          "passed": true
+        },
+        "reproducibility": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "sbom": {
+          "findings": [],
+          "metadata": {
+            "matched_components": 3,
+            "missing_components": [],
+            "unexpected_components": []
+          },
+          "passed": true
+        },
+        "source": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "workflow": {
+          "findings": [],
+          "metadata": {
+            "actual_workflow_sha256": "f6a66524890b51b715a4d86ce56855a8158a1c93ee3ed4dd644d307eb64be2a3"
+          },
+          "passed": true
+        }
+      }
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "model_provenance"
+      ],
+      "defended": true,
+      "description": "Missing dataset provenance is blocked.",
+      "expected_outcomes": [
+        "BLOCKED_MODEL_PROVENANCE_FAILURE"
+      ],
+      "family": "model_missing_dataset",
+      "finding_codes": [
+        "MODEL_DATASET_PROVENANCE_MISSING"
+      ],
+      "handler": "model",
+      "human_review_required": false,
+      "mutation": "model_missing_dataset",
+      "outcome": "BLOCKED_MODEL_PROVENANCE_FAILURE",
+      "prohibit_closure": false,
+      "scenario_id": "SCI-046",
+      "severity": "critical",
+      "signature_verified": true,
+      "unsafe_release": false,
+      "unverified_artifact_release": false,
+      "verification_results": {
+        "dependency": {
+          "findings": [],
+          "metadata": {
+            "actual_lock_digest": "31b5048af9d98f7d726cf4c28a146d3f6da3e3d7ce5bacfbb61a1eb387d8ee9f",
+            "dependency_count": 3,
+            "verified_artifact_count": 3
+          },
+          "passed": true
+        },
+        "model": {
+          "findings": [
+            {
+              "code": "MODEL_DATASET_PROVENANCE_MISSING",
+              "field_path": "datasets",
+              "message": "Model dataset provenance is required.",
+              "severity": "critical"
+            }
+          ],
+          "metadata": {
+            "verified_model_file_count": 1
+          },
+          "passed": false
+        },
+        "provenance": {
+          "findings": [],
+          "metadata": {
+            "signature_verified": true,
+            "statement_present": true
+          },
+          "passed": true
+        },
+        "release": {
+          "findings": [],
+          "metadata": {
+            "actual_manifest_digest": "a5441fb552ba5fe108e05d8a21e2d4faaadbb90d0ade43bf6ef60c1d28cd077c",
+            "observed_evidence_roles": [
+              "dependency_lock",
+              "model_manifest",
+              "provenance",
+              "sbom",
+              "workflow"
+            ],
+            "verified_artifact_count": 1
+          },
+          "passed": true
+        },
+        "reproducibility": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "sbom": {
+          "findings": [],
+          "metadata": {
+            "matched_components": 3,
+            "missing_components": [],
+            "unexpected_components": []
+          },
+          "passed": true
+        },
+        "source": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "workflow": {
+          "findings": [],
+          "metadata": {
+            "actual_workflow_sha256": "f6a66524890b51b715a4d86ce56855a8158a1c93ee3ed4dd644d307eb64be2a3"
+          },
+          "passed": true
+        }
+      }
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "model_provenance"
+      ],
+      "defended": true,
+      "description": "Unapproved model registry is blocked.",
+      "expected_outcomes": [
+        "BLOCKED_MODEL_PROVENANCE_FAILURE"
+      ],
+      "family": "model_bad_registry",
+      "finding_codes": [
+        "MODEL_REGISTRY_NOT_ALLOWED"
+      ],
+      "handler": "model",
+      "human_review_required": false,
+      "mutation": "model_bad_registry",
+      "outcome": "BLOCKED_MODEL_PROVENANCE_FAILURE",
+      "prohibit_closure": false,
+      "scenario_id": "SCI-047",
+      "severity": "critical",
+      "signature_verified": true,
+      "unsafe_release": false,
+      "unverified_artifact_release": false,
+      "verification_results": {
+        "dependency": {
+          "findings": [],
+          "metadata": {
+            "actual_lock_digest": "31b5048af9d98f7d726cf4c28a146d3f6da3e3d7ce5bacfbb61a1eb387d8ee9f",
+            "dependency_count": 3,
+            "verified_artifact_count": 3
+          },
+          "passed": true
+        },
+        "model": {
+          "findings": [
+            {
+              "code": "MODEL_REGISTRY_NOT_ALLOWED",
+              "field_path": "source_uri",
+              "message": "Model registry host is not allowlisted: 'evil.invalid'.",
+              "severity": "critical"
+            }
+          ],
+          "metadata": {
+            "verified_model_file_count": 1
+          },
+          "passed": false
+        },
+        "provenance": {
+          "findings": [],
+          "metadata": {
+            "signature_verified": true,
+            "statement_present": true
+          },
+          "passed": true
+        },
+        "release": {
+          "findings": [],
+          "metadata": {
+            "actual_manifest_digest": "f6e3a04948327cc8a42fc643f048e3306a386fc57f7d8ed0a417530aa1f6f399",
+            "observed_evidence_roles": [
+              "dependency_lock",
+              "model_manifest",
+              "provenance",
+              "sbom",
+              "workflow"
+            ],
+            "verified_artifact_count": 1
+          },
+          "passed": true
+        },
+        "reproducibility": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "sbom": {
+          "findings": [],
+          "metadata": {
+            "matched_components": 3,
+            "missing_components": [],
+            "unexpected_components": []
+          },
+          "passed": true
+        },
+        "source": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "workflow": {
+          "findings": [],
+          "metadata": {
+            "actual_workflow_sha256": "f6a66524890b51b715a4d86ce56855a8158a1c93ee3ed4dd644d307eb64be2a3"
+          },
+          "passed": true
+        }
+      }
+    },
+    {
+      "automated_release": false,
+      "control_tags": [
+        "model_provenance"
+      ],
+      "defended": true,
+      "description": "Synthetic model dataset requires accountable review and prohibits automated release.",
+      "expected_outcomes": [
+        "RELEASE_VERIFIED_WITH_REVIEW"
+      ],
+      "family": "model_synthetic_dataset_review",
+      "finding_codes": [],
+      "handler": "model",
+      "human_review_required": true,
+      "mutation": "model_synthetic_dataset_review",
+      "outcome": "RELEASE_VERIFIED_WITH_REVIEW",
+      "prohibit_closure": true,
+      "scenario_id": "SCI-048",
+      "severity": "critical",
+      "signature_verified": true,
+      "unsafe_release": false,
+      "unverified_artifact_release": false,
+      "verification_results": {
+        "dependency": {
+          "findings": [],
+          "metadata": {
+            "actual_lock_digest": "31b5048af9d98f7d726cf4c28a146d3f6da3e3d7ce5bacfbb61a1eb387d8ee9f",
+            "dependency_count": 3,
+            "verified_artifact_count": 3
+          },
+          "passed": true
+        },
+        "model": {
+          "findings": [],
+          "metadata": {
+            "verified_model_file_count": 1
+          },
+          "passed": true
+        },
+        "provenance": {
+          "findings": [],
+          "metadata": {
+            "signature_verified": true,
+            "statement_present": true
+          },
+          "passed": true
+        },
+        "release": {
+          "findings": [],
+          "metadata": {
+            "actual_manifest_digest": "e8406dd97d2b2adc9b4367acbe85f90f27c0cd107ff4bfdecf0307f71998fb06",
+            "observed_evidence_roles": [
+              "dependency_lock",
+              "model_manifest",
+              "provenance",
+              "sbom",
+              "workflow"
+            ],
+            "verified_artifact_count": 1
+          },
+          "passed": true
+        },
+        "reproducibility": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "sbom": {
+          "findings": [],
+          "metadata": {
+            "matched_components": 3,
+            "missing_components": [],
+            "unexpected_components": []
+          },
+          "passed": true
+        },
+        "source": {
+          "findings": [],
+          "metadata": {},
+          "passed": true
+        },
+        "workflow": {
+          "findings": [],
+          "metadata": {
+            "actual_workflow_sha256": "f6a66524890b51b715a4d86ce56855a8158a1c93ee3ed4dd644d307eb64be2a3"
+          },
+          "passed": true
+        }
+      }
+    }
+  ],
+  "schema_version": "1.0.0",
+  "summary": {
+    "artifact_digest_verification_rate": 1.0,
+    "blocked_artifact_digest_failure_count": 3,
+    "blocked_build_policy_violation_count": 8,
+    "blocked_dependency_hash_failure_count": 7,
+    "blocked_model_provenance_failure_count": 5,
+    "blocked_provenance_failure_count": 8,
+    "blocked_reproducibility_failure_count": 2,
+    "blocked_sbom_reconciliation_failure_count": 6,
+    "blocked_signature_failure_count": 2,
+    "blocked_unpinned_dependency_count": 2,
+    "build_provenance_verification_rate": 1.0,
+    "builder_identity_enforcement_rate": 1.0,
+    "ci_workflow_integrity_rate": 1.0,
+    "critical_scenario_count": 48,
+    "critical_supply_chain_scenario_defence_rate": 1.0,
+    "defended_critical_count": 48,
+    "dependency_integrity_enforcement_rate": 1.0,
+    "harness_error_count": 0,
+    "model_data_provenance_enforcement_rate": 1.0,
+    "overall_passed": true,
+    "quarantined_release_conflict_count": 2,
+    "quarantined_untrusted_artifact_count": 1,
+    "release_conflict_containment_rate": 1.0,
+    "release_manifest_atomicity_rate": 1.0,
+    "release_verified_count": 1,
+    "release_verified_with_review_count": 1,
+    "reproducibility_consistency_rate": 1.0,
+    "rollback_protection_rate": 1.0,
+    "sbom_to_build_reconciliation_rate": 1.0,
+    "scenario_count": 48,
+    "signature_enforcement_rate": 1.0,
+    "source_to_artifact_binding_rate": 1.0,
+    "trusted_input_integrity_passed": true,
+    "undetected_count": 0,
+    "unsafe_release_count": 0,
+    "unverified_artifact_release_count": 0
+  },
+  "undetected_scenario_ids": [],
+  "unsafe_release_scenario_ids": [],
+  "unverified_artifact_release_scenario_ids": []
+}

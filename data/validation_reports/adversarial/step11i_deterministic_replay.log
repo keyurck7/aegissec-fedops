@@ -1,0 +1,47 @@
+AegisSec Step 11I Supply-Chain and Release-Integrity Assurance
+Scenarios: 48
+Defended: 48
+Release verified: 1
+Release verified with review: 1
+Blocked unpinned dependencies: 2
+Blocked dependency integrity failures: 7
+Blocked build-policy violations: 8
+Blocked provenance failures: 8
+Blocked artifact-digest failures: 3
+Blocked SBOM reconciliation failures: 6
+Blocked signature failures: 2
+Blocked reproducibility failures: 2
+Blocked model-provenance failures: 5
+Quarantined untrusted artifacts: 1
+Quarantined release conflicts: 2
+Unsafe releases: 0
+Unverified artifact releases: 0
+Undetected: 0
+Harness errors: 0
+critical_supply_chain_scenario_defence_rate: 1.0000
+artifact_digest_verification_rate: 1.0000
+dependency_integrity_enforcement_rate: 1.0000
+build_provenance_verification_rate: 1.0000
+builder_identity_enforcement_rate: 1.0000
+source_to_artifact_binding_rate: 1.0000
+sbom_to_build_reconciliation_rate: 1.0000
+ci_workflow_integrity_rate: 1.0000
+model_data_provenance_enforcement_rate: 1.0000
+release_manifest_atomicity_rate: 1.0000
+rollback_protection_rate: 1.0000
+reproducibility_consistency_rate: 1.0000
+signature_enforcement_rate: 1.0000
+release_conflict_containment_rate: 1.0000
+Trusted inputs unchanged: True
+Stage gate: PASS
+Production readiness: BLOCKED
+Report: /home/jovyan/vault/aegissec-fedops/data/validation_reports/supply_chain/step11i_supply_chain_assurance_report.json
+Results CSV: /home/jovyan/vault/aegissec-fedops/data/validation_reports/supply_chain/step11i_supply_chain_results.csv
+Unsafe-release record: /home/jovyan/vault/aegissec-fedops/data/validation_reports/supply_chain/step11i_unsafe_releases.json
+Release evidence summary: /home/jovyan/vault/aegissec-fedops/data/validation_reports/supply_chain/step11i_release_evidence_summary.json
+Integrity record: /home/jovyan/vault/aegissec-fedops/data/validation_reports/supply_chain/step11i_trusted_baseline_integrity.sha256
+
+Remaining production blockers:
+ - Real operational validation has not yet been completed.
+ - Independent security review has not yet been completed.
+ - Production CI signing identity, transparency-log verification, and reproducible-build infrastructure have not yet been independently validated.

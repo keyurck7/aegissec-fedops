@@ -1,0 +1,702 @@
+policy:
+  catalog_id: AEGIS-SUPPLY-CHAIN-SCENARIO-CATALOG
+  version: 1.0.0
+  description: Deterministic critical scenarios for dependency, build, provenance, signature, artifact, SBOM, model, reproducibility, and release-gate integrity.
+deterministic_clock:
+  evaluation_time: '2026-07-15T12:00:00Z'
+release_policy_path: policies/assurance/supply_chain_release_policy_v1.yaml
+trusted_inputs:
+  requirements_manifest:
+    relative_path: requirements.txt
+    expected_sha256: 244bf8706459056e77a57548a623a298501994f4d6183d8f6459c835509eda41
+  requirements_parser:
+    relative_path: src/ingestion/requirements_parser.py
+    expected_sha256: 92338e01ed63ba48887736f01a8a16dd0942d7de3f2a3f29b26c0d9acc69c498
+  package_json_parser:
+    relative_path: src/ingestion/package_json_parser.py
+    expected_sha256: 031171c1d8b3c5ad7353ba802f89a196130d1e3a5f55697dec2fdedd45c130a7
+  decision_hashing:
+    relative_path: src/domain/decision_hashing.py
+    expected_sha256: 3b0a1eff5d2b97064d6dfb43936dde0bf2b1c23574a447afae13e2b02886853f
+  decision_policy:
+    relative_path: policies/decision/federal_base_policy_v1.yaml
+    expected_sha256: fd5f39cec54f4bb57491d60bff9326f9b854209d3ab907cdab8768029a35447f
+  evidence_schema:
+    relative_path: schemas/aegis_evidence_record.schema.json
+    expected_sha256: adaef9c4a1a837fddebee3d40cc03d6d99592682b3c42f1c24dded2fc74ce772
+  step11h_report:
+    relative_path: data/validation_reports/resilience/step11h_resilience_assurance_report.json
+    expected_sha256: 8b177fed1a8396fb44ad86710d9552e4cdd50fe6ca21cde40f45e44935f20578
+  resilience_policy:
+    relative_path: policies/assurance/resilience_runtime_policy_v1.yaml
+    expected_sha256: c0449072f9dff7ec9991e1a9ba7dc1ddfd9a8791fbef19246e027821f3543387
+  resilience_schema:
+    relative_path: schemas/aegis_resilience_assurance_report.schema.json
+    expected_sha256: 934be60113f6da4f6eecc97962dc281651758ea6d25df4162b932ff535ed3b4e
+  osv_client:
+    relative_path: src/intelligence/osv_client.py
+    expected_sha256: 26daa6892a852705f5dd2dc5c9f7ec9642ba4f5a6b5f8d5a2ba49290f027c83f
+  evidence_trust_engine:
+    relative_path: src/governance/evidence_trust_engine.py
+    expected_sha256: 78943367308a8fcc07e085da0e45fe75013f216d23f0fac3f1e749f148c74fc7
+  supply_chain_policy:
+    relative_path: policies/assurance/supply_chain_release_policy_v1.yaml
+    expected_sha256: 8426db44a03c6ab2de4215abe7f00af72504fd2260bbce85873baa754176e07c
+  supply_chain_guard:
+    relative_path: src/governance/supply_chain_guard.py
+    expected_sha256: b5a499dca944c3ae71b4dbff4e1b346304afd3a45351661e3dcdf65612c1f4bc
+  provenance_verifier:
+    relative_path: src/governance/provenance_verifier.py
+    expected_sha256: 32e8ecb10969512f2154b06110e27c756835aea0c996f7f6bbe00c70e21b14ee
+  release_integrity:
+    relative_path: src/governance/release_integrity.py
+    expected_sha256: e848f3da19ff905080fad990dd89d34380b6af5e22b1dfbd7e497e57e1fd6912
+  supply_chain_assurance:
+    relative_path: src/assurance/supply_chain_assurance.py
+    expected_sha256: 3966e16f44abc02145ee7fd5660e500c811db9a479e46673c0683717bb99db73
+  supply_chain_runner:
+    relative_path: scripts/run_step11i_supply_chain_assurance.py
+    expected_sha256: 48100a7f2ac1415bcdcfea854aa00d84fabf671681e8df4efa21181567a34522
+  supply_chain_schema:
+    relative_path: schemas/aegis_supply_chain_assurance_report.schema.json
+    expected_sha256: e05183d8688a8d8819a0ccf35a540689c4003d5499c56fe246a0edcef3065b5f
+quality_gates:
+- gate_id: STEP11I-CRITICAL-DEFENCE
+  metric: critical_supply_chain_scenario_defence_rate
+  operator: gte
+  threshold: 1.0
+- gate_id: STEP11I-ARTIFACT-DIGEST
+  metric: artifact_digest_verification_rate
+  operator: gte
+  threshold: 1.0
+- gate_id: STEP11I-DEPENDENCY-INTEGRITY
+  metric: dependency_integrity_enforcement_rate
+  operator: gte
+  threshold: 1.0
+- gate_id: STEP11I-PROVENANCE
+  metric: build_provenance_verification_rate
+  operator: gte
+  threshold: 1.0
+- gate_id: STEP11I-BUILDER
+  metric: builder_identity_enforcement_rate
+  operator: gte
+  threshold: 1.0
+- gate_id: STEP11I-SOURCE-BINDING
+  metric: source_to_artifact_binding_rate
+  operator: gte
+  threshold: 1.0
+- gate_id: STEP11I-SBOM
+  metric: sbom_to_build_reconciliation_rate
+  operator: gte
+  threshold: 1.0
+- gate_id: STEP11I-WORKFLOW
+  metric: ci_workflow_integrity_rate
+  operator: gte
+  threshold: 1.0
+- gate_id: STEP11I-MODEL
+  metric: model_data_provenance_enforcement_rate
+  operator: gte
+  threshold: 1.0
+- gate_id: STEP11I-MANIFEST
+  metric: release_manifest_atomicity_rate
+  operator: gte
+  threshold: 1.0
+- gate_id: STEP11I-ROLLBACK
+  metric: rollback_protection_rate
+  operator: gte
+  threshold: 1.0
+- gate_id: STEP11I-REPRODUCIBILITY
+  metric: reproducibility_consistency_rate
+  operator: gte
+  threshold: 1.0
+- gate_id: STEP11I-SIGNATURE
+  metric: signature_enforcement_rate
+  operator: gte
+  threshold: 1.0
+- gate_id: STEP11I-CONFLICT
+  metric: release_conflict_containment_rate
+  operator: gte
+  threshold: 1.0
+- gate_id: STEP11I-UNSAFE-RELEASE
+  metric: unsafe_release_count
+  operator: eq
+  threshold: 0
+- gate_id: STEP11I-UNVERIFIED-RELEASE
+  metric: unverified_artifact_release_count
+  operator: eq
+  threshold: 0
+- gate_id: STEP11I-UNDETECTED
+  metric: undetected_count
+  operator: eq
+  threshold: 0
+- gate_id: STEP11I-HARNESS
+  metric: harness_error_count
+  operator: eq
+  threshold: 0
+- gate_id: STEP11I-INTEGRITY
+  metric: trusted_input_integrity_passed
+  operator: eq
+  threshold: true
+production_readiness:
+  status: BLOCKED
+  blocking_reasons:
+  - Real operational validation has not yet been completed.
+  - Independent security review has not yet been completed.
+  - Production CI signing identity, transparency-log verification, and reproducible-build infrastructure have not yet been independently validated.
+limitations:
+- Scenarios use controlled local files, deterministic Ed25519 fixture keys, and no production signing material.
+- No live package registry, transparency log, CI platform, artifact registry, or model registry is modified.
+- Independent operational verification of production builders, signing identities, and reproducible builds remains mandatory.
+scenarios:
+- scenario_id: SCI-001
+  family: verified_release
+  severity: critical
+  handler: dependency
+  expected_outcomes:
+  - RELEASE_VERIFIED
+  control_tags:
+  - dependency_integrity
+  - artifact_digest
+  - provenance
+  - builder_identity
+  - source_binding
+  - sbom
+  - workflow_integrity
+  - model_provenance
+  - manifest_atomicity
+  - rollback_protection
+  - reproducibility
+  - signature
+  - release_conflict
+  description: A completely pinned, signed, provenance-bound release is verified.
+  parameters:
+    mutation: baseline_verified
+- scenario_id: SCI-002
+  family: dependency_range
+  severity: critical
+  handler: dependency
+  expected_outcomes:
+  - BLOCKED_UNPINNED_DEPENDENCY
+  control_tags:
+  - dependency_integrity
+  description: A version range cannot enter the release.
+  parameters:
+    mutation: dependency_range
+- scenario_id: SCI-003
+  family: dependency_wildcard
+  severity: critical
+  handler: dependency
+  expected_outcomes:
+  - BLOCKED_UNPINNED_DEPENDENCY
+  control_tags:
+  - dependency_integrity
+  description: A wildcard dependency cannot enter the release.
+  parameters:
+    mutation: dependency_wildcard
+- scenario_id: SCI-004
+  family: dependency_missing_hash
+  severity: critical
+  handler: dependency
+  expected_outcomes:
+  - BLOCKED_DEPENDENCY_HASH_FAILURE
+  control_tags:
+  - dependency_integrity
+  description: A dependency without SHA-256 is blocked.
+  parameters:
+    mutation: dependency_missing_hash
+- scenario_id: SCI-005
+  family: dependency_hash_mismatch
+  severity: critical
+  handler: dependency
+  expected_outcomes:
+  - BLOCKED_DEPENDENCY_HASH_FAILURE
+  control_tags:
+  - dependency_integrity
+  description: A dependency artifact whose bytes differ from the lock is blocked.
+  parameters:
+    mutation: dependency_hash_mismatch
+- scenario_id: SCI-006
+  family: dependency_direct_url
+  severity: critical
+  handler: dependency
+  expected_outcomes:
+  - BLOCKED_DEPENDENCY_HASH_FAILURE
+  control_tags:
+  - dependency_integrity
+  description: An unapproved direct URL dependency is blocked.
+  parameters:
+    mutation: dependency_direct_url
+- scenario_id: SCI-007
+  family: dependency_bad_registry
+  severity: critical
+  handler: dependency
+  expected_outcomes:
+  - BLOCKED_DEPENDENCY_HASH_FAILURE
+  control_tags:
+  - dependency_integrity
+  description: A dependency from an unapproved registry is blocked.
+  parameters:
+    mutation: dependency_bad_registry
+- scenario_id: SCI-008
+  family: dependency_lock_digest_tamper
+  severity: critical
+  handler: dependency
+  expected_outcomes:
+  - BLOCKED_DEPENDENCY_HASH_FAILURE
+  control_tags:
+  - dependency_integrity
+  description: A tampered lock digest is blocked.
+  parameters:
+    mutation: dependency_lock_digest_tamper
+- scenario_id: SCI-009
+  family: dependency_normalization_conflict
+  severity: critical
+  handler: dependency
+  expected_outcomes:
+  - BLOCKED_DEPENDENCY_HASH_FAILURE
+  control_tags:
+  - dependency_integrity
+  description: Conflicting normalized package identities are blocked.
+  parameters:
+    mutation: dependency_normalization_conflict
+- scenario_id: SCI-010
+  family: dependency_missing_artifact
+  severity: critical
+  handler: dependency
+  expected_outcomes:
+  - BLOCKED_DEPENDENCY_HASH_FAILURE
+  control_tags:
+  - dependency_integrity
+  description: A lock entry without a verifiable artifact is blocked.
+  parameters:
+    mutation: dependency_missing_artifact
+- scenario_id: SCI-011
+  family: provenance_missing
+  severity: critical
+  handler: provenance
+  expected_outcomes:
+  - BLOCKED_PROVENANCE_FAILURE
+  control_tags:
+  - provenance
+  description: Missing provenance blocks release.
+  parameters:
+    mutation: provenance_missing
+- scenario_id: SCI-012
+  family: provenance_predicate_type
+  severity: critical
+  handler: provenance
+  expected_outcomes:
+  - BLOCKED_PROVENANCE_FAILURE
+  control_tags:
+  - provenance
+  description: Unexpected provenance predicate type is rejected.
+  parameters:
+    mutation: provenance_predicate_type
+- scenario_id: SCI-013
+  family: provenance_subject_mismatch
+  severity: critical
+  handler: provenance
+  expected_outcomes:
+  - BLOCKED_PROVENANCE_FAILURE
+  control_tags:
+  - provenance
+  - artifact_digest
+  - source_binding
+  description: Provenance subject digest must bind the artifact.
+  parameters:
+    mutation: provenance_subject_mismatch
+- scenario_id: SCI-014
+  family: provenance_builder_mismatch
+  severity: critical
+  handler: provenance
+  expected_outcomes:
+  - BLOCKED_PROVENANCE_FAILURE
+  control_tags:
+  - provenance
+  - builder_identity
+  description: Untrusted builder identity is rejected.
+  parameters:
+    mutation: provenance_builder_mismatch
+- scenario_id: SCI-015
+  family: provenance_build_type_mismatch
+  severity: critical
+  handler: provenance
+  expected_outcomes:
+  - BLOCKED_PROVENANCE_FAILURE
+  control_tags:
+  - provenance
+  description: Unapproved build type is rejected.
+  parameters:
+    mutation: provenance_build_type_mismatch
+- scenario_id: SCI-016
+  family: provenance_source_revision_mismatch
+  severity: critical
+  handler: provenance
+  expected_outcomes:
+  - BLOCKED_PROVENANCE_FAILURE
+  control_tags:
+  - provenance
+  - source_binding
+  description: Wrong source revision is rejected.
+  parameters:
+    mutation: provenance_source_revision_mismatch
+- scenario_id: SCI-017
+  family: provenance_material_digest_mismatch
+  severity: critical
+  handler: provenance
+  expected_outcomes:
+  - BLOCKED_PROVENANCE_FAILURE
+  control_tags:
+  - provenance
+  - source_binding
+  description: Wrong source material digest is rejected.
+  parameters:
+    mutation: provenance_material_digest_mismatch
+- scenario_id: SCI-018
+  family: provenance_invocation_missing
+  severity: critical
+  handler: provenance
+  expected_outcomes:
+  - BLOCKED_PROVENANCE_FAILURE
+  control_tags:
+  - provenance
+  description: Missing invocation identity is rejected.
+  parameters:
+    mutation: provenance_invocation_missing
+- scenario_id: SCI-019
+  family: signature_invalid
+  severity: critical
+  handler: provenance
+  expected_outcomes:
+  - BLOCKED_SIGNATURE_FAILURE
+  control_tags:
+  - signature
+  - provenance
+  description: Invalid DSSE signature is rejected.
+  parameters:
+    mutation: signature_invalid
+- scenario_id: SCI-020
+  family: signature_untrusted_key
+  severity: critical
+  handler: provenance
+  expected_outcomes:
+  - BLOCKED_SIGNATURE_FAILURE
+  control_tags:
+  - signature
+  - provenance
+  description: Unknown signing identity is rejected.
+  parameters:
+    mutation: signature_untrusted_key
+- scenario_id: SCI-021
+  family: workflow_mutable_action
+  severity: critical
+  handler: build_ci
+  expected_outcomes:
+  - BLOCKED_BUILD_POLICY_VIOLATION
+  control_tags:
+  - workflow_integrity
+  description: Mutable CI action references are rejected.
+  parameters:
+    mutation: workflow_mutable_action
+- scenario_id: SCI-022
+  family: workflow_mutable_container
+  severity: critical
+  handler: build_ci
+  expected_outcomes:
+  - BLOCKED_BUILD_POLICY_VIOLATION
+  control_tags:
+  - workflow_integrity
+  description: Mutable build container references are rejected.
+  parameters:
+    mutation: workflow_mutable_container
+- scenario_id: SCI-023
+  family: workflow_digest_tamper
+  severity: critical
+  handler: build_ci
+  expected_outcomes:
+  - BLOCKED_BUILD_POLICY_VIOLATION
+  control_tags:
+  - workflow_integrity
+  description: Workflow content not matching the approved digest is rejected.
+  parameters:
+    mutation: workflow_digest_tamper
+- scenario_id: SCI-024
+  family: workflow_forbidden_trigger
+  severity: critical
+  handler: build_ci
+  expected_outcomes:
+  - BLOCKED_BUILD_POLICY_VIOLATION
+  control_tags:
+  - workflow_integrity
+  description: Dangerous CI trigger is rejected.
+  parameters:
+    mutation: workflow_forbidden_trigger
+- scenario_id: SCI-025
+  family: build_network_enabled
+  severity: critical
+  handler: build_ci
+  expected_outcomes:
+  - BLOCKED_BUILD_POLICY_VIOLATION
+  control_tags:
+  - workflow_integrity
+  description: Network-enabled build violates hermetic policy.
+  parameters:
+    mutation: build_network_enabled
+- scenario_id: SCI-026
+  family: build_nonhermetic
+  severity: critical
+  handler: build_ci
+  expected_outcomes:
+  - BLOCKED_BUILD_POLICY_VIOLATION
+  control_tags:
+  - workflow_integrity
+  description: Non-hermetic build is rejected.
+  parameters:
+    mutation: build_nonhermetic
+- scenario_id: SCI-027
+  family: source_dirty
+  severity: critical
+  handler: build_ci
+  expected_outcomes:
+  - BLOCKED_BUILD_POLICY_VIOLATION
+  control_tags:
+  - workflow_integrity
+  - source_binding
+  description: Dirty source state is rejected.
+  parameters:
+    mutation: source_dirty
+- scenario_id: SCI-028
+  family: source_uncommitted_input
+  severity: critical
+  handler: build_ci
+  expected_outcomes:
+  - BLOCKED_BUILD_POLICY_VIOLATION
+  control_tags:
+  - workflow_integrity
+  - source_binding
+  description: Uncommitted build input is rejected.
+  parameters:
+    mutation: source_uncommitted_input
+- scenario_id: SCI-029
+  family: artifact_bytes_tamper
+  severity: critical
+  handler: release
+  expected_outcomes:
+  - BLOCKED_ARTIFACT_DIGEST_FAILURE
+  control_tags:
+  - artifact_digest
+  description: Tampered artifact bytes are blocked.
+  parameters:
+    mutation: artifact_bytes_tamper
+- scenario_id: SCI-030
+  family: artifact_hash_missing
+  severity: critical
+  handler: release
+  expected_outcomes:
+  - BLOCKED_ARTIFACT_DIGEST_FAILURE
+  control_tags:
+  - artifact_digest
+  description: Artifact without digest is blocked.
+  parameters:
+    mutation: artifact_hash_missing
+- scenario_id: SCI-031
+  family: manifest_digest_tamper
+  severity: critical
+  handler: release
+  expected_outcomes:
+  - BLOCKED_ARTIFACT_DIGEST_FAILURE
+  control_tags:
+  - artifact_digest
+  - manifest_atomicity
+  description: Tampered release manifest digest is blocked.
+  parameters:
+    mutation: manifest_digest_tamper
+- scenario_id: SCI-032
+  family: release_duplicate_artifact
+  severity: critical
+  handler: release
+  expected_outcomes:
+  - QUARANTINED_RELEASE_CONFLICT
+  control_tags:
+  - release_conflict
+  - manifest_atomicity
+  description: Duplicate artifact identity is quarantined.
+  parameters:
+    mutation: release_duplicate_artifact
+- scenario_id: SCI-033
+  family: release_unauthorized_exception
+  severity: critical
+  handler: release
+  expected_outcomes:
+  - QUARANTINED_RELEASE_CONFLICT
+  control_tags:
+  - release_conflict
+  description: Unauthorized release exception is quarantined.
+  parameters:
+    mutation: release_unauthorized_exception
+- scenario_id: SCI-034
+  family: release_rollback
+  severity: critical
+  handler: release
+  expected_outcomes:
+  - BLOCKED_REPRODUCIBILITY_FAILURE
+  control_tags:
+  - rollback_protection
+  - reproducibility
+  description: Rollback to a prior release sequence is blocked.
+  parameters:
+    mutation: release_rollback
+- scenario_id: SCI-035
+  family: release_untrusted_media
+  severity: critical
+  handler: release
+  expected_outcomes:
+  - QUARANTINED_UNTRUSTED_ARTIFACT
+  control_tags:
+  - artifact_digest
+  description: Unapproved artifact media type is quarantined.
+  parameters:
+    mutation: release_untrusted_media
+- scenario_id: SCI-036
+  family: reproducibility_mismatch
+  severity: critical
+  handler: release
+  expected_outcomes:
+  - BLOCKED_REPRODUCIBILITY_FAILURE
+  control_tags:
+  - reproducibility
+  description: Non-reproducible build output is blocked.
+  parameters:
+    mutation: reproducibility_mismatch
+- scenario_id: SCI-037
+  family: sbom_missing_component
+  severity: critical
+  handler: sbom
+  expected_outcomes:
+  - BLOCKED_SBOM_RECONCILIATION_FAILURE
+  control_tags:
+  - sbom
+  description: Locked component absent from SBOM is blocked.
+  parameters:
+    mutation: sbom_missing_component
+- scenario_id: SCI-038
+  family: sbom_unexpected_component
+  severity: critical
+  handler: sbom
+  expected_outcomes:
+  - BLOCKED_SBOM_RECONCILIATION_FAILURE
+  control_tags:
+  - sbom
+  description: Unexpected SBOM component is blocked.
+  parameters:
+    mutation: sbom_unexpected_component
+- scenario_id: SCI-039
+  family: sbom_version_mismatch
+  severity: critical
+  handler: sbom
+  expected_outcomes:
+  - BLOCKED_SBOM_RECONCILIATION_FAILURE
+  control_tags:
+  - sbom
+  description: SBOM version substitution is blocked.
+  parameters:
+    mutation: sbom_version_mismatch
+- scenario_id: SCI-040
+  family: sbom_component_hash_mismatch
+  severity: critical
+  handler: sbom
+  expected_outcomes:
+  - BLOCKED_SBOM_RECONCILIATION_FAILURE
+  control_tags:
+  - sbom
+  description: SBOM component hash mismatch is blocked.
+  parameters:
+    mutation: sbom_component_hash_mismatch
+- scenario_id: SCI-041
+  family: sbom_subject_mismatch
+  severity: critical
+  handler: sbom
+  expected_outcomes:
+  - BLOCKED_SBOM_RECONCILIATION_FAILURE
+  control_tags:
+  - sbom
+  description: SBOM generated for a different artifact is blocked.
+  parameters:
+    mutation: sbom_subject_mismatch
+- scenario_id: SCI-042
+  family: sbom_old_spec
+  severity: critical
+  handler: sbom
+  expected_outcomes:
+  - BLOCKED_SBOM_RECONCILIATION_FAILURE
+  control_tags:
+  - sbom
+  description: Unsupported SBOM specification is blocked.
+  parameters:
+    mutation: sbom_old_spec
+- scenario_id: SCI-043
+  family: model_unpinned_revision
+  severity: critical
+  handler: model
+  expected_outcomes:
+  - BLOCKED_MODEL_PROVENANCE_FAILURE
+  control_tags:
+  - model_provenance
+  description: Unpinned model revision is blocked.
+  parameters:
+    mutation: model_unpinned_revision
+- scenario_id: SCI-044
+  family: model_hash_mismatch
+  severity: critical
+  handler: model
+  expected_outcomes:
+  - BLOCKED_MODEL_PROVENANCE_FAILURE
+  control_tags:
+  - model_provenance
+  description: Model artifact hash mismatch is blocked.
+  parameters:
+    mutation: model_hash_mismatch
+- scenario_id: SCI-045
+  family: model_remote_code
+  severity: critical
+  handler: model
+  expected_outcomes:
+  - BLOCKED_MODEL_PROVENANCE_FAILURE
+  control_tags:
+  - model_provenance
+  description: Remote model code execution is blocked.
+  parameters:
+    mutation: model_remote_code
+- scenario_id: SCI-046
+  family: model_missing_dataset
+  severity: critical
+  handler: model
+  expected_outcomes:
+  - BLOCKED_MODEL_PROVENANCE_FAILURE
+  control_tags:
+  - model_provenance
+  description: Missing dataset provenance is blocked.
+  parameters:
+    mutation: model_missing_dataset
+- scenario_id: SCI-047
+  family: model_bad_registry
+  severity: critical
+  handler: model
+  expected_outcomes:
+  - BLOCKED_MODEL_PROVENANCE_FAILURE
+  control_tags:
+  - model_provenance
+  description: Unapproved model registry is blocked.
+  parameters:
+    mutation: model_bad_registry
+- scenario_id: SCI-048
+  family: model_synthetic_dataset_review
+  severity: critical
+  handler: model
+  expected_outcomes:
+  - RELEASE_VERIFIED_WITH_REVIEW
+  control_tags:
+  - model_provenance
+  description: Synthetic model dataset requires accountable review and prohibits automated release.
+  parameters:
+    mutation: model_synthetic_dataset_review

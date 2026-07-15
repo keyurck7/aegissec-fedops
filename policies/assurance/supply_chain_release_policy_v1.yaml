@@ -1,0 +1,93 @@
+policy:
+  policy_id: AEGIS-SUPPLY-CHAIN-RELEASE-POLICY
+  version: 1.0.0
+  description: >-
+    Fail-closed software-supply-chain controls for dependency locks, build
+    workflows, SLSA provenance, DSSE signatures, artifact digests, CycloneDX
+    reconciliation, model provenance, reproducibility, rollback protection,
+    and atomic release manifests.
+deterministic_clock:
+  evaluation_time: '2026-07-15T12:00:00Z'
+dependency:
+  exact_pin_required: true
+  sha256_required: true
+  direct_references_permitted: false
+  allowed_registry_hosts:
+    - pypi.org
+  normalized_name_uniqueness_required: true
+  artifact_verification_required: true
+workflow:
+  action_commit_pin_required: true
+  container_digest_pin_required: true
+  allowed_runner_labels:
+    - ubuntu-24.04
+  forbidden_triggers:
+    - pull_request_target
+  forbidden_tokens:
+    - 'permissions: write-all'
+    - 'curl | sh'
+    - 'curl | bash'
+    - 'wget | sh'
+    - 'wget | bash'
+  network_disabled_required: true
+  hermetic_required: true
+provenance:
+  statement_type: https://in-toto.io/Statement/v1
+  predicate_type: https://slsa.dev/provenance/v1
+  payload_type: application/vnd.in-toto+json
+  allowed_builder_ids:
+    - urn:aegissec:builder:python-release:v1
+  allowed_build_types:
+    - urn:aegissec:build:python-wheel:v1
+  expected_source_uri: git+https://example.invalid/aegissec-fedops
+  expected_source_revision: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  expected_source_digest: bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+  allowed_key_fingerprints:
+    AEGIS-CONTROLLED-RELEASE-KEY-001: 65b60673d6ed884bf01c2c222d82ada0740f29ac3355d6a925c81f17f47a27b8
+  require_material_completeness: true
+  require_parameter_completeness: true
+  require_environment_completeness: true
+  require_reproducible: true
+  require_network_disabled: true
+model:
+  allowed_registry_hosts:
+    - huggingface.co
+  revision_pattern: '^[0-9a-f]{40}$'
+  remote_code_permitted: false
+  dataset_provenance_required: true
+  file_hashes_required: true
+release:
+  minimum_release_sequence: 6
+  allowed_artifact_media_types:
+    - application/zip
+    - application/octet-stream
+  required_evidence_roles:
+    - dependency_lock
+    - sbom
+    - provenance
+    - model_manifest
+    - workflow
+  authorized_exception_ids: []
+  atomic_manifest_required: true
+  rollback_protection_required: true
+review:
+  synthetic_dataset_requires_review: true
+  automated_release_permitted_with_review: false
+  human_review_required: true
+  prohibit_closure: true
+release_gate:
+  unsafe_release_permitted: false
+  unverified_artifact_release_permitted: false
+  signature_verification_required: true
+  provenance_verification_required: true
+  sbom_reconciliation_required: true
+  dependency_integrity_required: true
+  model_provenance_required: true
+  reproducibility_required: true
+  atomic_manifest_required: true
+production_readiness:
+  status: BLOCKED
+  blocking_reasons:
+    - Real operational validation has not yet been completed.
+    - Independent security review has not yet been completed.
+    - Production CI signing identity, transparency-log verification, and reproducible-build infrastructure have not yet been independently validated.

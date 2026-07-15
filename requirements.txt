@@ -12,3 +12,5 @@ pydantic
 jsonschema
 rich
 PyYAML>=6.0,<7
+
+cryptography==46.0.3

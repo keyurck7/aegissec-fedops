@@ -1,0 +1,9 @@
+{
+  "blocked_or_quarantined_count": 46,
+  "report_id": "AEG-SUPPLY-CHAIN-STEP11I-001",
+  "review_required_release_count": 1,
+  "sbom_to_build_reconciliation_rate": 1.0,
+  "signature_enforcement_rate": 1.0,
+  "source_to_artifact_binding_rate": 1.0,
+  "verified_release_count": 1
+}

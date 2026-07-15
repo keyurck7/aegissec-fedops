@@ -1,0 +1,629 @@
+{
+  "$defs": {
+    "artifactReference": {
+      "additionalProperties": false,
+      "oneOf": [
+        {
+          "required": [
+            "catalog_id"
+          ]
+        },
+        {
+          "required": [
+            "policy_id"
+          ]
+        }
+      ],
+      "properties": {
+        "catalog_id": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        },
+        "policy_id": {
+          "type": "string"
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "version": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "version",
+        "path",
+        "sha256"
+      ],
+      "type": "object"
+    },
+    "finding": {
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "field_path": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "message": {
+          "type": "string"
+        },
+        "severity": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "severity",
+        "message",
+        "field_path"
+      ],
+      "type": "object"
+    },
+    "integrityCheck": {
+      "additionalProperties": false,
+      "properties": {
+        "actual_sha256": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/sha256"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "exists": {
+          "type": "boolean"
+        },
+        "expected_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "passed": {
+          "type": "boolean"
+        },
+        "relative_path": {
+          "type": "string"
+        },
+        "safe_path": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "relative_path",
+        "expected_sha256",
+        "actual_sha256",
+        "safe_path",
+        "exists",
+        "passed"
+      ],
+      "type": "object"
+    },
+    "integrityChecks": {
+      "additionalProperties": {
+        "$ref": "#/$defs/integrityCheck"
+      },
+      "minProperties": 1,
+      "type": "object"
+    },
+    "qualityGate": {
+      "additionalProperties": false,
+      "properties": {
+        "gate_id": {
+          "type": "string"
+        },
+        "metric": {
+          "type": "string"
+        },
+        "observed": {},
+        "operator": {
+          "enum": [
+            "eq",
+            "gte",
+            "lte"
+          ]
+        },
+        "passed": {
+          "type": "boolean"
+        },
+        "threshold": {}
+      },
+      "required": [
+        "gate_id",
+        "metric",
+        "operator",
+        "threshold",
+        "observed",
+        "passed"
+      ],
+      "type": "object"
+    },
+    "scenarioResult": {
+      "additionalProperties": false,
+      "properties": {
+        "automated_release": {
+          "type": "boolean"
+        },
+        "control_tags": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "defended": {
+          "type": "boolean"
+        },
+        "description": {
+          "type": "string"
+        },
+        "expected_outcomes": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "family": {
+          "type": "string"
+        },
+        "finding_codes": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "handler": {
+          "enum": [
+            "dependency",
+            "provenance",
+            "build_ci",
+            "release",
+            "sbom",
+            "model"
+          ]
+        },
+        "human_review_required": {
+          "type": "boolean"
+        },
+        "mutation": {
+          "type": "string"
+        },
+        "outcome": {
+          "enum": [
+            "RELEASE_VERIFIED",
+            "RELEASE_VERIFIED_WITH_REVIEW",
+            "BLOCKED_UNPINNED_DEPENDENCY",
+            "BLOCKED_DEPENDENCY_HASH_FAILURE",
+            "BLOCKED_BUILD_POLICY_VIOLATION",
+            "BLOCKED_PROVENANCE_FAILURE",
+            "BLOCKED_ARTIFACT_DIGEST_FAILURE",
+            "BLOCKED_SBOM_RECONCILIATION_FAILURE",
+            "BLOCKED_SIGNATURE_FAILURE",
+            "BLOCKED_REPRODUCIBILITY_FAILURE",
+            "BLOCKED_MODEL_PROVENANCE_FAILURE",
+            "QUARANTINED_UNTRUSTED_ARTIFACT",
+            "QUARANTINED_RELEASE_CONFLICT",
+            "UNSAFE_RELEASE",
+            "UNDETECTED",
+            "HARNESS_ERROR"
+          ]
+        },
+        "prohibit_closure": {
+          "type": "boolean"
+        },
+        "scenario_id": {
+          "type": "string"
+        },
+        "severity": {
+          "const": "critical"
+        },
+        "signature_verified": {
+          "type": "boolean"
+        },
+        "unsafe_release": {
+          "type": "boolean"
+        },
+        "unverified_artifact_release": {
+          "type": "boolean"
+        },
+        "verification_results": {
+          "additionalProperties": {
+            "$ref": "#/$defs/verificationResult"
+          },
+          "type": "object"
+        }
+      },
+      "required": [
+        "scenario_id",
+        "family",
+        "handler",
+        "severity",
+        "description",
+        "mutation",
+        "control_tags",
+        "expected_outcomes",
+        "outcome",
+        "defended",
+        "automated_release",
+        "human_review_required",
+        "prohibit_closure",
+        "unsafe_release",
+        "unverified_artifact_release",
+        "signature_verified",
+        "finding_codes",
+        "verification_results"
+      ],
+      "type": "object"
+    },
+    "sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "stringArray": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "verificationResult": {
+      "additionalProperties": false,
+      "properties": {
+        "findings": {
+          "items": {
+            "$ref": "#/$defs/finding"
+          },
+          "type": "array"
+        },
+        "metadata": {
+          "type": "object"
+        },
+        "passed": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "passed",
+        "findings",
+        "metadata"
+      ],
+      "type": "object"
+    }
+  },
+  "$id": "https://aegissec.example/schemas/aegis_supply_chain_assurance_report.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "catalog": {
+      "$ref": "#/$defs/artifactReference"
+    },
+    "deterministic_clock": {
+      "additionalProperties": false,
+      "properties": {
+        "evaluation_time": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "network_requests_used_for_scenarios": {
+          "const": false
+        },
+        "production_signing_keys_used": {
+          "const": false
+        },
+        "wall_clock_reads_used_for_scenarios": {
+          "const": false
+        }
+      },
+      "required": [
+        "evaluation_time",
+        "wall_clock_reads_used_for_scenarios",
+        "network_requests_used_for_scenarios",
+        "production_signing_keys_used"
+      ],
+      "type": "object"
+    },
+    "generated_at": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "harness_error_scenario_ids": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "input_integrity_checks_after": {
+      "$ref": "#/$defs/integrityChecks"
+    },
+    "input_integrity_checks_before": {
+      "$ref": "#/$defs/integrityChecks"
+    },
+    "limitations": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "quality_gates": {
+      "items": {
+        "$ref": "#/$defs/qualityGate"
+      },
+      "maxItems": 19,
+      "minItems": 19,
+      "type": "array"
+    },
+    "release_decision": {
+      "additionalProperties": false,
+      "properties": {
+        "blocking_reasons": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "production_readiness_status": {
+          "enum": [
+            "BLOCKED",
+            "READY"
+          ]
+        },
+        "stage_gate_status": {
+          "enum": [
+            "PASS",
+            "FAIL"
+          ]
+        }
+      },
+      "required": [
+        "stage_gate_status",
+        "production_readiness_status",
+        "blocking_reasons"
+      ],
+      "type": "object"
+    },
+    "release_policy": {
+      "$ref": "#/$defs/artifactReference"
+    },
+    "report_id": {
+      "const": "AEG-SUPPLY-CHAIN-STEP11I-001"
+    },
+    "results": {
+      "items": {
+        "$ref": "#/$defs/scenarioResult"
+      },
+      "maxItems": 48,
+      "minItems": 48,
+      "type": "array"
+    },
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "summary": {
+      "additionalProperties": false,
+      "properties": {
+        "artifact_digest_verification_rate": {
+          "maximum": 1,
+          "minimum": 0,
+          "type": "number"
+        },
+        "blocked_artifact_digest_failure_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "blocked_build_policy_violation_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "blocked_dependency_hash_failure_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "blocked_model_provenance_failure_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "blocked_provenance_failure_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "blocked_reproducibility_failure_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "blocked_sbom_reconciliation_failure_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "blocked_signature_failure_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "blocked_unpinned_dependency_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "build_provenance_verification_rate": {
+          "maximum": 1,
+          "minimum": 0,
+          "type": "number"
+        },
+        "builder_identity_enforcement_rate": {
+          "maximum": 1,
+          "minimum": 0,
+          "type": "number"
+        },
+        "ci_workflow_integrity_rate": {
+          "maximum": 1,
+          "minimum": 0,
+          "type": "number"
+        },
+        "critical_scenario_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "critical_supply_chain_scenario_defence_rate": {
+          "maximum": 1,
+          "minimum": 0,
+          "type": "number"
+        },
+        "defended_critical_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "dependency_integrity_enforcement_rate": {
+          "maximum": 1,
+          "minimum": 0,
+          "type": "number"
+        },
+        "harness_error_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "model_data_provenance_enforcement_rate": {
+          "maximum": 1,
+          "minimum": 0,
+          "type": "number"
+        },
+        "overall_passed": {
+          "type": "boolean"
+        },
+        "quarantined_release_conflict_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "quarantined_untrusted_artifact_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "release_conflict_containment_rate": {
+          "maximum": 1,
+          "minimum": 0,
+          "type": "number"
+        },
+        "release_manifest_atomicity_rate": {
+          "maximum": 1,
+          "minimum": 0,
+          "type": "number"
+        },
+        "release_verified_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "release_verified_with_review_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "reproducibility_consistency_rate": {
+          "maximum": 1,
+          "minimum": 0,
+          "type": "number"
+        },
+        "rollback_protection_rate": {
+          "maximum": 1,
+          "minimum": 0,
+          "type": "number"
+        },
+        "sbom_to_build_reconciliation_rate": {
+          "maximum": 1,
+          "minimum": 0,
+          "type": "number"
+        },
+        "scenario_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "signature_enforcement_rate": {
+          "maximum": 1,
+          "minimum": 0,
+          "type": "number"
+        },
+        "source_to_artifact_binding_rate": {
+          "maximum": 1,
+          "minimum": 0,
+          "type": "number"
+        },
+        "trusted_input_integrity_passed": {
+          "type": "boolean"
+        },
+        "undetected_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "unsafe_release_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "unverified_artifact_release_count": {
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "scenario_count",
+        "critical_scenario_count",
+        "defended_critical_count",
+        "release_verified_count",
+        "release_verified_with_review_count",
+        "blocked_unpinned_dependency_count",
+        "blocked_dependency_hash_failure_count",
+        "blocked_build_policy_violation_count",
+        "blocked_provenance_failure_count",
+        "blocked_artifact_digest_failure_count",
+        "blocked_sbom_reconciliation_failure_count",
+        "blocked_signature_failure_count",
+        "blocked_reproducibility_failure_count",
+        "blocked_model_provenance_failure_count",
+        "quarantined_untrusted_artifact_count",
+        "quarantined_release_conflict_count",
+        "unsafe_release_count",
+        "unverified_artifact_release_count",
+        "undetected_count",
+        "harness_error_count",
+        "critical_supply_chain_scenario_defence_rate",
+        "artifact_digest_verification_rate",
+        "dependency_integrity_enforcement_rate",
+        "build_provenance_verification_rate",
+        "builder_identity_enforcement_rate",
+        "source_to_artifact_binding_rate",
+        "sbom_to_build_reconciliation_rate",
+        "ci_workflow_integrity_rate",
+        "model_data_provenance_enforcement_rate",
+        "release_manifest_atomicity_rate",
+        "rollback_protection_rate",
+        "reproducibility_consistency_rate",
+        "signature_enforcement_rate",
+        "release_conflict_containment_rate",
+        "trusted_input_integrity_passed",
+        "overall_passed"
+      ],
+      "type": "object"
+    },
+    "undetected_scenario_ids": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "unsafe_release_scenario_ids": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "unverified_artifact_release_scenario_ids": {
+      "$ref": "#/$defs/stringArray"
+    }
+  },
+  "required": [
+    "report_id",
+    "schema_version",
+    "generated_at",
+    "catalog",
+    "release_policy",
+    "deterministic_clock",
+    "input_integrity_checks_before",
+    "input_integrity_checks_after",
+    "summary",
+    "quality_gates",
+    "unsafe_release_scenario_ids",
+    "unverified_artifact_release_scenario_ids",
+    "undetected_scenario_ids",
+    "harness_error_scenario_ids",
+    "results",
+    "release_decision",
+    "limitations"
+  ],
+  "title": "AegisSec Step 11I Supply-Chain Assurance Report",
+  "type": "object"
+}
