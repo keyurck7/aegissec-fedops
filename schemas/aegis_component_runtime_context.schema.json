@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aegissec.example/schemas/aegis_component_runtime_context.schema.json",
+  "title": "AegisSec Component Runtime Context",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "context_id",
+    "observed_at",
+    "asset_id",
+    "component",
+    "presence",
+    "reachability",
+    "configuration",
+    "validation",
+    "provenance"
+  ],
+  "$defs": {
+    "evidenceIds": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 3, "maxLength": 300}
+    }
+  },
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "context_id": {"type": "string", "pattern": "^AEG-RTC-[A-Z0-9-]{8,120}$"},
+    "observed_at": {"type": "string", "format": "date-time"},
+    "asset_id": {"type": "string", "minLength": 3, "maxLength": 200},
+    "component": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["component_id", "package_name", "ecosystem", "version", "purl"],
+      "properties": {
+        "component_id": {"type": "string", "minLength": 3, "maxLength": 200},
+        "package_name": {"type": "string", "minLength": 1, "maxLength": 500},
+        "ecosystem": {"type": "string", "minLength": 1, "maxLength": 100},
+        "version": {"type": "string", "minLength": 1, "maxLength": 200},
+        "purl": {"type": ["string", "null"], "maxLength": 1000}
+      }
+    },
+    "presence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "confidence", "evidence_ids"],
+      "properties": {
+        "status": {"enum": ["PRESENT", "ABSENT", "UNKNOWN"]},
+        "confidence": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+        "evidence_ids": {"$ref": "#/$defs/evidenceIds"}
+      }
+    },
+    "reachability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "confidence", "evidence_ids"],
+      "properties": {
+        "status": {"enum": ["REACHABLE", "NOT_REACHABLE", "UNKNOWN"]},
+        "confidence": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+        "evidence_ids": {"$ref": "#/$defs/evidenceIds"}
+      }
+    },
+    "configuration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "mitigation_ids", "evidence_ids"],
+      "properties": {
+        "status": {"enum": ["VULNERABLE", "MITIGATED", "UNKNOWN"]},
+        "mitigation_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 3, "maxLength": 300}
+        },
+        "evidence_ids": {"$ref": "#/$defs/evidenceIds"}
+      }
+    },
+    "validation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "errors", "warnings"],
+      "properties": {
+        "status": {"enum": ["accepted", "accepted_with_warnings", "quarantined", "rejected"]},
+        "errors": {"type": "array", "items": {"type": "string", "maxLength": 2000}},
+        "warnings": {"type": "array", "items": {"type": "string", "maxLength": 2000}}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["origin_type", "collector", "collection_run_id"],
+      "properties": {
+        "origin_type": {"enum": ["observed", "attested", "controlled_demo"]},
+        "collector": {"type": "string", "minLength": 2, "maxLength": 300},
+        "collection_run_id": {"type": "string", "minLength": 3, "maxLength": 300}
+      }
+    }
+  }
+}

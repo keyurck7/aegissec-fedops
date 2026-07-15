@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "context_id": "AEG-RTC-LOG4SHELL-DEMO-001",
+  "observed_at": "2026-07-15T14:09:04Z",
+  "asset_id": "AEG-AST-HOSP-SCHED-001",
+  "component": {
+    "component_id": "AEG-CMP-LOG4J-CORE-001",
+    "package_name": "org.apache.logging.log4j:log4j-core",
+    "ecosystem": "Maven",
+    "version": "2.14.1",
+    "purl": "pkg:maven/org.apache.logging.log4j/log4j-core@2.14.1"
+  },
+  "presence": {
+    "status": "PRESENT",
+    "confidence": 0.97,
+    "evidence_ids": ["AEG-EVD-SBOM-LOG4J-001"]
+  },
+  "reachability": {
+    "status": "UNKNOWN",
+    "confidence": null,
+    "evidence_ids": []
+  },
+  "configuration": {
+    "status": "UNKNOWN",
+    "mitigation_ids": [],
+    "evidence_ids": []
+  },
+  "validation": {
+    "status": "accepted_with_warnings",
+    "errors": [],
+    "warnings": [
+      "Runtime reachability and configuration-specific mitigation have not yet been observed."
+    ]
+  },
+  "provenance": {
+    "origin_type": "controlled_demo",
+    "collector": "AegisSec Milestone 12C controlled vertical slice",
+    "collection_run_id": "RUN-M12C-LOG4SHELL-DEMO-001"
+  }
+}

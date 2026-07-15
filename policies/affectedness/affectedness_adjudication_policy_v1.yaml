@@ -1,0 +1,78 @@
+policy:
+  policy_id: AEGIS-AFFECTEDNESS-ADJUDICATION-POLICY
+  version: 1.0.0
+  engine_version: 1.0.0
+  description: >
+    Policy governing the conversion of source-governed canonical vulnerability
+    intelligence, component evidence, asset context, and runtime observations
+    into a fail-closed affectedness adjudication.
+
+canonical_intelligence_trust:
+  weights:
+    quality_gates: 0.50
+    source_validation: 0.25
+    freshness: 0.15
+    correlation_controls: 0.10
+  accept_threshold: 0.85
+  warning_threshold: 0.70
+  quarantine_on:
+    - failed_quality_gate
+    - blocking_freshness_finding
+    - blocking_source_conflict
+    - source_bundle_verification_failure
+    - exact_target_correlation_failure
+
+state_mapping:
+  affected: AFFECTED
+  probably_affected: PROBABLY_AFFECTED
+  fixed: NOT_AFFECTED
+  not_affected: NOT_AFFECTED
+  probably_not_affected: UNKNOWN
+  unknown: UNKNOWN
+
+runtime_semantics:
+  reachability_changes_affectedness: false
+  mitigation_changes_affectedness: false
+  definitive_absence_may_establish_not_affected: true
+  absent_presence_status: ABSENT
+  present_presence_status: PRESENT
+  unknown_presence_status: UNKNOWN
+
+human_review:
+  always_required_for:
+    - PROBABLY_AFFECTED
+    - UNKNOWN
+    - CONFLICTED
+  required_for_affected_when:
+    - runtime_reachability_unknown
+    - component_evidence_has_warnings
+    - canonical_intelligence_has_warnings
+    - production_asset
+    - mission_essential_asset
+  required_for_not_affected_when:
+    - confidence_below_closure_threshold
+    - runtime_presence_not_definitive
+    - residual_conflicts
+
+closure:
+  minimum_not_affected_confidence: 0.85
+  require_zero_blocking_conflicts: true
+  require_definitive_component_absence_or_version_result: true
+  prohibited_for:
+    - AFFECTED
+    - PROBABLY_AFFECTED
+    - UNKNOWN
+    - CONFLICTED
+
+release:
+  production_readiness: BLOCKED
+  policy_eligibility:
+    AFFECTED: ELIGIBLE
+    PROBABLY_AFFECTED: REVIEW_REQUIRED
+    NOT_AFFECTED: ELIGIBLE
+    UNKNOWN: BLOCKED
+    CONFLICTED: BLOCKED
+  remaining_blockers:
+    - Real operational validation has not yet been completed.
+    - Independent security review has not yet been completed.
+    - Human approval and remediation verification remain required before production closure.
