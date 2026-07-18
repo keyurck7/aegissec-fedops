@@ -1,0 +1,176 @@
+registry:
+  registry_id: AEGIS-DECISION-FEATURE-REASON-CODES
+  version: 1.0.0
+  description: >
+    Closed reason-code registry for Milestone 12D. Unknown reason codes are a
+    contract violation and block progression to the decision stage.
+
+codes:
+  - code: FEATURES_EXTRACTED
+    category: contract
+    severity: info
+  - code: INPUT_IDENTITIES_BOUND
+    category: contract
+    severity: info
+  - code: INPUT_IDENTITY_MISMATCH
+    category: contract
+    severity: critical
+  - code: UPSTREAM_STAGE_GATE_PASSED
+    category: contract
+    severity: info
+  - code: UPSTREAM_STAGE_GATE_FAILED
+    category: contract
+    severity: critical
+  - code: DECISION_OUTPUTS_ABSENT
+    category: contract
+    severity: info
+  - code: PROHIBITED_DECISION_OUTPUT_PRESENT
+    category: contract
+    severity: critical
+  - code: FIELD_PROVENANCE_COMPLETE
+    category: provenance
+    severity: info
+  - code: FIELD_PROVENANCE_INCOMPLETE
+    category: provenance
+    severity: high
+  - code: TECHNICAL_SEVERITY_PRESENT
+    category: technical
+    severity: info
+  - code: TECHNICAL_SEVERITY_MISSING
+    category: technical
+    severity: medium
+  - code: KNOWN_EXPLOITATION_PRESENT
+    category: exploitation
+    severity: info
+  - code: KNOWN_EXPLOITATION_NOT_OBSERVED
+    category: exploitation
+    severity: info
+  - code: KNOWN_EXPLOITATION_UNKNOWN
+    category: exploitation
+    severity: medium
+  - code: EPSS_PRESENT
+    category: exploitation
+    severity: info
+  - code: EPSS_MISSING
+    category: exploitation
+    severity: medium
+  - code: SSVC_SOURCE_ASSERTION_PRESENT
+    category: exploitation
+    severity: info
+  - code: SSVC_SOURCE_ASSERTION_MISSING
+    category: exploitation
+    severity: low
+  - code: AFFECTEDNESS_AFFECTED
+    category: affectedness
+    severity: high
+  - code: AFFECTEDNESS_PROBABLY_AFFECTED
+    category: affectedness
+    severity: high
+  - code: AFFECTEDNESS_NOT_AFFECTED
+    category: affectedness
+    severity: info
+  - code: AFFECTEDNESS_UNKNOWN
+    category: affectedness
+    severity: high
+  - code: AFFECTEDNESS_CONFLICTED
+    category: affectedness
+    severity: critical
+  - code: AFFECTEDNESS_CLOSURE_PROHIBITED
+    category: affectedness
+    severity: high
+  - code: ASSET_CRITICALITY_APPROVED
+    category: asset
+    severity: info
+  - code: ASSET_CRITICALITY_UNAPPROVED
+    category: asset
+    severity: high
+  - code: MISSION_ESSENTIAL_ASSET
+    category: mission
+    severity: high
+  - code: NON_MISSION_ESSENTIAL_ASSET
+    category: mission
+    severity: info
+  - code: SECTOR_CONTEXT_NON_SCORING
+    category: mission
+    severity: info
+  - code: INTERNET_EXPOSED
+    category: exposure
+    severity: high
+  - code: NOT_INTERNET_EXPOSED
+    category: exposure
+    severity: info
+  - code: RUNTIME_REACHABILITY_CONFIRMED
+    category: runtime
+    severity: high
+  - code: RUNTIME_REACHABILITY_NOT_CONFIRMED
+    category: runtime
+    severity: info
+  - code: RUNTIME_REACHABILITY_UNKNOWN
+    category: runtime
+    severity: medium
+  - code: RUNTIME_CONFIGURATION_VULNERABLE
+    category: runtime
+    severity: high
+  - code: RUNTIME_CONFIGURATION_MITIGATED
+    category: runtime
+    severity: info
+  - code: RUNTIME_CONFIGURATION_UNKNOWN
+    category: runtime
+    severity: medium
+  - code: EVIDENCE_TRUST_ACCEPTED
+    category: trust
+    severity: info
+  - code: EVIDENCE_TRUST_ACCEPTED_WITH_WARNINGS
+    category: trust
+    severity: medium
+  - code: EVIDENCE_TRUST_QUARANTINED
+    category: trust
+    severity: critical
+  - code: EVIDENCE_TRUST_REJECTED
+    category: trust
+    severity: critical
+  - code: REQUIRED_FRESHNESS_CURRENT
+    category: freshness
+    severity: info
+  - code: BLOCKING_FRESHNESS_FINDING
+    category: freshness
+    severity: critical
+  - code: SOURCE_ASSERTION_DIFFERENCE_PRESERVED
+    category: conflict
+    severity: medium
+  - code: NO_BLOCKING_CONFLICTS
+    category: conflict
+    severity: info
+  - code: BLOCKING_CONFLICT_PRESENT
+    category: conflict
+    severity: critical
+  - code: UNCERTAINTY_LOW
+    category: uncertainty
+    severity: info
+  - code: UNCERTAINTY_MEDIUM
+    category: uncertainty
+    severity: medium
+  - code: UNCERTAINTY_HIGH
+    category: uncertainty
+    severity: high
+  - code: UNCERTAINTY_CRITICAL
+    category: uncertainty
+    severity: critical
+  - code: HUMAN_REVIEW_REQUIRED
+    category: governance
+    severity: high
+  - code: HUMAN_REVIEW_NOT_REQUIRED
+    category: governance
+    severity: info
+  - code: PRODUCTION_BLOCK_PRESERVED
+    category: governance
+    severity: info
+  - code: NEXT_STAGE_ELIGIBLE
+    category: release
+    severity: info
+  - code: NEXT_STAGE_REVIEW_REQUIRED
+    category: release
+    severity: high
+  - code: NEXT_STAGE_BLOCKED
+    category: release
+    severity: critical

@@ -1,0 +1,1257 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aegissec.example/schemas/aegis_decision_feature_envelope.schema.json",
+  "title": "AegisSec Decision Feature Envelope",
+  "description": "Strict, tamper-evident and decision-neutral feature contract joining official intelligence, affectedness, asset, evidence and runtime context for downstream SSVC and ML stages.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "envelope_id",
+    "generated_at",
+    "contract",
+    "inputs",
+    "target",
+    "features",
+    "provenance",
+    "quality_gates",
+    "release_decision",
+    "audit"
+  ],
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "reasonCodes": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[A-Z0-9_]+$"
+      }
+    },
+    "reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "record_id",
+        "relative_path",
+        "sha256"
+      ],
+      "properties": {
+        "record_id": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 300
+        },
+        "relative_path": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "qualityGate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "gate_id",
+        "metric",
+        "observed",
+        "expected",
+        "pass",
+        "reason_codes"
+      ],
+      "properties": {
+        "gate_id": {
+          "type": "string",
+          "pattern": "^M12D-[A-Z0-9-]+$"
+        },
+        "metric": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 300
+        },
+        "observed": {},
+        "expected": {},
+        "pass": {
+          "type": "boolean"
+        },
+        "reason_codes": {
+          "$ref": "#/$defs/reasonCodes"
+        }
+      }
+    },
+    "featureProvenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "feature_path",
+        "source_record_id",
+        "source_relative_path",
+        "source_sha256",
+        "source_field_paths",
+        "extraction_method"
+      ],
+      "properties": {
+        "feature_path": {
+          "type": "string",
+          "pattern": "^/features/"
+        },
+        "source_record_id": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 300
+        },
+        "source_relative_path": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "source_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "source_field_paths": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^/"
+          }
+        },
+        "extraction_method": {
+          "enum": [
+            "deterministic_copy",
+            "deterministic_mapping",
+            "deterministic_aggregation",
+            "policy_derived"
+          ]
+        }
+      }
+    },
+    "conflict": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "code",
+        "blocking",
+        "source",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "type": "string",
+          "pattern": "^[A-Z0-9_]+$"
+        },
+        "blocking": {
+          "type": "boolean"
+        },
+        "source": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 200
+        },
+        "message": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 2000
+        }
+      }
+    },
+    "severity": {
+      "enum": [
+        "NOT_APPLICABLE",
+        "UNKNOWN",
+        "LOW",
+        "MEDIUM",
+        "HIGH",
+        "SEVERE",
+        "CRITICAL"
+      ]
+    },
+    "nullableScore": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 1
+    }
+  },
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "envelope_id": {
+      "type": "string",
+      "pattern": "^AEG-DFE-[A-F0-9]{24}$"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract_id",
+        "contract_version",
+        "builder_version",
+        "policy_id",
+        "policy_version",
+        "policy_sha256",
+        "reason_registry_id",
+        "reason_registry_version",
+        "reason_registry_sha256"
+      ],
+      "properties": {
+        "contract_id": {
+          "const": "AEGIS-DECISION-FEATURE-CONTRACT"
+        },
+        "contract_version": {
+          "const": "1.0.0"
+        },
+        "builder_version": {
+          "const": "1.0.0"
+        },
+        "policy_id": {
+          "const": "AEGIS-DECISION-FEATURE-POLICY"
+        },
+        "policy_version": {
+          "const": "1.0.0"
+        },
+        "policy_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "reason_registry_id": {
+          "const": "AEGIS-DECISION-FEATURE-REASON-CODES"
+        },
+        "reason_registry_version": {
+          "const": "1.0.0"
+        },
+        "reason_registry_sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "inputs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "canonical_intelligence",
+        "affectedness_adjudication",
+        "asset_context",
+        "component_evidence",
+        "runtime_context"
+      ],
+      "properties": {
+        "canonical_intelligence": {
+          "$ref": "#/$defs/reference"
+        },
+        "affectedness_adjudication": {
+          "$ref": "#/$defs/reference"
+        },
+        "asset_context": {
+          "$ref": "#/$defs/reference"
+        },
+        "component_evidence": {
+          "$ref": "#/$defs/reference"
+        },
+        "runtime_context": {
+          "$ref": "#/$defs/reference"
+        }
+      }
+    },
+    "target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "cve_id",
+        "asset_id",
+        "component"
+      ],
+      "properties": {
+        "cve_id": {
+          "type": "string",
+          "pattern": "^CVE-[0-9]{4}-[0-9]{4,}$"
+        },
+        "asset_id": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 300
+        },
+        "component": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "component_id",
+            "package_name",
+            "ecosystem",
+            "version",
+            "purl"
+          ],
+          "properties": {
+            "component_id": {
+              "type": "string",
+              "minLength": 3,
+              "maxLength": 300
+            },
+            "package_name": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 500
+            },
+            "ecosystem": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100
+            },
+            "version": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            "purl": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "maxLength": 1000
+            }
+          }
+        }
+      }
+    },
+    "features": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "technical_severity",
+        "exploitation",
+        "affectedness",
+        "asset_criticality",
+        "mission_and_sector_impact",
+        "exposure_and_reachability",
+        "evidence_trust",
+        "freshness",
+        "uncertainty_and_conflicts",
+        "governance"
+      ],
+      "properties": {
+        "technical_severity": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "status",
+            "base_score",
+            "base_severity",
+            "vector",
+            "version",
+            "source_name",
+            "source_record_id",
+            "exploitability_score",
+            "impact_score",
+            "weaknesses",
+            "reason_codes"
+          ],
+          "properties": {
+            "status": {
+              "enum": [
+                "PRESENT",
+                "MISSING",
+                "INVALID"
+              ]
+            },
+            "base_score": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0,
+              "maximum": 10
+            },
+            "base_severity": {
+              "$ref": "#/$defs/severity"
+            },
+            "vector": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "maxLength": 1000
+            },
+            "version": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "maxLength": 100
+            },
+            "source_name": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "maxLength": 200
+            },
+            "source_record_id": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "maxLength": 300
+            },
+            "exploitability_score": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "impact_score": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "weaknesses": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "pattern": "^CWE-[0-9]+$"
+              }
+            },
+            "reason_codes": {
+              "$ref": "#/$defs/reasonCodes"
+            }
+          }
+        },
+        "exploitation": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "known_exploitation_status",
+            "kev",
+            "epss",
+            "ssvc_source_assertion",
+            "reason_codes"
+          ],
+          "properties": {
+            "known_exploitation_status": {
+              "enum": [
+                "CONFIRMED_ACTIVE",
+                "KNOWN_CATALOGED",
+                "NOT_OBSERVED",
+                "UNKNOWN"
+              ]
+            },
+            "kev": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "status",
+                "listed",
+                "date_added",
+                "due_date",
+                "known_ransomware_campaign_use",
+                "required_action_present"
+              ],
+              "properties": {
+                "status": {
+                  "enum": [
+                    "LISTED",
+                    "NOT_LISTED",
+                    "UNKNOWN"
+                  ]
+                },
+                "listed": {
+                  "type": [
+                    "boolean",
+                    "null"
+                  ]
+                },
+                "date_added": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "format": "date"
+                },
+                "due_date": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "format": "date"
+                },
+                "known_ransomware_campaign_use": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "maxLength": 200
+                },
+                "required_action_present": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "epss": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "status",
+                "probability",
+                "percentile",
+                "score_date"
+              ],
+              "properties": {
+                "status": {
+                  "enum": [
+                    "PRESENT",
+                    "MISSING",
+                    "INVALID"
+                  ]
+                },
+                "probability": {
+                  "$ref": "#/$defs/nullableScore"
+                },
+                "percentile": {
+                  "$ref": "#/$defs/nullableScore"
+                },
+                "score_date": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "format": "date"
+                }
+              }
+            },
+            "ssvc_source_assertion": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "status",
+                "exploitation",
+                "automatable",
+                "technical_impact",
+                "source_role",
+                "assertion_timestamp"
+              ],
+              "properties": {
+                "status": {
+                  "enum": [
+                    "PRESENT",
+                    "MISSING"
+                  ]
+                },
+                "exploitation": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "maxLength": 100
+                },
+                "automatable": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "maxLength": 100
+                },
+                "technical_impact": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "maxLength": 100
+                },
+                "source_role": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "maxLength": 200
+                },
+                "assertion_timestamp": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "format": "date-time"
+                }
+              }
+            },
+            "reason_codes": {
+              "$ref": "#/$defs/reasonCodes"
+            }
+          }
+        },
+        "affectedness": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "status",
+            "technical_status",
+            "confidence",
+            "determination_basis",
+            "human_review_required",
+            "closure_prohibited",
+            "supporting_evidence_count",
+            "uncertainty_factors",
+            "reason_codes"
+          ],
+          "properties": {
+            "status": {
+              "enum": [
+                "AFFECTED",
+                "PROBABLY_AFFECTED",
+                "NOT_AFFECTED",
+                "UNKNOWN",
+                "CONFLICTED"
+              ]
+            },
+            "technical_status": {
+              "enum": [
+                "affected",
+                "probably_affected",
+                "unknown",
+                "probably_not_affected",
+                "not_affected",
+                "fixed"
+              ]
+            },
+            "confidence": {
+              "$ref": "#/$defs/nullableScore"
+            },
+            "determination_basis": {
+              "type": "string",
+              "minLength": 3,
+              "maxLength": 500
+            },
+            "human_review_required": {
+              "type": "boolean"
+            },
+            "closure_prohibited": {
+              "type": "boolean"
+            },
+            "supporting_evidence_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "uncertainty_factors": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "minLength": 3,
+                "maxLength": 2000
+              }
+            },
+            "reason_codes": {
+              "$ref": "#/$defs/reasonCodes"
+            }
+          }
+        },
+        "asset_criticality": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "level",
+            "approval_status",
+            "mission_essential",
+            "mission_tier",
+            "lifecycle_stage",
+            "operational_status",
+            "highest_data_sensitivity",
+            "contains_personal_data",
+            "contains_health_data",
+            "synthetic_or_demo_context",
+            "reason_codes"
+          ],
+          "properties": {
+            "level": {
+              "enum": [
+                "low",
+                "medium",
+                "high",
+                "very_high",
+                "unknown"
+              ]
+            },
+            "approval_status": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100
+            },
+            "mission_essential": {
+              "type": "boolean"
+            },
+            "mission_tier": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100
+            },
+            "lifecycle_stage": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100
+            },
+            "operational_status": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100
+            },
+            "highest_data_sensitivity": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100
+            },
+            "contains_personal_data": {
+              "type": "boolean"
+            },
+            "contains_health_data": {
+              "type": "boolean"
+            },
+            "synthetic_or_demo_context": {
+              "type": "boolean"
+            },
+            "reason_codes": {
+              "$ref": "#/$defs/reasonCodes"
+            }
+          }
+        },
+        "mission_and_sector_impact": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "primary_sector",
+            "subsector",
+            "jurisdictions",
+            "sector_label_is_decision_input",
+            "maximum_severity",
+            "maximum_severity_dimensions",
+            "dimensions",
+            "manual_alternative_available",
+            "rto_hours",
+            "maximum_tolerable_downtime_hours",
+            "reason_codes"
+          ],
+          "properties": {
+            "primary_sector": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            "subsector": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 300
+            },
+            "jurisdictions": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 100
+              }
+            },
+            "sector_label_is_decision_input": {
+              "const": false
+            },
+            "maximum_severity": {
+              "$ref": "#/$defs/severity"
+            },
+            "maximum_severity_dimensions": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 100
+              }
+            },
+            "dimensions": {
+              "type": "object",
+              "minProperties": 1,
+              "additionalProperties": {
+                "$ref": "#/$defs/severity"
+              }
+            },
+            "manual_alternative_available": {
+              "type": "boolean"
+            },
+            "rto_hours": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "maximum_tolerable_downtime_hours": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "reason_codes": {
+              "$ref": "#/$defs/reasonCodes"
+            }
+          }
+        },
+        "exposure_and_reachability": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "internet_accessible",
+            "externally_accessible",
+            "network_zone",
+            "authentication_required",
+            "privileged_interface_exposed",
+            "exposure_confidence",
+            "component_presence",
+            "runtime_reachability",
+            "runtime_reachability_confidence",
+            "runtime_configuration",
+            "compensating_control_count",
+            "reason_codes"
+          ],
+          "properties": {
+            "internet_accessible": {
+              "type": "boolean"
+            },
+            "externally_accessible": {
+              "type": "boolean"
+            },
+            "network_zone": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100
+            },
+            "authentication_required": {
+              "type": "boolean"
+            },
+            "privileged_interface_exposed": {
+              "type": "boolean"
+            },
+            "exposure_confidence": {
+              "$ref": "#/$defs/nullableScore"
+            },
+            "component_presence": {
+              "enum": [
+                "PRESENT",
+                "ABSENT",
+                "UNKNOWN"
+              ]
+            },
+            "runtime_reachability": {
+              "enum": [
+                "REACHABLE",
+                "NOT_REACHABLE",
+                "UNKNOWN"
+              ]
+            },
+            "runtime_reachability_confidence": {
+              "$ref": "#/$defs/nullableScore"
+            },
+            "runtime_configuration": {
+              "enum": [
+                "VULNERABLE",
+                "MITIGATED",
+                "UNKNOWN"
+              ]
+            },
+            "compensating_control_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "reason_codes": {
+              "$ref": "#/$defs/reasonCodes"
+            }
+          }
+        },
+        "evidence_trust": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "combined_action",
+            "combined_score",
+            "canonical_action",
+            "canonical_score",
+            "component_action",
+            "component_score",
+            "component_trust_level",
+            "warning_count",
+            "failed_quality_gate_count",
+            "reason_codes"
+          ],
+          "properties": {
+            "combined_action": {
+              "enum": [
+                "ACCEPT",
+                "ACCEPT_WITH_WARNINGS",
+                "QUARANTINE",
+                "REJECT"
+              ]
+            },
+            "combined_score": {
+              "$ref": "#/$defs/nullableScore"
+            },
+            "canonical_action": {
+              "enum": [
+                "ACCEPT",
+                "ACCEPT_WITH_WARNINGS",
+                "QUARANTINE",
+                "REJECT"
+              ]
+            },
+            "canonical_score": {
+              "$ref": "#/$defs/nullableScore"
+            },
+            "component_action": {
+              "enum": [
+                "ACCEPT",
+                "ACCEPT_WITH_WARNINGS",
+                "QUARANTINE",
+                "REJECT"
+              ]
+            },
+            "component_score": {
+              "$ref": "#/$defs/nullableScore"
+            },
+            "component_trust_level": {
+              "enum": [
+                "high",
+                "medium",
+                "low",
+                "rejected",
+                "unknown"
+              ]
+            },
+            "warning_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "failed_quality_gate_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "reason_codes": {
+              "$ref": "#/$defs/reasonCodes"
+            }
+          }
+        },
+        "freshness": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "reference_time",
+            "required_check_count",
+            "required_current_count",
+            "blocking_finding_count",
+            "oldest_required_age_days",
+            "all_required_current",
+            "source_statuses",
+            "reason_codes"
+          ],
+          "properties": {
+            "reference_time": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "required_check_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "required_current_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "blocking_finding_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "oldest_required_age_days": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "all_required_current": {
+              "type": "boolean"
+            },
+            "source_statuses": {
+              "type": "object",
+              "additionalProperties": {
+                "enum": [
+                  "CURRENT",
+                  "AGING",
+                  "STALE",
+                  "EXPIRED",
+                  "OBSERVED",
+                  "UNKNOWN"
+                ]
+              }
+            },
+            "reason_codes": {
+              "$ref": "#/$defs/reasonCodes"
+            }
+          }
+        },
+        "uncertainty_and_conflicts": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "level",
+            "unknown_feature_count",
+            "blocking_conflict_count",
+            "nonblocking_difference_count",
+            "uncertainty_factors",
+            "conflicts",
+            "human_review_triggers",
+            "reason_codes"
+          ],
+          "properties": {
+            "level": {
+              "enum": [
+                "LOW",
+                "MEDIUM",
+                "HIGH",
+                "CRITICAL"
+              ]
+            },
+            "unknown_feature_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "blocking_conflict_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "nonblocking_difference_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "uncertainty_factors": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "minLength": 3,
+                "maxLength": 2000
+              }
+            },
+            "conflicts": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/conflict"
+              }
+            },
+            "human_review_triggers": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "pattern": "^[A-Z0-9_]+$"
+              }
+            },
+            "reason_codes": {
+              "$ref": "#/$defs/reasonCodes"
+            }
+          }
+        },
+        "governance": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "human_review_required",
+            "closure_prohibited",
+            "upstream_stage_gate",
+            "upstream_policy_eligibility",
+            "production_readiness",
+            "accountable_owner_reference",
+            "cyber_risk_owner_reference",
+            "technical_owner_reference",
+            "sector_sme_reference",
+            "decision_output_prohibited",
+            "reason_codes"
+          ],
+          "properties": {
+            "human_review_required": {
+              "type": "boolean"
+            },
+            "closure_prohibited": {
+              "type": "boolean"
+            },
+            "upstream_stage_gate": {
+              "enum": [
+                "PASS",
+                "FAIL"
+              ]
+            },
+            "upstream_policy_eligibility": {
+              "enum": [
+                "ELIGIBLE",
+                "REVIEW_REQUIRED",
+                "BLOCKED"
+              ]
+            },
+            "production_readiness": {
+              "const": "BLOCKED"
+            },
+            "accountable_owner_reference": {
+              "type": "string",
+              "minLength": 3,
+              "maxLength": 300
+            },
+            "cyber_risk_owner_reference": {
+              "type": "string",
+              "minLength": 3,
+              "maxLength": 300
+            },
+            "technical_owner_reference": {
+              "type": "string",
+              "minLength": 3,
+              "maxLength": 300
+            },
+            "sector_sme_reference": {
+              "type": "string",
+              "minLength": 3,
+              "maxLength": 300
+            },
+            "decision_output_prohibited": {
+              "const": true
+            },
+            "reason_codes": {
+              "$ref": "#/$defs/reasonCodes"
+            }
+          }
+        }
+      }
+    },
+    "provenance": {
+      "type": "array",
+      "minItems": 24,
+      "items": {
+        "$ref": "#/$defs/featureProvenance"
+      }
+    },
+    "quality_gates": {
+      "type": "array",
+      "minItems": 10,
+      "items": {
+        "$ref": "#/$defs/qualityGate"
+      }
+    },
+    "release_decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "stage_gate",
+        "next_stage_eligibility",
+        "production_readiness",
+        "blocking_reasons",
+        "reason_codes"
+      ],
+      "properties": {
+        "stage_gate": {
+          "enum": [
+            "PASS",
+            "FAIL"
+          ]
+        },
+        "next_stage_eligibility": {
+          "enum": [
+            "ELIGIBLE_FOR_12E",
+            "REVIEW_REQUIRED_FOR_12E",
+            "BLOCKED_FOR_12E"
+          ]
+        },
+        "production_readiness": {
+          "const": "BLOCKED"
+        },
+        "blocking_reasons": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 2000
+          }
+        },
+        "reason_codes": {
+          "$ref": "#/$defs/reasonCodes"
+        }
+      }
+    },
+    "audit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "canonical_json_sha256",
+        "input_hashes",
+        "deterministic_envelope_id",
+        "prohibited_output_fields_absent",
+        "feature_group_count",
+        "provenance_entry_count"
+      ],
+      "properties": {
+        "canonical_json_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "input_hashes": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "canonical_intelligence",
+            "affectedness_adjudication",
+            "asset_context",
+            "component_evidence",
+            "runtime_context"
+          ],
+          "properties": {
+            "canonical_intelligence": {
+              "$ref": "#/$defs/sha256"
+            },
+            "affectedness_adjudication": {
+              "$ref": "#/$defs/sha256"
+            },
+            "asset_context": {
+              "$ref": "#/$defs/sha256"
+            },
+            "component_evidence": {
+              "$ref": "#/$defs/sha256"
+            },
+            "runtime_context": {
+              "$ref": "#/$defs/sha256"
+            }
+          }
+        },
+        "deterministic_envelope_id": {
+          "const": true
+        },
+        "prohibited_output_fields_absent": {
+          "const": true
+        },
+        "feature_group_count": {
+          "const": 10
+        },
+        "provenance_entry_count": {
+          "type": "integer",
+          "minimum": 24
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,117 @@
+policy:
+  policy_id: AEGIS-DECISION-FEATURE-POLICY
+  version: 1.0.0
+  builder_version: 1.0.0
+  contract_id: AEGIS-DECISION-FEATURE-CONTRACT
+  contract_version: 1.0.0
+  description: >
+    Policy governing the deterministic conversion of canonical vulnerability
+    intelligence, evidence-governed affectedness, asset context, component
+    evidence, and runtime context into a decision-feature envelope. This stage
+    prepares decision inputs only. It must not emit an SSVC decision, ML
+    prediction, final priority, operational action, response deadline, or
+    arbitration outcome.
+
+feature_requirements:
+  required_input_records:
+    - canonical_intelligence
+    - affectedness_adjudication
+    - asset_context
+    - component_evidence
+    - runtime_context
+  required_feature_groups:
+    - technical_severity
+    - exploitation
+    - affectedness
+    - asset_criticality
+    - mission_and_sector_impact
+    - exposure_and_reachability
+    - evidence_trust
+    - freshness
+    - uncertainty_and_conflicts
+    - governance
+  minimum_provenance_entries: 24
+
+severity_order:
+  not_applicable: 0
+  unknown: 1
+  low: 2
+  medium: 3
+  high: 4
+  severe: 5
+  critical: 6
+
+uncertainty:
+  levels:
+    low: 0
+    medium: 1
+    high: 2
+    critical: 3
+  elevate_to_medium_when:
+    - runtime_reachability_unknown
+    - runtime_configuration_unknown
+    - input_validation_warning
+    - source_assertion_difference
+    - non_operational_fixture
+  elevate_to_high_when:
+    - affectedness_probable_or_unknown
+    - trust_accept_with_warnings_and_multiple_unknowns
+    - missing_required_exploitation_signal
+    - asset_criticality_not_approved
+  elevate_to_critical_when:
+    - affectedness_conflicted
+    - blocking_conflict
+    - trust_quarantine_or_reject
+    - failed_upstream_stage_gate
+    - identity_mismatch
+
+fail_closed:
+  block_12e_when:
+    - failed_upstream_stage_gate
+    - affectedness_unknown_or_conflicted
+    - blocking_conflict
+    - trust_quarantine_or_reject
+    - identity_mismatch
+    - missing_required_input
+    - input_integrity_failure
+    - unregistered_reason_code
+    - prohibited_decision_output_present
+  preserve_production_block: true
+  missing_values_must_remain_unknown: true
+  sector_label_must_not_directly_set_priority: true
+  reachability_must_not_rewrite_affectedness: true
+  mitigation_must_not_rewrite_affectedness: true
+
+human_review:
+  required_when:
+    - upstream_human_review_required
+    - affectedness_probable_unknown_or_conflicted
+    - blocking_or_material_conflict
+    - runtime_reachability_unknown
+    - runtime_configuration_unknown
+    - mission_essential_asset
+    - production_asset
+    - synthetic_or_demo_context
+    - trust_warning_quarantine_or_reject
+
+prohibited_output_fields:
+  - final_priority
+  - priority
+  - action
+  - response_deadline_hours
+  - response_due_at
+  - ssvc_decision
+  - ml_prediction
+  - ml_advisory
+  - arbitration
+  - final_decision
+
+release:
+  production_readiness: BLOCKED
+  eligible_for_next_stage: ELIGIBLE_FOR_12E
+  review_required_for_next_stage: REVIEW_REQUIRED_FOR_12E
+  blocked_for_next_stage: BLOCKED_FOR_12E
+  remaining_blockers:
+    - Milestone 12D prepares governed features but does not authorize remediation action.
+    - SSVC policy execution, independent ML advisory, agreement checking, and accountable human disposition remain downstream stages.
+    - Real operational validation and independent security review remain incomplete.

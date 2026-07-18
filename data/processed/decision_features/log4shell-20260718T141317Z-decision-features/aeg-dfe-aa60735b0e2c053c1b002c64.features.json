@@ -1,0 +1,849 @@
+{
+  "audit": {
+    "canonical_json_sha256": "6caa48656f9e2f3c23fb1fb1373b4d5bf778e7b5ca08dcc4c77d98bc06097d82",
+    "deterministic_envelope_id": true,
+    "feature_group_count": 10,
+    "input_hashes": {
+      "affectedness_adjudication": "180d54a591aed57685080f25001043794527a400e76566513b585ee5487febb7",
+      "asset_context": "bc9cb98980010ca2bc1c123e808296a2e17bb34a5735cf42cd07e1efcfc64395",
+      "canonical_intelligence": "81d297eedd42d0cd0f89713dc0cad52e27b46833d97368fcada05f80c206cfe1",
+      "component_evidence": "21ed78284567bc33bb463fb2525941829b80c7e21144d17677f022d168a3c2de",
+      "runtime_context": "6abaebf0b5b581ce41e4bca16cfeb299bae3606f06d293d8e0b0a48c3e9fcb23"
+    },
+    "prohibited_output_fields_absent": true,
+    "provenance_entry_count": 42
+  },
+  "contract": {
+    "builder_version": "1.0.0",
+    "contract_id": "AEGIS-DECISION-FEATURE-CONTRACT",
+    "contract_version": "1.0.0",
+    "policy_id": "AEGIS-DECISION-FEATURE-POLICY",
+    "policy_sha256": "d6b7699dd8be9089dbf68db59e94deeded110efe6cdd0eb165ede5a5fc485552",
+    "policy_version": "1.0.0",
+    "reason_registry_id": "AEGIS-DECISION-FEATURE-REASON-CODES",
+    "reason_registry_sha256": "31d864d6c8bb44eaf12b6e22781cd89b810332e1fcf48163a035c846fea2399f",
+    "reason_registry_version": "1.0.0"
+  },
+  "envelope_id": "AEG-DFE-AA60735B0E2C053C1B002C64",
+  "features": {
+    "affectedness": {
+      "closure_prohibited": true,
+      "confidence": 0.9794,
+      "determination_basis": "canonical_official_intelligence_plus_component_evidence_and_runtime_context",
+      "human_review_required": true,
+      "reason_codes": [
+        "AFFECTEDNESS_AFFECTED",
+        "AFFECTEDNESS_CLOSURE_PROHIBITED"
+      ],
+      "status": "AFFECTED",
+      "supporting_evidence_count": 5,
+      "technical_status": "affected",
+      "uncertainty_factors": [
+        "Runtime reachability has not been established. This does not negate package affectedness."
+      ]
+    },
+    "asset_criticality": {
+      "approval_status": "approved",
+      "contains_health_data": true,
+      "contains_personal_data": true,
+      "highest_data_sensitivity": "confidential",
+      "level": "high",
+      "lifecycle_stage": "production",
+      "mission_essential": true,
+      "mission_tier": "critical",
+      "operational_status": "operational",
+      "reason_codes": [
+        "ASSET_CRITICALITY_APPROVED",
+        "MISSION_ESSENTIAL_ASSET"
+      ],
+      "synthetic_or_demo_context": true
+    },
+    "evidence_trust": {
+      "canonical_action": "ACCEPT",
+      "canonical_score": 1.0,
+      "combined_action": "ACCEPT_WITH_WARNINGS",
+      "combined_score": 0.9794,
+      "component_action": "ACCEPT_WITH_WARNINGS",
+      "component_score": 0.9794,
+      "component_trust_level": "high",
+      "failed_quality_gate_count": 0,
+      "reason_codes": [
+        "EVIDENCE_TRUST_ACCEPTED_WITH_WARNINGS"
+      ],
+      "warning_count": 2
+    },
+    "exploitation": {
+      "epss": {
+        "percentile": 1.0,
+        "probability": 0.99999,
+        "score_date": "2026-07-15",
+        "status": "PRESENT"
+      },
+      "kev": {
+        "date_added": "2021-12-10",
+        "due_date": "2021-12-24",
+        "known_ransomware_campaign_use": "Known",
+        "listed": true,
+        "required_action_present": true,
+        "status": "LISTED"
+      },
+      "known_exploitation_status": "CONFIRMED_ACTIVE",
+      "reason_codes": [
+        "KNOWN_EXPLOITATION_PRESENT",
+        "EPSS_PRESENT",
+        "SSVC_SOURCE_ASSERTION_PRESENT"
+      ],
+      "ssvc_source_assertion": {
+        "assertion_timestamp": "2025-02-04T14:25:34.416117Z",
+        "automatable": "yes",
+        "exploitation": "active",
+        "source_role": "CISA Coordinator",
+        "status": "PRESENT",
+        "technical_impact": "total"
+      }
+    },
+    "exposure_and_reachability": {
+      "authentication_required": true,
+      "compensating_control_count": 3,
+      "component_presence": "PRESENT",
+      "exposure_confidence": 0.95,
+      "externally_accessible": true,
+      "internet_accessible": true,
+      "network_zone": "dmz",
+      "privileged_interface_exposed": false,
+      "reason_codes": [
+        "INTERNET_EXPOSED",
+        "RUNTIME_REACHABILITY_UNKNOWN",
+        "RUNTIME_CONFIGURATION_UNKNOWN"
+      ],
+      "runtime_configuration": "UNKNOWN",
+      "runtime_reachability": "UNKNOWN",
+      "runtime_reachability_confidence": null
+    },
+    "freshness": {
+      "all_required_current": true,
+      "blocking_finding_count": 0,
+      "oldest_required_age_days": 0.797435,
+      "reason_codes": [
+        "REQUIRED_FRESHNESS_CURRENT"
+      ],
+      "reference_time": "2026-07-15T14:09:14.494975+00:00",
+      "required_check_count": 6,
+      "required_current_count": 6,
+      "source_statuses": {
+        "CISA_KEV": "CURRENT",
+        "FIRST_EPSS": "CURRENT",
+        "NVD": "CURRENT",
+        "OSV": "CURRENT"
+      }
+    },
+    "governance": {
+      "accountable_owner_reference": "OWNER-HOSP-SCHED-001",
+      "closure_prohibited": true,
+      "cyber_risk_owner_reference": "CYBER-HOSP-SCHED-001",
+      "decision_output_prohibited": true,
+      "human_review_required": true,
+      "production_readiness": "BLOCKED",
+      "reason_codes": [
+        "HUMAN_REVIEW_REQUIRED",
+        "PRODUCTION_BLOCK_PRESERVED"
+      ],
+      "sector_sme_reference": "SME-HEALTH-001",
+      "technical_owner_reference": "TECH-HOSP-SCHED-001",
+      "upstream_policy_eligibility": "ELIGIBLE",
+      "upstream_stage_gate": "PASS"
+    },
+    "mission_and_sector_impact": {
+      "dimensions": {
+        "availability": "SEVERE",
+        "confidentiality": "HIGH",
+        "integrity": "SEVERE",
+        "legal_regulatory": "HIGH",
+        "mission_readiness": "NOT_APPLICABLE",
+        "patient_safety": "HIGH",
+        "public_service": "HIGH",
+        "public_wellbeing": "HIGH"
+      },
+      "jurisdictions": [
+        "INTERNAL_DEMO",
+        "GERMANY",
+        "EU"
+      ],
+      "manual_alternative_available": true,
+      "maximum_severity": "SEVERE",
+      "maximum_severity_dimensions": [
+        "availability",
+        "integrity"
+      ],
+      "maximum_tolerable_downtime_hours": 8.0,
+      "primary_sector": "healthcare",
+      "reason_codes": [
+        "SECTOR_CONTEXT_NON_SCORING"
+      ],
+      "rto_hours": 4.0,
+      "sector_label_is_decision_input": false,
+      "subsector": "Hospital digital services"
+    },
+    "technical_severity": {
+      "base_score": 10.0,
+      "base_severity": "CRITICAL",
+      "exploitability_score": 3.9,
+      "impact_score": 6.0,
+      "reason_codes": [
+        "TECHNICAL_SEVERITY_PRESENT"
+      ],
+      "source_name": "NVD",
+      "source_record_id": "CVE-2021-44228",
+      "status": "PRESENT",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "version": "3.1",
+      "weaknesses": [
+        "CWE-20",
+        "CWE-400",
+        "CWE-502",
+        "CWE-917"
+      ]
+    },
+    "uncertainty_and_conflicts": {
+      "blocking_conflict_count": 0,
+      "conflicts": [],
+      "human_review_triggers": [
+        "UPSTREAM_HUMAN_REVIEW_REQUIRED",
+        "RUNTIME_REACHABILITY_UNKNOWN",
+        "RUNTIME_CONFIGURATION_UNKNOWN",
+        "MISSION_ESSENTIAL_ASSET",
+        "PRODUCTION_ASSET",
+        "NON_OPERATIONAL_CONTEXT",
+        "TRUST_NOT_UNCONDITIONALLY_ACCEPTED",
+        "SOURCE_ASSERTION_DIFFERENCE"
+      ],
+      "level": "MEDIUM",
+      "nonblocking_difference_count": 1,
+      "reason_codes": [
+        "UNCERTAINTY_MEDIUM",
+        "NO_BLOCKING_CONFLICTS",
+        "SOURCE_ASSERTION_DIFFERENCE_PRESERVED"
+      ],
+      "uncertainty_factors": [
+        "Runtime reachability has not been established. This does not negate package affectedness.",
+        "Runtime reachability is unknown.",
+        "Runtime configuration and mitigation status are unknown.",
+        "Asset and component context are controlled demonstration fixtures, not observed production records.",
+        "Official sources differ in field coverage; differences remain preserved with provenance."
+      ],
+      "unknown_feature_count": 2
+    }
+  },
+  "generated_at": "2026-07-15T14:09:04+00:00",
+  "inputs": {
+    "affectedness_adjudication": {
+      "record_id": "AEG-AFA-9E7D8F8A03A6A1EC07A6CC0A",
+      "relative_path": "data/processed/affectedness/log4shell-20260715T163707Z-affectedness/aeg-afa-9e7d8f8a03a6a1ec07a6cc0a.adjudication.json",
+      "sha256": "180d54a591aed57685080f25001043794527a400e76566513b585ee5487febb7"
+    },
+    "asset_context": {
+      "record_id": "AEG-AST-HOSP-SCHED-001",
+      "relative_path": "data/sample_inputs/assets/valid_healthcare_asset.json",
+      "sha256": "bc9cb98980010ca2bc1c123e808296a2e17bb34a5735cf42cd07e1efcfc64395"
+    },
+    "canonical_intelligence": {
+      "record_id": "AEG-CVI-49B4E71EF44A248DB7A08E5D",
+      "relative_path": "data/processed/canonical_intelligence/log4shell-20260715T140904Z/aeg-cvi-49b4e71ef44a248db7a08e5d.canonical.json",
+      "sha256": "81d297eedd42d0cd0f89713dc0cad52e27b46833d97368fcada05f80c206cfe1"
+    },
+    "component_evidence": {
+      "record_id": "AEG-EVD-SBOM-LOG4J-001",
+      "relative_path": "data/sample_inputs/evidence/valid_log4j_sbom_evidence.json",
+      "sha256": "21ed78284567bc33bb463fb2525941829b80c7e21144d17677f022d168a3c2de"
+    },
+    "runtime_context": {
+      "record_id": "AEG-RTC-LOG4SHELL-DEMO-001",
+      "relative_path": "data/sample_inputs/affectedness/valid_log4shell_runtime_context.json",
+      "sha256": "6abaebf0b5b581ce41e4bca16cfeb299bae3606f06d293d8e0b0a48c3e9fcb23"
+    }
+  },
+  "provenance": [
+    {
+      "extraction_method": "deterministic_mapping",
+      "feature_path": "/features/technical_severity/status",
+      "source_field_paths": [
+        "/vulnerability/severity/selected"
+      ],
+      "source_record_id": "AEG-CVI-49B4E71EF44A248DB7A08E5D",
+      "source_relative_path": "data/processed/canonical_intelligence/log4shell-20260715T140904Z/aeg-cvi-49b4e71ef44a248db7a08e5d.canonical.json",
+      "source_sha256": "81d297eedd42d0cd0f89713dc0cad52e27b46833d97368fcada05f80c206cfe1"
+    },
+    {
+      "extraction_method": "deterministic_mapping",
+      "feature_path": "/features/technical_severity/base_score",
+      "source_field_paths": [
+        "/vulnerability/severity/selected/base_score"
+      ],
+      "source_record_id": "AEG-CVI-49B4E71EF44A248DB7A08E5D",
+      "source_relative_path": "data/processed/canonical_intelligence/log4shell-20260715T140904Z/aeg-cvi-49b4e71ef44a248db7a08e5d.canonical.json",
+      "source_sha256": "81d297eedd42d0cd0f89713dc0cad52e27b46833d97368fcada05f80c206cfe1"
+    },
+    {
+      "extraction_method": "deterministic_mapping",
+      "feature_path": "/features/technical_severity/base_severity",
+      "source_field_paths": [
+        "/vulnerability/severity/selected/base_severity"
+      ],
+      "source_record_id": "AEG-CVI-49B4E71EF44A248DB7A08E5D",
+      "source_relative_path": "data/processed/canonical_intelligence/log4shell-20260715T140904Z/aeg-cvi-49b4e71ef44a248db7a08e5d.canonical.json",
+      "source_sha256": "81d297eedd42d0cd0f89713dc0cad52e27b46833d97368fcada05f80c206cfe1"
+    },
+    {
+      "extraction_method": "deterministic_mapping",
+      "feature_path": "/features/technical_severity/vector",
+      "source_field_paths": [
+        "/vulnerability/severity/selected/vector"
+      ],
+      "source_record_id": "AEG-CVI-49B4E71EF44A248DB7A08E5D",
+      "source_relative_path": "data/processed/canonical_intelligence/log4shell-20260715T140904Z/aeg-cvi-49b4e71ef44a248db7a08e5d.canonical.json",
+      "source_sha256": "81d297eedd42d0cd0f89713dc0cad52e27b46833d97368fcada05f80c206cfe1"
+    },
+    {
+      "extraction_method": "deterministic_mapping",
+      "feature_path": "/features/technical_severity/weaknesses",
+      "source_field_paths": [
+        "/vulnerability/weaknesses"
+      ],
+      "source_record_id": "AEG-CVI-49B4E71EF44A248DB7A08E5D",
+      "source_relative_path": "data/processed/canonical_intelligence/log4shell-20260715T140904Z/aeg-cvi-49b4e71ef44a248db7a08e5d.canonical.json",
+      "source_sha256": "81d297eedd42d0cd0f89713dc0cad52e27b46833d97368fcada05f80c206cfe1"
+    },
+    {
+      "extraction_method": "deterministic_mapping",
+      "feature_path": "/features/exploitation/known_exploitation_status",
+      "source_field_paths": [
+        "/exploitation"
+      ],
+      "source_record_id": "AEG-CVI-49B4E71EF44A248DB7A08E5D",
+      "source_relative_path": "data/processed/canonical_intelligence/log4shell-20260715T140904Z/aeg-cvi-49b4e71ef44a248db7a08e5d.canonical.json",
+      "source_sha256": "81d297eedd42d0cd0f89713dc0cad52e27b46833d97368fcada05f80c206cfe1"
+    },
+    {
+      "extraction_method": "deterministic_mapping",
+      "feature_path": "/features/exploitation/kev",
+      "source_field_paths": [
+        "/exploitation/kev"
+      ],
+      "source_record_id": "AEG-CVI-49B4E71EF44A248DB7A08E5D",
+      "source_relative_path": "data/processed/canonical_intelligence/log4shell-20260715T140904Z/aeg-cvi-49b4e71ef44a248db7a08e5d.canonical.json",
+      "source_sha256": "81d297eedd42d0cd0f89713dc0cad52e27b46833d97368fcada05f80c206cfe1"
+    },
+    {
+      "extraction_method": "deterministic_mapping",
+      "feature_path": "/features/exploitation/epss",
+      "source_field_paths": [
+        "/exploitation/epss"
+      ],
+      "source_record_id": "AEG-CVI-49B4E71EF44A248DB7A08E5D",
+      "source_relative_path": "data/processed/canonical_intelligence/log4shell-20260715T140904Z/aeg-cvi-49b4e71ef44a248db7a08e5d.canonical.json",
+      "source_sha256": "81d297eedd42d0cd0f89713dc0cad52e27b46833d97368fcada05f80c206cfe1"
+    },
+    {
+      "extraction_method": "deterministic_mapping",
+      "feature_path": "/features/exploitation/ssvc_source_assertion",
+      "source_field_paths": [
+        "/exploitation/ssvc_assertions"
+      ],
+      "source_record_id": "AEG-CVI-49B4E71EF44A248DB7A08E5D",
+      "source_relative_path": "data/processed/canonical_intelligence/log4shell-20260715T140904Z/aeg-cvi-49b4e71ef44a248db7a08e5d.canonical.json",
+      "source_sha256": "81d297eedd42d0cd0f89713dc0cad52e27b46833d97368fcada05f80c206cfe1"
+    },
+    {
+      "extraction_method": "deterministic_copy",
+      "feature_path": "/features/affectedness/status",
+      "source_field_paths": [
+        "/adjudication/status"
+      ],
+      "source_record_id": "AEG-AFA-9E7D8F8A03A6A1EC07A6CC0A",
+      "source_relative_path": "data/processed/affectedness/log4shell-20260715T163707Z-affectedness/aeg-afa-9e7d8f8a03a6a1ec07a6cc0a.adjudication.json",
+      "source_sha256": "180d54a591aed57685080f25001043794527a400e76566513b585ee5487febb7"
+    },
+    {
+      "extraction_method": "deterministic_copy",
+      "feature_path": "/features/affectedness/confidence",
+      "source_field_paths": [
+        "/adjudication/confidence"
+      ],
+      "source_record_id": "AEG-AFA-9E7D8F8A03A6A1EC07A6CC0A",
+      "source_relative_path": "data/processed/affectedness/log4shell-20260715T163707Z-affectedness/aeg-afa-9e7d8f8a03a6a1ec07a6cc0a.adjudication.json",
+      "source_sha256": "180d54a591aed57685080f25001043794527a400e76566513b585ee5487febb7"
+    },
+    {
+      "extraction_method": "deterministic_copy",
+      "feature_path": "/features/affectedness/human_review_required",
+      "source_field_paths": [
+        "/adjudication/human_review_required"
+      ],
+      "source_record_id": "AEG-AFA-9E7D8F8A03A6A1EC07A6CC0A",
+      "source_relative_path": "data/processed/affectedness/log4shell-20260715T163707Z-affectedness/aeg-afa-9e7d8f8a03a6a1ec07a6cc0a.adjudication.json",
+      "source_sha256": "180d54a591aed57685080f25001043794527a400e76566513b585ee5487febb7"
+    },
+    {
+      "extraction_method": "deterministic_copy",
+      "feature_path": "/features/affectedness/closure_prohibited",
+      "source_field_paths": [
+        "/adjudication/closure_prohibited"
+      ],
+      "source_record_id": "AEG-AFA-9E7D8F8A03A6A1EC07A6CC0A",
+      "source_relative_path": "data/processed/affectedness/log4shell-20260715T163707Z-affectedness/aeg-afa-9e7d8f8a03a6a1ec07a6cc0a.adjudication.json",
+      "source_sha256": "180d54a591aed57685080f25001043794527a400e76566513b585ee5487febb7"
+    },
+    {
+      "extraction_method": "deterministic_copy",
+      "feature_path": "/features/affectedness/uncertainty_factors",
+      "source_field_paths": [
+        "/adjudication/uncertainty_factors"
+      ],
+      "source_record_id": "AEG-AFA-9E7D8F8A03A6A1EC07A6CC0A",
+      "source_relative_path": "data/processed/affectedness/log4shell-20260715T163707Z-affectedness/aeg-afa-9e7d8f8a03a6a1ec07a6cc0a.adjudication.json",
+      "source_sha256": "180d54a591aed57685080f25001043794527a400e76566513b585ee5487febb7"
+    },
+    {
+      "extraction_method": "deterministic_mapping",
+      "feature_path": "/features/asset_criticality/level",
+      "source_field_paths": [
+        "/criticality/level"
+      ],
+      "source_record_id": "AEG-AST-HOSP-SCHED-001",
+      "source_relative_path": "data/sample_inputs/assets/valid_healthcare_asset.json",
+      "source_sha256": "bc9cb98980010ca2bc1c123e808296a2e17bb34a5735cf42cd07e1efcfc64395"
+    },
+    {
+      "extraction_method": "deterministic_mapping",
+      "feature_path": "/features/asset_criticality/approval_status",
+      "source_field_paths": [
+        "/criticality/approval_status"
+      ],
+      "source_record_id": "AEG-AST-HOSP-SCHED-001",
+      "source_relative_path": "data/sample_inputs/assets/valid_healthcare_asset.json",
+      "source_sha256": "bc9cb98980010ca2bc1c123e808296a2e17bb34a5735cf42cd07e1efcfc64395"
+    },
+    {
+      "extraction_method": "deterministic_mapping",
+      "feature_path": "/features/asset_criticality/mission_essential",
+      "source_field_paths": [
+        "/mission/mission_essential"
+      ],
+      "source_record_id": "AEG-AST-HOSP-SCHED-001",
+      "source_relative_path": "data/sample_inputs/assets/valid_healthcare_asset.json",
+      "source_sha256": "bc9cb98980010ca2bc1c123e808296a2e17bb34a5735cf42cd07e1efcfc64395"
+    },
+    {
+      "extraction_method": "deterministic_mapping",
+      "feature_path": "/features/asset_criticality/mission_tier",
+      "source_field_paths": [
+        "/mission/mission_tier"
+      ],
+      "source_record_id": "AEG-AST-HOSP-SCHED-001",
+      "source_relative_path": "data/sample_inputs/assets/valid_healthcare_asset.json",
+      "source_sha256": "bc9cb98980010ca2bc1c123e808296a2e17bb34a5735cf42cd07e1efcfc64395"
+    },
+    {
+      "extraction_method": "deterministic_mapping",
+      "feature_path": "/features/asset_criticality/lifecycle_stage",
+      "source_field_paths": [
+        "/environment/lifecycle_stage"
+      ],
+      "source_record_id": "AEG-AST-HOSP-SCHED-001",
+      "source_relative_path": "data/sample_inputs/assets/valid_healthcare_asset.json",
+      "source_sha256": "bc9cb98980010ca2bc1c123e808296a2e17bb34a5735cf42cd07e1efcfc64395"
+    },
+    {
+      "extraction_method": "deterministic_mapping",
+      "feature_path": "/features/asset_criticality/highest_data_sensitivity",
+      "source_field_paths": [
+        "/data_profile/highest_sensitivity"
+      ],
+      "source_record_id": "AEG-AST-HOSP-SCHED-001",
+      "source_relative_path": "data/sample_inputs/assets/valid_healthcare_asset.json",
+      "source_sha256": "bc9cb98980010ca2bc1c123e808296a2e17bb34a5735cf42cd07e1efcfc64395"
+    },
+    {
+      "extraction_method": "deterministic_mapping",
+      "feature_path": "/features/asset_criticality/synthetic_or_demo_context",
+      "source_field_paths": [
+        "/provenance/origin_type"
+      ],
+      "source_record_id": "AEG-AST-HOSP-SCHED-001",
+      "source_relative_path": "data/sample_inputs/assets/valid_healthcare_asset.json",
+      "source_sha256": "bc9cb98980010ca2bc1c123e808296a2e17bb34a5735cf42cd07e1efcfc64395"
+    },
+    {
+      "extraction_method": "deterministic_aggregation",
+      "feature_path": "/features/mission_and_sector_impact/primary_sector",
+      "source_field_paths": [
+        "/sector_context/primary_sector"
+      ],
+      "source_record_id": "AEG-AST-HOSP-SCHED-001",
+      "source_relative_path": "data/sample_inputs/assets/valid_healthcare_asset.json",
+      "source_sha256": "bc9cb98980010ca2bc1c123e808296a2e17bb34a5735cf42cd07e1efcfc64395"
+    },
+    {
+      "extraction_method": "deterministic_aggregation",
+      "feature_path": "/features/mission_and_sector_impact/maximum_severity",
+      "source_field_paths": [
+        "/impact_assessment"
+      ],
+      "source_record_id": "AEG-AST-HOSP-SCHED-001",
+      "source_relative_path": "data/sample_inputs/assets/valid_healthcare_asset.json",
+      "source_sha256": "bc9cb98980010ca2bc1c123e808296a2e17bb34a5735cf42cd07e1efcfc64395"
+    },
+    {
+      "extraction_method": "deterministic_aggregation",
+      "feature_path": "/features/mission_and_sector_impact/dimensions",
+      "source_field_paths": [
+        "/impact_assessment"
+      ],
+      "source_record_id": "AEG-AST-HOSP-SCHED-001",
+      "source_relative_path": "data/sample_inputs/assets/valid_healthcare_asset.json",
+      "source_sha256": "bc9cb98980010ca2bc1c123e808296a2e17bb34a5735cf42cd07e1efcfc64395"
+    },
+    {
+      "extraction_method": "deterministic_aggregation",
+      "feature_path": "/features/mission_and_sector_impact/manual_alternative_available",
+      "source_field_paths": [
+        "/mission/manual_alternative_available"
+      ],
+      "source_record_id": "AEG-AST-HOSP-SCHED-001",
+      "source_relative_path": "data/sample_inputs/assets/valid_healthcare_asset.json",
+      "source_sha256": "bc9cb98980010ca2bc1c123e808296a2e17bb34a5735cf42cd07e1efcfc64395"
+    },
+    {
+      "extraction_method": "deterministic_aggregation",
+      "feature_path": "/features/mission_and_sector_impact/rto_hours",
+      "source_field_paths": [
+        "/resilience/recovery_time_objective_hours"
+      ],
+      "source_record_id": "AEG-AST-HOSP-SCHED-001",
+      "source_relative_path": "data/sample_inputs/assets/valid_healthcare_asset.json",
+      "source_sha256": "bc9cb98980010ca2bc1c123e808296a2e17bb34a5735cf42cd07e1efcfc64395"
+    },
+    {
+      "extraction_method": "deterministic_mapping",
+      "feature_path": "/features/exposure_and_reachability/internet_accessible",
+      "source_field_paths": [
+        "/exposure/internet_accessible"
+      ],
+      "source_record_id": "AEG-AST-HOSP-SCHED-001",
+      "source_relative_path": "data/sample_inputs/assets/valid_healthcare_asset.json",
+      "source_sha256": "bc9cb98980010ca2bc1c123e808296a2e17bb34a5735cf42cd07e1efcfc64395"
+    },
+    {
+      "extraction_method": "deterministic_mapping",
+      "feature_path": "/features/exposure_and_reachability/network_zone",
+      "source_field_paths": [
+        "/exposure/network_zone"
+      ],
+      "source_record_id": "AEG-AST-HOSP-SCHED-001",
+      "source_relative_path": "data/sample_inputs/assets/valid_healthcare_asset.json",
+      "source_sha256": "bc9cb98980010ca2bc1c123e808296a2e17bb34a5735cf42cd07e1efcfc64395"
+    },
+    {
+      "extraction_method": "deterministic_mapping",
+      "feature_path": "/features/exposure_and_reachability/component_presence",
+      "source_field_paths": [
+        "/presence/status"
+      ],
+      "source_record_id": "AEG-RTC-LOG4SHELL-DEMO-001",
+      "source_relative_path": "data/sample_inputs/affectedness/valid_log4shell_runtime_context.json",
+      "source_sha256": "6abaebf0b5b581ce41e4bca16cfeb299bae3606f06d293d8e0b0a48c3e9fcb23"
+    },
+    {
+      "extraction_method": "deterministic_mapping",
+      "feature_path": "/features/exposure_and_reachability/runtime_reachability",
+      "source_field_paths": [
+        "/reachability/status"
+      ],
+      "source_record_id": "AEG-RTC-LOG4SHELL-DEMO-001",
+      "source_relative_path": "data/sample_inputs/affectedness/valid_log4shell_runtime_context.json",
+      "source_sha256": "6abaebf0b5b581ce41e4bca16cfeb299bae3606f06d293d8e0b0a48c3e9fcb23"
+    },
+    {
+      "extraction_method": "deterministic_mapping",
+      "feature_path": "/features/exposure_and_reachability/runtime_configuration",
+      "source_field_paths": [
+        "/configuration/status"
+      ],
+      "source_record_id": "AEG-RTC-LOG4SHELL-DEMO-001",
+      "source_relative_path": "data/sample_inputs/affectedness/valid_log4shell_runtime_context.json",
+      "source_sha256": "6abaebf0b5b581ce41e4bca16cfeb299bae3606f06d293d8e0b0a48c3e9fcb23"
+    },
+    {
+      "extraction_method": "deterministic_mapping",
+      "feature_path": "/features/exposure_and_reachability/compensating_control_count",
+      "source_field_paths": [
+        "/security_posture/compensating_controls"
+      ],
+      "source_record_id": "AEG-AST-HOSP-SCHED-001",
+      "source_relative_path": "data/sample_inputs/assets/valid_healthcare_asset.json",
+      "source_sha256": "bc9cb98980010ca2bc1c123e808296a2e17bb34a5735cf42cd07e1efcfc64395"
+    },
+    {
+      "extraction_method": "deterministic_aggregation",
+      "feature_path": "/features/evidence_trust/combined_action",
+      "source_field_paths": [
+        "/trust/combined/action"
+      ],
+      "source_record_id": "AEG-AFA-9E7D8F8A03A6A1EC07A6CC0A",
+      "source_relative_path": "data/processed/affectedness/log4shell-20260715T163707Z-affectedness/aeg-afa-9e7d8f8a03a6a1ec07a6cc0a.adjudication.json",
+      "source_sha256": "180d54a591aed57685080f25001043794527a400e76566513b585ee5487febb7"
+    },
+    {
+      "extraction_method": "deterministic_aggregation",
+      "feature_path": "/features/evidence_trust/combined_score",
+      "source_field_paths": [
+        "/trust/combined/aggregate_score"
+      ],
+      "source_record_id": "AEG-AFA-9E7D8F8A03A6A1EC07A6CC0A",
+      "source_relative_path": "data/processed/affectedness/log4shell-20260715T163707Z-affectedness/aeg-afa-9e7d8f8a03a6a1ec07a6cc0a.adjudication.json",
+      "source_sha256": "180d54a591aed57685080f25001043794527a400e76566513b585ee5487febb7"
+    },
+    {
+      "extraction_method": "deterministic_aggregation",
+      "feature_path": "/features/evidence_trust/component_action",
+      "source_field_paths": [
+        "/trust/component_evidence/action"
+      ],
+      "source_record_id": "AEG-AFA-9E7D8F8A03A6A1EC07A6CC0A",
+      "source_relative_path": "data/processed/affectedness/log4shell-20260715T163707Z-affectedness/aeg-afa-9e7d8f8a03a6a1ec07a6cc0a.adjudication.json",
+      "source_sha256": "180d54a591aed57685080f25001043794527a400e76566513b585ee5487febb7"
+    },
+    {
+      "extraction_method": "deterministic_aggregation",
+      "feature_path": "/features/evidence_trust/warning_count",
+      "source_field_paths": [
+        "/trust"
+      ],
+      "source_record_id": "AEG-AFA-9E7D8F8A03A6A1EC07A6CC0A",
+      "source_relative_path": "data/processed/affectedness/log4shell-20260715T163707Z-affectedness/aeg-afa-9e7d8f8a03a6a1ec07a6cc0a.adjudication.json",
+      "source_sha256": "180d54a591aed57685080f25001043794527a400e76566513b585ee5487febb7"
+    },
+    {
+      "extraction_method": "deterministic_aggregation",
+      "feature_path": "/features/freshness/reference_time",
+      "source_field_paths": [
+        "/freshness/reference_time"
+      ],
+      "source_record_id": "AEG-CVI-49B4E71EF44A248DB7A08E5D",
+      "source_relative_path": "data/processed/canonical_intelligence/log4shell-20260715T140904Z/aeg-cvi-49b4e71ef44a248db7a08e5d.canonical.json",
+      "source_sha256": "81d297eedd42d0cd0f89713dc0cad52e27b46833d97368fcada05f80c206cfe1"
+    },
+    {
+      "extraction_method": "deterministic_aggregation",
+      "feature_path": "/features/freshness/all_required_current",
+      "source_field_paths": [
+        "/freshness/checks"
+      ],
+      "source_record_id": "AEG-CVI-49B4E71EF44A248DB7A08E5D",
+      "source_relative_path": "data/processed/canonical_intelligence/log4shell-20260715T140904Z/aeg-cvi-49b4e71ef44a248db7a08e5d.canonical.json",
+      "source_sha256": "81d297eedd42d0cd0f89713dc0cad52e27b46833d97368fcada05f80c206cfe1"
+    },
+    {
+      "extraction_method": "deterministic_aggregation",
+      "feature_path": "/features/freshness/source_statuses",
+      "source_field_paths": [
+        "/freshness/checks"
+      ],
+      "source_record_id": "AEG-CVI-49B4E71EF44A248DB7A08E5D",
+      "source_relative_path": "data/processed/canonical_intelligence/log4shell-20260715T140904Z/aeg-cvi-49b4e71ef44a248db7a08e5d.canonical.json",
+      "source_sha256": "81d297eedd42d0cd0f89713dc0cad52e27b46833d97368fcada05f80c206cfe1"
+    },
+    {
+      "extraction_method": "policy_derived",
+      "feature_path": "/features/uncertainty_and_conflicts/level",
+      "source_field_paths": [
+        "/adjudication",
+        "/conflicts",
+        "/trust",
+        "/runtime_context"
+      ],
+      "source_record_id": "AEG-AFA-9E7D8F8A03A6A1EC07A6CC0A",
+      "source_relative_path": "data/processed/affectedness/log4shell-20260715T163707Z-affectedness/aeg-afa-9e7d8f8a03a6a1ec07a6cc0a.adjudication.json",
+      "source_sha256": "180d54a591aed57685080f25001043794527a400e76566513b585ee5487febb7"
+    },
+    {
+      "extraction_method": "policy_derived",
+      "feature_path": "/features/governance/human_review_required",
+      "source_field_paths": [
+        "/adjudication/human_review_required",
+        "/release_decision"
+      ],
+      "source_record_id": "AEG-AFA-9E7D8F8A03A6A1EC07A6CC0A",
+      "source_relative_path": "data/processed/affectedness/log4shell-20260715T163707Z-affectedness/aeg-afa-9e7d8f8a03a6a1ec07a6cc0a.adjudication.json",
+      "source_sha256": "180d54a591aed57685080f25001043794527a400e76566513b585ee5487febb7"
+    },
+    {
+      "extraction_method": "deterministic_copy",
+      "feature_path": "/features/governance/accountable_owner_reference",
+      "source_field_paths": [
+        "/ownership/accountable_system_owner/contact_reference"
+      ],
+      "source_record_id": "AEG-AST-HOSP-SCHED-001",
+      "source_relative_path": "data/sample_inputs/assets/valid_healthcare_asset.json",
+      "source_sha256": "bc9cb98980010ca2bc1c123e808296a2e17bb34a5735cf42cd07e1efcfc64395"
+    }
+  ],
+  "quality_gates": [
+    {
+      "expected": 5,
+      "gate_id": "M12D-INPUT-REFERENCES",
+      "metric": "required_input_reference_count",
+      "observed": 5,
+      "pass": true,
+      "reason_codes": [
+        "INPUT_IDENTITIES_BOUND"
+      ]
+    },
+    {
+      "expected": 0,
+      "gate_id": "M12D-IDENTITY-BINDING",
+      "metric": "identity_conflict_count",
+      "observed": 0,
+      "pass": true,
+      "reason_codes": [
+        "INPUT_IDENTITIES_BOUND"
+      ]
+    },
+    {
+      "expected": "PASS",
+      "gate_id": "M12D-UPSTREAM-STAGE",
+      "metric": "affectedness_stage_gate",
+      "observed": "PASS",
+      "pass": true,
+      "reason_codes": [
+        "UPSTREAM_STAGE_GATE_PASSED"
+      ]
+    },
+    {
+      "expected": 10,
+      "gate_id": "M12D-FEATURE-GROUPS",
+      "metric": "feature_group_count",
+      "observed": 10,
+      "pass": true,
+      "reason_codes": [
+        "FEATURES_EXTRACTED"
+      ]
+    },
+    {
+      "expected": ">=24",
+      "gate_id": "M12D-PROVENANCE",
+      "metric": "feature_provenance_entry_count",
+      "observed": 42,
+      "pass": true,
+      "reason_codes": [
+        "FIELD_PROVENANCE_COMPLETE"
+      ]
+    },
+    {
+      "expected": [],
+      "gate_id": "M12D-REASON-REGISTRY",
+      "metric": "unregistered_reason_codes",
+      "observed": [],
+      "pass": true,
+      "reason_codes": [
+        "FEATURES_EXTRACTED"
+      ]
+    },
+    {
+      "expected": [],
+      "gate_id": "M12D-DECISION-NEUTRALITY",
+      "metric": "prohibited_decision_output_paths",
+      "observed": [],
+      "pass": true,
+      "reason_codes": [
+        "DECISION_OUTPUTS_ABSENT"
+      ]
+    },
+    {
+      "expected": [
+        "ACCEPT",
+        "ACCEPT_WITH_WARNINGS"
+      ],
+      "gate_id": "M12D-TRUST",
+      "metric": "combined_evidence_trust_action",
+      "observed": "ACCEPT_WITH_WARNINGS",
+      "pass": true,
+      "reason_codes": [
+        "EVIDENCE_TRUST_ACCEPTED_WITH_WARNINGS"
+      ]
+    },
+    {
+      "expected": 0,
+      "gate_id": "M12D-FRESHNESS",
+      "metric": "blocking_freshness_finding_count",
+      "observed": 0,
+      "pass": true,
+      "reason_codes": [
+        "REQUIRED_FRESHNESS_CURRENT"
+      ]
+    },
+    {
+      "expected": [
+        "AFFECTED",
+        "PROBABLY_AFFECTED",
+        "NOT_AFFECTED"
+      ],
+      "gate_id": "M12D-AFFECTEDNESS",
+      "metric": "affectedness_resolved_for_policy_features",
+      "observed": "AFFECTED",
+      "pass": true,
+      "reason_codes": [
+        "AFFECTEDNESS_AFFECTED",
+        "AFFECTEDNESS_CLOSURE_PROHIBITED"
+      ]
+    },
+    {
+      "expected": true,
+      "gate_id": "M12D-HUMAN-REVIEW",
+      "metric": "upstream_human_review_preserved",
+      "observed": true,
+      "pass": true,
+      "reason_codes": [
+        "HUMAN_REVIEW_REQUIRED",
+        "PRODUCTION_BLOCK_PRESERVED"
+      ]
+    },
+    {
+      "expected": "BLOCKED",
+      "gate_id": "M12D-PRODUCTION-BLOCK",
+      "metric": "production_readiness",
+      "observed": "BLOCKED",
+      "pass": true,
+      "reason_codes": [
+        "PRODUCTION_BLOCK_PRESERVED"
+      ]
+    }
+  ],
+  "release_decision": {
+    "blocking_reasons": [
+      "Milestone 12D prepares governed features but does not authorize remediation action.",
+      "SSVC policy execution, independent ML advisory, agreement checking, and accountable human disposition remain downstream stages.",
+      "Real operational validation and independent security review remain incomplete.",
+      "Accountable human review remains required while downstream policy evaluation proceeds in review-required mode."
+    ],
+    "next_stage_eligibility": "REVIEW_REQUIRED_FOR_12E",
+    "production_readiness": "BLOCKED",
+    "reason_codes": [
+      "NEXT_STAGE_REVIEW_REQUIRED",
+      "PRODUCTION_BLOCK_PRESERVED"
+    ],
+    "stage_gate": "PASS"
+  },
+  "schema_version": "1.0.0",
+  "target": {
+    "asset_id": "AEG-AST-HOSP-SCHED-001",
+    "component": {
+      "component_id": "AEG-CMP-LOG4J-CORE-001",
+      "ecosystem": "Maven",
+      "package_name": "org.apache.logging.log4j:log4j-core",
+      "purl": "pkg:maven/org.apache.logging.log4j/log4j-core@2.14.1",
+      "version": "2.14.1"
+    },
+    "cve_id": "CVE-2021-44228"
+  }
+}

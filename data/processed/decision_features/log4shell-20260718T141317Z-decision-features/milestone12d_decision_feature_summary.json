@@ -1,0 +1,30 @@
+{
+  "affectedness": "AFFECTED",
+  "asset_criticality": "high",
+  "cvss_base_score": 10.0,
+  "envelope_id": "AEG-DFE-AA60735B0E2C053C1B002C64",
+  "envelope_path": "data/processed/decision_features/log4shell-20260718T141317Z-decision-features/aeg-dfe-aa60735b0e2c053c1b002c64.features.json",
+  "envelope_sha256": "033d2435e709be5af76e124d77c225bd1125d5da47864bc0b27c2d9d976b8431",
+  "epss_probability": 0.99999,
+  "human_review_required": true,
+  "known_exploitation_status": "CONFIRMED_ACTIVE",
+  "maximum_impact_severity": "SEVERE",
+  "next_stage_eligibility": "REVIEW_REQUIRED_FOR_12E",
+  "production_readiness": "BLOCKED",
+  "provenance_entry_count": 42,
+  "runtime_reachability": "UNKNOWN",
+  "schema_version": "1.0.0",
+  "stage_gate": "PASS",
+  "target": {
+    "asset_id": "AEG-AST-HOSP-SCHED-001",
+    "component": {
+      "component_id": "AEG-CMP-LOG4J-CORE-001",
+      "ecosystem": "Maven",
+      "package_name": "org.apache.logging.log4j:log4j-core",
+      "purl": "pkg:maven/org.apache.logging.log4j/log4j-core@2.14.1",
+      "version": "2.14.1"
+    },
+    "cve_id": "CVE-2021-44228"
+  },
+  "uncertainty_level": "MEDIUM"
+}
