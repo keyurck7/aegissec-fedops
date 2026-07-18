@@ -1,0 +1,23 @@
+{
+  "decision_id": "AEG-SSVC-72AC3113B91B9A98AF9285D1",
+  "decision_path": "data/processed/ssvc_policy/log4shell-20260718T152239Z-ssvc/aeg-ssvc-72ac3113b91b9a98af9285d1.ssvc.json",
+  "decision_sha256": "8989c9910fc7f63ada558c272a3da39b1b956d9103358a38ee34e4a06bdbb74f",
+  "human_review_required": true,
+  "input_envelope_id": "AEG-DFE-AA60735B0E2C053C1B002C64",
+  "mapping_status": "RESOLVED",
+  "matched_row": 69,
+  "next_stage": "MILESTONE_12F_INDEPENDENT_ML_ADVISORY",
+  "official_ssvc_status": "DECIDED",
+  "outcome": {
+    "id": "ssvc:DSOI:1.0.0",
+    "key": "O",
+    "name": "OUT_OF_CYCLE",
+    "rank": 2,
+    "reason_code": "SSVC_DECISION_OUT_OF_CYCLE"
+  },
+  "production_readiness": "BLOCKED",
+  "provenance_entry_count": 8,
+  "schema_version": "1.0.0",
+  "stage_gate": "PASS",
+  "vector": "A/O/Y/M"
+}

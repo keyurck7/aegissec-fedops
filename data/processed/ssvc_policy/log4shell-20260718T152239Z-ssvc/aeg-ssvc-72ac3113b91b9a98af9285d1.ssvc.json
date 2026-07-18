@@ -1,0 +1,401 @@
+{
+  "audit": {
+    "canonical_json_sha256": "e241c36a1f6d017dbec4719e7b363c5b6be08d0cc59761ebb267fe55e13a3e1f",
+    "deterministic_decision_id": true,
+    "human_impact_row_count": 16,
+    "policy_hashes_verified": true,
+    "reason_registry_closed": true,
+    "table_row_count": 72
+  },
+  "contract": {
+    "decision_table_id": "ssvc:DP:1.0.0",
+    "decision_table_sha256": "2dda887610160a0eb6b831d94f4d5bb489e8bebd92e53af84fb1535eb752f3e2",
+    "decision_table_version": "1.0.0",
+    "human_impact_table_id": "ssvc:HI:1.0.0",
+    "human_impact_table_sha256": "d6ca20ec0d4c123df9239a8b61d790cd702185c2dbd2676f34fbef3d51dcb3fc",
+    "human_impact_table_version": "1.0.0",
+    "mapping_policy_id": "AEGIS-SSVC-12D-MAPPING-POLICY",
+    "mapping_policy_sha256": "cd5f28ca14ec03c5bf278ad769d6b2915060244521d794cc44591a4c99752ee2",
+    "mapping_policy_version": "1.0.0",
+    "policy_id": "AEGIS-SSVC-DEPLOYER-POLICY",
+    "policy_sha256": "539bee121237a3fac29e4c49f7e190f3c96b6b80dbea25526228993118e889ca",
+    "policy_version": "1.0.0",
+    "reason_registry_id": "AEGIS-SSVC-REASON-CODES",
+    "reason_registry_sha256": "cfde36547d5e06e9f127699adc17725610316bf863918a464f2df01b799dd178",
+    "reason_registry_version": "1.0.0",
+    "upstream_contract_id": "AEGIS-DECISION-FEATURE-CONTRACT",
+    "upstream_contract_version": "1.0.0"
+  },
+  "decision_id": "AEG-SSVC-72AC3113B91B9A98AF9285D1",
+  "generated_at": "2026-07-18T15:22:40.432018+00:00",
+  "governance": {
+    "blocking_reasons": [
+      "Milestone 12D prepares governed features but does not authorize remediation action.",
+      "SSVC policy execution, independent ML advisory, agreement checking, and accountable human disposition remain downstream stages.",
+      "Real operational validation and independent security review remain incomplete.",
+      "Accountable human review remains required while downstream policy evaluation proceeds in review-required mode."
+    ],
+    "human_review_required": true,
+    "next_stage": "MILESTONE_12F_INDEPENDENT_ML_ADVISORY",
+    "production_readiness": "BLOCKED",
+    "reason_codes": [
+      "SSVC_PRODUCTION_BLOCK_PRESERVED",
+      "SSVC_FEDERAL_OVERLAY_NOT_APPLIED",
+      "SSVC_ML_ADVISORY_NOT_APPLIED",
+      "SSVC_FINAL_DISPOSITION_NOT_AUTHORIZED",
+      "SSVC_HUMAN_REVIEW_PRESERVED",
+      "SSVC_OFFICIAL_ROW_MATCHED",
+      "SSVC_DECISION_OUT_OF_CYCLE"
+    ],
+    "stage_gate": "PASS"
+  },
+  "input": {
+    "envelope_id": "AEG-DFE-AA60735B0E2C053C1B002C64",
+    "relative_path": "data/processed/decision_features/log4shell-20260718T141317Z-decision-features/aeg-dfe-aa60735b0e2c053c1b002c64.features.json",
+    "sha256": "033d2435e709be5af76e124d77c225bd1125d5da47864bc0b27c2d9d976b8431"
+  },
+  "mapping": {
+    "assumptions": [],
+    "blocking_reason_codes": [],
+    "decision_points": {
+      "automatable": {
+        "id": "ssvc:A:2.0.0",
+        "key": "Y",
+        "mapping_rule_id": "AUTOMATABLE_EXPLICIT_YES",
+        "name": "yes",
+        "reason_codes": [
+          "SSVC_AUTOMATABLE_YES"
+        ],
+        "source_feature_paths": [
+          "/features/exploitation/ssvc_source_assertion/automatable"
+        ],
+        "status": "RESOLVED"
+      },
+      "exploitation": {
+        "id": "ssvc:E:1.1.0",
+        "key": "A",
+        "mapping_rule_id": "EXPLOITATION_ACTIVE_PRECEDENCE",
+        "name": "active",
+        "reason_codes": [
+          "SSVC_EXPLOITATION_ACTIVE"
+        ],
+        "source_feature_paths": [
+          "/features/exploitation/known_exploitation_status",
+          "/features/exploitation/kev/listed",
+          "/features/exploitation/ssvc_source_assertion/exploitation"
+        ],
+        "status": "RESOLVED"
+      },
+      "human_impact": {
+        "id": "ssvc:HI:2.0.2",
+        "key": "M",
+        "mapping_rule_id": "HUMAN_IMPACT_TABLE_ROW_6",
+        "name": "medium",
+        "reason_codes": [
+          "SSVC_HUMAN_IMPACT_DERIVED"
+        ],
+        "source_feature_paths": [
+          "/mapping/decision_points/safety_impact/key",
+          "/mapping/decision_points/mission_impact/key"
+        ],
+        "status": "RESOLVED"
+      },
+      "mission_impact": {
+        "id": "ssvc:MI:2.0.0",
+        "key": "MEF",
+        "mapping_rule_id": "MISSION_IMPACT_ESSENTIAL_SEVERE",
+        "name": "mission_essential_failure",
+        "reason_codes": [
+          "SSVC_MISSION_IMPACT_MAPPED"
+        ],
+        "source_feature_paths": [
+          "/features/asset_criticality/mission_essential",
+          "/features/asset_criticality/mission_tier",
+          "/features/mission_and_sector_impact/maximum_severity",
+          "/features/mission_and_sector_impact/maximum_tolerable_downtime_hours",
+          "/features/mission_and_sector_impact/rto_hours",
+          "/features/mission_and_sector_impact/manual_alternative_available"
+        ],
+        "status": "RESOLVED"
+      },
+      "safety_impact": {
+        "id": "ssvc:SI:2.0.1",
+        "key": "M",
+        "mapping_rule_id": "SAFETY_IMPACT_MAX_DIMENSION",
+        "name": "marginal",
+        "reason_codes": [
+          "SSVC_SAFETY_IMPACT_MAPPED"
+        ],
+        "source_feature_paths": [
+          "/features/mission_and_sector_impact/dimensions/patient_safety",
+          "/features/mission_and_sector_impact/dimensions/public_wellbeing"
+        ],
+        "status": "RESOLVED"
+      },
+      "system_exposure": {
+        "id": "ssvc:EXP:1.0.1",
+        "key": "O",
+        "mapping_rule_id": "EXPOSURE_OPEN_ANY_ACCESSIBILITY",
+        "name": "open",
+        "reason_codes": [
+          "SSVC_EXPOSURE_OPEN"
+        ],
+        "source_feature_paths": [
+          "/features/exposure_and_reachability/internet_accessible",
+          "/features/exposure_and_reachability/externally_accessible",
+          "/features/exposure_and_reachability/network_zone",
+          "/features/exposure_and_reachability/authentication_required",
+          "/features/exposure_and_reachability/exposure_confidence"
+        ],
+        "status": "RESOLVED"
+      }
+    },
+    "status": "RESOLVED"
+  },
+  "official_ssvc_decision": {
+    "decision_table_id": "ssvc:DP:1.0.0",
+    "matched_row": 69,
+    "outcome": {
+      "id": "ssvc:DSOI:1.0.0",
+      "key": "O",
+      "name": "OUT_OF_CYCLE",
+      "rank": 2,
+      "reason_code": "SSVC_DECISION_OUT_OF_CYCLE"
+    },
+    "status": "DECIDED",
+    "vector": "A/O/Y/M"
+  },
+  "provenance": [
+    {
+      "decision_path": "/mapping/decision_points/exploitation",
+      "input_envelope_id": "AEG-DFE-AA60735B0E2C053C1B002C64",
+      "input_sha256": "033d2435e709be5af76e124d77c225bd1125d5da47864bc0b27c2d9d976b8431",
+      "mapping_rule_id": "EXPLOITATION_ACTIVE_PRECEDENCE",
+      "source_feature_paths": [
+        "/features/exploitation/known_exploitation_status",
+        "/features/exploitation/kev/listed",
+        "/features/exploitation/ssvc_source_assertion/exploitation"
+      ]
+    },
+    {
+      "decision_path": "/mapping/decision_points/system_exposure",
+      "input_envelope_id": "AEG-DFE-AA60735B0E2C053C1B002C64",
+      "input_sha256": "033d2435e709be5af76e124d77c225bd1125d5da47864bc0b27c2d9d976b8431",
+      "mapping_rule_id": "EXPOSURE_OPEN_ANY_ACCESSIBILITY",
+      "source_feature_paths": [
+        "/features/exposure_and_reachability/internet_accessible",
+        "/features/exposure_and_reachability/externally_accessible",
+        "/features/exposure_and_reachability/network_zone",
+        "/features/exposure_and_reachability/authentication_required",
+        "/features/exposure_and_reachability/exposure_confidence"
+      ]
+    },
+    {
+      "decision_path": "/mapping/decision_points/automatable",
+      "input_envelope_id": "AEG-DFE-AA60735B0E2C053C1B002C64",
+      "input_sha256": "033d2435e709be5af76e124d77c225bd1125d5da47864bc0b27c2d9d976b8431",
+      "mapping_rule_id": "AUTOMATABLE_EXPLICIT_YES",
+      "source_feature_paths": [
+        "/features/exploitation/ssvc_source_assertion/automatable"
+      ]
+    },
+    {
+      "decision_path": "/mapping/decision_points/safety_impact",
+      "input_envelope_id": "AEG-DFE-AA60735B0E2C053C1B002C64",
+      "input_sha256": "033d2435e709be5af76e124d77c225bd1125d5da47864bc0b27c2d9d976b8431",
+      "mapping_rule_id": "SAFETY_IMPACT_MAX_DIMENSION",
+      "source_feature_paths": [
+        "/features/mission_and_sector_impact/dimensions/patient_safety",
+        "/features/mission_and_sector_impact/dimensions/public_wellbeing"
+      ]
+    },
+    {
+      "decision_path": "/mapping/decision_points/mission_impact",
+      "input_envelope_id": "AEG-DFE-AA60735B0E2C053C1B002C64",
+      "input_sha256": "033d2435e709be5af76e124d77c225bd1125d5da47864bc0b27c2d9d976b8431",
+      "mapping_rule_id": "MISSION_IMPACT_ESSENTIAL_SEVERE",
+      "source_feature_paths": [
+        "/features/asset_criticality/mission_essential",
+        "/features/asset_criticality/mission_tier",
+        "/features/mission_and_sector_impact/maximum_severity",
+        "/features/mission_and_sector_impact/maximum_tolerable_downtime_hours",
+        "/features/mission_and_sector_impact/rto_hours",
+        "/features/mission_and_sector_impact/manual_alternative_available"
+      ]
+    },
+    {
+      "decision_path": "/mapping/decision_points/human_impact",
+      "input_envelope_id": "AEG-DFE-AA60735B0E2C053C1B002C64",
+      "input_sha256": "033d2435e709be5af76e124d77c225bd1125d5da47864bc0b27c2d9d976b8431",
+      "mapping_rule_id": "HUMAN_IMPACT_TABLE_ROW_6",
+      "source_feature_paths": [
+        "/mapping/decision_points/safety_impact/key",
+        "/mapping/decision_points/mission_impact/key"
+      ]
+    },
+    {
+      "decision_path": "/mapping/decision_points/human_impact/key",
+      "input_envelope_id": "AEG-DFE-AA60735B0E2C053C1B002C64",
+      "input_sha256": "033d2435e709be5af76e124d77c225bd1125d5da47864bc0b27c2d9d976b8431",
+      "mapping_rule_id": "HUMAN_IMPACT_TABLE_ROW_6",
+      "source_feature_paths": [
+        "/mapping/decision_points/safety_impact/key",
+        "/mapping/decision_points/mission_impact/key"
+      ]
+    },
+    {
+      "decision_path": "/official_ssvc_decision/outcome",
+      "input_envelope_id": "AEG-DFE-AA60735B0E2C053C1B002C64",
+      "input_sha256": "033d2435e709be5af76e124d77c225bd1125d5da47864bc0b27c2d9d976b8431",
+      "mapping_rule_id": "DEPLOYER_TABLE_ROW_69",
+      "source_feature_paths": [
+        "/mapping/decision_points/exploitation/key",
+        "/mapping/decision_points/system_exposure/key",
+        "/mapping/decision_points/automatable/key",
+        "/mapping/decision_points/human_impact/key"
+      ]
+    }
+  ],
+  "quality_gates": [
+    {
+      "expected": "AEGIS-DECISION-FEATURE-CONTRACT:1.0.0",
+      "gate_id": "M12E-CONTRACT",
+      "metric": "upstream_contract",
+      "observed": "AEGIS-DECISION-FEATURE-CONTRACT:1.0.0",
+      "pass": true,
+      "reason_codes": [
+        "SSVC_INPUT_CONTRACT_VERIFIED"
+      ]
+    },
+    {
+      "expected": true,
+      "gate_id": "M12E-INTEGRITY",
+      "metric": "input_canonical_integrity",
+      "observed": true,
+      "pass": true,
+      "reason_codes": [
+        "SSVC_INPUT_INTEGRITY_VERIFIED"
+      ]
+    },
+    {
+      "expected": "PASS",
+      "gate_id": "M12E-UPSTREAM-STAGE",
+      "metric": "upstream_stage_gate",
+      "observed": "PASS",
+      "pass": true,
+      "reason_codes": [
+        "SSVC_INPUT_CONTRACT_VERIFIED"
+      ]
+    },
+    {
+      "expected": 0,
+      "gate_id": "M12E-CONFLICTS",
+      "metric": "blocking_conflict_count",
+      "observed": 0,
+      "pass": true,
+      "reason_codes": [
+        "SSVC_NO_BLOCKING_CONFLICTS"
+      ]
+    },
+    {
+      "expected": 6,
+      "gate_id": "M12E-MANDATORY-POINTS",
+      "metric": "resolved_decision_point_count",
+      "observed": 6,
+      "pass": true,
+      "reason_codes": [
+        "SSVC_MANDATORY_POINTS_RESOLVED"
+      ]
+    },
+    {
+      "expected": "0..15",
+      "gate_id": "M12E-HUMAN-IMPACT",
+      "metric": "human_impact_table_row",
+      "observed": 6,
+      "pass": true,
+      "reason_codes": [
+        "SSVC_HUMAN_IMPACT_DERIVED"
+      ]
+    },
+    {
+      "expected": "0..71",
+      "gate_id": "M12E-DEPLOYER-ROW",
+      "metric": "deployer_table_row",
+      "observed": 69,
+      "pass": true,
+      "reason_codes": [
+        "SSVC_OFFICIAL_ROW_MATCHED"
+      ]
+    },
+    {
+      "expected": 5,
+      "gate_id": "M12E-POLICY-HASHES",
+      "metric": "policy_hash_count",
+      "observed": 5,
+      "pass": true,
+      "reason_codes": [
+        "SSVC_POLICY_HASHES_VERIFIED"
+      ]
+    },
+    {
+      "expected": true,
+      "gate_id": "M12E-REASON-REGISTRY",
+      "metric": "closed_reason_registry",
+      "observed": true,
+      "pass": true,
+      "reason_codes": [
+        "SSVC_REASON_REGISTRY_VERIFIED"
+      ]
+    },
+    {
+      "expected": 0,
+      "gate_id": "M12E-SEPARATION",
+      "metric": "unauthorized_downstream_outputs",
+      "observed": 0,
+      "pass": true,
+      "reason_codes": [
+        "SSVC_FEDERAL_OVERLAY_NOT_APPLIED",
+        "SSVC_ML_ADVISORY_NOT_APPLIED",
+        "SSVC_FINAL_DISPOSITION_NOT_AUTHORIZED"
+      ]
+    },
+    {
+      "expected": "BLOCKED",
+      "gate_id": "M12E-PRODUCTION-BLOCK",
+      "metric": "production_readiness",
+      "observed": "BLOCKED",
+      "pass": true,
+      "reason_codes": [
+        "SSVC_PRODUCTION_BLOCK_PRESERVED"
+      ]
+    },
+    {
+      "expected": ">=6",
+      "gate_id": "M12E-PROVENANCE",
+      "metric": "provenance_entry_count",
+      "observed": 8,
+      "pass": true,
+      "reason_codes": [
+        "SSVC_PROVENANCE_COMPLETE"
+      ]
+    }
+  ],
+  "schema_version": "1.0.0",
+  "separation": {
+    "federal_overlay_status": "NOT_APPLIED",
+    "final_disposition_status": "NOT_AUTHORIZED",
+    "ml_advisory_status": "NOT_APPLIED",
+    "official_ssvc_complete": true
+  },
+  "target": {
+    "asset_id": "AEG-AST-HOSP-SCHED-001",
+    "component": {
+      "component_id": "AEG-CMP-LOG4J-CORE-001",
+      "ecosystem": "Maven",
+      "package_name": "org.apache.logging.log4j:log4j-core",
+      "purl": "pkg:maven/org.apache.logging.log4j/log4j-core@2.14.1",
+      "version": "2.14.1"
+    },
+    "cve_id": "CVE-2021-44228"
+  }
+}

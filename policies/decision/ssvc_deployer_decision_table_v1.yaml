@@ -1,0 +1,1096 @@
+decision_table:
+  namespace: ssvc
+  key: DP
+  version: 1.0.0
+  name: Deployer Patch Application Priority
+  outcome:
+    namespace: ssvc
+    key: DSOI
+    version: 1.0.0
+  input_order:
+  - exploitation
+  - system_exposure
+  - automatable
+  - human_impact
+  expected_row_count: 72
+rows:
+- row: 0
+  inputs:
+    exploitation:
+      name: none
+      key: N
+    system_exposure:
+      name: small
+      key: S
+    automatable:
+      name: 'no'
+      key: N
+    human_impact:
+      name: low
+      key: L
+  outcome_key: D
+- row: 1
+  inputs:
+    exploitation:
+      name: none
+      key: N
+    system_exposure:
+      name: small
+      key: S
+    automatable:
+      name: 'no'
+      key: N
+    human_impact:
+      name: medium
+      key: M
+  outcome_key: D
+- row: 2
+  inputs:
+    exploitation:
+      name: none
+      key: N
+    system_exposure:
+      name: small
+      key: S
+    automatable:
+      name: 'no'
+      key: N
+    human_impact:
+      name: high
+      key: H
+  outcome_key: S
+- row: 3
+  inputs:
+    exploitation:
+      name: none
+      key: N
+    system_exposure:
+      name: small
+      key: S
+    automatable:
+      name: 'no'
+      key: N
+    human_impact:
+      name: very_high
+      key: VH
+  outcome_key: S
+- row: 4
+  inputs:
+    exploitation:
+      name: none
+      key: N
+    system_exposure:
+      name: small
+      key: S
+    automatable:
+      name: 'yes'
+      key: Y
+    human_impact:
+      name: low
+      key: L
+  outcome_key: D
+- row: 5
+  inputs:
+    exploitation:
+      name: none
+      key: N
+    system_exposure:
+      name: small
+      key: S
+    automatable:
+      name: 'yes'
+      key: Y
+    human_impact:
+      name: medium
+      key: M
+  outcome_key: S
+- row: 6
+  inputs:
+    exploitation:
+      name: none
+      key: N
+    system_exposure:
+      name: small
+      key: S
+    automatable:
+      name: 'yes'
+      key: Y
+    human_impact:
+      name: high
+      key: H
+  outcome_key: S
+- row: 7
+  inputs:
+    exploitation:
+      name: none
+      key: N
+    system_exposure:
+      name: small
+      key: S
+    automatable:
+      name: 'yes'
+      key: Y
+    human_impact:
+      name: very_high
+      key: VH
+  outcome_key: S
+- row: 8
+  inputs:
+    exploitation:
+      name: none
+      key: N
+    system_exposure:
+      name: controlled
+      key: C
+    automatable:
+      name: 'no'
+      key: N
+    human_impact:
+      name: low
+      key: L
+  outcome_key: D
+- row: 9
+  inputs:
+    exploitation:
+      name: none
+      key: N
+    system_exposure:
+      name: controlled
+      key: C
+    automatable:
+      name: 'no'
+      key: N
+    human_impact:
+      name: medium
+      key: M
+  outcome_key: S
+- row: 10
+  inputs:
+    exploitation:
+      name: none
+      key: N
+    system_exposure:
+      name: controlled
+      key: C
+    automatable:
+      name: 'no'
+      key: N
+    human_impact:
+      name: high
+      key: H
+  outcome_key: S
+- row: 11
+  inputs:
+    exploitation:
+      name: none
+      key: N
+    system_exposure:
+      name: controlled
+      key: C
+    automatable:
+      name: 'no'
+      key: N
+    human_impact:
+      name: very_high
+      key: VH
+  outcome_key: S
+- row: 12
+  inputs:
+    exploitation:
+      name: none
+      key: N
+    system_exposure:
+      name: controlled
+      key: C
+    automatable:
+      name: 'yes'
+      key: Y
+    human_impact:
+      name: low
+      key: L
+  outcome_key: S
+- row: 13
+  inputs:
+    exploitation:
+      name: none
+      key: N
+    system_exposure:
+      name: controlled
+      key: C
+    automatable:
+      name: 'yes'
+      key: Y
+    human_impact:
+      name: medium
+      key: M
+  outcome_key: S
+- row: 14
+  inputs:
+    exploitation:
+      name: none
+      key: N
+    system_exposure:
+      name: controlled
+      key: C
+    automatable:
+      name: 'yes'
+      key: Y
+    human_impact:
+      name: high
+      key: H
+  outcome_key: S
+- row: 15
+  inputs:
+    exploitation:
+      name: none
+      key: N
+    system_exposure:
+      name: controlled
+      key: C
+    automatable:
+      name: 'yes'
+      key: Y
+    human_impact:
+      name: very_high
+      key: VH
+  outcome_key: S
+- row: 16
+  inputs:
+    exploitation:
+      name: none
+      key: N
+    system_exposure:
+      name: open
+      key: O
+    automatable:
+      name: 'no'
+      key: N
+    human_impact:
+      name: low
+      key: L
+  outcome_key: D
+- row: 17
+  inputs:
+    exploitation:
+      name: none
+      key: N
+    system_exposure:
+      name: open
+      key: O
+    automatable:
+      name: 'no'
+      key: N
+    human_impact:
+      name: medium
+      key: M
+  outcome_key: S
+- row: 18
+  inputs:
+    exploitation:
+      name: none
+      key: N
+    system_exposure:
+      name: open
+      key: O
+    automatable:
+      name: 'no'
+      key: N
+    human_impact:
+      name: high
+      key: H
+  outcome_key: S
+- row: 19
+  inputs:
+    exploitation:
+      name: none
+      key: N
+    system_exposure:
+      name: open
+      key: O
+    automatable:
+      name: 'no'
+      key: N
+    human_impact:
+      name: very_high
+      key: VH
+  outcome_key: S
+- row: 20
+  inputs:
+    exploitation:
+      name: none
+      key: N
+    system_exposure:
+      name: open
+      key: O
+    automatable:
+      name: 'yes'
+      key: Y
+    human_impact:
+      name: low
+      key: L
+  outcome_key: S
+- row: 21
+  inputs:
+    exploitation:
+      name: none
+      key: N
+    system_exposure:
+      name: open
+      key: O
+    automatable:
+      name: 'yes'
+      key: Y
+    human_impact:
+      name: medium
+      key: M
+  outcome_key: S
+- row: 22
+  inputs:
+    exploitation:
+      name: none
+      key: N
+    system_exposure:
+      name: open
+      key: O
+    automatable:
+      name: 'yes'
+      key: Y
+    human_impact:
+      name: high
+      key: H
+  outcome_key: S
+- row: 23
+  inputs:
+    exploitation:
+      name: none
+      key: N
+    system_exposure:
+      name: open
+      key: O
+    automatable:
+      name: 'yes'
+      key: Y
+    human_impact:
+      name: very_high
+      key: VH
+  outcome_key: O
+- row: 24
+  inputs:
+    exploitation:
+      name: public_poc
+      key: P
+    system_exposure:
+      name: small
+      key: S
+    automatable:
+      name: 'no'
+      key: N
+    human_impact:
+      name: low
+      key: L
+  outcome_key: D
+- row: 25
+  inputs:
+    exploitation:
+      name: public_poc
+      key: P
+    system_exposure:
+      name: small
+      key: S
+    automatable:
+      name: 'no'
+      key: N
+    human_impact:
+      name: medium
+      key: M
+  outcome_key: S
+- row: 26
+  inputs:
+    exploitation:
+      name: public_poc
+      key: P
+    system_exposure:
+      name: small
+      key: S
+    automatable:
+      name: 'no'
+      key: N
+    human_impact:
+      name: high
+      key: H
+  outcome_key: S
+- row: 27
+  inputs:
+    exploitation:
+      name: public_poc
+      key: P
+    system_exposure:
+      name: small
+      key: S
+    automatable:
+      name: 'no'
+      key: N
+    human_impact:
+      name: very_high
+      key: VH
+  outcome_key: S
+- row: 28
+  inputs:
+    exploitation:
+      name: public_poc
+      key: P
+    system_exposure:
+      name: small
+      key: S
+    automatable:
+      name: 'yes'
+      key: Y
+    human_impact:
+      name: low
+      key: L
+  outcome_key: S
+- row: 29
+  inputs:
+    exploitation:
+      name: public_poc
+      key: P
+    system_exposure:
+      name: small
+      key: S
+    automatable:
+      name: 'yes'
+      key: Y
+    human_impact:
+      name: medium
+      key: M
+  outcome_key: S
+- row: 30
+  inputs:
+    exploitation:
+      name: public_poc
+      key: P
+    system_exposure:
+      name: small
+      key: S
+    automatable:
+      name: 'yes'
+      key: Y
+    human_impact:
+      name: high
+      key: H
+  outcome_key: S
+- row: 31
+  inputs:
+    exploitation:
+      name: public_poc
+      key: P
+    system_exposure:
+      name: small
+      key: S
+    automatable:
+      name: 'yes'
+      key: Y
+    human_impact:
+      name: very_high
+      key: VH
+  outcome_key: S
+- row: 32
+  inputs:
+    exploitation:
+      name: public_poc
+      key: P
+    system_exposure:
+      name: controlled
+      key: C
+    automatable:
+      name: 'no'
+      key: N
+    human_impact:
+      name: low
+      key: L
+  outcome_key: D
+- row: 33
+  inputs:
+    exploitation:
+      name: public_poc
+      key: P
+    system_exposure:
+      name: controlled
+      key: C
+    automatable:
+      name: 'no'
+      key: N
+    human_impact:
+      name: medium
+      key: M
+  outcome_key: S
+- row: 34
+  inputs:
+    exploitation:
+      name: public_poc
+      key: P
+    system_exposure:
+      name: controlled
+      key: C
+    automatable:
+      name: 'no'
+      key: N
+    human_impact:
+      name: high
+      key: H
+  outcome_key: S
+- row: 35
+  inputs:
+    exploitation:
+      name: public_poc
+      key: P
+    system_exposure:
+      name: controlled
+      key: C
+    automatable:
+      name: 'no'
+      key: N
+    human_impact:
+      name: very_high
+      key: VH
+  outcome_key: S
+- row: 36
+  inputs:
+    exploitation:
+      name: public_poc
+      key: P
+    system_exposure:
+      name: controlled
+      key: C
+    automatable:
+      name: 'yes'
+      key: Y
+    human_impact:
+      name: low
+      key: L
+  outcome_key: S
+- row: 37
+  inputs:
+    exploitation:
+      name: public_poc
+      key: P
+    system_exposure:
+      name: controlled
+      key: C
+    automatable:
+      name: 'yes'
+      key: Y
+    human_impact:
+      name: medium
+      key: M
+  outcome_key: S
+- row: 38
+  inputs:
+    exploitation:
+      name: public_poc
+      key: P
+    system_exposure:
+      name: controlled
+      key: C
+    automatable:
+      name: 'yes'
+      key: Y
+    human_impact:
+      name: high
+      key: H
+  outcome_key: S
+- row: 39
+  inputs:
+    exploitation:
+      name: public_poc
+      key: P
+    system_exposure:
+      name: controlled
+      key: C
+    automatable:
+      name: 'yes'
+      key: Y
+    human_impact:
+      name: very_high
+      key: VH
+  outcome_key: O
+- row: 40
+  inputs:
+    exploitation:
+      name: public_poc
+      key: P
+    system_exposure:
+      name: open
+      key: O
+    automatable:
+      name: 'no'
+      key: N
+    human_impact:
+      name: low
+      key: L
+  outcome_key: S
+- row: 41
+  inputs:
+    exploitation:
+      name: public_poc
+      key: P
+    system_exposure:
+      name: open
+      key: O
+    automatable:
+      name: 'no'
+      key: N
+    human_impact:
+      name: medium
+      key: M
+  outcome_key: S
+- row: 42
+  inputs:
+    exploitation:
+      name: public_poc
+      key: P
+    system_exposure:
+      name: open
+      key: O
+    automatable:
+      name: 'no'
+      key: N
+    human_impact:
+      name: high
+      key: H
+  outcome_key: S
+- row: 43
+  inputs:
+    exploitation:
+      name: public_poc
+      key: P
+    system_exposure:
+      name: open
+      key: O
+    automatable:
+      name: 'no'
+      key: N
+    human_impact:
+      name: very_high
+      key: VH
+  outcome_key: O
+- row: 44
+  inputs:
+    exploitation:
+      name: public_poc
+      key: P
+    system_exposure:
+      name: open
+      key: O
+    automatable:
+      name: 'yes'
+      key: Y
+    human_impact:
+      name: low
+      key: L
+  outcome_key: S
+- row: 45
+  inputs:
+    exploitation:
+      name: public_poc
+      key: P
+    system_exposure:
+      name: open
+      key: O
+    automatable:
+      name: 'yes'
+      key: Y
+    human_impact:
+      name: medium
+      key: M
+  outcome_key: S
+- row: 46
+  inputs:
+    exploitation:
+      name: public_poc
+      key: P
+    system_exposure:
+      name: open
+      key: O
+    automatable:
+      name: 'yes'
+      key: Y
+    human_impact:
+      name: high
+      key: H
+  outcome_key: O
+- row: 47
+  inputs:
+    exploitation:
+      name: public_poc
+      key: P
+    system_exposure:
+      name: open
+      key: O
+    automatable:
+      name: 'yes'
+      key: Y
+    human_impact:
+      name: very_high
+      key: VH
+  outcome_key: O
+- row: 48
+  inputs:
+    exploitation:
+      name: active
+      key: A
+    system_exposure:
+      name: small
+      key: S
+    automatable:
+      name: 'no'
+      key: N
+    human_impact:
+      name: low
+      key: L
+  outcome_key: S
+- row: 49
+  inputs:
+    exploitation:
+      name: active
+      key: A
+    system_exposure:
+      name: small
+      key: S
+    automatable:
+      name: 'no'
+      key: N
+    human_impact:
+      name: medium
+      key: M
+  outcome_key: S
+- row: 50
+  inputs:
+    exploitation:
+      name: active
+      key: A
+    system_exposure:
+      name: small
+      key: S
+    automatable:
+      name: 'no'
+      key: N
+    human_impact:
+      name: high
+      key: H
+  outcome_key: O
+- row: 51
+  inputs:
+    exploitation:
+      name: active
+      key: A
+    system_exposure:
+      name: small
+      key: S
+    automatable:
+      name: 'no'
+      key: N
+    human_impact:
+      name: very_high
+      key: VH
+  outcome_key: O
+- row: 52
+  inputs:
+    exploitation:
+      name: active
+      key: A
+    system_exposure:
+      name: small
+      key: S
+    automatable:
+      name: 'yes'
+      key: Y
+    human_impact:
+      name: low
+      key: L
+  outcome_key: S
+- row: 53
+  inputs:
+    exploitation:
+      name: active
+      key: A
+    system_exposure:
+      name: small
+      key: S
+    automatable:
+      name: 'yes'
+      key: Y
+    human_impact:
+      name: medium
+      key: M
+  outcome_key: O
+- row: 54
+  inputs:
+    exploitation:
+      name: active
+      key: A
+    system_exposure:
+      name: small
+      key: S
+    automatable:
+      name: 'yes'
+      key: Y
+    human_impact:
+      name: high
+      key: H
+  outcome_key: O
+- row: 55
+  inputs:
+    exploitation:
+      name: active
+      key: A
+    system_exposure:
+      name: small
+      key: S
+    automatable:
+      name: 'yes'
+      key: Y
+    human_impact:
+      name: very_high
+      key: VH
+  outcome_key: O
+- row: 56
+  inputs:
+    exploitation:
+      name: active
+      key: A
+    system_exposure:
+      name: controlled
+      key: C
+    automatable:
+      name: 'no'
+      key: N
+    human_impact:
+      name: low
+      key: L
+  outcome_key: S
+- row: 57
+  inputs:
+    exploitation:
+      name: active
+      key: A
+    system_exposure:
+      name: controlled
+      key: C
+    automatable:
+      name: 'no'
+      key: N
+    human_impact:
+      name: medium
+      key: M
+  outcome_key: S
+- row: 58
+  inputs:
+    exploitation:
+      name: active
+      key: A
+    system_exposure:
+      name: controlled
+      key: C
+    automatable:
+      name: 'no'
+      key: N
+    human_impact:
+      name: high
+      key: H
+  outcome_key: O
+- row: 59
+  inputs:
+    exploitation:
+      name: active
+      key: A
+    system_exposure:
+      name: controlled
+      key: C
+    automatable:
+      name: 'no'
+      key: N
+    human_impact:
+      name: very_high
+      key: VH
+  outcome_key: O
+- row: 60
+  inputs:
+    exploitation:
+      name: active
+      key: A
+    system_exposure:
+      name: controlled
+      key: C
+    automatable:
+      name: 'yes'
+      key: Y
+    human_impact:
+      name: low
+      key: L
+  outcome_key: O
+- row: 61
+  inputs:
+    exploitation:
+      name: active
+      key: A
+    system_exposure:
+      name: controlled
+      key: C
+    automatable:
+      name: 'yes'
+      key: Y
+    human_impact:
+      name: medium
+      key: M
+  outcome_key: O
+- row: 62
+  inputs:
+    exploitation:
+      name: active
+      key: A
+    system_exposure:
+      name: controlled
+      key: C
+    automatable:
+      name: 'yes'
+      key: Y
+    human_impact:
+      name: high
+      key: H
+  outcome_key: O
+- row: 63
+  inputs:
+    exploitation:
+      name: active
+      key: A
+    system_exposure:
+      name: controlled
+      key: C
+    automatable:
+      name: 'yes'
+      key: Y
+    human_impact:
+      name: very_high
+      key: VH
+  outcome_key: O
+- row: 64
+  inputs:
+    exploitation:
+      name: active
+      key: A
+    system_exposure:
+      name: open
+      key: O
+    automatable:
+      name: 'no'
+      key: N
+    human_impact:
+      name: low
+      key: L
+  outcome_key: S
+- row: 65
+  inputs:
+    exploitation:
+      name: active
+      key: A
+    system_exposure:
+      name: open
+      key: O
+    automatable:
+      name: 'no'
+      key: N
+    human_impact:
+      name: medium
+      key: M
+  outcome_key: O
+- row: 66
+  inputs:
+    exploitation:
+      name: active
+      key: A
+    system_exposure:
+      name: open
+      key: O
+    automatable:
+      name: 'no'
+      key: N
+    human_impact:
+      name: high
+      key: H
+  outcome_key: O
+- row: 67
+  inputs:
+    exploitation:
+      name: active
+      key: A
+    system_exposure:
+      name: open
+      key: O
+    automatable:
+      name: 'no'
+      key: N
+    human_impact:
+      name: very_high
+      key: VH
+  outcome_key: I
+- row: 68
+  inputs:
+    exploitation:
+      name: active
+      key: A
+    system_exposure:
+      name: open
+      key: O
+    automatable:
+      name: 'yes'
+      key: Y
+    human_impact:
+      name: low
+      key: L
+  outcome_key: O
+- row: 69
+  inputs:
+    exploitation:
+      name: active
+      key: A
+    system_exposure:
+      name: open
+      key: O
+    automatable:
+      name: 'yes'
+      key: Y
+    human_impact:
+      name: medium
+      key: M
+  outcome_key: O
+- row: 70
+  inputs:
+    exploitation:
+      name: active
+      key: A
+    system_exposure:
+      name: open
+      key: O
+    automatable:
+      name: 'yes'
+      key: Y
+    human_impact:
+      name: high
+      key: H
+  outcome_key: I
+- row: 71
+  inputs:
+    exploitation:
+      name: active
+      key: A
+    system_exposure:
+      name: open
+      key: O
+    automatable:
+      name: 'yes'
+      key: Y
+    human_impact:
+      name: very_high
+      key: VH
+  outcome_key: I

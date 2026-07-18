@@ -1,0 +1,96 @@
+mapping_policy:
+  policy_id: AEGIS-SSVC-12D-MAPPING-POLICY
+  version: 1.0.0
+  description: Deterministic, evidence-governed mapping from the Milestone 12D decision-feature
+    envelope to pinned SSVC decision-point values. Unresolved mandatory points fail
+    closed rather than being guessed.
+input_contract:
+  contract_id: AEGIS-DECISION-FEATURE-CONTRACT
+  version: 1.0.0
+mappings:
+  exploitation:
+    precedence:
+    - active_exploitation
+    - public_poc
+    - explicit_none
+    - unresolved
+    active_when_any:
+    - /features/exploitation/known_exploitation_status == CONFIRMED_ACTIVE
+    - /features/exploitation/kev/listed == true
+    - /features/exploitation/ssvc_source_assertion/exploitation == active
+    public_poc_when_any:
+    - /features/exploitation/known_exploitation_status == PUBLIC_POC
+    - /features/exploitation/ssvc_source_assertion/exploitation == public_poc
+    none_when_all:
+    - /features/exploitation/known_exploitation_status == NOT_OBSERVED
+    - /features/exploitation/kev/listed == false
+    unknown_action: BLOCK
+    epss_role: ADVISORY_ONLY_NOT_EXPLOITATION_PROOF
+  system_exposure:
+    open_when_any:
+    - /features/exposure_and_reachability/internet_accessible == true
+    - /features/exposure_and_reachability/externally_accessible == true
+    small_when_all:
+    - internet_accessible == false
+    - externally_accessible == false
+    - network_zone in [air_gapped, isolated, local, highly_controlled]
+    controlled_when_all:
+    - internet_accessible == false
+    - externally_accessible == false
+    - networked_or_controlled_access_evidence_present == true
+    unknown_action: ASSUME_OPEN_WITH_RECORDED_JUSTIFICATION
+  automatable:
+    yes_when: /features/exploitation/ssvc_source_assertion/automatable == yes
+    no_when: /features/exploitation/ssvc_source_assertion/automatable == no
+    unknown_action: BLOCK
+    cvss_only_inference_allowed: false
+  safety_impact:
+    source_dimensions:
+    - patient_safety
+    - public_wellbeing
+    select: maximum_ordered_value
+    aegis_to_ssvc:
+      NOT_APPLICABLE: N
+      LOW: N
+      MEDIUM: N
+      HIGH: M
+      SEVERE: R
+      CRITICAL: C
+    unknown_action: BLOCK
+  mission_impact:
+    source_fields:
+    - mission_essential
+    - mission_tier
+    - maximum_severity
+    - maximum_tolerable_downtime_hours
+    - rto_hours
+    - manual_alternative_available
+    rules:
+    - priority: 1
+      when: maximum_severity == CRITICAL
+      value: MF
+    - priority: 2
+      when: mission_essential == true and maximum_severity == SEVERE
+      value: MEF
+    - priority: 3
+      when: mission_essential == true and maximum_severity == HIGH
+      value: MSC
+    - priority: 4
+      when: maximum_severity in [HIGH, SEVERE]
+      value: MSC
+    - priority: 5
+      when: maximum_severity in [NOT_APPLICABLE, LOW, MEDIUM]
+      value: D
+    unknown_action: BLOCK
+  human_impact:
+    decision_table: policies/decision/ssvc_human_impact_decision_table_v1.yaml
+    derive_from:
+    - safety_impact
+    - mission_impact
+    unknown_action: BLOCK
+required_provenance:
+  record_source_feature_paths: true
+  record_mapping_rule_id: true
+  record_assumptions: true
+  record_policy_hashes: true
+  record_decision_table_row: true

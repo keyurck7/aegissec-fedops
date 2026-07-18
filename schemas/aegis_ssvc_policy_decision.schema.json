@@ -1,0 +1,535 @@
+{
+  "$defs": {
+    "decision_point": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "key": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "mapping_rule_id": {
+          "type": "string"
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason_codes": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "source_feature_paths": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "status": {
+          "enum": [
+            "RESOLVED",
+            "UNRESOLVED"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "key",
+        "status",
+        "source_feature_paths",
+        "reason_codes",
+        "mapping_rule_id"
+      ],
+      "type": "object"
+    },
+    "outcome": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "const": "ssvc:DSOI:1.0.0"
+        },
+        "key": {
+          "enum": [
+            "D",
+            "S",
+            "O",
+            "I"
+          ]
+        },
+        "name": {
+          "enum": [
+            "DEFER",
+            "SCHEDULED",
+            "OUT_OF_CYCLE",
+            "IMMEDIATE"
+          ]
+        },
+        "rank": {
+          "maximum": 3,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "reason_code": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "key",
+        "name",
+        "rank",
+        "reason_code"
+      ],
+      "type": "object"
+    },
+    "sha256": {
+      "pattern": "^[a-f0-9]{64}$",
+      "type": "string"
+    }
+  },
+  "$id": "https://aegissec.example/schemas/aegis_ssvc_policy_decision.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "audit": {
+      "additionalProperties": false,
+      "properties": {
+        "canonical_json_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "deterministic_decision_id": {
+          "type": "boolean"
+        },
+        "human_impact_row_count": {
+          "const": 16
+        },
+        "policy_hashes_verified": {
+          "type": "boolean"
+        },
+        "reason_registry_closed": {
+          "type": "boolean"
+        },
+        "table_row_count": {
+          "const": 72
+        }
+      },
+      "required": [
+        "canonical_json_sha256",
+        "deterministic_decision_id",
+        "policy_hashes_verified",
+        "table_row_count",
+        "human_impact_row_count",
+        "reason_registry_closed"
+      ],
+      "type": "object"
+    },
+    "contract": {
+      "additionalProperties": false,
+      "properties": {
+        "decision_table_id": {
+          "const": "ssvc:DP:1.0.0"
+        },
+        "decision_table_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "decision_table_version": {
+          "const": "1.0.0"
+        },
+        "human_impact_table_id": {
+          "const": "ssvc:HI:1.0.0"
+        },
+        "human_impact_table_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "human_impact_table_version": {
+          "const": "1.0.0"
+        },
+        "mapping_policy_id": {
+          "const": "AEGIS-SSVC-12D-MAPPING-POLICY"
+        },
+        "mapping_policy_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "mapping_policy_version": {
+          "const": "1.0.0"
+        },
+        "policy_id": {
+          "const": "AEGIS-SSVC-DEPLOYER-POLICY"
+        },
+        "policy_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "policy_version": {
+          "const": "1.0.0"
+        },
+        "reason_registry_id": {
+          "const": "AEGIS-SSVC-REASON-CODES"
+        },
+        "reason_registry_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "reason_registry_version": {
+          "const": "1.0.0"
+        },
+        "upstream_contract_id": {
+          "const": "AEGIS-DECISION-FEATURE-CONTRACT"
+        },
+        "upstream_contract_version": {
+          "const": "1.0.0"
+        }
+      },
+      "required": [
+        "policy_id",
+        "policy_version",
+        "policy_sha256",
+        "mapping_policy_id",
+        "mapping_policy_version",
+        "mapping_policy_sha256",
+        "decision_table_id",
+        "decision_table_version",
+        "decision_table_sha256",
+        "human_impact_table_id",
+        "human_impact_table_version",
+        "human_impact_table_sha256",
+        "reason_registry_id",
+        "reason_registry_version",
+        "reason_registry_sha256",
+        "upstream_contract_id",
+        "upstream_contract_version"
+      ],
+      "type": "object"
+    },
+    "decision_id": {
+      "pattern": "^AEG-SSVC-[A-F0-9]{24}$",
+      "type": "string"
+    },
+    "generated_at": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "governance": {
+      "additionalProperties": false,
+      "properties": {
+        "blocking_reasons": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "human_review_required": {
+          "type": "boolean"
+        },
+        "next_stage": {
+          "const": "MILESTONE_12F_INDEPENDENT_ML_ADVISORY"
+        },
+        "production_readiness": {
+          "const": "BLOCKED"
+        },
+        "reason_codes": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "stage_gate": {
+          "enum": [
+            "PASS",
+            "FAIL"
+          ]
+        }
+      },
+      "required": [
+        "human_review_required",
+        "production_readiness",
+        "next_stage",
+        "stage_gate",
+        "reason_codes",
+        "blocking_reasons"
+      ],
+      "type": "object"
+    },
+    "input": {
+      "additionalProperties": false,
+      "properties": {
+        "envelope_id": {
+          "type": "string"
+        },
+        "relative_path": {
+          "type": "string"
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      },
+      "required": [
+        "envelope_id",
+        "relative_path",
+        "sha256"
+      ],
+      "type": "object"
+    },
+    "mapping": {
+      "additionalProperties": false,
+      "properties": {
+        "assumptions": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "assumption_id": {
+                "type": "string"
+              },
+              "basis": {
+                "type": "string"
+              },
+              "decision_point": {
+                "type": "string"
+              },
+              "reason_code": {
+                "type": "string"
+              },
+              "statement": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "assumption_id",
+              "decision_point",
+              "statement",
+              "basis",
+              "reason_code"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "blocking_reason_codes": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "decision_points": {
+          "additionalProperties": false,
+          "properties": {
+            "automatable": {
+              "$ref": "#/$defs/decision_point"
+            },
+            "exploitation": {
+              "$ref": "#/$defs/decision_point"
+            },
+            "human_impact": {
+              "$ref": "#/$defs/decision_point"
+            },
+            "mission_impact": {
+              "$ref": "#/$defs/decision_point"
+            },
+            "safety_impact": {
+              "$ref": "#/$defs/decision_point"
+            },
+            "system_exposure": {
+              "$ref": "#/$defs/decision_point"
+            }
+          },
+          "required": [
+            "exploitation",
+            "system_exposure",
+            "automatable",
+            "safety_impact",
+            "mission_impact",
+            "human_impact"
+          ],
+          "type": "object"
+        },
+        "status": {
+          "enum": [
+            "RESOLVED",
+            "BLOCKED"
+          ]
+        }
+      },
+      "required": [
+        "status",
+        "blocking_reason_codes",
+        "decision_points",
+        "assumptions"
+      ],
+      "type": "object"
+    },
+    "official_ssvc_decision": {
+      "additionalProperties": false,
+      "properties": {
+        "decision_table_id": {
+          "const": "ssvc:DP:1.0.0"
+        },
+        "matched_row": {
+          "maximum": 71,
+          "minimum": 0,
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "outcome": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/outcome"
+            }
+          ]
+        },
+        "status": {
+          "enum": [
+            "DECIDED",
+            "BLOCKED"
+          ]
+        },
+        "vector": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "status",
+        "decision_table_id",
+        "vector",
+        "matched_row",
+        "outcome"
+      ],
+      "type": "object"
+    },
+    "provenance": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "decision_path": {
+            "type": "string"
+          },
+          "input_envelope_id": {
+            "type": "string"
+          },
+          "input_sha256": {
+            "$ref": "#/$defs/sha256"
+          },
+          "mapping_rule_id": {
+            "type": "string"
+          },
+          "source_feature_paths": {
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1,
+            "type": "array"
+          }
+        },
+        "required": [
+          "decision_path",
+          "source_feature_paths",
+          "mapping_rule_id",
+          "input_envelope_id",
+          "input_sha256"
+        ],
+        "type": "object"
+      },
+      "minItems": 6,
+      "type": "array"
+    },
+    "quality_gates": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "expected": {},
+          "gate_id": {
+            "type": "string"
+          },
+          "metric": {
+            "type": "string"
+          },
+          "observed": {},
+          "pass": {
+            "type": "boolean"
+          },
+          "reason_codes": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "gate_id",
+          "metric",
+          "expected",
+          "observed",
+          "pass",
+          "reason_codes"
+        ],
+        "type": "object"
+      },
+      "minItems": 8,
+      "type": "array"
+    },
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "separation": {
+      "additionalProperties": false,
+      "properties": {
+        "federal_overlay_status": {
+          "const": "NOT_APPLIED"
+        },
+        "final_disposition_status": {
+          "const": "NOT_AUTHORIZED"
+        },
+        "ml_advisory_status": {
+          "const": "NOT_APPLIED"
+        },
+        "official_ssvc_complete": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "official_ssvc_complete",
+        "federal_overlay_status",
+        "ml_advisory_status",
+        "final_disposition_status"
+      ],
+      "type": "object"
+    },
+    "target": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema_version",
+    "decision_id",
+    "generated_at",
+    "contract",
+    "input",
+    "target",
+    "mapping",
+    "official_ssvc_decision",
+    "separation",
+    "governance",
+    "quality_gates",
+    "provenance",
+    "audit"
+  ],
+  "title": "AegisSec Milestone 12E Governed SSVC Policy Decision",
+  "type": "object"
+}

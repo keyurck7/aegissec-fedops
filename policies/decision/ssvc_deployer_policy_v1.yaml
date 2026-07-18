@@ -1,0 +1,103 @@
+policy:
+  policy_id: AEGIS-SSVC-DEPLOYER-POLICY
+  version: 1.0.0
+  engine_version: 1.0.0
+  description: Governed execution policy for the official SSVC Deployer Patch Application
+    Priority decision model. Official SSVC evaluation remains distinguishable from
+    AegisSec federal overlays, ML advice, and final human disposition.
+  upstream_contract:
+    contract_id: AEGIS-DECISION-FEATURE-CONTRACT
+    version: 1.0.0
+  official_model:
+    namespace: ssvc
+    decision_table_key: DP
+    decision_table_version: 1.0.0
+    outcome_key: DSOI
+    outcome_version: 1.0.0
+    source_documentation: https://certcc.github.io/SSVC/howto/deployer_tree/
+decision_points:
+  exploitation:
+    namespace: ssvc
+    key: E
+    version: 1.1.0
+    ordered_keys:
+    - N
+    - P
+    - A
+  system_exposure:
+    namespace: ssvc
+    key: EXP
+    version: 1.0.1
+    ordered_keys:
+    - S
+    - C
+    - O
+  automatable:
+    namespace: ssvc
+    key: A
+    version: 2.0.0
+    ordered_keys:
+    - N
+    - Y
+  safety_impact:
+    namespace: ssvc
+    key: SI
+    version: 2.0.1
+    ordered_keys:
+    - N
+    - M
+    - R
+    - C
+  mission_impact:
+    namespace: ssvc
+    key: MI
+    version: 2.0.0
+    ordered_keys:
+    - D
+    - MSC
+    - MEF
+    - MF
+  human_impact:
+    namespace: ssvc
+    key: HI
+    version: 2.0.2
+    ordered_keys:
+    - L
+    - M
+    - H
+    - VH
+outcomes:
+  D:
+    name: DEFER
+    rank: 0
+  S:
+    name: SCHEDULED
+    rank: 1
+  O:
+    name: OUT_OF_CYCLE
+    rank: 2
+  I:
+    name: IMMEDIATE
+    rank: 3
+governance:
+  unknown_exploitation: BLOCK
+  unknown_automatable: BLOCK
+  unknown_human_impact: BLOCK
+  unknown_system_exposure: ASSUME_OPEN_WITH_RECORDED_JUSTIFICATION
+  upstream_stage_gate_must_pass: true
+  upstream_integrity_must_verify: true
+  blocking_conflicts_must_be_zero: true
+  preserve_upstream_human_review: true
+  production_readiness: BLOCKED
+  next_stage: MILESTONE_12F_INDEPENDENT_ML_ADVISORY
+  official_and_extension_outputs_must_remain_separate: true
+  sector_label_must_not_directly_select_ssvc_outcome: true
+  epss_must_not_replace_exploitation_state: true
+prohibited_behaviors:
+- silently_map_unknown_exploitation_to_none
+- silently_map_unknown_automatable_to_no
+- use_cvss_base_score_as_the_ssvc_outcome
+- use_epss_probability_as_active_exploitation_proof
+- allow_sector_name_to directly set outcome
+- allow mitigation to rewrite package affectedness
+- emit final operational disposition before 12G agreement and accountable review
