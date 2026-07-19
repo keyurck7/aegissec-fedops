@@ -8,6 +8,10 @@ from typing import Any, Iterable, Mapping
 
 import yaml
 
+from src.decision_policy.ssvc_contract_assurance import (
+    SSVCContractAssuranceError,
+    validate_ssvc_contract_documents,
+)
 from src.intelligence.official_source import canonical_json_bytes
 
 
@@ -213,7 +217,7 @@ def _load_reason_registry(
         if code in known:
             raise SSVCPolicyDecisionError(f"Duplicate SSVC reason code: {code}")
         known.add(code)
-    return dict(meta), known, digest
+    return document, dict(meta), known, digest
 
 
 def _normalize_impact(value: Any) -> str:
@@ -664,7 +668,34 @@ def build_ssvc_policy_decision(
     mapping_policy, mapping_sha = _load_yaml(mapping_policy_path, "SSVC mapping policy")
     deployer_table, table_sha = _load_yaml(deployer_table_path, "SSVC deployer table")
     human_table, human_sha = _load_yaml(human_impact_table_path, "SSVC human impact table")
-    registry_meta, known_reason_codes, registry_sha = _load_reason_registry(reason_registry_path)
+    (
+        reason_registry,
+        registry_meta,
+        known_reason_codes,
+        registry_sha,
+    ) = _load_reason_registry(reason_registry_path)
+
+    try:
+        contract_assurance = validate_ssvc_contract_documents(
+            deployer_policy=deployer_policy,
+            mapping_policy=mapping_policy,
+            deployer_table=deployer_table,
+            human_impact_table=human_table,
+            reason_registry=reason_registry,
+            digests={
+                "deployer_policy": policy_sha,
+                "mapping_policy": mapping_sha,
+                "deployer_table": table_sha,
+                "human_impact_table": human_sha,
+                "reason_registry": registry_sha,
+            },
+            enforce_pinned_hashes=True,
+        )
+    except SSVCContractAssuranceError as exc:
+        raise SSVCPolicyDecisionError(
+            "Pinned SSVC contract failed runtime assurance: "
+            + str(exc)
+        ) from exc
 
     policy_meta = _mapping(deployer_policy.get("policy"), "SSVC policy metadata")
     mapping_meta = _mapping(mapping_policy.get("mapping_policy"), "mapping policy metadata")
@@ -897,7 +928,7 @@ def build_ssvc_policy_decision(
             "policy_hash_count",
             5,
             5,
-            True,
+            contract_assurance.get("pinned_hashes_verified") is True,
             ["SSVC_POLICY_HASHES_VERIFIED"],
         ),
         _quality_gate(
@@ -996,9 +1027,15 @@ def build_ssvc_policy_decision(
         "audit": {
             "canonical_json_sha256": "0" * 64,
             "deterministic_decision_id": True,
-            "policy_hashes_verified": True,
-            "table_row_count": len(deployer_rows),
-            "human_impact_row_count": len(human_rows),
+            "policy_hashes_verified": (
+                contract_assurance.get("pinned_hashes_verified") is True
+            ),
+            "table_row_count": contract_assurance.get(
+                "deployer_row_count"
+            ),
+            "human_impact_row_count": contract_assurance.get(
+                "human_impact_row_count"
+            ),
             "reason_registry_closed": registry_meta.get("closed_registry") is True,
         },
     }
