@@ -1,0 +1,49 @@
+Milestone: 12E.3E
+Generated UTC: 2026-07-19T22:37:33Z
+Branch: feature/m12e3e-ssvc-adversarial-assurance
+HEAD: 4c6acc113801a4e333a35050f49ef9e9b2c7ae72
+Checkpoint tag: phase3-m12e3-runtime-contract-enforcement-20260719
+Checkpoint commit: 4c6acc113801a4e333a35050f49ef9e9b2c7ae72
+
+===== GIT LOG =====
+4c6acc1 (HEAD -> feature/m12e3e-ssvc-adversarial-assurance, tag: phase3-m12e3-runtime-contract-enforcement-20260719, origin/feature/m12e3e-ssvc-adversarial-assurance, origin/feature/m12e3-ssvc-policy-assurance, feature/m12e3-ssvc-policy-assurance) Enforce SSVC contract assurance at runtime
+fe35c14 (tag: phase3-m12e-ssvc-engine-20260718, origin/feature/m12e-governed-ssvc-policy, feature/m12e-governed-ssvc-policy) Add governed deterministic SSVC policy engine
+68bb8fb (tag: phase3-m12d-decision-features-20260718, origin/feature/m12d-decision-feature-envelope, feature/m12d-decision-feature-envelope) Add governed decision feature envelope
+6a13acf (tag: phase3-m12c-foundation-20260715, origin/feature/janvi-milestone12d, origin/feature/evidence-contract-v1, feature/evidence-contract-v1) Add Milestone 12D engineering handoff
+b295bd8 Complete official intelligence and affectedness foundation
+820b289 Add canonical official intelligence correlation
+
+===== TRACKED DIFF CHECK =====
+
+===== WORKTREE =====
+?? .coverage
+?? AegisSec_Milestone12D_Decision_Feature_Envelope_Handoff.sha256
+?? apply_milestone12c2_adapter_union_fix.py
+?? apply_milestone12c2_range_semantics_fix.py
+?? apply_milestone12c2_range_union_fix.py
+?? apply_milestone12c2_source_record_fix.py
+?? apply_milestone12c_affectedness_adjudication.py
+?? apply_milestone12d_decision_feature_envelope.py
+?? apply_milestone12e1_ssvc_contracts.py
+?? apply_milestone12e2_ssvc_mapping_engine.py
+?? apply_milestone12e3c_contract_assurance.py
+?? apply_milestone12e3d_runtime_enforcement.py
+?? build_milestone12c_source_bundle.py
+?? build_milestone12e_source_bundle.py
+?? data/processed/affectedness/
+?? milestone12c_affectedness_source_manifest.json
+?? milestone12d_source_inspection_bundle.tar.gz
+?? milestone12d_source_manifest.json
+?? milestone12e3_git_context.txt
+?? milestone12e3_source_filelist.txt
+?? milestone12e3_source_inspection_bundle.tar.gz
+?? milestone12e3_source_manifest.json
+?? milestone12e3e_git_context.txt
+?? milestone12e3e_source_filelist.txt
+?? milestone12e3e_source_inspection_bundle.tar.gz
+?? milestone12e3e_source_manifest.json
+?? milestone12e_source_inspection_bundle.tar.gz
+?? milestone12e_source_manifest.json
+?? reports/
+?? tests/unit/test_ssvc_adversarial_assurance.py
+?? untitled.txt

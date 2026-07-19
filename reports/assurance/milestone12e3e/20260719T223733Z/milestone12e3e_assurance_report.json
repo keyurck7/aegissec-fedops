@@ -1,0 +1,147 @@
+{
+  "artifacts": {
+    "adversarial_output": "adversarial-pytest.txt",
+    "full_regression_output": "full-regression.txt",
+    "junit_xml": "adversarial-tests.xml",
+    "source_bundle": "milestone12e3e_source_inspection_bundle.tar.gz",
+    "source_manifest": "milestone12e3e_source_manifest.json"
+  },
+  "branch": "feature/m12e3e-ssvc-adversarial-assurance",
+  "checkpoint_tag": "phase3-m12e3-runtime-contract-enforcement-20260719",
+  "generated_at": "2026-07-19T22:37:59.930040+00:00",
+  "governance": {
+    "final_disposition_authorized": false,
+    "human_review_required": false,
+    "next_stage": "MILESTONE_12F_INDEPENDENT_ML_ADVISORY",
+    "official_ssvc_decision_modified": false,
+    "production_readiness": "BLOCKED",
+    "stage_gate": "PASS"
+  },
+  "head": "4c6acc113801a4e333a35050f49ef9e9b2c7ae72",
+  "milestone": "12E.3E",
+  "mutation_assurance": {
+    "blocked_mutations": 17,
+    "cases": [
+      {
+        "case_id": "BYTE_LEVEL_POLICY_DRIFT",
+        "category": "integrity",
+        "detected": true,
+        "observed_action": "BLOCK"
+      },
+      {
+        "case_id": "ALLOW_EPSS_TO_REPLACE_EXPLOITATION",
+        "category": "governance_bypass",
+        "detected": true,
+        "observed_action": "BLOCK"
+      },
+      {
+        "case_id": "DEPLOYER_INPUT_ORDER_PERMUTATION",
+        "category": "semantic_drift",
+        "detected": true,
+        "observed_action": "BLOCK"
+      },
+      {
+        "case_id": "DISABLE_POLICY_HASH_PROVENANCE",
+        "category": "provenance_weakening",
+        "detected": true,
+        "observed_action": "BLOCK"
+      },
+      {
+        "case_id": "DUPLICATE_DEPLOYER_VECTOR",
+        "category": "completeness",
+        "detected": true,
+        "observed_action": "BLOCK"
+      },
+      {
+        "case_id": "ENABLE_SECTOR_OUTCOME_SELECTION",
+        "category": "governance_bypass",
+        "detected": true,
+        "observed_action": "BLOCK"
+      },
+      {
+        "case_id": "FAIL_OPEN_AUTOMATABLE",
+        "category": "fail_open",
+        "detected": true,
+        "observed_action": "BLOCK"
+      },
+      {
+        "case_id": "FAIL_OPEN_EXPLOITATION",
+        "category": "fail_open",
+        "detected": true,
+        "observed_action": "BLOCK"
+      },
+      {
+        "case_id": "HUMAN_IMPACT_DOWNGRADE",
+        "category": "semantic_drift",
+        "detected": true,
+        "observed_action": "BLOCK"
+      },
+      {
+        "case_id": "IMMEDIATE_RANK_DOWNGRADE",
+        "category": "semantic_drift",
+        "detected": true,
+        "observed_action": "BLOCK"
+      },
+      {
+        "case_id": "MISSING_DEPLOYER_ROW",
+        "category": "completeness",
+        "detected": true,
+        "observed_action": "BLOCK"
+      },
+      {
+        "case_id": "OUTCOME_NAME_DRIFT",
+        "category": "semantic_drift",
+        "detected": true,
+        "observed_action": "BLOCK"
+      },
+      {
+        "case_id": "REDIRECT_NEXT_STAGE",
+        "category": "governance_bypass",
+        "detected": true,
+        "observed_action": "BLOCK"
+      },
+      {
+        "case_id": "REMOVE_REQUIRED_REASON_CODE",
+        "category": "provenance_weakening",
+        "detected": true,
+        "observed_action": "BLOCK"
+      },
+      {
+        "case_id": "REOPEN_REASON_REGISTRY",
+        "category": "governance_bypass",
+        "detected": true,
+        "observed_action": "BLOCK"
+      },
+      {
+        "case_id": "REORDER_EXPLOITATION_KEYS",
+        "category": "semantic_drift",
+        "detected": true,
+        "observed_action": "BLOCK"
+      },
+      {
+        "case_id": "UNBLOCK_PRODUCTION",
+        "category": "governance_bypass",
+        "detected": true,
+        "observed_action": "BLOCK"
+      }
+    ],
+    "detection_rate": 1.0,
+    "escaped_mutations": 0,
+    "missing_mutations": [],
+    "total_mutations": 17,
+    "unexpected_mutations": []
+  },
+  "positive_controls": {
+    "exact_contract_validation": "PASS",
+    "pinned_contract_digest_test": "PASS"
+  },
+  "report_id": "AEG-SSA-493286B24346D14B46BDCEF9",
+  "schema_version": "1.0.0",
+  "test_evidence": {
+    "adversarial_test_count": 20,
+    "errors": 0,
+    "failures": 0,
+    "full_repository_passed_tests": 433,
+    "skipped": 0
+  }
+}

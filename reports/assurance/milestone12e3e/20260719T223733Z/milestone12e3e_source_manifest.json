@@ -1,0 +1,91 @@
+{
+  "branch": "feature/m12e3e-ssvc-adversarial-assurance",
+  "checkpoint_tag": "phase3-m12e3-runtime-contract-enforcement-20260719",
+  "file_count": 16,
+  "files": [
+    {
+      "relative_path": "requirements.txt",
+      "sha256": "244bf8706459056e77a57548a623a298501994f4d6183d8f6459c835509eda41",
+      "size_bytes": 156
+    },
+    {
+      "relative_path": "policies/decision/ssvc_deployer_policy_v1.yaml",
+      "sha256": "539bee121237a3fac29e4c49f7e190f3c96b6b80dbea25526228993118e889ca",
+      "size_bytes": 2454
+    },
+    {
+      "relative_path": "policies/decision/ssvc_deployer_decision_table_v1.yaml",
+      "sha256": "2dda887610160a0eb6b831d94f4d5bb489e8bebd92e53af84fb1535eb752f3e2",
+      "size_bytes": 17429
+    },
+    {
+      "relative_path": "policies/decision/ssvc_human_impact_decision_table_v1.yaml",
+      "sha256": "d6ca20ec0d4c123df9239a8b61d790cd702185c2dbd2676f34fbef3d51dcb3fc",
+      "size_bytes": 1508
+    },
+    {
+      "relative_path": "policies/decision/ssvc_mapping_policy_v1.yaml",
+      "sha256": "cd5f28ca14ec03c5bf278ad769d6b2915060244521d794cc44591a4c99752ee2",
+      "size_bytes": 3208
+    },
+    {
+      "relative_path": "policies/decision/ssvc_reason_codes_v1.yaml",
+      "sha256": "cfde36547d5e06e9f127699adc17725610316bf863918a464f2df01b799dd178",
+      "size_bytes": 3001
+    },
+    {
+      "relative_path": "schemas/aegis_ssvc_policy_decision.schema.json",
+      "sha256": "00609ddcbe7f92c07443623eb96009c461304c7b49dac9c9c6bd3df36ba168da",
+      "size_bytes": 12160
+    },
+    {
+      "relative_path": "scripts/run_milestone12e_ssvc_policy_decision.py",
+      "sha256": "0e54a3fcc8f559d07273ffab291b7d4faa766fe7bbe4e216a8a774207d5a787e",
+      "size_bytes": 8643
+    },
+    {
+      "relative_path": "src/decision_policy/__init__.py",
+      "sha256": "b3364ac4bdb40053308ef0e9dd9db767b50fcfc679859ad5ff8b522e43d8f925",
+      "size_bytes": 225
+    },
+    {
+      "relative_path": "src/decision_policy/ssvc_contract_assurance.py",
+      "sha256": "38fa4e6a87e6afde00cded0e9673dc0c0cc3fc368739a114a80d4be3fa87b679",
+      "size_bytes": 16806
+    },
+    {
+      "relative_path": "src/decision_policy/ssvc_engine.py",
+      "sha256": "a87772eed70e1ab449e985895432b3adb2ffc5e2f15a936c3ca6c4171fd0f2ff",
+      "size_bytes": 37727
+    },
+    {
+      "relative_path": "tests/unit/test_ssvc_policy_contracts.py",
+      "sha256": "dc0b4f3305f598fbc97f8ea8e38d5c5b1767bdf0813e883428195bd43fb6d9d4",
+      "size_bytes": 4838
+    },
+    {
+      "relative_path": "tests/unit/test_ssvc_mapping_engine.py",
+      "sha256": "4eb2c7486961f1bd873e7b9b019e00b61a4a7e49aaebb7cd254f3f94475051b4",
+      "size_bytes": 6999
+    },
+    {
+      "relative_path": "tests/unit/test_ssvc_contract_assurance.py",
+      "sha256": "1290f252f77d79271777ac90e13f2db65f0b0f2f69c7e16c805d032bcb792ff6",
+      "size_bytes": 4627
+    },
+    {
+      "relative_path": "tests/unit/test_ssvc_runtime_contract_enforcement.py",
+      "sha256": "6a58596ad4fb3144a9d64576618300c0d2352674876747323a7f09872ca2dd47",
+      "size_bytes": 5277
+    },
+    {
+      "relative_path": "tests/unit/test_ssvc_adversarial_assurance.py",
+      "sha256": "c3cd3d6c68c6972fcb7ac789144aa546d34852ab8baa483ed6e8ae1757b5c332",
+      "size_bytes": 7824
+    }
+  ],
+  "generated_at": "2026-07-19T22:37:33.816369+00:00",
+  "head": "4c6acc113801a4e333a35050f49ef9e9b2c7ae72",
+  "milestone": "12E.3E",
+  "schema_version": "1.0.0"
+}

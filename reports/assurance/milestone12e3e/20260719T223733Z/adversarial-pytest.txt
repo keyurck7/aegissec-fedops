@@ -1,0 +1,4 @@
+Running 20 items in this shard
+....................                                                                                                              [100%]
+---- generated xml file: /home/jovyan/vault/aegissec-fedops/reports/assurance/milestone12e3e/20260719T223733Z/adversarial-tests.xml -----
+20 passed in 1.70s
