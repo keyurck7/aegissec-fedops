@@ -1,0 +1,243 @@
+{
+  "$id": "https://aegissec.example/schemas/aegis_ml_feature_view.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "authority": {
+      "additionalProperties": false,
+      "properties": {
+        "agreement_gate_required": {
+          "const": true
+        },
+        "ml_may_authorize_final_disposition": {
+          "const": false
+        },
+        "ml_may_override_ssvc": {
+          "const": false
+        },
+        "role": {
+          "const": "INDEPENDENT_ADVISORY_ONLY"
+        },
+        "ssvc_role": {
+          "const": "AUTHORITATIVE_POLICY_DECISION"
+        }
+      },
+      "required": [
+        "role",
+        "ssvc_role",
+        "ml_may_override_ssvc",
+        "ml_may_authorize_final_disposition",
+        "agreement_gate_required"
+      ],
+      "type": "object"
+    },
+    "contract": {
+      "additionalProperties": false,
+      "properties": {
+        "contract_id": {
+          "const": "AEGIS-ML-ADVISORY-INPUT-CONTRACT"
+        },
+        "contract_version": {
+          "const": "1.0.0"
+        },
+        "policy_id": {
+          "const": "AEGIS-ML-ADVISORY-GOVERNANCE-POLICY"
+        },
+        "policy_sha256": {
+          "pattern": "^[a-f0-9]{64}$",
+          "type": "string"
+        },
+        "policy_version": {
+          "const": "1.0.0"
+        }
+      },
+      "required": [
+        "contract_id",
+        "contract_version",
+        "policy_id",
+        "policy_version",
+        "policy_sha256"
+      ],
+      "type": "object"
+    },
+    "evaluation_context": {
+      "type": "object"
+    },
+    "exclusion_audit": {
+      "additionalProperties": false,
+      "properties": {
+        "all_prohibited_fields_excluded": {
+          "const": true
+        },
+        "governance_output_consumed": {
+          "const": false
+        },
+        "source_prohibited_path_count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "source_prohibited_paths_present": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "ssvc_output_consumed": {
+          "const": false
+        }
+      },
+      "required": [
+        "source_prohibited_paths_present",
+        "source_prohibited_path_count",
+        "all_prohibited_fields_excluded",
+        "ssvc_output_consumed",
+        "governance_output_consumed"
+      ],
+      "type": "object"
+    },
+    "feature_provenance": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "data_type": {
+            "enum": [
+              "boolean",
+              "integer",
+              "number",
+              "string"
+            ]
+          },
+          "feature_id": {
+            "type": "string"
+          },
+          "nullable": {
+            "type": "boolean"
+          },
+          "required": {
+            "type": "boolean"
+          },
+          "source_path": {
+            "pattern": "^\\$\\.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "feature_id",
+          "source_path",
+          "data_type",
+          "required",
+          "nullable"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "feature_view_id": {
+      "pattern": "^AEG-MLF-[A-F0-9]{24}$",
+      "type": "string"
+    },
+    "generated_at": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "model_features": {
+      "minProperties": 1,
+      "type": "object"
+    },
+    "release_decision": {
+      "additionalProperties": false,
+      "properties": {
+        "next_stage": {
+          "const": "MILESTONE_12F2_PROVENANCE_GOVERNED_DATASET"
+        },
+        "production_dataset_eligible": {
+          "type": "boolean"
+        },
+        "production_readiness": {
+          "const": "BLOCKED"
+        },
+        "reason_codes": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "stage_gate": {
+          "enum": [
+            "PASS",
+            "FAIL"
+          ]
+        }
+      },
+      "required": [
+        "stage_gate",
+        "production_readiness",
+        "production_dataset_eligible",
+        "reason_codes",
+        "next_stage"
+      ],
+      "type": "object"
+    },
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "source": {
+      "additionalProperties": false,
+      "properties": {
+        "envelope_contract_id": {
+          "const": "AEGIS-DECISION-FEATURE-CONTRACT"
+        },
+        "envelope_contract_version": {
+          "const": "1.0.0"
+        },
+        "envelope_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "envelope_id",
+        "envelope_contract_id",
+        "envelope_contract_version"
+      ],
+      "type": "object"
+    },
+    "target": {
+      "additionalProperties": false,
+      "properties": {
+        "asset_id": {
+          "type": "string"
+        },
+        "component_purl": {
+          "type": "string"
+        },
+        "cve_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "cve_id",
+        "asset_id",
+        "component_purl"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema_version",
+    "feature_view_id",
+    "generated_at",
+    "authority",
+    "contract",
+    "source",
+    "target",
+    "model_features",
+    "feature_provenance",
+    "evaluation_context",
+    "exclusion_audit",
+    "release_decision"
+  ],
+  "title": "AegisSec Independent ML Feature View",
+  "type": "object"
+}
