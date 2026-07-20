@@ -1,0 +1,72 @@
+policy:
+  policy_id: AEGIS-ML-DATASET-TRAINING-POLICY
+  version: 1.0.0
+  description: Development-only provenance-governed dataset, training, evaluation, XAI, OOD and abstention contract.
+authority:
+  role: INDEPENDENT_ADVISORY_ONLY
+  may_override_ssvc: false
+  may_authorize_final_disposition: false
+  agreement_gate_required: true
+dataset:
+  minimum_rows: 240
+  minimum_class_rows: 30
+  synthetic_allowed_for_development: true
+  synthetic_production_eligible: false
+  prohibited_feature_terms:
+    - ssvc
+    - outcome
+    - decision
+    - disposition
+    - stage_gate
+    - production_readiness
+    - human_review
+    - priority
+    - action
+  prohibited_term_exceptions:
+    combined_trust_action:
+      matched_terms:
+        - action
+      rationale: >-
+        Pre-policy evidence-trust handling state approved by the independent
+        ML feature contract. It is not an SSVC outcome, remediation action,
+        final disposition, or production authorization.
+      source_contract: AEGIS-ML-ADVISORY-GOVERNANCE-POLICY
+  split:
+    strategy: GROUPED_STRATIFIED_DETERMINISTIC
+    group_fields: [asset_id, cve_id]
+    train_fraction: 0.70
+    validation_fraction: 0.15
+    test_fraction: 0.15
+    random_seed: 12062026
+training:
+  algorithm: RANDOM_FOREST_CLASSIFIER
+  random_seed: 12062026
+  n_estimators: 400
+  min_samples_leaf: 2
+  class_weight: balanced_subsample
+  probability_calibration: sigmoid
+  abstention_threshold: 0.60
+  ood_unknown_category_rate_threshold: 0.20
+  ood_numeric_out_of_range_rate_threshold: 0.10
+evaluation:
+  required_metrics:
+    - balanced_accuracy
+    - macro_f1
+    - weighted_f1
+    - log_loss
+    - multiclass_brier
+    - expected_calibration_error
+  development_gates:
+    minimum_balanced_accuracy: 0.70
+    minimum_macro_f1: 0.68
+    maximum_expected_calibration_error: 0.20
+    maximum_abstention_rate: 0.35
+  fairness_slices:
+    - asset_criticality_level
+    - mission_essential
+    - contains_health_data
+    - externally_accessible
+release:
+  production_readiness: BLOCKED
+  development_stage_gate: PASS
+  next_stage: MILESTONE_12G_AGREEMENT_AND_ESCALATION_GATE
