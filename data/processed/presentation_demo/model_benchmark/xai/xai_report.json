@@ -1,0 +1,47 @@
+{
+  "global_explanation": {
+    "coefficient_rows": 11,
+    "method": "STANDARDIZED_LOGISTIC_COEFFICIENTS"
+  },
+  "governance": {
+    "authoritative_policy_engine": "SSVC",
+    "automated_disposition_permitted": false,
+    "future_exploitation_prediction": false,
+    "human_review_required": true,
+    "model_authority": "ADVISORY_ONLY",
+    "production_readiness": "BLOCKED"
+  },
+  "local_explanation": {
+    "maximum_probability_reconstruction_error": 1.1102230246251565e-16,
+    "method": "ADDITIVE_LOGIT_CONTRIBUTIONS"
+  },
+  "model": {
+    "decision_threshold": 0.844979261781565,
+    "family": "logistic_regression",
+    "label_definition": "CURRENT_CISA_KEV_MEMBERSHIP",
+    "winner": "logistic_c_10"
+  },
+  "quality_gate": {
+    "checks": {
+      "all_four_outcomes_present": true,
+      "false_negatives_detected": true,
+      "false_positives_detected": true,
+      "label_excluded_from_features": true,
+      "model_advisory_only": true,
+      "probability_reconstruction_error_below_1e_9": true,
+      "production_blocked": true,
+      "ssvc_authority_preserved": true
+    },
+    "stage_gate": "PASS"
+  },
+  "schema_version": "1.0.0",
+  "weakness_analysis": {
+    "outcome_counts": {
+      "FALSE_NEGATIVE": 79,
+      "FALSE_POSITIVE": 1844,
+      "TRUE_NEGATIVE": 67726,
+      "TRUE_POSITIVE": 250
+    },
+    "slice_rows": 9
+  }
+}
