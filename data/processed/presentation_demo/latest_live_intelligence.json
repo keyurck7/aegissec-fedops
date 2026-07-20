@@ -1,0 +1,4991 @@
+{
+  "components": [
+    {
+      "advisories": [
+        {
+          "cve_aliases": [
+            "CVE-2026-34480"
+          ],
+          "database_severity": "MODERATE",
+          "modified": "2026-04-16T11:29:10.536806482Z",
+          "osv_id": "GHSA-3pxv-7cmr-fjr4",
+          "published": "2026-04-10T18:31:17Z",
+          "severity": [
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:N/SC:N/SI:L/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "f819768dad8c21459da8e44b1feb743e3b9ed6489a201bde219cb8e23b49cbfb",
+          "summary": "Apache Log4j Core: Silent log event loss in XmlLayout due to unescaped XML 1.0 forbidden characters",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2026-34477"
+          ],
+          "database_severity": "MODERATE",
+          "modified": "2026-04-17T12:29:10.521430176Z",
+          "osv_id": "GHSA-6hg6-v5c8-fphq",
+          "published": "2026-04-10T18:31:17Z",
+          "severity": [
+            {
+              "score": "CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:L/VI:N/VA:N/SC:N/SI:L/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "2a5e65f9ae902f4a8180bbaec0a1344f110904cbb2e9c96d83d92d8e6bc250cb",
+          "summary": "Apache Log4j Core: `verifyHostName` attribute silently ignored in TLS configuration",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2021-45046"
+          ],
+          "database_severity": "CRITICAL",
+          "modified": "2025-10-22T19:37:53.742023Z",
+          "osv_id": "GHSA-7rjr-3q55-vv33",
+          "published": "2021-12-14T18:01:28Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:H/E:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "2889a8fdb11b81f2e069bcb9dc9e1e511ebb6b1f6937ee19452ab11044ca3bde",
+          "summary": "Incomplete fix for Apache Log4j vulnerability",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2021-44832"
+          ],
+          "database_severity": "MODERATE",
+          "modified": "2026-06-09T10:45:14.253296471Z",
+          "osv_id": "GHSA-8489-44mv-ggj8",
+          "published": "2022-01-04T16:14:20Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "a7ebc436af01ee3793a48ef79b454dec75f5e0901d2c9ecde31e5359caae9325",
+          "summary": "Improper Input Validation and Injection in Apache Log4j2",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2021-44228"
+          ],
+          "database_severity": "CRITICAL",
+          "modified": "2025-10-22T19:37:02.616807Z",
+          "osv_id": "GHSA-jfh8-c2jp-5v3q",
+          "published": "2021-12-10T00:40:56Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H/E:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "fd5f29c5c14b2eea3abdd5c35293f8f4b920c8c8364bed34b3f678a0763981a2",
+          "summary": "Remote code injection in Log4j",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2021-45105"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2026-06-09T10:30:14.432177927Z",
+          "osv_id": "GHSA-p6xc-xr62-6r2g",
+          "published": "2021-12-18T18:00:07Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:N/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "c82b02b7166248962d49eea9d6312f5918f4cbe01ddfcda7612339a11ccc22f5",
+          "summary": "Apache Log4j2 vulnerable to Improper Input Validation and Uncontrolled Recursion",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2025-68161"
+          ],
+          "database_severity": "MODERATE",
+          "modified": "2026-02-04T03:10:00.616806Z",
+          "osv_id": "GHSA-vc5p-v9hr-52mj",
+          "published": "2025-12-18T21:31:44Z",
+          "severity": [
+            {
+              "score": "CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:L/VI:N/VA:N/SC:N/SI:L/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "033ad0ab6df09434890661e8a52e21b83ac842a6a27997a1166c5a2d0255e9f2",
+          "summary": "Apache Log4j does not verify the TLS hostname in its Socket Appender",
+          "withdrawn": null
+        }
+      ],
+      "component_id": "AEG-CMP-0001",
+      "criticality": "CRITICAL",
+      "cve_aliases": [
+        "CVE-2021-44228",
+        "CVE-2021-44832",
+        "CVE-2021-45046",
+        "CVE-2021-45105",
+        "CVE-2025-68161",
+        "CVE-2026-34477",
+        "CVE-2026-34480"
+      ],
+      "details_truncated": false,
+      "internet_exposed": true,
+      "matched_vulnerability_count": 7,
+      "mission_essential": true,
+      "osv_ids": [
+        "GHSA-3pxv-7cmr-fjr4",
+        "GHSA-6hg6-v5c8-fphq",
+        "GHSA-7rjr-3q55-vv33",
+        "GHSA-8489-44mv-ggj8",
+        "GHSA-jfh8-c2jp-5v3q",
+        "GHSA-p6xc-xr62-6r2g",
+        "GHSA-vc5p-v9hr-52mj"
+      ],
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.apache.logging.log4j:log4j-core",
+        "version": "2.14.1"
+      },
+      "sector": "HEALTHCARE",
+      "vulnerability_status": "VULNERABILITIES_IDENTIFIED"
+    },
+    {
+      "advisories": [
+        {
+          "cve_aliases": [
+            "CVE-2020-11619"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2026-05-06T18:48:48.151743Z",
+          "osv_id": "GHSA-27xj-rqx5-2255",
+          "published": "2020-05-15T18:58:44Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "f80a73e95370bb6f64beccda79c984dac7fbffc6b4c208f0f856c90a6577c4b0",
+          "summary": "jackson-databind mishandles the interaction between serialization gadgets and typing",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2020-25649"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2026-02-04T04:33:29.159339Z",
+          "osv_id": "GHSA-288c-cq4h-88gq",
+          "published": "2021-02-18T20:51:54Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "ce8c7966de2f111911edece754c4a2d0b751ce09cd2cc5ef5e80d1e89882f8b6",
+          "summary": "XML External Entity (XXE) Injection in Jackson Databind",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2020-8840"
+          ],
+          "database_severity": "CRITICAL",
+          "modified": "2024-03-16T05:18:54.922179Z",
+          "osv_id": "GHSA-4w82-r329-3q67",
+          "published": "2020-03-04T20:52:14Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "bd993d0350380f07b88c4c70557324886c9f77dafd5a4bbe3eab40e88efcea25",
+          "summary": "Deserialization of Untrusted Data in jackson-databind",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2020-36518"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2026-02-04T04:26:14.546092Z",
+          "osv_id": "GHSA-57j2-w4cx-62h2",
+          "published": "2022-03-12T00:00:36Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "f5473968b4d3f787a6ca208f3fd6d9dc27d8d9c081e77b8e0e941a9061fd84e6",
+          "summary": "Deeply nested json in jackson-databind",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2020-11112"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2026-02-04T04:20:43.091617Z",
+          "osv_id": "GHSA-58pp-9c76-5625",
+          "published": "2020-06-10T21:12:41Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "d7438be4172e2be4e1848301e9a33c9eaf17e6b0d5295dda007faee4193b7c1b",
+          "summary": "jackson-databind mishandles the interaction between serialization gadgets and typing",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2021-20190"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2025-09-15T07:42:14.888352Z",
+          "osv_id": "GHSA-5949-rw7g-wx7w",
+          "published": "2021-01-20T21:20:15Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "f1b13a264ada10377ee5a1d7da966aace1df3c97afcb106182170d7add830c45",
+          "summary": "Deserialization of untrusted data in jackson-databind",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2026-54515"
+          ],
+          "database_severity": "MODERATE",
+          "modified": "2026-07-16T21:30:21.943601698Z",
+          "osv_id": "GHSA-5jmj-h7xm-6q6v",
+          "published": "2026-06-23T21:23:58Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "6365d08290a0df978b6038d5cb692bb84f07a10206d6a8970f1b3e5fd926f498",
+          "summary": "jackson-databind has case-insensitive deserialization bypasses per-property @JsonIgnoreProperties",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2020-9546"
+          ],
+          "database_severity": "CRITICAL",
+          "modified": "2026-05-06T18:48:09.194314Z",
+          "osv_id": "GHSA-5p34-5m6p-p58g",
+          "published": "2020-04-23T21:08:40Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "c8bea648fd46f123a671222b225662275f9cee4706ea1472ff7ebd4a749d162b",
+          "summary": "jackson-databind mishandles the interaction between serialization gadgets and typing",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2020-35728"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2024-02-18T05:42:28.539166Z",
+          "osv_id": "GHSA-5r5r-6hpj-8gg9",
+          "published": "2021-12-09T19:15:24Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "c78af665c0fb84f746023b670378006d0e097e47e45df2db765c225ddd9be4a7",
+          "summary": "Serialization gadget exploit in jackson-databind",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2019-12086"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2024-03-15T01:17:50.016820Z",
+          "osv_id": "GHSA-5ww9-j83m-q7qx",
+          "published": "2019-05-23T09:32:24Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "5dfc7657c3f39ed7c1c02800f630f16834ad9041aee7ca33d8150e950fe98182",
+          "summary": "Information exposure in FasterXML jackson-databind",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2019-14379"
+          ],
+          "database_severity": "CRITICAL",
+          "modified": "2024-03-15T05:18:54.134884Z",
+          "osv_id": "GHSA-6fpp-rgj9-8rwc",
+          "published": "2019-08-01T19:18:00Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "31020d76a0b24ea8fd94dd7071f9a8a57240febd36cac007c58de4c36dcc7bd5",
+          "summary": "Deserialization of untrusted data in FasterXML jackson-databind",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2020-10969"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2026-02-04T03:36:14.950029Z",
+          "osv_id": "GHSA-758m-v56v-grj4",
+          "published": "2020-04-23T21:36:03Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "36b064ac5a37a09dfcbdd805da283f6f89e846e13b1330184fbd22607a997313",
+          "summary": "jackson-databind mishandles the interaction between serialization gadgets and typing",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2019-16335"
+          ],
+          "database_severity": "CRITICAL",
+          "modified": "2024-03-15T05:20:15.574552Z",
+          "osv_id": "GHSA-85cw-hj65-qqv9",
+          "published": "2019-09-23T18:33:45Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "89ad5702880ae182f9157310a0311b0c025092b335f9378253750b98e2a23ebc",
+          "summary": "Polymorphic Typing issue in FasterXML jackson-databind",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2020-36182"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2024-02-18T05:37:27.581808Z",
+          "osv_id": "GHSA-89qr-369f-5m5x",
+          "published": "2021-12-09T19:15:46Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "3050b8365b6b8cb1fc6fdf7e306ef449395f91ecfd8bcef8765947f56f13affc",
+          "summary": "Unsafe Deserialization in jackson-databind",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2020-36180"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2024-02-18T05:31:52.762759Z",
+          "osv_id": "GHSA-8c4j-34r4-xr8g",
+          "published": "2021-12-09T19:16:18Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "056670a09ef35dbc973ea17516b3475d9d6e0fe86c5bfcd9dd872756bebb435c",
+          "summary": "Unsafe Deserialization in jackson-databind",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2020-36185"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2024-02-18T05:30:48.085017Z",
+          "osv_id": "GHSA-8w26-6f25-cm9x",
+          "published": "2021-12-09T19:16:02Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "af9580614f7a9e5812880d43034d11dd019eae8ffba62147762d072b73095592",
+          "summary": "Unsafe Deserialization in jackson-databind",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2020-10672"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2026-02-04T04:17:13.822495Z",
+          "osv_id": "GHSA-95cm-88f5-f2c7",
+          "published": "2020-04-23T16:32:59Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "c6801fae7173050eaaf09c84c1a7fd8212fee994e95be69fa8575efef22e2496",
+          "summary": "jackson-databind mishandles the interaction between serialization gadgets and typing",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2020-36179"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2024-02-18T05:33:27.617261Z",
+          "osv_id": "GHSA-9gph-22xh-8x98",
+          "published": "2021-12-09T19:15:54Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "23c64ba95e4fca4541d6de92131d632143c1857849dc99e61090f524f773aa72",
+          "summary": "Unsafe Deserialization in jackson-databind",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2020-36183"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2026-05-06T18:48:47.299219Z",
+          "osv_id": "GHSA-9m6f-7xcq-8vf8",
+          "published": "2021-12-09T19:16:34Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "a9a449552ea792f51aacaf71f87e7881813f1aff5c5d97b50535cdb170cfcf8b",
+          "summary": "Unsafe Deserialization in jackson-databind",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2020-11113"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2026-02-04T03:51:09.910472Z",
+          "osv_id": "GHSA-9vvp-fxw6-jcxr",
+          "published": "2020-05-15T18:58:47Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "e4eb3c72d9d49ede75c4b54b714a1e9644e0a83bde8dd3dd48f3c42b43120cb6",
+          "summary": "jackson-databind mishandles the interaction between serialization gadgets and typing",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2020-14062"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2026-05-06T18:51:01.016240Z",
+          "osv_id": "GHSA-c265-37vj-cwcc",
+          "published": "2020-06-18T14:44:48Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "3fa41d8a9de8ff8e0804ba9a88cf7790435b1eba4a5210adf9dc7b4bff118e07",
+          "summary": "Deserialization of untrusted data in Jackson Databind",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2020-14061"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2026-02-04T03:00:42.142430Z",
+          "osv_id": "GHSA-c2q3-4qrh-fm48",
+          "published": "2020-06-18T14:44:50Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "a4ac30cddc157bce0bbc8089d71eda2eba289365e86750bfd032c4630dc31d79",
+          "summary": "Deserialization of untrusted data in Jackson Databind",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2019-14892"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2024-02-18T05:32:56.325249Z",
+          "osv_id": "GHSA-cf6r-3wgc-h863",
+          "published": "2020-05-15T18:58:58Z",
+          "severity": [
+            {
+              "score": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "0f84c44ea9b31f68bc619f7cc6f3006bb987da26b3ea0499a697f8e380999e83",
+          "summary": "Polymorphic deserialization of malicious object in jackson-databind",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2019-12814"
+          ],
+          "database_severity": "MODERATE",
+          "modified": "2024-03-15T01:18:17.903231Z",
+          "osv_id": "GHSA-cmfg-87vq-g5g4",
+          "published": "2019-07-17T15:26:12Z",
+          "severity": [
+            {
+              "score": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "9af42d763e7049e92883e0fd10d2c2c5d866d112546694d38f20f00ef0688656",
+          "summary": "Deserialization of untrusted data in FasterXML jackson-databind",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2020-36181"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2024-02-18T05:25:36.165759Z",
+          "osv_id": "GHSA-cvm9-fjm9-3572",
+          "published": "2021-12-09T19:16:10Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "b106efa2b16de8bc1ce4695c174e6b6c411234c6d08126e70c76d94eb64f6959",
+          "summary": "Unsafe Deserialization in jackson-databind",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2019-17267"
+          ],
+          "database_severity": "CRITICAL",
+          "modified": "2024-03-15T05:20:35.120151Z",
+          "osv_id": "GHSA-f3j5-rmmp-3fc5",
+          "published": "2020-06-15T18:44:48Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "e8457a594b858417e7e5c29deec6b34f287956b063797783afe7647890f924ae",
+          "summary": "Improper Input Validation in jackson-databind",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2020-36188"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2024-02-18T05:32:05.421673Z",
+          "osv_id": "GHSA-f9xh-2qgp-cq57",
+          "published": "2021-12-09T19:16:42Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "9c7fd82635e66fb6593c030f57a5edc03e612e330b23f22d025acfc140df10c8",
+          "summary": "Unsafe Deserialization in jackson-databind",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2019-16943"
+          ],
+          "database_severity": "CRITICAL",
+          "modified": "2024-03-16T05:19:55.172981Z",
+          "osv_id": "GHSA-fmmc-742q-jg75",
+          "published": "2019-11-13T00:32:27Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "0cb2aad36788ad1498d28d44a7281c91567d69bb9c1f33b8cab43fb6da4b2ba9",
+          "summary": "jackson-databind polymorphic typing issue",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2020-10673"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2024-07-03T21:22:37.578162Z",
+          "osv_id": "GHSA-fqwf-pjwf-7vqv",
+          "published": "2020-05-15T18:59:04Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "746a5e51ad77bb722a84bdca07f520109e54979a3fcb34b832f5eb9e7efeda9d",
+          "summary": "jackson-databind mishandles the interaction between serialization gadgets and typing",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2019-17531"
+          ],
+          "database_severity": "CRITICAL",
+          "modified": "2024-03-16T05:19:37.211801Z",
+          "osv_id": "GHSA-gjmw-vf9h-g25v",
+          "published": "2019-11-13T00:32:38Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "248b178ee0c51a15c8d48ed340d7c3123cded548d866252ec3d665afc4c384e5",
+          "summary": "jackson-databind polymorphic typing issue",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2019-14439"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2024-03-13T05:27:58.436849Z",
+          "osv_id": "GHSA-gwp4-hfv6-p7hw",
+          "published": "2019-08-01T19:18:06Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "ba8114606b19cfcb6e0a983281bda766c17eeb6fd06ba922d9a4d24458e6cd21",
+          "summary": "Deserialization of untrusted data in FasterXML jackson-databind",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2019-20330"
+          ],
+          "database_severity": "CRITICAL",
+          "modified": "2024-03-15T01:05:18.790961Z",
+          "osv_id": "GHSA-gww7-p5w4-wrfv",
+          "published": "2020-03-04T20:52:11Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "b51c64558fe6e3952cf73133ae870c24017f9e0fc3ea48b27225d8f30506a86a",
+          "summary": "Deserialization of Untrusted Data in jackson-databind",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2020-24616"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2024-02-18T05:30:45.329621Z",
+          "osv_id": "GHSA-h3cw-g4mq-c5x2",
+          "published": "2021-12-09T19:14:51Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "1b738e6589570ffdfc08296159c330d8c1ec269feaa2e08e478c330784033a62",
+          "summary": "Code Injection in jackson-databind",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2020-11620"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2026-02-04T02:16:35.259275Z",
+          "osv_id": "GHSA-h4rc-386g-6m85",
+          "published": "2020-04-23T20:19:02Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "e288e928a2029c818b7a87142957979ef52f0a0876ad31835adbb26534bddcc3",
+          "summary": "jackson-databind mishandles the interaction between serialization gadgets and typing",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2019-14540"
+          ],
+          "database_severity": "CRITICAL",
+          "modified": "2026-02-04T02:19:17.186100Z",
+          "osv_id": "GHSA-h822-r4r5-v8jg",
+          "published": "2019-09-23T18:33:25Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "94212a7560da5889a0a01fe76924e63de64f08845e73d04f2a1c9542911786e5",
+          "summary": "Polymorphic Typing issue in FasterXML jackson-databind",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2026-54514"
+          ],
+          "database_severity": "MODERATE",
+          "modified": "2026-06-25T00:29:24.783131313Z",
+          "osv_id": "GHSA-hgj6-7826-r7m5",
+          "published": "2026-06-23T21:22:54Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "b4ad12b259e01111a9ca2c4f6f1acf1b8aeac49a78e9bafe246c4571b5eecc97",
+          "summary": "jackson-databind: InetSocketAddress deserialization triggers eager DNS resolution (SSRF)",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2020-14060"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2026-05-06T18:48:52.633638Z",
+          "osv_id": "GHSA-j823-4qch-3rgm",
+          "published": "2020-06-18T14:44:46Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "cb3689eb13df5a5e2d7d1365063e0b0e279b9a928e551d7451b747c694f9b877",
+          "summary": "Deserialization of untrusted data in Jackson Databind",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2022-42003"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2026-02-04T02:23:59.070528Z",
+          "osv_id": "GHSA-jjjh-jjxp-wpff",
+          "published": "2022-10-03T00:00:31Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "3903d4a503c46479b4d6a4af4416e3ab5d5f5f0a3cad4a6b6af4ad6562c8112a",
+          "summary": "Uncontrolled Resource Consumption in Jackson-databind",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2020-36184"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2024-02-18T05:21:54.725837Z",
+          "osv_id": "GHSA-m6x4-97wx-4q27",
+          "published": "2021-12-09T19:16:26Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "180e136af26c24ed8b3410b422bf978f1ee618a74e1fe6a304d10778ffde8ced",
+          "summary": "Unsafe Deserialization in jackson-databind",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2020-14195"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2026-02-04T03:13:09.057050Z",
+          "osv_id": "GHSA-mc6h-4qgp-37qh",
+          "published": "2020-06-18T14:44:43Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "f7698cb5d1f700d4e30cdd544347690246ade4a2f15e0277f1670c1267db18db",
+          "summary": "Deserialization of untrusted data in Jackson Databind",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2019-12384"
+          ],
+          "database_severity": "MODERATE",
+          "modified": "2024-03-15T01:16:21.467932Z",
+          "osv_id": "GHSA-mph4-vhrx-mv67",
+          "published": "2019-07-05T21:07:27Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "55f9d6b7728943852724e40931221c495c92856c18f4659ea93cf380a23220c6",
+          "summary": "Deserialization of Untrusted Data in FasterXML jackson-databind",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2019-16942"
+          ],
+          "database_severity": "CRITICAL",
+          "modified": "2024-03-15T01:01:46.432481Z",
+          "osv_id": "GHSA-mx7p-6679-8g3q",
+          "published": "2019-10-28T20:51:15Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "10c1bdd351e81f3c0a56b1f7817e2edeb1e4042be42bf385c868d65a735a778b",
+          "summary": "Polymorphic Typing in FasterXML jackson-databind",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2020-9548"
+          ],
+          "database_severity": "CRITICAL",
+          "modified": "2024-03-15T00:33:14.700288Z",
+          "osv_id": "GHSA-p43x-xfjf-5jhr",
+          "published": "2020-05-15T18:59:01Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "db8b83e911d94b7c3efc28505617f868aa0adc5d35921cf122346d62ec74d328",
+          "summary": "jackson-databind mishandles the interaction between serialization gadgets and typing",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2020-9547"
+          ],
+          "database_severity": "CRITICAL",
+          "modified": "2024-03-16T05:19:47.711015Z",
+          "osv_id": "GHSA-q93h-jc49-78gg",
+          "published": "2020-05-15T18:59:10Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "8cbc3f0bef2bc26f229e883e23655fe6d6374318998620439d0c6b3000c17063",
+          "summary": "jackson-databind mishandles the interaction between serialization gadgets and typing",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2020-24750"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2024-02-18T05:20:56.894470Z",
+          "osv_id": "GHSA-qjw2-hr98-qgfh",
+          "published": "2021-12-09T19:15:36Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "5fc1833256e7e007c16b762950b95788583516ae31f667faf5cb9d1fd61c8a8a",
+          "summary": "Unsafe Deserialization in jackson-databind",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2019-14893"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2026-02-04T04:09:08.721663Z",
+          "osv_id": "GHSA-qmqc-x3r4-6v39",
+          "published": "2020-05-15T18:59:07Z",
+          "severity": [],
+          "source_record_sha256": "afe0ece4f6ed8ef3760f46710c35613e3730506cc9ffe75d10be0b9c5deaf96a",
+          "summary": "Polymorphic deserialization of malicious object in jackson-databind",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2020-35491"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2024-06-25T14:20:21.323050Z",
+          "osv_id": "GHSA-r3gr-cxrf-hg25",
+          "published": "2021-12-09T19:15:11Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "7fe603fc026a23865b8684be1251155450ae175747e901a141cec96d8b6ce05c",
+          "summary": "Serialization gadgets exploit in jackson-databind",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2020-36187"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2024-02-18T05:30:45.856594Z",
+          "osv_id": "GHSA-r695-7vr9-jgc2",
+          "published": "2021-12-09T19:16:51Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "742334e789e79ae3949b2d657549bbe81e4db5602e89d4de9bd4cc240359a9cc",
+          "summary": "Unsafe Deserialization in jackson-databind",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2020-10968"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2026-02-04T02:45:42.713913Z",
+          "osv_id": "GHSA-rf6r-2c4q-2vwg",
+          "published": "2020-05-15T18:58:54Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "cfbbe95107b314c5bd76b56df55a7366d338e79c028a406b15be0d1c49029ba1",
+          "summary": "jackson-databind mishandles the interaction between serialization gadgets and typing",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2022-42004"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2026-05-21T00:30:10.193331395Z",
+          "osv_id": "GHSA-rgv9-q543-rqg4",
+          "published": "2022-10-03T00:00:31Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "cc5c63f304a8eaacc58caeb9cecc1926b203b49b0e3951ccaa34bdd79a8f75dd",
+          "summary": "Uncontrolled Resource Consumption in FasterXML jackson-databind",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2020-10650"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2026-07-08T06:00:01.572650992Z",
+          "osv_id": "GHSA-rpr3-cw39-3pxh",
+          "published": "2022-07-15T19:41:47Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "94d726c06a4bc31890af5940248d4c3b65cb6e38f1e0287276b7000a3bb3cb42",
+          "summary": "jackson-databind vulnerable to unsafe deserialization",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2020-11111"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2026-02-04T02:40:39.243220Z",
+          "osv_id": "GHSA-v3xw-c963-f5hc",
+          "published": "2020-05-15T18:58:50Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "8e58bd1bb77bf37c8d3f867bd0c43e0a4d37679889969eaa165ab2e50763ad8e",
+          "summary": "jackson-databind mishandles the interaction between serialization gadgets and typing",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2020-36186"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2024-02-18T05:22:38.024460Z",
+          "osv_id": "GHSA-v585-23hc-c647",
+          "published": "2021-11-19T20:13:06Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "14024a8b000b05f4cddae992a57ca84718465b0dcc40e90e993f4e95e5d8b3e3",
+          "summary": "Unsafe Deserialization in jackson-databind",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2020-36189"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2024-02-18T05:24:26.785781Z",
+          "osv_id": "GHSA-vfqx-33qm-g869",
+          "published": "2021-12-09T19:16:59Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "80dbcfcf68b4607c50678317ca393bb04e7cbdd05411ed5ca02affe00ab0f0e6",
+          "summary": "Unsafe Deserialization in jackson-databind",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2020-35490"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2024-03-15T00:31:15.123603Z",
+          "osv_id": "GHSA-wh8g-3j2c-rqj5",
+          "published": "2021-12-09T19:15:00Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "0f31ce48f14b0dbdea1fe5349d5a185011388de4b11e3942039057fdba364ef5",
+          "summary": "Serialization gadgets exploit in jackson-databind",
+          "withdrawn": null
+        }
+      ],
+      "component_id": "AEG-CMP-0002",
+      "criticality": "HIGH",
+      "cve_aliases": [
+        "CVE-2019-12086",
+        "CVE-2019-12384",
+        "CVE-2019-12814",
+        "CVE-2019-14379",
+        "CVE-2019-14439",
+        "CVE-2019-14540",
+        "CVE-2019-14892",
+        "CVE-2019-14893",
+        "CVE-2019-16335",
+        "CVE-2019-16942",
+        "CVE-2019-16943",
+        "CVE-2019-17267",
+        "CVE-2019-17531",
+        "CVE-2019-20330",
+        "CVE-2020-10650",
+        "CVE-2020-10672",
+        "CVE-2020-10673",
+        "CVE-2020-10968",
+        "CVE-2020-10969",
+        "CVE-2020-11111",
+        "CVE-2020-11112",
+        "CVE-2020-11113",
+        "CVE-2020-11619",
+        "CVE-2020-11620",
+        "CVE-2020-14060",
+        "CVE-2020-14061",
+        "CVE-2020-14062",
+        "CVE-2020-14195",
+        "CVE-2020-24616",
+        "CVE-2020-24750",
+        "CVE-2020-25649",
+        "CVE-2020-35490",
+        "CVE-2020-35491",
+        "CVE-2020-35728",
+        "CVE-2020-36179",
+        "CVE-2020-36180",
+        "CVE-2020-36181",
+        "CVE-2020-36182",
+        "CVE-2020-36183",
+        "CVE-2020-36184",
+        "CVE-2020-36185",
+        "CVE-2020-36186",
+        "CVE-2020-36187",
+        "CVE-2020-36188",
+        "CVE-2020-36189",
+        "CVE-2020-36518",
+        "CVE-2020-8840",
+        "CVE-2020-9546",
+        "CVE-2020-9547",
+        "CVE-2020-9548",
+        "CVE-2021-20190",
+        "CVE-2022-42003",
+        "CVE-2022-42004",
+        "CVE-2026-54514",
+        "CVE-2026-54515"
+      ],
+      "details_truncated": false,
+      "internet_exposed": false,
+      "matched_vulnerability_count": 55,
+      "mission_essential": true,
+      "osv_ids": [
+        "GHSA-27xj-rqx5-2255",
+        "GHSA-288c-cq4h-88gq",
+        "GHSA-4w82-r329-3q67",
+        "GHSA-57j2-w4cx-62h2",
+        "GHSA-58pp-9c76-5625",
+        "GHSA-5949-rw7g-wx7w",
+        "GHSA-5jmj-h7xm-6q6v",
+        "GHSA-5p34-5m6p-p58g",
+        "GHSA-5r5r-6hpj-8gg9",
+        "GHSA-5ww9-j83m-q7qx",
+        "GHSA-6fpp-rgj9-8rwc",
+        "GHSA-758m-v56v-grj4",
+        "GHSA-85cw-hj65-qqv9",
+        "GHSA-89qr-369f-5m5x",
+        "GHSA-8c4j-34r4-xr8g",
+        "GHSA-8w26-6f25-cm9x",
+        "GHSA-95cm-88f5-f2c7",
+        "GHSA-9gph-22xh-8x98",
+        "GHSA-9m6f-7xcq-8vf8",
+        "GHSA-9vvp-fxw6-jcxr",
+        "GHSA-c265-37vj-cwcc",
+        "GHSA-c2q3-4qrh-fm48",
+        "GHSA-cf6r-3wgc-h863",
+        "GHSA-cmfg-87vq-g5g4",
+        "GHSA-cvm9-fjm9-3572",
+        "GHSA-f3j5-rmmp-3fc5",
+        "GHSA-f9xh-2qgp-cq57",
+        "GHSA-fmmc-742q-jg75",
+        "GHSA-fqwf-pjwf-7vqv",
+        "GHSA-gjmw-vf9h-g25v",
+        "GHSA-gwp4-hfv6-p7hw",
+        "GHSA-gww7-p5w4-wrfv",
+        "GHSA-h3cw-g4mq-c5x2",
+        "GHSA-h4rc-386g-6m85",
+        "GHSA-h822-r4r5-v8jg",
+        "GHSA-hgj6-7826-r7m5",
+        "GHSA-j823-4qch-3rgm",
+        "GHSA-jjjh-jjxp-wpff",
+        "GHSA-m6x4-97wx-4q27",
+        "GHSA-mc6h-4qgp-37qh",
+        "GHSA-mph4-vhrx-mv67",
+        "GHSA-mx7p-6679-8g3q",
+        "GHSA-p43x-xfjf-5jhr",
+        "GHSA-q93h-jc49-78gg",
+        "GHSA-qjw2-hr98-qgfh",
+        "GHSA-qmqc-x3r4-6v39",
+        "GHSA-r3gr-cxrf-hg25",
+        "GHSA-r695-7vr9-jgc2",
+        "GHSA-rf6r-2c4q-2vwg",
+        "GHSA-rgv9-q543-rqg4",
+        "GHSA-rpr3-cw39-3pxh",
+        "GHSA-v3xw-c963-f5hc",
+        "GHSA-v585-23hc-c647",
+        "GHSA-vfqx-33qm-g869",
+        "GHSA-wh8g-3j2c-rqj5"
+      ],
+      "package": {
+        "ecosystem": "Maven",
+        "name": "com.fasterxml.jackson.core:jackson-databind",
+        "version": "2.9.8"
+      },
+      "sector": "HEALTHCARE",
+      "vulnerability_status": "VULNERABILITIES_IDENTIFIED"
+    },
+    {
+      "advisories": [
+        {
+          "cve_aliases": [
+            "CVE-2024-38809"
+          ],
+          "database_severity": "MODERATE",
+          "modified": "2026-02-04T03:41:13.020256Z",
+          "osv_id": "GHSA-2rmj-mq67-h97g",
+          "published": "2024-09-24T18:34:43Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "376b8797243dd518cec962c59daa545be51e55869f132eb6c57aaeb2b03e41a7",
+          "summary": "Spring Framework DoS via conditional HTTP request",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2024-22262"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2026-04-17T19:29:23.512712553Z",
+          "osv_id": "GHSA-2wrp-6fg6-hmc5",
+          "published": "2024-04-16T06:30:28Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "8a546fc7282fd260c5c30135017e72a039878b24c517c8a05c1f00119c0a066c",
+          "summary": "Spring Framework URL Parsing with Host Validation",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2024-38820"
+          ],
+          "database_severity": "MODERATE",
+          "modified": "2026-02-04T04:13:07.093622Z",
+          "osv_id": "GHSA-4gc7-5j7h-4qph",
+          "published": "2024-10-18T06:30:32Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "2ad7f848505e8feaa6d4914c032426f6f53c90dcbbe3a86a409427a1e76bdadd",
+          "summary": "Spring Framework DataBinder Case Sensitive Match Exception",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2016-1000027"
+          ],
+          "database_severity": "CRITICAL",
+          "modified": "2026-02-04T02:53:42.698234Z",
+          "osv_id": "GHSA-4wrc-f8pq-fpqp",
+          "published": "2022-05-24T17:05:30Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "7a5b49c481a28a812a32adff1d95e8ca9905236c41db73452417b8c59ef80d7a",
+          "summary": "Pivotal Spring Framework contains unsafe Java deserialization methods",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2024-22243"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2026-02-04T03:35:25.288455Z",
+          "osv_id": "GHSA-ccgv-vj62-xf9h",
+          "published": "2024-02-23T06:30:31Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "4097ee9f36f18c003d684a75a540ad94eafece7a60d2b517195a16e1a1e52c06",
+          "summary": "Spring Web vulnerable to Open Redirect or Server Side Request Forgery",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2024-22259"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2026-02-04T02:37:54.422465Z",
+          "osv_id": "GHSA-hgjh-9rj2-g67j",
+          "published": "2024-03-16T06:30:27Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "1bd82be28b8ff957d11111bfe662456f462f7b1bb078b2f670c40c5f5dfcd5ae",
+          "summary": "Spring Framework URL Parsing with Host Validation Vulnerability",
+          "withdrawn": null
+        }
+      ],
+      "component_id": "AEG-CMP-0003",
+      "criticality": "CRITICAL",
+      "cve_aliases": [
+        "CVE-2016-1000027",
+        "CVE-2024-22243",
+        "CVE-2024-22259",
+        "CVE-2024-22262",
+        "CVE-2024-38809",
+        "CVE-2024-38820"
+      ],
+      "details_truncated": false,
+      "internet_exposed": true,
+      "matched_vulnerability_count": 6,
+      "mission_essential": true,
+      "osv_ids": [
+        "GHSA-2rmj-mq67-h97g",
+        "GHSA-2wrp-6fg6-hmc5",
+        "GHSA-4gc7-5j7h-4qph",
+        "GHSA-4wrc-f8pq-fpqp",
+        "GHSA-ccgv-vj62-xf9h",
+        "GHSA-hgjh-9rj2-g67j"
+      ],
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.springframework:spring-web",
+        "version": "5.3.17"
+      },
+      "sector": "PUBLIC_ADMINISTRATION",
+      "vulnerability_status": "VULNERABILITIES_IDENTIFIED"
+    },
+    {
+      "advisories": [
+        {
+          "cve_aliases": [
+            "CVE-2022-42889"
+          ],
+          "database_severity": "CRITICAL",
+          "modified": "2024-02-16T08:09:06.872889Z",
+          "osv_id": "GHSA-599f-7c49-w659",
+          "published": "2022-10-13T19:00:17Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "377132670acc451f7a0ead6e9cb89c004efe688135f6228f4655886be4b50f62",
+          "summary": "Arbitrary code execution in Apache Commons Text",
+          "withdrawn": null
+        }
+      ],
+      "component_id": "AEG-CMP-0004",
+      "criticality": "HIGH",
+      "cve_aliases": [
+        "CVE-2022-42889"
+      ],
+      "details_truncated": false,
+      "internet_exposed": false,
+      "matched_vulnerability_count": 1,
+      "mission_essential": true,
+      "osv_ids": [
+        "GHSA-599f-7c49-w659"
+      ],
+      "package": {
+        "ecosystem": "Maven",
+        "name": "org.apache.commons:commons-text",
+        "version": "1.9"
+      },
+      "sector": "PUBLIC_ADMINISTRATION",
+      "vulnerability_status": "VULNERABILITIES_IDENTIFIED"
+    },
+    {
+      "advisories": [
+        {
+          "cve_aliases": [
+            "CVE-2022-28346"
+          ],
+          "database_severity": "CRITICAL",
+          "modified": "2025-02-21T05:41:10.759178Z",
+          "osv_id": "GHSA-2gwj-7jmv-h26r",
+          "published": "2022-04-13T00:00:33Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "f62ce2c46ff4797fd18988cecf52973e971fb1d55b24de20a3c9a313e3c1617a",
+          "summary": "SQL Injection in Django",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2020-13596"
+          ],
+          "database_severity": "MODERATE",
+          "modified": "2024-09-20T15:46:33.021684Z",
+          "osv_id": "GHSA-2m34-jcjv-45xf",
+          "published": "2020-06-05T16:24:28Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "e212ace5bee62b5672ff5b665daf391f15d4c9aad57de64f42bf87a2c734673c",
+          "summary": "XSS in Django",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2020-9402"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2026-07-09T16:56:16.012032693Z",
+          "osv_id": "GHSA-3gh2-xw74-jmcw",
+          "published": "2020-06-05T14:52:07Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "481fc22e92fe5b268e96cb4994ffc813f9ea9b8a9a9d79cef966655d6d05711b",
+          "summary": "SQL injection in Django",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2021-45115"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2024-09-20T16:09:39.890846Z",
+          "osv_id": "GHSA-53qw-q765-4fww",
+          "published": "2022-01-12T19:20:53Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "79f0ef0a1bd599c8b957df825ca84d799f960dfbe82d0fc1b34dd741043e8eeb",
+          "summary": "Denial-of-service in Django",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2021-33203"
+          ],
+          "database_severity": "MODERATE",
+          "modified": "2024-09-20T15:46:52.557962Z",
+          "osv_id": "GHSA-68w8-qjq3-2gfm",
+          "published": "2021-06-10T17:21:00Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:N",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "1b4e1cf989127a0f75a76b15bc7bfa1d83c202ea6ef54a43f4c80b7c80a1ce32",
+          "summary": "Path Traversal in Django",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2019-11358"
+          ],
+          "database_severity": "MODERATE",
+          "modified": "2026-07-08T05:56:09.047237467Z",
+          "osv_id": "GHSA-6c3j-c64m-qhgq",
+          "published": "2019-04-26T16:29:11Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "6fdbfc4c8774808078386454221692e23221d134a76701a3771fe6ffa04250b6",
+          "summary": "XSS in jQuery as used in Drupal, Backdrop CMS, and other products",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2019-12781"
+          ],
+          "database_severity": "MODERATE",
+          "modified": "2024-09-18T16:26:02.265514Z",
+          "osv_id": "GHSA-6c7v-2f49-8h26",
+          "published": "2019-07-03T20:37:25Z",
+          "severity": [
+            {
+              "score": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "14e07991aefd9100f8e4e02c633801c5c9e2c295e1a565ba0561b9e44104b7ee",
+          "summary": "Django Incorrect HTTP detection with reverse-proxy connecting via HTTPS",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2022-23833"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2024-09-20T15:47:27.155401Z",
+          "osv_id": "GHSA-6cw3-g6wv-c2xv",
+          "published": "2022-02-04T00:00:26Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "667db133cfdb84fc9a0ee80e73133c361bb91b90ebb8303043ed8e415f6fce46",
+          "summary": "Infinite Loop in Django",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2019-14234"
+          ],
+          "database_severity": "CRITICAL",
+          "modified": "2025-02-21T05:50:19.980781Z",
+          "osv_id": "GHSA-6r97-cj55-9hrq",
+          "published": "2019-08-16T14:00:34Z",
+          "severity": [
+            {
+              "score": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "d4308ac5f1fea952f75e88acc6b6b813281009d9b3b976c3992ebd1d0a265559",
+          "summary": "SQL Injection in Django",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2025-57833"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2026-06-05T14:45:50.840275748Z",
+          "osv_id": "GHSA-6w2r-r2m5-xq5w",
+          "published": "2025-09-08T18:31:31Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:L/A:N",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "c053cd5e2595abfdc486c6cd87beff4f11963a0990236b998c54475da6ef544f",
+          "summary": "Django is subject to SQL injection through its column aliases",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2019-12308"
+          ],
+          "database_severity": "MODERATE",
+          "modified": "2024-09-20T16:09:01.600161Z",
+          "osv_id": "GHSA-7rp2-fm2h-wchj",
+          "published": "2019-06-10T18:43:25Z",
+          "severity": [
+            {
+              "score": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "116cbb1dffd46f099d895f8e6abd49a203407677046f3ff92ea4a81578a97a8b",
+          "summary": "Django Cross-site Scripting in AdminURLFieldWidget",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2025-48432"
+          ],
+          "database_severity": "MODERATE",
+          "modified": "2026-02-04T03:48:05.224740Z",
+          "osv_id": "GHSA-7xr5-9hcq-chf9",
+          "published": "2025-06-05T03:30:58Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:N/I:L/A:N",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "b73a83247af9f3aa7f0292aaf84f0d83c9ab3af8523da410b317f67c84f977cf",
+          "summary": "Django Improper Output Neutralization for Logs vulnerability",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2021-45116"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2025-02-21T05:29:59.213830Z",
+          "osv_id": "GHSA-8c5j-9r9f-c6w8",
+          "published": "2022-01-12T19:21:10Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "a12f8f2de2de2644811fc0b731b1708d353e703edb440693d4c5ecf238741f03",
+          "summary": "Information disclosure in Django",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2022-36359"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2026-02-04T02:45:55.690257Z",
+          "osv_id": "GHSA-8x94-hmjh-97hq",
+          "published": "2022-08-11T14:49:12Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "3f1a0a49e7e69ae71698e922dfd86530aafba817a5a0f7250169b97d492a7602",
+          "summary": "Django vulnerable to Reflected File Download attack",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2022-22818"
+          ],
+          "database_severity": "MODERATE",
+          "modified": "2024-09-20T15:47:46.984048Z",
+          "osv_id": "GHSA-95rw-fx8r-36v6",
+          "published": "2022-02-04T00:00:33Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "89a39e4e1a77389a4ae2592711010b14805a81a5ff28a95a73961058437dc031",
+          "summary": "Cross-site Scripting in Django",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2019-14232"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2024-09-20T16:24:57.221275Z",
+          "osv_id": "GHSA-c4qh-4vgv-qc6g",
+          "published": "2019-08-06T01:43:29Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "f269fa04e322e127b94a5ed618d29d1cd998d02eddfa3cc7aeabb2cad2566f60",
+          "summary": "Django Denial-of-service in django.utils.text.Truncator",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2020-24584"
+          ],
+          "database_severity": "MODERATE",
+          "modified": "2024-11-19T05:35:08.998992Z",
+          "osv_id": "GHSA-fr28-569j-53c4",
+          "published": "2021-03-18T20:30:01Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "b164fcf0641f8443659768a43af580f44fb40423f6c4da68a5ba12881fff24ef",
+          "summary": "Django Incorrect Default Permissions",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2025-64459"
+          ],
+          "database_severity": "CRITICAL",
+          "modified": "2026-06-05T14:45:52.053173828Z",
+          "osv_id": "GHSA-frmv-pr5f-9mcr",
+          "published": "2025-11-05T15:31:07Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "747d21838bef9b86c2e92c793dac04bb2a0de511e8e287520471b8e8f6db5d85",
+          "summary": "Django vulnerable to SQL injection via _connector keyword argument in QuerySet and Q objects.",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2021-3281"
+          ],
+          "database_severity": "MODERATE",
+          "modified": "2024-09-20T15:46:03.145197Z",
+          "osv_id": "GHSA-fvgf-6h6h-3322",
+          "published": "2021-03-18T20:29:49Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "00c4c99254240d918d71ef394dd782772e46e8406d23a70e45cd4d64dcf46e64",
+          "summary": "Django Directory Traversal via archive.extract",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2019-14233"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2024-09-20T16:35:22.320310Z",
+          "osv_id": "GHSA-h5jv-4p7w-64jg",
+          "published": "2019-08-06T01:43:33Z",
+          "severity": [
+            {
+              "score": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "af4be3123d003c9912d8a71f031f0598468f907e296d010fa2d2e50cefa2e764",
+          "summary": "Django Denial-of-service in strip_tags()",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2020-7471"
+          ],
+          "database_severity": "CRITICAL",
+          "modified": "2025-02-21T06:12:43.981276Z",
+          "osv_id": "GHSA-hmr4-m2h5-33qx",
+          "published": "2020-02-11T21:03:20Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "abfcaa52b7b872d303701b8c2c26372bf329beba2fc9c689566bec49b9d1a0f9",
+          "summary": "SQL injection in Django",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2019-19118"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2024-11-19T05:33:19.050183Z",
+          "osv_id": "GHSA-hvmf-r92r-27hr",
+          "published": "2019-12-04T21:26:28Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:N/VI:H/VA:N/SC:N/SI:N/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "d8ca9242a56305e3809a7f020e28cfb91ff7e8e9a511024c69781e2ecd0ba7c1",
+          "summary": "Django allows unintended model editing",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2021-45452"
+          ],
+          "database_severity": "MODERATE",
+          "modified": "2024-09-20T12:22:54.101910Z",
+          "osv_id": "GHSA-jrh2-hc4r-7jwx",
+          "published": "2022-01-12T19:21:04Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "c1939492b1a9a1f806aec8dc757b0aabc1e1cf480047f84e8483f049cd96510c",
+          "summary": "Directory-traversal in Django",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2020-24583"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2024-09-18T20:08:33.242589Z",
+          "osv_id": "GHSA-m6gj-h9gm-gw44",
+          "published": "2021-03-18T20:30:13Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "2788fc391319b2fe646c96ef564ca4715bc7ec94f3264f61b9a6298c88299ca6",
+          "summary": "Django Incorrect Default Permissions",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2021-33571"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2024-09-20T16:08:23.035684Z",
+          "osv_id": "GHSA-p99v-5w3c-jqq9",
+          "published": "2021-06-10T17:21:12Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:H/VA:N/SC:N/SI:N/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "640e90bc1520b0a5630c258289825759c9f4a018c414ac3295f15f2e5f6be8a6",
+          "summary": "Django Access Control Bypass possibly leading to SSRF, RFI, and LFI attacks ",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2021-32052"
+          ],
+          "database_severity": "MODERATE",
+          "modified": "2024-09-20T15:33:15.953439Z",
+          "osv_id": "GHSA-qm57-vhq3-3fwf",
+          "published": "2021-06-09T17:14:51Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "5612e8eb4f1f67a22ce61e7e081ee3378345ab72791bd6bceeb2efeec094aeaf",
+          "summary": "Header injection possible in Django",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2025-64458"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2026-06-05T14:45:50.558008837Z",
+          "osv_id": "GHSA-qw25-v68c-qjf3",
+          "published": "2025-11-05T15:31:07Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "e5e0de38cddaf38175e181753c852d55c832a73358d42002a8c123396ce27111",
+          "summary": "Django has a denial-of-service vulnerability in HttpResponseRedirect and HttpResponsePermanentRedirect on Windows",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2024-45231"
+          ],
+          "database_severity": "MODERATE",
+          "modified": "2026-07-07T17:57:34.018251439Z",
+          "osv_id": "GHSA-rrqc-c2jx-6jgv",
+          "published": "2024-10-08T18:33:13Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "116f2bd6fe589b02d8a5db4b83cc7cc99f1e8b04c540f1f74df308f2d0e81661",
+          "summary": "Django allows enumeration of user e-mail addresses",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2021-31542"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2024-09-20T15:33:18.289155Z",
+          "osv_id": "GHSA-rxjp-mfm9-w4wr",
+          "published": "2021-06-04T21:15:56Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "1ff1e8443f8fd61cceff0f333ad83fe252a08ffe8d469bf6286497ba39803f54",
+          "summary": "Path Traversal in Django",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2021-44420"
+          ],
+          "database_severity": "MODERATE",
+          "modified": "2024-11-19T05:35:04.095106Z",
+          "osv_id": "GHSA-v6rh-hp5x-86rv",
+          "published": "2021-12-09T19:09:37Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "52ca594d16d5e3243d5262e63da3b55517d77bf0a878ff1bfa3d00a52e56389b",
+          "summary": "Potential bypass of an upstream access control based on URL paths in Django",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2019-14235"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2024-09-20T16:35:02.132194Z",
+          "osv_id": "GHSA-v9qg-3j8p-r63v",
+          "published": "2019-08-06T01:43:31Z",
+          "severity": [
+            {
+              "score": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "e3e7b18ff745c6c90b1b365d360be23bba7b0a0807fc2705c6d48a95b7d0bcd9",
+          "summary": "Uncontrolled Recursion in Django",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2019-19844"
+          ],
+          "database_severity": "CRITICAL",
+          "modified": "2024-09-20T15:24:05.816291Z",
+          "osv_id": "GHSA-vfq6-hq5r-27r6",
+          "published": "2020-01-16T22:35:12Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "a784d7ec5e3adad13fab97a45c76f984197ef3e9c1ed263ee104b3b34e845d66",
+          "summary": "Django Potential account hijack via password reset form",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2022-28347"
+          ],
+          "database_severity": "CRITICAL",
+          "modified": "2025-02-21T05:41:01.294618Z",
+          "osv_id": "GHSA-w24h-v9qh-8gxj",
+          "published": "2022-04-13T00:00:33Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "1e0e1f08498d41f350099e2fa2de95d674d46b6bbcf720c09901ebe6c57a8ea4",
+          "summary": "SQL Injection in Django",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2020-13254"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2024-11-19T05:38:34.283599Z",
+          "osv_id": "GHSA-wpjr-j57x-wxfw",
+          "published": "2020-06-05T16:20:44Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "b991e8ccdc91948a143e9ae028b67cf55ca9c211bffb195aa3608b2ad0b56b10",
+          "summary": "Data leakage via cache key collision in Django",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2021-28658"
+          ],
+          "database_severity": "MODERATE",
+          "modified": "2024-09-20T16:08:04.482170Z",
+          "osv_id": "GHSA-xgxc-v2qg-chmh",
+          "published": "2021-04-08T18:11:48Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "200e0a7c88a7b96842c53fe199aea2119b93a16696b8ca6e95ca5617fe55781e",
+          "summary": "Directory Traversal in Django",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2019-12781"
+          ],
+          "database_severity": null,
+          "modified": "2023-11-08T04:01:06.373410Z",
+          "osv_id": "PYSEC-2019-10",
+          "published": "2019-07-01T14:15:00Z",
+          "severity": [],
+          "source_record_sha256": "2d1636a70db4c8f2b85eb08d1eb62b28abfb70daf28bf93859cfa3e41f27dd3d",
+          "summary": "No summary supplied by source.",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2019-14232"
+          ],
+          "database_severity": null,
+          "modified": "2023-11-08T04:01:09.281488Z",
+          "osv_id": "PYSEC-2019-11",
+          "published": "2019-08-02T15:15:00Z",
+          "severity": [],
+          "source_record_sha256": "fe657550a13d407d0c01b5fcf2f15f633f335a42289011de91b841b864c54027",
+          "summary": "No summary supplied by source.",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2019-14233"
+          ],
+          "database_severity": null,
+          "modified": "2023-11-08T04:01:09.343031Z",
+          "osv_id": "PYSEC-2019-12",
+          "published": "2019-08-02T15:15:00Z",
+          "severity": [],
+          "source_record_sha256": "214a064f76490c20c696a70913711cf1ba5acb35b2dfdf8df877d4a389d18e27",
+          "summary": "No summary supplied by source.",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2019-14234"
+          ],
+          "database_severity": null,
+          "modified": "2023-11-08T04:01:09.403667Z",
+          "osv_id": "PYSEC-2019-13",
+          "published": "2019-08-09T13:15:00Z",
+          "severity": [],
+          "source_record_sha256": "7f94c3ef65832fd7cbb7a8b56fd36cc68807da306f9db41a58e5c591d12d4fbe",
+          "summary": "No summary supplied by source.",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2019-14235"
+          ],
+          "database_severity": null,
+          "modified": "2023-11-08T04:01:09.464696Z",
+          "osv_id": "PYSEC-2019-14",
+          "published": "2019-08-02T15:15:00Z",
+          "severity": [],
+          "source_record_sha256": "03243aa453929d23f6ad53b22bf591f1abd710ae1f19c7a0eab133964fd9cbc4",
+          "summary": "No summary supplied by source.",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2019-19118"
+          ],
+          "database_severity": null,
+          "modified": "2023-11-08T04:01:27.740072Z",
+          "osv_id": "PYSEC-2019-15",
+          "published": "2019-12-02T14:15:00Z",
+          "severity": [],
+          "source_record_sha256": "4d5f2bdb787d68109b3daeae3321145711a0ac3def95fd8909d9e312cb37f7e2",
+          "summary": "No summary supplied by source.",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2019-19844"
+          ],
+          "database_severity": null,
+          "modified": "2023-11-08T04:01:29.652595Z",
+          "osv_id": "PYSEC-2019-16",
+          "published": "2019-12-18T19:15:00Z",
+          "severity": [],
+          "source_record_sha256": "fc9a88bbf6dc3c65ca3efa20a48c1a99ca0b714b30fbb4ee85efeff4b9d3fc22",
+          "summary": "No summary supplied by source.",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2019-12308"
+          ],
+          "database_severity": null,
+          "modified": "2023-11-08T04:01:03.504446Z",
+          "osv_id": "PYSEC-2019-79",
+          "published": "2019-06-03T17:29:00Z",
+          "severity": [],
+          "source_record_sha256": "12cd073230d64d64f15ee5a5ecb999d396886d419a9f0e2e6d827d20b7f44fb5",
+          "summary": "No summary supplied by source.",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2020-13254"
+          ],
+          "database_severity": null,
+          "modified": "2023-12-06T01:00:04.827501Z",
+          "osv_id": "PYSEC-2020-31",
+          "published": "2020-06-03T14:15:00Z",
+          "severity": [],
+          "source_record_sha256": "3a0565ba7725d05999b61ed8c08fdf5a5eed3b73f658d21a3d12b1c5c72f9f4e",
+          "summary": "No summary supplied by source.",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2020-13596"
+          ],
+          "database_severity": null,
+          "modified": "2023-12-06T01:00:11.037950Z",
+          "osv_id": "PYSEC-2020-32",
+          "published": "2020-06-03T14:15:00Z",
+          "severity": [],
+          "source_record_sha256": "4a6ed8f707893b25d35024b9a49605dac94d58674e55f9d85f81ad37a37bf0ec",
+          "summary": "No summary supplied by source.",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2020-24583"
+          ],
+          "database_severity": null,
+          "modified": "2023-12-06T01:00:24.074093Z",
+          "osv_id": "PYSEC-2020-33",
+          "published": "2020-09-01T13:15:00Z",
+          "severity": [],
+          "source_record_sha256": "84c65fbbee81b59d1763b2c3ddbdc8694bfe13e13b2897922bee47bbc03ab104",
+          "summary": "No summary supplied by source.",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2020-24584"
+          ],
+          "database_severity": null,
+          "modified": "2023-12-06T01:00:24.135957Z",
+          "osv_id": "PYSEC-2020-34",
+          "published": "2020-09-01T13:15:00Z",
+          "severity": [],
+          "source_record_sha256": "d30ca7d3cd451ee67359b9ff10d31bded9ac6b46a2f5b7fec7d5cb9d816e727c",
+          "summary": "No summary supplied by source.",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2020-7471"
+          ],
+          "database_severity": null,
+          "modified": "2023-12-06T01:00:38.606116Z",
+          "osv_id": "PYSEC-2020-35",
+          "published": "2020-02-03T12:15:00Z",
+          "severity": [],
+          "source_record_sha256": "3733499c27a7cdb34080b1be4635a6734329012deba1f93b606842c78df6f28b",
+          "summary": "No summary supplied by source.",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2020-9402"
+          ],
+          "database_severity": null,
+          "modified": "2026-07-09T16:56:16.012032693Z",
+          "osv_id": "PYSEC-2020-36",
+          "published": "2020-03-05T15:15:00Z",
+          "severity": [],
+          "source_record_sha256": "e42d0e7813ffff0a2b5c7abacab65287464be0705a5a5816b20bcc7bd85c8829",
+          "summary": "No summary supplied by source.",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2021-44420"
+          ],
+          "database_severity": null,
+          "modified": "2023-12-06T01:01:41.266810Z",
+          "osv_id": "PYSEC-2021-439",
+          "published": "2021-12-08T00:15:00Z",
+          "severity": [],
+          "source_record_sha256": "10df3d116c833f9831e8f798162993afe15068f31ecfcfcabb38c0711910e8f2",
+          "summary": "No summary supplied by source.",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2021-28658"
+          ],
+          "database_severity": null,
+          "modified": "2023-12-06T01:01:01.677077Z",
+          "osv_id": "PYSEC-2021-6",
+          "published": "2021-04-06T15:15:00Z",
+          "severity": [],
+          "source_record_sha256": "f78bdf7cdb97d106976d402c8db62e1336dce196280415924db2b3cc4ccffced",
+          "summary": "No summary supplied by source.",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2021-31542"
+          ],
+          "database_severity": null,
+          "modified": "2023-12-06T01:01:11.745914Z",
+          "osv_id": "PYSEC-2021-7",
+          "published": "2021-05-05T15:15:00Z",
+          "severity": [],
+          "source_record_sha256": "d438a823927bce48955be52cbe28103da4ce0c05e9f3d1b71322d736971f98e3",
+          "summary": "No summary supplied by source.",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2021-32052"
+          ],
+          "database_severity": null,
+          "modified": "2023-12-06T01:01:13.553156Z",
+          "osv_id": "PYSEC-2021-8",
+          "published": "2021-05-06T16:15:00Z",
+          "severity": [],
+          "source_record_sha256": "642f6e27856bd9f9c57488264f826c94befef3168b5f5ca93c82d8104697f050",
+          "summary": "No summary supplied by source.",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2021-3281"
+          ],
+          "database_severity": null,
+          "modified": "2023-12-06T01:01:15.916389Z",
+          "osv_id": "PYSEC-2021-9",
+          "published": "2021-02-02T07:15:00Z",
+          "severity": [],
+          "source_record_sha256": "3b5dce9eeeb461861421cda8e5ffa4b924a57a63af7344095e9ff04b4c63da16",
+          "summary": "No summary supplied by source.",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2021-33203"
+          ],
+          "database_severity": null,
+          "modified": "2023-12-06T01:01:16.755410Z",
+          "osv_id": "PYSEC-2021-98",
+          "published": "2021-06-08T18:15:00Z",
+          "severity": [],
+          "source_record_sha256": "94f6eb92fc6cc4fdfaf1d4d97a1106cd12604d741a061f85950be98b12921662",
+          "summary": "No summary supplied by source.",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2021-33571"
+          ],
+          "database_severity": null,
+          "modified": "2023-12-06T01:01:16.815257Z",
+          "osv_id": "PYSEC-2021-99",
+          "published": "2021-06-08T18:15:00Z",
+          "severity": [],
+          "source_record_sha256": "daf10e720279a55c41f0c3720eeab4a5fe28650f15c4bbc1f579878d704e28f1",
+          "summary": "No summary supplied by source.",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2021-45115"
+          ],
+          "database_severity": null,
+          "modified": "2023-12-06T01:01:43.028018Z",
+          "osv_id": "PYSEC-2022-1",
+          "published": "2022-01-05T00:15:00Z",
+          "severity": [],
+          "source_record_sha256": "00216c6dbb8351c27bf3546aac87ce3eb7e925bb124f3474b55d4638932d7a7f",
+          "summary": "No summary supplied by source.",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2022-22818"
+          ],
+          "database_severity": null,
+          "modified": "2023-12-06T01:01:58.226668Z",
+          "osv_id": "PYSEC-2022-19",
+          "published": "2022-02-03T02:15:00Z",
+          "severity": [],
+          "source_record_sha256": "7413e347265e5ee297ad26d0a036a8c4acfed561312bec2e870828fde8940568",
+          "summary": "No summary supplied by source.",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2022-28346"
+          ],
+          "database_severity": null,
+          "modified": "2023-12-06T01:02:11.594317Z",
+          "osv_id": "PYSEC-2022-190",
+          "published": "2022-04-12T05:15:00Z",
+          "severity": [],
+          "source_record_sha256": "8e0cf2d3d8476f874e3669415449dd7b643035b0f1ac983cd5b1e736a19af692",
+          "summary": "No summary supplied by source.",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2022-28347"
+          ],
+          "database_severity": null,
+          "modified": "2023-12-06T01:02:11.666037Z",
+          "osv_id": "PYSEC-2022-191",
+          "published": "2022-04-12T05:15:00Z",
+          "severity": [],
+          "source_record_sha256": "96fcc3d496859c03cf4effd9a890fc1df59ba08ffe6c8d463c3ce054667bdcff",
+          "summary": "No summary supplied by source.",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2021-45116"
+          ],
+          "database_severity": null,
+          "modified": "2023-12-06T01:01:43.088680Z",
+          "osv_id": "PYSEC-2022-2",
+          "published": "2022-01-05T00:15:00Z",
+          "severity": [],
+          "source_record_sha256": "be24411e40cd6ca17d1634152902bef6130706e4577aae4e1619d2c7fbe7498b",
+          "summary": "No summary supplied by source.",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2022-23833"
+          ],
+          "database_severity": null,
+          "modified": "2023-12-06T01:02:02.697371Z",
+          "osv_id": "PYSEC-2022-20",
+          "published": "2022-02-03T02:15:00Z",
+          "severity": [],
+          "source_record_sha256": "7260cbe25ec3bf56b02f970ff2df1fbfe7f152fd6e875cef0ab3893b9c3354d1",
+          "summary": "No summary supplied by source.",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2021-45452"
+          ],
+          "database_severity": null,
+          "modified": "2023-12-06T01:01:43.819827Z",
+          "osv_id": "PYSEC-2022-3",
+          "published": "2022-01-05T00:15:00Z",
+          "severity": [],
+          "source_record_sha256": "d65cc97a2b658b7549339301be632c4c8810ac585f5ea3c46dbd08c0012a3a43",
+          "summary": "No summary supplied by source.",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2024-45231"
+          ],
+          "database_severity": null,
+          "modified": "2026-07-07T17:57:34.018251439Z",
+          "osv_id": "PYSEC-2026-1297",
+          "published": "2026-07-07T14:34:42.697597Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "e2e5863f1d3a341a2e2a6a9cde2001964db4a08cdbaa76aece6276e9210c38ee",
+          "summary": "Django allows enumeration of user e-mail addresses",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2019-11358"
+          ],
+          "database_severity": null,
+          "modified": "2026-07-06T08:11:04.714032155Z",
+          "osv_id": "PYSEC-2026-628",
+          "published": "2026-07-02T14:13:09.430399Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "897c608154c988843cf7d0a8857e6231c917249ffed59f116c82a0baea1b0915",
+          "summary": "XSS in jQuery as used in Drupal, Backdrop CMS, and other products",
+          "withdrawn": null
+        }
+      ],
+      "component_id": "AEG-CMP-0005",
+      "criticality": "HIGH",
+      "cve_aliases": [
+        "CVE-2019-11358",
+        "CVE-2019-12308",
+        "CVE-2019-12781",
+        "CVE-2019-14232",
+        "CVE-2019-14233",
+        "CVE-2019-14234",
+        "CVE-2019-14235",
+        "CVE-2019-19118",
+        "CVE-2019-19844",
+        "CVE-2020-13254",
+        "CVE-2020-13596",
+        "CVE-2020-24583",
+        "CVE-2020-24584",
+        "CVE-2020-7471",
+        "CVE-2020-9402",
+        "CVE-2021-28658",
+        "CVE-2021-31542",
+        "CVE-2021-32052",
+        "CVE-2021-3281",
+        "CVE-2021-33203",
+        "CVE-2021-33571",
+        "CVE-2021-44420",
+        "CVE-2021-45115",
+        "CVE-2021-45116",
+        "CVE-2021-45452",
+        "CVE-2022-22818",
+        "CVE-2022-23833",
+        "CVE-2022-28346",
+        "CVE-2022-28347",
+        "CVE-2022-36359",
+        "CVE-2024-45231",
+        "CVE-2025-48432",
+        "CVE-2025-57833",
+        "CVE-2025-64458",
+        "CVE-2025-64459"
+      ],
+      "details_truncated": false,
+      "internet_exposed": true,
+      "matched_vulnerability_count": 65,
+      "mission_essential": false,
+      "osv_ids": [
+        "GHSA-2gwj-7jmv-h26r",
+        "GHSA-2m34-jcjv-45xf",
+        "GHSA-3gh2-xw74-jmcw",
+        "GHSA-53qw-q765-4fww",
+        "GHSA-68w8-qjq3-2gfm",
+        "GHSA-6c3j-c64m-qhgq",
+        "GHSA-6c7v-2f49-8h26",
+        "GHSA-6cw3-g6wv-c2xv",
+        "GHSA-6r97-cj55-9hrq",
+        "GHSA-6w2r-r2m5-xq5w",
+        "GHSA-7rp2-fm2h-wchj",
+        "GHSA-7xr5-9hcq-chf9",
+        "GHSA-8c5j-9r9f-c6w8",
+        "GHSA-8x94-hmjh-97hq",
+        "GHSA-95rw-fx8r-36v6",
+        "GHSA-c4qh-4vgv-qc6g",
+        "GHSA-fr28-569j-53c4",
+        "GHSA-frmv-pr5f-9mcr",
+        "GHSA-fvgf-6h6h-3322",
+        "GHSA-h5jv-4p7w-64jg",
+        "GHSA-hmr4-m2h5-33qx",
+        "GHSA-hvmf-r92r-27hr",
+        "GHSA-jrh2-hc4r-7jwx",
+        "GHSA-m6gj-h9gm-gw44",
+        "GHSA-p99v-5w3c-jqq9",
+        "GHSA-qm57-vhq3-3fwf",
+        "GHSA-qw25-v68c-qjf3",
+        "GHSA-rrqc-c2jx-6jgv",
+        "GHSA-rxjp-mfm9-w4wr",
+        "GHSA-v6rh-hp5x-86rv",
+        "GHSA-v9qg-3j8p-r63v",
+        "GHSA-vfq6-hq5r-27r6",
+        "GHSA-w24h-v9qh-8gxj",
+        "GHSA-wpjr-j57x-wxfw",
+        "GHSA-xgxc-v2qg-chmh",
+        "PYSEC-2019-10",
+        "PYSEC-2019-11",
+        "PYSEC-2019-12",
+        "PYSEC-2019-13",
+        "PYSEC-2019-14",
+        "PYSEC-2019-15",
+        "PYSEC-2019-16",
+        "PYSEC-2019-79",
+        "PYSEC-2020-31",
+        "PYSEC-2020-32",
+        "PYSEC-2020-33",
+        "PYSEC-2020-34",
+        "PYSEC-2020-35",
+        "PYSEC-2020-36",
+        "PYSEC-2021-439",
+        "PYSEC-2021-6",
+        "PYSEC-2021-7",
+        "PYSEC-2021-8",
+        "PYSEC-2021-9",
+        "PYSEC-2021-98",
+        "PYSEC-2021-99",
+        "PYSEC-2022-1",
+        "PYSEC-2022-19",
+        "PYSEC-2022-190",
+        "PYSEC-2022-191",
+        "PYSEC-2022-2",
+        "PYSEC-2022-20",
+        "PYSEC-2022-3",
+        "PYSEC-2026-1297",
+        "PYSEC-2026-628"
+      ],
+      "package": {
+        "ecosystem": "PyPI",
+        "name": "Django",
+        "version": "2.2.0"
+      },
+      "sector": "EDUCATION",
+      "vulnerability_status": "VULNERABILITIES_IDENTIFIED"
+    },
+    {
+      "advisories": [
+        {
+          "cve_aliases": [
+            "CVE-2023-50447"
+          ],
+          "database_severity": "CRITICAL",
+          "modified": "2026-06-29T12:26:31.072868483Z",
+          "osv_id": "GHSA-3f63-hfp8-52jq",
+          "published": "2024-01-19T21:30:35Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "0ccc774ab85649b6b72d3b010b565269edaa1249465225571b2bf1a7bc640107",
+          "summary": "Arbitrary Code Execution in Pillow",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2024-28219"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2026-07-07T17:57:00.234584017Z",
+          "osv_id": "GHSA-44wm-f244-xhp3",
+          "published": "2024-04-03T03:30:30Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:L/AC:H/PR:L/UI:R/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:A/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "efad836355ea376e4f88a250242e49045997181cd6ec2b2ad615431e14421ef7",
+          "summary": "Pillow buffer overflow vulnerability",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [],
+          "database_severity": "LOW",
+          "modified": "2024-12-05T05:35:12.297192Z",
+          "osv_id": "GHSA-4fx9-vc88-q2xc",
+          "published": "2022-03-11T23:39:27Z",
+          "severity": [],
+          "source_record_sha256": "29eb279c9f7e7ecc255881703a1be50995f7ba222116ef6d694569411beab74b",
+          "summary": "Infinite loop in Pillow",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2021-34552"
+          ],
+          "database_severity": "CRITICAL",
+          "modified": "2024-10-09T21:10:34.327533Z",
+          "osv_id": "GHSA-7534-mm45-c74v",
+          "published": "2021-10-05T20:24:41Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "a9fe6909dd66d7f84365942634e959451eba193609caae166e003d0f85135a5d",
+          "summary": "Buffer Overflow in Pillow",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2023-44271"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2024-10-14T21:23:45.339098Z",
+          "osv_id": "GHSA-8ghj-p4vj-mr35",
+          "published": "2023-11-03T06:36:30Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "95eccb80eccd7cb7e046d318cf13cad4b03aec85594d241a409cf3bc218d7e1d",
+          "summary": "Pillow Denial of Service vulnerability",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2022-22817"
+          ],
+          "database_severity": "CRITICAL",
+          "modified": "2024-10-14T18:26:08.636369Z",
+          "osv_id": "GHSA-8vj2-vxx3-667w",
+          "published": "2022-01-12T20:07:33Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "531209c06eaa90a757cd01e8f04a063d174e83ec12a4b8535c158d15f64207a9",
+          "summary": "Arbitrary expression injection in Pillow",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2021-23437"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2024-10-09T21:08:55.452380Z",
+          "osv_id": "GHSA-98vv-pw6r-q6q4",
+          "published": "2021-09-07T23:08:10Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "a751c0361570aa50430ccadbb8296510702f0e8a3cf380dce7702d09694fdd9b",
+          "summary": "Uncontrolled Resource Consumption in pillow",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2022-24303"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2024-10-14T18:43:28.549080Z",
+          "osv_id": "GHSA-9j59-75qj-795w",
+          "published": "2022-03-11T23:10:32Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:H/VA:H/SC:N/SI:N/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "c56dd45dc9d3759dfd34b1198e1e9ccf4fd162a06e38021e6ef4c27c62790c81",
+          "summary": "Path traversal in Pillow",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2023-4863",
+            "CVE-2023-5129"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2026-07-07T17:56:20.858779255Z",
+          "osv_id": "GHSA-j7hp-h8jx-5ppr",
+          "published": "2023-09-12T15:30:20Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "a148fba54880ef665df4f0820ad84a929d8697d57e1d21012ede3cdf5c5d8b32",
+          "summary": "libwebp: OOB write in BuildHuffmanTable",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2022-45198"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2024-10-14T18:39:06.000592Z",
+          "osv_id": "GHSA-m2vv-5vj5-2hm7",
+          "published": "2022-11-14T12:00:15Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "aeb937f94c41a327dabdd2d17db979ed5e9005cf4448ece64994bf8ecdc101a0",
+          "summary": "Pillow vulnerable to Data Amplification attack.",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2022-22815"
+          ],
+          "database_severity": "MODERATE",
+          "modified": "2024-10-14T18:38:03.414350Z",
+          "osv_id": "GHSA-pw3c-h7wp-cvhx",
+          "published": "2022-01-12T20:07:43Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:L/VA:L/SC:N/SI:N/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "ae580625b0f5f942ace8bba051dbc924dcade2d4aa08c9b03618a7e049d21285",
+          "summary": "Improper Initialization in Pillow",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2026-42310"
+          ],
+          "database_severity": "MODERATE",
+          "modified": "2026-07-13T16:42:37.358429541Z",
+          "osv_id": "GHSA-r73j-pqj5-w3x7",
+          "published": "2026-05-04T20:19:30Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "e4219cb8695b1ea96eda37ea0cf97d2c7482617122efe5d686fea2c2f16cf9e6",
+          "summary": "Pillow has a PDF Parsing Trailer Infinite Loop (DoS)",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2026-42308"
+          ],
+          "database_severity": "MODERATE",
+          "modified": "2026-06-08T23:45:16.414580348Z",
+          "osv_id": "GHSA-wjx4-4jcj-g98j",
+          "published": "2026-05-04T20:18:45Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "c3b553891eeef223799f6b1868dfdb4aba97c31b380842ccc7a274e0d34f6b7d",
+          "summary": "Pillow has an integer overflow when processing fonts",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2022-22816"
+          ],
+          "database_severity": "MODERATE",
+          "modified": "2024-10-14T18:38:42.596412Z",
+          "osv_id": "GHSA-xrcv-f9gm-v42c",
+          "published": "2022-01-12T20:07:41Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:L/VA:L/SC:N/SI:N/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "af1b6f5d927d45f3ce3ae65daa0c66ae6a653f97ab1b3832338b311f10d8a4a5",
+          "summary": "Out-of-bounds Read in Pillow",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2021-23437"
+          ],
+          "database_severity": null,
+          "modified": "2023-12-06T01:00:56.992827Z",
+          "osv_id": "PYSEC-2021-317",
+          "published": "2021-09-03T16:15:00Z",
+          "severity": [],
+          "source_record_sha256": "7cbe1f7467e08d689239a05494b26323938e8452cfd0849714a39dd87c1894d6",
+          "summary": "No summary supplied by source.",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2021-34552"
+          ],
+          "database_severity": null,
+          "modified": "2023-12-06T01:01:17.659994Z",
+          "osv_id": "PYSEC-2021-331",
+          "published": "2021-07-13T17:15:00Z",
+          "severity": [],
+          "source_record_sha256": "f87fe09543d359a34885c53f3beccdf2865dcecc2eddc8ef9cb41a62278fea85",
+          "summary": "No summary supplied by source.",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2022-22817"
+          ],
+          "database_severity": null,
+          "modified": "2023-12-06T01:01:58.166055Z",
+          "osv_id": "PYSEC-2022-10",
+          "published": "2022-01-10T14:12:00Z",
+          "severity": [],
+          "source_record_sha256": "8d01c15eca495f8437b41721897a64a8a44ac72eec4014cf041b570034e87e5f",
+          "summary": "No summary supplied by source.",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2022-24303"
+          ],
+          "database_severity": null,
+          "modified": "2023-12-06T01:02:03.848876Z",
+          "osv_id": "PYSEC-2022-168",
+          "published": "2022-03-28T02:15:00Z",
+          "severity": [],
+          "source_record_sha256": "2a690f6a15b2a72f3e3c3ad8c54c419b8f087160c90541c034f7f1d97513d2eb",
+          "summary": "No summary supplied by source.",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2022-45198"
+          ],
+          "database_severity": null,
+          "modified": "2026-06-10T17:02:31.598361984Z",
+          "osv_id": "PYSEC-2022-42979",
+          "published": "2022-11-14T07:15:00Z",
+          "severity": [],
+          "source_record_sha256": "5ab809db121bb6ed57554e4810ef7fe3f0024389269cccaa394f622dc582a96e",
+          "summary": "No summary supplied by source.",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2022-45199"
+          ],
+          "database_severity": null,
+          "modified": "2026-06-10T17:02:31.598026305Z",
+          "osv_id": "PYSEC-2022-42980",
+          "published": "2022-11-14T07:15:00Z",
+          "severity": [],
+          "source_record_sha256": "a2b98e0f0158b41264c85038838f76631a22839ffa60c13b65c3281929e590aa",
+          "summary": "No summary supplied by source.",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2022-22815"
+          ],
+          "database_severity": null,
+          "modified": "2023-12-06T01:01:58.043772Z",
+          "osv_id": "PYSEC-2022-8",
+          "published": "2022-01-10T14:12:00Z",
+          "severity": [],
+          "source_record_sha256": "96054a19824f191e777983d9207d96db9d7ff3e0e793f4eaa02c05215f241a40",
+          "summary": "No summary supplied by source.",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2022-22816"
+          ],
+          "database_severity": null,
+          "modified": "2023-12-06T01:01:58.105368Z",
+          "osv_id": "PYSEC-2022-9",
+          "published": "2022-01-10T14:12:00Z",
+          "severity": [],
+          "source_record_sha256": "f3d4cb1cc207b9ce416ddb858c869b8ced5f81a2bc6bd4b44bfe2ed9639f82b3",
+          "summary": "No summary supplied by source.",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [],
+          "database_severity": null,
+          "modified": "2026-02-04T03:22:30.928037Z",
+          "osv_id": "PYSEC-2023-175",
+          "published": "2023-09-20T05:29:33Z",
+          "severity": [],
+          "source_record_sha256": "c2d91e7c12cce4a69d83c36776178783110b4b76b6a314149dbd2bd3c7d6b2c4",
+          "summary": "No summary supplied by source.",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2023-44271"
+          ],
+          "database_severity": null,
+          "modified": "2026-06-10T17:02:31.597832523Z",
+          "osv_id": "PYSEC-2023-227",
+          "published": "2023-11-03T05:15:00Z",
+          "severity": [],
+          "source_record_sha256": "3a72b8980de71a60e855f5a4aa3c53f1a2b42860a41e3da2633aa45062e95f8a",
+          "summary": "No summary supplied by source.",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2026-42308"
+          ],
+          "database_severity": null,
+          "modified": "2026-05-27T13:56:18.230226284Z",
+          "osv_id": "PYSEC-2026-165",
+          "published": "2026-05-09T06:16:09.793Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "48aa9e3963f8ba82e6b28d03ad517cba3d0cf247fdf680f68df843a5d5f0ec18",
+          "summary": "No summary supplied by source.",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2024-28219"
+          ],
+          "database_severity": null,
+          "modified": "2026-07-07T17:57:00.234584017Z",
+          "osv_id": "PYSEC-2026-1793",
+          "published": "2026-07-07T11:45:37.253510Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:L/AC:H/PR:L/UI:R/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:A/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "0dc6f92cb356820eaaf6ad604b94a32e21013d81f708e29dab1c87b930fb1fd7",
+          "summary": "Pillow buffer overflow vulnerability",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2023-4863",
+            "CVE-2023-5129"
+          ],
+          "database_severity": null,
+          "modified": "2026-07-07T17:56:20.858779255Z",
+          "osv_id": "PYSEC-2026-1794",
+          "published": "2026-07-07T11:45:24.102852Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "64eb5d08df1ff0b6d086e81c380d6154ae9da1597b82cc58e23fcbfff86d51e0",
+          "summary": "libwebp: OOB write in BuildHuffmanTable",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2026-54059"
+          ],
+          "database_severity": null,
+          "modified": "2026-07-13T07:26:49.281845979Z",
+          "osv_id": "PYSEC-2026-2253",
+          "published": "2026-07-06T19:17:08.127Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "c9bba8916ae41bd5ea4ff284f1c23429ca4cee32490fbfb633a57db39f03b354",
+          "summary": "No summary supplied by source.",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2026-54060"
+          ],
+          "database_severity": null,
+          "modified": "2026-07-13T07:26:56.196935469Z",
+          "osv_id": "PYSEC-2026-2254",
+          "published": "2026-07-06T19:17:08.270Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "b6ebc8ae2c5f0360ca0c8e979284ed4143f59b51772895a1a5be7bd6b9f80e58",
+          "summary": "No summary supplied by source.",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2026-55379"
+          ],
+          "database_severity": null,
+          "modified": "2026-07-13T07:26:26.726353373Z",
+          "osv_id": "PYSEC-2026-2255",
+          "published": "2026-07-06T19:17:08.577Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "b5dc4e581e70f124652578d22687c48a11637b130552092fdc98eb7b7ccad3e8",
+          "summary": "No summary supplied by source.",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2026-55380"
+          ],
+          "database_severity": null,
+          "modified": "2026-07-13T07:26:17.085341343Z",
+          "osv_id": "PYSEC-2026-2256",
+          "published": "2026-07-06T19:17:08.703Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "9003ef6bc9e5447b9c22827a76e394e3ac0690f224cf00d725c3075dd3054ffd",
+          "summary": "No summary supplied by source.",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2026-55798"
+          ],
+          "database_severity": null,
+          "modified": "2026-07-13T07:26:48.229039344Z",
+          "osv_id": "PYSEC-2026-2257",
+          "published": "2026-07-06T19:17:08.830Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:L/AC:H/PR:N/UI:R/S:U/C:L/I:L/A:L",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "05e399f3772702266d1c1b5be1ca00cc5287fa49499347c1b04c0c714f5a4306",
+          "summary": "No summary supplied by source.",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2026-42310"
+          ],
+          "database_severity": null,
+          "modified": "2026-07-13T16:42:37.358429541Z",
+          "osv_id": "PYSEC-2026-2874",
+          "published": "2026-07-13T15:02:57.093476Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "dbffc54c35c72c53c9f0772fad8d8a630828945754e31dbfd95542e547d06403",
+          "summary": "Pillow has a PDF Parsing Trailer Infinite Loop (DoS)",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2026-59199"
+          ],
+          "database_severity": null,
+          "modified": "2026-07-15T20:11:36.266805254Z",
+          "osv_id": "PYSEC-2026-3451",
+          "published": "2026-07-14T16:17:01.937Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "acd9f9021494fef9a6c356f240cd17a66b54262d67c69052ba56b529254418d7",
+          "summary": "No summary supplied by source.",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2026-59205"
+          ],
+          "database_severity": null,
+          "modified": "2026-07-15T20:11:15.582336837Z",
+          "osv_id": "PYSEC-2026-3453",
+          "published": "2026-07-14T16:17:02.370Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "697a32e78dfc68bcebf3713f7f9ef9568749f76db9c734b7f7406edfea92f2da",
+          "summary": "No summary supplied by source.",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2023-50447"
+          ],
+          "database_severity": null,
+          "modified": "2026-07-01T20:23:00.296282Z",
+          "osv_id": "PYSEC-2026-457",
+          "published": "2026-06-29T11:50:41.331802Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "192f27c2744c48727b774bae9efccb3c7f5d57519b4192181f00a165a60690c3",
+          "summary": "Arbitrary Code Execution in Pillow",
+          "withdrawn": null
+        }
+      ],
+      "component_id": "AEG-CMP-0006",
+      "criticality": "MEDIUM",
+      "cve_aliases": [
+        "CVE-2021-23437",
+        "CVE-2021-34552",
+        "CVE-2022-22815",
+        "CVE-2022-22816",
+        "CVE-2022-22817",
+        "CVE-2022-24303",
+        "CVE-2022-45198",
+        "CVE-2022-45199",
+        "CVE-2023-44271",
+        "CVE-2023-4863",
+        "CVE-2023-50447",
+        "CVE-2023-5129",
+        "CVE-2024-28219",
+        "CVE-2026-42308",
+        "CVE-2026-42310",
+        "CVE-2026-54059",
+        "CVE-2026-54060",
+        "CVE-2026-55379",
+        "CVE-2026-55380",
+        "CVE-2026-55798",
+        "CVE-2026-59199",
+        "CVE-2026-59205"
+      ],
+      "details_truncated": false,
+      "internet_exposed": false,
+      "matched_vulnerability_count": 36,
+      "mission_essential": false,
+      "osv_ids": [
+        "GHSA-3f63-hfp8-52jq",
+        "GHSA-44wm-f244-xhp3",
+        "GHSA-4fx9-vc88-q2xc",
+        "GHSA-7534-mm45-c74v",
+        "GHSA-8ghj-p4vj-mr35",
+        "GHSA-8vj2-vxx3-667w",
+        "GHSA-98vv-pw6r-q6q4",
+        "GHSA-9j59-75qj-795w",
+        "GHSA-j7hp-h8jx-5ppr",
+        "GHSA-m2vv-5vj5-2hm7",
+        "GHSA-pw3c-h7wp-cvhx",
+        "GHSA-r73j-pqj5-w3x7",
+        "GHSA-wjx4-4jcj-g98j",
+        "GHSA-xrcv-f9gm-v42c",
+        "PYSEC-2021-317",
+        "PYSEC-2021-331",
+        "PYSEC-2022-10",
+        "PYSEC-2022-168",
+        "PYSEC-2022-42979",
+        "PYSEC-2022-42980",
+        "PYSEC-2022-8",
+        "PYSEC-2022-9",
+        "PYSEC-2023-175",
+        "PYSEC-2023-227",
+        "PYSEC-2026-165",
+        "PYSEC-2026-1793",
+        "PYSEC-2026-1794",
+        "PYSEC-2026-2253",
+        "PYSEC-2026-2254",
+        "PYSEC-2026-2255",
+        "PYSEC-2026-2256",
+        "PYSEC-2026-2257",
+        "PYSEC-2026-2874",
+        "PYSEC-2026-3451",
+        "PYSEC-2026-3453",
+        "PYSEC-2026-457"
+      ],
+      "package": {
+        "ecosystem": "PyPI",
+        "name": "Pillow",
+        "version": "8.2.0"
+      },
+      "sector": "EDUCATION",
+      "vulnerability_status": "VULNERABILITIES_IDENTIFIED"
+    },
+    {
+      "advisories": [
+        {
+          "cve_aliases": [
+            "CVE-2025-66471"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2026-07-07T17:56:33.872074196Z",
+          "osv_id": "GHSA-2xpw-w6gg-jr37",
+          "published": "2025-12-05T18:15:54Z",
+          "severity": [
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:H",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "ce307cc69aafc4cbc07a7860168c478994ac153e1f28e160248fc64d809e044a",
+          "summary": "urllib3 streaming API improperly handles highly compressed data",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2024-37891"
+          ],
+          "database_severity": "MODERATE",
+          "modified": "2026-07-07T17:56:53.715123733Z",
+          "osv_id": "GHSA-34jh-p97f-mpxf",
+          "published": "2024-06-17T21:37:20Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:N/A:N",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "e8de5d28d98da0a3331994abd815834d16efb64e3e8b62b3c0a43b02e447c478",
+          "summary": "urllib3's Proxy-Authorization request header isn't stripped during cross-origin redirects",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2026-21441"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2026-07-07T17:56:31.346111893Z",
+          "osv_id": "GHSA-38jv-5279-wg99",
+          "published": "2026-01-07T19:18:14Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:H",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "a7531afd5f231199b28b622567eca67dc129385ffc4ab6d184891492e20d369a",
+          "summary": "Decompression-bomb safeguards bypassed when following HTTP redirects (streaming API)",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2023-45803"
+          ],
+          "database_severity": "MODERATE",
+          "modified": "2026-02-04T03:30:16.767903Z",
+          "osv_id": "GHSA-g4mx-q9vg-27p4",
+          "published": "2023-10-17T20:15:25Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:A/AC:H/PR:H/UI:N/S:U/C:H/I:N/A:N",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:A/AC:L/AT:P/PR:H/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "dfdbd784040e4684ae0765a2092b19f8e9af18e839826ab1dedf3a09c21cb409",
+          "summary": "urllib3's request body not stripped after redirect from 303 status changes request method to GET",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2025-66418"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2026-07-07T17:57:28.931610368Z",
+          "osv_id": "GHSA-gm62-xv2j-4w53",
+          "published": "2025-12-05T18:15:19Z",
+          "severity": [
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:H",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "58560b7e32f05fd2e6f3e7936cfbba42ca76e1715718403f2d800f5962d1b341",
+          "summary": "urllib3 allows an unbounded number of links in the decompression chain",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2020-7212"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2024-11-18T22:35:00.503678Z",
+          "osv_id": "GHSA-hmv2-79q8-fv6g",
+          "published": "2021-04-30T17:31:43Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "73c0ce405f366f212da0be128e7f820713ceeb037af965817dc5fc60ce2cbc55",
+          "summary": "Uncontrolled Resource Consumption in urllib3",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2025-50181"
+          ],
+          "database_severity": "MODERATE",
+          "modified": "2026-07-07T17:56:41.872294653Z",
+          "osv_id": "GHSA-pq67-6m6q-mj2v",
+          "published": "2025-06-18T17:50:00Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "6d2720ec2848c5dedf83d5d5c2373f3db46f4a9631894904db3f2bf6e7eed87e",
+          "summary": "urllib3 redirects are not disabled when retries are disabled on PoolManager instantiation",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2026-44431"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2026-05-20T08:11:43.145797382Z",
+          "osv_id": "GHSA-qccp-gfcp-xxvc",
+          "published": "2026-05-11T14:51:20Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "08f0004cdd2394bf96a693e2d0565c9e732c548424d54d21070212cab9e0602b",
+          "summary": "urllib3: Sensitive headers forwarded across origins in proxied low-level redirects",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2023-43804"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2026-02-04T02:58:30.152562Z",
+          "osv_id": "GHSA-v845-jxx5-vc9f",
+          "published": "2023-10-02T23:27:05Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:N",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:P/PR:H/UI:N/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "f5792506c23a7873292295f501c31695a0b64c6e01c1f6574ec34a6ae1dd4782",
+          "summary": "`Cookie` HTTP header isn't stripped on cross-origin redirects",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2020-26137"
+          ],
+          "database_severity": "MODERATE",
+          "modified": "2024-11-18T22:47:07.792720Z",
+          "osv_id": "GHSA-wqvq-5m8c-6g24",
+          "published": "2021-06-18T18:46:43Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "757265e5c43bfe659e2e3b40a9785a768d2ad0eb9b03ee189cc974d8fc66c5ac",
+          "summary": "CRLF injection in urllib3",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2020-26137"
+          ],
+          "database_severity": null,
+          "modified": "2023-11-08T04:03:14.251187Z",
+          "osv_id": "PYSEC-2020-148",
+          "published": "2020-09-30T18:15:00Z",
+          "severity": [],
+          "source_record_sha256": "c9b82b7a59b21d2a860f9aec3faefb0740a63d3ee5f363a15ea0e57434e5a502",
+          "summary": "No summary supplied by source.",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2020-7212"
+          ],
+          "database_severity": null,
+          "modified": "2023-11-08T04:03:58.967412Z",
+          "osv_id": "PYSEC-2020-149",
+          "published": "2020-03-06T20:15:00Z",
+          "severity": [],
+          "source_record_sha256": "ceb5fd23ba9181abe0d8d49b9231839e86131e64e677f6744de1648c4ec778b3",
+          "summary": "No summary supplied by source.",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2021-33503"
+          ],
+          "database_severity": null,
+          "modified": "2026-06-08T10:15:12.134263625Z",
+          "osv_id": "PYSEC-2021-108",
+          "published": "2021-06-29T11:15:00Z",
+          "severity": [],
+          "source_record_sha256": "c00a1b1653b7b2280fece306c81fb332a305bd891fab86120ee3fa1a6e981aa9",
+          "summary": "No summary supplied by source.",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2023-43804"
+          ],
+          "database_severity": null,
+          "modified": "2023-11-08T04:13:33.452167Z",
+          "osv_id": "PYSEC-2023-192",
+          "published": "2023-10-04T17:15:00Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "103f0d0976ebd665b16245bf263b624493eea82167400e47665fd2c28d98d3c8",
+          "summary": "No summary supplied by source.",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2023-45803"
+          ],
+          "database_severity": null,
+          "modified": "2023-11-08T04:13:39.165450Z",
+          "osv_id": "PYSEC-2023-212",
+          "published": "2023-10-17T20:15:00Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:A/AC:H/PR:H/UI:N/S:U/C:H/I:N/A:N",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "3309ff14cd82af0dc99e460a3c8bbb4117833d945f8f0847d89d5c5a618f162a",
+          "summary": "No summary supplied by source.",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2026-44431"
+          ],
+          "database_severity": null,
+          "modified": "2026-05-20T09:19:20.983812Z",
+          "osv_id": "PYSEC-2026-141",
+          "published": "2026-05-13T16:16:57.150Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "02bc56342e0cc9b2f1380e5ca86014bb379676a9b43bdefe2152b6e6dda3677d",
+          "summary": "No summary supplied by source.",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2025-66471"
+          ],
+          "database_severity": null,
+          "modified": "2026-07-07T17:48:15.379954669Z",
+          "osv_id": "PYSEC-2026-1994",
+          "published": "2026-07-07T16:03:12.332335Z",
+          "severity": [
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:H",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "cc34e692407eaa636769972a73a3a24771a8783dc063be7c16ced9b5013d931f",
+          "summary": "urllib3 streaming API improperly handles highly compressed data",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2024-37891"
+          ],
+          "database_severity": null,
+          "modified": "2026-07-07T17:48:15.400192088Z",
+          "osv_id": "PYSEC-2026-1995",
+          "published": "2026-07-07T14:34:34.848392Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:N/A:N",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "fb7e1da60722b6b8a72fa3af58cbdc86b647db3d5fff84a2e058939ae38298f9",
+          "summary": "urllib3's Proxy-Authorization request header isn't stripped during cross-origin redirects",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2026-21441"
+          ],
+          "database_severity": null,
+          "modified": "2026-07-07T17:48:15.382053236Z",
+          "osv_id": "PYSEC-2026-1996",
+          "published": "2026-07-07T16:03:16.841533Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:H",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "47589fe96d4454d87d78564c115be1fa7328a385b355b4e643088b27b9912252",
+          "summary": "Decompression-bomb safeguards bypassed when following HTTP redirects (streaming API)",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2025-66418"
+          ],
+          "database_severity": null,
+          "modified": "2026-07-07T17:47:54.140852492Z",
+          "osv_id": "PYSEC-2026-1998",
+          "published": "2026-07-07T16:03:12.278581Z",
+          "severity": [
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:H",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "8ec1b8c50d998294796e83374ad636b1a59e41f3b4592495892dd4099da7cc92",
+          "summary": "urllib3 allows an unbounded number of links in the decompression chain",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2025-50181"
+          ],
+          "database_severity": null,
+          "modified": "2026-07-07T17:47:54.161376347Z",
+          "osv_id": "PYSEC-2026-1999",
+          "published": "2026-07-07T16:02:55.519678Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "1f791d295cba48ccd99a237c5059dedc36aecd78bade6087a8b70f612bac8717",
+          "summary": "urllib3 redirects are not disabled when retries are disabled on PoolManager instantiation",
+          "withdrawn": null
+        }
+      ],
+      "component_id": "AEG-CMP-0007",
+      "criticality": "CRITICAL",
+      "cve_aliases": [
+        "CVE-2020-26137",
+        "CVE-2020-7212",
+        "CVE-2021-33503",
+        "CVE-2023-43804",
+        "CVE-2023-45803",
+        "CVE-2024-37891",
+        "CVE-2025-50181",
+        "CVE-2025-66418",
+        "CVE-2025-66471",
+        "CVE-2026-21441",
+        "CVE-2026-44431"
+      ],
+      "details_truncated": false,
+      "internet_exposed": false,
+      "matched_vulnerability_count": 21,
+      "mission_essential": true,
+      "osv_ids": [
+        "GHSA-2xpw-w6gg-jr37",
+        "GHSA-34jh-p97f-mpxf",
+        "GHSA-38jv-5279-wg99",
+        "GHSA-g4mx-q9vg-27p4",
+        "GHSA-gm62-xv2j-4w53",
+        "GHSA-hmv2-79q8-fv6g",
+        "GHSA-pq67-6m6q-mj2v",
+        "GHSA-qccp-gfcp-xxvc",
+        "GHSA-v845-jxx5-vc9f",
+        "GHSA-wqvq-5m8c-6g24",
+        "PYSEC-2020-148",
+        "PYSEC-2020-149",
+        "PYSEC-2021-108",
+        "PYSEC-2023-192",
+        "PYSEC-2023-212",
+        "PYSEC-2026-141",
+        "PYSEC-2026-1994",
+        "PYSEC-2026-1995",
+        "PYSEC-2026-1996",
+        "PYSEC-2026-1998",
+        "PYSEC-2026-1999"
+      ],
+      "package": {
+        "ecosystem": "PyPI",
+        "name": "urllib3",
+        "version": "1.25.2"
+      },
+      "sector": "DEFENCE_LOGISTICS",
+      "vulnerability_status": "VULNERABILITIES_IDENTIFIED"
+    },
+    {
+      "advisories": [
+        {
+          "cve_aliases": [
+            "CVE-2020-14343"
+          ],
+          "database_severity": "CRITICAL",
+          "modified": "2026-02-04T03:33:10.792778Z",
+          "osv_id": "GHSA-8q59-q68h-6hv4",
+          "published": "2021-03-25T21:26:26Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "50ffa1ba1119a2d702d772bfe6ba39654126b6f42f838889086c7d87335a71cd",
+          "summary": "Improper Input Validation in PyYAML",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2020-14343"
+          ],
+          "database_severity": null,
+          "modified": "2023-11-08T04:02:26.414885Z",
+          "osv_id": "PYSEC-2021-142",
+          "published": "2021-02-09T21:15:00Z",
+          "severity": [],
+          "source_record_sha256": "2bf2756936d2c124da1da4b3f003d1fed8d310ecd36cdb0a7831cb57f2c244f3",
+          "summary": "No summary supplied by source.",
+          "withdrawn": null
+        }
+      ],
+      "component_id": "AEG-CMP-0008",
+      "criticality": "CRITICAL",
+      "cve_aliases": [
+        "CVE-2020-14343"
+      ],
+      "details_truncated": false,
+      "internet_exposed": false,
+      "matched_vulnerability_count": 2,
+      "mission_essential": true,
+      "osv_ids": [
+        "GHSA-8q59-q68h-6hv4",
+        "PYSEC-2021-142"
+      ],
+      "package": {
+        "ecosystem": "PyPI",
+        "name": "PyYAML",
+        "version": "5.3.1"
+      },
+      "sector": "DEFENCE_LOGISTICS",
+      "vulnerability_status": "VULNERABILITIES_IDENTIFIED"
+    },
+    {
+      "advisories": [
+        {
+          "cve_aliases": [
+            "CVE-2020-28500"
+          ],
+          "database_severity": "MODERATE",
+          "modified": "2025-09-29T21:12:31.102523Z",
+          "osv_id": "GHSA-29mw-wpgm-hmr9",
+          "published": "2022-01-06T20:30:46Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "59af6785802a38662ddceb22e6de76f439ea061fd61a84fb732821d810a31dbb",
+          "summary": "Regular Expression Denial of Service (ReDoS) in lodash",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2021-23337",
+            "CVE-2026-4800"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2026-07-08T18:29:36.682352320Z",
+          "osv_id": "GHSA-35jh-r3h4-6jhm",
+          "published": "2021-05-06T16:05:51Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "a68dd2091b2c0b7396eb99912d4122b1488fa518433de6c3539af24d960ffaac",
+          "summary": "Command Injection in lodash",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2025-13465",
+            "CVE-2026-2950"
+          ],
+          "database_severity": "MODERATE",
+          "modified": "2026-07-08T07:10:26.957853710Z",
+          "osv_id": "GHSA-f23m-r3pf-42rh",
+          "published": "2026-04-01T23:50:27Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "3c3de5acf0a7a3c1eef2abd3ffc5e578e8129585129d884a4c19a4b878fa5253",
+          "summary": "lodash vulnerable to Prototype Pollution via array path bypass in `_.unset` and `_.omit`",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2020-8203"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2025-08-12T21:56:17.174859Z",
+          "osv_id": "GHSA-p6mc-m468-83gw",
+          "published": "2020-07-15T19:15:48Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "b037e09d03e2423c97e27e4c1b7971caff6c347502864e04dbee03d99ec5a8ee",
+          "summary": "Prototype Pollution in lodash",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2021-23337",
+            "CVE-2026-4800"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2026-07-08T08:11:11.759560102Z",
+          "osv_id": "GHSA-r5fr-rjxr-66jc",
+          "published": "2026-04-01T23:51:12Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "c926e5d73a55ad33c0ff5cbe3b7c214199dcf3a625d41f8082fac3b399596136",
+          "summary": "lodash vulnerable to Code Injection via `_.template` imports key names",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2025-13465",
+            "CVE-2026-2950"
+          ],
+          "database_severity": "MODERATE",
+          "modified": "2026-07-08T07:10:26.957853710Z",
+          "osv_id": "GHSA-xxjr-mmjv-4gpg",
+          "published": "2026-01-21T23:01:22Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:L/VA:L/SC:H/SI:H/SA:H/E:P",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "efeb2baef7845dc2063a11088a215085deb868dcf867a43fb891a46b1033eec8",
+          "summary": "Lodash has Prototype Pollution Vulnerability in `_.unset` and `_.omit` functions",
+          "withdrawn": null
+        }
+      ],
+      "component_id": "AEG-CMP-0009",
+      "criticality": "MEDIUM",
+      "cve_aliases": [
+        "CVE-2020-28500",
+        "CVE-2020-8203",
+        "CVE-2021-23337",
+        "CVE-2025-13465",
+        "CVE-2026-2950",
+        "CVE-2026-4800"
+      ],
+      "details_truncated": false,
+      "internet_exposed": true,
+      "matched_vulnerability_count": 6,
+      "mission_essential": false,
+      "osv_ids": [
+        "GHSA-29mw-wpgm-hmr9",
+        "GHSA-35jh-r3h4-6jhm",
+        "GHSA-f23m-r3pf-42rh",
+        "GHSA-p6mc-m468-83gw",
+        "GHSA-r5fr-rjxr-66jc",
+        "GHSA-xxjr-mmjv-4gpg"
+      ],
+      "package": {
+        "ecosystem": "npm",
+        "name": "lodash",
+        "version": "4.17.15"
+      },
+      "sector": "PUBLIC_ADMINISTRATION",
+      "vulnerability_status": "VULNERABILITIES_IDENTIFIED"
+    },
+    {
+      "advisories": [
+        {
+          "cve_aliases": [
+            "CVE-2020-7598"
+          ],
+          "database_severity": "MODERATE",
+          "modified": "2026-03-13T22:11:31.390433Z",
+          "osv_id": "GHSA-vh95-rmgr-6w4m",
+          "published": "2020-04-03T21:48:32Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "293570aa3a815707cb8b55d2c9cb1df8f3f7d1c036d00757f0970afd2b15783e",
+          "summary": "Prototype Pollution in minimist",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2021-44906"
+          ],
+          "database_severity": "CRITICAL",
+          "modified": "2026-03-13T22:11:59.523514Z",
+          "osv_id": "GHSA-xvch-5gv4-984h",
+          "published": "2022-03-18T00:01:09Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "489d322f1b93cf7d0aaa061bf2092dbbcd57a41a5650093af4790331e3f5c33e",
+          "summary": "Prototype Pollution in minimist",
+          "withdrawn": null
+        }
+      ],
+      "component_id": "AEG-CMP-0010",
+      "criticality": "MEDIUM",
+      "cve_aliases": [
+        "CVE-2020-7598",
+        "CVE-2021-44906"
+      ],
+      "details_truncated": false,
+      "internet_exposed": false,
+      "matched_vulnerability_count": 2,
+      "mission_essential": false,
+      "osv_ids": [
+        "GHSA-vh95-rmgr-6w4m",
+        "GHSA-xvch-5gv4-984h"
+      ],
+      "package": {
+        "ecosystem": "npm",
+        "name": "minimist",
+        "version": "0.0.8"
+      },
+      "sector": "EDUCATION",
+      "vulnerability_status": "VULNERABILITIES_IDENTIFIED"
+    },
+    {
+      "advisories": [
+        {
+          "cve_aliases": [
+            "CVE-2026-44495"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2026-06-12T19:30:10.204806657Z",
+          "osv_id": "GHSA-3g43-6gmg-66jw",
+          "published": "2026-05-29T16:07:31Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:L/A:L",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "a6fc4d5ceca2741ba612ae55f8496e18700909694537414d5a3f229df170e6fa",
+          "summary": "axios Vulnerable to Credential Theft and Response Hijacking via Prototype Pollution Gadget in Config Merge",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2025-62718"
+          ],
+          "database_severity": "MODERATE",
+          "modified": "2026-05-08T13:46:43Z",
+          "osv_id": "GHSA-3p68-rc4w-qgx5",
+          "published": "2026-04-09T17:32:19Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:L/VI:L/VA:N/SC:L/SI:L/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "a2993c7b56887ff4f963a95982565b8809f1a06a9f1b331b3792f28184271303",
+          "summary": "Axios has a NO_PROXY Hostname Normalization Bypass that Leads to SSRF",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2026-25639"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2026-05-08T14:03:50.604057Z",
+          "osv_id": "GHSA-43fc-jf86-j433",
+          "published": "2026-02-09T17:46:14Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "75d6328c7437a95766df9fcce70cce848ce9ba955b794a786269c2ec4f7997fc",
+          "summary": "Axios is Vulnerable to Denial of Service via __proto__ Key in mergeConfig",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2026-42034"
+          ],
+          "database_severity": "MODERATE",
+          "modified": "2026-05-06T15:29:22.484110786Z",
+          "osv_id": "GHSA-5c9x-8gcm-mpgx",
+          "published": "2026-05-05T00:33:25Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "0258c4879e2ccd29fb7e25b456edbe6251dee8edb833abebe4d27651f2223f43",
+          "summary": "Axios' HTTP adapter-streamed uploads bypass maxBodyLength when maxRedirects: 0",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2026-42039"
+          ],
+          "database_severity": "MODERATE",
+          "modified": "2026-06-08T16:00:10.031349689Z",
+          "osv_id": "GHSA-62hf-57xw-28j9",
+          "published": "2026-05-05T00:34:32Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "type": "CVSS_V3"
+            },
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "c2f99fc0b0e4490e414cce76ff98f4b099018ef4a6dff45cfd68113209cd6fa4",
+          "summary": "Axios: unbounded recursion in toFormData causes DoS via deeply nested request data",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2026-42035"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2026-05-06T15:29:22.420628473Z",
+          "osv_id": "GHSA-6chq-wfr3-2hj9",
+          "published": "2026-05-05T00:25:47Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "84db3f7258ffd6ae793504f40e7fab352abb6c6a74b656d6a6239f61e1880ec4",
+          "summary": "Axios: Header Injection via Prototype Pollution",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2026-44490"
+          ],
+          "database_severity": "MODERATE",
+          "modified": "2026-06-12T19:30:11.389775970Z",
+          "osv_id": "GHSA-898c-q2cr-xwhg",
+          "published": "2026-05-29T15:54:57Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:L",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "f25d2c5be92c86dcc4293f38d406f182593fdbd9ab2875275d8104b4eea7a19c",
+          "summary": "axios has DoS & Header Injection via Prototype Pollution Read-Side Gadgets in axios merge functions",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2021-3749"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2023-11-08T04:06:18.328201Z",
+          "osv_id": "GHSA-cph5-m8f7-6c5x",
+          "published": "2021-09-01T18:23:02Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "27d326754a2e2353d6cd308aebbb97a44139dd5e6ea5b7efa7ba4f0c907e0885",
+          "summary": "axios Inefficient Regular Expression Complexity vulnerability",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2026-40175"
+          ],
+          "database_severity": "MODERATE",
+          "modified": "2026-05-20T00:30:10.353644780Z",
+          "osv_id": "GHSA-fvcv-3m26-pcqx",
+          "published": "2026-04-10T19:47:16Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "f22a504374c74682764ea11dc48e5efb4ce23d04748541be557ce1a6dc7d946c",
+          "summary": "Axios has Unrestricted Cloud Metadata Exfiltration via Header Injection Chain",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2026-44496"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2026-06-18T05:15:07.468380584Z",
+          "osv_id": "GHSA-hfxv-24rg-xrqf",
+          "published": "2026-06-04T14:24:06Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "111e70750f6686c9010dc490de3de0f7990f43c3d6837e7ba0a92703c88f6d69",
+          "summary": "Axios: Regular Expression Denial of Service (ReDoS) via Cookie Name Injection",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2026-44486"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2026-06-12T19:30:09.847820233Z",
+          "osv_id": "GHSA-j5f8-grm9-p9fc",
+          "published": "2026-06-04T14:15:01Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "7583e73d555407f4b990a452ed6085ca8c28e57f7cf7e3a01404dc10c221f600",
+          "summary": "Axios: Proxy-Authorization header leaks to redirect target when proxy is re-evaluated to direct connection",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2025-27152"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2026-02-04T03:30:49.527969Z",
+          "osv_id": "GHSA-jr5f-v2jv-69x6",
+          "published": "2025-03-07T15:16:00Z",
+          "severity": [
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N/E:P",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "67af59b5d1134a4ccfb84df7743299661e7ecfb509c99bb58d021576dc05321d",
+          "summary": "axios Requests Vulnerable To Possible SSRF and Credential Leakage via Absolute URL",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2026-42038"
+          ],
+          "database_severity": "MODERATE",
+          "modified": "2026-05-06T15:29:25.469495724Z",
+          "osv_id": "GHSA-m7pr-hjqh-92cm",
+          "published": "2026-05-05T00:40:17Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:N/A:N",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "15fe4c61efaec11841659737672d738a17e004151765d05621c3922fb079ece9",
+          "summary": "Axios: no_proxy bypass via IP alias allows SSRF",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2026-44487"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2026-06-12T19:30:09.850549232Z",
+          "osv_id": "GHSA-p92q-9vqr-4j8v",
+          "published": "2026-06-04T14:19:53Z",
+          "severity": [
+            {
+              "score": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+              "type": "CVSS_V4"
+            }
+          ],
+          "source_record_sha256": "e667e1516159e27957022aca27d841ba8efbd85e46d2ffd8d66f6372e94cd9d0",
+          "summary": "Axios: Proxy-Authorization Credential Leak to Origin Server Across HTTP-to-HTTPS Redirect in Axios Node.js HTTP Adapter",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2026-42033"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2026-05-06T15:29:21.690525700Z",
+          "osv_id": "GHSA-pf86-5x62-jrwf",
+          "published": "2026-05-05T00:26:29Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "fe647a0552a2b0f13a91f574c506aa2a95a01bb9321035608fb7f6601674b738",
+          "summary": "Axios: Prototype Pollution Gadgets - Response Tampering, Data Exfiltration, and Request Hijacking",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2026-44492"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2026-07-17T15:46:06.986530896Z",
+          "osv_id": "GHSA-pjwm-pj3p-43mv",
+          "published": "2026-05-29T15:59:30Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "db3423ad0f5bfef9a808378f356fcdd52dc2d9ffc371429cd3ab75187e39146e",
+          "summary": "axios's shouldBypassProxy does not recognize IPv4-mapped IPv6 addresses, allowing NO_PROXY bypass (incomplete fix for CVE-2025-62718)",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2026-42043"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2026-05-06T15:29:21.321963957Z",
+          "osv_id": "GHSA-pmwg-cvhr-8vh7",
+          "published": "2026-05-05T00:20:58Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "958b67dd020217dfce89afd9204f23c9d2aa7d9dc9211094ac6961c63d4ab43f",
+          "summary": "Axios: Incomplete Fix for CVE-2025-62718 — NO_PROXY Protection Bypassed via RFC 1122 Loopback Subnet (127.0.0.0/8) in Axios 1.15.0",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2026-42036"
+          ],
+          "database_severity": "MODERATE",
+          "modified": "2026-05-06T15:29:25.221206831Z",
+          "osv_id": "GHSA-vf2m-468p-8v99",
+          "published": "2026-05-05T00:26:57Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "069f7cc481d64c81ee19a93368feacaed3d17d3ab5566855fe9077f0660cbc24",
+          "summary": "Axios: HTTP adapter streamed responses bypass maxContentLength",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2026-42041"
+          ],
+          "database_severity": "MODERATE",
+          "modified": "2026-05-06T15:29:25.530276017Z",
+          "osv_id": "GHSA-w9j2-pvgh-6h63",
+          "published": "2026-05-05T00:21:39Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "5d2527cfcfd88f8c035c8458ad216c65d70bb7be8dd6f61b1b718545d81a4240",
+          "summary": "Axios: Authentication Bypass via Prototype Pollution Gadget in `validateStatus` Merge Strategy",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2023-45857"
+          ],
+          "database_severity": "MODERATE",
+          "modified": "2026-02-04T02:41:22.966638Z",
+          "osv_id": "GHSA-wf5p-g6vw-rhxx",
+          "published": "2023-11-08T21:30:37Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "733a8d996acf11b639fdfe0d43a5e8f079fe655d14550d0510c2c9e8ec52982a",
+          "summary": "Axios Cross-Site Request Forgery Vulnerability",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2026-42040"
+          ],
+          "database_severity": "LOW",
+          "modified": "2026-05-06T15:29:21.463270742Z",
+          "osv_id": "GHSA-xhjh-pmcv-23jw",
+          "published": "2026-05-05T00:18:03Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "44f1abe4201af58177b593279c1af1668a9051d57c12497d6f6a5d4107da57c6",
+          "summary": "Axios: Null Byte Injection via Reverse-Encoding in AxiosURLSearchParams",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2026-42042"
+          ],
+          "database_severity": "MODERATE",
+          "modified": "2026-05-06T15:29:24.391236937Z",
+          "osv_id": "GHSA-xx6v-rp6x-q39c",
+          "published": "2026-05-05T00:25:22Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "9a82493c895bbbfcbdc32a2f5d5643088ec64cb455af199dc4811abdaa5a9d31",
+          "summary": "Axios: XSRF Token Cross-Origin Leakage via Prototype Pollution Gadget in `withXSRFToken` Boolean Coercion",
+          "withdrawn": null
+        }
+      ],
+      "component_id": "AEG-CMP-0011",
+      "criticality": "HIGH",
+      "cve_aliases": [
+        "CVE-2021-3749",
+        "CVE-2023-45857",
+        "CVE-2025-27152",
+        "CVE-2025-62718",
+        "CVE-2026-25639",
+        "CVE-2026-40175",
+        "CVE-2026-42033",
+        "CVE-2026-42034",
+        "CVE-2026-42035",
+        "CVE-2026-42036",
+        "CVE-2026-42038",
+        "CVE-2026-42039",
+        "CVE-2026-42040",
+        "CVE-2026-42041",
+        "CVE-2026-42042",
+        "CVE-2026-42043",
+        "CVE-2026-44486",
+        "CVE-2026-44487",
+        "CVE-2026-44490",
+        "CVE-2026-44492",
+        "CVE-2026-44495",
+        "CVE-2026-44496"
+      ],
+      "details_truncated": false,
+      "internet_exposed": true,
+      "matched_vulnerability_count": 22,
+      "mission_essential": false,
+      "osv_ids": [
+        "GHSA-3g43-6gmg-66jw",
+        "GHSA-3p68-rc4w-qgx5",
+        "GHSA-43fc-jf86-j433",
+        "GHSA-5c9x-8gcm-mpgx",
+        "GHSA-62hf-57xw-28j9",
+        "GHSA-6chq-wfr3-2hj9",
+        "GHSA-898c-q2cr-xwhg",
+        "GHSA-cph5-m8f7-6c5x",
+        "GHSA-fvcv-3m26-pcqx",
+        "GHSA-hfxv-24rg-xrqf",
+        "GHSA-j5f8-grm9-p9fc",
+        "GHSA-jr5f-v2jv-69x6",
+        "GHSA-m7pr-hjqh-92cm",
+        "GHSA-p92q-9vqr-4j8v",
+        "GHSA-pf86-5x62-jrwf",
+        "GHSA-pjwm-pj3p-43mv",
+        "GHSA-pmwg-cvhr-8vh7",
+        "GHSA-vf2m-468p-8v99",
+        "GHSA-w9j2-pvgh-6h63",
+        "GHSA-wf5p-g6vw-rhxx",
+        "GHSA-xhjh-pmcv-23jw",
+        "GHSA-xx6v-rp6x-q39c"
+      ],
+      "package": {
+        "ecosystem": "npm",
+        "name": "axios",
+        "version": "0.21.1"
+      },
+      "sector": "HEALTHCARE",
+      "vulnerability_status": "VULNERABILITIES_IDENTIFIED"
+    },
+    {
+      "advisories": [
+        {
+          "cve_aliases": [
+            "CVE-2022-0235"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2023-11-08T04:07:30.211593Z",
+          "osv_id": "GHSA-r683-j2x4-v87g",
+          "published": "2022-01-21T23:55:52Z",
+          "severity": [
+            {
+              "score": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "510e8368371648967722ae2738c1b32ac16a3a16e990659c33eb5771453e21a3",
+          "summary": "node-fetch forwards secure headers to untrusted sites",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2020-15168"
+          ],
+          "database_severity": "LOW",
+          "modified": "2026-07-08T06:00:29.567074454Z",
+          "osv_id": "GHSA-w7rc-rwvf-8q5r",
+          "published": "2020-09-10T17:46:21Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:U/C:N/I:N/A:L",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "72eb116fa0535a847f032d844e647dc9c1cc8e1bbbda7521bbc9bbe73c80ed77",
+          "summary": "The `size` option isn't honored after following a redirect in node-fetch",
+          "withdrawn": null
+        }
+      ],
+      "component_id": "AEG-CMP-0012",
+      "criticality": "HIGH",
+      "cve_aliases": [
+        "CVE-2020-15168",
+        "CVE-2022-0235"
+      ],
+      "details_truncated": false,
+      "internet_exposed": true,
+      "matched_vulnerability_count": 2,
+      "mission_essential": true,
+      "osv_ids": [
+        "GHSA-r683-j2x4-v87g",
+        "GHSA-w7rc-rwvf-8q5r"
+      ],
+      "package": {
+        "ecosystem": "npm",
+        "name": "node-fetch",
+        "version": "2.6.0"
+      },
+      "sector": "DEFENCE_LOGISTICS",
+      "vulnerability_status": "VULNERABILITIES_IDENTIFIED"
+    },
+    {
+      "advisories": [
+        {
+          "cve_aliases": [
+            "CVE-2022-23539"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2024-06-24T21:23:38Z",
+          "osv_id": "GHSA-8cf7-32gw-wr33",
+          "published": "2022-12-22T03:32:22Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "1a84e8806987d3c9ae87b083adc01442ccd6eefad415bc27051e1fac6b7a285f",
+          "summary": "jsonwebtoken unrestricted key type could lead to legacy keys usage ",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2022-23541"
+          ],
+          "database_severity": "MODERATE",
+          "modified": "2024-06-24T21:24:06Z",
+          "osv_id": "GHSA-hjrf-2m68-5959",
+          "published": "2022-12-22T03:33:19Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:L",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "fcfd93bcca5342ea92670e7722f7189216d2f14cbb440e2438ec689d4beefbd1",
+          "summary": "jsonwebtoken's insecure implementation of key retrieval function could lead to Forgeable Public/Private Tokens from RSA to HMAC",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2022-23540"
+          ],
+          "database_severity": "MODERATE",
+          "modified": "2025-02-13T18:33:13Z",
+          "osv_id": "GHSA-qwph-4952-7xr6",
+          "published": "2022-12-22T03:32:59Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:H/A:L",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "3d568d06c0ed89086bf1e8624fa18d8bc96d8720117f87334b5e09f0f5f0fd21",
+          "summary": "jsonwebtoken vulnerable to signature validation bypass due to insecure default algorithm in jwt.verify()",
+          "withdrawn": null
+        }
+      ],
+      "component_id": "AEG-CMP-0013",
+      "criticality": "CRITICAL",
+      "cve_aliases": [
+        "CVE-2022-23539",
+        "CVE-2022-23540",
+        "CVE-2022-23541"
+      ],
+      "details_truncated": false,
+      "internet_exposed": true,
+      "matched_vulnerability_count": 3,
+      "mission_essential": true,
+      "osv_ids": [
+        "GHSA-8cf7-32gw-wr33",
+        "GHSA-hjrf-2m68-5959",
+        "GHSA-qwph-4952-7xr6"
+      ],
+      "package": {
+        "ecosystem": "npm",
+        "name": "jsonwebtoken",
+        "version": "8.5.1"
+      },
+      "sector": "PUBLIC_ADMINISTRATION",
+      "vulnerability_status": "VULNERABILITIES_IDENTIFIED"
+    },
+    {
+      "advisories": [],
+      "component_id": "AEG-CMP-0014",
+      "criticality": "MEDIUM",
+      "cve_aliases": [],
+      "details_truncated": false,
+      "internet_exposed": true,
+      "matched_vulnerability_count": 0,
+      "mission_essential": false,
+      "osv_ids": [],
+      "package": {
+        "ecosystem": "RubyGems",
+        "name": "rails",
+        "version": "5.2.0"
+      },
+      "sector": "EDUCATION",
+      "vulnerability_status": "NO_MATCHES_IDENTIFIED"
+    },
+    {
+      "advisories": [
+        {
+          "cve_aliases": [
+            "CVE-2024-21907"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2026-07-08T06:53:11.583483075Z",
+          "osv_id": "GHSA-5crp-9r3c-p9vr",
+          "published": "2022-06-22T15:08:47Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "ddc8d3e1a0e543c14785b4a010f84abc5938b31b37dc9c90d5aa261d24471b14",
+          "summary": "Improper Handling of Exceptional Conditions in Newtonsoft.Json",
+          "withdrawn": null
+        }
+      ],
+      "component_id": "AEG-CMP-0015",
+      "criticality": "HIGH",
+      "cve_aliases": [
+        "CVE-2024-21907"
+      ],
+      "details_truncated": false,
+      "internet_exposed": false,
+      "matched_vulnerability_count": 1,
+      "mission_essential": true,
+      "osv_ids": [
+        "GHSA-5crp-9r3c-p9vr"
+      ],
+      "package": {
+        "ecosystem": "NuGet",
+        "name": "Newtonsoft.Json",
+        "version": "12.0.1"
+      },
+      "sector": "HEALTHCARE",
+      "vulnerability_status": "VULNERABILITIES_IDENTIFIED"
+    },
+    {
+      "advisories": [
+        {
+          "cve_aliases": [
+            "CVE-2023-29401"
+          ],
+          "database_severity": "MODERATE",
+          "modified": "2023-11-08T04:12:18.674169Z",
+          "osv_id": "GHSA-2c4m-59x9-fr2g",
+          "published": "2023-05-12T20:19:25Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "26a110f09e275fe62d87302484c7b2b9b7493681e360d52064e44f043850ff71",
+          "summary": "Gin Web Framework does not properly sanitize filename parameter of Context.FileAttachment function",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2023-26125"
+          ],
+          "database_severity": "MODERATE",
+          "modified": "2023-11-08T04:11:58.943766Z",
+          "osv_id": "GHSA-3vp4-m3rf-835h",
+          "published": "2023-05-04T06:30:12Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "9be9c833a51988fa95f2a0f76b5ea87ce34576d2030726bc65287678f06ed9bb",
+          "summary": "Improper input validation in github.com/gin-gonic/gin",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2020-28483"
+          ],
+          "database_severity": "HIGH",
+          "modified": "2026-03-14T10:41:18.820930Z",
+          "osv_id": "GHSA-h395-qcrw-5vmq",
+          "published": "2021-06-23T17:53:21Z",
+          "severity": [
+            {
+              "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:L/A:N",
+              "type": "CVSS_V3"
+            }
+          ],
+          "source_record_sha256": "f308dd0e5714a45f191cd4e5fd4c71c46ff4896ef050533746cb114e4d676a65",
+          "summary": "Inconsistent Interpretation of HTTP Requests in github.com/gin-gonic/gin",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2020-28483"
+          ],
+          "database_severity": null,
+          "modified": "2026-07-08T05:56:36.895132392Z",
+          "osv_id": "GO-2021-0052",
+          "published": "2021-04-14T20:04:52Z",
+          "severity": [],
+          "source_record_sha256": "8d3860793d5ca7e7b09cb702c919c971298a50a7046f2a0c956ad741d5cc719a",
+          "summary": "Inconsistent interpretation of HTTP Requests in github.com/gin-gonic/gin",
+          "withdrawn": null
+        },
+        {
+          "cve_aliases": [
+            "CVE-2023-29401"
+          ],
+          "database_severity": null,
+          "modified": "2024-05-20T16:03:47Z",
+          "osv_id": "GO-2023-1737",
+          "published": "2023-05-11T18:59:56Z",
+          "severity": [],
+          "source_record_sha256": "20555f3e8d933f6da37675e37774439f09a868cf9d16be57be49689a7c0540c1",
+          "summary": "Improper handling of filenames in Content-Disposition HTTP header in github.com/gin-gonic/gin",
+          "withdrawn": null
+        }
+      ],
+      "component_id": "AEG-CMP-0016",
+      "criticality": "CRITICAL",
+      "cve_aliases": [
+        "CVE-2020-28483",
+        "CVE-2023-26125",
+        "CVE-2023-29401"
+      ],
+      "details_truncated": false,
+      "internet_exposed": false,
+      "matched_vulnerability_count": 5,
+      "mission_essential": true,
+      "osv_ids": [
+        "GHSA-2c4m-59x9-fr2g",
+        "GHSA-3vp4-m3rf-835h",
+        "GHSA-h395-qcrw-5vmq",
+        "GO-2021-0052",
+        "GO-2023-1737"
+      ],
+      "package": {
+        "ecosystem": "Go",
+        "name": "github.com/gin-gonic/gin",
+        "version": "v1.7.0"
+      },
+      "sector": "DEFENCE_LOGISTICS",
+      "vulnerability_status": "VULNERABILITIES_IDENTIFIED"
+    }
+  ],
+  "generated_at": "2026-07-20T06:31:43Z",
+  "governance": {
+    "human_review_required": true,
+    "live_source_claim": "VERIFIED",
+    "next_stage": "MILESTONE_12P_2B_KEV_EPSS_ENRICHMENT",
+    "personal_data": "ABSENT",
+    "production_readiness": "BLOCKED",
+    "real_customer_data": "ABSENT"
+  },
+  "inventory": {
+    "authorized_demo": true,
+    "inventory_id": "AEG-DEMO-INVENTORY-20260720",
+    "inventory_sha256": "4c24dfd39ac5743c231afc0501d76b1f7485371f214f3c685429229ee96e485f",
+    "production_eligible": false
+  },
+  "report_id": "AEG-LIVE-OSV-A749E73954A076F1C1129D92",
+  "source": {
+    "detail_endpoint": "/v1/vulns/{id}",
+    "endpoint": "/v1/querybatch",
+    "mode": "LIVE_API",
+    "name": "OSV",
+    "response_sha256": "c41a0db11d80a572dac3f7491919be38bc6b495bfc61c2df7592264bad3cdf21"
+  },
+  "summary": {
+    "components_assessed": 16,
+    "components_without_matches": 1,
+    "detailed_records_retrieved": 234,
+    "total_component_vulnerability_matches": 234,
+    "unique_osv_records": 234,
+    "vulnerable_components": 15
+  }
+}
