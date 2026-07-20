@@ -108,6 +108,7 @@ with st.sidebar:
             "Component Explorer",
             "Threat Intelligence",
             "Real-Data ML Benchmark",
+            "SSVC Decision and Prediction",
             "XAI and Error Analysis",
             "Governance and Assurance",
             "Pipeline Architecture",
@@ -785,6 +786,203 @@ elif page == "Real-Data ML Benchmark":
             "preserved SSVC authority."
         )
 
+
+
+elif page == "SSVC Decision and Prediction":
+    from src.presentation_demo.master_vertical_slice import (
+        load_master_vertical_slice,
+    )
+
+    master = load_master_vertical_slice()
+    summary = master["summary"]
+
+    st.subheader(
+        "Governed SSVC decision and predictive-policy separation"
+    )
+
+    metric_columns = st.columns(6)
+
+    metric_columns[0].metric(
+        "SSVC vector",
+        summary["vector"],
+    )
+
+    metric_columns[1].metric(
+        "Decision row",
+        summary["matched_row"],
+    )
+
+    metric_columns[2].metric(
+        "Official outcome",
+        summary["outcome_name"],
+    )
+
+    metric_columns[3].metric(
+        "Stage gate",
+        summary["stage_gate"],
+    )
+
+    metric_columns[4].metric(
+        "Human review",
+        str(summary["human_review_required"]),
+    )
+
+    metric_columns[5].metric(
+        "Production",
+        summary["production_readiness"],
+    )
+
+    st.info(
+        "SSVC converts governed evidence and operational context "
+        "into a stakeholder action. It is not a future-exploitation "
+        "prediction model."
+    )
+
+    st.subheader(
+        "Golden Log4Shell decision trace"
+    )
+
+    review_record = pd.DataFrame(
+        [
+            {
+                "Decision ID": summary["decision_id"],
+                "CVE": summary["cve_id"],
+                "SSVC vector": summary["vector"],
+                "Matched row": summary["matched_row"],
+                "Official outcome": summary["outcome_name"],
+                "Human review": summary["human_review_required"],
+                "Final disposition": summary[
+                    "final_disposition_status"
+                ],
+                "Production readiness": summary[
+                    "production_readiness"
+                ],
+            }
+        ]
+    )
+
+    st.dataframe(
+        review_record,
+        use_container_width=True,
+        hide_index=True,
+    )
+
+    st.subheader(
+        "Governed SSVC decision points"
+    )
+
+    st.dataframe(
+        master["decision_points"],
+        use_container_width=True,
+        hide_index=True,
+    )
+
+    st.caption(
+        "The official deployer decision uses the governed vector "
+        "A/O/Y/M and pinned decision-table row 69. Safety and "
+        "mission impact remain part of the human-impact and "
+        "review evidence."
+    )
+
+    st.subheader(
+        "SSVC quality gates"
+    )
+
+    st.dataframe(
+        master["quality_gates"],
+        use_container_width=True,
+        hide_index=True,
+    )
+
+    st.subheader(
+        "Evidence, prediction and action boundaries"
+    )
+
+    st.dataframe(
+        master["claim_boundary"],
+        use_container_width=True,
+        hide_index=True,
+    )
+
+    st.warning(
+        "The current custom model classifies current CISA KEV "
+        "membership. FIRST EPSS is the current near-term forecast "
+        "lane. A custom future-exploitation model is not yet authorized."
+    )
+
+    st.subheader(
+        "Threshold operating policies"
+    )
+
+    operating_points = master[
+        "operating_points"
+    ].copy()
+
+    for metric_name in [
+        "threshold",
+        "precision",
+        "recall",
+        "f1",
+        "balanced_accuracy",
+    ]:
+        if metric_name in operating_points.columns:
+            operating_points[metric_name] = (
+                operating_points[metric_name]
+                .astype(float)
+                .round(4)
+            )
+
+    st.dataframe(
+        operating_points,
+        use_container_width=True,
+        hide_index=True,
+    )
+
+    st.caption(
+        "Changing the threshold changes the precision-recall "
+        "operating policy. It does not create new predictive evidence."
+    )
+
+    frontier = (
+        master["threshold_frontier"][
+            [
+                "recall",
+                "precision",
+            ]
+        ]
+        .sort_values("recall")
+        .drop_duplicates(subset=["recall"])
+        .set_index("recall")
+    )
+
+    st.line_chart(frontier)
+
+    st.subheader(
+        "Evidence and prediction agreement matrix"
+    )
+
+    st.dataframe(
+        master["agreement_matrix"],
+        use_container_width=True,
+        hide_index=True,
+    )
+
+    st.subheader(
+        "Screenshot and low-trust input policy"
+    )
+
+    st.dataframe(
+        master["screenshot_policy"],
+        use_container_width=True,
+        hide_index=True,
+    )
+
+    st.error(
+        "A high exploitation forecast cannot rewrite confirmed "
+        "exploitation evidence. Unknown identity or affectedness "
+        "fails closed and requires human review. Final disposition "
+        "remains unauthorized."
+    )
 
 
 elif page == "XAI and Error Analysis":

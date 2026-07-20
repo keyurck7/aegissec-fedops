@@ -1,0 +1,318 @@
+{
+  "dashboard_contract": {
+    "detected_pages": [
+      "Component Explorer",
+      "Executive Overview",
+      "Governance and Assurance",
+      "Pipeline Architecture",
+      "Real-Data ML Benchmark",
+      "Threat Intelligence",
+      "XAI and Error Analysis"
+    ],
+    "has_ssvc_prediction_page": false,
+    "has_xai_page": true,
+    "path": "app/aegissec_command_center.py",
+    "sha256": "36e16cb0c60a1165d5a5580edde68a1e65ec88cad867b5031fd91557484a6561",
+    "uses_pandas_alias": true
+  },
+  "model_contract": {
+    "prediction_columns": [
+      "cve",
+      "is_kev",
+      "epss",
+      "percentile",
+      "cve_year",
+      "predicted_probability",
+      "prediction"
+    ],
+    "prediction_dtypes": {
+      "cve": "object",
+      "cve_year": "int64",
+      "epss": "float64",
+      "is_kev": "int64",
+      "percentile": "float64",
+      "predicted_probability": "float64",
+      "prediction": "int64"
+    },
+    "prediction_path": "data/processed/presentation_demo/model_benchmark/real_model_test_predictions.csv.gz",
+    "prediction_sample": [
+      {
+        "cve": "CVE-2009-0543",
+        "cve_year": 2009,
+        "epss": 0.18722,
+        "is_kev": 0,
+        "percentile": 0.96953,
+        "predicted_probability": 0.3305654196762164,
+        "prediction": 0
+      },
+      {
+        "cve": "CVE-2024-21671",
+        "cve_year": 2024,
+        "epss": 0.00398,
+        "is_kev": 0,
+        "percentile": 0.32082,
+        "predicted_probability": 0.0404059955657707,
+        "prediction": 0
+      },
+      {
+        "cve": "CVE-2025-26649",
+        "cve_year": 2025,
+        "epss": 0.00355,
+        "is_kev": 0,
+        "percentile": 0.2783,
+        "predicted_probability": 0.039873793562244,
+        "prediction": 0
+      }
+    ],
+    "prediction_sha256": "5576bc32bac5f2950ce274f9b09d5e36515978f26a3a5e263e3ba4784a96fc82",
+    "report_path": "data/processed/presentation_demo/model_benchmark/real_model_benchmark_report.json",
+    "report_sha256": "187a2f4058b1b3b6123dc16ee94933389f350126feec64565a99809b73f8e916",
+    "report_structure": {
+      "artifacts": {
+        "candidate_results_path": "str",
+        "feature_importance_path": "str",
+        "model_path": "str",
+        "model_sha256": "str",
+        "test_predictions_path": "str"
+      },
+      "benchmark_id": "str",
+      "dataset": {
+        "dataset_id": "str",
+        "positive_rows": "int",
+        "prevalence": "float",
+        "rows": "int",
+        "snapshot_date": "str"
+      },
+      "feature_importance": {
+        "_length": 11,
+        "_sample": {
+          "feature": "str",
+          "importance_mean": "float",
+          "importance_std": "float"
+        },
+        "_type": "array"
+      },
+      "features": {
+        "_length": 11,
+        "_sample": "str",
+        "_type": "array"
+      },
+      "generated_at": "str",
+      "governance": {
+        "authoritative_policy_engine": "str",
+        "automated_disposition_permitted": "bool",
+        "causal_model": "bool",
+        "future_exploitation_prediction": "bool",
+        "independent_from_ssvc": "bool",
+        "label_definition": "str",
+        "limitations": {
+          "_length": 5,
+          "_sample": "str",
+          "_type": "array"
+        },
+        "model_authority": "str",
+        "production_readiness": "str"
+      },
+      "leakage_firewall": {
+        "asset_or_sector_features_used": "bool",
+        "cisa_kev_derived_features_used": "bool",
+        "label": "str",
+        "label_in_features": "bool",
+        "ssvc_features_used": "bool"
+      },
+      "quality_gate": {
+        "checks": {
+          "balanced_accuracy_at_least_0_65": "bool",
+          "label_excluded_from_features": "bool",
+          "pr_auc_materially_above_prevalence": "bool",
+          "recall_at_least_0_60": "bool",
+          "roc_auc_at_least_0_75": "bool",
+          "test_positive_rows_at_least_100": "bool"
+        },
+        "development_gate": "str"
+      },
+      "schema_version": "str",
+      "split": {
+        "random_seed": "int",
+        "sampled_training_rows": "int",
+        "test_distribution": "str",
+        "test_rows": "int",
+        "training_rows": "int",
+        "validation_rows": "int"
+      },
+      "test_metrics": {
+        "accuracy": "float",
+        "balanced_accuracy": "float",
+        "brier_score": "float",
+        "confusion_matrix": {
+          "false_negative": "int",
+          "false_positive": "int",
+          "true_negative": "int",
+          "true_positive": "int"
+        },
+        "expected_calibration_error": "float",
+        "f1": "float",
+        "log_loss": "float",
+        "positive_rows": "int",
+        "pr_auc": "float",
+        "precision": "float",
+        "predicted_positive_rate": "float",
+        "prevalence": "float",
+        "recall": "float",
+        "roc_auc": "float",
+        "rows": "int",
+        "threshold": "float"
+      },
+      "winner": {
+        "candidate_name": "str",
+        "family": "str",
+        "parameters": {
+          "C": "float"
+        },
+        "threshold_selection": {
+          "threshold": "float",
+          "validation_precision": "float",
+          "validation_recall": "float"
+        },
+        "validation_metrics": {
+          "accuracy": "float",
+          "balanced_accuracy": "float",
+          "brier_score": "float",
+          "confusion_matrix": {
+            "_keys": [
+              "false_negative",
+              "false_positive",
+              "true_negative",
+              "true_positive"
+            ],
+            "_type": "object"
+          },
+          "expected_calibration_error": "float",
+          "f1": "float",
+          "log_loss": "float",
+          "positive_rows": "int",
+          "pr_auc": "float",
+          "precision": "float",
+          "predicted_positive_rate": "float",
+          "prevalence": "float",
+          "recall": "float",
+          "roc_auc": "float",
+          "rows": "int",
+          "threshold": "float"
+        }
+      }
+    },
+    "report_top_level_keys": [
+      "artifacts",
+      "benchmark_id",
+      "dataset",
+      "feature_importance",
+      "features",
+      "generated_at",
+      "governance",
+      "leakage_firewall",
+      "quality_gate",
+      "schema_version",
+      "split",
+      "test_metrics",
+      "winner"
+    ]
+  },
+  "planned_claim_boundaries": {
+    "component_present": "Extraction and identity confidence",
+    "current_custom_model": "Current KEV-membership classification only",
+    "exact_version_affected": "Deterministic version-range affectedness",
+    "future_custom_forecast": "Not yet authorized",
+    "known_exploitation": "CISA KEV and confirmed intelligence",
+    "near_term_forecast": "FIRST EPSS advisory forecast",
+    "operational_action": "Governed SSVC plus human review"
+  },
+  "schema_version": "1.0.0",
+  "source_artifacts": {
+    "affectedness": {
+      "path": "data/processed/affectedness/log4shell-20260715T163707Z-affectedness/aeg-afa-9e7d8f8a03a6a1ec07a6cc0a.adjudication.json",
+      "release_decision": {
+        "blocking_reasons": [
+          "Real operational validation has not yet been completed.",
+          "Independent security review has not yet been completed.",
+          "Human approval and remediation verification remain required before production closure.",
+          "Accountable human review is required for this adjudication."
+        ],
+        "policy_eligibility": "ELIGIBLE",
+        "production_readiness": "BLOCKED",
+        "stage_gate": "PASS"
+      },
+      "sha256": "180d54a591aed57685080f25001043794527a400e76566513b585ee5487febb7",
+      "top_level_keys": [
+        "adjudication",
+        "audit",
+        "conflicts",
+        "generated_at",
+        "inputs",
+        "policy",
+        "quality_gates",
+        "release_decision",
+        "report_id",
+        "runtime_context",
+        "schema_version",
+        "target",
+        "technical_assessment",
+        "trust"
+      ]
+    },
+    "decision_feature_envelope": {
+      "envelope_id": "AEG-DFE-AA60735B0E2C053C1B002C64",
+      "path": "data/processed/decision_features/log4shell-20260718T141317Z-decision-features/aeg-dfe-aa60735b0e2c053c1b002c64.features.json",
+      "release_decision": {
+        "blocking_reasons": [
+          "Milestone 12D prepares governed features but does not authorize remediation action.",
+          "SSVC policy execution, independent ML advisory, agreement checking, and accountable human disposition remain downstream stages.",
+          "Real operational validation and independent security review remain incomplete.",
+          "Accountable human review remains required while downstream policy evaluation proceeds in review-required mode."
+        ],
+        "next_stage_eligibility": "REVIEW_REQUIRED_FOR_12E",
+        "production_readiness": "BLOCKED",
+        "reason_codes": [
+          "NEXT_STAGE_REVIEW_REQUIRED",
+          "PRODUCTION_BLOCK_PRESERVED"
+        ],
+        "stage_gate": "PASS"
+      },
+      "sha256": "033d2435e709be5af76e124d77c225bd1125d5da47864bc0b27c2d9d976b8431",
+      "top_level_keys": [
+        "audit",
+        "contract",
+        "envelope_id",
+        "features",
+        "generated_at",
+        "inputs",
+        "provenance",
+        "quality_gates",
+        "release_decision",
+        "schema_version",
+        "target"
+      ]
+    },
+    "ssvc": {
+      "decision_id": "AEG-SSVC-72AC3113B91B9A98AF9285D1",
+      "decision_points": [
+        "automatable",
+        "exploitation",
+        "human_impact",
+        "mission_impact",
+        "safety_impact",
+        "system_exposure"
+      ],
+      "human_review_required": true,
+      "matched_row": 69,
+      "outcome": "OUT_OF_CYCLE",
+      "path": "data/processed/ssvc_policy/log4shell-20260718T152239Z-ssvc/aeg-ssvc-72ac3113b91b9a98af9285d1.ssvc.json",
+      "production_readiness": "BLOCKED",
+      "provenance_entry_count": 8,
+      "quality_gate_count": 12,
+      "sha256": "8989c9910fc7f63ada558c272a3da39b1b956d9103358a38ee34e4a06bdbb74f",
+      "stage_gate": "PASS",
+      "vector": "A/O/Y/M"
+    }
+  }
+}
