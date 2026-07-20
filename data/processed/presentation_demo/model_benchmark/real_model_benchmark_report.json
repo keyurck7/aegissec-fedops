@@ -1,0 +1,190 @@
+{
+  "artifacts": {
+    "candidate_results_path": "/home/jovyan/vault/aegissec-fedops/data/processed/presentation_demo/model_benchmark/real_model_candidates.json",
+    "feature_importance_path": "/home/jovyan/vault/aegissec-fedops/data/processed/presentation_demo/model_benchmark/real_model_feature_importance.json",
+    "model_path": "/home/jovyan/vault/aegissec-fedops/data/processed/presentation_demo/model_benchmark/real_kev_membership_model.joblib",
+    "model_sha256": "42d55688ac34ab185096d81f6d3265bdc62a7ccac15f57bb2cc2c9bbcae70d7f",
+    "test_predictions_path": "/home/jovyan/vault/aegissec-fedops/data/processed/presentation_demo/model_benchmark/real_model_test_predictions.csv.gz"
+  },
+  "benchmark_id": "AEG-REAL-MODEL-1FFCDF2D3872C3E8B74537BB",
+  "dataset": {
+    "dataset_id": "AEG-REAL-KEV-8ED4F0701255B5F8AA46E147",
+    "positive_rows": 1647,
+    "prevalence": 0.004712567705606153,
+    "rows": 349491,
+    "snapshot_date": "2026-07-19"
+  },
+  "feature_importance": [
+    {
+      "feature": "epss_logit",
+      "importance_mean": 0.31304429827367175,
+      "importance_std": 0.0023800684457010337
+    },
+    {
+      "feature": "percentile",
+      "importance_mean": 0.0774464919954463,
+      "importance_std": 0.007875874848301904
+    },
+    {
+      "feature": "epss",
+      "importance_mean": 0.009839565629997493,
+      "importance_std": 0.0012378321426212088
+    },
+    {
+      "feature": "cve_age_years",
+      "importance_mean": 0.008568714512400322,
+      "importance_std": 0.012010894843044769
+    },
+    {
+      "feature": "cve_year",
+      "importance_mean": 0.008568714512400322,
+      "importance_std": 0.012010894843044769
+    },
+    {
+      "feature": "epss_log10",
+      "importance_mean": 0.006305592413704116,
+      "importance_std": 0.0014666150999219966
+    },
+    {
+      "feature": "percentile_squared",
+      "importance_mean": 0.003959533244595063,
+      "importance_std": 0.0018098997018972194
+    },
+    {
+      "feature": "percentile_ge_0_90",
+      "importance_mean": 0.0015286144475962586,
+      "importance_std": 0.00037730894602325336
+    },
+    {
+      "feature": "epss_ge_0_50",
+      "importance_mean": 0.00028438464474167535,
+      "importance_std": 1.2521461427269148e-05
+    },
+    {
+      "feature": "epss_ge_0_10",
+      "importance_mean": -0.0007703548879776645,
+      "importance_std": 0.0010935169563858697
+    },
+    {
+      "feature": "percentile_ge_0_99",
+      "importance_mean": -0.008767104975688278,
+      "importance_std": 0.0009795939151148502
+    }
+  ],
+  "features": [
+    "epss",
+    "percentile",
+    "cve_year",
+    "cve_age_years",
+    "epss_log10",
+    "epss_logit",
+    "percentile_squared",
+    "epss_ge_0_10",
+    "epss_ge_0_50",
+    "percentile_ge_0_90",
+    "percentile_ge_0_99"
+  ],
+  "generated_at": "2026-07-20T07:20:37Z",
+  "governance": {
+    "authoritative_policy_engine": "SSVC",
+    "automated_disposition_permitted": false,
+    "causal_model": false,
+    "future_exploitation_prediction": false,
+    "independent_from_ssvc": true,
+    "label_definition": "CURRENT_CISA_KEV_MEMBERSHIP",
+    "limitations": [
+      "Cross-sectional benchmark, not temporal validation.",
+      "EPSS is an input feature and not a complete risk score.",
+      "KEV membership represents confirmed historical exploitation.",
+      "Results must not be used to replace affectedness or SSVC.",
+      "Accuracy is inflated by natural class imbalance and is not the primary model-selection metric."
+    ],
+    "model_authority": "ADVISORY_ONLY",
+    "production_readiness": "BLOCKED"
+  },
+  "leakage_firewall": {
+    "asset_or_sector_features_used": false,
+    "cisa_kev_derived_features_used": false,
+    "label": "is_kev",
+    "label_in_features": false,
+    "ssvc_features_used": false
+  },
+  "quality_gate": {
+    "checks": {
+      "balanced_accuracy_at_least_0_65": true,
+      "label_excluded_from_features": true,
+      "pr_auc_materially_above_prevalence": true,
+      "recall_at_least_0_60": true,
+      "roc_auc_at_least_0_75": true,
+      "test_positive_rows_at_least_100": true
+    },
+    "development_gate": "PASS"
+  },
+  "schema_version": "1.0.0",
+  "split": {
+    "random_seed": 42,
+    "sampled_training_rows": 12844,
+    "test_distribution": "NATURAL_PREVALENCE",
+    "test_rows": 69899,
+    "training_rows": 209694,
+    "validation_rows": 69898
+  },
+  "test_metrics": {
+    "accuracy": 0.9724888768079658,
+    "balanced_accuracy": 0.8666863708591159,
+    "brier_score": 0.06366534681738552,
+    "confusion_matrix": {
+      "false_negative": 79,
+      "false_positive": 1844,
+      "true_negative": 67726,
+      "true_positive": 250
+    },
+    "expected_calibration_error": 0.1339779121045176,
+    "f1": 0.20635575732562939,
+    "log_loss": 0.23085229831819318,
+    "positive_rows": 329,
+    "pr_auc": 0.38280121703260706,
+    "precision": 0.11938872970391595,
+    "predicted_positive_rate": 0.02995751012174709,
+    "prevalence": 0.004706791227342308,
+    "recall": 0.7598784194528876,
+    "roc_auc": 0.9667098760820377,
+    "rows": 69899,
+    "threshold": 0.844979261781565
+  },
+  "winner": {
+    "candidate_name": "logistic_c_10",
+    "family": "logistic_regression",
+    "parameters": {
+      "C": 10.0
+    },
+    "threshold_selection": {
+      "threshold": 0.844979261781565,
+      "validation_precision": 0.1161592505854801,
+      "validation_recall": 0.7515151515151515
+    },
+    "validation_metrics": {
+      "accuracy": 0.971830381412916,
+      "balanced_accuracy": 0.8621953057483761,
+      "brier_score": 0.06414017309491148,
+      "confusion_matrix": {
+        "false_negative": 82,
+        "false_positive": 1887,
+        "true_negative": 67681,
+        "true_positive": 248
+      },
+      "expected_calibration_error": 0.13303766896991392,
+      "f1": 0.20121703853955375,
+      "log_loss": 0.23301640846473634,
+      "positive_rows": 330,
+      "pr_auc": 0.3667620087960759,
+      "precision": 0.1161592505854801,
+      "predicted_positive_rate": 0.030544507711236374,
+      "prevalence": 0.0047211651263269335,
+      "recall": 0.7515151515151515,
+      "roc_auc": 0.9664086457375038,
+      "rows": 69898,
+      "threshold": 0.844979261781565
+    }
+  }
+}

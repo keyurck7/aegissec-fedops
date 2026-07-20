@@ -1,0 +1,41 @@
+{
+  "dataset_id": "AEG-REAL-KEV-8ED4F0701255B5F8AA46E147",
+  "dataset_path": "/home/jovyan/vault/aegissec-fedops/data/processed/presentation_demo/model_benchmark/real_epss_kev_benchmark.csv.gz",
+  "dataset_sha256": "51e157c1f1b86c30f392bde5b0bfe4cefa62b32ea2ebabc765edb08fd91258d4",
+  "epss_source": {
+    "cache_path": "/home/jovyan/vault/aegissec-fedops/data/cache/presentation_demo/epss_scores-2026-07-19.csv.gz",
+    "rows": 349491,
+    "score_date": "2026-07-19",
+    "sha256": "8fd145bd950e1c768faf950c03de99955e79014a074caf74b8c6609a9509ace3",
+    "url": "https://epss.empiricalsecurity.com/epss_scores-2026-07-19.csv.gz"
+  },
+  "generated_at": "2026-07-20T07:20:01Z",
+  "governance": {
+    "authoritative_policy_engine": "SSVC",
+    "automated_disposition_permitted": false,
+    "causal_claim": false,
+    "customer_data": false,
+    "future_exploitation_claim": false,
+    "model_authority": "ADVISORY_ONLY",
+    "personal_data": false,
+    "production_readiness": "BLOCKED",
+    "real_public_data": true
+  },
+  "kev_cves_not_in_epss": [],
+  "kev_source": {
+    "cache_path": "/home/jovyan/vault/aegissec-fedops/data/cache/presentation_demo/cisa_known_exploited_vulnerabilities.json",
+    "catalog_version": "2026.07.16",
+    "date_released": "2026-07-16T17:00:15.6845Z",
+    "declared_count": 1647,
+    "sha256": "41d27023a5912a49ca2b06370550fa6da50e35794c269766a6332618d82f243e",
+    "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+    "validated_cves": 1647
+  },
+  "label_definition": "CURRENT_CISA_KEV_MEMBERSHIP",
+  "negative_rows": 347844,
+  "positive_prevalence": 0.004712567705606153,
+  "positive_rows": 1647,
+  "rows": 349491,
+  "schema_version": "1.0.0",
+  "unique_cves": 349491
+}

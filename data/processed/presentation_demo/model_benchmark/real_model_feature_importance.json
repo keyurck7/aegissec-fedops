@@ -1,0 +1,57 @@
+[
+  {
+    "feature": "epss_logit",
+    "importance_mean": 0.31304429827367175,
+    "importance_std": 0.0023800684457010337
+  },
+  {
+    "feature": "percentile",
+    "importance_mean": 0.0774464919954463,
+    "importance_std": 0.007875874848301904
+  },
+  {
+    "feature": "epss",
+    "importance_mean": 0.009839565629997493,
+    "importance_std": 0.0012378321426212088
+  },
+  {
+    "feature": "cve_age_years",
+    "importance_mean": 0.008568714512400322,
+    "importance_std": 0.012010894843044769
+  },
+  {
+    "feature": "cve_year",
+    "importance_mean": 0.008568714512400322,
+    "importance_std": 0.012010894843044769
+  },
+  {
+    "feature": "epss_log10",
+    "importance_mean": 0.006305592413704116,
+    "importance_std": 0.0014666150999219966
+  },
+  {
+    "feature": "percentile_squared",
+    "importance_mean": 0.003959533244595063,
+    "importance_std": 0.0018098997018972194
+  },
+  {
+    "feature": "percentile_ge_0_90",
+    "importance_mean": 0.0015286144475962586,
+    "importance_std": 0.00037730894602325336
+  },
+  {
+    "feature": "epss_ge_0_50",
+    "importance_mean": 0.00028438464474167535,
+    "importance_std": 1.2521461427269148e-05
+  },
+  {
+    "feature": "epss_ge_0_10",
+    "importance_mean": -0.0007703548879776645,
+    "importance_std": 0.0010935169563858697
+  },
+  {
+    "feature": "percentile_ge_0_99",
+    "importance_mean": -0.008767104975688278,
+    "importance_std": 0.0009795939151148502
+  }
+]
