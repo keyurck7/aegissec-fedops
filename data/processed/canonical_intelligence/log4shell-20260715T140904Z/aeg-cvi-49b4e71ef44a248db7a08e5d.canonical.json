@@ -1,0 +1,850 @@
+{
+  "adjacent_vulnerabilities": [
+    {
+      "aliases": [
+        "CVE-2026-34480"
+      ],
+      "last_modified_at": "2026-04-16T11:29:10.536806482Z",
+      "published_at": "2026-04-10T18:31:17Z",
+      "reason": "COMPONENT_VERSION_MATCH_WITHOUT_TARGET_CVE_ALIAS",
+      "record_id": "GHSA-3pxv-7cmr-fjr4",
+      "record_index": 0,
+      "summary": "Apache Log4j Core: Silent log event loss in XmlLayout due to unescaped XML 1.0 forbidden characters"
+    },
+    {
+      "aliases": [
+        "CVE-2026-34477"
+      ],
+      "last_modified_at": "2026-04-17T12:29:10.521430176Z",
+      "published_at": "2026-04-10T18:31:17Z",
+      "reason": "COMPONENT_VERSION_MATCH_WITHOUT_TARGET_CVE_ALIAS",
+      "record_id": "GHSA-6hg6-v5c8-fphq",
+      "record_index": 1,
+      "summary": "Apache Log4j Core: `verifyHostName` attribute silently ignored in TLS configuration"
+    },
+    {
+      "aliases": [
+        "CVE-2021-45046"
+      ],
+      "last_modified_at": "2025-10-22T19:37:53.742023Z",
+      "published_at": "2021-12-14T18:01:28Z",
+      "reason": "COMPONENT_VERSION_MATCH_WITHOUT_TARGET_CVE_ALIAS",
+      "record_id": "GHSA-7rjr-3q55-vv33",
+      "record_index": 2,
+      "summary": "Incomplete fix for Apache Log4j vulnerability"
+    },
+    {
+      "aliases": [
+        "CVE-2021-44832"
+      ],
+      "last_modified_at": "2026-06-09T10:45:14.253296471Z",
+      "published_at": "2022-01-04T16:14:20Z",
+      "reason": "COMPONENT_VERSION_MATCH_WITHOUT_TARGET_CVE_ALIAS",
+      "record_id": "GHSA-8489-44mv-ggj8",
+      "record_index": 3,
+      "summary": "Improper Input Validation and Injection in Apache Log4j2"
+    },
+    {
+      "aliases": [
+        "CVE-2021-45105"
+      ],
+      "last_modified_at": "2026-06-09T10:30:14.432177927Z",
+      "published_at": "2021-12-18T18:00:07Z",
+      "reason": "COMPONENT_VERSION_MATCH_WITHOUT_TARGET_CVE_ALIAS",
+      "record_id": "GHSA-p6xc-xr62-6r2g",
+      "record_index": 5,
+      "summary": "Apache Log4j2 vulnerable to Improper Input Validation and Uncontrolled Recursion"
+    },
+    {
+      "aliases": [
+        "CVE-2025-68161"
+      ],
+      "last_modified_at": "2026-02-04T03:10:00.616806Z",
+      "published_at": "2025-12-18T21:31:44Z",
+      "reason": "COMPONENT_VERSION_MATCH_WITHOUT_TARGET_CVE_ALIAS",
+      "record_id": "GHSA-vc5p-v9hr-52mj",
+      "record_index": 6,
+      "summary": "Apache Log4j does not verify the TLS hostname in its Socket Appender"
+    }
+  ],
+  "affectedness_decision": {
+    "reason": "Milestone 12B prepares source-governed evidence. Affectedness must be adjudicated in the next controlled stage.",
+    "status": "NOT_EVALUATED"
+  },
+  "correlation_controls": {
+    "adjacent_record_isolation": true,
+    "assertion_differences": [
+      {
+        "assertions": {
+          "CISA_KEV": [
+            "CWE-20",
+            "CWE-400",
+            "CWE-502"
+          ],
+          "NVD": [
+            "CWE-20",
+            "CWE-400",
+            "CWE-502",
+            "CWE-917"
+          ],
+          "OSV": [
+            "CWE-20",
+            "CWE-400",
+            "CWE-502",
+            "CWE-917"
+          ]
+        },
+        "blocking": false,
+        "classification": "SOURCE_COVERAGE_DIFFERENCE",
+        "disposition": "UNION_WITH_FIELD_LEVEL_PROVENANCE",
+        "field": "/vulnerability/weaknesses"
+      }
+    ],
+    "conflicts": [],
+    "consensus_inference_permitted": false,
+    "exact_target_correlation_required": true,
+    "exact_target_matches": {
+      "CISA_KEV": [
+        "CVE-2021-44228"
+      ],
+      "FIRST_EPSS": [
+        "CVE-2021-44228"
+      ],
+      "NVD": [
+        "CVE-2021-44228"
+      ],
+      "OSV": [
+        "GHSA-jfh8-c2jp-5v3q"
+      ]
+    },
+    "missing_numeric_values_coerced_to_zero": false,
+    "source_count_is_consensus": false
+  },
+  "exploitation": {
+    "epss": {
+      "cve_id": "CVE-2021-44228",
+      "percentile": 1.0,
+      "probability": 0.99999,
+      "score_date": "2026-07-15",
+      "status": "PRESENT"
+    },
+    "kev": {
+      "date_added": "2021-12-10",
+      "due_date": "2021-12-24",
+      "known_ransomware_campaign_use": "Known",
+      "listed": true,
+      "product": "Log4j2",
+      "required_action": "For all affected software assets for which updates exist, the only acceptable remediation actions are: 1) Apply updates; OR 2) remove affected assets from agency networks. Temporary mitigations using one of the measures provided at https://www.cisa.gov/uscert/ed-22-02-apache-log4j-recommended-mitigation-measures are only acceptable until updates are available.",
+      "status": "LISTED",
+      "vendor_project": "Apache"
+    },
+    "ssvc_assertions": [
+      {
+        "data": {
+          "id": "CVE-2021-44228",
+          "options": [
+            {
+              "exploitation": "active"
+            },
+            {
+              "automatable": "yes"
+            },
+            {
+              "technicalImpact": "total"
+            }
+          ],
+          "role": "CISA Coordinator",
+          "timestamp": "2025-02-04T14:25:34.416117Z",
+          "version": "2.0.3"
+        },
+        "metric_family": "ssvcV203",
+        "metric_index": 0,
+        "source": "134c704f-9b21-4f2e-91b3-4a467353bcc0"
+      }
+    ]
+  },
+  "field_provenance": [
+    {
+      "extraction_method": "validated_run_input",
+      "field_path": "/target/cve_id",
+      "retrieved_at": "2026-07-15T14:09:14.494975+00:00",
+      "source_artifact_sha256": "60b5017c9cd42838f85aae29686e30c0a40794d0c8dd931ee0bb6c494d08bcd9",
+      "source_authority": "declared_input",
+      "source_envelope_id": null,
+      "source_name": "RUN_INPUT",
+      "source_pointer": "/requested_cve_ids",
+      "source_record_id": "AEG-M12-OFFICIAL-20260715T140914Z",
+      "value_sha256": "36910f32dc2ac89a6f16b1f9493efac05ba904b60f3fa901a2bb4f3ff7af05ec"
+    },
+    {
+      "extraction_method": "validated_run_input",
+      "field_path": "/target/component",
+      "retrieved_at": "2026-07-15T14:09:14.494975+00:00",
+      "source_artifact_sha256": "60b5017c9cd42838f85aae29686e30c0a40794d0c8dd931ee0bb6c494d08bcd9",
+      "source_authority": "declared_input",
+      "source_envelope_id": null,
+      "source_name": "RUN_INPUT",
+      "source_pointer": "/component",
+      "source_record_id": "AEG-M12-OFFICIAL-20260715T140914Z",
+      "value_sha256": "6152725ea2240377f80768295312870acced335982610db5a7b383001976d42c"
+    },
+    {
+      "extraction_method": "deterministic_field_extraction",
+      "field_path": "/identifiers/primary_cve",
+      "retrieved_at": "2026-07-15T14:09:14.494975+00:00",
+      "source_artifact_sha256": "6d484b4269c545a949da005e72df0a69de5b0aa488082b5cfc80aa8a36b18772",
+      "source_authority": "authoritative",
+      "source_envelope_id": "AEG-OSI-DA909188A1571952D82F13EE",
+      "source_name": "NVD",
+      "source_pointer": "/vulnerabilities/0/cve/id",
+      "source_record_id": "CVE-2021-44228",
+      "value_sha256": "36910f32dc2ac89a6f16b1f9493efac05ba904b60f3fa901a2bb4f3ff7af05ec"
+    },
+    {
+      "extraction_method": "deterministic_field_extraction",
+      "field_path": "/vulnerability/description",
+      "retrieved_at": "2026-07-15T14:09:14.494975+00:00",
+      "source_artifact_sha256": "6d484b4269c545a949da005e72df0a69de5b0aa488082b5cfc80aa8a36b18772",
+      "source_authority": "authoritative",
+      "source_envelope_id": "AEG-OSI-DA909188A1571952D82F13EE",
+      "source_name": "NVD",
+      "source_pointer": "/vulnerabilities/0/cve/descriptions",
+      "source_record_id": "CVE-2021-44228",
+      "value_sha256": "68f33bc1e214fa81880578527218475f8e33c42ceabe74ef47024fbc62abda0b"
+    },
+    {
+      "extraction_method": "deterministic_field_extraction",
+      "field_path": "/vulnerability/status",
+      "retrieved_at": "2026-07-15T14:09:14.494975+00:00",
+      "source_artifact_sha256": "6d484b4269c545a949da005e72df0a69de5b0aa488082b5cfc80aa8a36b18772",
+      "source_authority": "authoritative",
+      "source_envelope_id": "AEG-OSI-DA909188A1571952D82F13EE",
+      "source_name": "NVD",
+      "source_pointer": "/vulnerabilities/0/cve/vulnStatus",
+      "source_record_id": "CVE-2021-44228",
+      "value_sha256": "d1dc1220bd6b42322f7496ce6363a72aa76c0d05dca5c9f6051fc3481f0d3358"
+    },
+    {
+      "extraction_method": "deterministic_field_extraction",
+      "field_path": "/vulnerability/published_at",
+      "retrieved_at": "2026-07-15T14:09:14.494975+00:00",
+      "source_artifact_sha256": "6d484b4269c545a949da005e72df0a69de5b0aa488082b5cfc80aa8a36b18772",
+      "source_authority": "authoritative",
+      "source_envelope_id": "AEG-OSI-DA909188A1571952D82F13EE",
+      "source_name": "NVD",
+      "source_pointer": "/vulnerabilities/0/cve/published",
+      "source_record_id": "CVE-2021-44228",
+      "value_sha256": "f30e9eaeda34783e86a05ac10959f496c240e2be07ba59fdd9a7a3d125615d5c"
+    },
+    {
+      "extraction_method": "deterministic_field_extraction",
+      "field_path": "/vulnerability/last_modified_at",
+      "retrieved_at": "2026-07-15T14:09:14.494975+00:00",
+      "source_artifact_sha256": "6d484b4269c545a949da005e72df0a69de5b0aa488082b5cfc80aa8a36b18772",
+      "source_authority": "authoritative",
+      "source_envelope_id": "AEG-OSI-DA909188A1571952D82F13EE",
+      "source_name": "NVD",
+      "source_pointer": "/vulnerabilities/0/cve/lastModified",
+      "source_record_id": "CVE-2021-44228",
+      "value_sha256": "d5ad0c9f6eaef60cde3d751ed151d4da3372f2f289917b93c4ae84cb2b32c2b7"
+    },
+    {
+      "extraction_method": "deterministic_primary_cvss_selection",
+      "field_path": "/vulnerability/severity/selected",
+      "retrieved_at": "2026-07-15T14:09:14.494975+00:00",
+      "source_artifact_sha256": "6d484b4269c545a949da005e72df0a69de5b0aa488082b5cfc80aa8a36b18772",
+      "source_authority": "authoritative",
+      "source_envelope_id": "AEG-OSI-DA909188A1571952D82F13EE",
+      "source_name": "NVD",
+      "source_pointer": "/vulnerabilities/0/cve/metrics",
+      "source_record_id": "CVE-2021-44228",
+      "value_sha256": "32112ef7a96a83660ace483156e9b95e70f4cec633a2ae583da5cbfe6577df14"
+    },
+    {
+      "extraction_method": "multi_source_union_anchor",
+      "field_path": "/vulnerability/weaknesses",
+      "retrieved_at": "2026-07-15T14:09:14.494975+00:00",
+      "source_artifact_sha256": "6d484b4269c545a949da005e72df0a69de5b0aa488082b5cfc80aa8a36b18772",
+      "source_authority": "authoritative",
+      "source_envelope_id": "AEG-OSI-DA909188A1571952D82F13EE",
+      "source_name": "NVD",
+      "source_pointer": "/vulnerabilities/0/cve/weaknesses",
+      "source_record_id": "CVE-2021-44228",
+      "value_sha256": "6763df101e9a06e92c31d091b1f2254729bc1d266a01a84615952e33345b28f8"
+    },
+    {
+      "extraction_method": "multi_source_union_contribution",
+      "field_path": "/vulnerability/weaknesses",
+      "retrieved_at": "2026-07-15T14:09:14.494975+00:00",
+      "source_artifact_sha256": "8aa1798b624c7863f5e66c0e56ccf06c800b8931fc8142af0c6adccb03d4eeb2",
+      "source_authority": "authoritative",
+      "source_envelope_id": "AEG-OSI-B74E3D1072C2FFDCFF10119C",
+      "source_name": "CISA_KEV",
+      "source_pointer": "/vulnerabilities/1345/cwes",
+      "source_record_id": "CVE-2021-44228",
+      "value_sha256": "86feb0e871dd6786f7bf33894d751ca64b5b69a31878568d7ed5accdb2dac773"
+    },
+    {
+      "extraction_method": "multi_source_union_contribution",
+      "field_path": "/vulnerability/weaknesses",
+      "retrieved_at": "2026-07-15T14:09:14.494975+00:00",
+      "source_artifact_sha256": "cb5ae2708c1115ef40b781bb4093e4e5184675fe7bd5a19bdcb22ca9da72f961",
+      "source_authority": "high",
+      "source_envelope_id": "AEG-OSI-ACD41CA17BEF4D71F941E955",
+      "source_name": "OSV",
+      "source_pointer": "/vulns/4/database_specific/cwe_ids",
+      "source_record_id": "GHSA-jfh8-c2jp-5v3q",
+      "value_sha256": "6763df101e9a06e92c31d091b1f2254729bc1d266a01a84615952e33345b28f8"
+    },
+    {
+      "extraction_method": "deterministic_field_extraction",
+      "field_path": "/vulnerability/title",
+      "retrieved_at": "2026-07-15T14:09:14.494975+00:00",
+      "source_artifact_sha256": "8aa1798b624c7863f5e66c0e56ccf06c800b8931fc8142af0c6adccb03d4eeb2",
+      "source_authority": "authoritative",
+      "source_envelope_id": "AEG-OSI-B74E3D1072C2FFDCFF10119C",
+      "source_name": "CISA_KEV",
+      "source_pointer": "/vulnerabilities/1345/vulnerabilityName",
+      "source_record_id": "CVE-2021-44228",
+      "value_sha256": "c9ff40018d41a5f07f168a8d5e65a41d048add922000bff45cf0c9deed9d4c38"
+    },
+    {
+      "extraction_method": "deterministic_field_extraction",
+      "field_path": "/exploitation/kev",
+      "retrieved_at": "2026-07-15T14:09:14.494975+00:00",
+      "source_artifact_sha256": "8aa1798b624c7863f5e66c0e56ccf06c800b8931fc8142af0c6adccb03d4eeb2",
+      "source_authority": "authoritative",
+      "source_envelope_id": "AEG-OSI-B74E3D1072C2FFDCFF10119C",
+      "source_name": "CISA_KEV",
+      "source_pointer": "/vulnerabilities/1345",
+      "source_record_id": "CVE-2021-44228",
+      "value_sha256": "9b7aeae609ddd89539d463272fce7a3d0685d533139def87ff0d0f2803eda99e"
+    },
+    {
+      "extraction_method": "exact_cve_extraction",
+      "field_path": "/exploitation/epss",
+      "retrieved_at": "2026-07-15T14:09:14.494975+00:00",
+      "source_artifact_sha256": "dc9f568b45d078c25a99e3f94969d0dba11c764bf86eedeb83bf71e147d3e926",
+      "source_authority": "high",
+      "source_envelope_id": "AEG-OSI-A2DC678BB891C2C71EF67CB5",
+      "source_name": "FIRST_EPSS",
+      "source_pointer": "/data/0",
+      "source_record_id": "CVE-2021-44228",
+      "value_sha256": "0cc5b2b37fb36f3fe648faf50cf172398c19fe8bf8b631fe4891c7f54dd5af6f"
+    },
+    {
+      "extraction_method": "exact_cve_alias_and_component_identity_filter",
+      "field_path": "/package_evidence",
+      "retrieved_at": "2026-07-15T14:09:14.494975+00:00",
+      "source_artifact_sha256": "cb5ae2708c1115ef40b781bb4093e4e5184675fe7bd5a19bdcb22ca9da72f961",
+      "source_authority": "high",
+      "source_envelope_id": "AEG-OSI-ACD41CA17BEF4D71F941E955",
+      "source_name": "OSV",
+      "source_pointer": "/vulns/4/affected",
+      "source_record_id": "GHSA-jfh8-c2jp-5v3q",
+      "value_sha256": "d1d3f8257e20e6e1acb119ab3dffe40b68348755757158030218fb43d5067258"
+    },
+    {
+      "extraction_method": "exact_target_identifier_union",
+      "field_path": "/identifiers/aliases",
+      "retrieved_at": "2026-07-15T14:09:14.494975+00:00",
+      "source_artifact_sha256": "cb5ae2708c1115ef40b781bb4093e4e5184675fe7bd5a19bdcb22ca9da72f961",
+      "source_authority": "high",
+      "source_envelope_id": "AEG-OSI-ACD41CA17BEF4D71F941E955",
+      "source_name": "OSV",
+      "source_pointer": "/vulns/4",
+      "source_record_id": "GHSA-jfh8-c2jp-5v3q",
+      "value_sha256": "0e3e5b8f6d910b632c84c41338490ed125ada2ad2c4de613574892dac699139f"
+    }
+  ],
+  "freshness": {
+    "blocking_findings": [],
+    "checks": [
+      {
+        "age_days": 0.0,
+        "blocking": false,
+        "check_id": "RETRIEVAL-OSV",
+        "max_age_days": 1.0,
+        "observed_at": "2026-07-15T14:09:14.494975+00:00",
+        "required": true,
+        "semantic": "retrieval_time",
+        "source_name": "OSV",
+        "status": "CURRENT"
+      },
+      {
+        "age_days": 0.0,
+        "blocking": false,
+        "check_id": "RETRIEVAL-NVD",
+        "max_age_days": 1.0,
+        "observed_at": "2026-07-15T14:09:14.494975+00:00",
+        "required": true,
+        "semantic": "retrieval_time",
+        "source_name": "NVD",
+        "status": "CURRENT"
+      },
+      {
+        "age_days": 0.0,
+        "blocking": false,
+        "check_id": "RETRIEVAL-CISA_KEV",
+        "max_age_days": 1.0,
+        "observed_at": "2026-07-15T14:09:14.494975+00:00",
+        "required": true,
+        "semantic": "retrieval_time",
+        "source_name": "CISA_KEV",
+        "status": "CURRENT"
+      },
+      {
+        "age_days": 0.0,
+        "blocking": false,
+        "check_id": "RETRIEVAL-FIRST_EPSS",
+        "max_age_days": 1.0,
+        "observed_at": "2026-07-15T14:09:14.494975+00:00",
+        "required": true,
+        "semantic": "retrieval_time",
+        "source_name": "FIRST_EPSS",
+        "status": "CURRENT"
+      },
+      {
+        "age_days": 0.797435,
+        "blocking": false,
+        "check_id": "CISA-KEV-CATALOG",
+        "max_age_days": 3.0,
+        "observed_at": "2026-07-14T19:00:56.138900+00:00",
+        "required": true,
+        "semantic": "catalog_release_time",
+        "source_name": "CISA_KEV",
+        "status": "CURRENT"
+      },
+      {
+        "age_days": 0.589751,
+        "blocking": false,
+        "check_id": "FIRST-EPSS-SCORE",
+        "max_age_days": 2.0,
+        "observed_at": "2026-07-15T00:00:00+00:00",
+        "required": true,
+        "semantic": "score_date",
+        "source_name": "FIRST_EPSS",
+        "status": "CURRENT"
+      },
+      {
+        "age_days": 28.414688,
+        "blocking": false,
+        "check_id": "NVD-RECORD-MODIFIED",
+        "max_age_days": null,
+        "observed_at": "2026-06-17T04:12:05.460000+00:00",
+        "required": false,
+        "semantic": "record_last_modified_time",
+        "source_name": "NVD",
+        "status": "OBSERVED"
+      },
+      {
+        "age_days": 265.77236,
+        "blocking": false,
+        "check_id": "OSV-RECORD-GHSA-jfh8-c2jp-5v3q",
+        "max_age_days": null,
+        "observed_at": "2025-10-22T19:37:02.616807+00:00",
+        "required": false,
+        "semantic": "advisory_last_modified_time",
+        "source_name": "OSV",
+        "status": "OBSERVED"
+      }
+    ],
+    "reference_time": "2026-07-15T14:09:14.494975+00:00"
+  },
+  "generated_at": "2026-07-15T14:09:14.494975+00:00",
+  "identifiers": {
+    "aliases": [
+      "GHSA-JFH8-C2JP-5V3Q"
+    ],
+    "primary_cve": "CVE-2021-44228"
+  },
+  "package_evidence": {
+    "aggregate_status": "AFFECTED_SUPPORTED",
+    "assertions": [
+      {
+        "affected_index": 0,
+        "ecosystem": "Maven",
+        "evidence_status": "AFFECTED_SUPPORTED",
+        "explicit_version_match": true,
+        "fixed_versions": [
+          "2.15.0"
+        ],
+        "package_name": "org.apache.logging.log4j:log4j-core",
+        "purl": "pkg:maven/org.apache.logging.log4j/log4j-core",
+        "range_evaluations": [
+          {
+            "affected": true,
+            "before_introduced": false,
+            "error": null,
+            "fixed": "2.15.0",
+            "fixed_boundary_reached": false,
+            "introduced": "2.13.0",
+            "last_affected": null,
+            "range_index": 0,
+            "range_type": "ECOSYSTEM",
+            "reason_codes": [
+              "VERSION_WITHIN_AFFECTED_RANGE"
+            ],
+            "segment_index": 0,
+            "valid": true
+          }
+        ],
+        "source_record_id": "GHSA-jfh8-c2jp-5v3q"
+      },
+      {
+        "affected_index": 1,
+        "ecosystem": "Maven",
+        "evidence_status": "NOT_AFFECTED_SUPPORTED",
+        "explicit_version_match": false,
+        "fixed_versions": [
+          "2.3.1"
+        ],
+        "package_name": "org.apache.logging.log4j:log4j-core",
+        "purl": "pkg:maven/org.apache.logging.log4j/log4j-core",
+        "range_evaluations": [
+          {
+            "affected": false,
+            "before_introduced": false,
+            "error": null,
+            "fixed": "2.3.1",
+            "fixed_boundary_reached": true,
+            "introduced": "2.0-beta9",
+            "last_affected": null,
+            "range_index": 0,
+            "range_type": "ECOSYSTEM",
+            "reason_codes": [
+              "FIXED_BOUNDARY_REACHED"
+            ],
+            "segment_index": 0,
+            "valid": true
+          }
+        ],
+        "source_record_id": "GHSA-jfh8-c2jp-5v3q"
+      },
+      {
+        "affected_index": 2,
+        "ecosystem": "Maven",
+        "evidence_status": "NOT_AFFECTED_SUPPORTED",
+        "explicit_version_match": false,
+        "fixed_versions": [
+          "2.12.2"
+        ],
+        "package_name": "org.apache.logging.log4j:log4j-core",
+        "purl": "pkg:maven/org.apache.logging.log4j/log4j-core",
+        "range_evaluations": [
+          {
+            "affected": false,
+            "before_introduced": false,
+            "error": null,
+            "fixed": "2.12.2",
+            "fixed_boundary_reached": true,
+            "introduced": "2.4",
+            "last_affected": null,
+            "range_index": 0,
+            "range_type": "ECOSYSTEM",
+            "reason_codes": [
+              "FIXED_BOUNDARY_REACHED"
+            ],
+            "segment_index": 0,
+            "valid": true
+          }
+        ],
+        "source_record_id": "GHSA-jfh8-c2jp-5v3q"
+      }
+    ],
+    "exact_target_record_ids": [
+      "GHSA-jfh8-c2jp-5v3q"
+    ],
+    "source": "OSV"
+  },
+  "production_readiness": "BLOCKED",
+  "quality": {
+    "limitations": [
+      "Canonical correlation does not prove runtime reachability or deployed affectedness.",
+      "OSV package-version results may include adjacent CVEs and are isolated by exact identifiers.",
+      "NVD CPE configurations are not direct proof of the observed package instance.",
+      "EPSS is a probability estimate, not evidence of active exploitation on an asset.",
+      "CISA KEV listing applies to the vulnerability, not proof that this component instance is affected.",
+      "Independent security review and real operational validation remain incomplete."
+    ],
+    "quality_gates": [
+      {
+        "expected": 4,
+        "gate_id": "M12B-SOURCE-SET",
+        "metric": "required_source_bundle_count",
+        "observed": 4,
+        "pass": true
+      },
+      {
+        "expected": 1,
+        "gate_id": "M12B-NVD-EXACT",
+        "metric": "nvd_exact_target_count",
+        "observed": 1,
+        "pass": true
+      },
+      {
+        "expected": "each <= 1",
+        "gate_id": "M12B-CARDINALITY",
+        "metric": "single_record_source_cardinality",
+        "observed": {
+          "CISA_KEV": 1,
+          "FIRST_EPSS": 1,
+          "NVD": 1
+        },
+        "pass": true
+      },
+      {
+        "expected": true,
+        "gate_id": "M12B-ADJACENT-ISOLATION",
+        "metric": "adjacent_records_excluded_from_target_assertions",
+        "observed": true,
+        "pass": true
+      },
+      {
+        "expected": false,
+        "gate_id": "M12B-NO-CONSENSUS-COUNTING",
+        "metric": "source_count_interpreted_as_consensus",
+        "observed": false,
+        "pass": true
+      },
+      {
+        "expected": false,
+        "gate_id": "M12B-MISSING-NOT-ZERO",
+        "metric": "missing_numeric_values_coerced_to_zero",
+        "observed": false,
+        "pass": true
+      },
+      {
+        "expected": [],
+        "gate_id": "M12B-FRESHNESS",
+        "metric": "blocking_freshness_findings",
+        "observed": [],
+        "pass": true
+      },
+      {
+        "expected": "BLOCKED",
+        "gate_id": "M12B-PRODUCTION-BLOCK",
+        "metric": "production_readiness",
+        "observed": "BLOCKED",
+        "pass": true
+      }
+    ],
+    "source_bundle_verification": "PASS",
+    "warnings": []
+  },
+  "record_id": "AEG-CVI-49B4E71EF44A248DB7A08E5D",
+  "schema_version": "1.0.0",
+  "source_assertions": [
+    {
+      "all_record_ids": [
+        "GHSA-3pxv-7cmr-fjr4",
+        "GHSA-6hg6-v5c8-fphq",
+        "GHSA-7rjr-3q55-vv33",
+        "GHSA-8489-44mv-ggj8",
+        "GHSA-jfh8-c2jp-5v3q",
+        "GHSA-p6xc-xr62-6r2g",
+        "GHSA-vc5p-v9hr-52mj"
+      ],
+      "artifact_paths": {
+        "envelope": "data/raw/official_sources/log4shell-20260715T140904Z/aeg-osi-acd41ca17bef4d71f941e955.envelope.json",
+        "integrity": "data/raw/official_sources/log4shell-20260715T140904Z/aeg-osi-acd41ca17bef4d71f941e955.integrity.sha256",
+        "payload": "data/raw/official_sources/log4shell-20260715T140904Z/aeg-osi-acd41ca17bef4d71f941e955.payload.json"
+      },
+      "claim_ownership": [
+        "package_identity",
+        "affected_ranges",
+        "fixed_versions",
+        "ecosystem_aliases"
+      ],
+      "envelope_id": "AEG-OSI-ACD41CA17BEF4D71F941E955",
+      "exact_target_record_ids": [
+        "GHSA-jfh8-c2jp-5v3q"
+      ],
+      "payload_sha256": "cb5ae2708c1115ef40b781bb4093e4e5184675fe7bd5a19bdcb22ca9da72f961",
+      "retrieved_at": "2026-07-15T14:09:14.494975+00:00",
+      "source_authority": "high",
+      "source_category": "open_source_project",
+      "source_name": "OSV",
+      "validation_status": "accepted"
+    },
+    {
+      "all_record_ids": [
+        "CVE-2021-44228"
+      ],
+      "artifact_paths": {
+        "envelope": "data/raw/official_sources/log4shell-20260715T140904Z/aeg-osi-da909188a1571952d82f13ee.envelope.json",
+        "integrity": "data/raw/official_sources/log4shell-20260715T140904Z/aeg-osi-da909188a1571952d82f13ee.integrity.sha256",
+        "payload": "data/raw/official_sources/log4shell-20260715T140904Z/aeg-osi-da909188a1571952d82f13ee.payload.json"
+      },
+      "claim_ownership": [
+        "cve_metadata",
+        "cvss",
+        "cwe",
+        "ssvc"
+      ],
+      "envelope_id": "AEG-OSI-DA909188A1571952D82F13EE",
+      "exact_target_record_ids": [
+        "CVE-2021-44228"
+      ],
+      "payload_sha256": "6d484b4269c545a949da005e72df0a69de5b0aa488082b5cfc80aa8a36b18772",
+      "retrieved_at": "2026-07-15T14:09:14.494975+00:00",
+      "source_authority": "authoritative",
+      "source_category": "official_government",
+      "source_name": "NVD",
+      "validation_status": "accepted"
+    },
+    {
+      "all_record_ids": [
+        "CVE-2021-44228"
+      ],
+      "artifact_paths": {
+        "envelope": "data/raw/official_sources/log4shell-20260715T140904Z/aeg-osi-b74e3d1072c2ffdcff10119c.envelope.json",
+        "integrity": "data/raw/official_sources/log4shell-20260715T140904Z/aeg-osi-b74e3d1072c2ffdcff10119c.integrity.sha256",
+        "payload": "data/raw/official_sources/log4shell-20260715T140904Z/aeg-osi-b74e3d1072c2ffdcff10119c.payload.json"
+      },
+      "claim_ownership": [
+        "known_exploitation",
+        "federal_due_date",
+        "required_action",
+        "ransomware_use"
+      ],
+      "envelope_id": "AEG-OSI-B74E3D1072C2FFDCFF10119C",
+      "exact_target_record_ids": [
+        "CVE-2021-44228"
+      ],
+      "payload_sha256": "8aa1798b624c7863f5e66c0e56ccf06c800b8931fc8142af0c6adccb03d4eeb2",
+      "retrieved_at": "2026-07-15T14:09:14.494975+00:00",
+      "source_authority": "authoritative",
+      "source_category": "official_government",
+      "source_name": "CISA_KEV",
+      "validation_status": "accepted"
+    },
+    {
+      "all_record_ids": [
+        "CVE-2021-44228"
+      ],
+      "artifact_paths": {
+        "envelope": "data/raw/official_sources/log4shell-20260715T140904Z/aeg-osi-a2dc678bb891c2c71ef67cb5.envelope.json",
+        "integrity": "data/raw/official_sources/log4shell-20260715T140904Z/aeg-osi-a2dc678bb891c2c71ef67cb5.integrity.sha256",
+        "payload": "data/raw/official_sources/log4shell-20260715T140904Z/aeg-osi-a2dc678bb891c2c71ef67cb5.payload.json"
+      },
+      "claim_ownership": [
+        "exploit_probability",
+        "percentile",
+        "score_date"
+      ],
+      "envelope_id": "AEG-OSI-A2DC678BB891C2C71EF67CB5",
+      "exact_target_record_ids": [
+        "CVE-2021-44228"
+      ],
+      "payload_sha256": "dc9f568b45d078c25a99e3f94969d0dba11c764bf86eedeb83bf71e147d3e926",
+      "retrieved_at": "2026-07-15T14:09:14.494975+00:00",
+      "source_authority": "high",
+      "source_category": "official_public_service",
+      "source_name": "FIRST_EPSS",
+      "validation_status": "accepted"
+    }
+  ],
+  "source_run": {
+    "network_used": true,
+    "retrieved_at": "2026-07-15T14:09:14.494975+00:00",
+    "run_id": "AEG-M12-OFFICIAL-20260715T140914Z",
+    "summary_path": "data/raw/official_sources/log4shell-20260715T140904Z/milestone12_official_source_summary.json",
+    "summary_sha256": "60b5017c9cd42838f85aae29686e30c0a40794d0c8dd931ee0bb6c494d08bcd9"
+  },
+  "target": {
+    "component": {
+      "ecosystem": "Maven",
+      "package_name": "org.apache.logging.log4j:log4j-core",
+      "version": "2.14.1"
+    },
+    "cve_id": "CVE-2021-44228"
+  },
+  "vulnerability": {
+    "description": "Apache Log4j2 2.0-beta9 through 2.15.0 (excluding security releases 2.12.2, 2.12.3, and 2.3.1) JNDI features used in configuration, log messages, and parameters do not protect against attacker controlled LDAP and other JNDI related endpoints. An attacker who can control log messages or log message parameters can execute arbitrary code loaded from LDAP servers when message lookup substitution is enabled. From log4j 2.15.0, this behavior has been disabled by default. From version 2.16.0 (along with 2.12.2, 2.12.3, and 2.3.1), this functionality has been completely removed. Note that this vulnerability is specific to log4j-core and does not affect log4net, log4cxx, or other Apache Logging Services projects.",
+    "last_modified_at": "2026-06-17T04:12:05.460",
+    "published_at": "2021-12-10T10:15:09.143",
+    "severity": {
+      "assertions": [
+        {
+          "base_score": 9.3,
+          "base_severity": null,
+          "exploitability_score": 8.6,
+          "impact_score": 10.0,
+          "metric_family": "cvssMetricV2",
+          "metric_index": 0,
+          "source": "nvd@nist.gov",
+          "source_name": "NVD",
+          "source_record_id": "CVE-2021-44228",
+          "type": "Primary",
+          "vector": "AV:N/AC:M/Au:N/C:C/I:C/A:C",
+          "version": "2.0"
+        },
+        {
+          "base_score": 10.0,
+          "base_severity": "CRITICAL",
+          "exploitability_score": 3.9,
+          "impact_score": 6.0,
+          "metric_family": "cvssMetricV31",
+          "metric_index": 0,
+          "source": "nvd@nist.gov",
+          "source_name": "NVD",
+          "source_record_id": "CVE-2021-44228",
+          "type": "Primary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+          "version": "3.1"
+        },
+        {
+          "base_score": 10.0,
+          "base_severity": "CRITICAL",
+          "exploitability_score": 3.9,
+          "impact_score": 6.0,
+          "metric_family": "cvssMetricV31",
+          "metric_index": 1,
+          "source": "134c704f-9b21-4f2e-91b3-4a467353bcc0",
+          "source_name": "NVD",
+          "source_record_id": "CVE-2021-44228",
+          "type": "Secondary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+          "version": "3.1"
+        },
+        {
+          "base_score": null,
+          "base_severity": "CRITICAL",
+          "exploitability_score": null,
+          "impact_score": null,
+          "metric_family": "OSV_DATABASE_SPECIFIC",
+          "metric_index": 4,
+          "source": "OSV",
+          "source_name": "OSV",
+          "source_record_id": "GHSA-jfh8-c2jp-5v3q",
+          "type": "Advisory",
+          "vector": null,
+          "version": null
+        }
+      ],
+      "selected": {
+        "base_score": 10.0,
+        "base_severity": "CRITICAL",
+        "exploitability_score": 3.9,
+        "impact_score": 6.0,
+        "metric_family": "cvssMetricV31",
+        "metric_index": 0,
+        "source": "nvd@nist.gov",
+        "source_name": "NVD",
+        "source_record_id": "CVE-2021-44228",
+        "type": "Primary",
+        "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+        "version": "3.1"
+      }
+    },
+    "status": "Analyzed",
+    "title": "Apache Log4j2 Remote Code Execution Vulnerability",
+    "weaknesses": [
+      "CWE-20",
+      "CWE-400",
+      "CWE-502",
+      "CWE-917"
+    ]
+  }
+}

@@ -1,0 +1,280 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aegissec.local/schemas/aegis-finding-assessment-request.schema.json",
+  "title": "AegisSec Finding Assessment Request",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "request_id",
+    "created_at",
+    "status",
+    "unit_of_assessment",
+    "input_reference",
+    "asset_context",
+    "runtime_context",
+    "evidence_snapshot",
+    "readiness",
+    "governance",
+    "integrity"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "request_id": {
+      "type": "string",
+      "pattern": "^AEG-FAR-[A-F0-9]{24}$"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "status": {
+      "enum": [
+        "READY_FOR_AFFECTEDNESS",
+        "BLOCKED"
+      ]
+    },
+    "unit_of_assessment": {
+      "type": "object",
+      "required": [
+        "asset_id",
+        "component",
+        "cve_id"
+      ],
+      "properties": {
+        "asset_id": {
+          "type": ["string", "null"]
+        },
+        "component": {
+          "type": "object",
+          "required": [
+            "component_id",
+            "name",
+            "version",
+            "ecosystem",
+            "purl",
+            "identity_status"
+          ],
+          "properties": {
+            "component_id": {
+              "type": ["string", "null"]
+            },
+            "name": {
+              "type": ["string", "null"]
+            },
+            "version": {
+              "type": ["string", "null"]
+            },
+            "ecosystem": {
+              "type": ["string", "null"]
+            },
+            "purl": {
+              "type": ["string", "null"]
+            },
+            "identity_status": {
+              "type": ["string", "null"]
+            }
+          },
+          "additionalProperties": true
+        },
+        "cve_id": {
+          "type": ["string", "null"]
+        }
+      },
+      "additionalProperties": false
+    },
+    "input_reference": {
+      "type": "object",
+      "required": [
+        "input_id",
+        "input_envelope_sha256"
+      ],
+      "properties": {
+        "input_id": {
+          "type": "string"
+        },
+        "input_envelope_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "asset_context": {
+      "type": "object",
+      "required": [
+        "record_id",
+        "sha256",
+        "criticality",
+        "exposure",
+        "impact_assessment"
+      ],
+      "properties": {
+        "record_id": {
+          "type": ["string", "null"]
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "criticality": {
+          "type": "object"
+        },
+        "exposure": {
+          "type": "object"
+        },
+        "impact_assessment": {
+          "type": "object"
+        }
+      },
+      "additionalProperties": true
+    },
+    "runtime_context": {
+      "type": "object",
+      "required": [
+        "presence",
+        "reachability",
+        "configuration",
+        "affectedness_semantics"
+      ],
+      "properties": {
+        "presence": {
+          "enum": [
+            "PRESENT",
+            "ABSENT",
+            "UNKNOWN"
+          ]
+        },
+        "reachability": {
+          "type": "string"
+        },
+        "configuration": {
+          "type": "string"
+        },
+        "affectedness_semantics": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "evidence_snapshot": {
+      "type": "object",
+      "required": [
+        "correlation_source",
+        "correlation_authority",
+        "correlation_row_sha256",
+        "technical",
+        "exploitation",
+        "historical_intelligence"
+      ],
+      "properties": {
+        "correlation_source": {
+          "type": "string"
+        },
+        "correlation_authority": {
+          "const": "CORRELATION_EVIDENCE_ONLY"
+        },
+        "correlation_row_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "technical": {
+          "type": "object"
+        },
+        "exploitation": {
+          "type": "object"
+        },
+        "historical_intelligence": {
+          "type": ["object", "null"]
+        }
+      },
+      "additionalProperties": true
+    },
+    "readiness": {
+      "type": "object",
+      "required": [
+        "status",
+        "blocking_reason_codes",
+        "warnings"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "READY_FOR_AFFECTEDNESS",
+            "BLOCKED"
+          ]
+        },
+        "blocking_reason_codes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "warnings": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "governance": {
+      "type": "object",
+      "required": [
+        "request_authority",
+        "affectedness_authority",
+        "policy_authority",
+        "model_authority",
+        "may_override_ssvc",
+        "automated_disposition_permitted",
+        "final_disposition_authority",
+        "production_readiness"
+      ],
+      "properties": {
+        "request_authority": {
+          "const": "ASSESSMENT_INPUT_ONLY"
+        },
+        "affectedness_authority": {
+          "const": "DETERMINISTIC_ENGINE"
+        },
+        "policy_authority": {
+          "const": "SSVC"
+        },
+        "model_authority": {
+          "const": "ADVISORY_ONLY"
+        },
+        "may_override_ssvc": {
+          "const": false
+        },
+        "automated_disposition_permitted": {
+          "const": false
+        },
+        "final_disposition_authority": {
+          "const": "HUMAN"
+        },
+        "production_readiness": {
+          "const": "BLOCKED"
+        }
+      },
+      "additionalProperties": false
+    },
+    "integrity": {
+      "type": "object",
+      "required": [
+        "request_sha256"
+      ],
+      "properties": {
+        "request_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

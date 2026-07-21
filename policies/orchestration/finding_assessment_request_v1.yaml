@@ -1,0 +1,47 @@
+policy_id: AEG-ORCH-FINDING-ASSESSMENT-REQUEST-V1
+schema_version: 1.0.0
+status: DEVELOPMENT_CONTROLLED
+
+unit_of_assessment:
+  cardinality: ONE
+  required_dimensions:
+    - asset
+    - component
+    - component_version
+    - vulnerability
+    - evidence_snapshot
+
+readiness:
+  exact_component_version_required: true
+  component_name_required: true
+  cve_identifier_required: true
+  asset_identifier_required: true
+  ecosystem_or_purl_required: true
+  valid_input_envelope_required: true
+
+missing_value_semantics:
+  missing_version: BLOCK
+  missing_asset_context: BLOCK
+  missing_cve: BLOCK
+  unknown_reachability: PRESERVE_UNKNOWN
+  unknown_configuration: PRESERVE_UNKNOWN
+  missing_epss: UNKNOWN
+  missing_kev_confirmation: NOT_CONFIRMED
+  absence_of_match_means_safe: false
+
+evidence:
+  correlation_row_sha256_required: true
+  input_envelope_sha256_required: true
+  asset_context_sha256_required: true
+  historical_snapshot_authority: HISTORICAL_READ_ONLY
+  scanner_authority: ADVISORY_ONLY
+  live_validated_sources_take_precedence: true
+
+authority:
+  request_authority: ASSESSMENT_INPUT_ONLY
+  affectedness_authority: DETERMINISTIC_ENGINE
+  policy_authority: SSVC
+  model_authority: ADVISORY_ONLY
+  automated_disposition_permitted: false
+  final_disposition_authority: HUMAN
+  production_readiness: BLOCKED

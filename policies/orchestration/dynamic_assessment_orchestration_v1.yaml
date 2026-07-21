@@ -1,0 +1,128 @@
+policy_id: AEG-ORCH-DYNAMIC-ASSESSMENT-V1
+schema_version: 1.0.0
+status: DEVELOPMENT_CONTROLLED
+
+purpose: >
+  Govern dynamic vulnerability assessment execution through explicit,
+  dependency-gated stages and a tamper-evident append-only event ledger.
+
+stage_statuses:
+  - PENDING
+  - RUNNING
+  - PASSED
+  - PASSED_WITH_WARNINGS
+  - BLOCKED
+  - FAILED
+  - SKIPPED
+
+run_statuses:
+  - CREATED
+  - IN_PROGRESS
+  - AWAITING_HUMAN_REVIEW
+  - BLOCKED
+  - FAILED
+  - COMPLETED
+
+stages:
+  - stage_id: INTAKE_VALIDATION
+    authority: AUTHORITATIVE
+    required: true
+    required_dependencies: []
+    optional_dependencies: []
+
+  - stage_id: ASSET_CONTEXT
+    authority: AUTHORITATIVE
+    required: true
+    required_dependencies:
+      - INTAKE_VALIDATION
+    optional_dependencies: []
+
+  - stage_id: COMPONENT_CORRELATION
+    authority: AUTHORITATIVE
+    required: true
+    required_dependencies:
+      - INTAKE_VALIDATION
+      - ASSET_CONTEXT
+    optional_dependencies: []
+
+  - stage_id: EVIDENCE_ARBITRATION
+    authority: AUTHORITATIVE
+    required: true
+    required_dependencies:
+      - COMPONENT_CORRELATION
+    optional_dependencies: []
+
+  - stage_id: AFFECTEDNESS
+    authority: AUTHORITATIVE
+    required: true
+    required_dependencies:
+      - EVIDENCE_ARBITRATION
+    optional_dependencies: []
+
+  - stage_id: DECISION_FEATURE_ENVELOPE
+    authority: AUTHORITATIVE
+    required: true
+    required_dependencies:
+      - AFFECTEDNESS
+    optional_dependencies: []
+
+  - stage_id: SSVC
+    authority: AUTHORITATIVE
+    required: true
+    required_dependencies:
+      - DECISION_FEATURE_ENVELOPE
+    optional_dependencies: []
+
+  - stage_id: ML_ADVISORY
+    authority: ADVISORY
+    required: false
+    required_dependencies:
+      - DECISION_FEATURE_ENVELOPE
+    optional_dependencies: []
+
+  - stage_id: AGREEMENT_ANALYSIS
+    authority: ADVISORY
+    required: false
+    required_dependencies:
+      - SSVC
+    optional_dependencies:
+      - ML_ADVISORY
+
+  - stage_id: HUMAN_REVIEW
+    authority: HUMAN
+    required: true
+    required_dependencies:
+      - SSVC
+    optional_dependencies:
+      - AGREEMENT_ANALYSIS
+
+  - stage_id: FINALIZATION
+    authority: HUMAN
+    required: true
+    required_dependencies:
+      - HUMAN_REVIEW
+    optional_dependencies: []
+
+transition_controls:
+  terminal_states_are_immutable: true
+  downstream_start_requires_passed_dependencies: true
+  optional_dependencies_must_be_terminal: true
+  required_stage_skip_requires_upstream_block: true
+  warnings_required_for_passed_with_warnings: true
+  reason_code_required_for_block_fail_skip: true
+
+integrity:
+  event_chain_algorithm: SHA-256
+  canonical_serialization: RFC8785_STYLE_SORTED_JSON
+  genesis_hash: ZERO_SHA256
+  atomic_write_required: true
+  sidecar_sha256_required: true
+  event_sequence_required: true
+
+authority:
+  affectedness_authority: DETERMINISTIC_ENGINE
+  policy_authority: SSVC
+  model_authority: ADVISORY_ONLY
+  final_disposition_authority: HUMAN
+  automated_final_disposition_permitted: false
+  production_readiness: BLOCKED
