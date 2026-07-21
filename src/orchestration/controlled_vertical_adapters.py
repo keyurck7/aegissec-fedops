@@ -460,6 +460,8 @@ def component_correlation_adapter(
 def evidence_arbitration_adapter(
     context: dict[str, Any],
 ) -> StageResult:
+    """Arbitrate evidence without making optional history authoritative."""
+
     workbench = context[
         "workbench"
     ]
@@ -468,9 +470,38 @@ def evidence_arbitration_adapter(
         "governance"
     ]
 
-    snapshot = workbench[
+    snapshot = workbench.get(
         "snapshot_summary"
-    ]
+    )
+
+    master = context.get(
+        "master_vertical_slice"
+    )
+
+    authoritative_fallback_available = (
+        isinstance(
+            master,
+            Mapping,
+        )
+        and isinstance(
+            master.get(
+                "affectedness"
+            ),
+            Mapping,
+        )
+        and isinstance(
+            master.get(
+                "feature_envelope"
+            ),
+            Mapping,
+        )
+        and isinstance(
+            master.get(
+                "ssvc"
+            ),
+            Mapping,
+        )
+    )
 
     if (
         governance[
@@ -489,52 +520,100 @@ def evidence_arbitration_adapter(
             ),
         )
 
-    if snapshot is None:
+    snapshot_available = isinstance(
+        snapshot,
+        Mapping,
+    )
+
+    if (
+        not snapshot_available
+        and not authoritative_fallback_available
+    ):
         return StageResult(
             status=BLOCKED,
             reason_code=(
-                "GOVERNED_SNAPSHOT_UNAVAILABLE"
+                "AUTHORITATIVE_EVIDENCE_UNAVAILABLE"
             ),
             message=(
-                "Janvi's governed intelligence "
-                "snapshot is unavailable."
+                "Neither governed historical enrichment "
+                "nor authoritative canonical evidence "
+                "is available."
             ),
         )
 
     arbitration = {
         "live_source_precedence": True,
+        "snapshot_available": (
+            snapshot_available
+        ),
         "snapshot_authority": (
-            governance[
-                "snapshot_authority"
-            ]
+            governance.get(
+                "snapshot_authority",
+                "HISTORICAL_READ_ONLY",
+            )
         ),
         "scanner_authority": (
-            governance[
-                "scanner_authority"
-            ]
+            governance.get(
+                "scanner_authority",
+                "ADVISORY_ONLY",
+            )
+        ),
+        "authoritative_canonical_fallback": (
+            authoritative_fallback_available
         ),
         "snapshot_total_cves": (
-            snapshot["total_cves"]
+            snapshot.get(
+                "total_cves"
+            )
+            if snapshot_available
+            else None
         ),
         "snapshot_kev_cves": (
-            snapshot["kev_cves"]
+            snapshot.get(
+                "kev_cves"
+            )
+            if snapshot_available
+            else None
         ),
         "snapshot_missing_epss": (
-            snapshot["missing_epss"]
+            snapshot.get(
+                "missing_epss"
+            )
+            if snapshot_available
+            else None
         ),
     }
 
-    return StageResult(
-        status=PASSED_WITH_WARNINGS,
-        message=(
+    if snapshot_available:
+        message = (
             "Evidence precedence and source "
             "authority were preserved."
-        ),
-        warnings=(
+        )
+
+        warnings = (
             "The July 14 intelligence provider is "
             "historical and read-only. Fresher validated "
             "live evidence retains precedence.",
-        ),
+        )
+
+    else:
+        message = (
+            "Authoritative canonical evidence was preserved "
+            "while optional historical enrichment was unavailable."
+        )
+
+        warnings = (
+            "The historical Janvi intelligence snapshot "
+            "is unavailable in this runtime.",
+            "Execution continues only because validated "
+            "canonical affectedness, feature and SSVC "
+            "artifacts are available.",
+        )
+
+    return StageResult(
+        status=PASSED_WITH_WARNINGS,
+        message=message,
+        warnings=warnings,
         outputs=(
             artifact_reference(
                 stage_id=(

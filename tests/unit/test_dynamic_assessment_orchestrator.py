@@ -11,6 +11,7 @@ from src.orchestration.assessment_ledger import (
 )
 from src.orchestration.controlled_vertical_adapters import (
     artifact_reference,
+    evidence_arbitration_adapter,
     execute_controlled_vertical_slice,
 )
 from src.orchestration.dynamic_orchestrator import (
@@ -278,3 +279,61 @@ def test_stage_outputs_are_hash_bound():
         assert len(
             outputs[0]["sha256"]
         ) == 64
+
+
+
+def test_optional_historical_snapshot_does_not_block_canonical_execution():
+    result = evidence_arbitration_adapter(
+        {
+            "workbench": {
+                "governance": {
+                    "live_source_precedence": True,
+                    "snapshot_authority": (
+                        "HISTORICAL_READ_ONLY"
+                    ),
+                    "scanner_authority": (
+                        "ADVISORY_ONLY"
+                    ),
+                },
+                "snapshot_summary": None,
+            },
+            "master_vertical_slice": {
+                "affectedness": {
+                    "release_decision": {
+                        "stage_gate": "PASS"
+                    }
+                },
+                "feature_envelope": {
+                    "release_decision": {
+                        "stage_gate": "PASS"
+                    }
+                },
+                "ssvc": {
+                    "governance": {
+                        "stage_gate": "PASS"
+                    }
+                },
+            },
+        }
+    )
+
+    assert (
+        result.status
+        == "PASSED_WITH_WARNINGS"
+    )
+
+    assert (
+        result.metadata[
+            "snapshot_available"
+        ]
+        is False
+    )
+
+    assert (
+        result.metadata[
+            "authoritative_canonical_fallback"
+        ]
+        is True
+    )
+
+    assert result.outputs
