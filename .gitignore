@@ -34,3 +34,8 @@ data/raw/official_sources/*
 !data/raw/official_sources/.gitkeep
 data/raw/official_sources/
 data/processed/canonical_intelligence/
+/janvi_data_ethics_20260714.zip
+/data/external/janvi_snapshot_20260714/source/
+/data/external/janvi_snapshot_20260714/*.sqlite
+/data/external/janvi_snapshot_20260714/*.sqlite-shm
+/data/external/janvi_snapshot_20260714/*.sqlite-wal

@@ -1,0 +1,42 @@
+policy_id: AEG-INTEL-EXTERNAL-SNAPSHOT-PRECEDENCE-V1
+schema_version: 1.0.0
+status: DEVELOPMENT_CONTROLLED
+purpose: >
+  Govern the use of external vulnerability-intelligence snapshots
+  without allowing stale evidence to override newer authoritative data.
+
+source_authority:
+  snapshot_authority: READ_ONLY_EXTERNAL_INTELLIGENCE
+  affectedness_authority: PROHIBITED
+  ssvc_override_permitted: false
+  automated_disposition_permitted: false
+  production_authorization_permitted: false
+
+precedence:
+  live_cisa_kev_over_snapshot: true
+  live_epss_over_snapshot: true
+  newer_vendor_advisory_over_snapshot: true
+  exact_version_affectedness_over_cve_presence: true
+  human_authorized_decision_over_advisory_analytics: true
+
+missing_value_semantics:
+  missing_epss: UNKNOWN
+  missing_cvss: UNKNOWN
+  missing_kev_match: NOT_CONFIRMED
+  missing_package_match: UNKNOWN
+  absence_of_match_means_safe: false
+
+provider_controls:
+  database_mode: READ_ONLY
+  source_sha256_required: true
+  database_sha256_required: true
+  sqlite_integrity_check_required: true
+  duplicate_cve_policy: REJECT
+  malformed_cve_policy: REJECT
+  malformed_probability_policy: STORE_AS_UNKNOWN_AND_COUNT
+  retain_source_provenance: true
+
+high_consequence_use:
+  human_review_required: true
+  final_disposition_authority: HUMAN
+  production_readiness: BLOCKED
