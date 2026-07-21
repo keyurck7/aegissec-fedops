@@ -1,0 +1,42 @@
+policy_id: AEG-INTAKE-UNIFIED-V1
+schema_version: 1.0.0
+status: DEVELOPMENT_CONTROLLED
+
+limits:
+  maximum_upload_bytes: 20971520
+  maximum_components: 10000
+  maximum_vulnerability_hints: 25000
+
+supported_formats:
+  - CYCLONEDX_JSON
+  - SPDX_JSON
+  - REQUIREMENTS_TXT
+  - PACKAGE_JSON
+  - PACKAGE_LOCK_JSON
+  - COMPONENT_CSV
+  - SYFT_JSON
+  - TRIVY_JSON
+
+security:
+  authorization_required: true
+  archives_permitted: false
+  executable_content_permitted: false
+  network_access_during_parsing: false
+  content_based_detection_required: true
+  sha256_required: true
+  parser_reason_codes_required: true
+
+missing_value_semantics:
+  missing_version: UNKNOWN
+  non_exact_version: UNKNOWN
+  missing_ecosystem: UNKNOWN
+  missing_purl: NOT_AVAILABLE
+  absence_of_vulnerability_match_means_safe: false
+
+governance:
+  scanner_findings_authority: ADVISORY_ONLY
+  input_may_determine_affectedness_alone: false
+  input_may_override_ssvc: false
+  automated_disposition_permitted: false
+  final_disposition_authority: HUMAN
+  production_readiness: BLOCKED

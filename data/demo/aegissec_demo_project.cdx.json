@@ -1,0 +1,1032 @@
+{
+  "bomFormat": "CycloneDX",
+  "components": [
+    {
+      "bom-ref": "AEG-CMP-0001",
+      "group": "org.apache.logging.log4j",
+      "name": "log4j-core",
+      "properties": [
+        {
+          "name": "aegissec:ecosystem",
+          "value": "Maven"
+        },
+        {
+          "name": "aegissec:component_name",
+          "value": "org.apache.logging.log4j:log4j-core"
+        },
+        {
+          "name": "aegissec:asset_id",
+          "value": "AEG-HC-PATIENT-PORTAL"
+        },
+        {
+          "name": "aegissec:asset_name",
+          "value": "Patient Services Portal"
+        },
+        {
+          "name": "aegissec:sector",
+          "value": "HEALTHCARE"
+        },
+        {
+          "name": "aegissec:criticality",
+          "value": "CRITICAL"
+        },
+        {
+          "name": "aegissec:internet_exposed",
+          "value": "true"
+        },
+        {
+          "name": "aegissec:externally_accessible",
+          "value": "true"
+        },
+        {
+          "name": "aegissec:mission_essential",
+          "value": "true"
+        },
+        {
+          "name": "aegissec:contains_health_data",
+          "value": "true"
+        },
+        {
+          "name": "aegissec:data_sensitivity",
+          "value": "RESTRICTED"
+        },
+        {
+          "name": "aegissec:source_type",
+          "value": "CONTROLLED_DEMO_CYCLONEDX_SBOM"
+        },
+        {
+          "name": "aegissec:production_eligible",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:maven/org.apache.logging.log4j/log4j-core@2.14.1",
+      "type": "library",
+      "version": "2.14.1"
+    },
+    {
+      "bom-ref": "AEG-CMP-0002",
+      "group": "com.fasterxml.jackson.core",
+      "name": "jackson-databind",
+      "properties": [
+        {
+          "name": "aegissec:ecosystem",
+          "value": "Maven"
+        },
+        {
+          "name": "aegissec:component_name",
+          "value": "com.fasterxml.jackson.core:jackson-databind"
+        },
+        {
+          "name": "aegissec:asset_id",
+          "value": "AEG-HC-INTEGRATION-GATEWAY"
+        },
+        {
+          "name": "aegissec:asset_name",
+          "value": "Clinical Integration Gateway"
+        },
+        {
+          "name": "aegissec:sector",
+          "value": "HEALTHCARE"
+        },
+        {
+          "name": "aegissec:criticality",
+          "value": "HIGH"
+        },
+        {
+          "name": "aegissec:internet_exposed",
+          "value": "false"
+        },
+        {
+          "name": "aegissec:externally_accessible",
+          "value": "false"
+        },
+        {
+          "name": "aegissec:mission_essential",
+          "value": "true"
+        },
+        {
+          "name": "aegissec:contains_health_data",
+          "value": "true"
+        },
+        {
+          "name": "aegissec:data_sensitivity",
+          "value": "RESTRICTED"
+        },
+        {
+          "name": "aegissec:source_type",
+          "value": "CONTROLLED_DEMO_CYCLONEDX_SBOM"
+        },
+        {
+          "name": "aegissec:production_eligible",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.9.8",
+      "type": "library",
+      "version": "2.9.8"
+    },
+    {
+      "bom-ref": "AEG-CMP-0003",
+      "group": "org.springframework",
+      "name": "spring-web",
+      "properties": [
+        {
+          "name": "aegissec:ecosystem",
+          "value": "Maven"
+        },
+        {
+          "name": "aegissec:component_name",
+          "value": "org.springframework:spring-web"
+        },
+        {
+          "name": "aegissec:asset_id",
+          "value": "AEG-GOV-CITIZEN-SERVICES"
+        },
+        {
+          "name": "aegissec:asset_name",
+          "value": "Citizen Services Gateway"
+        },
+        {
+          "name": "aegissec:sector",
+          "value": "PUBLIC_ADMINISTRATION"
+        },
+        {
+          "name": "aegissec:criticality",
+          "value": "CRITICAL"
+        },
+        {
+          "name": "aegissec:internet_exposed",
+          "value": "true"
+        },
+        {
+          "name": "aegissec:externally_accessible",
+          "value": "true"
+        },
+        {
+          "name": "aegissec:mission_essential",
+          "value": "true"
+        },
+        {
+          "name": "aegissec:contains_health_data",
+          "value": "false"
+        },
+        {
+          "name": "aegissec:data_sensitivity",
+          "value": "CONFIDENTIAL"
+        },
+        {
+          "name": "aegissec:source_type",
+          "value": "CONTROLLED_DEMO_CYCLONEDX_SBOM"
+        },
+        {
+          "name": "aegissec:production_eligible",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:maven/org.springframework/spring-web@5.3.17",
+      "type": "library",
+      "version": "5.3.17"
+    },
+    {
+      "bom-ref": "AEG-CMP-0004",
+      "group": "org.apache.commons",
+      "name": "commons-text",
+      "properties": [
+        {
+          "name": "aegissec:ecosystem",
+          "value": "Maven"
+        },
+        {
+          "name": "aegissec:component_name",
+          "value": "org.apache.commons:commons-text"
+        },
+        {
+          "name": "aegissec:asset_id",
+          "value": "AEG-GOV-DOCUMENT-WORKFLOW"
+        },
+        {
+          "name": "aegissec:asset_name",
+          "value": "Government Document Workflow"
+        },
+        {
+          "name": "aegissec:sector",
+          "value": "PUBLIC_ADMINISTRATION"
+        },
+        {
+          "name": "aegissec:criticality",
+          "value": "HIGH"
+        },
+        {
+          "name": "aegissec:internet_exposed",
+          "value": "false"
+        },
+        {
+          "name": "aegissec:externally_accessible",
+          "value": "false"
+        },
+        {
+          "name": "aegissec:mission_essential",
+          "value": "true"
+        },
+        {
+          "name": "aegissec:contains_health_data",
+          "value": "false"
+        },
+        {
+          "name": "aegissec:data_sensitivity",
+          "value": "CONFIDENTIAL"
+        },
+        {
+          "name": "aegissec:source_type",
+          "value": "CONTROLLED_DEMO_CYCLONEDX_SBOM"
+        },
+        {
+          "name": "aegissec:production_eligible",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:maven/org.apache.commons/commons-text@1.9",
+      "type": "library",
+      "version": "1.9"
+    },
+    {
+      "bom-ref": "AEG-CMP-0005",
+      "group": "",
+      "name": "Django",
+      "properties": [
+        {
+          "name": "aegissec:ecosystem",
+          "value": "PyPI"
+        },
+        {
+          "name": "aegissec:component_name",
+          "value": "Django"
+        },
+        {
+          "name": "aegissec:asset_id",
+          "value": "AEG-EDU-STUDENT-PORTAL"
+        },
+        {
+          "name": "aegissec:asset_name",
+          "value": "Student Administration Portal"
+        },
+        {
+          "name": "aegissec:sector",
+          "value": "EDUCATION"
+        },
+        {
+          "name": "aegissec:criticality",
+          "value": "HIGH"
+        },
+        {
+          "name": "aegissec:internet_exposed",
+          "value": "true"
+        },
+        {
+          "name": "aegissec:externally_accessible",
+          "value": "true"
+        },
+        {
+          "name": "aegissec:mission_essential",
+          "value": "false"
+        },
+        {
+          "name": "aegissec:contains_health_data",
+          "value": "false"
+        },
+        {
+          "name": "aegissec:data_sensitivity",
+          "value": "CONFIDENTIAL"
+        },
+        {
+          "name": "aegissec:source_type",
+          "value": "CONTROLLED_DEMO_CYCLONEDX_SBOM"
+        },
+        {
+          "name": "aegissec:production_eligible",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:pypi/django@2.2.0",
+      "type": "library",
+      "version": "2.2.0"
+    },
+    {
+      "bom-ref": "AEG-CMP-0006",
+      "group": "",
+      "name": "Pillow",
+      "properties": [
+        {
+          "name": "aegissec:ecosystem",
+          "value": "PyPI"
+        },
+        {
+          "name": "aegissec:component_name",
+          "value": "Pillow"
+        },
+        {
+          "name": "aegissec:asset_id",
+          "value": "AEG-EDU-DOCUMENT-SERVICE"
+        },
+        {
+          "name": "aegissec:asset_name",
+          "value": "Academic Document Processing"
+        },
+        {
+          "name": "aegissec:sector",
+          "value": "EDUCATION"
+        },
+        {
+          "name": "aegissec:criticality",
+          "value": "MEDIUM"
+        },
+        {
+          "name": "aegissec:internet_exposed",
+          "value": "false"
+        },
+        {
+          "name": "aegissec:externally_accessible",
+          "value": "false"
+        },
+        {
+          "name": "aegissec:mission_essential",
+          "value": "false"
+        },
+        {
+          "name": "aegissec:contains_health_data",
+          "value": "false"
+        },
+        {
+          "name": "aegissec:data_sensitivity",
+          "value": "INTERNAL"
+        },
+        {
+          "name": "aegissec:source_type",
+          "value": "CONTROLLED_DEMO_CYCLONEDX_SBOM"
+        },
+        {
+          "name": "aegissec:production_eligible",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:pypi/pillow@8.2.0",
+      "type": "library",
+      "version": "8.2.0"
+    },
+    {
+      "bom-ref": "AEG-CMP-0007",
+      "group": "",
+      "name": "urllib3",
+      "properties": [
+        {
+          "name": "aegissec:ecosystem",
+          "value": "PyPI"
+        },
+        {
+          "name": "aegissec:component_name",
+          "value": "urllib3"
+        },
+        {
+          "name": "aegissec:asset_id",
+          "value": "AEG-DEF-SUPPLY-API"
+        },
+        {
+          "name": "aegissec:asset_name",
+          "value": "Defence Supply Coordination API"
+        },
+        {
+          "name": "aegissec:sector",
+          "value": "DEFENCE_LOGISTICS"
+        },
+        {
+          "name": "aegissec:criticality",
+          "value": "CRITICAL"
+        },
+        {
+          "name": "aegissec:internet_exposed",
+          "value": "false"
+        },
+        {
+          "name": "aegissec:externally_accessible",
+          "value": "false"
+        },
+        {
+          "name": "aegissec:mission_essential",
+          "value": "true"
+        },
+        {
+          "name": "aegissec:contains_health_data",
+          "value": "false"
+        },
+        {
+          "name": "aegissec:data_sensitivity",
+          "value": "RESTRICTED"
+        },
+        {
+          "name": "aegissec:source_type",
+          "value": "CONTROLLED_DEMO_CYCLONEDX_SBOM"
+        },
+        {
+          "name": "aegissec:production_eligible",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:pypi/urllib3@1.25.2",
+      "type": "library",
+      "version": "1.25.2"
+    },
+    {
+      "bom-ref": "AEG-CMP-0008",
+      "group": "",
+      "name": "PyYAML",
+      "properties": [
+        {
+          "name": "aegissec:ecosystem",
+          "value": "PyPI"
+        },
+        {
+          "name": "aegissec:component_name",
+          "value": "PyYAML"
+        },
+        {
+          "name": "aegissec:asset_id",
+          "value": "AEG-DEF-MISSION-CONFIG"
+        },
+        {
+          "name": "aegissec:asset_name",
+          "value": "Mission Configuration Service"
+        },
+        {
+          "name": "aegissec:sector",
+          "value": "DEFENCE_LOGISTICS"
+        },
+        {
+          "name": "aegissec:criticality",
+          "value": "CRITICAL"
+        },
+        {
+          "name": "aegissec:internet_exposed",
+          "value": "false"
+        },
+        {
+          "name": "aegissec:externally_accessible",
+          "value": "false"
+        },
+        {
+          "name": "aegissec:mission_essential",
+          "value": "true"
+        },
+        {
+          "name": "aegissec:contains_health_data",
+          "value": "false"
+        },
+        {
+          "name": "aegissec:data_sensitivity",
+          "value": "RESTRICTED"
+        },
+        {
+          "name": "aegissec:source_type",
+          "value": "CONTROLLED_DEMO_CYCLONEDX_SBOM"
+        },
+        {
+          "name": "aegissec:production_eligible",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:pypi/pyyaml@5.3.1",
+      "type": "library",
+      "version": "5.3.1"
+    },
+    {
+      "bom-ref": "AEG-CMP-0009",
+      "group": "",
+      "name": "lodash",
+      "properties": [
+        {
+          "name": "aegissec:ecosystem",
+          "value": "npm"
+        },
+        {
+          "name": "aegissec:component_name",
+          "value": "lodash"
+        },
+        {
+          "name": "aegissec:asset_id",
+          "value": "AEG-GOV-ANALYTICS-UI"
+        },
+        {
+          "name": "aegissec:asset_name",
+          "value": "Public Analytics Interface"
+        },
+        {
+          "name": "aegissec:sector",
+          "value": "PUBLIC_ADMINISTRATION"
+        },
+        {
+          "name": "aegissec:criticality",
+          "value": "MEDIUM"
+        },
+        {
+          "name": "aegissec:internet_exposed",
+          "value": "true"
+        },
+        {
+          "name": "aegissec:externally_accessible",
+          "value": "true"
+        },
+        {
+          "name": "aegissec:mission_essential",
+          "value": "false"
+        },
+        {
+          "name": "aegissec:contains_health_data",
+          "value": "false"
+        },
+        {
+          "name": "aegissec:data_sensitivity",
+          "value": "PUBLIC"
+        },
+        {
+          "name": "aegissec:source_type",
+          "value": "CONTROLLED_DEMO_CYCLONEDX_SBOM"
+        },
+        {
+          "name": "aegissec:production_eligible",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:npm/lodash@4.17.15",
+      "type": "library",
+      "version": "4.17.15"
+    },
+    {
+      "bom-ref": "AEG-CMP-0010",
+      "group": "",
+      "name": "minimist",
+      "properties": [
+        {
+          "name": "aegissec:ecosystem",
+          "value": "npm"
+        },
+        {
+          "name": "aegissec:component_name",
+          "value": "minimist"
+        },
+        {
+          "name": "aegissec:asset_id",
+          "value": "AEG-EDU-BUILD-PIPELINE"
+        },
+        {
+          "name": "aegissec:asset_name",
+          "value": "University Build Pipeline"
+        },
+        {
+          "name": "aegissec:sector",
+          "value": "EDUCATION"
+        },
+        {
+          "name": "aegissec:criticality",
+          "value": "MEDIUM"
+        },
+        {
+          "name": "aegissec:internet_exposed",
+          "value": "false"
+        },
+        {
+          "name": "aegissec:externally_accessible",
+          "value": "false"
+        },
+        {
+          "name": "aegissec:mission_essential",
+          "value": "false"
+        },
+        {
+          "name": "aegissec:contains_health_data",
+          "value": "false"
+        },
+        {
+          "name": "aegissec:data_sensitivity",
+          "value": "INTERNAL"
+        },
+        {
+          "name": "aegissec:source_type",
+          "value": "CONTROLLED_DEMO_CYCLONEDX_SBOM"
+        },
+        {
+          "name": "aegissec:production_eligible",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:npm/minimist@0.0.8",
+      "type": "library",
+      "version": "0.0.8"
+    },
+    {
+      "bom-ref": "AEG-CMP-0011",
+      "group": "",
+      "name": "axios",
+      "properties": [
+        {
+          "name": "aegissec:ecosystem",
+          "value": "npm"
+        },
+        {
+          "name": "aegissec:component_name",
+          "value": "axios"
+        },
+        {
+          "name": "aegissec:asset_id",
+          "value": "AEG-HC-APPOINTMENT-UI"
+        },
+        {
+          "name": "aegissec:asset_name",
+          "value": "Healthcare Appointment Interface"
+        },
+        {
+          "name": "aegissec:sector",
+          "value": "HEALTHCARE"
+        },
+        {
+          "name": "aegissec:criticality",
+          "value": "HIGH"
+        },
+        {
+          "name": "aegissec:internet_exposed",
+          "value": "true"
+        },
+        {
+          "name": "aegissec:externally_accessible",
+          "value": "true"
+        },
+        {
+          "name": "aegissec:mission_essential",
+          "value": "false"
+        },
+        {
+          "name": "aegissec:contains_health_data",
+          "value": "true"
+        },
+        {
+          "name": "aegissec:data_sensitivity",
+          "value": "RESTRICTED"
+        },
+        {
+          "name": "aegissec:source_type",
+          "value": "CONTROLLED_DEMO_CYCLONEDX_SBOM"
+        },
+        {
+          "name": "aegissec:production_eligible",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:npm/axios@0.21.1",
+      "type": "library",
+      "version": "0.21.1"
+    },
+    {
+      "bom-ref": "AEG-CMP-0012",
+      "group": "",
+      "name": "node-fetch",
+      "properties": [
+        {
+          "name": "aegissec:ecosystem",
+          "value": "npm"
+        },
+        {
+          "name": "aegissec:component_name",
+          "value": "node-fetch"
+        },
+        {
+          "name": "aegissec:asset_id",
+          "value": "AEG-DEF-VENDOR-GATEWAY"
+        },
+        {
+          "name": "aegissec:asset_name",
+          "value": "Defence Vendor Exchange Gateway"
+        },
+        {
+          "name": "aegissec:sector",
+          "value": "DEFENCE_LOGISTICS"
+        },
+        {
+          "name": "aegissec:criticality",
+          "value": "HIGH"
+        },
+        {
+          "name": "aegissec:internet_exposed",
+          "value": "true"
+        },
+        {
+          "name": "aegissec:externally_accessible",
+          "value": "true"
+        },
+        {
+          "name": "aegissec:mission_essential",
+          "value": "true"
+        },
+        {
+          "name": "aegissec:contains_health_data",
+          "value": "false"
+        },
+        {
+          "name": "aegissec:data_sensitivity",
+          "value": "RESTRICTED"
+        },
+        {
+          "name": "aegissec:source_type",
+          "value": "CONTROLLED_DEMO_CYCLONEDX_SBOM"
+        },
+        {
+          "name": "aegissec:production_eligible",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:npm/node-fetch@2.6.0",
+      "type": "library",
+      "version": "2.6.0"
+    },
+    {
+      "bom-ref": "AEG-CMP-0013",
+      "group": "",
+      "name": "jsonwebtoken",
+      "properties": [
+        {
+          "name": "aegissec:ecosystem",
+          "value": "npm"
+        },
+        {
+          "name": "aegissec:component_name",
+          "value": "jsonwebtoken"
+        },
+        {
+          "name": "aegissec:asset_id",
+          "value": "AEG-GOV-IDENTITY-BROKER"
+        },
+        {
+          "name": "aegissec:asset_name",
+          "value": "Government Identity Broker"
+        },
+        {
+          "name": "aegissec:sector",
+          "value": "PUBLIC_ADMINISTRATION"
+        },
+        {
+          "name": "aegissec:criticality",
+          "value": "CRITICAL"
+        },
+        {
+          "name": "aegissec:internet_exposed",
+          "value": "true"
+        },
+        {
+          "name": "aegissec:externally_accessible",
+          "value": "true"
+        },
+        {
+          "name": "aegissec:mission_essential",
+          "value": "true"
+        },
+        {
+          "name": "aegissec:contains_health_data",
+          "value": "false"
+        },
+        {
+          "name": "aegissec:data_sensitivity",
+          "value": "RESTRICTED"
+        },
+        {
+          "name": "aegissec:source_type",
+          "value": "CONTROLLED_DEMO_CYCLONEDX_SBOM"
+        },
+        {
+          "name": "aegissec:production_eligible",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:npm/jsonwebtoken@8.5.1",
+      "type": "library",
+      "version": "8.5.1"
+    },
+    {
+      "bom-ref": "AEG-CMP-0014",
+      "group": "",
+      "name": "rails",
+      "properties": [
+        {
+          "name": "aegissec:ecosystem",
+          "value": "RubyGems"
+        },
+        {
+          "name": "aegissec:component_name",
+          "value": "rails"
+        },
+        {
+          "name": "aegissec:asset_id",
+          "value": "AEG-EDU-ALUMNI-SERVICE"
+        },
+        {
+          "name": "aegissec:asset_name",
+          "value": "Alumni Services Platform"
+        },
+        {
+          "name": "aegissec:sector",
+          "value": "EDUCATION"
+        },
+        {
+          "name": "aegissec:criticality",
+          "value": "MEDIUM"
+        },
+        {
+          "name": "aegissec:internet_exposed",
+          "value": "true"
+        },
+        {
+          "name": "aegissec:externally_accessible",
+          "value": "true"
+        },
+        {
+          "name": "aegissec:mission_essential",
+          "value": "false"
+        },
+        {
+          "name": "aegissec:contains_health_data",
+          "value": "false"
+        },
+        {
+          "name": "aegissec:data_sensitivity",
+          "value": "CONFIDENTIAL"
+        },
+        {
+          "name": "aegissec:source_type",
+          "value": "CONTROLLED_DEMO_CYCLONEDX_SBOM"
+        },
+        {
+          "name": "aegissec:production_eligible",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:gem/rails@5.2.0",
+      "type": "library",
+      "version": "5.2.0"
+    },
+    {
+      "bom-ref": "AEG-CMP-0015",
+      "group": "",
+      "name": "Newtonsoft.Json",
+      "properties": [
+        {
+          "name": "aegissec:ecosystem",
+          "value": "NuGet"
+        },
+        {
+          "name": "aegissec:component_name",
+          "value": "Newtonsoft.Json"
+        },
+        {
+          "name": "aegissec:asset_id",
+          "value": "AEG-HC-CLAIMS-PROCESSOR"
+        },
+        {
+          "name": "aegissec:asset_name",
+          "value": "Healthcare Claims Processor"
+        },
+        {
+          "name": "aegissec:sector",
+          "value": "HEALTHCARE"
+        },
+        {
+          "name": "aegissec:criticality",
+          "value": "HIGH"
+        },
+        {
+          "name": "aegissec:internet_exposed",
+          "value": "false"
+        },
+        {
+          "name": "aegissec:externally_accessible",
+          "value": "false"
+        },
+        {
+          "name": "aegissec:mission_essential",
+          "value": "true"
+        },
+        {
+          "name": "aegissec:contains_health_data",
+          "value": "true"
+        },
+        {
+          "name": "aegissec:data_sensitivity",
+          "value": "RESTRICTED"
+        },
+        {
+          "name": "aegissec:source_type",
+          "value": "CONTROLLED_DEMO_CYCLONEDX_SBOM"
+        },
+        {
+          "name": "aegissec:production_eligible",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:nuget/Newtonsoft.Json@12.0.1",
+      "type": "library",
+      "version": "12.0.1"
+    },
+    {
+      "bom-ref": "AEG-CMP-0016",
+      "group": "",
+      "name": "github.com/gin-gonic/gin",
+      "properties": [
+        {
+          "name": "aegissec:ecosystem",
+          "value": "Go"
+        },
+        {
+          "name": "aegissec:component_name",
+          "value": "github.com/gin-gonic/gin"
+        },
+        {
+          "name": "aegissec:asset_id",
+          "value": "AEG-DEF-FLEET-SERVICE"
+        },
+        {
+          "name": "aegissec:asset_name",
+          "value": "Fleet Readiness Service"
+        },
+        {
+          "name": "aegissec:sector",
+          "value": "DEFENCE_LOGISTICS"
+        },
+        {
+          "name": "aegissec:criticality",
+          "value": "CRITICAL"
+        },
+        {
+          "name": "aegissec:internet_exposed",
+          "value": "false"
+        },
+        {
+          "name": "aegissec:externally_accessible",
+          "value": "false"
+        },
+        {
+          "name": "aegissec:mission_essential",
+          "value": "true"
+        },
+        {
+          "name": "aegissec:contains_health_data",
+          "value": "false"
+        },
+        {
+          "name": "aegissec:data_sensitivity",
+          "value": "RESTRICTED"
+        },
+        {
+          "name": "aegissec:source_type",
+          "value": "CONTROLLED_DEMO_CYCLONEDX_SBOM"
+        },
+        {
+          "name": "aegissec:production_eligible",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:golang/github.com/gin-gonic/gin@v1.7.0",
+      "type": "library",
+      "version": "v1.7.0"
+    }
+  ],
+  "metadata": {
+    "authors": [
+      {
+        "name": "AegisSec-FedOps controlled demonstration"
+      }
+    ],
+    "component": {
+      "bom-ref": "AEG-DEMO-SYSTEM",
+      "name": "AegisSec Multi-Sector Demonstration System",
+      "type": "application",
+      "version": "1.0.0"
+    },
+    "properties": [
+      {
+        "name": "aegissec:authorized_demo",
+        "value": "true"
+      },
+      {
+        "name": "aegissec:customer_data",
+        "value": "false"
+      },
+      {
+        "name": "aegissec:personal_data",
+        "value": "false"
+      },
+      {
+        "name": "aegissec:production_eligible",
+        "value": "false"
+      }
+    ],
+    "timestamp": "2026-07-20T00:00:00Z"
+  },
+  "serialNumber": "urn:uuid:00e039ad-5d04-5fa0-bb80-83c6de8a5b75",
+  "specVersion": "1.6",
+  "version": 1
+}

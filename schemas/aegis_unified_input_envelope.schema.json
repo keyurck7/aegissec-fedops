@@ -1,0 +1,299 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aegissec.local/schemas/aegis-unified-input-envelope.schema.json",
+  "title": "AegisSec Unified Input Envelope",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "input_id",
+    "created_at",
+    "source",
+    "detection",
+    "validation",
+    "components",
+    "vulnerability_hints",
+    "statistics",
+    "trust",
+    "governance",
+    "integrity"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "input_id": {
+      "type": "string",
+      "pattern": "^AEG-INP-[A-F0-9]{24}$"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "filename",
+        "size_bytes",
+        "sha256",
+        "authorized",
+        "declared_media_type"
+      ],
+      "properties": {
+        "filename": {
+          "type": "string",
+          "minLength": 1
+        },
+        "size_bytes": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "authorized": {
+          "const": true
+        },
+        "declared_media_type": {
+          "type": ["string", "null"]
+        }
+      },
+      "additionalProperties": true
+    },
+    "detection": {
+      "type": "object",
+      "required": [
+        "format",
+        "media_type",
+        "method",
+        "parser_version"
+      ],
+      "properties": {
+        "format": {
+          "enum": [
+            "CYCLONEDX_JSON",
+            "SPDX_JSON",
+            "REQUIREMENTS_TXT",
+            "PACKAGE_JSON",
+            "PACKAGE_LOCK_JSON",
+            "COMPONENT_CSV",
+            "SYFT_JSON",
+            "TRIVY_JSON"
+          ]
+        },
+        "media_type": {
+          "type": "string"
+        },
+        "method": {
+          "const": "CONTENT_AND_FILENAME"
+        },
+        "parser_version": {
+          "const": "1.0.0"
+        }
+      },
+      "additionalProperties": false
+    },
+    "validation": {
+      "type": "object",
+      "required": [
+        "stage_gate",
+        "errors",
+        "warnings",
+        "reason_codes"
+      ],
+      "properties": {
+        "stage_gate": {
+          "enum": ["PASS", "FAIL"]
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "warnings": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "reason_codes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "components": {
+      "type": "array",
+      "maxItems": 10000,
+      "items": {
+        "type": "object",
+        "required": [
+          "component_id",
+          "name",
+          "version",
+          "raw_version",
+          "ecosystem",
+          "purl",
+          "supplier",
+          "scope",
+          "identity_status",
+          "source_location",
+          "component_sha256"
+        ],
+        "properties": {
+          "component_id": {
+            "type": "string",
+            "pattern": "^AEG-CMP-[A-F0-9]{20}$"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "version": {
+            "type": ["string", "null"]
+          },
+          "raw_version": {
+            "type": ["string", "null"]
+          },
+          "ecosystem": {
+            "type": ["string", "null"]
+          },
+          "purl": {
+            "type": ["string", "null"]
+          },
+          "supplier": {
+            "type": ["string", "null"]
+          },
+          "scope": {
+            "type": ["string", "null"]
+          },
+          "identity_status": {
+            "enum": [
+              "EXACT",
+              "PARTIAL",
+              "UNKNOWN_VERSION",
+              "UNKNOWN_ECOSYSTEM"
+            ]
+          },
+          "source_location": {
+            "type": ["string", "null"]
+          },
+          "component_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "vulnerability_hints": {
+      "type": "array",
+      "maxItems": 25000,
+      "items": {
+        "type": "object",
+        "required": [
+          "vulnerability_id",
+          "component_name",
+          "installed_version",
+          "source",
+          "authority"
+        ],
+        "properties": {
+          "vulnerability_id": {
+            "type": "string"
+          },
+          "component_name": {
+            "type": ["string", "null"]
+          },
+          "installed_version": {
+            "type": ["string", "null"]
+          },
+          "source": {
+            "type": "string"
+          },
+          "authority": {
+            "const": "ADVISORY_ONLY"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "statistics": {
+      "type": "object",
+      "required": [
+        "component_count",
+        "exact_identity_count",
+        "unknown_version_count",
+        "duplicate_component_count",
+        "vulnerability_hint_count"
+      ],
+      "additionalProperties": true
+    },
+    "trust": {
+      "type": "object",
+      "required": [
+        "action",
+        "parser_confidence",
+        "identity_completeness",
+        "human_review_required"
+      ],
+      "additionalProperties": true
+    },
+    "governance": {
+      "type": "object",
+      "required": [
+        "authority",
+        "may_determine_affectedness_alone",
+        "may_override_ssvc",
+        "automated_disposition_permitted",
+        "final_disposition_authority",
+        "production_readiness"
+      ],
+      "properties": {
+        "authority": {
+          "const": "INPUT_EVIDENCE_ONLY"
+        },
+        "may_determine_affectedness_alone": {
+          "const": false
+        },
+        "may_override_ssvc": {
+          "const": false
+        },
+        "automated_disposition_permitted": {
+          "const": false
+        },
+        "final_disposition_authority": {
+          "const": "HUMAN"
+        },
+        "production_readiness": {
+          "const": "BLOCKED"
+        }
+      },
+      "additionalProperties": true
+    },
+    "integrity": {
+      "type": "object",
+      "required": [
+        "content_sha256",
+        "envelope_sha256"
+      ],
+      "properties": {
+        "content_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "envelope_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

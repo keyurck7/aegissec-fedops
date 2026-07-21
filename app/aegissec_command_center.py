@@ -105,6 +105,7 @@ with st.sidebar:
         "Command workspace",
         [
             "Executive Overview",
+            "Scan a System",
             "Component Explorer",
             "Threat Intelligence",
             "Real-Data ML Benchmark",
@@ -292,6 +293,700 @@ if page == "Executive Overview":
         ),
         mime="text/csv",
     )
+
+
+elif page == "Scan a System":
+    import json
+
+    from src.intake.unified_gateway import (
+        InputGatewayError,
+    )
+    from src.presentation_demo.master_vertical_slice import (
+        load_master_vertical_slice,
+    )
+    from src.presentation_demo.unified_scan_workbench import (
+        run_unified_scan,
+    )
+
+    st.markdown(
+        """
+        <div class="aegis-hero">
+            <h1>Scan a System</h1>
+            <p>
+                Upload authorised software evidence, normalize it into
+                one governed component inventory, compare it with current
+                vulnerability intelligence, and preserve uncertainty for
+                human review.
+            </p>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+    st.caption(
+        "Supported evidence: CycloneDX JSON, SPDX JSON, "
+        "requirements.txt, package.json, package-lock.json, "
+        "component CSV, Syft JSON and Trivy JSON."
+    )
+
+    source_mode = st.radio(
+        "Evidence source",
+        [
+            "Controlled demonstration",
+            "Upload authorised evidence",
+        ],
+        horizontal=True,
+    )
+
+    payload = None
+    filename = None
+    media_type = None
+    authorized = True
+
+    if source_mode == "Controlled demonstration":
+        demonstration_options = {
+            "CycloneDX project SBOM": (
+                ROOT
+                / "data"
+                / "demo"
+                / "aegissec_demo_project.cdx.json"
+            ),
+            "Python requirements": (
+                ROOT
+                / "data"
+                / "sample_inputs"
+                / "citizen_portal"
+                / "requirements.txt"
+            ),
+            "Node package manifest": (
+                ROOT
+                / "data"
+                / "sample_inputs"
+                / "citizen_portal"
+                / "package.json"
+            ),
+        }
+
+        selected_demo = st.selectbox(
+            "Demonstration evidence",
+            list(
+                demonstration_options
+            ),
+        )
+
+        demo_path = demonstration_options[
+            selected_demo
+        ]
+
+        if demo_path.is_file():
+            payload = demo_path.read_bytes()
+            filename = demo_path.name
+        else:
+            st.error(
+                "The selected controlled demonstration "
+                "file is missing."
+            )
+
+    else:
+        authorized = st.checkbox(
+            "I confirm that I am authorised to assess "
+            "this software evidence.",
+            value=False,
+            help=(
+                "AegisSec rejects unauthorised evidence. "
+                "Do not upload production secrets, private "
+                "keys or restricted data."
+            ),
+        )
+
+        uploaded = st.file_uploader(
+            "Upload software evidence",
+            type=[
+                "json",
+                "txt",
+                "csv",
+            ],
+            help=(
+                "Maximum 20 MB. Archives and executable "
+                "content are rejected. Format detection uses "
+                "both content and filename."
+            ),
+            key="unified_system_evidence",
+        )
+
+        if uploaded is not None:
+            payload = uploaded.getvalue()
+            filename = uploaded.name
+            media_type = uploaded.type
+
+    if payload is None:
+        st.info(
+            "Choose a controlled example or upload "
+            "authorised software evidence."
+        )
+
+    elif (
+        source_mode
+        == "Upload authorised evidence"
+        and not authorized
+    ):
+        st.warning(
+            "Confirm assessment authorisation before "
+            "the evidence can enter the pipeline."
+        )
+
+    else:
+        try:
+            result = run_unified_scan(
+                payload,
+                filename=(
+                    filename
+                    or "uploaded_evidence"
+                ),
+                authorized=authorized,
+                declared_media_type=(
+                    media_type
+                ),
+            )
+
+        except InputGatewayError as exc:
+            st.error(
+                "Evidence rejected: "
+                + str(exc)
+            )
+
+            st.dataframe(
+                pd.DataFrame(
+                    [
+                        {
+                            "Reason code": (
+                                exc.reason_code
+                            ),
+                            "Filename": (
+                                exc.filename
+                            ),
+                            "Content SHA-256": (
+                                exc.content_sha256
+                            ),
+                            "Disposition": (
+                                "REJECTED"
+                            ),
+                        }
+                    ]
+                ),
+                use_container_width=True,
+                hide_index=True,
+            )
+
+        else:
+            envelope = result[
+                "envelope"
+            ]
+
+            statistics = envelope[
+                "statistics"
+            ]
+
+            trust = envelope["trust"]
+
+            metric_columns = st.columns(6)
+
+            metric_columns[0].metric(
+                "Format",
+                envelope[
+                    "detection"
+                ]["format"].replace(
+                    "_",
+                    " ",
+                ),
+            )
+
+            metric_columns[1].metric(
+                "Components",
+                statistics[
+                    "component_count"
+                ],
+            )
+
+            metric_columns[2].metric(
+                "Exact identities",
+                statistics[
+                    "exact_identity_count"
+                ],
+            )
+
+            metric_columns[3].metric(
+                "Unknown versions",
+                statistics[
+                    "unknown_version_count"
+                ],
+            )
+
+            metric_columns[4].metric(
+                "Vulnerability hints",
+                statistics[
+                    "vulnerability_hint_count"
+                ],
+            )
+
+            metric_columns[5].metric(
+                "Trust action",
+                trust["action"],
+            )
+
+            st.success(
+                "Unified intake validation: PASS"
+            )
+
+            st.caption(
+                "File: "
+                + envelope["source"][
+                    "filename"
+                ]
+                + " | SHA-256: "
+                + envelope["source"][
+                    "sha256"
+                ]
+                + " | Envelope: "
+                + envelope["integrity"][
+                    "envelope_sha256"
+                ]
+            )
+
+            if envelope[
+                "validation"
+            ]["warnings"]:
+                st.warning(
+                    "\n".join(
+                        "• " + warning
+                        for warning
+                        in envelope[
+                            "validation"
+                        ]["warnings"]
+                    )
+                )
+
+            st.download_button(
+                "Download governed input envelope",
+                data=result[
+                    "envelope_bytes"
+                ],
+                file_name=(
+                    envelope["input_id"]
+                    + ".input-envelope.json"
+                ),
+                mime="application/json",
+                use_container_width=False,
+            )
+
+            (
+                components_tab,
+                matches_tab,
+                unmatched_tab,
+                findings_tab,
+                snapshot_tab,
+                envelope_tab,
+                governance_tab,
+            ) = st.tabs(
+                [
+                    "Component inventory",
+                    "Matched components",
+                    "Unknown components",
+                    "Vulnerability evidence",
+                    "Janvi snapshot evidence",
+                    "Integrity envelope",
+                    "Governance",
+                ]
+            )
+
+            with components_tab:
+                components_frame = result[
+                    "component_frame"
+                ]
+
+                if components_frame.empty:
+                    st.info(
+                        "No components were extracted."
+                    )
+                else:
+                    st.dataframe(
+                        components_frame,
+                        use_container_width=True,
+                        hide_index=True,
+                    )
+
+                st.caption(
+                    str(
+                        result[
+                            "exact_scan_components"
+                        ]
+                    )
+                    + " exact-version components were "
+                    "eligible for vulnerability matching."
+                )
+
+            scan = result["scan"]
+
+            with matches_tab:
+                if scan is None:
+                    st.info(
+                        result["scan_error"]
+                        or (
+                            "No governed vulnerability "
+                            "matches are available."
+                        )
+                    )
+                else:
+                    matched = scan[
+                        "matched_components"
+                    ]
+
+                    if matched.empty:
+                        st.info(
+                            "No exact governed component "
+                            "matches were found."
+                        )
+                    else:
+                        st.dataframe(
+                            matched,
+                            use_container_width=True,
+                            hide_index=True,
+                        )
+
+            with unmatched_tab:
+                if scan is None:
+                    unknown = result[
+                        "component_frame"
+                    ]
+
+                    if not unknown.empty:
+                        unknown = unknown[
+                            unknown[
+                                "identity_status"
+                            ]
+                            != "EXACT"
+                        ]
+
+                    if unknown.empty:
+                        st.info(
+                            "No unresolved component "
+                            "identities are available."
+                        )
+                    else:
+                        st.dataframe(
+                            unknown,
+                            use_container_width=True,
+                            hide_index=True,
+                        )
+                else:
+                    unmatched = scan[
+                        "unmatched_components"
+                    ]
+
+                    if unmatched.empty:
+                        st.success(
+                            "All scan-eligible components "
+                            "matched the governed risk mart."
+                        )
+                    else:
+                        st.dataframe(
+                            unmatched,
+                            use_container_width=True,
+                            hide_index=True,
+                        )
+
+            with findings_tab:
+                if scan is None:
+                    st.info(
+                        result["scan_error"]
+                        or (
+                            "No vulnerability evidence "
+                            "was generated."
+                        )
+                    )
+                else:
+                    findings = scan[
+                        "vulnerability_findings"
+                    ]
+
+                    if findings.empty:
+                        st.info(
+                            "No known vulnerability "
+                            "evidence was found."
+                        )
+                    else:
+                        st.dataframe(
+                            findings,
+                            use_container_width=True,
+                            hide_index=True,
+                        )
+
+                hints = envelope[
+                    "vulnerability_hints"
+                ]
+
+                if hints:
+                    st.markdown(
+                        "#### Scanner-provided advisory hints"
+                    )
+
+                    st.dataframe(
+                        pd.DataFrame(hints),
+                        use_container_width=True,
+                        hide_index=True,
+                    )
+
+                    st.caption(
+                        "Scanner findings remain "
+                        "ADVISORY_ONLY and cannot determine "
+                        "affectedness or override SSVC."
+                    )
+
+            with snapshot_tab:
+                snapshot_summary = result[
+                    "snapshot_summary"
+                ]
+
+                if snapshot_summary is None:
+                    st.warning(
+                        "Janvi's governed intelligence "
+                        "provider is unavailable."
+                    )
+                else:
+                    snapshot_metrics = st.columns(4)
+
+                    snapshot_metrics[0].metric(
+                        "Indexed CVEs",
+                        snapshot_summary[
+                            "total_cves"
+                        ],
+                    )
+
+                    snapshot_metrics[1].metric(
+                        "Snapshot KEV",
+                        snapshot_summary[
+                            "kev_cves"
+                        ],
+                    )
+
+                    snapshot_metrics[2].metric(
+                        "Missing EPSS",
+                        snapshot_summary[
+                            "missing_epss"
+                        ],
+                    )
+
+                    snapshot_metrics[3].metric(
+                        "Maximum EPSS",
+                        snapshot_summary[
+                            "maximum_epss"
+                        ],
+                    )
+
+                snapshot_frame = result[
+                    "snapshot_evidence"
+                ]
+
+                if snapshot_frame.empty:
+                    st.info(
+                        "No CVE identifiers from this "
+                        "input matched the July 14 governed "
+                        "snapshot."
+                    )
+                else:
+                    st.dataframe(
+                        snapshot_frame,
+                        use_container_width=True,
+                        hide_index=True,
+                    )
+
+                st.caption(
+                    "This snapshot is historical and "
+                    "read-only. Fresher live CISA KEV, "
+                    "FIRST EPSS and vendor evidence take "
+                    "precedence."
+                )
+
+            with envelope_tab:
+                preview = dict(envelope)
+
+                if len(
+                    preview["components"]
+                ) > 100:
+                    preview[
+                        "components"
+                    ] = preview[
+                        "components"
+                    ][:100]
+
+                    st.info(
+                        "The screen preview shows the first "
+                        "100 components. The downloaded "
+                        "envelope contains the complete set."
+                    )
+
+                st.json(preview)
+
+            with governance_tab:
+                governance = result[
+                    "governance"
+                ]
+
+                st.dataframe(
+                    pd.DataFrame(
+                        [
+                            {
+                                "Control": (
+                                    "Input authority"
+                                ),
+                                "Status": (
+                                    "INPUT_EVIDENCE_ONLY"
+                                ),
+                            },
+                            {
+                                "Control": (
+                                    "Live source precedence"
+                                ),
+                                "Status": (
+                                    "PRESERVED"
+                                ),
+                            },
+                            {
+                                "Control": (
+                                    "Historical snapshot"
+                                ),
+                                "Status": governance[
+                                    "snapshot_authority"
+                                ],
+                            },
+                            {
+                                "Control": (
+                                    "Scanner findings"
+                                ),
+                                "Status": governance[
+                                    "scanner_authority"
+                                ],
+                            },
+                            {
+                                "Control": (
+                                    "Affectedness authority"
+                                ),
+                                "Status": (
+                                    "DETERMINISTIC_ENGINE"
+                                ),
+                            },
+                            {
+                                "Control": (
+                                    "Policy authority"
+                                ),
+                                "Status": governance[
+                                    "ssvc_authority"
+                                ],
+                            },
+                            {
+                                "Control": (
+                                    "Final disposition"
+                                ),
+                                "Status": governance[
+                                    "final_disposition"
+                                ],
+                            },
+                            {
+                                "Control": (
+                                    "Production readiness"
+                                ),
+                                "Status": governance[
+                                    "production_readiness"
+                                ],
+                            },
+                        ]
+                    ),
+                    use_container_width=True,
+                    hide_index=True,
+                )
+
+                st.warning(
+                    "A successful intake does not certify "
+                    "that a system is safe. Unknown package "
+                    "identity, missing versions and absent "
+                    "vulnerability matches remain explicit."
+                )
+
+            names = (
+                result["component_frame"][
+                    "name"
+                ].astype(str)
+                if not result[
+                    "component_frame"
+                ].empty
+                else pd.Series(
+                    dtype=str
+                )
+            )
+
+            has_log4j = names.str.contains(
+                "log4j",
+                case=False,
+                regex=False,
+            ).any()
+
+            if has_log4j:
+                st.subheader(
+                    "Governed SSVC escalation"
+                )
+
+                master = (
+                    load_master_vertical_slice()
+                )
+
+                ssvc = master["summary"]
+
+                st.dataframe(
+                    pd.DataFrame(
+                        [
+                            {
+                                "CVE": ssvc[
+                                    "cve_id"
+                                ],
+                                "SSVC vector": (
+                                    ssvc["vector"]
+                                ),
+                                "Decision row": (
+                                    ssvc[
+                                        "matched_row"
+                                    ]
+                                ),
+                                "Outcome": ssvc[
+                                    "outcome_name"
+                                ],
+                                "Human review": (
+                                    ssvc[
+                                        "human_review_required"
+                                    ]
+                                ),
+                                "Final disposition": (
+                                    ssvc[
+                                        "final_disposition_status"
+                                    ]
+                                ),
+                                "Production": (
+                                    ssvc[
+                                        "production_readiness"
+                                    ]
+                                ),
+                            }
+                        ]
+                    ),
+                    use_container_width=True,
+                    hide_index=True,
+                )
+
+                st.error(
+                    "Log4j evidence detected. Confirmed "
+                    "Log4Shell conditions trigger the "
+                    "governed SSVC path and mandatory "
+                    "human review."
+                )
 
 
 elif page == "Component Explorer":
